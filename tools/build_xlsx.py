@@ -251,6 +251,89 @@ d.cell(r_be+2,1,"Notes: discharge needs reactive-dyed (e.g. Procion) hoodies, no
 d.column_dimensions["A"].width=60
 for col in "BCD": d.column_dimensions[col].width=20
 
+
+# Other products (same cost basis as the hoodie)
+o = wb.create_sheet("Other products")
+o["A1"] = "Other products: cost to make and gross margin (estimates, Nov 2026)"; o["A1"].font = title
+o["A2"] = "Blue = edit. Gross margin = (price - cost to make) / price; cost to make includes your time at the Inputs hourly rate, excludes marketing. 'Net per unit' also takes off card fees, the shipping label (free shipping) and returns, using Inputs."
+o["A2"].font = Font(name=F, italic=True)
+prods = ["Tee","Sweatpants","Underwear (boxer brief)","Socks (factory knit)","Beanie (factory knit)","Dad cap","Heavy jacket (duck, lined)"]
+# label, values per product, unit, note
+inp = [
+ ("Price low", [45,110,30,18,32,35,250], USD, "Comparable retail: heavyweight tees ~$50; LA sweats $110-225; plastic-free boxers $30-42; plastic-free socks ~$9-11/pair in packs; Carhartt J140 $120-140 (synthetic lining)."),
+ ("Price high", [60,140,38,24,40,40,325], USD, ""),
+ ("Paid maker: fabric or blank", [12.50,22.40,4.00,7.00,12.00,8.00,76.00], USD, "Tee 1.25 yd x $10 hemp/cotton jersey; sweats 1.6 yd x $14 fleece; jacket = 3 yd duck + flannel + wool batt + cupro sleeves. Socks/beanie/cap = factory price per piece (est.)."),
+ ("Paid maker: trims (rib, elastic, zipper, cord, thread, labels)", [3.75,7.87,3.00,0,0,0,26.50], USD, "Natural-rubber elastic ~$2/yd (est.); #10 brass zipper $10-14 (cotton tape unconfirmed)."),
+ ("Paid maker: sewing labor (CMT)", [10,22,8,0,0,0,55], USD, "US small-batch estimates; get quotes. Hoodie uses $30."),
+ ("Freight per unit", [1.50,2.50,0.75,0.50,0.75,0.75,5.00], USD, "Estimate."),
+ ("Overseas full package, landed (FOB + freight + duty)", [14,17,6,7,6,6,70], USD, "Est. Pakistan 300 GSM tee $8-14 FOB at 50 pcs; no sweatpant/underwear/jacket quotes found. Socks: no overseas data, set = US."),
+ ("Decoration supplies per unit", [2.50,3.00,1.00,0,1.50,1.50,5.00], USD, "Socks: design is knitted in. Beanie/cap: embroidered cotton patch."),
+ ("Your hours per unit (decorate + pack)", [0.5,0.75,0.25,0.1,0.3,0.3,1.0], '0.00', "Estimate."),
+ ("Packaging", [1.00,1.50,0.75,0.50,0.75,1.50,4.00], USD, "Cap needs a box; jacket a large box."),
+ ("Shipping label", [6,9,5,4.5,5,7,18], USD, "USPS Ground Advantage estimates by weight."),
+ ("Self-sewn: your sewing hours", [1.0,1.5,0.5,0,0,0,7.0], '0.00', "0 = not practical to make yourself."),
+ ("One-time development per style (pattern, grade, samples)", [600,900,700,150,100,150,2000], USD0, "Estimates. Socks/beanie/cap = artwork, setup and samples."),
+ ("Minimum order per style (pieces)", [50,50,100,144,100,100,50], '0', "Typical quoted minimums; socks 144-288 at Fort Payne mills."),
+]
+for j,h in enumerate(["Item"]+prods+["Notes"]):
+    c=o.cell(4,1+j,h); c.font=bold; c.fill=hdr; c.alignment=Alignment(wrap_text=True)
+R={}
+for i,(lab,vals,fmt,note) in enumerate(inp):
+    r=5+i; R[lab]=r
+    o.cell(r,1,lab).font=black
+    for j,v in enumerate(vals):
+        c=o.cell(r,2+j,v); c.font=blue; c.number_format=fmt
+    o.cell(r,2+len(prods),note).font=Font(name=F,italic=True,size=9)
+r0=5+len(inp)+1
+o.cell(r0,1,"Calculated").font=bold
+cols=[chr(66+j) for j in range(len(prods))]
+def ref(lab,col): return f"{col}{R[lab]}"
+rate=N['rate']
+calc=[
+ ("Cost to make: paid maker (incl. your time)", lambda c: f"={ref('Paid maker: fabric or blank',c)}+{ref('Paid maker: trims (rib, elastic, zipper, cord, thread, labels)',c)}+{ref('Paid maker: sewing labor (CMT)',c)}+{ref('Freight per unit',c)}+{ref('Decoration supplies per unit',c)}+{ref('Your hours per unit (decorate + pack)',c)}*{rate}+{ref('Packaging',c)}", USD),
+ ("Cost to make: overseas full package (incl. your time)", lambda c: f"={ref('Overseas full package, landed (FOB + freight + duty)',c)}+{ref('Decoration supplies per unit',c)}+{ref('Your hours per unit (decorate + pack)',c)}*{rate}+{ref('Packaging',c)}", USD),
+ ("Cost to make: self-sewn, cash only", lambda c: f"=IF({ref('Self-sewn: your sewing hours',c)}=0,\"n/a\",{ref('Paid maker: fabric or blank',c)}+{ref('Paid maker: trims (rib, elastic, zipper, cord, thread, labels)',c)}+{ref('Decoration supplies per unit',c)}+{ref('Packaging',c)})", USD),
+ ("Cost to make: self-sewn, your time paid", lambda c: f"=IF({ref('Self-sewn: your sewing hours',c)}=0,\"n/a\",{ref('Paid maker: fabric or blank',c)}+{ref('Paid maker: trims (rib, elastic, zipper, cord, thread, labels)',c)}+{ref('Decoration supplies per unit',c)}+{ref('Packaging',c)}+({ref('Self-sewn: your sewing hours',c)}+{ref('Your hours per unit (decorate + pack)',c)})*{rate})", USD),
+]
+CR={}
+for i,(lab,fn,fmt) in enumerate(calc):
+    r=r0+1+i; CR[i]=r
+    o.cell(r,1,lab).font=black
+    for c in cols:
+        x=o[f"{c}{r}"]; x.value=fn(c); x.number_format=fmt
+r=r0+1+len(calc)+1
+names=["paid maker","overseas","self-sewn cash","self-sewn time paid"]
+for pl in ["Price low","Price high"]:
+    for k,nm in enumerate(names):
+        o.cell(r,1,f"Gross margin at {pl.lower()}: {nm}").font=black
+        for c in cols:
+            P=ref(pl,c)
+            x=o[f"{c}{r}"]; x.value=f"=IFERROR(({P}-{c}{CR[k]})/{P},\"n/a\")"; x.number_format=PCT
+        r+=1
+r+=1
+for k,nm in enumerate(names[:2]):
+    o.cell(r,1,f"Price needed for 50% gross margin: {nm}").font=bold
+    for c in cols:
+        x=o[f"{c}{r}"]; x.value=f"={c}{CR[k]}/0.5"; x.number_format=USD
+    r+=1
+r+=1
+for k,nm in enumerate(names[:2]):
+    o.cell(r,1,f"Net per unit made at price high, free shipping, after card fee + returns: {nm}").font=black
+    for c in cols:
+        P=ref('Price high',c); S=ref('Shipping label',c)
+        x=o[f"{c}{r}"]; x.value=f"=(1-{N['ret']})*{P}*(1-{N['feepct']})-{c}{CR[k]}-(1-{N['ret']})*({S}+{N['feefix']})"; x.number_format=USD
+    r+=1
+r+=1
+o.cell(r,1,"Cash for first run: minimum order x paid-maker cost + development").font=bold
+for c in cols:
+    x=o[f"{c}{r}"]; x.value=f"={ref('Minimum order per style (pieces)',c)}*({c}{CR[0]}-{ref('Your hours per unit (decorate + pack)',c)}*{rate})+{ref('One-time development per style (pattern, grade, samples)',c)}"; x.number_format=USD0
+r+=2
+o.cell(r,1,"Equipment you'd add: tee/underwear/sweats reuse the hoodie serger + coverstitch; jacket needs an industrial walking-foot machine (~$1,500-1,700); socks need a sock-knitting machine (~$2,800-4,000, not recommended); caps can't be embroidered on a PE900 once assembled (use patches).").font=Font(name=F,italic=True)
+o.column_dimensions["A"].width=62
+for c in cols: o.column_dimensions[c].width=15
+o.column_dimensions[chr(66+len(prods))].width=70
+o.freeze_panes="B5"
+
 # Legend example note
 ws.cell(r+1,1,"Example: if a sewer quotes $38 per piece, type 38 in the 'Sewing labor' blue cell; Scenarios updates automatically.").font=Font(name=F,italic=True)
 wb.save("/home/user/Clothing/docs/margin-model.xlsx")
