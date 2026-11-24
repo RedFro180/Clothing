@@ -18,5 +18,5 @@ A showcase shop with no payment yet: a featured row at the top, all 107 hoodies 
 - **Featured picks, price, coming-soon list:** top of `tools/build_site.py`. A design's theme can be overridden with `theme="rot"` in its `D(...)` entry.
 - **Keep the label "Featured"** until there are real sales. Calling unsold items "best sellers" is a false claim.
 - **Requests:** with `FORM_ENDPOINT` empty, the site opens the visitor's email app addressed to `CONTACT_EMAIL`. To receive requests without relying on email apps, paste a form-service URL (e.g. Formspree) into `FORM_ENDPOINT`.
-- **Free hosting:** GitHub repo → Settings → Pages → deploy from a branch, folder `/site`. If Pages only offers `/` or `/docs`, copy `site/` to `docs/`. Note that GitHub Pages on a free account needs a public repo.
+- **Free hosting:** GitHub Pages' "deploy from a branch" only serves `/` or `/docs`, and `docs/` already holds the research files. So either set Pages to "GitHub Actions" with a static-site workflow pointed at `site/`, or put `site/` on Netlify or Cloudflare Pages (drag-and-drop, free tier). GitHub Pages on a free account needs a public repo, which would make the research docs public too.
 - **Adding payment later:** either Stripe Payment Links (one link per product/size, no monthly fee, swap the "Add" button for the link) or move to Shopify and reuse the images and copy.
