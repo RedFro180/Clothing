@@ -734,7 +734,8 @@ PLACE = {"front": "front center", "back": "back", "chest": "left chest", "sleeve
 def fname(num, d): return (f"{num:02d}" if num < 100 else f"{num:03d}") + "-" + d["slug"] + ".svg"
 def color_for(num):
     return PALETTE[(num * 7) % len(PALETTE)]
-def render(num, d):
+def render(num, d, clean=False, out=OUT):
+    """clean=True: product image for the website (no notes, transparent background, cropped)."""
     global INK, FAB
     cname, FAB, INK = color_for(num)
     view, art = layout(num, d)
@@ -745,6 +746,11 @@ def render(num, d):
     method = ("Light ink: resist print, discharge (reactive dye) or embroidery" if light_ink
               else "Dark ink: natural-dye paste print")
     if RED in art: method += " + red embroidery"
+    if clean:
+        s = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 36 560 570" width="560" height="570">'
+             f'<title>{E(title)}</title>{DEFS}{hoodie(view)}<g filter="url(#grunge)">{art}</g></svg>')
+        open(os.path.join(out, fname(num, d)), "w").write(s)
+        return fname(num, d)
     s = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" width="600" height="720" font-family="Arial, Helvetica, sans-serif">
 {DEFS}
 <rect width="600" height="720" fill="{PAGE}"/>
@@ -755,7 +761,7 @@ def render(num, d):
 <text x="300" y="677" text-anchor="middle" font-size="11" fill="#555">Hoodie: {E(cname)}. {E(method)}.</text>
 <text x="300" y="702" text-anchor="middle" font-size="10" fill="#777">Placement sketch only. Redraw in your own hand before use.</text>
 </svg>'''
-    open(os.path.join(OUT, fname(num, d)), "w").write(s)
+    open(os.path.join(out, fname(num, d)), "w").write(s)
     return fname(num, d)
 
 def all_designs():
