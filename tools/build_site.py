@@ -75,8 +75,9 @@ def main():
         })
     fonts = os.path.join(SITE, "fonts")
     os.makedirs(fonts, exist_ok=True)
-    for f in os.listdir(S.FD):
-        shutil.copy(os.path.join(S.FD, f), fonts)
+    for f in os.listdir(S.FD):   # the site uses Pirata One (logo) and Oswald (buttons, labels)
+        if f.split("-")[0] in ("pirata", "oswald") or f in ("LICENSE-pirata-one.txt", "LICENSE-oswald.txt"):
+            shutil.copy(os.path.join(S.FD, f), fonts)
     data = {"products": products, "themes": THEMES,
             "types": [{"id": "hoodie", "label": "Hoodies", "live": True, "price": PRICE}] +
                      [{"id": k, "label": l, "live": False, "price": p} for k, l, p in COMING_SOON]}
