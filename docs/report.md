@@ -69,6 +69,31 @@ Research as of Nov 24, 2026. Not legal, tax or financial advice. Prices are from
 
 **US sewing labor:** about $8–15 per piece at volume ([Apex Fashion Lab](https://www.apexfashionlab.com/glossary/cut-and-sew)). Expect more for 50 pieces with cotton thread; the model uses $30.
 
+## 5b. Sewing it yourself (keeps every part natural)
+**Best blend for soft + durable:** about **30% hemp / 70% cotton brushed-back fleece, 330–400 GSM**. Cotton is softest from day one; hemp is stronger and pills less, and softens with washing ([AZoM](https://www.azom.com/article.aspx?ArticleID=24444), [Sewingtrip](https://sewingtrip.com/cotton-vs-hemp-pros-and-cons/), [Stridewise](https://stridewise.com/hemp-vs-cotton/); seller-type sources, no lab tests found). Choose 55/45 if durability matters more than first-wear softness. Brushed fleece is softest; French terry (loops inside) pills less. Wash-test swatches 5 times before choosing.
+
+**Rib:** heavy 100% cotton 1x1 or 2x2, no spandex. Cut cuffs and hem a little tighter to make up for less spring-back.
+
+**Thread is the weak point.** Guides recommend polyester or poly-core thread for knits, because 100% cotton serger thread is weaker and linty ([Linda's](https://lindas.com/blogs/tips-and-tricks/serger-cone-thread), [Ageberry](https://www.ageberry.com/?p=23518)). Natural options: cotton on a 4-thread overlock, with every seam stretch-tested (cuffs, hood seam, side seams); silk thread on high-stress seams (natural, strong, costly); wood-pulp filament ([Amann AeoniQ](https://www.amann.com/products/product/aeoniqtm-fil/), mostly industrial).
+
+**Machines:** serger for seams (entry models ~$250–350, [Sew Can She](https://sewcanshe.com/the-best-sergers-for-sewing/)) and coverstitch for hems (e.g. Brother 2340CV, Janome 1000CPX; verify prices), or a twin needle on a regular machine.
+
+**Time:** beginners take about 3–6 hours per pullover; pros on industrial machines 1–2 hours ([Modaknits](https://modaknits.com/?p=53558), [Peekaboo](https://peekaboopatternshop.com/hoodie-patterns)). Plan on ~2 hours after practice: 50 hoodies ≈ 100 hours, about 20 a week full-time.
+
+**Pattern:** buy an indie hoodie pattern and alter it to match a hoodie whose fit you like, or pay a patternmaker to draft and grade one ($150–2,000).
+
+**Money (workbook sheet "Self-sewn vs sewer", mid inputs):**
+
+| | Paid sewer | Self-sewn |
+|---|---|---|
+| Cash cost to make | $76 | $43 |
+| Cost incl. your time ($20/hr) | $96 | $103 |
+| Gross margin at $120, cash only | 36% | 64% |
+| Gross margin at $150, cash only | 49% | 71% |
+| Gross margin at $150, time paid | 36% | 31% |
+
+Self-sewn cash margin clears 50%, but most of the gain is your unpaid wages, and it caps volume. Good for the first run and a "handmade" story; move to a sewer or factory once demand outgrows your hours. One-time: ~$1,050 for machines and pattern.
+
 ## 6. Business setup for a first-timer
 1. **Form an LLC.** Ohio: $99 filing, no annual report. Florida: $125 filing plus $138.75 annual report due May 1 ($538.75 if late) ([LLC University](https://www.llcuniversity.com/llc-annual-fees-by-state/), **verify** on state sites). You can form in the state you live in and re-register if you move.
 2. **Get an EIN** from the IRS (free). **Open a business bank account.** Keep business and personal money separate.

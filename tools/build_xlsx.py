@@ -58,6 +58,10 @@ rows = [
  ("Screen printing setup (screens, squeegees, exposure, press)", 600.00, "$", "Estimate for basic home setup."),
  ("Dye setup (stainless pots, scale, burner, steamer, PPE)", 400.00, "$", "Estimate."),
  ("Other (RN free, samples of trims, misc.)", 200.00, "$", "Estimate."),
+ ("SELF-SEWN OPTION (you sew instead of a sewer)", None, None, None),
+ ("Your sewing hours per hoodie (after practice)", 2.0, "hr", "Beginners 3-6 hrs per pullover; pros 1-2 hrs on industrial machines (Modaknits, Peekaboo). Time your first 10."),
+ ("Sewing equipment (serger + coverstitch, one-time)", 900.00, "$", "Entry sergers ~$250-350; coverstitch extra. Verify prices."),
+ ("Pattern for self-sewn (indie pattern + alterations)", 150.00, "$", "Estimate; a patternmaker draft + grade is $150-2,000."),
 ]
 names = {}
 r0 = 4
@@ -66,7 +70,7 @@ for c in "ABCD": ws[f"{c}4"].font = bold; ws[f"{c}4"].fill = hdr
 r = 5
 keys = ["fab_yd","fab_px","rib_yd","rib_px","thread","cord","labels","freight",
         "cmt","dye","print","hrs","rate","pack","ship","shipchg","feepct","feefix","ret","mkt",
-        "pattern","samples","samplefab","trials","llc","shopify","domain","ins","screen","dyeeq","other"]
+        "pattern","samples","samplefab","trials","llc","shopify","domain","ins","screen","dyeeq","other","sewhrs","sewequip","sewpattern"]
 ki = 0
 for label,val,unit,note in rows:
     ws.cell(r,1,label)
@@ -157,6 +161,54 @@ rr+=1
 s.cell(rr,1,"Notes: sales tax is collected and passed to the state, so it is excluded. 'Your labor' is a cost; set your rate to 0 on Inputs to see cash-only results. Returns % reduces units sold, but you still pay to make them.").font=Font(name=F,italic=True)
 s.column_dimensions["A"].width=70
 for c in "BCD": s.column_dimensions[c].width=14
+
+# Self-sewn comparison
+c2 = wb.create_sheet("Self-sewn vs sewer")
+c2["A1"] = "Sewing it yourself vs paying a sewer (per hoodie)"; c2["A1"].font = title
+c2["A2"] = "Gross margin = (price - cost to make) / price. Cost to make excludes marketing, shipping, card fees and returns."
+c2["A2"].font = Font(name=F, italic=True)
+hdrs = ["Item","Paid sewer","Self-sewn"]
+for j,h in enumerate(hdrs):
+    c=c2.cell(4,1+j,h); c.font=bold; c.fill=hdr
+mat = f"{N['fab_yd']}*{N['fab_px']}+{N['rib_yd']}*{N['rib_px']}+{N['thread']}+{N['cord']}+{N['labels']}"
+items = [
+ ("Materials (fabric, rib, thread, cord, labels)", f"={mat}", f"={mat}"),
+ ("Freight to/from sewer", f"={N['freight']}", "=0"),
+ ("Sewing labor paid out", f"={N['cmt']}", "=0"),
+ ("Dye + print materials", f"={N['dye']}+{N['print']}", f"={N['dye']}+{N['print']}"),
+ ("Packaging", f"={N['pack']}", f"={N['pack']}"),
+ ("Cash cost to make", "=SUM(B5:B9)", "=SUM(C5:C9)"),
+ ("Your time: dye/print/pack hours x rate", f"={N['hrs']}*{N['rate']}", f"={N['hrs']}*{N['rate']}"),
+ ("Your time: sewing hours x rate", "=0", f"={N['sewhrs']}*{N['rate']}"),
+ ("Full cost to make (incl. your time)", "=B10+B11+B12", "=C10+C11+C12"),
+]
+for i,(lab,a,b) in enumerate(items):
+    r_=5+i
+    c2.cell(r_,1,lab).font = bold if lab.startswith(("Cash","Full")) else black
+    for j,f in enumerate((a,b)):
+        c=c2.cell(r_,2+j,f); c.number_format=USD; c.font=green
+c2.cell(15,1,"Gross margin at retail price ↓").font=bold
+for j in range(3): c2.cell(15,1+j).fill=hdr
+rr2=16
+for p in (120,150):
+    c=c2.cell(rr2,1,p); c.font=blue; c.number_format=USD0
+    c2.cell(rr2,4,"cash only (your time free)").font=Font(name=F,italic=True)
+    for j,col in enumerate("BC"):
+        c=c2.cell(rr2,2+j,f"=($A{rr2}-{col}$10)/$A{rr2}"); c.number_format=PCT
+    rr2+=1
+    c=c2.cell(rr2,1,p); c.font=blue; c.number_format=USD0
+    c2.cell(rr2,4,"with your time paid").font=Font(name=F,italic=True)
+    for j,col in enumerate("BC"):
+        c=c2.cell(rr2,2+j,f"=($A{rr2}-{col}$13)/$A{rr2}"); c.number_format=PCT
+    rr2+=1
+c2.cell(rr2+1,1,"One-time for self-sewn: equipment + pattern").font=bold
+c=c2.cell(rr2+1,3,f"={N['sewequip']}+{N['sewpattern']}"); c.number_format=USD0; c.font=green
+c2.cell(rr2+2,1,"Hoodies per 40-hour week at your sewing hours (sewing only)").font=bold
+c=c2.cell(rr2+2,3,f"=IF({N['sewhrs']}=0,0,ROUNDDOWN(40/{N['sewhrs']},0))"); c.number_format='0'
+c2.cell(rr2+4,1,"Note: the higher cash margin when self-sewn is mostly your unpaid wages. It also caps how many you can make.").font=Font(name=F,italic=True)
+c2.column_dimensions["A"].width=55
+for col in "BC": c2.column_dimensions[col].width=14
+c2.column_dimensions["D"].width=28
 
 # Legend example note
 ws.cell(r+1,1,"Example: if a sewer quotes $38 per piece, type 38 in the 'Sewing labor' blue cell; Scenarios updates automatically.").font=Font(name=F,italic=True)
