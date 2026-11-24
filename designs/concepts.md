@@ -77,3 +77,117 @@ These are starting points. You make the final art. All captions are original dra
 - Dark base fabric (logwood/iron black, deep indigo) makes printing *dark on dark* impossible. Either print on light naturally dyed fabric (madder, weld, undyed oatmeal) or use a **discharge-style resist**: print the mordant or resist on undyed fabric, then dye. The printed area takes color differently from the rest.
 - Sleeves and hoods are hard to screen at home on a finished hoodie. Print cut panels before sewing (send printed panels to the sewer) or use embroidery with cotton thread.
 - Wash-test every design 10+ times before you sell it.
+
+## Sketch set 2: 100 more hoodie sketches (08–107)
+
+These are placement sketches made with `tools/svgs_more.py` (data in `tools/designs_data.py`). Contact sheets: `sketches/overview-08-32.png`, `overview-33-57.png`, `overview-58-82.png`, `overview-83-107.png`.
+- **34** are captions from the list above that hadn't been drawn yet. **66** are new captions written in the same voice.
+- The same line applies as before: there are no method images and nothing that reads as encouragement. Several are "connection" pieces meant to carry 988 on the hem or hood.
+- **"Not checked"** means no search has been done. Before printing any of them, search each phrase on Etsy, Redbubble, TeePublic, Amazon and USPTO (Class 25).
+- Placements:
+  - Front center prints sit above the kangaroo pocket.
+  - Chest, sleeve and hood text is small. Embroider it, or print it on panels before sewing.
+  - Pocket prints must be printed on the pocket piece before it's sewn on.
+
+| # | Caption | Placement | Print | Platform | Source | First-pass check | File |
+|---|---|---|---|---|---|---|---|
+| 8 | BUILT DIFFERENT. BROKEN SIMILAR. | Front center | 1C | L | List #6 | See list | [svg](sketches/08-built-different-broken-similar.svg) |
+| 9 | MY THERAPIST AND MY SQUAT RACK BOTH SAY I'M MAKING PROGRESS | Back | 1C | L | List #7 | See list | [svg](sketches/09-therapist-and-squat-rack.svg) |
+| 10 | EXISTENTIAL DREAD, BUT MAKE IT CARDIO | Front center | 1C | L | List #8 | See list | [svg](sketches/10-existential-dread-cardio.svg) |
+| 11 | MEMENTO MORI. MEMENTO MORE REPS. | Front center | 1C | L | List #9 | Crowded theme | [svg](sketches/11-memento-more-reps.svg) |
+| 12 | LIFT HEAVY THINGS. CARRY HEAVY THOUGHTS. PUT BOTH DOWN SOMETIMES. | Back | TYPE | L | List #10 | See list | [svg](sketches/12-lift-heavy-carry-heavy.svg) |
+| 13 | I DON'T HAVE ABS. I HAVE DREAD WITH GOOD POSTURE. | Front center | 1C | L | List #11 | See list | [svg](sketches/13-dread-with-good-posture.svg) |
+| 14 | COPING MECHANISM: 225 LBS | Front center | 1C | L | List #12 | See list | [svg](sketches/14-coping-mechanism-225.svg) |
+| 15 | DEAD LIFTS. LIVE LIFTER. | Left chest | FINE: embroidery suggested | L | List #13 | Crowded theme | [svg](sketches/15-dead-lifts-live-lifter.svg) |
+| 16 | THE VOID STARES BACK. I STARE AT MY MACROS. | Front center | 1C | L | List #14 | See list | [svg](sketches/16-void-stares-macros.svg) |
+| 17 | BORN TO SUFFER. FORCED TO HYDRATE. | Front center | 1C | L | List #15 | Crowded format | [svg](sketches/17-born-to-suffer-hydrate.svg) |
+| 18 | MORTALITY IS UNDEFEATED. / *still going for the rematch.* | Back | 1C | L | List #16 | See list | [svg](sketches/18-mortality-undefeated.svg) |
+| 19 | I CARRY MY TRAUMA LIKE A FARMER'S CARRY: / *with grip.* | Front center | 1C | L | List #17 | See list | [svg](sketches/19-trauma-farmers-carry.svg) |
+| 20 | NOT OKAY. STILL SHOWING UP. | Front center | TYPE | L | List #18 | Likely Seen | [svg](sketches/20-not-okay-still-showing-up.svg) |
+| 21 | YOUR DEMONS DON'T SPOT YOU. / *we do.* | Back | 1C | L | List #19 | See list | [svg](sketches/21-demons-dont-spot-you.svg) |
+| 22 | SWEAT. TEARS. DREAD. REPEAT. | Back | TYPE | L | List #20 | See list | [svg](sketches/22-sweat-tears-dread-repeat.svg) |
+| 23 | ASHES TO ASHES REPS TO REPS | Sleeve | FINE: embroidery suggested | L | List #21 | See list | [svg](sketches/23-ashes-to-ashes-reps-to-reps.svg) |
+| 24 | ASK ME HOW I'M REALLY DOING. / *then we squat.* | Front center | TYPE | L | List #22 | See list | [svg](sketches/24-ask-me-how-im-doing.svg) |
+| 25 | PALLBEARER TRAINING PROGRAM | Back | 1C | M | List #23 | See list | [svg](sketches/25-pallbearer-training.svg) |
+| 26 | PERSONAL RECORD: SURVIVED ANOTHER TUESDAY | Front center | TYPE | L | List #24 | See list | [svg](sketches/26-pr-survived-tuesday.svg) |
+| 27 | REST DAY FOR THE BODY. NEVER FOR THE BRAIN. | Front center | 1C | L | List #25 | See list | [svg](sketches/27-rest-day-body.svg) |
+| 28 | GHOSTED BY SEROTONIN | Front center | 1C | L | List #26 | Likely Seen | [svg](sketches/28-ghosted-by-serotonin.svg) |
+| 29 | EVERYTHING HURTS AND I'M STILL HERE | Back | TYPE | L | List #27 | See list | [svg](sketches/29-everything-hurts.svg) |
+| 30 | HEAVY METAL. HEAVIER FEELINGS. | Front center | 1C | L | List #29 | See list | [svg](sketches/30-heavy-metal-heavier-feelings.svg) |
+| 31 | PROFESSIONALLY HAUNTED | Left chest | FINE: embroidery suggested | L | List #30 | See list | [svg](sketches/31-professionally-haunted.svg) |
+| 32 | OUT OF ORDER / *(in the brain, not the bathroom)* | Front center | TYPE | L | List #31 | See list | [svg](sketches/32-out-of-order.svg) |
+| 33 | FINE. / *(not fine)* | Left chest | FINE: embroidery suggested | L | List #32 | See list | [svg](sketches/33-fine-not-fine.svg) |
+| 34 | DREAD, BUT COZY | Front center | 1C | L | List #33 | See list | [svg](sketches/34-dread-but-cozy.svg) |
+| 35 | I'M NOT A MORNING PERSON. / *i'm a mourning person.* | Front center | 1C | L | List #34 | Likely Seen | [svg](sketches/35-mourning-person.svg) |
+| 36 | SOMEBODY'S 3 A.M. THOUGHTS MADE IT INTO FABRIC | Back | 1C | L | List #35 | See list | [svg](sketches/36-3am-thoughts-fabric.svg) |
+| 37 | THE PAIN IS REAL. SO ARE WE. | Back | TYPE | L | List #36 | See list | [svg](sketches/37-pain-is-real-so-are-we.svg) |
+| 38 | HOLD THE WEIGHT. HOLD EACH OTHER. | Front center | 1C | L | List #37 | See list | [svg](sketches/38-hold-the-weight.svg) |
+| 39 | BRAIN: HAUNTED. BODY: LIFTING. SPIRIT: UNCLEAR. | Back | TYPE | L | List #38 | See list | [svg](sketches/39-brain-haunted-body-lifting.svg) |
+| 40 | HAND-DYED IN PLANTS / *because nothing else would hold my sadness* | Front center | 1C | L | List #39 | See list | [svg](sketches/40-hand-dyed-sadness.svg) |
+| 41 | THIS HOODIE WAS DYED WITH DEAD PLANTS. / *relatable.* | Pocket + chest | 1C | L | List #40 | See list | [svg](sketches/41-dyed-with-dead-plants.svg) |
+| 42 | DEADLIFTS ARE CHEAPER THAN THERAPY. / *i do both.* | Front center | 1C | L | New | Not checked | [svg](sketches/42-deadlifts-cheaper-than-therapy.svg) |
+| 43 | HEAVY IS RELATIVE. SO IS OKAY. | Front center | 1C | L | New | Not checked | [svg](sketches/43-heavy-is-relative.svg) |
+| 44 | REST BETWEEN SETS. REST BETWEEN THOUGHTS. | Back | 1C | L | New | Not checked | [svg](sketches/44-rest-between-thoughts.svg) |
+| 45 | SPOTTED: TRAUMA. LIFTED: ANYWAY. | Front center | TYPE | L | New | Not checked | [svg](sketches/45-spotted-trauma.svg) |
+| 46 | SORE FROM YESTERDAY. HAUNTED FROM CHILDHOOD. | Back | 1C | L | New | Not checked | [svg](sketches/46-sore-and-haunted.svg) |
+| 47 | PROGRESSIVE OVERLOAD / *(emotional)* | Left chest | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/47-progressive-overload-emotional.svg) |
+| 48 | RACK YOUR WEIGHTS. UNPACK YOUR BAGGAGE. | Back | 1C | L | New | Not checked | [svg](sketches/48-rack-weights-unpack-baggage.svg) |
+| 49 | FAILURE IS A REP SCHEME | Pocket + chest | TYPE | L | New | Not checked | [svg](sketches/49-failure-is-a-rep-scheme.svg) |
+| 50 | TRAINING FOR THE APOCALYPSE / *mostly mentally* | Front center | 1C | L | New | Not checked | [svg](sketches/50-training-for-apocalypse.svg) |
+| 51 | SKIP LEG DAY? I CAN'T EVEN SKIP FEELINGS. | Back | TYPE | L | New | Not checked | [svg](sketches/51-cant-skip-feelings.svg) |
+| 52 | GRIP STRENGTH: / *holding it together* | Front center | 1C | L | New | Not checked | [svg](sketches/52-grip-strength-holding-together.svg) |
+| 53 | ONE MORE REP. ONE MORE DAY. | Back | TYPE | L | New | Not checked | [svg](sketches/53-one-more-rep-one-more-day.svg) |
+| 54 | HEAVY LIFTING CLUB / *emotional division* | Left chest | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/54-heavy-lifting-club.svg) |
+| 55 | LIFT. CRY. HYDRATE. | Front center | 1C | L | New | Not checked | [svg](sketches/55-lift-cry-hydrate.svg) |
+| 56 | PR / *(personal regret)* | Left chest | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/56-pr-personal-regret.svg) |
+| 57 | BENCH PRESSING MY INTRUSIVE THOUGHTS | Front center | 1C | L | New | Not checked | [svg](sketches/57-bench-intrusive-thoughts.svg) |
+| 58 | RECOVERY IS NOT LINEAR. / *neither is my bar path.* | Front center | TYPE | L | New | Not checked | [svg](sketches/58-recovery-not-linear.svg) |
+| 59 | TEMPO: SLOW. / *like my healing.* | Front center | 1C | L | New | Not checked | [svg](sketches/59-tempo-slow-healing.svg) |
+| 60 | PLATE MATH IS EASIER THAN FEELINGS | Back | 1C | L | New | Not checked | [svg](sketches/60-plate-math-feelings.svg) |
+| 61 | WARM-UP SET: SMALL TALK. WORKING SET: THE TRUTH. | Back | TYPE | L | New | Not checked | [svg](sketches/61-warm-up-small-talk.svg) |
+| 62 | COUNTING REPS SO I DON'T COUNT REGRETS | Front center | TYPE | L | New | Not checked | [svg](sketches/62-counting-reps-not-regrets.svg) |
+| 63 | THE IRON NEVER ASKS IF I'M OKAY. / *you can.* | Back | 1C | L | New | Not checked | [svg](sketches/63-iron-never-asks.svg) |
+| 64 | DELOAD WEEK FOR MY SOUL | Front center | 1C | L | New | Not checked | [svg](sketches/64-deload-week-soul.svg) |
+| 65 | STRONGER THAN YESTERDAY'S THOUGHTS | Front center | 1C | L | New | Not checked | [svg](sketches/65-stronger-than-yesterdays-thoughts.svg) |
+| 66 | HYPERTROPHY OF THE HEART | Front center | 1C | L | New | Not checked | [svg](sketches/66-hypertrophy-of-the-heart.svg) |
+| 67 | SETS, REPS AND UNPROCESSED GRIEF | Sleeve | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/67-sets-reps-grief.svg) |
+| 68 | SOME WEIGHTS YOU CAN PUT DOWN. / *ask for help with the rest.* | Back | 1C | L | New | Not checked | [svg](sketches/68-some-weights-put-down.svg) |
+| 69 | RUNNING ON SPITE AND COLD BREW | Front center | 1C | L | New | Not checked | [svg](sketches/69-spite-and-cold-brew.svg) |
+| 70 | EXISTENCE IS A GROUP PROJECT. / *show up.* | Back | 1C | L | New | Not checked | [svg](sketches/70-existence-group-project.svg) |
+| 71 | TIRED, BUT IN A GOTHIC WAY | Front center | 1C | L | New | Not checked | [svg](sketches/71-tired-gothic.svg) |
+| 72 | HERE FOR A SHORT TIME. LIFTING FOR A LONG TIME. | Back | 1C | L | New | Not checked | [svg](sketches/72-here-short-time.svg) |
+| 73 | MILDLY HAUNTED. / *fully hydrated.* | Left chest | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/73-haunted-hydrated.svg) |
+| 74 | SAD, BUT STRUCTURALLY SOUND | Front center | TYPE | L | New | Not checked | [svg](sketches/74-sad-structurally-sound.svg) |
+| 75 | DOOMSCROLLING BETWEEN SETS | Pocket + chest | 1C | L | New | Not checked | [svg](sketches/75-doomscrolling-between-sets.svg) |
+| 76 | DARKNESS IS JUST THE ABSENCE OF REPS | Front center | 1C | L | New | Not checked | [svg](sketches/76-darkness-absence-of-reps.svg) |
+| 77 | UNDER ALL THIS MUSCLE: / *a skeleton who is scared.* | Back | 1C | L | New | Not checked | [svg](sketches/77-skeleton-scared.svg) |
+| 78 | HOPE IS A HEAVY SINGLE | Front center | 1C | L | New | Not checked | [svg](sketches/78-hope-heavy-single.svg) |
+| 79 | STILL HERE. STILL LIFTING. STILL WEIRD. | Back | TYPE | L | New | Not checked | [svg](sketches/79-still-here-still-lifting.svg) |
+| 80 | RIGOR MORTIS? / *no, just leg day.* | Front center | 1C | M | New | Not checked | [svg](sketches/80-rigor-mortis-leg-day.svg) |
+| 81 | MORTAL. MUSCULAR. MOODY. | Front center | TYPE | L | New | Not checked | [svg](sketches/81-mortal-muscular-moody.svg) |
+| 82 | FEELINGS: UNRACKED | Left chest | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/82-feelings-unracked.svg) |
+| 83 | CEMETERY QUIET. GYM LOUD. | Back | 1C | L | New | Not checked | [svg](sketches/83-cemetery-quiet-gym-loud.svg) |
+| 84 | GHOSTS CAN'T DO PULL-UPS. / *i checked.* | Front center | 1C | L | New | Not checked | [svg](sketches/84-ghosts-cant-do-pullups.svg) |
+| 85 | NIGHT SHIFT FOR MY BRAIN | Front center | 1C | L | New | Not checked | [svg](sketches/85-night-shift-brain.svg) |
+| 86 | 3 A.M. THOUGHTS. 5 A.M. WORKOUTS. | Back | 1C | L | New | Not checked | [svg](sketches/86-3am-thoughts-5am-workouts.svg) |
+| 87 | BLACK HOODIE. BLACKER MOOD. / *bright future (allegedly).* | Front center | 1C | L | New | Not checked | [svg](sketches/87-black-hoodie-blacker-mood.svg) |
+| 88 | TOO SAD TO STOP. TOO STUBBORN TO QUIT. | Back | TYPE | L | New | Not checked | [svg](sketches/88-too-stubborn-to-quit.svg) |
+| 89 | SURVIVAL MODE: ON. / *beast mode: pending.* | Front center | 1C | L | New | Not checked | [svg](sketches/89-survival-mode-on.svg) |
+| 90 | MEMENTO MORI. / *remember to stretch.* | Left chest | FINE: embroidery suggested | L | New | Crowded theme | [svg](sketches/90-memento-mori-stretch.svg) |
+| 91 | LIFE IS SHORT. REST TIMES SHOULDN'T BE. | Front center | 1C | L | New | Not checked | [svg](sketches/91-life-short-rest-times.svg) |
+| 92 | HEALING IS A SLOW ECCENTRIC | Sleeve | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/92-healing-slow-eccentric.svg) |
+| 93 | BUILT FOR HEAVY THINGS | Front center | 1C | L | New | Not checked | [svg](sketches/93-built-for-heavy-things.svg) |
+| 94 | THE VOID CALLED. / *i put it on hold for leg day.* | Front center | TYPE | L | New | Not checked | [svg](sketches/94-void-on-hold.svg) |
+| 95 | ANXIETY, BUT MAKE IT A SUPERSET | Front center | 1C | L | New | Not checked | [svg](sketches/95-anxiety-superset.svg) |
+| 96 | GRIEF HAS NO OFF-SEASON | Back | TYPE | L | New | Not checked | [svg](sketches/96-grief-no-off-season.svg) |
+| 97 | ALONE TOGETHER AT 6 A.M. | Front center | 1C | L | New | Not checked | [svg](sketches/97-alone-together-6am.svg) |
+| 98 | TALK TO SOMEONE. / *then lift something.* (hood: 988) | Hood + back | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/98-talk-then-lift.svg) |
+| 99 | STILL BREATHING. / *that's the whole workout today.* (hood: STILL HERE) | Hood + back | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/99-still-breathing.svg) |
+| 100 | HEAVY HEART. HEAVY SQUAT. (hood: LIFT) | Hood + back | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/100-heavy-heart-heavy-squat.svg) |
+| 101 | CHALK AND SORROW / *both get on everything* | Sleeve | FINE: embroidery suggested | L | New | Not checked | [svg](sketches/101-chalk-and-sorrow.svg) |
+| 102 | THE GYM IS MY GRAVEYARD SHIFT | Front center | 1C | L | New | Not checked | [svg](sketches/102-gym-is-my-graveyard-shift.svg) |
+| 103 | SPIRIT WEAK. GRIP STRONG. | Pocket + chest | 1C | L | New | Not checked | [svg](sketches/103-spirit-weak-grip-strong.svg) |
+| 104 | BURNING OUT. / *burning calories.* | Front center | 1C | L | New | Not checked | [svg](sketches/104-burning-out-burning-calories.svg) |
+| 105 | CAUGHT IN A WEB OF MY OWN THOUGHTS | Back | 1C | L | New | Not checked | [svg](sketches/105-web-of-thoughts.svg) |
+| 106 | SUPPORT SYSTEM: / *a squat rack and three friends.* | Front center | 1C | L | New | Not checked | [svg](sketches/106-support-system.svg) |
+| 107 | TODAY'S GOALS | Back | 1C | L | New | Not checked | [svg](sketches/107-checklist-today.svg) |

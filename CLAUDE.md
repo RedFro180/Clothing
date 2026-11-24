@@ -53,7 +53,7 @@ Read this first. Not legal/tax advice. Prices are web research (Nov 2026); "est.
 - `docs/other-products.md` — tees, sweatpants, underwear, socks, beanie, dad cap, heavy duck jacket: blend/build, plastic-free problems, sourcing, margins. Workbook sheet "Other products" (blue inputs; margins, price for 50%, break-even, first-run cash).
 - `docs/other-products-equipment.md` — every machine/tool/material with prices + how-to per product; core studio $1,951–3,421 if self-sewn ($342–777 with paid sewer); all products incl. decoration ~$5,890–9,410.
 - `docs/swatch-order-list.md` — fabric/rib/thread swatches to buy and test.
-- `designs/concepts.md` — 40 captions with risk ratings; `designs/sketches/*.svg` + `overview.png` (built by `tools/svgs.py`).
+- `designs/concepts.md` — 40 captions with risk ratings + "Sketch set 2" index table (sketches 08–107: 34 from the list, 66 new captions; new ones not phrase-checked). `designs/sketches/*.svg`: 01–07 built by `tools/svgs.py`, 08–107 by `tools/svgs_more.py` from `tools/designs_data.py` (shared outline in `tools/svgs_base.py`). Contact sheets: `overview.png` (01–07), `overview-08-32.png` … `overview-83-107.png`. Gallery page (all 107, filter by placement): https://claude.ai/artifact/KmKWiokA56KcfBpsBMi7U4, slug 97f4a165-13d7-4e71-9d85-eda9106cfae1.
 - Older Claude Docs from a prior session: main points https://claude.ai/artifact/7Ysk53stPEMhTXRDsbfSoN, playbook https://claude.ai/artifact/XxV8rHdC8MJtPCqZPeVC8u, factory kit https://claude.ai/artifact/QQZpmqMPCWcGb6fjaXoUHq (pre-restart; some content outdated).
 
 ## Status / open items
