@@ -91,102 +91,102 @@ These are placement sketches made with `tools/svgs_dark.py` (data in `tools/desi
 
 | # | Caption | Placement | Print | Platform | Source | First-pass check | File |
 |---|---|---|---|---|---|---|---|
-| 8 | BUILT DIFFERENT. BROKEN SIMILAR. | Front center | 1C | L | List #6 | See list | [svg](sketches/08-built-different-broken-similar.svg) |
-| 9 | MY THERAPIST AND MY SQUAT RACK BOTH SAY I'M MAKING PROGRESS | Back | 1C | L | List #7 | See list | [svg](sketches/09-therapist-and-squat-rack.svg) |
-| 10 | CAUSE OF DEATH: LEG DAY. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match; "leg day" humor is crowded) | [svg](sketches/10-cause-of-death-leg-day.svg) |
-| 11 | MEMENTO MORI. MEMENTO MORE REPS. | Front center | 1C | L | List #9 | Crowded theme | [svg](sketches/11-memento-more-reps.svg) |
+| 8 | WE ALL BREAK THE SAME WAY. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/08-we-all-break.svg) |
+| 9 | THE BAR DOESN'T CARE HOW YOU FEEL. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/09-bar-doesnt-care.svg) |
+| 10 | EVERYONE GETS A TOE TAG. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/10-everyone-gets-a-toe-tag.svg) |
+| 11 | YOU ARE A SKELETON WEARING MEAT. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/11-skeleton-wearing-meat.svg) |
 | 12 | LIFT HEAVY THINGS. CARRY HEAVY THOUGHTS. PUT BOTH DOWN SOMETIMES. | Back | TYPE | L | List #10 | See list | [svg](sketches/12-lift-heavy-carry-heavy.svg) |
-| 13 | AUTOPSY NOTES: ENLARGED TRAPS. | Front center | 1C | M | New (round 3, morbid) | Changed: first draft ("Autopsy will show pre-workout") referenced a real death involving pre-workout; new phrase not found | [svg](sketches/13-autopsy-enlarged-traps.svg) |
-| 14 | COPING MECHANISM: 225 LBS | Front center | 1C | L | List #12 | See list | [svg](sketches/14-coping-mechanism-225.svg) |
-| 15 | DEAD LIFTS. LIVE LIFTER. | Left chest | FINE: embroidery suggested | L | List #13 | Crowded theme | [svg](sketches/15-dead-lifts-live-lifter.svg) |
-| 16 | THE VOID STARES BACK. I STARE AT MY MACROS. | Front center | 1C | L | List #14 | See list | [svg](sketches/16-void-stares-macros.svg) |
-| 17 | EMBALM ME IN CHALK. | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/17-embalm-me-in-chalk.svg) |
+| 13 | THEY WILL CUT YOU OPEN AND WEIGH YOUR HEART. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/13-they-weigh-your-heart.svg) |
+| 14 | 225 LBS. IT HELPS. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/14-225-it-helps.svg) |
+| 15 | STILL WARM. | Left chest | FINE: embroidery suggested | M | New (round 4, colder) | Changed: "Mortal" is registered for clothing, "Not forever" near a PacSun tee; now "Still warm" | [svg](sketches/15-still-warm.svg) |
+| 16 | SOMETHING IS WATCHING. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/16-something-is-watching.svg) |
+| 17 | EMBALMED. ZIPPED. FORGOTTEN. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/17-embalmed-zipped-forgotten.svg) |
 | 18 | MORTALITY IS UNDEFEATED. / *still going for the rematch.* | Back | 1C | L | List #16 | See list | [svg](sketches/18-mortality-undefeated.svg) |
-| 19 | I CARRY MY TRAUMA LIKE A FARMER'S CARRY: / *with grip.* | Front center | 1C | L | List #17 | See list | [svg](sketches/19-trauma-farmers-carry.svg) |
-| 20 | THE CORONER ASKED ABOUT MY BENCH. | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/20-coroner-asked-bench.svg) |
+| 19 | SOME THINGS YOU CARRY FOREVER. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/19-carry-forever.svg) |
+| 20 | THE CORONER WILL KNOW EVERYTHING. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/20-coroner-will-know.svg) |
 | 21 | YOUR DEMONS DON'T SPOT YOU. / *we do.* | Back | 1C | L | List #19 | See list | [svg](sketches/21-demons-dont-spot-you.svg) |
 | 22 | SWEAT. TEARS. DREAD. REPEAT. | Back | TYPE | L | List #20 | See list | [svg](sketches/22-sweat-tears-dread-repeat.svg) |
-| 23 | ASHES TO ASHES REPS TO REPS | Sleeve | FINE: embroidery suggested | L | List #21 | See list | [svg](sketches/23-ashes-to-ashes-reps-to-reps.svg) |
+| 23 | ASHES TO ASHES. DUST TO DUST. | Sleeve | FINE: embroidery suggested | M | New (round 4, colder) | Public-domain burial phrase (Book of Common Prayer); common on merch | [svg](sketches/23-ashes-to-ashes.svg) |
 | 24 | ASK ME HOW I'M REALLY DOING. / *then we squat.* | Front center | TYPE | L | List #22 | See list | [svg](sketches/24-ask-me-how-im-doing.svg) |
-| 25 | PALLBEARER TRAINING PROGRAM | Back | 1C | M | List #23 | See list | [svg](sketches/25-pallbearer-training.svg) |
-| 26 | TIME OF DEATH: 5:00 A.M. / *time of PR: 5:01.* | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/26-time-of-death-pr.svg) |
-| 27 | MAGGOTS HATE CARDIO. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/27-maggots-hate-cardio.svg) |
-| 28 | FRESH CORPSE. FRESH PUMP. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/28-fresh-corpse-fresh-pump.svg) |
+| 25 | THE BOX WILL BE HEAVY. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/25-the-box-will-be-heavy.svg) |
+| 26 | TIME OF DEATH: TO BE DETERMINED. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/26-time-of-death-tbd.svg) |
+| 27 | THE MAGGOTS ARE PATIENT. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/27-maggots-are-patient.svg) |
+| 28 | STILL MOVING. ALREADY ROTTING. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/28-still-moving-already-rotting.svg) |
 | 29 | EVERYTHING HURTS AND I'M STILL HERE | Back | TYPE | L | List #27 | See list | [svg](sketches/29-everything-hurts.svg) |
-| 30 | HEAVY METAL. HEAVIER FEELINGS. | Front center | 1C | L | List #29 | See list | [svg](sketches/30-heavy-metal-heavier-feelings.svg) |
-| 31 | NEXT OF KIN: / *my barbell.* | Left chest | FINE: embroidery suggested | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/31-next-of-kin-barbell.svg) |
-| 32 | ORGAN DONOR. / *gains not included.* | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/32-organ-donor-gains.svg) |
-| 33 | TAGGED & BAGGED. / *still lifting.* | Left chest | FINE: embroidery suggested | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/33-tagged-and-bagged.svg) |
-| 34 | COZY AS A COFFIN. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/34-cozy-as-a-coffin.svg) |
-| 35 | I WANT MY OBITUARY TO LIST MY SQUAT. | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/35-obituary-list-squat.svg) |
+| 30 | THE WEIGHT IS REAL. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/30-the-weight-is-real.svg) |
+| 31 | NEXT OF KIN: / *notified.* | Left chest | FINE: embroidery suggested | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/31-next-of-kin-notified.svg) |
+| 32 | MEAT. BONE. SPITE. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/32-meat-bone-spite.svg) |
+| 33 | TAGGED. | Left chest | FINE: embroidery suggested | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/33-tagged.svg) |
+| 34 | PINE BOX. FINAL ADDRESS. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/34-pine-box-final-address.svg) |
+| 35 | ONE DAY THIS IS YOU. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/35-one-day-this-is-you.svg) |
 | 36 | SOMEBODY'S 3 A.M. THOUGHTS MADE IT INTO FABRIC | Back | 1C | L | List #35 | See list | [svg](sketches/36-3am-thoughts-fabric.svg) |
 | 37 | THE PAIN IS REAL. SO ARE WE. | Back | TYPE | L | List #36 | See list | [svg](sketches/37-pain-is-real-so-are-we.svg) |
 | 38 | HOLD THE WEIGHT. HOLD EACH OTHER. | Front center | 1C | L | List #37 | See list | [svg](sketches/38-hold-the-weight.svg) |
 | 39 | BRAIN: HAUNTED. BODY: LIFTING. SPIRIT: UNCLEAR. | Back | TYPE | L | List #38 | See list | [svg](sketches/39-brain-haunted-body-lifting.svg) |
-| 40 | HAND-DYED IN PLANTS / *because nothing else would hold my sadness* | Front center | 1C | L | List #39 | See list | [svg](sketches/40-hand-dyed-sadness.svg) |
-| 41 | THIS HOODIE WAS DYED WITH DEAD PLANTS. / *relatable.* | Pocket + chest | 1C | L | List #40 | See list | [svg](sketches/41-dyed-with-dead-plants.svg) |
-| 42 | HERE LIES A MEDIOCRE DEADLIFT. / *beloved anyway.* | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/42-here-lies-mediocre-deadlift.svg) |
-| 43 | SIX FEET UNDER IS JUST A DEEP SQUAT. | Back | 1C | M | New (round 2, darker) | Clear (no exact match; "six feet under" skull tees are common) | [svg](sketches/43-six-feet-under-deep-squat.svg) |
-| 44 | THE REAPER SPOTS ME. / *he's patient.* | Back | 1C | M | New (round 3, morbid) | Caution: Gymreapers is a gym brand built on reaper imagery; phrase not found | [svg](sketches/44-reaper-spots-me.svg) |
-| 45 | ANATOMY OF A BAD WEEK. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/45-anatomy-of-a-bad-week.svg) |
+| 40 | DYED WITH DEAD PLANTS. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/40-dyed-with-dead-plants-front.svg) |
+| 41 | EVERYTHING ROTS. | Pocket + chest | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/41-everything-rots-pocket.svg) |
+| 42 | HERE LIES SOMEONE WHO TRIED. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/42-here-lies-someone-who-tried.svg) |
+| 43 | SIX FEET. NO MORE. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/43-six-feet-no-more.svg) |
+| 44 | THE REAPER IS PATIENT. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/44-reaper-is-patient.svg) |
+| 45 | WHAT'S LEFT OF ME. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/45-whats-left-of-me.svg) |
 | 46 | SORE FROM YESTERDAY. HAUNTED FROM CHILDHOOD. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/46-sore-and-haunted.svg) |
-| 47 | SOMEWHERE BETWEEN A BREAKDOWN AND A PR. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/47-breakdown-and-a-pr.svg) |
-| 48 | OPEN CASKET. OPEN GYM. | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/48-open-casket-open-gym.svg) |
-| 49 | CORPSE POSE IS MY REST DAY | Pocket + chest | 1C | M | New (round 3, morbid) | Caution: "Corpse Pose and Chill" tee sold (Yune Yoga); exact phrase not found | [svg](sketches/49-corpse-pose-rest-day.svg) |
+| 47 | SOMETHING IN ME IS BROKEN. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/47-something-in-me-is-broken.svg) |
+| 48 | THE DIRT ALWAYS WINS. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/48-the-dirt-always-wins.svg) |
+| 49 | LIE STILL. | Pocket + chest | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/49-lie-still.svg) |
 | 50 | BURY ME WITH MY BELT ON. | Back | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/50-bury-me-with-my-belt.svg) |
 | 51 | MY HEART BEATS OUT OF SPITE. | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/51-heart-beats-out-of-spite.svg) |
 | 52 | CHALK ON MY HANDS. GRAVE DIRT ON MY BOOTS. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/52-chalk-hands-grave-dirt.svg) |
-| 53 | THE WORMS WILL HAVE TO WORK FOR IT. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/53-worms-work-for-it.svg) |
-| 54 | MY COFFIN NEEDS REINFORCED HANDLES. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/54-coffin-reinforced-handles.svg) |
-| 55 | ROTTING, BUT WITH EXCELLENT FORM. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/55-rotting-excellent-form.svg) |
-| 56 | GRIEF: / *the PR nobody wants.* | Left chest | FINE: embroidery suggested | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/56-grief-pr-nobody-wants.svg) |
-| 57 | BENCH PRESSING MY INTRUSIVE THOUGHTS | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/57-bench-intrusive-thoughts.svg) |
-| 58 | DECOMPOSITION IS ALSO PROGRESS. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/58-decomposition-is-progress.svg) |
-| 59 | TIME UNDER TENSION. / *time under ground.* | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/59-time-under-ground.svg) |
-| 60 | PLATE MATH IS EASIER THAN FEELINGS | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/60-plate-math-feelings.svg) |
+| 53 | THE WORMS ARE WAITING. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/53-worms-are-waiting.svg) |
+| 54 | MEASURED FOR A COFFIN. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/54-measured-for-a-coffin.svg) |
+| 55 | ROTTING IN REAL TIME. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/55-rotting-in-real-time.svg) |
+| 56 | GRIEF. / *it doesn't get lighter.* | Left chest | FINE: embroidery suggested | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/56-grief-doesnt-get-lighter.svg) |
+| 57 | THE THOUGHTS ARE HEAVIER. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/57-thoughts-are-heavier.svg) |
+| 58 | EVERY CELL IN YOU IS DYING. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/58-every-cell-is-dying.svg) |
+| 59 | EVERYONE ENDS UNDERGROUND. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/59-everyone-ends-underground.svg) |
+| 60 | GRIEF HAS WEIGHT. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/60-grief-has-weight.svg) |
 | 61 | WARM-UP SET: SMALL TALK. WORKING SET: THE TRUTH. | Back | TYPE | L | New | Clear (no exact match found) | [svg](sketches/61-warm-up-small-talk.svg) |
 | 62 | CORONER'S REPORT: HEART TOO HEAVY. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/62-coroner-heart-too-heavy.svg) |
 | 63 | THE IRON NEVER ASKS IF I'M OKAY. / *you can.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/63-iron-never-asks.svg) |
-| 64 | BODY BAG. GYM BAG. / *same weight.* | Front center | 1C | M | New (round 3, morbid) | Caution: a "Body Bag" gym bag is sold (Dr. Paul Bearer); exact phrase not found | [svg](sketches/64-body-bag-gym-bag.svg) |
-| 65 | I LIFT SO MY PALLBEARERS DON'T STRUGGLE. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/65-pallbearers-dont-struggle.svg) |
-| 66 | HYPERTROPHY OF THE HEART | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/66-hypertrophy-of-the-heart.svg) |
-| 67 | SETS, REPS AND UNPROCESSED GRIEF | Sleeve | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/67-sets-reps-grief.svg) |
+| 64 | YOU WILL FIT IN A BAG. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/64-you-will-fit-in-a-bag.svg) |
+| 65 | SIX PEOPLE WILL CARRY YOU. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/65-six-people-will-carry-you.svg) |
+| 66 | A HEART IS JUST MEAT. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/66-a-heart-is-just-meat.svg) |
+| 67 | GRIEF. UNPROCESSED. UNFINISHED. | Sleeve | FINE: embroidery suggested | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/67-grief-unprocessed.svg) |
 | 68 | SOME WEIGHTS YOU CAN PUT DOWN. / *ask for help with the rest.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/68-some-weights-put-down.svg) |
-| 69 | EMBALMED IN PRE-WORKOUT. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/69-embalmed-in-pre-workout.svg) |
-| 70 | EXISTENCE IS A GROUP PROJECT. / *show up.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/70-existence-group-project.svg) |
-| 71 | DEATH WARMED UP. / *then did legs.* | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/71-death-warmed-up.svg) |
-| 72 | HERE FOR A SHORT TIME. LIFTING FOR A LONG TIME. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/72-here-short-time.svg) |
-| 73 | THE VOID IS A GREAT LISTENER. / *terrible spotter.* | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/73-void-listener-spotter.svg) |
-| 74 | SAD, BUT STRUCTURALLY SOUND | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/74-sad-structurally-sound.svg) |
+| 69 | PRESERVED. NOT SAVED. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/69-preserved-not-saved.svg) |
+| 70 | WE BURY OUR OWN. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/70-we-bury-our-own.svg) |
+| 71 | LOOKS LIKE DEATH. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/71-looks-like-death.svg) |
+| 72 | HERE FOR A SHORT TIME. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/72-here-for-a-short-time.svg) |
+| 73 | THE VOID LISTENS. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/73-the-void-listens.svg) |
+| 74 | CRACKED. STILL STANDING. | Front center | TYPE | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/74-cracked-still-standing.svg) |
 | 75 | DRESSED FOR MY FUNERAL / *and the gym.* | Pocket + chest | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/75-dressed-for-my-funeral.svg) |
-| 76 | DARKNESS IS JUST THE ABSENCE OF REPS | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/76-darkness-absence-of-reps.svg) |
+| 76 | NOTHING YOU LOVE STAYS. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/76-nothing-you-love-stays.svg) |
 | 77 | UNDER ALL THIS MUSCLE: / *a skeleton who is scared.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/77-skeleton-scared.svg) |
-| 78 | HOPE IS A HEAVY SINGLE | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/78-hope-heavy-single.svg) |
-| 79 | STILL HERE. STILL LIFTING. STILL WEIRD. | Back | TYPE | L | New | Clear (no exact match found) | [svg](sketches/79-still-here-still-lifting.svg) |
-| 80 | RIGOR MORTIS? / *no, just leg day.* | Front center | 1C | M | New | Clear for the joke; "Rigor Mortis" is also a band name on merch | [svg](sketches/80-rigor-mortis-leg-day.svg) |
-| 81 | MORTAL. MUSCULAR. MOODY. | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/81-mortal-muscular-moody.svg) |
-| 82 | BORN TIRED. WILL DIE TIRED. LEG DAY IN BETWEEN. | Back | 1C | M | New (round 2, darker) | Caution: DIE TIRED filed for clothing (serial 99163541, status unclear); full phrase not found | [svg](sketches/82-born-tired-die-tired.svg) |
+| 78 | HOPE IS HEAVY. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/78-hope-is-heavy.svg) |
+| 79 | STILL HERE. STILL HAUNTED. | Back | TYPE | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/79-still-here-still-haunted.svg) |
+| 80 | RIGOR MORTIS SETS IN FAST. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/80-rigor-mortis-sets-in.svg) |
+| 81 | BREATHING. TIRED. HERE. | Front center | TYPE | M | New (round 4, colder) | Changed off MORTAL (registered, clothing) | [svg](sketches/81-breathing-tired-here.svg) |
+| 82 | BORN SCREAMING. BURIED QUIET. | Back | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/82-born-screaming-buried-quiet.svg) |
 | 83 | CEMETERY QUIET. GYM LOUD. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/83-cemetery-quiet-gym-loud.svg) |
 | 84 | HAUNTED BY EVERYONE I'VE LOST. / *they spot me now.* | Back | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/84-haunted-they-spot-me.svg) |
-| 85 | COLD STORAGE. WARM-UP SETS. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/85-cold-storage-warm-up.svg) |
+| 85 | COLD STORAGE. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/85-cold-storage.svg) |
 | 86 | 3 A.M. THOUGHTS. 5 A.M. WORKOUTS. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/86-3am-thoughts-5am-workouts.svg) |
-| 87 | BLACK HOODIE. BLACKER MOOD. / *bright future (allegedly).* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/87-black-hoodie-blacker-mood.svg) |
-| 88 | DEATH IS THE FINAL REST DAY. / *not today.* | Back | 1C | M | New (round 2, darker) | Clear (no exact match; "rest day" tees are common) | [svg](sketches/88-final-rest-day-not-today.svg) |
-| 89 | DECOMPOSING AT A HEALTHY PACE. | Front center | 1C | M | New (round 2, darker) | Caution: Hot Topic sells a "Currently decomposing" tee; exact phrase not found | [svg](sketches/89-decomposing-healthy-pace.svg) |
-| 90 | MEMENTO MORI. / *remember to stretch.* | Left chest | FINE: embroidery suggested | L | New | Crowded theme | [svg](sketches/90-memento-mori-stretch.svg) |
+| 87 | ALWAYS IN MOURNING. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/87-always-in-mourning.svg) |
+| 88 | THE GRAVE CAN WAIT. | Back | 1C | M | New (round 4, colder) | Caution: RIPT sells a "Heaven Can Wait" skeleton tee; exact phrase not found | [svg](sketches/88-the-grave-can-wait.svg) |
+| 89 | EVERYTHING BEAUTIFUL ROTS. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/89-everything-beautiful-rots.svg) |
+| 90 | DEATH / *remembers you.* | Left chest | FINE: embroidery suggested | M | New (round 4, colder) | Changed: MEMENTO MORI GOODS registered for shirts; MEMENTO MORI CLOTHING pending | [svg](sketches/90-death-remembers-you.svg) |
 | 91 | LIFE IS SHORT. DECOMPOSITION IS LONG. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/91-decomposition-is-long.svg) |
-| 92 | ORGANS: DONATED. GAINS: KEPT. | Sleeve | FINE: embroidery suggested | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/92-organs-donated-gains-kept.svg) |
+| 92 | ORGANS. BONES. NOTHING ELSE. | Sleeve | FINE: embroidery suggested | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/92-organs-bones-nothing.svg) |
 | 93 | BUILT HEAVY. BURIED HEAVIER. | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/93-built-heavy-buried-heavier.svg) |
-| 94 | THE VOID CALLED. / *i put it on hold for leg day.* | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/94-void-on-hold.svg) |
-| 95 | FLATLINE. / *then PR.* | Front center | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/95-flatline-then-pr.svg) |
+| 94 | SILENCE IS LOUD AT 3 A.M. | Front center | TYPE | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/94-silence-at-3am.svg) |
+| 95 | THE LINE GOES FLAT. | Front center | 1C | M | New (round 4, colder) | Changed: FLATLINE is registered for clothing | [svg](sketches/95-the-line-goes-flat.svg) |
 | 96 | GRIEF HAS NO OFF-SEASON | Back | TYPE | L | New | Clear (no exact match found) | [svg](sketches/96-grief-no-off-season.svg) |
 | 97 | ALONE TOGETHER AT 6 A.M. | Front center | 1C | L | New | Caution: ALONE filed for shirts (Class 25, pending); phrase not found | [svg](sketches/97-alone-together-6am.svg) |
 | 98 | TALK TO SOMEONE. / *then lift something.* (hood: 988) | Hood + back | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/98-talk-then-lift.svg) |
 | 99 | STILL BREATHING. / *that's the whole workout today.* (hood: STILL HERE) | Hood + back | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/99-still-breathing.svg) |
-| 100 | HEAVY HEART. HEAVY SQUAT. (hood: LIFT) | Hood + back | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/100-heavy-heart-heavy-squat.svg) |
+| 100 | IT HURTS HERE. | Hood + back | FINE: embroidery suggested | M | New (round 4, colder) | Changed: HEAVY HEART filed for hoodies and T-shirts | [svg](sketches/100-it-hurts-here.svg) |
 | 101 | CHALK AND SORROW / *both get on everything* | Sleeve | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/101-chalk-and-sorrow.svg) |
-| 102 | THE GYM IS MY GRAVEYARD SHIFT | Front center | 1C | L | New | Clear; "graveyard shift" is a common phrase on shirts | [svg](sketches/102-gym-is-my-graveyard-shift.svg) |
-| 103 | GRIP STRENGTH: / *rigor mortis.* | Front center | 1C | M | New (round 3, morbid) | Changed after check: "Death grip" conflicts with DEATHGRIP (registered, T-shirts) and DEATH GRIPS (shirts); new phrase not found | [svg](sketches/103-grip-rigor-mortis.svg) |
+| 102 | HE'S ALWAYS IN THE ROOM. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/102-hes-always-in-the-room.svg) |
+| 103 | DEAD HANDS DON'T LET GO. | Front center | 1C | M | New (round 4, colder) | Clear (no exact match found) | [svg](sketches/103-dead-hands-dont-let-go.svg) |
 | 104 | EVERY REP IS A EULOGY / *for who I was.* | Back | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/104-every-rep-a-eulogy.svg) |
 | 105 | THE FLIES KNOW SOMETHING. | Back | 1C | M | New (round 3, morbid) | Clear (no exact match found) | [svg](sketches/105-flies-know-something.svg) |
 | 106 | SUPPORT SYSTEM: / *a squat rack and three friends.* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/106-support-system.svg) |
@@ -272,3 +272,34 @@ Several kept captions also got heavier art: #11, 18, 24, 53, 55, 67, 81, 104.
   - #49: Yune Yoga sells a "Corpse Pose and Chill" tee ([link](https://www.living.fit/collections/yune-yoga/products/yune-yoga-corpse-pose-and-chill-t-shirt)).
   - #44: Gymreapers is a large gym brand built on reaper imagery ([link](https://www.gymreapers.com/products/reaper-dept-tee)). Keep your reaper art clearly different from theirs.
 - **No exact match found:** the remaining 29.
+
+## Round 4: colder captions (2026-11-24)
+
+You said the sketches were "too friendly" and narrowed it to the captions being too punny. The art, colors and layouts are unchanged. 71 captions were rewritten as plain, cold statements about death, decay, grief and the body, with no wordplay. The ones that were already blunt stay, and the "you're not alone" pieces keep their message.
+
+**The line:**
+- No methods or near-misses, and no lines that say the wearer wants to die.
+- One existing caption was pulled for this reason: #94 "The void called" points at *l'appel du vide*, the urge to jump from heights.
+
+**Check (web search only, about 30 searches, most grouping 2–3 phrases; USPTO and Etsy are blocked here):**
+- **Changed for existing trademarks:**
+  - #15 and #81 "Mortal": MORTAL is registered for clothing, Reg. 6710731 ([Markinton](https://markinton.com/trademark/mortal-90624331)).
+  - #95 "Flatline": FLATLINE is registered for clothing, Reg. 3274365 ([Justia](https://trademarks.justia.com/787/06/flatline-78706026.html)).
+  - #100 "Heavy heart": HEAVY HEART is filed for hoodies and T-shirts ([Justia](https://trademarks.justia.com/owners/heavy-heart-llc-4302956)).
+  - #90 "Memento mori": MEMENTO MORI GOODS is registered for shirts ([Justia](https://trademark.justia.com/876/84/memento-mori-87684688.html)).
+  - #05 "Routine": ROUTINE is a live Class 25 registration ([Justia](https://trademarks.justia.com/901/03/routine-90103338.html)).
+- **Changed because already sold:**
+  - #88 "Death can wait": Black Rifle Division sells a "Death Can Wait" shirt ([Evike](https://www.evike.com/products/18423/)).
+  - #15 "Not forever": PacSun sells "We Are Not Forever" ([PacSun](https://www.pacsun.com/for-those-who-sin/we-are-not-forever-pocket-t-shirt-10032182.html)).
+- **Caution:** #88's replacement, "The grave can wait," is close to RIPT's "Heaven Can Wait" tee.
+- **No exact match found:** the rest.
+
+Sketches 01–07 are tracked in the code (`FIRST` in `tools/designs_data.py`), not in the table above. Round 4 changes there:
+
+| # | Caption | Placement | Check |
+|---|---|---|---|
+| 02 | MEAT. BONE. NOTHING ELSE. | Front center | Clear (no exact match found) |
+| 04 | CARRYING THE DEAD. | Front center | Clear (no exact match found) |
+| 05 | AFTER | Back | Changed: "Routine" is a live Class 25 registration (Turnstyle Brands); now "After" |
+| 06 | RUNNING ON WHAT'S LEFT. | Front center | Clear (no exact match found) |
+| 07 | I CARRY THE DEAD WITH ME | Sleeve | Clear (no exact match found) |
