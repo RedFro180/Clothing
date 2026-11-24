@@ -1,0 +1,76 @@
+/* BOLD: light, conventional online-store look (shared light base + look-specific rules below). */
+.look-bold { --bg: #ffffff; --panel: #fff; --line: #e2e2e2; --bone: #151515; --dim: #666; --red: #d0021b;
+  --tile-light: #efefef; --tile-dark: #efefef; --head: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --type: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--bone); }
+.look-bold .brand { font-family: "Pirata One", serif; }
+.look-bold h1, .look-bold h2 { font-family: var(--head); font-weight: 700; letter-spacing: -.01em; }
+.look-bold .top { background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+.look-bold .top nav a { color: #333; }
+.look-bold .bag-btn { border: 1px solid #151515; color: #151515; }
+.look-bold .btn { background: #151515; color: #fff; }
+.look-bold .btn:hover { background: #333; }
+.look-bold .kicker { color: var(--dim); font-family: var(--head); text-transform: none; letter-spacing: 0; font-size: 14px; }
+.look-bold .lede { font-family: var(--head); color: var(--dim); }
+.look-bold .tile, .look-bold .tile.dark { background: #efefef; }
+.look-bold .card h3 { font-family: var(--head); text-transform: none; letter-spacing: 0; font-weight: 600; font-size: 15px; }
+.look-bold .card .row { color: var(--dim); }
+.look-bold .place { background: rgba(255,255,255,.9); color: #333; }
+.look-bold .scroll-btns button { background: #fff; border: 1px solid var(--line); border-radius: 50%; }
+.look-bold .filters label { color: #444; font-family: var(--head); text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; }
+.look-bold .filters select, .look-bold .filters input { background-color: #fff; border: 1px solid #cfcfcf; color: #151515; border-radius: 6px; }
+.look-bold .filters option { background: #fff; color: #151515; }
+.look-bold .result-bar { color: var(--dim); }
+.look-bold .info { border-top: 1px solid var(--line); }
+.look-bold .info h2 { font-size: 24px; } .look-bold .info p { color: #555; }
+.look-bold .foot { border-top: 1px solid var(--line); background: #f7f7f7; color: #555; }
+.look-bold .crisis { color: #151515; }
+.look-bold dialog { background: #fff; color: #151515; border: 0; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.look-bold .bag { border-radius: 0; }
+.look-bold .bag-head { background: #fff; }
+.look-bold .x { color: #151515; }
+.look-bold .pd-img, .look-bold .pd-img.dark { background: #efefef; }
+.look-bold .pd h2 { font-family: var(--head); text-transform: none; }
+.look-bold .pd-meta { color: var(--dim); font-family: var(--head); text-transform: none; letter-spacing: 0; }
+.look-bold .sizes button { border-color: #cfcfcf; border-radius: 6px; }
+.look-bold .sizes button[aria-pressed="true"] { background: #151515; color: #fff; border-color: #151515; }
+.look-bold .qty input, .look-bold .req input, .look-bold .req textarea, .look-bold .bag-item input { background: #fff; border: 1px solid #cfcfcf; border-radius: 6px; }
+.look-bold summary { color: #151515; font-family: var(--head); text-transform: none; letter-spacing: 0; }
+.look-bold details { color: #555; }
+.look-bold .soon { border: 1px dashed #bbb; background: #fff; }
+.look-bold .soon h3 { font-family: var(--head); font-weight: 700; font-size: 30px; }
+.look-bold .soon input { background: #fff; border: 1px solid #cfcfcf; }
+.look-bold .link { color: #444; }
+.look-bold .announce { background: #d0021b; color: #fff; }
+
+.look-bold .top { background: #000; border-bottom: 0; }
+.look-bold .brand { color: #fff; }
+.look-bold .top nav a { color: #fff; }
+.look-bold .bag-btn { border-color: #fff; color: #fff; }
+.look-bold .btn { background: var(--red); font-size: 16px; }
+.look-bold .btn:hover { background: #fff; color: #000; }
+.look-bold h1, .look-bold h2 { font-family: var(--ui); text-transform: uppercase; letter-spacing: .01em; }
+.hero-split { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 0; }
+.hero-split .hs-text { padding: clamp(36px, 7vw, 96px) clamp(16px, 5vw, 64px); align-self: center; }
+.hs-art { display: grid; place-items: center; padding: clamp(20px, 4vw, 48px); }
+.hs-art .hero-art { width: min(100%, 500px); background: #f1f1f1; }
+@media (max-width: 760px) { .hero-split { grid-template-columns: 1fr; } }
+.hero-bold { background: #111; color: #fff; }
+.hero-bold h1 { font-size: clamp(44px, 7vw, 96px); line-height: .95; color: #fff; }
+.hero-bold .kicker { color: var(--red); font-family: var(--ui); text-transform: uppercase; letter-spacing: .1em; font-size: 13px; }
+.hero-bold .lede { color: #bbb; }
+.look-bold .featured, .look-bold .shop { padding-top: 40px; }
+.look-bold h2 { font-size: clamp(30px, 4vw, 44px); }
+.look-bold .filters select, .look-bold .filters input { border-radius: 0; border: 2px solid #151515; font-weight: 600; }
+.look-bold .filters label { font-family: var(--ui); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.look-bold .grid { gap: 4px 4px; row-gap: 26px; }
+.look-bold .card h3 { font-family: var(--ui); text-transform: uppercase; font-weight: 700; letter-spacing: .02em; padding: 0 6px; }
+.look-bold .card .row { padding: 0 6px; }
+.look-bold .card .price { color: #151515; font-weight: 800; }
+.look-bold .badge { background: var(--red); }
+.look-bold .place { background: #151515; color: #fff; }
+.look-bold dialog { border-radius: 0; }
+.look-bold .pd h2 { font-family: var(--ui); text-transform: uppercase; }
+.look-bold .sizes button { border-radius: 0; border: 2px solid #151515; }
+.look-bold .foot { background: #000; color: #aaa; border: 0; }
+.look-bold .foot .crisis { color: #fff; }
+.look-bold .scroll-btns button { border-radius: 0; border: 2px solid #151515; }

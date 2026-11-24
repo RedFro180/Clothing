@@ -1,0 +1,71 @@
+/* SOFT: light, conventional online-store look (shared light base + look-specific rules below). */
+.look-soft { --bg: #faf8f5; --panel: #fff; --line: #e2e2e2; --bone: #151515; --dim: #666; --red: #3f4a3c;
+  --tile-light: #efece7; --tile-dark: #efece7; --head: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --type: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--bone); }
+.look-soft .brand { font-family: "Pirata One", serif; }
+.look-soft h1, .look-soft h2 { font-family: var(--head); font-weight: 700; letter-spacing: -.01em; }
+.look-soft .top { background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); }
+.look-soft .top nav a { color: #333; }
+.look-soft .bag-btn { border: 1px solid #151515; color: #151515; }
+.look-soft .btn { background: #151515; color: #fff; }
+.look-soft .btn:hover { background: #333; }
+.look-soft .kicker { color: var(--dim); font-family: var(--head); text-transform: none; letter-spacing: 0; font-size: 14px; }
+.look-soft .lede { font-family: var(--head); color: var(--dim); }
+.look-soft .tile, .look-soft .tile.dark { background: #efece7; }
+.look-soft .card h3 { font-family: var(--head); text-transform: none; letter-spacing: 0; font-weight: 600; font-size: 15px; }
+.look-soft .card .row { color: var(--dim); }
+.look-soft .place { background: rgba(255,255,255,.9); color: #333; }
+.look-soft .scroll-btns button { background: #fff; border: 1px solid var(--line); border-radius: 50%; }
+.look-soft .filters label { color: #444; font-family: var(--head); text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; }
+.look-soft .filters select, .look-soft .filters input { background-color: #fff; border: 1px solid #cfcfcf; color: #151515; border-radius: 6px; }
+.look-soft .filters option { background: #fff; color: #151515; }
+.look-soft .result-bar { color: var(--dim); }
+.look-soft .info { border-top: 1px solid var(--line); }
+.look-soft .info h2 { font-size: 24px; } .look-soft .info p { color: #555; }
+.look-soft .foot { border-top: 1px solid var(--line); background: #f7f7f7; color: #555; }
+.look-soft .crisis { color: #151515; }
+.look-soft dialog { background: #fff; color: #151515; border: 0; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+.look-soft .bag { border-radius: 0; }
+.look-soft .bag-head { background: #fff; }
+.look-soft .x { color: #151515; }
+.look-soft .pd-img, .look-soft .pd-img.dark { background: #efece7; }
+.look-soft .pd h2 { font-family: var(--head); text-transform: none; }
+.look-soft .pd-meta { color: var(--dim); font-family: var(--head); text-transform: none; letter-spacing: 0; }
+.look-soft .sizes button { border-color: #cfcfcf; border-radius: 6px; }
+.look-soft .sizes button[aria-pressed="true"] { background: #151515; color: #fff; border-color: #151515; }
+.look-soft .qty input, .look-soft .req input, .look-soft .req textarea, .look-soft .bag-item input { background: #fff; border: 1px solid #cfcfcf; border-radius: 6px; }
+.look-soft summary { color: #151515; font-family: var(--head); text-transform: none; letter-spacing: 0; }
+.look-soft details { color: #555; }
+.look-soft .soon { border: 1px dashed #bbb; background: #fff; }
+.look-soft .soon h3 { font-family: var(--head); font-weight: 700; font-size: 30px; }
+.look-soft .soon input { background: #fff; border: 1px solid #cfcfcf; }
+.look-soft .link { color: #444; }
+.look-soft .announce { background: #3f4a3c; color: #fff; }
+
+.look-soft .top { background: rgba(250,248,245,.95); border-bottom: 0; }
+.look-soft .bag-btn { border-radius: 999px; padding: 7px 16px; }
+.look-soft .btn { border-radius: 999px; background: #3f4a3c; }
+.look-soft .btn:hover { background: #2f382d; }
+.hero-soft { margin: 0 auto; text-align: center; max-width: 1100px; padding-bottom: 30px; }
+.hero-soft h1 { font-size: clamp(36px, 5.5vw, 64px); line-height: 1.05; }
+.hero-soft .lede { margin-left: auto; margin-right: auto; }
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 2vw, 22px); margin-top: 40px; }
+.trio .hero-art { background: #fff; border-radius: 14px; padding: 16px; box-shadow: 0 6px 24px rgba(0,0,0,.07); transition: transform .25s; }
+.trio .hero-art:hover { transform: translateY(-4px); }
+.look-soft h2 { font-size: 28px; }
+.look-soft .filters { background: #fff; border-radius: 14px; padding: 16px; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
+.look-soft .filters select, .look-soft .filters input { border-radius: 999px; border-color: #e0ddd8; background-color: #faf8f5; }
+.look-soft .grid { gap: 22px; }
+.look-soft .card { background: #fff; border-radius: 14px; padding: 10px 10px 14px; box-shadow: 0 4px 18px rgba(0,0,0,.06); transition: transform .25s, box-shadow .25s; }
+.look-soft .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,.1); }
+.look-soft .card:hover .tile img { transform: none; }
+.look-soft .tile { border-radius: 10px; }
+.look-soft .card h3, .look-soft .card .row { padding: 0 4px; }
+.look-soft .badge { background: #3f4a3c; border-radius: 999px; font-family: var(--head); text-transform: none; letter-spacing: 0; }
+.look-soft .place { border-radius: 999px; }
+.look-soft .feat-row { padding: 6px 4px 18px; }
+.look-soft .sizes button { border-radius: 999px; }
+.look-soft .sizes button[aria-pressed="true"] { background: #3f4a3c; border-color: #3f4a3c; }
+.look-soft dialog { border-radius: 18px; }
+.look-soft .pd-img { border-radius: 18px 0 0 18px; }
+@media (max-width: 760px) { .look-soft .pd-img { border-radius: 18px 18px 0 0; } }

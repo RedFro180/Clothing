@@ -13,7 +13,8 @@ Research as of Nov 2026. Not legal, tax or financial advice.
 A showcase shop with no payment yet: a featured row at the top, all 107 hoodies auto-filled below, drop-downs for category (hoodies live, other products "coming soon"), theme and color, plus sort and search. Product pop-ups have a size picker. The preorder list is saved in the visitor's browser and sent as a request by email or a form service.
 
 - **Rebuild after design changes:** `python3 tools/build_site.py`, then `python3 tools/build_looks.py`. The first re-renders `site/img/` and `site/products.js` from `tools/designs_data.py`; the second writes the four pages.
-- **Four looks, same products and features**, with a switcher bar at the top of each page:
+- **Seven looks, same products and features**, with a switcher bar at the top of each page:
+  - Light, conventional store layouts: `look-clean.html` (Clean: white, centered logo, left sidebar filters, 3-column grid), `look-soft.html` (Soft: warm off-white, rounded white cards, pill-shaped controls, sage accent), `look-bold.html` (Bold: white with black header/hero/footer bands, red accent, uppercase streetwear type).
   - `index.html` (Original): dark, plain grid.
   - `look-poster.html` (Poster): light paper, big hero hoodie, sentence-style filters ("Show me … from … in …"), mixed-size cards.
   - `look-parlor.html` (Parlor): night/candle glow, arched chapel-window frames, staggered columns.

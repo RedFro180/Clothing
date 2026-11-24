@@ -124,3 +124,9 @@ details ul { padding-left: 18px; margin: 8px 0; }
 .looks a { color: #d8cfbd; text-decoration: none; padding: 3px 2px; }
 .looks a[aria-current] { color: #fff; border-bottom: 2px solid #b3262a; }
 .hero-art img { width: 100%; height: auto; }
+.looks span { color: #6f675b; }
+.looks.light { background: #f1f1f1; color: #777; }
+.looks.light a { color: #333; }
+.looks.light a[aria-current] { color: #000; border-bottom-color: #000; }
+.looks.light span { color: #888; }
+.announce { margin: 0; text-align: center; padding: 8px 12px; font-size: 13px; letter-spacing: .02em; }

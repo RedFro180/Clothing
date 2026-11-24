@@ -32,6 +32,37 @@ SENTENCE = '''<form class="filters sentence" id="filters" onsubmit="return false
     </form>'''
 
 LOOKS = {
+    "look-clean": dict(
+        name="Clean", light=True, css="look-clean.css", filters=None,
+        announce="Preorders open · Natural fiber, no plastic",
+        hero=f'''<section class="hero hero-split">
+    <div class="hs-text">
+      <h1 data-tagline>Dark humor. Natural fiber. No plastic.</h1>
+      {LEDE}
+      {CTA}
+    </div>
+    <div class="hs-art">{art(0)}</div>
+  </section>'''),
+    "look-soft": dict(
+        name="Soft", light=True, css="look-soft.css", filters=None,
+        hero=f'''<section class="hero hero-soft">
+    {KICK}
+    <h1 data-tagline>Dark humor. Natural fiber. No plastic.</h1>
+    {LEDE}
+    {CTA}
+    <div class="trio">{art(0)}{art(1)}{art(2)}</div>
+  </section>'''),
+    "look-bold": dict(
+        name="Bold", light=True, css="look-bold.css", filters=None,
+        announce="Preorders open now",
+        hero=f'''<section class="hero hero-split hero-bold">
+    <div class="hs-text">{KICK}
+      <h1 data-tagline>Dark humor. Natural fiber. No plastic.</h1>
+      {LEDE}
+      {CTA}
+    </div>
+    <div class="hs-art">{art(0)}</div>
+  </section>'''),
     "index": dict(name="Original", css=None, hero=None, filters=None),
     "look-poster": dict(
         name="Poster", css="look-poster.css", filters=SENTENCE,
@@ -75,8 +106,13 @@ HERO_JS = '''<script>{
 def build():
     for key, L in LOOKS.items():
         s = TPL
-        bar = "".join(f'<a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{v["name"]}</a>' for k, v in LOOKS.items())
-        s = s.replace("<!--LOOKS-->", f'<nav class="looks" aria-label="Page design">Design: {bar}</nav>')
+        link = lambda k, v: f'<a href="{k}.html"{" aria-current=\"page\"" if k == key else ""}>{v["name"]}</a>'
+        light = "".join(link(k, v) for k, v in LOOKS.items() if v.get("light"))
+        dark = "".join(link(k, v) for k, v in LOOKS.items() if not v.get("light"))
+        top = f'<nav class="looks{" light" if L.get("light") else ""}" aria-label="Page design">Design: <span>Light:</span>{light}<span>| Dark:</span>{dark}</nav>'
+        if L.get("announce"):
+            top += f'\n<p class="announce">{L["announce"]}</p>'
+        s = s.replace("<!--LOOKS-->", top)
         if L["css"]:
             s = s.replace('<link rel="stylesheet" href="style.css">',
                           f'<link rel="stylesheet" href="style.css">\n<link rel="stylesheet" href="{L["css"]}">')
