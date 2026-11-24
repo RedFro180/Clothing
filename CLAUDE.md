@@ -57,6 +57,6 @@ Read this first. Not legal/tax advice. Prices are web research (Nov 2026); "est.
 - Older Claude Docs from a prior session: main points https://claude.ai/artifact/7Ysk53stPEMhTXRDsbfSoN, playbook https://claude.ai/artifact/XxV8rHdC8MJtPCqZPeVC8u, factory kit https://claude.ai/artifact/QQZpmqMPCWcGb6fjaXoUHq (pre-restart; some content outdated).
 
 ## Status / open items
-- **GitHub push blocked**: Claude lacks access to RedFro180/Clothing. Branch `claude/dark-humor-apparel-brand-mbgd2e`, commits are local only. User must reconnect at https://claude.ai/connect-github and install the Claude GitHub App on the repo.
+- **GitHub push blocked**: Claude lacks access to RedFro180/Clothing. Branch `claude/dark-humor-apparel-brand-mbgd2e`, commits are local only. User must reconnect at https://claude.ai/connect-github and install the Claude GitHub App on the repo. As of 2026-11-24 the GitHub repo is empty (no branches); git push and GitHub MCP push_files both return 403. Report page republished with sections 13 (other products) and 14 (equipment), version 1795521705-b615.
 - Offered, not yet done: no-plastic spec sheet + quote emails for Pakistan/Portugal/US sewers; marketing "team" (Claude role files and optional weekly scheduled task) — user to pick option, platforms, voice references.
 - To do (user): pick brand name; buy swatches and wash-test; buy one 100% cotton heavyweight hoodie to compare with the Happy Clothing hoodie; choose decoration method; get factory samples.
