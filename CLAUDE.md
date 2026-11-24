@@ -61,7 +61,7 @@ Read this first. Not legal/tax advice. Prices are web research (Nov 2026); "est.
 - Data/images: `python3 tools/build_site.py` → `site/products.js` + `site/img/` (clean renders via `render(..., clean=True, out=...)` in svgs_dark.py). FEATURED, PRICE ($150), COMING_SOON, icon→theme map live there. Settings in `site/config.js`.
 - Looks (user said the first version "looks like Excel"; then asked for "normal color and format"): light Clean, Soft, Bold + dark Original, Poster, Parlor, Zine. `tools/build_looks.py` writes `site/index.html` + `site/look-*.html` from `tools/site_template.html` (edit the template, not the outputs); styles `site/look-*.css` over `style.css`. User hasn't picked one yet.
 - Product links are `#slug` (artifact viewer passes plain hashes only). Filters sync to the query string.
-- Preview artifact: https://claude.ai/artifact/CJ1kBxHD7rw5FRvQe3Y2H8, slug 5b74a0d4-d6f9-494f-9228-089e5255c623, version (see last publish; 3 light looks added 2026-11-24) (republish with publish_files; patch mode keeps unlisted files). In the artifact frame, mailto links may not open; the address is shown as text.
+- Preview artifact: https://claude.ai/artifact/CJ1kBxHD7rw5FRvQe3Y2H8, slug 5b74a0d4-d6f9-494f-9228-089e5255c623, version 1795558531-83c1 (republish with publish_files; patch mode keeps unlisted files). In the artifact frame, mailto links may not open; the address is shown as text.
 
 ## Status / open items
 - **GitHub:** pushed to branch `claude/dark-humor-apparel-brand-mbgd2e` on RedFro180/Clothing (2026-11-24) after the Claude GitHub App was given access to the repo. Push new commits there. Report page last republished as version 1795521705-b615 (sections 13 other products, 14 equipment).
