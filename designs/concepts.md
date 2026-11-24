@@ -126,20 +126,20 @@ These are placement sketches made with `tools/svgs_more.py` (data in `tools/desi
 | 40 | HAND-DYED IN PLANTS / *because nothing else would hold my sadness* | Front center | 1C | L | List #39 | See list | [svg](sketches/40-hand-dyed-sadness.svg) |
 | 41 | THIS HOODIE WAS DYED WITH DEAD PLANTS. / *relatable.* | Pocket + chest | 1C | L | List #40 | See list | [svg](sketches/41-dyed-with-dead-plants.svg) |
 | 42 | DEADLIFTS ARE CHEAPER THAN THERAPY. / *i do both.* | Front center | 1C | L | New | Crowded format ("___ is cheaper than therapy"); exact phrase not found | [svg](sketches/42-deadlifts-cheaper-than-therapy.svg) |
-| 43 | HEAVY IS RELATIVE. SO IS OKAY. | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/43-heavy-is-relative.svg) |
+| 43 | SIX FEET UNDER IS JUST A DEEP SQUAT. | Back | 1C | M | New (round 2, darker) | Clear (no exact match; "six feet under" skull tees are common) | [svg](sketches/43-six-feet-under-deep-squat.svg) |
 | 44 | REST BETWEEN SETS. REST BETWEEN THOUGHTS. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/44-rest-between-thoughts.svg) |
 | 45 | SPOTTED: TRAUMA. LIFTED: ANYWAY. | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/45-spotted-trauma.svg) |
 | 46 | SORE FROM YESTERDAY. HAUNTED FROM CHILDHOOD. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/46-sore-and-haunted.svg) |
-| 47 | PROGRESSIVE OVERLOAD / *(emotional)* | Left chest | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/47-progressive-overload-emotional.svg) |
+| 47 | SOMEWHERE BETWEEN A BREAKDOWN AND A PR. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/47-breakdown-and-a-pr.svg) |
 | 48 | RACK YOUR WEIGHTS. UNPACK YOUR BAGGAGE. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/48-rack-weights-unpack-baggage.svg) |
 | 49 | FAILURE IS A REP SCHEME | Pocket + chest | TYPE | L | New | Clear (no exact match found) | [svg](sketches/49-failure-is-a-rep-scheme.svg) |
-| 50 | TRAINING FOR THE APOCALYPSE / *mostly mentally* | Front center | 1C | L | New | Caution: "Apocalypse" gym tees (Gymreapers) + APOCALYPSE clothing marks; phrase not found | [svg](sketches/50-training-for-apocalypse.svg) |
+| 50 | BURY ME WITH MY BELT ON. | Back | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/50-bury-me-with-my-belt.svg) |
 | 51 | SKIP LEG DAY? I CAN'T EVEN SKIP FEELINGS. | Back | TYPE | L | New | Clear (no exact match found) | [svg](sketches/51-cant-skip-feelings.svg) |
 | 52 | GRIP STRENGTH: / *holding it together* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/52-grip-strength-holding-together.svg) |
-| 53 | ONE MORE REP. ONE MORE DAY. | Back | TYPE | L | New | Crowded: "One More Rep" sold widely; full phrase not found | [svg](sketches/53-one-more-rep-one-more-day.svg) |
-| 54 | HEAVY LIFTING CLUB / *emotional division* | Left chest | FINE: embroidery suggested | L | New | Caution: Gymshark and Gymreapers sell "Lifting Club" lines | [svg](sketches/54-heavy-lifting-club.svg) |
-| 55 | LIFT. CRY. HYDRATE. | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/55-lift-cry-hydrate.svg) |
-| 56 | PR / *(personal regret)* | Left chest | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/56-pr-personal-regret.svg) |
+| 53 | THE WORMS WILL HAVE TO WORK FOR IT. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/53-worms-work-for-it.svg) |
+| 54 | MY COFFIN NEEDS REINFORCED HANDLES. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/54-coffin-reinforced-handles.svg) |
+| 55 | ROTTING, BUT WITH EXCELLENT FORM. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/55-rotting-excellent-form.svg) |
+| 56 | GRIEF: / *the PR nobody wants.* | Left chest | FINE: embroidery suggested | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/56-grief-pr-nobody-wants.svg) |
 | 57 | BENCH PRESSING MY INTRUSIVE THOUGHTS | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/57-bench-intrusive-thoughts.svg) |
 | 58 | RECOVERY IS NOT LINEAR. / *neither is my bar path.* | Front center | TYPE | L | New | Crowded theme ("healing is not linear"); pending mark RECOVERY IS NOT A STRAIGHT LINE (Class 35, not apparel) | [svg](sketches/58-recovery-not-linear.svg) |
 | 59 | TEMPO: SLOW. / *like my healing.* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/59-tempo-slow-healing.svg) |
@@ -148,15 +148,15 @@ These are placement sketches made with `tools/svgs_more.py` (data in `tools/desi
 | 62 | COUNTING REPS SO I DON'T COUNT REGRETS | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/62-counting-reps-not-regrets.svg) |
 | 63 | THE IRON NEVER ASKS IF I'M OKAY. / *you can.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/63-iron-never-asks.svg) |
 | 64 | DELOAD WEEK FOR MY SOUL | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/64-deload-week-soul.svg) |
-| 65 | STRONGER THAN YESTERDAY'S THOUGHTS | Front center | 1C | L | New | **Change.** Contains registered mark STRONGER THAN YESTERDAY (Class 25) | [svg](sketches/65-stronger-than-yesterdays-thoughts.svg) |
+| 65 | I LIFT SO MY PALLBEARERS DON'T STRUGGLE. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/65-pallbearers-dont-struggle.svg) |
 | 66 | HYPERTROPHY OF THE HEART | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/66-hypertrophy-of-the-heart.svg) |
 | 67 | SETS, REPS AND UNPROCESSED GRIEF | Sleeve | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/67-sets-reps-grief.svg) |
 | 68 | SOME WEIGHTS YOU CAN PUT DOWN. / *ask for help with the rest.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/68-some-weights-put-down.svg) |
-| 69 | RUNNING ON SPITE AND COLD BREW | Front center | 1C | L | New | **Seen:** near-identical "Running on spite and iced coffee" tee sold | [svg](sketches/69-spite-and-cold-brew.svg) |
+| 69 | EMBALMED IN PRE-WORKOUT. | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/69-embalmed-in-pre-workout.svg) |
 | 70 | EXISTENCE IS A GROUP PROJECT. / *show up.* | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/70-existence-group-project.svg) |
 | 71 | TIRED, BUT IN A GOTHIC WAY | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/71-tired-gothic.svg) |
 | 72 | HERE FOR A SHORT TIME. LIFTING FOR A LONG TIME. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/72-here-short-time.svg) |
-| 73 | MILDLY HAUNTED. / *fully hydrated.* | Left chest | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/73-haunted-hydrated.svg) |
+| 73 | THE VOID IS A GREAT LISTENER. / *terrible spotter.* | Front center | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/73-void-listener-spotter.svg) |
 | 74 | SAD, BUT STRUCTURALLY SOUND | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/74-sad-structurally-sound.svg) |
 | 75 | DOOMSCROLLING BETWEEN SETS | Pocket + chest | 1C | L | New | Crowded theme (doomscrolling tees); gym version not found | [svg](sketches/75-doomscrolling-between-sets.svg) |
 | 76 | DARKNESS IS JUST THE ABSENCE OF REPS | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/76-darkness-absence-of-reps.svg) |
@@ -165,14 +165,14 @@ These are placement sketches made with `tools/svgs_more.py` (data in `tools/desi
 | 79 | STILL HERE. STILL LIFTING. STILL WEIRD. | Back | TYPE | L | New | Clear (no exact match found) | [svg](sketches/79-still-here-still-lifting.svg) |
 | 80 | RIGOR MORTIS? / *no, just leg day.* | Front center | 1C | M | New | Clear for the joke; "Rigor Mortis" is also a band name on merch | [svg](sketches/80-rigor-mortis-leg-day.svg) |
 | 81 | MORTAL. MUSCULAR. MOODY. | Front center | TYPE | L | New | Clear (no exact match found) | [svg](sketches/81-mortal-muscular-moody.svg) |
-| 82 | FEELINGS: UNRACKED | Left chest | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/82-feelings-unracked.svg) |
+| 82 | BORN TIRED. WILL DIE TIRED. LEG DAY IN BETWEEN. | Back | 1C | M | New (round 2, darker) | Caution: DIE TIRED filed for clothing (serial 99163541, status unclear); full phrase not found | [svg](sketches/82-born-tired-die-tired.svg) |
 | 83 | CEMETERY QUIET. GYM LOUD. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/83-cemetery-quiet-gym-loud.svg) |
-| 84 | GHOSTS CAN'T DO PULL-UPS. / *i checked.* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/84-ghosts-cant-do-pullups.svg) |
+| 84 | HAUNTED BY EVERYONE I'VE LOST. / *they spot me now.* | Back | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/84-haunted-they-spot-me.svg) |
 | 85 | NIGHT SHIFT FOR MY BRAIN | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/85-night-shift-brain.svg) |
 | 86 | 3 A.M. THOUGHTS. 5 A.M. WORKOUTS. | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/86-3am-thoughts-5am-workouts.svg) |
 | 87 | BLACK HOODIE. BLACKER MOOD. / *bright future (allegedly).* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/87-black-hoodie-blacker-mood.svg) |
-| 88 | TOO SAD TO STOP. TOO STUBBORN TO QUIT. | Back | TYPE | L | New | **Seen (half):** "Too Stubborn to Quit" tee sold | [svg](sketches/88-too-stubborn-to-quit.svg) |
-| 89 | SURVIVAL MODE: ON. / *beast mode: pending.* | Front center | 1C | L | New | **Change.** BEAST MODE is a registered Class 25 mark; SURVIVAL MODE filed for shirts | [svg](sketches/89-survival-mode-on.svg) |
+| 88 | DEATH IS THE FINAL REST DAY. / *not today.* | Back | 1C | M | New (round 2, darker) | Clear (no exact match; "rest day" tees are common) | [svg](sketches/88-final-rest-day-not-today.svg) |
+| 89 | DECOMPOSING AT A HEALTHY PACE. | Front center | 1C | M | New (round 2, darker) | Caution: Hot Topic sells a "Currently decomposing" tee; exact phrase not found | [svg](sketches/89-decomposing-healthy-pace.svg) |
 | 90 | MEMENTO MORI. / *remember to stretch.* | Left chest | FINE: embroidery suggested | L | New | Crowded theme | [svg](sketches/90-memento-mori-stretch.svg) |
 | 91 | LIFE IS SHORT. REST TIMES SHOULDN'T BE. | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/91-life-short-rest-times.svg) |
 | 92 | HEALING IS A SLOW ECCENTRIC | Sleeve | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/92-healing-slow-eccentric.svg) |
@@ -187,7 +187,7 @@ These are placement sketches made with `tools/svgs_more.py` (data in `tools/desi
 | 101 | CHALK AND SORROW / *both get on everything* | Sleeve | FINE: embroidery suggested | L | New | Clear (no exact match found) | [svg](sketches/101-chalk-and-sorrow.svg) |
 | 102 | THE GYM IS MY GRAVEYARD SHIFT | Front center | 1C | L | New | Clear; "graveyard shift" is a common phrase on shirts | [svg](sketches/102-gym-is-my-graveyard-shift.svg) |
 | 103 | SPIRIT WEAK. GRIP STRONG. | Pocket + chest | 1C | L | New | Clear (no exact match found) | [svg](sketches/103-spirit-weak-grip-strong.svg) |
-| 104 | BURNING OUT. / *burning calories.* | Front center | 1C | L | New | Similar format ("if only sarcasm burned calories"); exact not found | [svg](sketches/104-burning-out-burning-calories.svg) |
+| 104 | EVERY REP IS A EULOGY / *for who I was.* | Back | 1C | M | New (round 2, darker) | Clear (no exact match found) | [svg](sketches/104-every-rep-a-eulogy.svg) |
 | 105 | CAUGHT IN A WEB OF MY OWN THOUGHTS | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/105-web-of-thoughts.svg) |
 | 106 | SUPPORT SYSTEM: / *a squat rack and three friends.* | Front center | 1C | L | New | Clear (no exact match found) | [svg](sketches/106-support-system.svg) |
 | 107 | TODAY'S GOALS | Back | 1C | L | New | Clear (no exact match found) | [svg](sketches/107-checklist-today.svg) |
@@ -224,3 +224,20 @@ These are placement sketches made with `tools/svgs_more.py` (data in `tools/desi
 - **102:** "graveyard shift" is a common phrase on shirts.
 
 **No exact match found (51):** 43–49, 51, 52, 55–57, 59–64, 66–68, 70–74, 76–79, 81–87, 91–96, 98–101, 103, 105–107. The ones that look most distinctive are 46, 56, 60, 61, 70, 74, 76, 77, 84, 94, 100, 101 and 106.
+
+## Round 2: darker captions (2026-11-24)
+
+At your request, 15 captions were replaced with darker ones about death, burial, rot and grief.
+- **The line still holds:** no method images, no coded method references, nothing that reads as encouragement.
+- **Why these 15:**
+  - #65 and #89 had trademark problems.
+  - #69 and #88 were already sold by others.
+  - The other 11 were the softest or most crowded: #43, 47, 50, 53, 54, 55, 56, 73, 82, 84, 104.
+- **Platform risk:** M for all 15. They're fine for the store and organic posts. Test them before paid ads, because death imagery can trip ad review.
+
+**Same web-only check as above (USPTO and Etsy are blocked here), 15 searches:**
+- **No exact match found:** 13 of 15.
+- **Caution, #82 "Born tired. Will die tired.":** a DIE TIRED application covers shirts, pants, jackets and hats (serial 99163541, filed 2025). Justia shows it as new; another tracker shows it as dead. Check TSDR before printing. [Justia](https://trademarks.justia.com/991/63/die-99163541.html)
+- **Caution, #89 "Decomposing at a healthy pace":** Hot Topic sells a "Currently decomposing" skeleton tee. The wording is different, but the theme is close. [Hot Topic](https://www.hottopic.com/product/decomposing-skeleton-library-t-shirt/36473798.html)
+
+The "Change before using" and "Already sold" items in the previous section (#65, #69, #88, #89) are now **resolved by replacement**. The old phrases are no longer in the set.
