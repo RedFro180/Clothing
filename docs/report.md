@@ -37,6 +37,8 @@ Research as of Nov 24, 2026. Not legal, tax or financial advice. Prices are from
 - **Limits:** 1–2 colors, bold shapes, small batch-to-batch variation. Light or medium base colors only; no light print on dark fabric. Target wash-fastness grade 4–5; test 10+ washes on every design and color.
 - **Panels vs. finished hoodies:** printing cut panels before sewing is easier, especially for back and sleeves. It means you ship printed panels to the sewer. Printing finished hoodies needs a platen that fits inside the garment.
 
+**Full supply list with prices and steps:** `docs/decoration-supplies.md` covers natural dye, discharge printing and embroidery. Approximate start-up costs: natural dye $450–900; discharge $100–500; embroidery about $1,300–1,700 with a Brother PE900; plus $150–300 of screen-printing gear shared by the first two.
+
 ## 5. Getting your fit made
 1. **Write a fit brief.** Pick a reference hoodie you like and measure it (chest, body length, shoulder drop, sleeve, cuff, hem, hood height). List what to change ("2 in longer body, drop shoulder 3 in, narrower cuff").
 2. **Pattern + grading:** $150–2,000+ per style ([Innblac](https://www.innblac.com/es/blogs/denim-wholesale/how-much-does-it-cost-to-make-a-custom-hoodie), [Dutch Label Shop](https://www.dutchlabelshop.com/en_au/blog/how-much-does-it-cost-to-start-a-clothing-brand/), [Modaknits](https://modaknits.com/?p=63904)). Some sewers have in-house pattern makers.
