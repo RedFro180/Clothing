@@ -427,9 +427,205 @@ def checklist(x, y, s=1, items=()):
         g += tpath(t, "type", 22 * s, x - 84 * s, yy, anchor="start")
     return g
 def none(x, y, s=1): return ""
+
+# ---------------- morbid set: morgue / rot / anatomy / funeral ----------------
+def toe_tag(x, y, s=1, label="DOA", line1="NAME: ________", line2="CAUSE: ________"):
+    g = f'<g transform="rotate(-12 {x:.1f} {y:.1f})">'
+    g += f'<path d="M{x-80*s:.1f} {y-38*s:.1f} L{x+70*s:.1f} {y-38*s:.1f} L{x+92*s:.1f} {y-16*s:.1f} L{x+92*s:.1f} {y+16*s:.1f} L{x+70*s:.1f} {y+38*s:.1f} L{x-80*s:.1f} {y+38*s:.1f} Z" fill="{INK}"/>'
+    g += f'<circle cx="{x+72*s:.1f}" cy="{y:.1f}" r="{8*s:.1f}" fill="{FAB}"/>'
+    g += tpath(label, "osw", fitsize(label, "osw", 130 * s, 30 * s), x - 6 * s, y - 6 * s, fill=FAB)
+    g += tpath(line1, "type", 11 * s, x - 70 * s, y + 13 * s, anchor="start", fill=FAB) + tpath(line2, "type", 11 * s, x - 70 * s, y + 28 * s, anchor="start", fill=FAB)
+    g += '</g>'
+    g += f'<path d="M{x+70*s:.1f} {y-14*s:.1f} C{x+120*s:.1f} {y-40*s:.1f} {x+110*s:.1f} {y-90*s:.1f} {x+60*s:.1f} {y-96*s:.1f}" stroke="{INK}" stroke-width="{3*s:.1f}" fill="none"/>'
+    return g
+def body_bag(x, y, s=1):
+    g = f'<rect x="{x-110*s:.1f}" y="{y-38*s:.1f}" width="{220*s:.1f}" height="{76*s:.1f}" rx="{38*s:.1f}" fill="{INK}"/>'
+    g += f'<path d="M{x-50*s:.1f} {y:.1f} L{x+96*s:.1f} {y:.1f}" stroke="{FAB}" stroke-width="{3*s:.1f}"/>'
+    g += ''.join(f'<line x1="{x+u*s:.1f}" y1="{y-5*s:.1f}" x2="{x+u*s:.1f}" y2="{y+5*s:.1f}" stroke="{FAB}" stroke-width="{2*s:.1f}"/>' for u in range(-44, 96, 7))
+    g += f'<rect x="{x+92*s:.1f}" y="{y-6*s:.1f}" width="{14*s:.1f}" height="{12*s:.1f}" rx="{3*s:.1f}" fill="{FAB}"/>'
+    g += f'<path d="M{x-104*s:.1f} {y:.1f} Q{x-80*s:.1f} {y-34*s:.1f} {x-50*s:.1f} {y:.1f} Q{x-80*s:.1f} {y+34*s:.1f} {x-104*s:.1f} {y:.1f} Z" fill="{FAB}"/>'
+    g += f'<g transform="rotate(-90 {x-78*s:.1f} {y:.1f})">' + skull(x - 78 * s, y, 0.32 * s, cracked=False) + '</g>'
+    return g
+def morgue_drawer(x, y, s=1):
+    g = f'<rect x="{x-110*s:.1f}" y="{y-70*s:.1f}" width="{90*s:.1f}" height="{90*s:.1f}" fill="none" stroke="{INK}" stroke-width="{6*s:.1f}"/>'
+    g += f'<rect x="{x-90*s:.1f}" y="{y-58*s:.1f}" width="{50*s:.1f}" height="{18*s:.1f}" fill="{INK}"/><rect x="{x-82*s:.1f}" y="{y-20*s:.1f}" width="{34*s:.1f}" height="{8*s:.1f}" rx="{4*s:.1f}" fill="{INK}"/>'
+    g += f'<rect x="{x-24*s:.1f}" y="{y-6*s:.1f}" width="{150*s:.1f}" height="{12*s:.1f}" fill="{INK}"/>'
+    g += f'<path d="M{x-20*s:.1f} {y-6*s:.1f} Q{x+10*s:.1f} {y-40*s:.1f} {x+40*s:.1f} {y-22*s:.1f} Q{x+70*s:.1f} {y-32*s:.1f} {x+100*s:.1f} {y-20*s:.1f} L{x+112*s:.1f} {y-6*s:.1f} Z" fill="{INK}"/>'
+    for u in (106, 122):
+        g += f'<path d="M{x+u*s:.1f} {y-8*s:.1f} q{2*s:.1f} {-26*s:.1f} {10*s:.1f} {-28*s:.1f} q{6*s:.1f} {2*s:.1f} {2*s:.1f} {28*s:.1f} Z" fill="{INK}"/>'
+    g += f'<path d="M{x+118*s:.1f} {y-30*s:.1f} l{14*s:.1f} {-16*s:.1f}" stroke="{INK}" stroke-width="{2*s:.1f}"/><rect x="{x+126*s:.1f}" y="{y-62*s:.1f}" width="{28*s:.1f}" height="{18*s:.1f}" fill="{INK}" transform="rotate(-20 {x+140*s:.1f} {y-53*s:.1f})"/>'
+    return g
+def y_incision(x, y, s=1):
+    f = F(x, y, s)
+    g = skull(x, y - 92 * s, 0.42 * s, cracked=False)
+    g += f'<rect x="{x-8*s:.1f}" y="{y-70*s:.1f}" width="{16*s:.1f}" height="{14*s:.1f}" fill="{INK}"/>'
+    g += f'<path d="M{f(-62,-56)} Q{f(0,-64)} {f(62,-56)} L{f(54,30)} Q{f(40,70)} {f(30,74)} L{f(-30,74)} Q{f(-40,70)} {f(-54,30)} Z" fill="{INK}"/>'
+    g += f'<path d="M{f(-44,-48)} L{f(0,-6)} L{f(44,-48)} M{f(0,-6)} L{f(0,66)}" stroke="{FAB}" stroke-width="{3*s:.1f}" fill="none"/>'
+    for (x1, y1, x2, y2) in ((-44, -48, 0, -6), (44, -48, 0, -6), (0, -6, 0, 66)):
+        for t in range(1, 8):
+            px, py = x1 + (x2 - x1) * t / 8, y1 + (y2 - y1) * t / 8
+            dx, dy = x2 - x1, y2 - y1; L = math.hypot(dx, dy); nx, ny = -dy / L * 6, dx / L * 6
+            g += f'<line x1="{x+(px-nx)*s:.1f}" y1="{y+(py-ny)*s:.1f}" x2="{x+(px+nx)*s:.1f}" y2="{y+(py+ny)*s:.1f}" stroke="{FAB}" stroke-width="{1.8*s:.1f}"/>'
+    for v in (-30, -14, 2):
+        for d in (-1, 1):
+            g += f'<path d="M{f(d*14,v)} Q{f(d*40,v-4)} {f(d*50,v+8)}" stroke="{FAB}" stroke-width="{1.6*s:.1f}" fill="none" stroke-dasharray="{3*s:.1f} {3*s:.1f}"/>'
+    return g
+def autopsy_report(x, y, s=1, fields=(("CAUSE OF DEATH", "leg day"), ("TIME OF DEATH", "5:00 a.m."))):
+    w, h = 250 * s, (44 + 30 * len(fields)) * s
+    g = f'<rect x="{x-w/2:.1f}" y="{y-h/2:.1f}" width="{w:.1f}" height="{h:.1f}" fill="none" stroke="{INK}" stroke-width="{4*s:.1f}"/>'
+    g += f'<rect x="{x-w/2:.1f}" y="{y-h/2:.1f}" width="{w:.1f}" height="{30*s:.1f}" fill="{INK}"/>'
+    g += tpath("AUTOPSY REPORT", "osw", 20 * s, x, y - h / 2 + 23 * s, fill=FAB)
+    for i, (k, v) in enumerate(fields):
+        yy = y - h / 2 + (58 + i * 30) * s
+        g += tpath(k + ":", "type", 12 * s, x - w / 2 + 10 * s, yy, anchor="start")
+        kw = measure(k + ":", "type", 12 * s)
+        g += tpath(v, "type", fitsize(v, "type", w - kw - 30 * s, 17 * s), x - w / 2 + 18 * s + kw, yy, anchor="start")
+        g += f'<line x1="{x-w/2+14*s+kw:.1f}" y1="{yy+4*s:.1f}" x2="{x+w/2-10*s:.1f}" y2="{yy+4*s:.1f}" stroke="{INK}" stroke-width="{1.2*s:.1f}"/>'
+    return g
+def maggots(x, y, s=1, n=7, spread=60):
+    g = ''
+    for k in range(n):
+        a = k * 2.399; r = spread * math.sqrt((k + 0.5) / n)
+        cx, cy = x + r * math.cos(a) * s, y + r * math.sin(a) * s * 0.6; rot = (k * 47) % 180
+        g += f'<g transform="rotate({rot} {cx:.1f} {cy:.1f})"><ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{8*s:.1f}" ry="{3.6*s:.1f}" fill="{INK}"/>'
+        g += ''.join(f'<line x1="{cx+u*s:.1f}" y1="{cy-3.6*s:.1f}" x2="{cx+u*s:.1f}" y2="{cy+3.6*s:.1f}" stroke="{FAB}" stroke-width="{0.9*s:.1f}"/>' for u in (-3, 0, 3)) + '</g>'
+    return g
+def flies(x, y, s=1, n=4, spread=70):
+    g = ''
+    for k in range(n):
+        a = k * 2.1 + 0.6; r = spread * (0.5 + 0.5 * ((k * 37) % 10) / 10)
+        cx, cy = x + r * math.cos(a) * s, y + r * math.sin(a) * s * 0.7
+        g += f'<ellipse cx="{cx-5*s:.1f}" cy="{cy-5*s:.1f}" rx="{6*s:.1f}" ry="{3.5*s:.1f}" fill="none" stroke="{INK}" stroke-width="{1.4*s:.1f}" transform="rotate(-30 {cx:.1f} {cy:.1f})"/>'
+        g += f'<ellipse cx="{cx+5*s:.1f}" cy="{cy-5*s:.1f}" rx="{6*s:.1f}" ry="{3.5*s:.1f}" fill="none" stroke="{INK}" stroke-width="{1.4*s:.1f}" transform="rotate(30 {cx:.1f} {cy:.1f})"/>'
+        g += f'<ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{3.4*s:.1f}" ry="{5*s:.1f}" fill="{INK}"/>'
+        g += f'<path d="M{cx-20*s:.1f} {cy+8*s:.1f} q{6*s:.1f} {-8*s:.1f} {12*s:.1f} 0 q{4*s:.1f} {6*s:.1f} {6*s:.1f} {-4*s:.1f}" stroke="{INK}" stroke-width="{1*s:.1f}" fill="none" stroke-dasharray="{2*s:.1f} {2*s:.1f}"/>'
+    return g
+def rot_skull(x, y, s=1):
+    f = F(x, y, s)
+    g = skull(x, y, s)
+    g += (f'<path d="M{f(2,-66)} C{f(-40,-70)} {f(-58,-34)} {f(-54,0)} C{f(-54,22)} {f(-46,36)} {f(-36,50)} L{f(-24,56)} '
+          f'L{f(-20,44)} L{f(-12,50)} L{f(-10,36)} L{f(-2,40)} L{f(-4,26)} L{f(4,22)} L{f(-2,12)} L{f(6,4)} L{f(-2,-6)} L{f(6,-16)} L{f(-2,-24)} L{f(6,-34)} L{f(-2,-44)} L{f(6,-54)} Z" fill="{INK}"/>')
+    g += f'<path d="M{f(6,-54)} L{f(-2,-44)} L{f(6,-34)} L{f(-2,-24)} L{f(6,-16)} L{f(-2,-6)} L{f(6,4)} L{f(-2,12)} L{f(4,22)} L{f(-4,26)} L{f(-2,40)} L{f(-10,36)} L{f(-12,50)} L{f(-20,44)} L{f(-24,56)}" stroke="{FAB}" stroke-width="{2.4*s:.1f}" fill="none"/>'
+    g += f'<path d="M{f(-36,-12)} Q{f(-22,-24)} {f(-8,-12)} Q{f(-22,-2)} {f(-36,-12)} Z" fill="{FAB}"/><circle cx="{x-22*s:.1f}" cy="{y-12*s:.1f}" r="{4.5*s:.1f}" fill="{INK}"/>'
+    g += f'<path d="M{f(-40,-26)} Q{f(-22,-34)} {f(-6,-26)}" stroke="{FAB}" stroke-width="{2*s:.1f}" fill="none"/>'
+    g += ''.join(f'<path d="M{f(u,v)} q{3*s:.1f} {6*s:.1f} 0 {12*s:.1f}" stroke="{FAB}" stroke-width="{1.2*s:.1f}" fill="none"/>' for u, v in ((-44, 8), (-36, 16), (-28, 4), (-46, -40), (-30, -50)))
+    g += f'<path d="M{f(-30,30)} Q{f(-16,34)} {f(-6,30)}" stroke="{FAB}" stroke-width="{2.4*s:.1f}" fill="none"/>'
+    g += maggots(x + 22 * s, y - 2 * s, 0.7 * s, n=5, spread=18)
+    for u, L in ((-38, 22), (-26, 30), (-12, 16)):
+        g += f'<path d="M{f(u,54)} q{-4*s:.1f} {L*s:.1f} 0 {L*s:.1f} q{4*s:.1f} 0 0 {-L*s:.1f} Z" fill="{INK}"/>'
+    return g
+def rot_lifter(x, y, s=1):
+    s2 = s * 0.78 * 0.85
+    g = figure(x, y, s * 0.85, "press")
+    hy = y - 75 * s2
+    for u, v, L in ((-30, 40, 16), (24, 52, 22), (-12, 120, 14), (20, 150, 18)):
+        g += f'<path d="M{x+u*s2:.1f} {hy+v*s2:.1f} q{-6*s2:.1f} {6*s2:.1f} {-2*s2:.1f} {L*s2:.1f} q{6*s2:.1f} {-2*s2:.1f} {8*s2:.1f} {-L*s2:.1f} Z" fill="{INK}"/>'
+    return g + flies(x, hy - 20 * s2, s * 0.8, n=4, spread=90)
+def anatomical_heart(x, y, s=1, drips=True):
+    f = F(x, y, s)
+    g = (f'<path d="M{f(-10,-34)} C{f(-46,-50)} {f(-66,-14)} {f(-54,16)} C{f(-42,50)} {f(-8,70)} {f(10,82)} C{f(24,60)} {f(58,36)} {f(56,0)} '
+         f'C{f(54,-30)} {f(30,-46)} {f(10,-34)} Z" fill="{INK}"/>')
+    g += f'<path d="M{f(-6,-34)} L{f(-8,-70)} Q{f(-6,-86)} {f(14,-86)} Q{f(36,-86)} {f(38,-62)} L{f(36,-30)}" fill="none" stroke="{INK}" stroke-width="{16*s:.1f}"/>'
+    for u, v in ((4, -84), (16, -90), (28, -84)):
+        g += f'<line x1="{x+u*s:.1f}" y1="{y+(v+6)*s:.1f}" x2="{x+(u+2)*s:.1f}" y2="{y+(v-12)*s:.1f}" stroke="{INK}" stroke-width="{6*s:.1f}" stroke-linecap="round"/>'
+    g += f'<path d="M{f(-30,-30)} Q{f(-44,-52)} {f(-34,-66)}" fill="none" stroke="{INK}" stroke-width="{10*s:.1f}" stroke-linecap="round"/>'
+    g += f'<path d="M{f(-6,-20)} C{f(-14,0)} {f(-2,20)} {f(-10,44)} M{f(-6,-2)} L{f(-30,10)} M{f(-8,24)} L{f(10,40)} M{f(26,-24)} C{f(30,-4)} {f(40,10)} {f(34,30)}" stroke="{FAB}" stroke-width="{2.4*s:.1f}" fill="none"/>'
+    g += f'<circle cx="{x-8*s:.1f}" cy="{y-82*s:.1f}" r="{4*s:.1f}" fill="{FAB}"/><circle cx="{x+36*s:.1f}" cy="{y-58*s:.1f}" r="{4*s:.1f}" fill="{FAB}"/>'
+    if drips:
+        for u, L in ((-20, 26), (6, 40), (22, 18)):
+            g += f'<path d="M{f(u,62 if u<0 else 70)} q{-5*s:.1f} {L*s:.1f} 0 {L*s:.1f} q{5*s:.1f} 0 0 {-L*s:.1f} Z" fill="{INK}"/>'
+    return g
+def ekg(x, y, s=1, w=220):
+    pts = [(-w / 2, 0), (-40, 0), (-30, -8), (-22, 0), (-14, 0), (-8, 34), (0, -62), (8, 18), (16, 0), (34, 0), (42, -10), (52, 0), (w / 2, 0)]
+    return f'<polyline points="{" ".join(f"{x+u*s:.1f},{y+v*s:.1f}" for u, v in pts)}" fill="none" stroke="{INK}" stroke-width="{4.5*s:.1f}" stroke-linejoin="round" stroke-linecap="round"/>'
+def flatline(x, y, s=1):
+    return anatomical_heart(x, y - 18 * s, s * 0.72, drips=False) + ekg(x, y + 62 * s, s, 240)
+def flayed_figure(x, y, s=1, labels=("SPITE", "GRIEF", "CAFFEINE", "REGRET")):
+    f = F(x, y, s)
+    g = skull(x, y - 98 * s, 0.34 * s, cracked=False)
+    g += (f'<path d="M{f(-10,-80)} L{f(-44,-70)} Q{f(-62,-64)} {f(-64,-44)} L{f(-70,10)} L{f(-58,12)} L{f(-48,-34)} L{f(-40,-2)} '
+          f'L{f(-34,40)} L{f(-30,110)} L{f(-12,110)} L{f(-4,46)} L{f(4,46)} L{f(12,110)} L{f(30,110)} L{f(34,40)} L{f(40,-2)} L{f(48,-34)} '
+          f'L{f(58,12)} L{f(70,10)} L{f(64,-44)} Q{f(62,-64)} {f(44,-70)} L{f(10,-80)} Z" fill="{INK}"/>')
+    lines = [((0, -66), (0, 30)), ((-34, -50), (0, -38)), ((34, -50), (0, -38)), ((-30, -36), (-4, -24)), ((30, -36), (4, -24))]
+    for v in (-12, 2, 16, 30):
+        lines.append(((-18, v), (18, v)))
+    for (a, b) in lines:
+        g += f'<line x1="{x+a[0]*s:.1f}" y1="{y+a[1]*s:.1f}" x2="{x+b[0]*s:.1f}" y2="{y+b[1]*s:.1f}" stroke="{FAB}" stroke-width="{1.8*s:.1f}"/>'
+    for d in (-1, 1):
+        g += f'<path d="M{f(d*52,-52)} Q{f(d*60,-40)} {f(d*54,-26)} M{f(d*22,50)} Q{f(d*14,74)} {f(d*20,100)}" stroke="{FAB}" stroke-width="{1.8*s:.1f}" fill="none"/>'
+    pts = [((-26, -46), (-118, -60)), ((26, -46), (118, -60)), ((-12, 8), (-118, 20)), ((20, 70), (118, 80))]
+    for (a, b), lab in zip(pts, labels):
+        g += f'<line x1="{x+a[0]*s:.1f}" y1="{y+a[1]*s:.1f}" x2="{x+b[0]*s:.1f}" y2="{y+b[1]*s:.1f}" stroke="{INK}" stroke-width="{1.4*s:.1f}"/><circle cx="{x+a[0]*s:.1f}" cy="{y+a[1]*s:.1f}" r="{2.6*s:.1f}" fill="{FAB}" stroke="{INK}" stroke-width="{1.2*s:.1f}"/>'
+        g += tpath(lab, "type", 12 * s, x + b[0] * s, y + (b[1] - 4) * s, anchor="end" if b[0] < 0 else "start")
+    return g
+def open_grave(x, y, s=1):
+    f = F(x, y, s)
+    g = f'<path d="M{f(-110,20)} L{f(70,20)} L{f(100,-14)} L{f(-80,-14)} Z" fill="{INK}"/>'
+    g += f'<path d="M{f(-60,10)} L{f(40,10)} L{f(58,-8)} L{f(-42,-8)} Z" fill="{FAB}"/>' + f'<path d="M{f(-50,6)} L{f(34,6)} L{f(48,-5)} L{f(-36,-5)} Z" fill="none" stroke="{INK}" stroke-width="{2*s:.1f}"/>'
+    g += f'<path d="M{f(70,20)} Q{f(90,-40)} {f(130,-30)} Q{f(160,-20)} {f(170,20)} Z" fill="{INK}"/>'
+    g += ''.join(f'<circle cx="{x+u*s:.1f}" cy="{y+v*s:.1f}" r="{2.4*s:.1f}" fill="{FAB}"/>' for u, v in ((100, -10), (122, -2), (140, -14), (150, 6), (112, 10)))
+    g += f'<line x1="{x+130*s:.1f}" y1="{y-30*s:.1f}" x2="{x+150*s:.1f}" y2="{y-110*s:.1f}" stroke="{INK}" stroke-width="{5*s:.1f}"/><path d="M{f(122,-30)} L{f(140,-30)} L{f(136,-4)} L{f(126,-4)} Z" fill="{INK}"/>'
+    g += f'<path d="M{f(142,-112)} L{f(158,-108)}" stroke="{INK}" stroke-width="{6*s:.1f}" stroke-linecap="round"/>'
+    g += tombstone(x - 90 * s, y - 64 * s, 0.55 * s, "RIP", hand=False)
+    return g
+def reaper(x, y, s=1, spot=True):
+    f = F(x, y, s)
+    g = (f'<path d="M{f(0,-96)} C{f(-36,-96)} {f(-44,-60)} {f(-44,-36)} L{f(-62,40)} L{f(-70,96)} L{f(-50,86)} L{f(-38,98)} L{f(-22,88)} L{f(-6,100)} '
+         f'L{f(10,88)} L{f(26,100)} L{f(40,88)} L{f(56,98)} L{f(68,96)} L{f(60,40)} L{f(44,-36)} C{f(44,-60)} {f(36,-96)} {f(0,-96)} Z" fill="{INK}"/>')
+    g += f'<path d="M{f(-24,-62)} Q{f(0,-82)} {f(24,-62)} L{f(22,-28)} Q{f(0,-18)} {f(-22,-28)} Z" fill="{FAB}"/>'
+    g += skull(x, y - 46 * s, 0.24 * s, fg=INK, bg=FAB, cracked=False)
+    g += f'<line x1="{x+70*s:.1f}" y1="{y-130*s:.1f}" x2="{x+70*s:.1f}" y2="{y+100*s:.1f}" stroke="{INK}" stroke-width="{5*s:.1f}"/>'
+    g += f'<path d="M{f(70,-130)} Q{f(10,-150)} {f(-40,-112)} Q{f(10,-128)} {f(70,-116)} Z" fill="{INK}"/>'
+    if spot:
+        g += barbell(x, y - 14 * s, 0.72 * s)
+        for d in (-1, 1):
+            g += hand_skel(x + d * 30 * s, y + 6 * s, 0.34 * s)
+    return g
+def obituary(x, y, s=1, lines=("Beloved. Tired.", "Survived by a squat rack", "and three friends.", "In lieu of flowers,", "rack your weights.")):
+    w = 240 * s
+    g = tpath("Obituaries", "black", 30 * s, x, y - 70 * s)
+    g += f'<line x1="{x-w/2:.1f}" y1="{y-60*s:.1f}" x2="{x+w/2:.1f}" y2="{y-60*s:.1f}" stroke="{INK}" stroke-width="{3*s:.1f}"/><line x1="{x-w/2:.1f}" y1="{y-55*s:.1f}" x2="{x+w/2:.1f}" y2="{y-55*s:.1f}" stroke="{INK}" stroke-width="{1.2*s:.1f}"/>'
+    g += f'<rect x="{x-w/2:.1f}" y="{y-46*s:.1f}" width="{70*s:.1f}" height="{84*s:.1f}" fill="{INK}"/>' + skull(x - w / 2 + 35 * s, y - 2 * s, 0.4 * s, fg=FAB, bg=INK, cracked=False)
+    for i, t in enumerate(lines):
+        g += tpath(t, "type", fitsize(t, "type", 160 * s, 13 * s), x - w / 2 + 80 * s, y + (-30 + i * 17) * s, anchor="start")
+    for i in range(3):
+        g += f'<line x1="{x-w/2:.1f}" y1="{y+(54+i*9)*s:.1f}" x2="{x+w/2-(30 if i==2 else 0)*s:.1f}" y2="{y+(54+i*9)*s:.1f}" stroke="{INK}" stroke-width="{2.4*s:.1f}"/>'
+    return g
+def wreath(x, y, s=1):
+    g = ''
+    for k in range(22):
+        a = k * 2 * math.pi / 22; cx, cy = x + 58 * s * math.cos(a), y + 58 * s * math.sin(a)
+        g += f'<ellipse cx="{cx:.1f}" cy="{cy:.1f}" rx="{14*s:.1f}" ry="{6*s:.1f}" transform="rotate({math.degrees(a)+60:.0f} {cx:.1f} {cy:.1f})" fill="{INK}"/>'
+    for k in range(0, 22, 4):
+        a = k * 2 * math.pi / 22 + 0.15
+        g += f'<circle cx="{x+58*s*math.cos(a):.1f}" cy="{y+58*s*math.sin(a):.1f}" r="{7*s:.1f}" fill="{INK}" stroke="{FAB}" stroke-width="{1.5*s:.1f}"/>'
+    g += f'<path d="M{x-14*s:.1f} {y+56*s:.1f} L{x-30*s:.1f} {y+100*s:.1f} L{x-14*s:.1f} {y+92*s:.1f} L{x-4*s:.1f} {y+62*s:.1f} Z M{x+14*s:.1f} {y+56*s:.1f} L{x+30*s:.1f} {y+100*s:.1f} L{x+14*s:.1f} {y+92*s:.1f} L{x+4*s:.1f} {y+62*s:.1f} Z" fill="{INK}"/>'
+    return g + f'<circle cx="{x:.1f}" cy="{y+58*s:.1f}" r="{9*s:.1f}" fill="{INK}"/>' + skull(x, y, 0.4 * s)
+def death_grip(x, y, s=1):
+    g = f'<line x1="{x-120*s:.1f}" y1="{y-20*s:.1f}" x2="{x+120*s:.1f}" y2="{y-20*s:.1f}" stroke="{INK}" stroke-width="{10*s:.1f}" stroke-linecap="round"/>'
+    g += bone(x - 6 * s, y + 80 * s, x - 6 * s, y + 20 * s, 7 * s) + bone(x + 8 * s, y + 80 * s, x + 8 * s, y + 20 * s, 7 * s)
+    g += ''.join(f'<circle cx="{x+u*s:.1f}" cy="{y+12*s:.1f}" r="{6*s:.1f}" fill="{INK}"/>' for u in (-14, -4, 6, 16))
+    for i, u in enumerate((-22, -8, 6, 20)):
+        g += bone(x + u * s, y + 4 * s, x + (u - 2) * s, y - 14 * s, 5 * s) + f'<path d="M{x+(u-2)*s:.1f} {y-14*s:.1f} q{-4*s:.1f} {-16*s:.1f} {8*s:.1f} {-14*s:.1f}" stroke="{INK}" stroke-width="{5*s:.1f}" fill="none" stroke-linecap="round"/>'
+    g += bone(x + 26 * s, y + 16 * s, x + 40 * s, y - 8 * s, 5 * s)
+    for d in (-1, 1):
+        g += f'<rect x="{x+d*96*s-(16*s if d<0 else 0):.1f}" y="{y-60*s:.1f}" width="{16*s:.1f}" height="{80*s:.1f}" rx="{3*s:.1f}" fill="{INK}"/>'
+    return g
+def skull_flies(x, y, s=1):
+    return rot_skull(x, y, s) + flies(x, y - 10 * s, s, n=5, spread=95)
+def blood_drips(x, y, w, seed=0, size=1.0):
+    g = ''
+    k = 0
+    for i in range(int(w // 18)):
+        if (i * 7 + seed) % 3 == 0: continue
+        xx = x - w / 2 + 9 + i * 18 + ((i * 5 + seed) % 7) - 3
+        L = (10 + ((i * 13 + seed * 3) % 5) * 7) * size
+        g += f'<path d="M{xx-3*size:.1f} {y:.1f} L{xx-2*size:.1f} {y+L:.1f} Q{xx:.1f} {y+L+7*size:.1f} {xx+2*size:.1f} {y+L:.1f} L{xx+3*size:.1f} {y:.1f} Z" fill="{INK}"/><circle cx="{xx:.1f}" cy="{y+L+1*size:.1f}" r="{3.2*size:.1f}" fill="{INK}"/>'
+    return f'<rect x="{x-w/2:.1f}" y="{y-2:.1f}" width="{w:.1f}" height="4" fill="{INK}"/>' + g
 ICONS = {k: globals()[k] for k in (
     "skull figure figures2 barbell dumbbell kettlebell plate coffin tombstone ghost battery heart brain coffee clock stopwatch "
-    "moon candle hourglass rose flower moth raven eye bones bat bolt flame bottle anchor rack chain sun web cloud checklist none hand_skel").split()}
+    "moon candle hourglass rose flower moth raven eye bones bat bolt flame bottle anchor rack chain sun web cloud checklist none hand_skel "
+    "toe_tag body_bag morgue_drawer y_incision autopsy_report maggots flies rot_skull rot_lifter anatomical_heart ekg flatline flayed_figure open_grave reaper obituary wreath death_grip skull_flies").split()}
 
 # ---------------- type helpers ----------------
 KEEP = {"PR", "A.M.", "A.M", "LB", "LBS", "ATG", "988"}
@@ -485,7 +681,8 @@ def layout(num, d):
             first, rest = sentence(lines[0]), lines[1:]
             fs = fitsize(first, "black", 270, 38 if rest else 44)
             a += tpath(first, "black", fs, 300, 340 + fs * 0.75)
-            yy = 340 + fs * 0.95
+            if d.get("drip"): a += blood_drips(300, 340 + fs * 0.82, min(260, measure(first, "black", fs)), num, 0.5)
+            yy = 340 + fs * 0.95 + (26 if d.get("drip") else 0)
             if rest:
                 t, yy = stack(rest, "pirata", 300, yy, 270, 30, upper=False); a += t
             if sub: a += tpath(sub, "type", fitsize(sub, "type", 260, 15), 300, yy + 18)
@@ -508,10 +705,11 @@ def layout(num, d):
             if ic == "checklist":
                 a += checklist(300, yy + 30, 1, **args); yy += 190
             else:
-                a += ICONS[icon_name](300, yy + 78, (sc * 0.95) if ic != "none" else 0.72, **(args if ic != "none" else {}))
-                yy += 168
+                a += ICONS[icon_name](300, yy + (112 if ic == "reaper" else 78), (sc * 0.95) if ic != "none" else 0.72, **(args if ic != "none" else {}))
+                yy += 168 + (26 if ic == "reaper" else 0)
             if rest:
                 t, yy = stack(rest, "pirata", 300, yy, 290, 36, upper=False); a += t
+                if d.get("drip"): a += blood_drips(300, yy + 4, 250, num, 0.8); yy += 22
             if sub: a += banner(300, min(yy + 26, 532), 250, sub)
     elif place == "chest":
         cx = 382; joined = " ".join(lines)
