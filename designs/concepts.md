@@ -80,7 +80,7 @@ These are starting points. You make the final art. All captions are original dra
 
 ## Sketch set 2: 100 more hoodie sketches (08–107)
 
-These are placement sketches made with `tools/svgs_more.py` (data in `tools/designs_data.py`). Contact sheets: `sketches/overview-08-32.png`, `overview-33-57.png`, `overview-58-82.png`, `overview-83-107.png`.
+These are placement sketches made with `tools/svgs_dark.py` (data in `tools/designs_data.py`), with dark art on 10 natural-dye hoodie colors. Contact sheets: `sketches/overview-01-25.png`, `overview-26-50.png`, `overview-51-75.png`, `overview-76-100.png` and `overview-101-107.png`.
 - **34** are captions from the list above that hadn't been drawn yet. **66** are new captions written in the same voice.
 - The same line applies as before: there are no method images and nothing that reads as encouragement. Several are "connection" pieces meant to carry 988 on the hem or hood.
 - The 66 new phrases were checked on 2026-11-24 (see "Trademark and seller check" below). That was a web search, not a USPTO search. Before printing, still search each one on Etsy, Redbubble, TeePublic, Amazon and USPTO (Class 25).

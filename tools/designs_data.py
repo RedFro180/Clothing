@@ -1,5 +1,5 @@
 # Sketch set 2 (numbers 08-107). src = caption number in designs/concepts.md ("L6") or "new".
-# place: front | back | chest | sleeve | pocket | hood.  icon: a function name in svgs_more.py.
+# place: front | back | chest | sleeve | pocket | hood.  icon: a function name in svgs_dark.py.
 def D(slug, lines, sub, icon, place, note, src, **kw):
     d = dict(slug=slug, lines=lines, sub=sub, icon=icon, place=place, note=note, src=src); d.update(kw); return d
 
@@ -53,7 +53,7 @@ D("cant-skip-feelings", ["SKIP LEG DAY?", "I CAN'T EVEN", "SKIP FEELINGS."], "",
 D("grip-strength-holding-together", ["GRIP STRENGTH:"], "holding it together", "chain", "front", "Chain icon; text stacked under.", "new"),
 D("worms-work-for-it", ["THE WORMS WILL HAVE", "TO WORK FOR IT."], "", "skull", "front", "Skull icon.", "new2"),
 D("coffin-reinforced-handles", ["MY COFFIN NEEDS", "REINFORCED HANDLES."], "", "coffin", "front", "Coffin with a 45 plate label.", "new2", args={"label": "45"}),
-D("rotting-excellent-form", ["ROTTING,", "BUT WITH EXCELLENT FORM."], "", "figure", "front", "Standing figure (draw it as a skeleton).", "new2", args={"pose": "stand"}),
+D("rotting-excellent-form", ["ROTTING,", "BUT WITH EXCELLENT FORM."], "", "figure", "front", "Skeleton standing tall.", "new2", args={"pose": "stand"}),
 D("grief-pr-nobody-wants", ["GRIEF:"], "the PR nobody wants.", "plate", "chest", "Small chest print.", "new2"),
 D("bench-intrusive-thoughts", ["BENCH PRESSING", "MY INTRUSIVE THOUGHTS"], "", "figure", "front", "Pressing figure.", "new", args={"pose": "press"}, s=0.8),
 D("recovery-not-linear", ["RECOVERY IS NOT LINEAR."], "neither is my bar path.", "none", "front", "Draw a wavy line under the type.", "new"),
@@ -87,7 +87,7 @@ D("night-shift-brain", ["NIGHT SHIFT", "FOR MY BRAIN"], "", "moon", "front", "Mo
 D("3am-thoughts-5am-workouts", ["3 A.M. THOUGHTS.", "5 A.M. WORKOUTS."], "", "clock", "back", "Clock at 5:00.", "new", args={"h": 5, "m": 0}),
 D("black-hoodie-blacker-mood", ["BLACK HOODIE.", "BLACKER MOOD."], "bright future (allegedly).", "sun", "front", "Rising sun icon.", "new", args={"rising": True}),
 D("final-rest-day-not-today", ["DEATH IS THE FINAL REST DAY."], "not today.", "tombstone", "back", "Survival message. Replaces #88 (already sold). Add 988 on the hem.", "new2", args={"label": "LATER"}),
-D("decomposing-healthy-pace", ["DECOMPOSING AT", "A HEALTHY PACE."], "", "flower", "front", "Flower icon (draw it wilted). Replaces #89 (BEAST MODE trademark).", "new2"),
+D("decomposing-healthy-pace", ["DECOMPOSING AT", "A HEALTHY PACE."], "", "flower", "front", "Wilted rose. Replaces #89 (BEAST MODE trademark).", "new2"),
 D("memento-mori-stretch", ["MEMENTO MORI."], "remember to stretch.", "skull", "chest", "Chest print. Memento mori theme is crowded.", "new"),
 D("life-short-rest-times", ["LIFE IS SHORT.", "REST TIMES SHOULDN'T BE."], "", "stopwatch", "front", "Stopwatch icon.", "new"),
 D("healing-slow-eccentric", ["HEALING IS A", "SLOW ECCENTRIC"], "", "none", "sleeve", "Sleeve type; embroidery suggested.", "new"),

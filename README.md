@@ -5,6 +5,6 @@
 - `designs/concepts.md`: 40 caption concepts with ratings, plus an index of hoodie sketches 08–107.
 - `designs/sketches/`: 107 SVG hoodie placement sketches; `overview*.png` contact sheets show them.
 - `docs/other-products.md`, `docs/other-products-equipment.md`: tees, sweatpants, underwear, socks, hats, jackets, and every tool and machine with prices.
-- `tools/`: scripts that generate the sketches and the workbook.
+- `tools/`: scripts that generate the sketches (`svgs_dark.py`) and the workbook (`build_xlsx.py`); `tools/fonts` holds the open-licensed (OFL) fonts.
 
 Research as of Nov 2026. Not legal, tax or financial advice.
