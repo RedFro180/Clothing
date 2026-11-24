@@ -33,8 +33,10 @@ rows = [
  ("Freight: fabric to sewer + finished goods back, per unit", 3.00, "$", "Estimate."),
  ("PER-UNIT MAKING", None, None, None),
  ("Sewing labor (cut-make-trim), per piece", 30.00, "$", "US CMT benchmark $8-15/pc at volume (apexfashionlab); small runs and cotton thread cost more. Get quotes."),
- ("Natural dye materials per hoodie (home dyeing)", 4.00, "$", "Estimate for extract + mordant. Dye house alternative: Green Matters listed $35/garment wholesale (2023 page)."),
- ("Print materials per hoodie (paste, thickener, mordant)", 1.50, "$", "Estimate."),
+ ("DECORATION METHOD: 1 = natural dye + print, 2 = discharge, 3 = embroidery", 1, "#", "Pick one. Scenarios and Self-sewn sheets use the method chosen here; 'Decoration options' compares all three."),
+ ("Natural dye + print supplies per hoodie (scour, tannin, aluminum acetate, extract, thickener)", 5.50, "$", "Midpoint of $3-8 (docs/decoration-supplies.md). Botanical Colors: madder 50 g dyes ~750 g fiber dark red."),
+ ("Discharge supplies per hoodie (deColourant paste; black Procion + soda ash if you dye)", 2.00, "$", "Midpoint of $1-3. deColourant ~$7-9 per 8 oz (Dharma); Procion MX ~$11-12 per 2/3 oz jar."),
+ ("Embroidery supplies per hoodie (cotton/rayon thread, cotton backing, needles)", 2.00, "$", "Midpoint of $1-3. Aurifil 50wt cotton $53 per 6,452 yd cone; cotton tear-away ~$15-30/roll (est.)."),
  ("Your hours per hoodie (dye, print, steam, wash, pack)", 1.00, "hr", "Estimate; time yourself on the first 10."),
  ("Your hourly rate", 20.00, "$/hr", "Your choice. Set 0 to see cash-only margin."),
  ("PER-ORDER", None, None, None),
@@ -55,8 +57,10 @@ rows = [
  ("Shopify Basic (12 months at $39, or $29 if billed yearly)", 468.00, "$", "Shopify pricing pages, 2026."),
  ("Domain + email", 80.00, "$", "Estimate."),
  ("General liability insurance (incl. product)", 500.00, "$", "Guides put small apparel sellers at ~$350-750/yr."),
- ("Screen printing setup (screens, squeegees, exposure, press)", 600.00, "$", "Estimate for basic home setup."),
- ("Dye setup (stainless pots, scale, burner, steamer, PPE)", 400.00, "$", "Estimate."),
+ ("Screen-printing gear (kit, emulsion + UV lamp, tabletop press, platen) - methods 1 and 2", 225.00, "$", "Midpoint of $150-300: kits $20-70, press ~$109, rest estimated."),
+ ("Natural dye equipment (pots, scale, burner, steamer, PPE, starter dyes/mordants)", 675.00, "$", "Midpoint of $450-900 (docs/decoration-supplies.md)."),
+ ("Discharge equipment (steam iron or heat press, respirator, starter paste/dye)", 300.00, "$", "Midpoint of $100-500."),
+ ("Embroidery equipment (Brother PE900, hoops, scissors, digitizing)", 1500.00, "$", "Midpoint of $1,300-1,700; PE900 ~$1,100-1,400 (Staples)."),
  ("Other (RN free, samples of trims, misc.)", 200.00, "$", "Estimate."),
  ("SELF-SEWN OPTION (you sew instead of a sewer)", None, None, None),
  ("Your sewing hours per hoodie (after practice)", 2.0, "hr", "Beginners 3-6 hrs per pullover; pros 1-2 hrs on industrial machines (Modaknits, Peekaboo). Time your first 10."),
@@ -69,8 +73,8 @@ ws["A4"]="Item"; ws["B4"]="Value"; ws["C4"]="Unit"; ws["D4"]="Source / note"
 for c in "ABCD": ws[f"{c}4"].font = bold; ws[f"{c}4"].fill = hdr
 r = 5
 keys = ["fab_yd","fab_px","rib_yd","rib_px","thread","cord","labels","freight",
-        "cmt","dye","print","hrs","rate","pack","ship","shipchg","feepct","feefix","ret","mkt",
-        "pattern","samples","samplefab","trials","llc","shopify","domain","ins","screen","dyeeq","other","sewhrs","sewequip","sewpattern"]
+        "cmt","method","d_nat","d_dis","d_emb","hrs","rate","pack","ship","shipchg","feepct","feefix","ret","mkt",
+        "pattern","samples","samplefab","trials","llc","shopify","domain","ins","screen","eq_nat","eq_dis","eq_emb","other","sewhrs","sewequip","sewpattern"]
 ki = 0
 for label,val,unit,note in rows:
     ws.cell(r,1,label)
@@ -78,13 +82,13 @@ for label,val,unit,note in rows:
         ws.cell(r,1).font = bold
     else:
         c = ws.cell(r,2,val); c.font = blue
-        c.number_format = PCT if unit=="%" else ('0.00' if unit in ("yd","hr") else USD)
+        c.number_format = PCT if unit=="%" else ('0.00' if unit in ("yd","hr") else ('0' if unit=="#" else USD))
         ws.cell(r,3,unit).font = black
         ws.cell(r,4,note).font = black
         names[keys[ki]] = f"Inputs!$B${r}"; ki += 1
         ws.cell(r,1).font = black
     r += 1
-for k in ["fab_px","cmt","pattern","samples","ret","mkt"]:
+for k in ["fab_px","cmt","pattern","samples","ret","mkt","method"]:
     ws[names[k].split("!")[1].replace("$","")].fill = yellow
 ws.column_dimensions["A"].width = 58; ws.column_dimensions["B"].width = 12
 ws.column_dimensions["C"].width = 7; ws.column_dimensions["D"].width = 95
@@ -92,6 +96,8 @@ ws.column_dimensions["C"].width = 7; ws.column_dimensions["D"].width = 95
 # Scenarios
 s = wb.create_sheet("Scenarios")
 N = names
+DEC = f"CHOOSE({N['method']},{N['d_nat']},{N['d_dis']},{N['d_emb']})"
+DEQ = f"CHOOSE({N['method']},{N['eq_nat']}+{N['screen']},{N['eq_dis']}+{N['screen']},{N['eq_emb']})"
 s["A1"] = "Per-unit cost and scenario results"; s["A1"].font = title
 s["A3"] = "Per-unit cost (excludes one-time and fixed costs)"; s["A3"].font = bold
 lines = [
@@ -99,7 +105,7 @@ lines = [
  ("Trims (thread, cord, labels)", f"={N['thread']}+{N['cord']}+{N['labels']}"),
  ("Freight", f"={N['freight']}"),
  ("Sewing labor", f"={N['cmt']}"),
- ("Dye + print materials", f"={N['dye']}+{N['print']}"),
+ ("Decoration supplies (selected method)", f"={DEC}"),
  ("Your labor", f"={N['hrs']}*{N['rate']}"),
  ("Packaging", f"={N['pack']}"),
  ("Marketing", f"={N['mkt']}"),
@@ -116,7 +122,7 @@ s.cell(rr,1,"One-time development (per style)").font=bold
 c=s.cell(rr,2,f"={N['pattern']}+{N['samples']}+{N['samplefab']}+{N['trials']}"); c.font=green; c.number_format=USD0
 devrow = rr; rr+=1
 s.cell(rr,1,"Year-one fixed costs").font=bold
-c=s.cell(rr,2,f"={N['llc']}+{N['shopify']}+{N['domain']}+{N['ins']}+{N['screen']}+{N['dyeeq']}+{N['other']}"); c.font=green; c.number_format=USD0
+c=s.cell(rr,2,f"={N['llc']}+{N['shopify']}+{N['domain']}+{N['ins']}+{DEQ}+{N['other']}"); c.font=green; c.number_format=USD0
 fixrow = rr; rr+=2
 
 s.cell(rr,1,"Scenario levers (blue = edit)").font=bold; rr+=1
@@ -175,7 +181,7 @@ items = [
  ("Materials (fabric, rib, thread, cord, labels)", f"={mat}", f"={mat}"),
  ("Freight to/from sewer", f"={N['freight']}", "=0"),
  ("Sewing labor paid out", f"={N['cmt']}", "=0"),
- ("Dye + print materials", f"={N['dye']}+{N['print']}", f"={N['dye']}+{N['print']}"),
+ ("Decoration supplies (selected method)", f"={DEC}", f"={DEC}"),
  ("Packaging", f"={N['pack']}", f"={N['pack']}"),
  ("Cash cost to make", "=SUM(B5:B9)", "=SUM(C5:C9)"),
  ("Your time: dye/print/pack hours x rate", f"={N['hrs']}*{N['rate']}", f"={N['hrs']}*{N['rate']}"),
@@ -209,6 +215,41 @@ c2.cell(rr2+4,1,"Note: the higher cash margin when self-sewn is mostly your unpa
 c2.column_dimensions["A"].width=55
 for col in "BC": c2.column_dimensions[col].width=14
 c2.column_dimensions["D"].width=28
+
+# Decoration options comparison
+d = wb.create_sheet("Decoration options")
+d["A1"] = "Decoration methods compared (paid sewer, your time paid, mid inputs)"; d["A1"].font = title
+d["A2"] = "Uses every other input from the Inputs sheet. Your hours per hoodie are the same for all three; change them if embroidery or discharge is faster for you."
+d["A2"].font = Font(name=F, italic=True)
+heads=["Item","1 Natural dye + print","2 Discharge","3 Embroidery"]
+for j,h in enumerate(heads):
+    c=d.cell(4,1+j,h); c.font=bold; c.fill=hdr
+base_ex = f"Scenarios!$B${unitrow}-{DEC}"   # unit cost without decoration
+fixed_ex = f"Scenarios!$B${fixrow}-{DEQ}"   # fixed costs without decoration equipment
+dec = [N['d_nat'],N['d_dis'],N['d_emb']]
+deq = [f"{N['eq_nat']}+{N['screen']}",f"{N['eq_dis']}+{N['screen']}",N['eq_emb']]
+mk = f"{N['fab_yd']}*{N['fab_px']}+{N['rib_yd']}*{N['rib_px']}+{N['thread']}+{N['cord']}+{N['labels']}+{N['freight']}+{N['cmt']}+{N['pack']}+{N['hrs']}*{N['rate']}"
+rowsd = [
+ ("Decoration supplies per hoodie", lambda j: f"={dec[j]}", USD),
+ ("Decoration equipment (one-time)", lambda j: f"={deq[j]}", USD0),
+ ("Cost to make one hoodie (incl. your time, excl. marketing)", lambda j: f"={mk}+{dec[j]}", USD),
+ ("Gross margin at $120", lambda j: f"=(120-({mk}+{dec[j]}))/120", PCT),
+ ("Gross margin at $150", lambda j: f"=(150-({mk}+{dec[j]}))/150", PCT),
+ ("Cost to make + market one hoodie (as in Scenarios)", lambda j: f"={base_ex}+{dec[j]}", USD),
+ ("Year-one fixed costs with this method's equipment", lambda j: f"={fixed_ex}+{deq[j]}", USD0),
+]
+for i,(lab,fn,fmt) in enumerate(rowsd):
+    d.cell(5+i,1,lab).font=black
+    for j in range(3):
+        c=d.cell(5+i,2+j,fn(j)); c.number_format=fmt; c.font=black
+r_be=5+len(rowsd)
+d.cell(r_be,1,"Break-even units at $150 (dev + fixed / profit per unit made)").font=bold
+for j,col in enumerate("BCD"):
+    per=f"((1-{N['ret']})*(150+{N['shipchg']})*(1-{N['feepct']})-{col}10-(1-{N['ret']})*({N['ship']}+{N['feefix']}))"
+    c=d.cell(r_be,2+j,f'=IF({per}<=0,"never",ROUNDUP((Scenarios!$B${devrow}+{col}11)/{per},0))'); c.number_format='0'
+d.cell(r_be+2,1,"Notes: discharge needs reactive-dyed (e.g. Procion) hoodies, not natural dye. Confirm deColourant has no plastic binder (SDS). Embroidery equipment assumes a Brother PE900; a 6-needle PR680W is ~$12,000-12,600.").font=Font(name=F,italic=True)
+d.column_dimensions["A"].width=60
+for col in "BCD": d.column_dimensions[col].width=20
 
 # Legend example note
 ws.cell(r+1,1,"Example: if a sewer quotes $38 per piece, type 38 in the 'Sewing labor' blue cell; Scenarios updates automatically.").font=Font(name=F,italic=True)

@@ -5,7 +5,7 @@ Research as of Nov 24, 2026. Not legal, tax or financial advice. Prices are from
 ## 1. The short version
 - **Your "no polymers + natural dyes + home printing" spec is possible, but it's the hard path.** Every normal print ink fails the no-polymer rule. Natural-dye printing works but is limited to bold 1–2 color designs, with some batch-to-batch color variation.
 - **The fit you want means paying for development first:** a pattern maker, 2+ fit samples and a size set. That's roughly $1,000–3,000 per style before production.
-- **Margins are thin at normal hoodie prices.** With mid-range estimates, one hoodie costs ~$106 to make and market, counting $20 of your own labor and $10 of marketing. At $150 retail you make ~$18 per hoodie made after shipping, fees and returns. Breaking even on one style's development plus year-one fixed costs takes about 226 units at $150 or 92 units at $180. Comparable plant-dyed hemp hoodies sell for about $65–$195 (examples below).
+- **Margins are thin at normal hoodie prices.** With mid-range estimates, one hoodie costs ~$106 to make and market, counting $20 of your own labor and $10 of marketing. At $150 retail you make ~$18 per hoodie made after shipping, fees and returns. Breaking even on one style's development plus year-one fixed costs takes about 221 units at $150 or 89 units at $180. Comparable plant-dyed hemp hoodies sell for about $65–$195 (examples below).
 - **Ohio vs Florida:** Ohio is cheaper to form and keep an LLC ($99 once vs $125 + $138.75/yr). Florida's lack of personal income tax only helps if you live there.
 
 ## 2. Materials that meet "no polymers"
@@ -129,7 +129,7 @@ Workbook: `docs/margin-model.xlsx`. Edit the blue cells; yellow cells are the bi
 | Marketing | 10.00 |
 
 Plus per order: $10 shipping label (free shipping assumed), 2.9% + 30¢ card fee, and 8% of units lost to returns and seconds.
-One-time development per style: $1,750. Year-one fixed costs: $2,347 (LLC, Shopify, domain, insurance, print and dye equipment, misc).
+One-time development per style: $1,750. Year-one fixed costs: $2,247 (LLC, Shopify, domain, insurance, natural-dye and screen-print equipment, misc).
 
 **Profit on the run, before development and fixed costs**
 
@@ -143,9 +143,9 @@ One-time development per style: $1,750. Year-one fixed costs: $2,347 (LLC, Shopi
 
 | Retail | 25 | 50 | 150 | Break-even units |
 |---|---|---|---|---|
-| $120 | −$4,313 | −$4,529 | −$5,393 | never |
-| $150 | −$3,643 | −$3,189 | −$1,373 | 226 |
-| $180 | −$2,973 | −$1,849 | $2,647 | 92 |
+| $120 | −$4,213 | −$4,429 | −$5,293 | never |
+| $150 | −$3,543 | −$3,089 | −$1,273 | 221 |
+| $180 | −$2,873 | −$1,749 | $2,747 | 89 |
 
 **What moves the numbers most:**
 - **Sewing labor:** $30 → $20 adds $10 per unit.
@@ -162,6 +162,17 @@ One-time development per style: $1,750. Year-one fixed costs: $2,347 (LLC, Shopi
 - Poetry indigo-dyed hemp cotton hoodie: £139 full price
 
 A $150–180 price is within range for this category. Dark-humor graphic hoodies usually sell for $50–90, so customers will need to see why yours costs more: hemp, plant dye, made in the USA, hand-printed, limited run.
+
+**Decoration method compared** (workbook sheet "Decoration options"; paid sewer, your time paid, mid inputs):
+
+| | Natural dye + print | Discharge | Embroidery (PE900) |
+|---|---|---|---|
+| Supplies per hoodie | $5.50 | $2.00 | $2.00 |
+| Equipment (one-time) | $900 | $525 | $1,500 |
+| Gross margin at $150 | 36% | 38% | 38% |
+| Break-even units at $150 | 221 | 168 | 213 |
+
+Decoration is a small share of cost; the method changes margin by only ~2 points. Choose it on look and durability, not price. Set the method on the Inputs sheet (1, 2 or 3) to run every scenario with it.
 
 ## 8. Suggested order of steps
 1. Buy 3–5 pre-mordanted cotton hoodies and a few yards of hemp fleece and rib. Practice dyeing and printing, and wash-test 10+ times. (~$400–600)
