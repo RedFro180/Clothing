@@ -9,6 +9,7 @@
 </head>
 <body>
 <a class="skip" href="#shop">Skip to products</a>
+<nav class="looks" aria-label="Page design">Design: <a href="index.html" aria-current="page">Original</a><a href="look-poster.html">Poster</a><a href="look-parlor.html">Parlor</a><a href="look-zine.html">Zine</a></nav>
 
 <header class="top">
   <a class="brand" href="#" data-brand>Brand</a>
@@ -146,5 +147,11 @@
 <script src="config.js"></script>
 <script src="products.js"></script>
 <script src="app.js"></script>
+<script>{
+  const f = window.CATALOG.products.filter(p => p.featured).sort((a, b) => a.featured - b.featured);
+  document.querySelectorAll("[data-hero]").forEach(a => { const p = f[+a.dataset.hero]; if (!p) return;
+    a.href = "#" + p.slug; a.setAttribute("aria-label", p.name); const i = a.querySelector("img"); i.src = p.img; i.alt = p.color + " hoodie: " + p.name; });
+  document.querySelectorAll("[data-hero-name]").forEach(e => { const p = f[+e.dataset.heroName]; if (p) e.textContent = p.name + " / " + p.color; });
+}</script>
 </body>
 </html>
