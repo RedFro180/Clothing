@@ -15,6 +15,22 @@ Same rules as the hoodies: natural fibers, **no synthetic polymers** (no polyest
 | Dad cap | Medium (hidden poly parts) | Unstructured 100% cotton twill | Not practical | $18 / 56% at $40 | $15 / 62% at $40 | $36 / $30 |
 | Heavy jacket | **Hard** (lining, insulation, zipper) | 12 oz cotton duck + flannel/wool lining | Only with an industrial machine | $192 / 41% at $325 | $99 / 70% at $325 | $383 / $198 |
 
+**Equipment and start-up** (full lists with prices and how-tos are in [other-products-equipment.md](other-products-equipment.md)):
+
+| Product | Equipment to add if you sew (beyond the hoodie studio) | Materials per unit | Break-even units at the high price (US maker / overseas) | Cash for a first run, US maker |
+|---|---|---|---|---|
+| Tee | $51–72 | $15–20 | 92 / 30 | ~$2,160 (50 pcs) |
+| Sweatpants | $45–86 | $25–42 | 22 / 12 | ~$3,860 (50) |
+| Underwear | $44–71 | $8–10 | 107 / 43 | ~$2,450 (100) |
+| Socks | $160–170 (setup) | ~$7 factory | 24 / 22 | ~$1,300 (144) |
+| Beanie | $38–82 | $6–14 | 17 / 10 | ~$1,600 (100) |
+| Dad cap | $8 (shares beanie setup) | $8–13 | 15 / 12 | ~$1,330 (100) |
+| Heavy jacket | $1,664–2,568 (industrial machine) | $72–142 | 25 / 12 | ~$10,580 (50) |
+
+The core studio, if you sew everything yourself (machines, cutting, pressing, shipping), costs $1,951–3,421. With a paid sewer it's $342–777. Equipment for every product at once, decoration included, is ~$5,890–9,410; without the jacket, ~$4,230–6,840.
+
+Break-even here covers only each style's development and the equipment it adds. It doesn't cover the shared year-one fixed costs from the hoodie model ($2,247).
+
 **Key facts from the numbers**
 - **The 50% target is met with a paid US maker only for socks and caps** (margins on both are small in dollars), and roughly for sweatpants at $150. Tees, underwear and jackets miss it unless made overseas or priced well above market.
 - **Overseas full package meets 50% for every product** at the high price, but those per-unit numbers are estimates: I found real quotes only for tees (Pakistan, $8–14 FOB at 50 pcs). Every factory will default to polyester thread, labels and elastic unless your spec sheet forbids them.

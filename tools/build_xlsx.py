@@ -252,6 +252,7 @@ d.column_dimensions["A"].width=60
 for col in "BCD": d.column_dimensions[col].width=20
 
 
+legend_row = r
 # Other products (same cost basis as the hoodie)
 o = wb.create_sheet("Other products")
 o["A1"] = "Other products: cost to make and gross margin (estimates, Nov 2026)"; o["A1"].font = title
@@ -274,6 +275,8 @@ inp = [
  ("Self-sewn: your sewing hours", [1.0,1.5,0.5,0,0,0,7.0], '0.00', "0 = not practical to make yourself."),
  ("One-time development per style (pattern, grade, samples)", [600,900,700,150,100,150,2000], USD0, "Estimates. Socks/beanie/cap = artwork, setup and samples."),
  ("Minimum order per style (pieces)", [50,50,100,144,100,100,50], '0', "Typical quoted minimums; socks 144-288 at Fort Payne mills."),
+ ("Equipment to add, you sew (one-time, beyond hoodie studio)", [60,65,57,0,60,8,2100], USD0, "Midpoints from other-products-equipment.md. Jacket = walking-foot machine + snap tools + needles/thread + trial jacket."),
+ ("Equipment to add, paid maker/factory (one-time)", [0,0,0,15,60,8,0], USD0, "Socks: photo boards. Beanie/cap: hoop + patch supplies (PE900 already owned)."),
 ]
 for j,h in enumerate(["Item"]+prods+["Notes"]):
     c=o.cell(4,1+j,h); c.font=bold; c.fill=hdr; c.alignment=Alignment(wrap_text=True)
@@ -324,6 +327,15 @@ for k,nm in enumerate(names[:2]):
         x=o[f"{c}{r}"]; x.value=f"=(1-{N['ret']})*{P}*(1-{N['feepct']})-{c}{CR[k]}-(1-{N['ret']})*({S}+{N['feefix']})"; x.number_format=USD
     r+=1
 r+=1
+NET0=r-3
+o.cell(r,1,"Break-even units at price high, paid maker (development + equipment / net per unit)").font=bold
+for c in cols:
+    x=o[f"{c}{r}"]; x.value=f"=IF({c}{NET0}<=0,\"never\",ROUNDUP(({ref('One-time development per style (pattern, grade, samples)',c)}+{ref('Equipment to add, paid maker/factory (one-time)',c)})/{c}{NET0},0))"; x.number_format='0'
+r+=1
+o.cell(r,1,"Break-even units at price high, overseas (development + equipment / net per unit)").font=bold
+for c in cols:
+    x=o[f"{c}{r}"]; x.value=f"=IF({c}{NET0+1}<=0,\"never\",ROUNDUP(({ref('One-time development per style (pattern, grade, samples)',c)}+{ref('Equipment to add, paid maker/factory (one-time)',c)})/{c}{NET0+1},0))"; x.number_format='0'
+r+=2
 o.cell(r,1,"Cash for first run: minimum order x paid-maker cost + development").font=bold
 for c in cols:
     x=o[f"{c}{r}"]; x.value=f"={ref('Minimum order per style (pieces)',c)}*({c}{CR[0]}-{ref('Your hours per unit (decorate + pack)',c)}*{rate})+{ref('One-time development per style (pattern, grade, samples)',c)}"; x.number_format=USD0
@@ -335,6 +347,6 @@ o.column_dimensions[chr(66+len(prods))].width=70
 o.freeze_panes="B5"
 
 # Legend example note
-ws.cell(r+1,1,"Example: if a sewer quotes $38 per piece, type 38 in the 'Sewing labor' blue cell; Scenarios updates automatically.").font=Font(name=F,italic=True)
+ws.cell(legend_row+1,1,"Example: if a sewer quotes $38 per piece, type 38 in the 'Sewing labor' blue cell; Scenarios updates automatically.").font=Font(name=F,italic=True)
 wb.save("/home/user/Clothing/docs/margin-model.xlsx")
 print(unitrow, devrow, fixrow, urow)

@@ -28,6 +28,12 @@ Read this first. Not legal/tax advice. Prices are web research (Nov 2026); "est.
 - Self-sewn: cash cost ~$43 (64% at $120) but ~$103 with own time paid; ~20 hoodies/week full-time; ~$1,050 machines + pattern.
 - Decoration (Decoration options sheet): natural dye $5.50/unit + $900 equip; discharge $2 + $525; embroidery (Brother PE900) $2 + $1,500. Method changes margin only ~2 pts.
 
+## Other products (2026-11-24, all estimates; see docs/other-products.md)
+- Cost to make incl. own time, paid US maker → margin at high price: tee $41 (31% at $60), sweats $74 (47% at $140), boxer brief $23 (41% at $38), socks $10 (58% at $24), beanie $21 (47% at $40), dad cap $18 (56% at $40), duck jacket $192 (41% at $325). Overseas full package hits 50%+ on all at the high price (only the tee has real listing prices).
+- Hard plastic-free parts: waistband/underwear elastic (use cotton-covered natural rubber; latex disclosure, ~1–6% allergy), socks (no nylon/spandex → wear/slide; factory knit-in only, MOQ ~144), cap hidden parts (sweatband, brim board, thread), jacket (lining/insulation → flannel + wool batt + cupro sleeves; zipper tape usually polyester, YKK cotton-tape "Universal" unconfirmed for heavy separating).
+- Suggested order: sweatpants → beanie → tee → socks/caps → underwear → jacket last (~$10.6k first run).
+- Inputs-sheet bug fixed: legend note had overwritten Inputs!A44 label ("Other" row); now uses legend_row.
+
 ## Print / decoration facts
 - Plastisol (PVC), water-based/discharge inks (acrylic binders), DTG, DTF, sublimation all fail no-polymer rule. Laser etching not recommended (>20% natural fiber).
 - Passes: natural-dye screen printing (mordant or extract paste, steam), block printing, cotton/rayon embroidery (cotton backing or muslin; most cutaways are polyester), discharge (only on reactive/Procion-dyed fabric; confirm Jacquard deColourant SDS has no binder).
@@ -42,8 +48,10 @@ Read this first. Not legal/tax advice. Prices are web research (Nov 2026); "est.
 
 ## Files in repo
 - `docs/report.md` — full research report (also published: https://claude.ai/artifact/XFChP2Bmwv7JcoJgG426N4, slug f4edc7d6-b149-49b7-8038-e73fa9b21271; rebuild HTML from md files and republish).
-- `docs/margin-model.xlsx` — edit blue cells; sheets: Inputs, Scenarios, Self-sewn vs sewer, Decoration options. Built by `tools/build_xlsx.py`; recalc with the xlsx skill's recalc.py.
+- `docs/margin-model.xlsx` — edit blue cells; sheets: Inputs, Scenarios, Self-sewn vs sewer, Decoration options, Other products. Built by `tools/build_xlsx.py`; recalc with the xlsx skill's recalc.py.
 - `docs/decoration-supplies.md` — tools/materials/prices/how-to for natural dye, discharge, embroidery.
+- `docs/other-products.md` — tees, sweatpants, underwear, socks, beanie, dad cap, heavy duck jacket: blend/build, plastic-free problems, sourcing, margins. Workbook sheet "Other products" (blue inputs; margins, price for 50%, break-even, first-run cash).
+- `docs/other-products-equipment.md` — every machine/tool/material with prices + how-to per product; core studio $1,951–3,421 if self-sewn ($342–777 with paid sewer); all products incl. decoration ~$5,890–9,410.
 - `docs/swatch-order-list.md` — fabric/rib/thread swatches to buy and test.
 - `designs/concepts.md` — 40 captions with risk ratings; `designs/sketches/*.svg` + `overview.png` (built by `tools/svgs.py`).
 - Older Claude Docs from a prior session: main points https://claude.ai/artifact/7Ysk53stPEMhTXRDsbfSoN, playbook https://claude.ai/artifact/XxV8rHdC8MJtPCqZPeVC8u, factory kit https://claude.ai/artifact/QQZpmqMPCWcGb6fjaXoUHq (pre-restart; some content outdated).
