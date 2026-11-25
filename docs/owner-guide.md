@@ -44,6 +44,8 @@ What the site can and can't protect:
 
 **Change designs or prices:** edit `tools/designs_data.py` or `tools/build_site.py`, then run `python3 tools/build_site.py`, then `node tools/check_site.js`. Easiest: ask me to do it.
 
+**Foldables and split screen:** `node tools/fold_test.js` checks the Galaxy Fold cover and inner screens, split screen, half-folded and dual screens (it also runs in the GitHub check). Emulation isn't the real phone, so look at big changes on your Fold too.
+
 **Safer bigger changes:** do them on a new branch. Cloudflare gives that branch its own preview link. Check it on your phone, then merge.
 
 ## 5. Your data (backend)

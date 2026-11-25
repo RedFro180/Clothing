@@ -807,3 +807,42 @@ dialog.pd { overflow: hidden; display: flex; flex-direction: column; }
   .ring-sec { padding-top: 4px; }
   .ring { height: 280px; }
 }
+
+/* ================= FOLDABLES + SPLIT SCREEN (2026-11-25) ================= */
+.hero-head .kicker { font-size: max(11.5px, 0.8em); }
+.chip .tag { font-size: 11px; }
+/* near-square open Fold (about 750–1100px wide): 3 columns instead of 2 big ones */
+@media (min-width: 740px) and (max-width: 1100px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* very narrow split screen (a third of the Fold's inner screen): one column */
+@media (max-width: 340px) {
+  .grid { grid-template-columns: 1fr; }
+  .grid .card { max-width: 300px; justify-self: center; width: 100%; }
+}
+/* Dual screens with a hinge (side by side): keep pop-ups on one screen so nothing sits in the fold */
+@media (horizontal-viewport-segments: 2) {
+  dialog.pd, dialog.rv { margin-left: 12px; margin-right: auto; width: calc(env(viewport-segment-width 0 0) - 24px); max-width: none; }
+  #bag { width: env(viewport-segment-width 1 0); max-width: none; } /* the list drawer fills the right-hand screen */
+  dialog.pd .pd-body { grid-template-columns: 1fr; }
+}
+/* Half-folded (Flex mode, top half / bottom half): keep pop-ups in the top half you're looking at */
+@media (vertical-viewport-segments: 2) {
+  dialog.pd, dialog.rv { margin-top: 8px; margin-bottom: auto; max-height: calc(env(viewport-segment-height 0 0) - 16px); }
+  #bag { height: env(viewport-segment-height 0 0); max-height: env(viewport-segment-height 0 0); }
+  dialog.pd .pd-body { max-height: calc(env(viewport-segment-height 0 0) - 16px); }
+}
+/* Short, wide windows (split top/bottom, half-folded, phone sideways): smaller picture so size + Add show sooner */
+@media (max-height: 520px) and (min-width: 600px) {
+  dialog.pd .pd-body { grid-template-columns: minmax(0, .75fr) minmax(0, 1fr); }
+  .pd-img { aspect-ratio: auto; height: calc(100vh - 150px); }
+  .pd-img img { max-height: 100%; width: auto; max-width: 100%; }
+  .g-thumbs button, .g-thumbs .g-thumb { width: 44px; height: 44px; }
+  .pd-info h2 { font-size: 22px; }
+  .pd-info .sg-btn { display: inline-block; margin: 0 28px 0 0; vertical-align: middle; }
+  .pd-info .qty { display: inline-flex; vertical-align: middle; margin: 0; }
+  .pd-info .pd-ship { margin-bottom: 4px; }
+}
+/* Very narrow split screen: keep the list button on one line */
+@media (max-width: 340px) {
+  .bag-btn { white-space: nowrap; letter-spacing: .04em; font-size: 12px; padding-left: 12px; padding-right: 10px; }
+  .top .brand { font-size: 24px; }
+}

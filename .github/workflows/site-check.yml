@@ -2,13 +2,13 @@
 name: Site safety check
 on:
   push:
-    paths: ["site/**", "tools/check_site.js", "tools/customer_runs.js", "tools/abuse_tests.js", "tools/scroll_test.js", ".github/workflows/site-check.yml"]
+    paths: ["site/**", "tools/check_site.js", "tools/customer_runs.js", "tools/abuse_tests.js", "tools/scroll_test.js", "tools/fold_test.js", "tools/screens.js", ".github/workflows/site-check.yml"]
   pull_request:
     paths: ["site/**"]
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,5 +23,9 @@ jobs:
         run: node tools/abuse_tests.js
       - name: Scrolling on 7 screen types (pop-ups, lists, ring, chips)
         run: node tools/scroll_test.js
+      - name: Foldables, dual screens and split screen (layout, full order, fold/unfold, hinge)
+        run: node tools/fold_test.js
+      - name: Scrolling on foldable and split-screen sizes
+        run: node tools/scroll_test.js fold
       - name: 50 simulated shoppers (must finish with no page errors)
         run: node tools/customer_runs.js

@@ -1,12 +1,13 @@
 // Full scrolling test: every scrollable part of the shop, on 7 screen types.
 // Run:  node tools/scroll_test.js        (exit 1 if anything fails)
+//       node tools/scroll_test.js fold   (foldables, dual screens and split screen; see FOLD in screens.js)
 // Checks: page scroll, product pop-up (wheel/finger, top + bottom edges, size guide, "Buy it with" row,
 // opening another product), page locked while any pop-up is open and unlocked after, scroll position kept,
 // preorder list with many items, recently viewed, filter chip rows, spinning ring, back to top, shared link.
 const { chromium, devices } = require("playwright");
 const path = require("path");
 const URL0 = "file://" + path.join(__dirname, "..", "site", "index.html");
-const SCREENS = [
+const SCREENS = process.argv[2] === "fold" ? require("./screens").FOLD : [
   ["desktop 1280", { viewport: { width: 1280, height: 760 } }],
   ["laptop 1366x620", { viewport: { width: 1366, height: 620 } }],
   ["iPad Mini", devices["iPad Mini"]],
@@ -111,6 +112,8 @@ const fails = [], errs = [];
       const vis = await p.evaluate(() => { const r = document.querySelector("#sizeGuide").getBoundingClientRect(), d = document.querySelector("#pdBody").getBoundingClientRect(); return r.bottom <= d.bottom + 1; });
       if (vis) break; await scrollAt(box.x + box.width * 0.75, box.y + box.height * 0.5, 160);
     }
+    // finger/wheel steps can overshoot on very short screens; settle it into place like a reader would
+    await p.evaluate(() => document.querySelector("#sizeGuide").scrollIntoView({ block: "nearest", behavior: "instant" })); await settle();
     ok("size guide scrolls fully into view", await p.evaluate(() => { const r = document.querySelector("#sizeGuide").getBoundingClientRect(), d = document.querySelector("#pdBody").getBoundingClientRect(); return r.top >= d.top - 1 && r.bottom <= d.bottom + 1; }));
     ok("page still with size guide open", (await pageY()) === before);
     // "Buy it with" row swipes sideways if it's wider than the screen
