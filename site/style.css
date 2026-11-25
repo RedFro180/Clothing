@@ -756,3 +756,12 @@ body { font-family: var(--sans); -webkit-font-smoothing: antialiased; }
   .sizes button { height: 40px; }
   .pd-info > #pdAdd, .pd-info > .notify { margin-top: 8px; }
 }
+
+/* ---- order form protections (2026-11-25) ---- */
+.hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.agree { display: flex !important; gap: 10px; align-items: flex-start; font-size: 13.5px; line-height: 1.4; color: #3f382f; }
+.agree input { width: 20px; height: 20px; margin-top: 1px; flex: none; }
+.agree a { color: #1a1714; }
+.order-flag { margin: 0; padding: 10px 14px; border-radius: 14px; background: #f6ece4; border: 1px solid #d9b9a6; font-size: 13.5px; color: #5a2a22; }
+.order-flag[hidden] { display: none; }
+#reqBtn:disabled { opacity: .6; cursor: wait; }

@@ -1,0 +1,17 @@
+# Security headers. Read automatically by Cloudflare Pages and Netlify (same format).
+# If you add a different form service or analytics host, add its domain to connect-src (and form-action).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://us-assets.i.posthog.com https://eu-assets.i.posthog.com; connect-src 'self' https://us.i.posthog.com https://eu.i.posthog.com https://formspree.io; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; form-action 'self' mailto: https://formspree.io; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
+
+/config.js
+  Cache-Control: no-cache
+/products.js
+  Cache-Control: no-cache
+/app.js
+  Cache-Control: no-cache

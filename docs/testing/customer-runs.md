@@ -49,3 +49,16 @@ Fixed:
 | Color chip off-screen | 3 | 3 (minor; row swipes) |
 
 0 page errors. About 7 clicks from landing to preorder request.
+
+## After protection features (rerun 2026-11-25)
+- 50/50 reached a product; 41 preorders + 9 restock requests sent; **0 page errors**. Real shoppers are not blocked by the new checks: bot trap, 2.5-second minimum, final-sale tick box and limits.
+- About 8 clicks from landing to preorder (+1 for the final-sale tick box).
+- Remaining friction: preorders open the email app (needs FORM_ENDPOINT); size guide empty (needs measurements); 3 colour chips off-screen (minor).
+- Abuse tests (`tools/abuse_tests.js`): all passed.
+  - quantity capped at 3, order capped at 8, [LARGE] notice shown
+  - tampered browser storage cleaned
+  - bot trap silently discards; instant submit rejected
+  - missing agreement and bad email rejected
+  - script in the name field never runs
+  - 4th request in 10 minutes blocked
+  - prices always taken from the catalog

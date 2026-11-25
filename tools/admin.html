@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop settings editor</title>
+<style>
+  :root { --ink: #1a1714; --dim: #6b6258; --line: #ddd3c3; --bg: #f4f0e8; --ok: #2f6b3a; --bad: #8f2a25; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: #1a1714; color: #f4f0e8; padding: 14px 20px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0 auto 0 0; }
+  main { max-width: 980px; margin: 0 auto; padding: 20px; display: grid; gap: 18px; }
+  section { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  h2 { margin: 0 0 4px; font-size: 17px; } .hint { color: var(--dim); font-size: 13px; margin: 0 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px 16px; }
+  label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; }
+  label small { font-weight: 400; color: var(--dim); }
+  input[type=text], input[type=email], input[type=url], input[type=number], input[type=search] { height: 40px; padding: 0 12px; border: 1px solid #cbbfab; border-radius: 10px; font: 15px system-ui; }
+  .check { display: flex; gap: 8px; align-items: center; font-weight: 600; }
+  button { height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid #1a1714; background: #1a1714; color: #fff; font: 600 14px system-ui; cursor: pointer; }
+  button.alt { background: #fff; color: #1a1714; }
+  header button.alt { border-color: #f4f0e8; }
+  table { border-collapse: collapse; width: 100%; } td, th { padding: 4px; text-align: left; } td input { width: 90px; }
+  .so-list { display: grid; gap: 6px; max-height: 420px; overflow: auto; border: 1px solid var(--line); border-radius: 12px; padding: 8px; }
+  .so-row { display: grid; grid-template-columns: 52px 1fr auto; gap: 10px; align-items: center; padding: 4px; border-radius: 10px; }
+  .so-row.has { background: #fbefe9; }
+  .so-row img { width: 52px; height: 52px; object-fit: contain; background: #e8e2d6; border-radius: 8px; }
+  .so-sizes { display: flex; gap: 4px; flex-wrap: wrap; }
+  .so-sizes label { display: inline-flex; gap: 3px; align-items: center; font-weight: 500; padding: 2px 6px; border: 1px solid var(--line); border-radius: 8px; }
+  #report { white-space: pre-wrap; font-size: 14px; }
+  #report .e { color: var(--bad); font-weight: 600; } #report .w { color: #8a5a00; } #report .ok { color: var(--ok); font-weight: 600; }
+  textarea { width: 100%; height: 220px; font: 12.5px ui-monospace, Menlo, monospace; border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  ol { margin: 6px 0 0; padding-left: 20px; } li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Shop settings editor</h1>
+  <button type="button" id="checkBtn" class="alt">Check</button>
+  <button type="button" id="copyBtn">Copy new config.js</button>
+  <button type="button" id="dlBtn" class="alt">Download config.js</button>
+</header>
+<main>
+  <section>
+    <h2>How this works</h2>
+    <p class="hint">This page only edits a copy. Nothing on your live site changes until you replace <b>site/config.js</b>.</p>
+    <ol>
+      <li>Change what you want below. Press <b>Check</b>. Fix anything in red.</li>
+      <li>Press <b>Copy new config.js</b>.</li>
+      <li>On GitHub, open <b>site/config.js</b> → pencil (edit) → select all → paste → <b>Commit changes</b>.</li>
+      <li>Your host redeploys in about a minute. If anything looks wrong, use the host's <b>Rollback</b> to the previous version.</li>
+    </ol>
+  </section>
+
+  <section><h2>Brand &amp; contact</h2><p class="hint">Shown in the header, footer, share preview text and emails.</p>
+    <div class="grid">
+      <label>Brand name <input type="text" data-k="BRAND" maxlength="40"></label>
+      <label>Tagline <input type="text" data-k="TAGLINE" maxlength="80"></label>
+      <label>Contact email <input type="email" data-k="CONTACT_EMAIL"></label>
+      <label>Top-row label <small>Keep "Featured" until real sales</small><input type="text" data-k="FEATURED_LABEL" maxlength="24"></label>
+      <label>Instagram link <small>https://instagram.com/…</small><input type="url" data-k="INSTAGRAM"></label>
+      <label>TikTok link <small>https://tiktok.com/@…</small><input type="url" data-k="TIKTOK"></label>
+    </div></section>
+
+  <section><h2>Orders, shipping &amp; protection</h2><p class="hint">Limits stop huge or fake orders. Large orders still come in, marked [LARGE] so you verify before taking payment.</p>
+    <div class="grid">
+      <label>Shipping per order ($) <input type="number" min="0" step="1" data-k="SHIPPING_FLAT" data-num></label>
+      <label>Free shipping at (hoodies) <small>0 = never</small><input type="number" min="0" step="1" data-k="FREE_SHIP_QTY" data-num></label>
+      <label>Max of one design + size <input type="number" min="1" step="1" data-k="MAX_QTY_PER_ITEM" data-num></label>
+      <label>Max hoodies per order <input type="number" min="1" step="1" data-k="MAX_ITEMS_PER_ORDER" data-num></label>
+      <label>Flag as large order at <input type="number" min="1" step="1" data-k="LARGE_ORDER_ITEMS" data-num></label>
+      <label>Order form address <small>Formspree (or similar) link. Empty = email app.</small><input type="url" data-k="FORM_ENDPOINT"></label>
+    </div></section>
+
+  <section><h2>Sold-out sizes</h2><p class="hint">Tick sizes that are out. Shoppers see them crossed out and can ask to be told when they're back.</p>
+    <input type="search" id="soFind" placeholder="Find a design (name or number)" style="width:100%;margin-bottom:8px">
+    <label class="check" style="margin-bottom:8px"><input type="checkbox" id="soOnly"> Only show designs with sold-out sizes</label>
+    <div class="so-list" id="soList"></div></section>
+
+  <section><h2>Size guide (inches, measured flat)</h2><p class="hint">Fill in after your fit sample. Blank shows "Measurements coming soon".</p>
+    <table><thead><tr><th>Size</th><th>Chest</th><th>Length</th><th>Sleeve</th></tr></thead><tbody id="sizeRows"></tbody></table></section>
+
+  <section><h2>Data &amp; extras</h2>
+    <div class="grid">
+      <label>PostHog project key <small>starts with phc_</small><input type="text" data-k="POSTHOG_KEY"></label>
+      <label>PostHog host <input type="url" data-k="POSTHOG_HOST"></label>
+      <label>Spin speed (seconds per turn) <input type="number" min="6" step="1" data-k="HERO_SPEED" data-num></label>
+      <label class="check"><input type="checkbox" data-k="SMS_ENABLED" data-bool> Offer text alerts <small>(only with an SMS tool that records consent)</small></label>
+    </div></section>
+
+  <section><h2>Check results</h2><div id="report">Press Check.</div>
+    <textarea id="out" readonly aria-label="New config.js"></textarea></section>
+</main>
+<script src="../site/config.js"></script>
+<script src="../site/products.js"></script>
+<script>
+{
+  const C = JSON.parse(JSON.stringify(window.SITE_CONFIG || {})), P = (window.CATALOG && window.CATALOG.products) || [];
+  const $ = s => document.querySelector(s);
+  C.SOLD_OUT = C.SOLD_OUT || {}; C.SIZE_CHART = C.SIZE_CHART || [];
+  document.querySelectorAll("[data-k]").forEach(i => {
+    const k = i.dataset.k;
+    if (i.dataset.bool !== undefined) i.checked = !!C[k]; else i.value = C[k] ?? "";
+    i.addEventListener("input", () => { C[k] = i.dataset.bool !== undefined ? i.checked : i.dataset.num !== undefined ? (i.value === "" ? "" : Number(i.value)) : i.value.trim(); build(); });
+  });
+  // size chart
+  const sizes = ["S", "M", "L", "XL", "2XL", "3XL"];
+  sizes.forEach(s => { if (!C.SIZE_CHART.find(r => r.size === s)) C.SIZE_CHART.push({ size: s, chest: "", length: "", sleeve: "" }); });
+  $("#sizeRows").append(...sizes.map(s => {
+    const tr = document.createElement("tr"); const row = C.SIZE_CHART.find(r => r.size === s);
+    const td = document.createElement("td"); td.textContent = s; tr.append(td);
+    for (const f of ["chest", "length", "sleeve"]) { const c = document.createElement("td"), i = document.createElement("input");
+      i.type = "number"; i.step = "0.25"; i.min = "0"; i.value = row[f]; i.setAttribute("aria-label", `${s} ${f}`);
+      i.addEventListener("input", () => { row[f] = i.value; build(); }); c.append(i); tr.append(c); }
+    return tr; }));
+  // sold out list
+  function drawSO() {
+    const q = $("#soFind").value.trim().toLowerCase(), only = $("#soOnly").checked;
+    $("#soList").replaceChildren(...P.filter(p => (!q || String(p.id) === q || p.name.toLowerCase().includes(q)) && (!only || (C.SOLD_OUT[p.id] || []).length)).map(p => {
+      const row = document.createElement("div"); row.className = "so-row" + ((C.SOLD_OUT[p.id] || []).length ? " has" : "");
+      const img = document.createElement("img"); img.src = "../site/" + p.img; img.alt = "";
+      const t = document.createElement("div"); t.textContent = `#${p.id} ${p.name} (${p.color})`;
+      const box = document.createElement("div"); box.className = "so-sizes";
+      p.sizes.forEach(s => { const l = document.createElement("label"), c = document.createElement("input"); c.type = "checkbox";
+        c.checked = (C.SOLD_OUT[p.id] || []).includes(s);
+        c.addEventListener("change", () => { const a = new Set(C.SOLD_OUT[p.id] || []); c.checked ? a.add(s) : a.delete(s);
+          if (a.size) C.SOLD_OUT[p.id] = p.sizes.filter(x => a.has(x)); else delete C.SOLD_OUT[p.id];
+          row.className = "so-row" + (a.size ? " has" : ""); build(); });
+        l.append(c, document.createTextNode(s)); box.append(l); });
+      row.append(img, t, box); return row; }));
+  }
+  $("#soFind").addEventListener("input", drawSO); $("#soOnly").addEventListener("change", drawSO);
+  // output
+  const q = v => JSON.stringify(v);
+  function text() {
+    const so = Object.keys(C.SOLD_OUT).sort((a, b) => a - b).map(k => `${k}: ${q(C.SOLD_OUT[k])}`).join(", ");
+    const chart = C.SIZE_CHART.map(r => `    { size: ${q(r.size)}, chest: ${q(String(r.chest || ""))}, length: ${q(String(r.length || ""))}, sleeve: ${q(String(r.sleeve || ""))} },`).join("\n");
+    return `// Site settings. Made with tools/admin.html on ${new Date().toISOString().slice(0, 10)}. Check with: node tools/check_site.js
+window.SITE_CONFIG = {
+  BRAND: ${q(C.BRAND)},
+  TAGLINE: ${q(C.TAGLINE)},
+  // Keep "Featured" until you have real sales; calling unsold items "best sellers" is a false claim (FTC Act Section 5).
+  FEATURED_LABEL: ${q(C.FEATURED_LABEL)},
+  // Where preorder / notify-me requests go. "" = the shopper's email app opens instead.
+  FORM_ENDPOINT: ${q(C.FORM_ENDPOINT || "")},
+  CONTACT_EMAIL: ${q(C.CONTACT_EMAIL)},
+  CURRENCY: ${q(C.CURRENCY || "USD")},
+  // Social links for the footer. "" hides them.
+  INSTAGRAM: ${q(C.INSTAGRAM || "")},
+  TIKTOK: ${q(C.TIKTOK || "")},
+  // Shipping (dollars per order) and free shipping at this many hoodies (0 = never).
+  SHIPPING_FLAT: ${Number(C.SHIPPING_FLAT) || 0},
+  FREE_SHIP_QTY: ${Number(C.FREE_SHIP_QTY) || 0},
+  // Private analytics (only you see it): PostHog project key.
+  POSTHOG_KEY: ${q(C.POSTHOG_KEY || "")},
+  POSTHOG_HOST: ${q(C.POSTHOG_HOST || "https://us.i.posthog.com")},
+  // Order limits. Large orders are accepted but marked [LARGE] for you to verify before payment.
+  MAX_QTY_PER_ITEM: ${Number(C.MAX_QTY_PER_ITEM) || 3},
+  MAX_ITEMS_PER_ORDER: ${Number(C.MAX_ITEMS_PER_ORDER) || 8},
+  LARGE_ORDER_ITEMS: ${Number(C.LARGE_ORDER_ITEMS) || 4},
+  // Sold-out sizes by design number.
+  SOLD_OUT: { ${so} },
+  // Text alerts: only with an SMS tool that records consent.
+  SMS_ENABLED: ${C.SMS_ENABLED ? "true" : "false"},
+  // Size guide (inches, garment measured flat). Blank = "Measurements coming soon".
+  SIZE_UNITS: ${q(C.SIZE_UNITS || "in")},
+  SIZE_CHART: [
+${chart}
+  ],
+  // The spinning ring shows the Featured hoodies. Seconds for one full turn; bigger = slower.
+  HERO_SPEED: ${Number(C.HERO_SPEED) || 24},
+};
+`;
+  }
+  function check() {
+    const E = [], W = [], ids = new Set(P.map(p => p.id));
+    if (!C.BRAND) E.push("Brand name is empty."); else if (C.BRAND === "Brand Name") W.push("Brand name is still the placeholder.");
+    if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(C.CONTACT_EMAIL || "")) E.push("Contact email isn't valid.");
+    for (const k of ["FORM_ENDPOINT", "INSTAGRAM", "TIKTOK", "POSTHOG_HOST"]) if (C[k] && !/^https:\/\/\S+$/.test(C[k])) E.push(`${k} must start with https://`);
+    for (const k of ["SHIPPING_FLAT", "FREE_SHIP_QTY", "MAX_QTY_PER_ITEM", "MAX_ITEMS_PER_ORDER", "LARGE_ORDER_ITEMS", "HERO_SPEED"])
+      if (C[k] === "" || !(Number(C[k]) >= 0)) E.push(`${k} needs a number.`);
+    if (Number(C.MAX_QTY_PER_ITEM) < 1 || Number(C.MAX_ITEMS_PER_ORDER) < 1) E.push("Order limits must be at least 1.");
+    if (C.POSTHOG_KEY && !/^phc_[A-Za-z0-9]+$/.test(C.POSTHOG_KEY)) E.push("PostHog key should start with phc_.");
+    if (C.FORM_ENDPOINT && !/formspree\.io/.test(C.FORM_ENDPOINT)) W.push("Not a Formspree address: also add its domain to site/_headers (connect-src and form-action).");
+    if (!C.FORM_ENDPOINT) W.push("No order form address: orders open the shopper's email app.");
+    if (/best ?sell/i.test(C.FEATURED_LABEL || "")) W.push("Only say best seller once real sales back it up.");
+    for (const k of Object.keys(C.SOLD_OUT)) if (!ids.has(Number(k))) E.push(`Sold-out design ${k} doesn't exist.`);
+    if (!C.SIZE_CHART.some(r => r.chest || r.length || r.sleeve)) W.push("Size guide has no measurements yet.");
+    return { E, W };
+  }
+  function build() {
+    const { E, W } = check(); $("#out").value = text();
+    const rep = $("#report"); rep.replaceChildren();
+    const line = (cls, t) => { const d = document.createElement("div"); d.className = cls; d.textContent = t; rep.append(d); };
+    E.forEach(e => line("e", "✗ " + e)); W.forEach(w => line("w", "! " + w));
+    line(E.length ? "e" : "ok", E.length ? "Fix the red items before copying." : "Looks good. Copy it and paste into site/config.js on GitHub.");
+    $("#copyBtn").disabled = $("#dlBtn").disabled = !!E.length;
+    return !E.length;
+  }
+  $("#checkBtn").addEventListener("click", build);
+  $("#copyBtn").addEventListener("click", async () => { if (!build()) return; try { await navigator.clipboard.writeText($("#out").value); $("#copyBtn").textContent = "Copied ✓"; } catch { $("#out").select(); document.execCommand("copy"); $("#copyBtn").textContent = "Copied ✓"; } setTimeout(() => $("#copyBtn").textContent = "Copy new config.js", 1800); });
+  $("#dlBtn").addEventListener("click", () => { if (!build()) return; const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([$("#out").value], { type: "text/javascript" })); a.download = "config.js"; a.click(); });
+  drawSO(); build();
+}
+</script>
+</body>
+</html>

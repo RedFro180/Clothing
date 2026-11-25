@@ -1,7 +1,7 @@
 // 50 simulated customer journeys. Each logs actions, clicks, scrolls, timing and friction.
 const { chromium, devices } = require('playwright');
 const fs = require('fs');
-const URL0 = 'file:///home/user/Clothing/site/index.html';
+const URL0 = 'file://' + require('path').join(__dirname, '..', 'site', 'index.html');
 let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647; const pick = a => a[Math.floor(rnd() * a.length)];
 const SEARCHES = ['skull', 'skeleton', 'black', 'gym', 'grief', 'funny', 'coffin', 'reaper', 'sad', 'death', 'pink', 'heavy', 'lift', 'grave', 'bones', 'rot', 'xl', 'zip up', 'mom', 'depression'];
 const PERSONAS = [
@@ -89,14 +89,21 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     let submitted = false, mail = null;
     if (await p.locator('#pd').evaluate(d => d.open)) await p.keyboard.press('Escape');
     const items = Number(await p.textContent('#bagCount'));
+    const flag = await p.evaluate(() => !document.querySelector('#orderFlag').hidden); if (flag) log.push('large-order flag shown');
     if (items > 0) {
       if (!(await p.locator('#bag').evaluate(d => d.open))) await act('open preorder list', () => p.click('#bagBtn'));
       const total = await p.textContent('#bagTotal'); log.push(total.trim());
       if (!/Shipping/.test(total)) friction.push('shipping cost unknown at checkout');
       await act('type name', () => p.fill('#reqForm input[name=name]', 'Test Buyer'));
       await act('type email', () => p.fill('#reqForm input[name=email]', 'buyer@example.com'));
+      const agreeVis = await p.locator('#reqForm input[name=agree]').isVisible(); if (!agreeVis) friction.push('final-sale checkbox not visible');
+      await act('tick final-sale checkbox', () => p.check('#reqForm input[name=agree]'));
+      await p.waitForTimeout(2600);   // real people take a few seconds; instant submits are treated as bots
       await act('send preorder request', () => p.click('#reqForm button[type=submit]')); await p.waitForTimeout(200);
-      mail = /email app/i.test(await p.textContent('#reqMsg')); submitted = true;
+      const rm = await p.textContent('#reqMsg'); mail = /email app/i.test(rm); submitted = /PO-\d{6}-/.test(rm) || mail;
+      if (!submitted) friction.push('preorder not sent: ' + rm.slice(0, 60));
+      const sendVisible = await p.evaluate(() => { const r = document.querySelector('#reqBtn').getBoundingClientRect(); return r.bottom <= innerHeight; });
+      if (!sendVisible) friction.push('Send button below the screen in the list');
       if (mail) friction.push('preorder request opens email app; buyer must press send there');
       const fields = await p.locator('#reqForm input, #reqForm textarea').count(); log.push(`form fields: ${fields}`);
       if (!/size|ship|address/i.test(await p.textContent('#reqForm'))) {}
@@ -116,4 +123,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
   console.log('first screen (phone) products visible:', runs.filter(r => r.device === 'phone').map(r => r.firstScreen.products).join(','));
   console.log('friction counts:'); Object.entries(f).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => console.log('  ' + v + '× ' + k));
   const s = {}; runs.filter(r => r.persona === 'search').forEach(r => { const q = r.log.find(x => x.startsWith('search')); const n = r.log.find(x => x.startsWith('results')); s[q] = n; }); console.log('searches:', s);
-  await b.close(); })();
+  const errCount = runs.reduce((a, r) => a + r.errs.length, 0), sent = runs.filter(r => r.submitted).length;
+  await b.close();
+  if (errCount || sent < 35) { console.log('FAILED: page errors or too few completed orders'); process.exit(1); }
+})();

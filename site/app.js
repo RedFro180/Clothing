@@ -19,6 +19,10 @@
     if (!f) return "Free shipping";
     return q ? `${money(f)} shipping · free when you get ${q}+` : `${money(f)} shipping`;
   };
+  const MAXQ = Math.max(1, Number(C.MAX_QTY_PER_ITEM) || 3), MAXN = Math.max(1, Number(C.MAX_ITEMS_PER_ORDER) || 8);
+  const LARGE = Number(C.LARGE_ORDER_ITEMS) || 4;
+  const clampQ = n => Math.max(1, Math.min(MAXQ, parseInt(n, 10) || 1));
+  const safeUrl = u => /^https:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : "";
   const byId = Object.fromEntries(P.map(p => [p.id, p]));
   const bySlug = Object.fromEntries(P.map(p => [p.slug, p]));
 
@@ -222,6 +226,7 @@
         email, el("button", { class: "btn", type: "submit", text: "Notify me" })), msg);
   }
 
+  $("#filters").addEventListener("submit", e => e.preventDefault());
   [fCat, fTheme, fColor, fSort].forEach(s => s.addEventListener("change", render));
   let t, ts; fSearch.addEventListener("input", () => { clearTimeout(t); t = setTimeout(render, 150);
     clearTimeout(ts); ts = setTimeout(() => fSearch.value.trim() && track("search", { q: fSearch.value.trim(), results: $("#grid").querySelectorAll(".card").length }), 1200); });
@@ -309,7 +314,8 @@
       onclick: e => {
         if (!size) { $("#pdMsg").textContent = "Pick a size first, then tap + Add."; return; }
         if (soldOut(q, size)) { e.currentTarget.textContent = `${size} sold out`; return; }
-        addToBag(q.id, size, 1, "buy_it_with"); e.currentTarget.textContent = "Added ✓"; e.currentTarget.disabled = true;
+        if (!addToBag(q.id, size, 1, "buy_it_with")) return;
+        e.currentTarget.textContent = "Added ✓"; e.currentTarget.disabled = true;
         $("#pdMsg").textContent = `Added ${q.name} (${size}). `;
         $("#pdMsg").append(el("button", { class: "link", type: "button", text: "View list", onclick: () => { pd.close(); openBag(); } }));
       } }))));
@@ -412,9 +418,10 @@
   pd.addEventListener("close", () => { if (bySlug[location.hash.slice(1)]) history.replaceState(null, "", location.pathname + location.search); });
   $("#pdAdd").addEventListener("click", () => {
     if (!size) { $("#pdMsg").textContent = "Pick a size first."; return; }
-    const n = Math.max(1, Math.min(20, parseInt($("#pdQty").value, 10) || 1));
-    addToBag(cur.id, size, n);
-    $("#pdMsg").textContent = `Added ${n} × ${size}. `;
+    const n = clampQ($("#pdQty").value);
+    const before = bagQty();
+    if (!addToBag(cur.id, size, n)) return;
+    $("#pdMsg").textContent = `Added ${bagQty() - before} × ${size}. `;
     $("#pdMsg").append(el("button", { class: "link", type: "button", text: "View list", onclick: () => { pd.close(); openBag(); } }));
   });
   $("#pdShare").addEventListener("click", async () => {
@@ -438,14 +445,22 @@
   const KEY = "preorder-list-v1";
   let bag = [];
   try { bag = JSON.parse(localStorage.getItem(KEY)) || []; } catch { bag = []; }
-  bag = bag.filter(i => byId[i.id]);
+  bag = (Array.isArray(bag) ? bag : []).filter(i => i && byId[i.id] && byId[i.id].sizes.includes(i.size))
+    .map(i => ({ id: i.id, size: i.size, qty: clampQ(i.qty) }));
+  while (bag.reduce((s, i) => s + i.qty, 0) > MAXN) { const last = bag[bag.length - 1]; if (last.qty > 1) last.qty--; else bag.pop(); }
+  function limitMsg(t) { const m = $("#pd").open ? $("#pdMsg") : $("#reqMsg"); m.textContent = t; }
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch {} updateCount(); };
   const updateCount = () => { $("#bagCount").textContent = bag.reduce((s, i) => s + i.qty, 0); };
+  const bagQty = () => bag.reduce((s, i) => s + i.qty, 0);
   function addToBag(id, sz, n, from) {
+    const room = MAXN - bagQty();
+    const hit0 = bag.find(i => i.id === id && i.size === sz);
+    n = Math.min(n, room, MAXQ - (hit0 ? hit0.qty : 0));
+    if (n <= 0) { limitMsg(hit0 && hit0.qty >= MAXQ ? `Limit is ${MAXQ} of the same hoodie and size.` : `Limit is ${MAXN} hoodies per order. Email us for bigger orders.`); return false; }
     track("added_to_list", { id, name: byId[id].name, size: sz, qty: n, from: from || "product" });
     const hit = bag.find(i => i.id === id && i.size === sz);
-    if (hit) hit.qty = Math.min(20, hit.qty + n); else bag.push({ id, size: sz, qty: n });
-    save();
+    if (hit) hit.qty = Math.min(MAXQ, hit.qty + n); else bag.push({ id, size: sz, qty: n });
+    save(); return true;
   }
   const bagEl = $("#bag");
   function shipping(qty, subtotal) {
@@ -462,8 +477,8 @@
         el("div", { class: "tile" + (p.light ? " dark" : "") }, el("img", { src: p.img, alt: "" })),
         el("div", {}, el("h3", { text: p.name }), el("p", { text: `${p.color} · Size ${i.size} · ${money(p.price)}` }),
           el("button", { class: "link", type: "button", text: "Remove", onclick: () => { bag.splice(idx, 1); save(); drawBag(); } })),
-        el("input", { type: "number", min: 1, max: 20, value: i.qty, "aria-label": `Quantity for ${p.name}`,
-          onchange: e => { i.qty = Math.max(1, Math.min(20, parseInt(e.target.value, 10) || 1)); save(); drawBag(); } })));
+        el("input", { type: "number", min: 1, max: MAXQ, value: i.qty, "aria-label": `Quantity for ${p.name}`,
+          onchange: e => { const others = bagQty() - i.qty; i.qty = Math.min(clampQ(e.target.value), MAXN - others); save(); drawBag(); } })));
     });
     const sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0), qty = bag.reduce((s, i) => s + i.qty, 0);
     const ship = shipping(qty, sub), need = C.FREE_SHIP_QTY ? C.FREE_SHIP_QTY - qty : 0;
@@ -475,44 +490,88 @@
       el("div", { class: "sum total" }, el("span", { text: "Estimated total" }), el("span", { text: money(sub + ship) })),
       el("p", { class: "note", text: "Nothing is charged now." })] : []));
     $("#reqForm").hidden = !bag.length;
+    const qn = bagQty();
+    $("#orderFlag").hidden = qn < LARGE;
+    $("#orderFlag").textContent = qn >= MAXN ? `That's the most per order (${MAXN}). For bigger orders, email ${C.CONTACT_EMAIL}.`
+      : `Large order (${qn} hoodies): we'll confirm by email before sending a payment link.`;
   }
   $("#bagNote").textContent = `No payment now. Send the list and we'll email a ship date and payment link. Or email ${C.CONTACT_EMAIL} directly.`;
-  function openBag() { drawBag(); $("#reqMsg").textContent = ""; bagEl.showModal(); }
+  function openBag() { drawBag(); $("#reqMsg").textContent = ""; formOpenedAt = Date.now(); bagEl.showModal(); }
   $("#bagBtn").addEventListener("click", openBag);
 
+  // ---------- preorder request: anti-spam, limits, order id, evidence for disputes ----------
+  let formOpenedAt = 0;
+  const POLICY = "All sales are final. Check the size chart before ordering. If we send the wrong item or it's lost or damaged in shipping, email us within 7 days and we'll fix it.";
+  function catalogStamp() {   // short fingerprint of prices so you can spot an edited order
+    let h = 0; const s = P.map(p => p.id + ":" + p.price).join("|");
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+    return h.toString(36);
+  }
+  function orderId() {
+    const d = new Date(), r = Math.random().toString(36).slice(2, 6).toUpperCase();
+    return `PO-${d.getFullYear() % 100}${String(d.getMonth() + 1).padStart(2, "0")}${String(d.getDate()).padStart(2, "0")}-${r}`;
+  }
+  function rateOk() {   // max 3 requests per 10 minutes from this browser
+    const now = Date.now(), win = 10 * 60 * 1000;
+    let log = []; try { log = JSON.parse(localStorage.getItem("req-log")) || []; } catch {}
+    log = log.filter(t => now - t < win);
+    if (log.length >= 3) return false;
+    log.push(now); try { localStorage.setItem("req-log", JSON.stringify(log)); } catch {}
+    return true;
+  }
+  const emailOk = s => /^[^\s@]{1,64}@[^\s@]{1,190}\.[a-z]{2,24}$/i.test(String(s || "").trim());
   $("#reqForm").addEventListener("submit", e => {
     e.preventDefault();
-    const f = new FormData(e.target);
-    const items = bag.map(i => `${i.qty} x #${i.id} ${byId[i.id].name} (${byId[i.id].color}, ${i.size})`);
-    const qty = bag.reduce((s, i) => s + i.qty, 0), sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0);
-    trackPurchase(bag.map(i => ({ id: i.id, name: byId[i.id].name, size: i.size, qty: i.qty })), sub, shipping(qty, sub));
-    send({ type: "preorder", name: f.get("name"), email: f.get("email"), note: f.get("note"), items: items.join("\n"),
-      shipping: money(shipping(qty, sub)), total: money(sub + shipping(qty, sub)) }, $("#reqMsg"),
-      () => { bag = []; save(); drawBag(); });
+    const f = new FormData(e.target), msg = $("#reqMsg"), btn = $("#reqBtn");
+    if (btn.disabled) return;
+    if (f.get("_gotcha")) { msg.textContent = "Sent."; return; }                       // bot filled the hidden field: pretend, send nothing
+    if (Date.now() - formOpenedAt < 2500) { msg.textContent = "Please check your details, then send."; return; }  // instant submits are bots
+    const name = String(f.get("name") || "").trim().slice(0, 80), email = String(f.get("email") || "").trim().slice(0, 120);
+    const note = String(f.get("note") || "").trim().slice(0, 500);
+    if (name.length < 2) { msg.textContent = "Please enter your name."; return; }
+    if (!emailOk(email)) { msg.textContent = "Please enter a valid email."; return; }
+    if (!f.get("agree")) { msg.textContent = "Please confirm you checked the size guide."; return; }
+    if (!bag.length) return;
+    if (!rateOk()) { msg.textContent = `Too many requests from this device. Try again in a few minutes or email ${C.CONTACT_EMAIL}.`; return; }
+    const qty = bagQty(), sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0), ship = shipping(qty, sub);
+    const id = orderId(), large = qty >= LARGE;
+    const items = bag.map(i => `${i.qty} x #${i.id} ${byId[i.id].name} (${byId[i.id].color}, ${i.size}) @ ${money(byId[i.id].price)}`);
+    trackPurchase(bag.map(i => ({ id: i.id, name: byId[i.id].name, size: i.size, qty: i.qty })), sub, ship);
+    btn.disabled = true;
+    send({ type: "preorder", order_id: id, large_order: large ? "YES - verify before taking payment" : "no",
+      name, email, note, items: items.join("\n"), item_count: qty,
+      subtotal: money(sub), shipping: money(ship), total: money(sub + ship), price_check: catalogStamp(),
+      agreed_to: POLICY, agreed_at: new Date().toISOString(), page: location.href.split("#")[0],
+      _subject: `${large ? "[LARGE] " : ""}Preorder ${id} from ${name}` }, msg,
+      () => { bag = []; save(); drawBag(); msg.textContent = `Sent. Your order number is ${id}. We'll email ${email} with a ship date and payment link.`; });
+    setTimeout(() => { btn.disabled = false; }, 4000);
   });
 
   // ---------- sending requests ----------
   async function send(data, msg, done) {
-    if (C.FORM_ENDPOINT) {
+    const endpoint = safeUrl(C.FORM_ENDPOINT);
+    if (endpoint) {
       msg.textContent = "Sending…";
       try {
-        const r = await fetch(C.FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+        const r = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
         if (!r.ok) throw new Error(r.status);
         msg.textContent = "Sent. We'll email you."; done && done();
       } catch { msg.textContent = `Couldn't send. Email ${C.CONTACT_EMAIL} instead.`; }
       return;
     }
     // no form service set up: open the visitor's email app with everything filled in
-    const subject = data.type === "preorder" ? `Preorder request from ${data.name}` : `Notify me: ${data.product}`;
-    const body = Object.entries(data).filter(([k]) => k !== "type").map(([k, v]) => `${k}: ${v}`).join("\n");
+    const subject = data._subject || (data.type === "restock" ? `Restock alert: ${data.product} ${data.size}` : `Notify me: ${data.product}`);
+    const body = Object.entries(data).filter(([k]) => k !== "type" && !k.startsWith("_")).map(([k, v]) => `${k}: ${v}`).join("\n");
     location.href = `mailto:${C.CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    msg.textContent = `Your email app should open. If not, email ${C.CONTACT_EMAIL}.`;
+    msg.textContent = data.order_id
+      ? `Your email app should open with order ${data.order_id}. Press Send there to finish. If it doesn't open, email ${C.CONTACT_EMAIL}.`
+      : `Your email app should open. If not, email ${C.CONTACT_EMAIL}.`;
   }
 
   // ---------- footer: drop alerts + social links ----------
   $("#dropForm").addEventListener("submit", e => { e.preventDefault();
     send({ type: "notify", product: "Drop alerts", email: e.target.querySelector("input").value }, $("#dropMsg")); });
-  const soc = [["Instagram", C.INSTAGRAM], ["TikTok", C.TIKTOK]].filter(([, u]) => u);
+  const soc = [["Instagram", safeUrl(C.INSTAGRAM)], ["TikTok", safeUrl(C.TIKTOK)]].filter(([, u]) => u);
   $("#social").append(...soc.map(([n, u]) => el("a", { href: u, rel: "noopener", text: n })));
 
   $("#heroShip").textContent = shipLine();

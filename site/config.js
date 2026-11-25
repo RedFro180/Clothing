@@ -16,6 +16,10 @@ window.SITE_CONFIG = {
   // Private analytics (only you see it). Make a free PostHog account, copy the "Project API key", paste it here.
   POSTHOG_KEY: "",
   POSTHOG_HOST: "https://us.i.posthog.com",
+  // Order limits (protect against huge or fake orders). Large orders are still accepted but marked for you to check.
+  MAX_QTY_PER_ITEM: 3,                 // most of one design + size a shopper can add
+  MAX_ITEMS_PER_ORDER: 8,              // most hoodies in one preorder request
+  LARGE_ORDER_ITEMS: 4,                // at this many hoodies the request is flagged "large order: verify before payment"
   // Sizes that are out of stock, by design number (the number at the start of each image name).
   // Example: SOLD_OUT: { 11: ["S", "3XL"], 27: ["M"] }. Shoppers can ask to be told when it's back.
   SOLD_OUT: {},
