@@ -905,7 +905,7 @@ dialog.pd { overflow: hidden; display: flex; flex-direction: column; }
    Arrows removed: swipe, tapping a side hoodie, and keyboard arrows still turn or open everything. */
 .ring-ctrl { position: absolute; right: max(20px, calc((100% - var(--wrap)) / 2)); bottom: 12px; margin: 0 !important; z-index: 5; display: block; }
 .ring-ctrl button#ringPause { position: relative; width: 30px !important; height: 30px !important; padding: 0; border-radius: 50%;
-  display: grid; place-items: center; font-size: 9px; letter-spacing: -1px; line-height: 1;
+  display: grid; place-items: center; font-size: 11px; letter-spacing: -1.5px; line-height: 1;
   background: rgba(15,13,12,.45) !important; border: 1px solid rgba(236,229,216,.28) !important; color: rgba(236,229,216,.7) !important;
   box-shadow: none !important; opacity: .75; transition: opacity .2s, border-color .2s; }
 .ring-ctrl button#ringPause::before { content: ""; position: absolute; inset: -8px; border-radius: 50%; }   /* 46px tap area */
