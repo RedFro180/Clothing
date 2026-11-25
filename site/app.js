@@ -35,25 +35,53 @@
         el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), p.color)));
   }
 
-  // ---------- spotlight strip: hoodies from config HERO_ROTATION glide slowly, no text ----------
-  (function strip() {
-    const track = $("#stripTrack"); if (!track) return;
-    const ids = (C.HERO_ROTATION && C.HERO_ROTATION.length ? C.HERO_ROTATION : P.filter(p => p.featured).map(p => p.id));
-    const list = ids.map(id => byId[id]).filter(Boolean);
-    if (!list.length) { track.closest(".hero-strip").hidden = true; return; }
-    const box = (p, copy) => el("button", { class: "strip-box", type: "button", "aria-label": `${p.name}, ${p.color}. View`,
-        tabindex: copy ? -1 : 0, "aria-hidden": copy ? "true" : false, onclick: () => openProduct(p) },
-      el("div", { class: "tile" + (p.light ? " dark" : "") }, el("img", { src: p.img, alt: copy ? "" : `${p.color} hoodie: ${p.name}`, width: 560, height: 570 })));
-    track.append(...list.map(p => box(p, false)), ...list.map(p => box(p, true)));   // second copy makes the loop seamless
-    track.style.animationDuration = (Number(C.HERO_SPEED) || 60) + "s";
+  // ---------- featured ring: featured hoodies standing in a slowly turning 3-D circle ----------
+  (function ring() {
+    const box = $("#ring"); if (!box) return;
+    const list = P.filter(p => p.featured).sort((a, b) => a.featured - b.featured);
+    if (!list.length) { box.closest(".ring-sec").hidden = true; return; }
+    const N = list.length, step = Math.PI * 2 / N;
+    const items = list.map(p => el("button", { class: "ring-card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. View`, onclick: () => openProduct(p) },
+      el("div", { class: "tile" + (p.light ? " dark" : "") }, el("img", { src: p.img, alt: `${p.color} hoodie: ${p.name}`, width: 560, height: 570 })),
+      el("p", { class: "price", text: money(p.price) })));
+    box.append(...items);
+    const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const speed = (Math.PI * 2) / ((Number(C.HERO_SPEED) || 40) * 1000);   // radians per ms
+    let angle = 0, target = null, paused = false, last = 0;
+    function place() {
+      const W = box.clientWidth, R = Math.min(W * (W < 600 ? 0.44 : 0.36), 520), lift = Math.min(W * 0.05, 46);
+      items.forEach((it, i) => {
+        const t = angle + i * step, x = Math.sin(t) * R, z = Math.cos(t);       // z: 1 front, -1 back
+        const s = 0.55 + 0.45 * (z + 1) / 2;
+        it.style.transform = `translate(-50%, -50%) translate3d(${x.toFixed(1)}px, ${(z * lift).toFixed(1)}px, 0) scale(${s.toFixed(3)})`;
+        it.style.zIndex = String(Math.round((z + 1) * 50));
+        it.style.filter = `brightness(${(0.45 + 0.55 * (z + 1) / 2).toFixed(3)}) saturate(${(0.6 + 0.4 * (z + 1) / 2).toFixed(3)})`;
+        it.tabIndex = z > 0.7 ? 0 : -1;
+        it.classList.toggle("front", z > 0.97);
+      });
+    }
+    function turn(dir) {   // step to the next/previous hoodie
+      const k = Math.round(-angle / step) + dir; target = -k * step;
+    }
+    function frame(now) {
+      const dt = last ? Math.min(now - last, 50) : 16; last = now;
+      if (target !== null) {
+        const d = target - angle; angle += d * 0.12; if (Math.abs(d) < 0.002) { angle = target; target = null; }
+      } else if (!still && !paused && !document.hidden) angle -= speed * dt;
+      place(); requestAnimationFrame(frame);
+    }
+    $("#ringPrev").addEventListener("click", () => turn(-1));
+    $("#ringNext").addEventListener("click", () => turn(1));
+    const sec = box.closest(".ring-sec");
+    sec.addEventListener("mouseenter", () => paused = true); sec.addEventListener("mouseleave", () => paused = false);
+    sec.addEventListener("focusin", () => paused = true); sec.addEventListener("focusout", () => paused = false);
+    let sx = null, swiped = false;
+    box.addEventListener("pointerdown", e => { sx = e.clientX; swiped = false; });
+    box.addEventListener("pointerup", e => { if (sx !== null && Math.abs(e.clientX - sx) > 40) { swiped = true; turn(e.clientX < sx ? 1 : -1); } sx = null; });
+    box.addEventListener("click", e => { if (swiped) { e.stopPropagation(); e.preventDefault(); swiped = false; } }, true);
+    window.addEventListener("resize", place);
+    place(); requestAnimationFrame(frame);
   })();
-
-  // ---------- featured row ----------
-  const feat = P.filter(p => p.featured).sort((a, b) => a.featured - b.featured);
-  $("#featRow").append(...feat.map(card));
-  document.querySelectorAll("[data-scroll]").forEach(b => b.addEventListener("click", () => {
-    const row = $("#featRow"); row.scrollBy({ left: Number(b.dataset.scroll) * row.clientWidth * 0.8, behavior: "smooth" });
-  }));
 
   // ---------- filters ----------
   const fCat = $("#fCat"), fTheme = $("#fTheme"), fColor = $("#fColor"), fSort = $("#fSort"), fSearch = $("#fSearch");
