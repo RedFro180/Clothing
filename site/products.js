@@ -46,7 +46,7 @@ window.CATALOG = {
   {
    "id": 2,
    "slug": "meat-bone-nothing-else",
-   "name": "Meat. bone. nothing else.",
+   "name": "Meat. Bone. Nothing else.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -466,7 +466,7 @@ window.CATALOG = {
   {
    "id": 12,
    "slug": "lift-heavy-carry-heavy",
-   "name": "Lift heavy things. carry heavy thoughts. put both down sometimes.",
+   "name": "Lift heavy things. Carry heavy thoughts. Put both down sometimes.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -550,7 +550,7 @@ window.CATALOG = {
   {
    "id": 14,
    "slug": "225-it-helps",
-   "name": "225 lbs. it helps.",
+   "name": "225 lbs. It helps.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -676,7 +676,7 @@ window.CATALOG = {
   {
    "id": 17,
    "slug": "embalmed-zipped-forgotten",
-   "name": "Embalmed. zipped. forgotten.",
+   "name": "Embalmed. Zipped. Forgotten.",
    "sub": "",
    "type": "hoodie",
    "theme": "morgue",
@@ -886,7 +886,7 @@ window.CATALOG = {
   {
    "id": 22,
    "slug": "sweat-tears-dread-repeat",
-   "name": "Sweat. tears. dread. repeat.",
+   "name": "Sweat. Tears. Dread. Repeat.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -928,7 +928,7 @@ window.CATALOG = {
   {
    "id": 23,
    "slug": "ashes-to-ashes",
-   "name": "Ashes to ashes. dust to dust.",
+   "name": "Ashes to ashes. Dust to dust.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -970,7 +970,7 @@ window.CATALOG = {
   {
    "id": 24,
    "slug": "ask-me-how-im-doing",
-   "name": "Ask me how i'm really doing.",
+   "name": "Ask me how I'm really doing.",
    "sub": "",
    "type": "hoodie",
    "theme": "anatomy",
@@ -1138,7 +1138,7 @@ window.CATALOG = {
   {
    "id": 28,
    "slug": "still-moving-already-rotting",
-   "name": "Still moving. already rotting.",
+   "name": "Still moving. Already rotting.",
    "sub": "",
    "type": "hoodie",
    "theme": "rot",
@@ -1180,7 +1180,7 @@ window.CATALOG = {
   {
    "id": 29,
    "slug": "everything-hurts",
-   "name": "Everything hurts and i'm still here",
+   "name": "Everything hurts and I'm still here",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -1306,7 +1306,7 @@ window.CATALOG = {
   {
    "id": 32,
    "slug": "meat-bone-spite",
-   "name": "Meat. bone. spite.",
+   "name": "Meat. Bone. Spite.",
    "sub": "",
    "type": "hoodie",
    "theme": "anatomy",
@@ -1390,7 +1390,7 @@ window.CATALOG = {
   {
    "id": 34,
    "slug": "pine-box-final-address",
-   "name": "Pine box. final address.",
+   "name": "Pine box. Final address.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -1516,7 +1516,7 @@ window.CATALOG = {
   {
    "id": 37,
    "slug": "pain-is-real-so-are-we",
-   "name": "The pain is real. so are we.",
+   "name": "The pain is real. So are we.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -1558,7 +1558,7 @@ window.CATALOG = {
   {
    "id": 38,
    "slug": "hold-the-weight",
-   "name": "Hold the weight. hold each other.",
+   "name": "Hold the weight. Hold each other.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -1600,7 +1600,7 @@ window.CATALOG = {
   {
    "id": 39,
    "slug": "brain-haunted-body-lifting",
-   "name": "Brain: haunted. body: lifting. spirit: unclear.",
+   "name": "Brain: haunted. Body: lifting. Spirit: unclear.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -1768,7 +1768,7 @@ window.CATALOG = {
   {
    "id": 43,
    "slug": "six-feet-no-more",
-   "name": "Six feet. no more.",
+   "name": "Six feet. No more.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -1894,7 +1894,7 @@ window.CATALOG = {
   {
    "id": 46,
    "slug": "sore-and-haunted",
-   "name": "Sore from yesterday. haunted from childhood.",
+   "name": "Sore from yesterday. Haunted from childhood.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -2146,7 +2146,7 @@ window.CATALOG = {
   {
    "id": 52,
    "slug": "chalk-hands-grave-dirt",
-   "name": "Chalk on my hands. grave dirt on my boots.",
+   "name": "Chalk on my hands. Grave dirt on my boots.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -2524,7 +2524,7 @@ window.CATALOG = {
   {
    "id": 61,
    "slug": "warm-up-small-talk",
-   "name": "Warm-up set: small talk. working set: the truth.",
+   "name": "Warm-up set: small talk. Working set: the truth.",
    "sub": "",
    "type": "hoodie",
    "theme": "iron",
@@ -2608,7 +2608,7 @@ window.CATALOG = {
   {
    "id": 63,
    "slug": "iron-never-asks",
-   "name": "The iron never asks if i'm okay.",
+   "name": "The iron never asks if I'm okay.",
    "sub": "you can.",
    "type": "hoodie",
    "theme": "iron",
@@ -2776,7 +2776,7 @@ window.CATALOG = {
   {
    "id": 67,
    "slug": "grief-unprocessed",
-   "name": "Grief. unprocessed. unfinished.",
+   "name": "Grief. Unprocessed. Unfinished.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -2860,7 +2860,7 @@ window.CATALOG = {
   {
    "id": 69,
    "slug": "preserved-not-saved",
-   "name": "Preserved. not saved.",
+   "name": "Preserved. Not saved.",
    "sub": "",
    "type": "hoodie",
    "theme": "morgue",
@@ -3070,7 +3070,7 @@ window.CATALOG = {
   {
    "id": 74,
    "slug": "cracked-still-standing",
-   "name": "Cracked. still standing.",
+   "name": "Cracked. Still standing.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -3280,7 +3280,7 @@ window.CATALOG = {
   {
    "id": 79,
    "slug": "still-here-still-haunted",
-   "name": "Still here. still haunted.",
+   "name": "Still here. Still haunted.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -3364,7 +3364,7 @@ window.CATALOG = {
   {
    "id": 81,
    "slug": "breathing-tired-here",
-   "name": "Breathing. tired. here.",
+   "name": "Breathing. Tired. Here.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -3406,7 +3406,7 @@ window.CATALOG = {
   {
    "id": 82,
    "slug": "born-screaming-buried-quiet",
-   "name": "Born screaming. buried quiet.",
+   "name": "Born screaming. Buried quiet.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -3448,7 +3448,7 @@ window.CATALOG = {
   {
    "id": 83,
    "slug": "cemetery-quiet-gym-loud",
-   "name": "Cemetery quiet. gym loud.",
+   "name": "Cemetery quiet. Gym loud.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -3490,7 +3490,7 @@ window.CATALOG = {
   {
    "id": 84,
    "slug": "haunted-they-spot-me",
-   "name": "Haunted by everyone i've lost.",
+   "name": "Haunted by everyone I've lost.",
    "sub": "",
    "type": "hoodie",
    "theme": "grief",
@@ -3784,7 +3784,7 @@ window.CATALOG = {
   {
    "id": 91,
    "slug": "decomposition-is-long",
-   "name": "Life is short. decomposition is long.",
+   "name": "Life is short. Decomposition is long.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",
@@ -3826,7 +3826,7 @@ window.CATALOG = {
   {
    "id": 92,
    "slug": "organs-bones-nothing",
-   "name": "Organs. bones. nothing else.",
+   "name": "Organs. Bones. Nothing else.",
    "sub": "",
    "type": "hoodie",
    "theme": "anatomy",
@@ -3868,7 +3868,7 @@ window.CATALOG = {
   {
    "id": 93,
    "slug": "built-heavy-buried-heavier",
-   "name": "Built heavy. buried heavier.",
+   "name": "Built heavy. Buried heavier.",
    "sub": "",
    "type": "hoodie",
    "theme": "grave",

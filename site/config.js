@@ -10,6 +10,9 @@ window.SITE_CONFIG = {
   FORM_ENDPOINT: "",
   CONTACT_EMAIL: "hello@example.com",  // replace with your shop email
   CURRENCY: "USD",
+  // Social links for the footer. Leave "" to hide.
+  INSTAGRAM: "",
+  TIKTOK: "",
   // Size guide shown on every product. Fill in the numbers (garment measured flat). Blank = "Measurements coming soon".
   SIZE_UNITS: "in",
   SIZE_CHART: [

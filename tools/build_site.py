@@ -53,8 +53,12 @@ def theme_for(d):
     return "grief"
 
 def title_case(lines):
-    s = " ".join(lines).strip()
-    return s[0] + s[1:].lower()
+    """Sentence case: capitalize each sentence start and the word I (I'm, I'll, I've)."""
+    import re
+    s = " ".join(lines).strip().lower()
+    s = re.sub(r"(^|(?<!a\.m)(?<!p\.m)[.!?]\s+)([a-z])", lambda m: m.group(1) + m.group(2).upper(), s)
+    s = re.sub(r"\bi\b", "I", s)
+    return s
 
 def lum(hexc):
     return sum(int(hexc[i:i + 2], 16) for i in (1, 3, 5))

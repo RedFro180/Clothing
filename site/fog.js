@@ -46,14 +46,14 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     buf = offscreen(Math.ceil(W / 2), Math.ceil(H / 2)); bx = buf.getContext("2d"); bx.setTransform(0.5, 0, 0, 0.5, 0, 0);
     if (!sprites.length) {
-      sprites = [makeSprite("236,229,216"), makeSprite("236,229,216"), makeSprite("214,200,180"), makeSprite("150,50,45")];
+      sprites = [makeSprite("200,190,175"), makeSprite("180,170,155"), makeSprite("170,160,145"), makeSprite("140,50,45")];
       grains = [makeGrain(), makeGrain(), makeGrain()];
     }
     const M = Math.max(W, H);
-    plumes = Array.from({ length: 7 }, (_, i) => ({
-      sp: sprites[i === 6 ? 3 : i % 3], x: rnd(-0.2, 1.2) * W, y: rnd(-0.1, 1.1) * H,
-      size: M * rnd(0.55, 1.1), vx: rnd(0.004, 0.012) * (Math.random() < 0.5 ? -1 : 1), vy: rnd(-0.006, -0.002),
-      rot: rnd(0, 6.28), vr: rnd(-0.00003, 0.00003), alpha: i === 6 ? 0.5 : rnd(0.35, 0.7), par: rnd(0.04, 0.14),
+    plumes = Array.from({ length: 5 }, (_, i) => ({
+      sp: sprites[i === 4 ? 3 : i % 3], x: rnd(-0.2, 1.2) * W, y: rnd(-0.1, 1.1) * H,
+      size: M * rnd(0.9, 1.5), vx: rnd(0.004, 0.012) * (Math.random() < 0.5 ? -1 : 1), vy: rnd(-0.006, -0.002),
+      rot: rnd(0, 6.28), vr: rnd(-0.00003, 0.00003), alpha: i === 4 ? 0.35 : rnd(0.16, 0.26), par: rnd(0.04, 0.14),
     }));
     if (still) frame(0);
   }

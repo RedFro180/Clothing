@@ -27,8 +27,7 @@
     return el("button", { class: "card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}`, onclick: () => openProduct(p) },
       el("div", { class: "tile" + (p.light ? " dark" : "") },
         el("img", { src: p.img, alt: `${p.color} hoodie, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570 }),
-        p.featured ? el("span", { class: "badge", text: C.FEATURED_LABEL }) : null,
-        el("span", { class: "place", text: p.placement.replace(" print", "") })),
+),
       el("p", { class: "price", text: money(p.price) }),
       el("h3", { text: p.name }),
       el("div", { class: "row" },
@@ -207,7 +206,7 @@
     cur = p; size = null;
     gallery(p);
     $("#sizeGuide").hidden = true; $("#sgBtn").setAttribute("aria-expanded", "false");
-    $("#pdMeta").textContent = `${CAT.themes[p.theme]} · ${p.placement}`;
+    $("#pdMeta").textContent = [p.featured ? C.FEATURED_LABEL : "", CAT.themes[p.theme], p.placement].filter(Boolean).join(" · ");
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
     $("#pdPrice").textContent = money(p.price);
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
@@ -353,6 +352,12 @@
     location.href = `mailto:${C.CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     msg.textContent = `Your email app should open. If not, email ${C.CONTACT_EMAIL}.`;
   }
+
+  // ---------- footer: drop alerts + social links ----------
+  $("#dropForm").addEventListener("submit", e => { e.preventDefault();
+    send({ type: "notify", product: "Drop alerts", email: e.target.querySelector("input").value }, $("#dropMsg")); });
+  const soc = [["Instagram", C.INSTAGRAM], ["TikTok", C.TIKTOK]].filter(([, u]) => u);
+  $("#social").append(...soc.map(([n, u]) => el("a", { href: u, rel: "noopener", text: n })));
 
   updateCount(); render(); fromHash();
 })();
