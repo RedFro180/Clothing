@@ -112,7 +112,7 @@
     const speed = (Math.PI * 2) / ((Number(C.HERO_SPEED) || 40) * 1000);   // radians per ms
     let angle = 0, target = null, hover = false, kbd = false, stopped = false, last = 0, stepClock = 0;
     function place() {
-      const W = box.clientWidth, R = Math.min(W * (W < 600 ? 0.4 : 0.33), 520), lift = Math.min(W * 0.05, 46);
+      const W = box.clientWidth, R = Math.min(W * (W < 600 ? 0.4 : 0.33), 600), lift = Math.min(W * 0.05, 46);
       items.forEach((it, i) => {
         const t = angle + i * step, x = Math.sin(t) * R, z = Math.cos(t);       // z: 1 front, -1 back
         const s = 0.55 + 0.45 * (z + 1) / 2;
