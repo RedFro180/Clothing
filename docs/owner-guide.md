@@ -42,6 +42,8 @@ What the site can and can't protect:
 5. Wait for the green check ✓ on GitHub (about 2–5 min). A red ✗ means the change would break something. Don't publish it; fix it or undo the commit.
 6. Cloudflare publishes about a minute later. If anything looks wrong: Cloudflare → Deployments → previous one → **Rollback**.
 
+**One price:** while every hoodie has the same price, the site hides prices on the product grid and says "One price $150, every design" once instead. If you ever give one design a different price, prices show under every hoodie again automatically.
+
 **Change designs or prices:** edit `tools/designs_data.py` or `tools/build_site.py`, then run `python3 tools/build_site.py`, then `node tools/check_site.js`. Easiest: ask me to do it.
 
 **Foldables and split screen:** `node tools/fold_test.js` checks the Galaxy Fold cover and inner screens, split screen, half-folded and dual screens (it also runs in the GitHub check). Emulation isn't the real phone, so look at big changes on your Fold too.

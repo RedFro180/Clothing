@@ -14,6 +14,8 @@
   const money = n => new Intl.NumberFormat("en-US", { style: "currency", currency: C.CURRENCY, maximumFractionDigits: 0 }).format(n);
   const track = (n, p) => { try { window.track && window.track(n, p); } catch (e) {} };
   const trackPurchase = (...x) => { try { window.trackPurchase && window.trackPurchase(...x); } catch (e) {} };
+  // One price for everything? Then prices come off the cards and the shop says it once, clearly.
+  const PRICES = [...new Set(P.map(p => p.price))], ONE = PRICES.length === 1 ? PRICES[0] : null;
   const shipLine = () => {
     const f = Number(C.SHIPPING_FLAT) || 0, q = C.FREE_SHIP_QTY;
     if (!f) return "Free shipping";
@@ -36,14 +38,63 @@
 
   // ---------- cards ----------
   function card(p) {
-    return el("button", { class: "card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}`, onclick: () => openProduct(p) },
-      el("div", { class: "tile" + (p.light ? " dark" : "") },
-        el("img", { src: p.img, alt: `${p.color} hoodie, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570 }),
-),
-      el("p", { class: "price", text: money(p.price) }),
+    const back = (p.imgs && p.imgs[1] && p.imgs[1].src) || p.img;
+    const stage = el("div", { class: "stage" },
+      el("div", { class: "turn" },
+        el("img", { class: "face front", src: p.img, alt: `${p.color} hoodie, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570, draggable: "false" }),
+        el("img", { class: "face back", "data-src": back, alt: "", width: 560, height: 570, draggable: "false" })),
+      el("span", { class: "shadow", "aria-hidden": "true" }),
+      el("span", { class: "spin-ico", "aria-hidden": "true", text: "\u21BB" }));
+    const c = el("button", { class: "card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. Left and right arrows turn it.`, onclick: () => openProduct(p) },
+      stage,
+      ONE ? null : el("p", { class: "price", text: money(p.price) }),
       el("h3", { text: p.name }),
       el("div", { class: "row" },
         el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), p.color)));
+    spinnable(stage, c);
+    return c;
+  }
+
+  // ---------- spin: drag (computer) or swipe sideways (phone) to turn a hoodie between front and back ----------
+  const STILL = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function spinnable(stage, card) {
+    const turn = stage.querySelector(".turn"), faces = [...stage.querySelectorAll(".face")], shadow = stage.querySelector(".shadow");
+    let a = 0, v = 0, raf = 0, down = null, lastX = 0, lastT = 0, moved = false, justSpun = false, hover = false, t0 = 0;
+    const loadBack = () => { const b = faces[1]; if (b.dataset.src) { b.src = b.dataset.src; delete b.dataset.src; } };
+    function draw() {
+      const c = Math.cos(a * Math.PI / 180), lit = 0.55 + 0.45 * Math.abs(c);
+      turn.style.transform = `rotateY(${a.toFixed(2)}deg)`;
+      faces.forEach(f => f.style.filter = `brightness(${lit.toFixed(3)}) drop-shadow(0 0 1.2px rgba(236,229,216,${(0.5 * lit).toFixed(2)}))`);
+      shadow.style.transform = `scaleX(${(0.55 + 0.45 * Math.abs(c)).toFixed(3)})`;
+    }
+    function loop(now) {
+      raf = 0; if (down && moved) return;
+      if (Math.abs(v) > 0.05) { a += v; v *= 0.94; }
+      else {
+        v = 0;
+        const target = Math.round(a / 180) * 180, idle = hover && !STILL ? Math.sin((now - t0) / 700) * 10 : 0;
+        a += (target + idle - a) * 0.12;
+        if (Math.abs(target + idle - a) < 0.05 && !hover) { a = target; draw(); return; }
+      }
+      draw(); raf = requestAnimationFrame(loop);
+    }
+    const kick = () => { if (!raf) raf = requestAnimationFrame(loop); };
+    stage.addEventListener("pointerdown", e => { if (e.button > 0) return; loadBack(); justSpun = false; down = { x: e.clientX, y: e.clientY, a, id: e.pointerId }; moved = false; v = 0; lastX = e.clientX; lastT = e.timeStamp; });
+    stage.addEventListener("pointermove", e => {
+      if (!down || e.pointerId !== down.id) return;
+      const dx = e.clientX - down.x, dy = e.clientY - down.y;
+      if (!moved && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) { moved = true; try { stage.setPointerCapture(e.pointerId); } catch {} }
+      if (!moved) return;
+      a = down.a + dx * 0.7;
+      const dt = Math.max(8, e.timeStamp - lastT); v = (e.clientX - lastX) * 0.7 * (16 / dt); lastX = e.clientX; lastT = e.timeStamp;
+      draw();
+    });
+    const end = () => { if (!down) return; if (moved) justSpun = true; down = null; moved = false; kick(); };
+    stage.addEventListener("pointerup", end); stage.addEventListener("pointercancel", end);
+    card.addEventListener("click", e => { if (justSpun) { e.stopPropagation(); e.preventDefault(); justSpun = false; } }, true);   // a spin isn't a click
+    card.addEventListener("keydown", e => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); loadBack(); v = (e.key === "ArrowRight" ? 1 : -1) * 9; kick(); } });
+    card.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") { hover = true; t0 = performance.now(); loadBack(); kick(); } });
+    card.addEventListener("pointerleave", () => { hover = false; kick(); });
   }
 
   // ---------- featured ring: featured hoodies standing in a slowly turning 3-D circle ----------
@@ -53,8 +104,9 @@
     if (!list.length) { box.closest(".ring-sec").hidden = true; return; }
     const N = list.length, step = Math.PI * 2 / N;
     const items = list.map(p => el("button", { class: "ring-card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. View`, onclick: () => openProduct(p) },
-      el("div", { class: "tile" + (p.light ? " dark" : "") }, el("img", { src: p.img, alt: `${p.color} hoodie: ${p.name}`, width: 560, height: 570 })),
-      el("p", { class: "price", text: money(p.price) })));
+      el("div", { class: "tile" }, el("img", { src: p.img, alt: `${p.color} hoodie: ${p.name}`, width: 560, height: 570, draggable: "false" })),
+      el("span", { class: "shadow", "aria-hidden": "true" }),
+      ONE ? null : el("p", { class: "price", text: money(p.price) })));
     box.append(...items);
     const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     const speed = (Math.PI * 2) / ((Number(C.HERO_SPEED) || 40) * 1000);   // radians per ms
@@ -192,7 +244,7 @@
     if (fSort.value === "az") list.sort((a, b) => a.name.localeCompare(b.name));
     else if (fSort.value === "new") list.sort((a, b) => b.id - a.id);
     else list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id);
-    $("#resultCount").textContent = `${list.length} ${list.length === 1 ? "hoodie" : "hoodies"}`;
+    $("#resultCount").textContent = `${list.length} ${list.length === 1 ? "hoodie" : "hoodies"}` + (ONE ? ` · ${money(ONE)} each` : "");
     if (!list.length) {
       const tips = ["skull", "coffin", "grief", "gym", "rot", "black"];
       grid.append(el("div", { class: "empty" },
@@ -241,7 +293,7 @@
     $("#sizeGuide").hidden = true; $("#sgBtn").setAttribute("aria-expanded", "false");
     $("#pdMeta").textContent = [p.featured ? C.FEATURED_LABEL : "", CAT.themes[p.theme], p.placement].filter(Boolean).join(" · ");
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
-    $("#pdPrice").textContent = money(p.price);
+    $("#pdPrice").replaceChildren(money(p.price), ONE ? el("span", { class: "same-price", text: "Same price for every design" }) : "");
     $("#pdShip").textContent = shipLine();
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
     const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
@@ -298,7 +350,7 @@
     return el("div", { class: "mini" },
       el("button", { type: "button", class: "mini-open", "aria-label": `View ${q.name}`, onclick: () => { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); } },
         el("div", { class: "tile" }, el("img", { src: q.img, alt: "", loading: "lazy" })),
-        el("span", { class: "mini-price", text: money(q.price) }), el("span", { class: "mini-name", text: q.name })), btn || null);
+        ONE ? null : el("span", { class: "mini-price", text: money(q.price) }), el("span", { class: "mini-name", text: q.name })), btn || null);
   }
   function drawAlts(out) {
     const box = $("#pdAlts");
@@ -357,7 +409,7 @@
     const list = (store.get("recent") || []).map(id => byId[id]).filter(Boolean);
     $("#rvList").replaceChildren(...(list.length ? list.map(p => el("button", { type: "button", class: "rv-item", onclick: () => { rv.close(); openProduct(p); } },
       el("div", { class: "tile" }, el("img", { src: p.img, alt: "" })),
-      el("span", { class: "rv-name", text: p.name }), el("span", { class: "rv-price", text: money(p.price) })))
+      el("span", { class: "rv-name", text: p.name }), ONE ? null : el("span", { class: "rv-price", text: money(p.price) })))
       : [el("p", { class: "note", text: "Nothing yet. Hoodies you open show up here." })]));
   }
   $("#rvBtn").hidden = !(store.get("recent") || []).length;
@@ -576,7 +628,8 @@
   const soc = [["Instagram", safeUrl(C.INSTAGRAM)], ["TikTok", safeUrl(C.TIKTOK)]].filter(([, u]) => u);
   $("#social").append(...soc.map(([n, u]) => el("a", { href: u, rel: "noopener", text: n })));
 
-  $("#heroShip").textContent = shipLine();
+  $("#heroShip").replaceChildren(...(ONE ? [el("strong", { text: `Every hoodie ${money(ONE)}` }), " · "] : []), shipLine());
+  const op = $("#onePrice"); if (op) { op.hidden = !ONE; if (ONE) op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE) }), el("span", { class: "op-s", text: "every design" })); }
   const sf = document.querySelector("[data-ship-faq]");
   if (sf) sf.textContent = `${shipLine()}. Shipping is shown on each product and in your preorder list before you send anything.`;
 

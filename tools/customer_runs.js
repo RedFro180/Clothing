@@ -33,7 +33,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     await p.goto(startUrl); await p.waitForTimeout(500);
     const vh = await p.evaluate(() => innerHeight);
     const firstScreen = await p.evaluate(() => ({ products: [...document.querySelectorAll('.ring-card, #grid .card')].filter(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0 && getComputedStyle(e).visibility !== 'hidden' && +getComputedStyle(e).opacity > .5; }).length,
-      priceVisible: [...document.querySelectorAll('.price')].some(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }) }));
+      priceVisible: [...document.querySelectorAll('.price, #onePrice:not([hidden]), #heroShip, #resultCount')].some(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }) }));
     if (persona === 'returning') { await p.evaluate(() => localStorage.setItem('recent', JSON.stringify([60, 27, 44]))); await p.reload(); await p.waitForTimeout(400); }
     const openCard = async sel => { await p.locator(sel).scrollIntoViewIfNeeded(); scrolls++; await p.locator(sel).click({ force: true }); await p.waitForTimeout(250); };
     const gridToView = async () => { await p.locator('#filters').scrollIntoViewIfNeeded(); scrolls++; };

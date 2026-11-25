@@ -846,3 +846,56 @@ dialog.pd { overflow: hidden; display: flex; flex-direction: column; }
   .bag-btn { white-space: nowrap; letter-spacing: .04em; font-size: 12px; padding-left: 12px; padding-right: 10px; }
   .top .brand { font-size: 24px; }
 }
+
+/* ================= SPOTLIGHT (2026-11-25): no windows. The hoodie is the product ================= */
+/* grid items: no box, the hoodie floats on the background with a soft light behind it; drag/swipe spins it */
+.card { background: none !important; box-shadow: none !important; border: 0 !important; border-radius: 0 !important; padding: 0 !important;
+  color: #ece5d8; text-align: left; transform: none !important; }
+.card:hover, .card:focus-visible { background: none !important; box-shadow: none !important; transform: none !important; }
+.card:focus-visible { outline: 2px solid #c9a27e; outline-offset: 6px; border-radius: 14px !important; }
+.card .stage { position: relative; aspect-ratio: 560 / 600; perspective: 1100px; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.card .stage:active { cursor: grabbing; }
+.card .stage::before { content: ""; position: absolute; inset: -4% -6% 4%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(236,229,216,.30), rgba(236,229,216,.10) 55%, rgba(236,229,216,0)); transition: opacity .3s; }
+.card:hover .stage::before, .card:focus-visible .stage::before { background: radial-gradient(closest-side, rgba(236,229,216,.38), rgba(236,229,216,.13) 55%, rgba(236,229,216,0)); }
+.card .turn { position: absolute; inset: 0 0 6% 0; transform-style: preserve-3d; will-change: transform; }
+.card .face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  pointer-events: none; -webkit-user-drag: none; filter: drop-shadow(0 0 1.2px rgba(236,229,216,.5)); transition: none; }
+.card .face.back { transform: rotateY(180deg); }
+.card:hover .tile img, .card .face { transform-origin: center; }
+.card:hover .face.front { transform: none; }
+.card .shadow, .ring-card .shadow { position: absolute; left: 18%; right: 18%; bottom: 1%; height: 7%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(0,0,0,.75), rgba(0,0,0,0)); }
+.card .spin-ico { position: absolute; right: 4px; bottom: 2px; font-size: 13px; color: #a89e8f; opacity: .55; pointer-events: none; transition: opacity .2s; }
+.card:hover .spin-ico { opacity: 1; }
+.card h3 { color: #ece5d8 !important; margin: 10px 2px 4px !important; }
+.card .price { color: #ece5d8 !important; margin: 10px 2px 2px !important; }
+.card .row { color: #a89e8f !important; padding: 0 2px !important; }
+.card .price + h3 { margin-top: 0 !important; }
+
+/* featured ring: same look, no boxes, front hoodie gets the brightest light */
+.ring-card { background: none !important; box-shadow: none !important; border: 0 !important; padding: 0 !important; border-radius: 0 !important; }
+.ring-card .tile { background: none !important; box-shadow: none !important; border-radius: 0 !important; position: relative; overflow: visible; }
+.ring-card .tile::before { content: ""; position: absolute; inset: -6% -8% 0; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(236,229,216,.26), rgba(236,229,216,.08) 55%, rgba(236,229,216,0)); }
+.ring-card.front .tile::before { background: radial-gradient(closest-side, rgba(236,229,216,.40), rgba(236,229,216,.13) 55%, rgba(236,229,216,0)); }
+.ring-card img { position: relative; filter: drop-shadow(0 0 1.2px rgba(236,229,216,.5)); }
+.ring-card .shadow { bottom: -3%; }
+.ring-card.front { box-shadow: none !important; }
+.ring-card .price { color: #ece5d8; }
+
+/* one price: said once, clearly, instead of under every hoodie */
+.shop-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.shop-head .sec-title { margin-bottom: 0; }
+.one-price { display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 6px; padding: 8px 16px 8px 14px; border-radius: 999px;
+  border: 1px solid rgba(236,229,216,.22); background: rgba(20,17,15,.55); color: #ece5d8; }
+.one-price .op-k { font: 700 11px/1 "Oswald", var(--sans); letter-spacing: .14em; text-transform: uppercase; color: #c9a27e; }
+.one-price .op-v { font: 600 18px/1 var(--sans); letter-spacing: -.01em; }
+.one-price .op-s { font-size: 13px; color: #a89e8f; }
+.shop > .shop-head { margin-bottom: 18px; }
+.hero-ship strong { color: #ece5d8; font-weight: 600; letter-spacing: .02em; }
+.pd-price .same-price { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: var(--dim, #6b6258); letter-spacing: 0; }
+@media (max-width: 560px) {
+  .shop-head { align-items: center; }
+  .one-price { padding: 6px 12px; gap: 8px; } .one-price .op-v { font-size: 16px; } .one-price .op-s { display: none; }
+}

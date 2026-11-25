@@ -81,6 +81,30 @@ const fails = [], errs = [];
       await p.evaluate(() => document.querySelector("#ringPause").click());
     }
 
+    // 3b. grid hoodies spin on a sideways drag/swipe, without opening the product or moving the page
+    {
+      await p.evaluate(() => document.querySelector("#grid .card").scrollIntoView({ block: "center", behavior: "instant" })); await settle();
+      const r = await p.locator("#grid .card .stage").first().boundingBox(), sx = Math.round(r.x + r.width / 2), sy = Math.round(r.y + r.height / 2), y0 = await pageY();
+      const t0 = await p.evaluate(() => document.querySelector("#grid .card .turn").style.transform);
+      let mid;
+      if (touch) {
+        await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x: sx, y: sy }] });
+        for (let i = 1; i <= 8; i++) await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: sx - i * 12, y: sy }] });
+        mid = await p.evaluate(() => document.querySelector("#grid .card .turn").style.transform);
+        await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+      } else {
+        await p.mouse.move(sx, sy); await p.mouse.down(); for (let i = 1; i <= 8; i++) await p.mouse.move(sx + i * 14, sy);
+        mid = await p.evaluate(() => document.querySelector("#grid .card .turn").style.transform); await p.mouse.up();
+      }
+      await p.waitForTimeout(500);
+      ok("hoodie spins on a sideways drag/swipe", mid && mid !== t0, `(${t0} → ${mid})`);
+      ok("spinning doesn't open the product", !(await p.evaluate(() => document.querySelector("#pd").open)));
+      ok("spinning doesn't move the page", Math.abs((await pageY()) - y0) < 2);
+      ok("back of the hoodie loads when spun", await p.evaluate(() => !!document.querySelector("#grid .card .face.back").getAttribute("src")));
+      await p.evaluate(() => { const d = document.querySelector("dialog[open]"); if (d) d.close(); });
+      await p.mouse.move(2, 2);
+    }
+
     // 4. product pop-up
     await p.locator("#grid .card").nth(5).scrollIntoViewIfNeeded(); await settle();
     await p.locator("#grid .card").nth(5).click(); await p.waitForTimeout(350);
