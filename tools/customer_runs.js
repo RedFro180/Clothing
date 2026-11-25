@@ -1,0 +1,119 @@
+// 50 simulated customer journeys. Each logs actions, clicks, scrolls, timing and friction.
+const { chromium, devices } = require('playwright');
+const fs = require('fs');
+const URL0 = 'file:///home/user/Clothing/site/index.html';
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647; const pick = a => a[Math.floor(rnd() * a.length)];
+const SEARCHES = ['skull', 'skeleton', 'black', 'gym', 'grief', 'funny', 'coffin', 'reaper', 'sad', 'death', 'pink', 'heavy', 'lift', 'grave', 'bones', 'rot', 'xl', 'zip up', 'mom', 'depression'];
+const PERSONAS = [
+  ['ring-impulse', 'Sees the spinning ring, taps a hoodie, buys'],
+  ['search', 'Knows a vibe, types a search'],
+  ['theme', 'Browses a theme chip'],
+  ['color', 'Wants a specific color'],
+  ['scroll', 'Scrolls the grid and picks something'],
+  ['multi', 'Adds 2–3 hoodies'],
+  ['soldout', 'Wants a size that is sold out'],
+  ['sizeunsure', 'Unsure of size, opens size guide'],
+  ['shared-link', 'Arrives from a shared product link'],
+  ['returning', 'Comes back later, uses recently viewed'],
+];
+const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
+(async () => {
+  const b = await chromium.launch(); const runs = [];
+  for (let i = 0; i < 50; i++) {
+    const [persona, desc] = PERSONAS[i % PERSONAS.length];
+    const phone = rnd() < 0.7;                      // audience mostly on phones
+    const ctx = await b.newContext(phone ? { ...devices[pick(['iPhone 13', 'iPhone SE', 'Pixel 7'])] } : { viewport: { width: pick([1280, 1440, 1920]), height: pick([760, 860, 1000]) } });
+    await ctx.addInitScript(sold => {
+      let cfg; Object.defineProperty(window, 'SITE_CONFIG', { configurable: true, get() { return cfg; }, set(v) { v.SOLD_OUT = sold; cfg = v; } });
+    }, SOLD);
+    const p = await ctx.newPage(); const errs = []; p.on('pageerror', e => errs.push(e.message));
+    const log = []; let clicks = 0, taps = 0, scrolls = 0, friction = []; const t0 = Date.now();
+    const act = async (label, fn) => { try { await fn(); clicks++; log.push(label); } catch (e) { friction.push('FAILED: ' + label + ' (' + e.message.split('\n')[0].slice(0, 80) + ')'); } };
+    const startUrl = persona === 'shared-link' ? URL0 + '#' + pick(['everyone-gets-a-toe-tag', 'grief-has-weight', 'skeleton-wearing-meat', 'the-dirt-always-wins']) : URL0;
+    await p.goto(startUrl); await p.waitForTimeout(500);
+    const vh = await p.evaluate(() => innerHeight);
+    const firstScreen = await p.evaluate(() => ({ products: [...document.querySelectorAll('.ring-card, #grid .card')].filter(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0 && getComputedStyle(e).visibility !== 'hidden' && +getComputedStyle(e).opacity > .5; }).length,
+      priceVisible: [...document.querySelectorAll('.price')].some(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }) }));
+    if (persona === 'returning') { await p.evaluate(() => localStorage.setItem('recent', JSON.stringify([60, 27, 44]))); await p.reload(); await p.waitForTimeout(400); }
+    const openCard = async sel => { await p.locator(sel).scrollIntoViewIfNeeded(); scrolls++; await p.locator(sel).click({ force: true }); await p.waitForTimeout(250); };
+    const gridToView = async () => { await p.locator('#filters').scrollIntoViewIfNeeded(); scrolls++; };
+    let wantSize = pick(['S', 'M', 'L', 'L', 'XL', 'XL', '2XL']);
+    // ---------- journeys ----------
+    if (persona === 'ring-impulse') { await act('tap front hoodie in ring', () => p.locator('.ring-card.front').click({ force: true })); }
+    if (persona === 'search') {
+      await gridToView(); const q = pick(SEARCHES); await act('search "' + q + '"', () => p.fill('#fSearch', q)); await p.waitForTimeout(300);
+      const n = await p.locator('#grid .card').count(); log.push(`results: ${n}`);
+      if (n === 0) { friction.push(`search "${q}" found nothing`); await act('clear filters', () => p.click('#clearBtn')); }
+      await act('open first result', () => openCard('#grid .card >> nth=0'));
+    }
+    if (persona === 'theme') { await gridToView(); const t = pick(['Morgue', 'Rot', 'Anatomy', 'Graves', 'Grief', 'Iron']); await act('theme chip ' + t, () => p.locator('[data-for="fTheme"] .chip', { hasText: t }).click()); await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 4))); }
+    if (persona === 'color') { await gridToView(); const c = pick(['Black', 'Olive', 'Oxblood', 'Indigo', 'Plum', 'Sand', 'Charcoal']);
+      const chip = p.locator('[data-for="fColor"] .chip', { hasText: c }); const inView = await chip.evaluate(e => { const r = e.getBoundingClientRect(); return r.right <= innerWidth && r.left >= 0; });
+      if (!inView) friction.push(`color "${c}" chip off-screen; had to swipe the row`);
+      await act('color chip ' + c, () => chip.click()); await act('open a result', () => openCard('#grid .card >> nth=0')); }
+    if (persona === 'scroll') { const k = 8 + Math.floor(rnd() * 30); await act(`scroll to product #${k + 1}`, () => openCard(`#grid .card >> nth=${k}`)); scrolls += Math.round(k / (phone ? 2 : 4)); }
+    if (persona === 'multi') { await act('open product', () => openCard('#grid .card >> nth=1')); }
+    if (persona === 'soldout') { await act('open toe tag (L sold out)', async () => { await p.evaluate(() => location.hash = 'everyone-gets-a-toe-tag'); await p.waitForTimeout(300); }); wantSize = 'L'; }
+    if (persona === 'sizeunsure') { await act('open product', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 12))); }
+    if (persona === 'returning') { const vis = await p.locator('#rvBtn').isVisible(); if (!vis) friction.push('recently viewed button not visible'); await act('open recently viewed', () => p.click('#rvBtn')); await act('pick from recent', () => p.locator('.rv-item').first().click()); }
+    // ---------- inside product ----------
+    const open = await p.evaluate(() => document.querySelector('#pd').open);
+    if (!open) { friction.push('never reached a product'); }
+    else {
+      const name = await p.textContent('#pdName'); log.push('viewing: ' + name);
+      const m = await p.evaluate(() => { const r = document.querySelector('#pdAdd').getBoundingClientRect(); return { addBelow: r.bottom > innerHeight, priceTop: Math.round(document.querySelector('#pdPrice').getBoundingClientRect().top) }; });
+      if (m.addBelow) friction.push('Add button below the screen in pop-up');
+      if (persona === 'sizeunsure') { await act('open size guide', () => p.click('#sgBtn')); const g = await p.textContent('#sizeGuide'); if (g.includes('coming soon')) friction.push('size guide has no measurements'); }
+      await act('pick size ' + wantSize, () => p.locator(`#pdSizes button[data-s="${wantSize}"]`).click());
+      const sold = await p.locator('#notifyForm').isVisible();
+      if (sold) {
+        log.push('size sold out');
+        await act('enter email for restock', () => p.fill('#nfEmail', 'test@example.com'));
+        await act('submit notify', () => p.click('#notifyBtn')); await p.waitForTimeout(200);
+        const mail = /email app/i.test(await p.textContent('#pdMsg')); if (mail) friction.push('restock request opens email app (no form service)');
+        const alt = (await p.locator('#pdSizes button:not(.is-out)').count()); log.push(`${alt} other sizes available`);
+        const suggest = await p.evaluate(() => /other|similar|try/i.test(document.querySelector('#pdMsg').textContent + document.querySelector('#sizeNote').textContent));
+        if (!suggest) friction.push('sold out: no suggestion of similar hoodies in that size');
+      } else {
+        if (rnd() < 0.15) { await act('tap Add without size (mistake)', async () => { await p.locator('#pdSizes button[aria-pressed="true"]').click(); }); }
+        await act('add to preorder list', () => p.click('#pdAdd')); await p.waitForTimeout(150);
+        const msg = await p.textContent('#pdMsg'); log.push('msg: ' + msg.trim());
+        const countVisible = await p.evaluate(() => { const r = document.querySelector('#bagCount').getBoundingClientRect(); return r.width > 0; });
+        if (persona === 'multi') {
+          await act('close', () => p.keyboard.press('Escape'));
+          for (const k of [5, 14]) { await act('open another', () => openCard(`#grid .card >> nth=${k}`)); const pre = await p.locator('#pdSizes button[aria-pressed="true"]').count(); if (!pre) friction.push('size not remembered'); await act('add', () => p.click('#pdAdd')); await act('close', () => p.keyboard.press('Escape')); }
+        } else await act('tap "View list"', () => p.locator('#pdMsg .link').click());
+      }
+    }
+    // ---------- checkout (preorder request) ----------
+    let submitted = false, mail = null;
+    if (await p.locator('#pd').evaluate(d => d.open)) await p.keyboard.press('Escape');
+    const items = Number(await p.textContent('#bagCount'));
+    if (items > 0) {
+      if (!(await p.locator('#bag').evaluate(d => d.open))) await act('open preorder list', () => p.click('#bagBtn'));
+      const total = await p.textContent('#bagTotal'); log.push(total.trim());
+      if (/shipping/.test(total) && !/\$\d+ shipping|free shipping/i.test(total)) friction.push('shipping cost unknown at checkout');
+      await act('type name', () => p.fill('#reqForm input[name=name]', 'Test Buyer'));
+      await act('type email', () => p.fill('#reqForm input[name=email]', 'buyer@example.com'));
+      await act('send preorder request', () => p.click('#reqForm button[type=submit]')); await p.waitForTimeout(200);
+      mail = /email app/i.test(await p.textContent('#reqMsg')); submitted = true;
+      if (mail) friction.push('preorder request opens email app; buyer must press send there');
+      const fields = await p.locator('#reqForm input, #reqForm textarea').count(); log.push(`form fields: ${fields}`);
+      if (!/size|ship|address/i.test(await p.textContent('#reqForm'))) {}
+    }
+    const secs = ((Date.now() - t0) / 1000).toFixed(1);
+    runs.push({ i: i + 1, persona, desc, device: phone ? 'phone' : 'desktop', vh, firstScreen, clicks, scrolls, items, submitted, mailto: !!mail, friction, errs, log, secs });
+    await ctx.close();
+  }
+  fs.writeFileSync(require('path').join(__dirname, '..', 'docs', 'testing', 'customer-runs-latest.json'), JSON.stringify(runs, null, 1));
+  // summary
+  const f = {}; runs.forEach(r => r.friction.forEach(x => { const k = x.replace(/"[^"]*"/g, '"…"').replace(/#\d+/, '#n'); f[k] = (f[k] || 0) + 1; }));
+  console.log('runs', runs.length, 'errors', runs.reduce((a, r) => a + r.errs.length, 0));
+  console.log('reached a product:', runs.filter(r => !r.friction.includes('never reached a product')).length);
+  console.log('submitted preorder:', runs.filter(r => r.submitted).length, ' via email app:', runs.filter(r => r.mailto).length);
+  const avg = k => (runs.reduce((a, r) => a + r[k], 0) / runs.length).toFixed(1);
+  console.log('avg clicks', avg('clicks'), 'avg scrolls', avg('scrolls'));
+  console.log('first screen (phone) products visible:', runs.filter(r => r.device === 'phone').map(r => r.firstScreen.products).join(','));
+  console.log('friction counts:'); Object.entries(f).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => console.log('  ' + v + '× ' + k));
+  const s = {}; runs.filter(r => r.persona === 'search').forEach(r => { const q = r.log.find(x => x.startsWith('search')); const n = r.log.find(x => x.startsWith('results')); s[q] = n; }); console.log('searches:', s);
+  await b.close(); })();
