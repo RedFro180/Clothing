@@ -773,3 +773,37 @@ dialog.pd { overflow: hidden; display: flex; flex-direction: column; }
 @media (min-width: 761px) { .pd-gallery { position: sticky; top: 0; align-self: start; } }
 @media (max-width: 760px) { .pd-body { max-height: 96vh; max-height: 96dvh; } }
 .bag, .rv { overflow-y: auto; overscroll-behavior: contain; }
+
+/* ================= DESIGN PASS 2 (2026-11-25): calmer hero, product first, quieter chrome ================= */
+/* Hero: one-line headline on wide screens so the spinning hoodies sit in the first screen */
+.hero-head { padding-top: clamp(28px, 4.5vw, 56px); }
+.hero-head h1 { font-size: clamp(40px, 5.2vw, 78px); max-width: none; margin-bottom: 14px; }
+.hero-head .lede { font-size: clamp(15px, 1.5vw, 18px); }
+@media (min-width: 761px) { .ring { height: clamp(330px, 33vw, 470px); } }
+/* "Soon" tags: unavailable things shouldn't be the loudest thing in the filters */
+.chip .tag { background: transparent; color: #8f8578; border: 1px solid rgba(236,229,216,.18); font-weight: 600; }
+.chip[aria-checked="true"] .tag { background: transparent; color: #4f473f; border-color: rgba(26,23,20,.25); }
+/* Product pop-up: the picture is a rounded panel on the dialog color (no mismatched band under the thumbnails) */
+.pd-gallery { background: transparent; padding: 16px 0 16px 16px; gap: 10px; }
+.pd-img { border-radius: 18px; overflow: hidden; background: #e8e2d6; box-shadow: inset 0 0 0 1px rgba(26,23,20,.06); }
+.g-thumbs { padding: 0 2px 4px; }
+@media (max-width: 760px) { .pd-gallery { padding: 12px 12px 0; } }
+#pdName:focus { outline: none; }
+/* Help: title + contact on the left, questions on the right (no empty half-screen) */
+@media (min-width: 900px) {
+  .faq { display: grid; grid-template-columns: minmax(240px, 1fr) 2fr; gap: 56px; align-items: start; }
+  .faq-list { max-width: none; }
+}
+.faq-intro p { color: #a89e8f; font-size: 15px; line-height: 1.6; max-width: 34ch; margin: 0 0 20px; }
+.faq-intro a { color: #ece5d8; word-break: break-all; }
+/* Phones held sideways: a slimmer header so it doesn't cover a third of the screen */
+@media (max-height: 500px) and (orientation: landscape) {
+  .top { padding-top: 6px; padding-bottom: 6px; }
+  .top .brand { font-size: 24px; }
+  .hero-head { padding-top: 16px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-head .lede { display: none; }
+  .ring-sec { padding-top: 4px; }
+  .ring { height: 280px; }
+}

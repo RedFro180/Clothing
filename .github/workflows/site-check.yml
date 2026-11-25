@@ -2,7 +2,7 @@
 name: Site safety check
 on:
   push:
-    paths: ["site/**", "tools/check_site.js", "tools/customer_runs.js", "tools/abuse_tests.js", ".github/workflows/site-check.yml"]
+    paths: ["site/**", "tools/check_site.js", "tools/customer_runs.js", "tools/abuse_tests.js", "tools/scroll_test.js", ".github/workflows/site-check.yml"]
   pull_request:
     paths: ["site/**"]
 jobs:
@@ -21,5 +21,7 @@ jobs:
         run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
       - name: Abuse tests (bots, spam, tampering, huge orders)
         run: node tools/abuse_tests.js
+      - name: Scrolling on 7 screen types (pop-ups, lists, ring, chips)
+        run: node tools/scroll_test.js
       - name: 50 simulated shoppers (must finish with no page errors)
         run: node tools/customer_runs.js

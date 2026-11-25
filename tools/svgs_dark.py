@@ -81,23 +81,61 @@ def arctext(text, n, size, cx, cy, r):
     return f'<path d="{pen.getCommands()}" fill="{INK}"/>'
 
 # ---------------- hoodie ----------------
+BODY = ('M150 170 L95 200 L40 470 L95 485 L130 330 L135 590 L465 590 L470 330 L505 485 L560 470 L505 200 L450 170 '
+        'Q420 150 390 145 Q300 60 210 145 Q180 150 150 170 Z')
 def hoodie(view):
-    dark = shade(FAB, 0.72); line = shade(FAB, 0.55); cord = shade(FAB, 1.35) if sum(int(FAB[i:i+2], 16) for i in (1, 3, 5)) < 300 else shade(FAB, 0.6)
-    g = ('<path d="M150 170 L95 200 L40 470 L95 485 L130 330 L135 590 L465 590 L470 330 L505 485 L560 470 L505 200 L450 170 '
-         f'Q420 150 390 145 Q300 60 210 145 Q180 150 150 170 Z" fill="{FAB}" stroke="{line}" stroke-width="3"/>'
-         f'<path d="M150 170 L130 330 M450 170 L470 330 M135 560 L465 560" stroke="{line}" stroke-width="2" fill="none"/>'
-         f'<g stroke="{shade(FAB,0.8)}" stroke-width="2">' + ''.join(f'<line x1="{140+i*11}" y1="563" x2="{140+i*11}" y2="588"/>' for i in range(30)) + '</g>'
-         f'<rect x="38" y="465" width="60" height="22" fill="{dark}" stroke="{line}" stroke-width="2" transform="rotate(5 68 476)"/>'
-         f'<rect x="502" y="465" width="60" height="22" fill="{dark}" stroke="{line}" stroke-width="2" transform="rotate(-5 532 476)"/>')
+    """Hoodie mockup: flat fabric color plus soft shading, folds, seams and a kangaroo pocket,
+    so it reads as a garment rather than an outline. Only gradients (no filters) so it stays fast in the grid."""
+    dark = shade(FAB, 0.72); line = shade(FAB, 0.62); seam = shade(FAB, 0.8)
+    cord = shade(FAB, 1.35) if sum(int(FAB[i:i+2], 16) for i in (1, 3, 5)) < 300 else shade(FAB, 0.6)
+    k = "hf" if view == "front" else "hb"
+    defs = (f'<defs><clipPath id="{k}c"><path d="{BODY}"/></clipPath>'
+            f'<linearGradient id="{k}x" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".26"/>'
+            '<stop offset=".2" stop-color="#000" stop-opacity=".1"/><stop offset=".34" stop-color="#000" stop-opacity="0"/>'
+            '<stop offset=".66" stop-color="#000" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity=".1"/>'
+            '<stop offset="1" stop-color="#000" stop-opacity=".26"/></linearGradient>'
+            f'<linearGradient id="{k}y" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".1"/>'
+            '<stop offset=".35" stop-color="#fff" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity="0"/>'
+            '<stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>'
+            f'<radialGradient id="{k}n" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#000" stop-opacity=".28"/>'
+            '<stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>')
+    fold = lambda d, o=.13, w=4: f'<path d="{d}" stroke="#000" stroke-opacity="{o}" stroke-width="{w}" fill="none" stroke-linecap="round"/>'
+    lite = lambda d, o=.09, w=3: f'<path d="{d}" stroke="#fff" stroke-opacity="{o}" stroke-width="{w}" fill="none" stroke-linecap="round"/>'
+    g = (defs + f'<path d="{BODY}" fill="{FAB}"/>'
+         f'<g clip-path="url(#{k}c)">'
+         f'<rect x="30" y="50" width="540" height="560" fill="url(#{k}x)"/><rect x="30" y="50" width="540" height="560" fill="url(#{k}y)"/>'
+         # sleeves sit behind the body: darker inner edge along the armhole
+         + fold("M150 172 L131 332", .16, 7) + fold("M450 172 L469 332", .16, 7)
+         # sleeve folds (elbow bunching) and soft highlights
+         + fold("M118 268 Q104 286 98 312") + fold("M104 352 Q90 366 84 392") + fold("M95 420 Q84 432 76 452", .1)
+         + fold("M482 268 Q496 286 502 312") + fold("M496 352 Q510 366 516 392") + fold("M505 420 Q516 432 524 452", .1)
+         + lite("M110 230 Q92 320 72 440") + lite("M490 230 Q508 320 528 440")
+         # body: gentle drape lines
+         + fold("M175 360 Q185 440 170 530", .06, 6) + fold("M425 360 Q415 440 430 530", .06, 6)
+         + '</g>'
+         f'<path d="{BODY}" fill="none" stroke="{line}" stroke-width="2" stroke-linejoin="round"/>'
+         f'<path d="M150 170 L130 330 M450 170 L470 330" stroke="{seam}" stroke-width="1.5" fill="none"/>'
+         f'<path d="M135 560 L465 560" stroke="{line}" stroke-width="1.5" fill="none"/>'
+         f'<g stroke="{shade(FAB,0.82)}" stroke-width="1.6">' + ''.join(f'<line x1="{140+i*8}" y1="563" x2="{140+i*8}" y2="588"/>' for i in range(41)) + '</g>'
+         f'<rect x="38" y="465" width="60" height="22" rx="3" fill="{dark}" stroke="{line}" stroke-width="1.5" transform="rotate(5 68 476)"/>'
+         f'<rect x="502" y="465" width="60" height="22" rx="3" fill="{dark}" stroke="{line}" stroke-width="1.5" transform="rotate(-5 532 476)"/>')
     if view == "front":
         g += (f'<path d="M210 145 Q300 215 390 145 Q300 120 210 145 Z" fill="{shade(FAB,0.5)}"/>'
-              f'<path d="M210 145 Q300 215 390 145" fill="none" stroke="{line}" stroke-width="3"/>'
-              f'<path d="M200 430 L400 430 L420 520 L180 520 Z" fill="none" stroke="{line}" stroke-width="2" stroke-dasharray="6 4"/>'
-              f'<path d="M282 188 Q278 220 276 252 M318 188 Q322 220 324 252" stroke="{cord}" stroke-width="3" fill="none"/>'
-              f'<rect x="272" y="250" width="7" height="13" fill="{cord}"/><rect x="321" y="250" width="7" height="13" fill="{cord}"/>')
+              f'<ellipse cx="300" cy="182" rx="105" ry="40" fill="url(#{k}n)"/>'
+              f'<path d="M210 145 Q300 215 390 145" fill="none" stroke="{line}" stroke-width="2.5"/>'
+              f'<path d="M216 152 Q300 212 384 152" fill="none" stroke="{seam}" stroke-width="1" stroke-dasharray="3 3"/>'
+              # kangaroo pocket: a panel with slanted hand openings and a stitch line
+              f'<path d="M205 432 L395 432 L428 535 L172 535 Z" fill="#000" fill-opacity=".05"/>'
+              f'<path d="M205 432 L395 432" stroke="{seam}" stroke-width="1.5"/>'
+              f'<path d="M205 432 L172 535 M395 432 L428 535" stroke="#000" stroke-opacity=".3" stroke-width="3"/>'
+              f'<path d="M209 437 L391 437 M211 437 L180 532 M389 437 L420 532" stroke="{seam}" stroke-width="1" stroke-dasharray="3 3" fill="none"/>'
+              f'<path d="M282 188 Q278 220 276 252 M318 188 Q322 220 324 252" stroke="{cord}" stroke-width="3.5" fill="none" stroke-linecap="round"/>'
+              f'<rect x="272" y="250" width="7" height="13" rx="2" fill="{cord}"/><rect x="321" y="250" width="7" height="13" rx="2" fill="{cord}"/>')
     else:
-        g += (f'<path d="M215 145 Q300 40 385 145 Q300 178 215 145 Z" fill="{dark}" stroke="{line}" stroke-width="3"/>'
-              f'<path d="M300 96 L300 160" stroke="{line}" stroke-width="2"/>')
+        g += (f'<path d="M215 145 Q300 40 385 145 Q300 178 215 145 Z" fill="{dark}" stroke="{line}" stroke-width="2"/>'
+              f'<path d="M215 145 Q300 178 385 145" fill="none" stroke="#000" stroke-opacity=".2" stroke-width="5"/>'
+              f'<path d="M300 92 L300 160" stroke="{seam}" stroke-width="1.5"/>'
+              + lite("M250 110 Q270 92 296 88", .12, 4))
     return g
 
 DEFS = '''<defs><filter id="grunge" x="-5%" y="-5%" width="110%" height="110%">

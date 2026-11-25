@@ -29,6 +29,7 @@
   // ---------- branding ----------
   document.title = `${C.BRAND} | Dark-humor hoodies, no plastic`;
   document.querySelectorAll("[data-brand]").forEach(n => n.textContent = C.BRAND);
+  document.querySelectorAll("[data-contact]").forEach(a => { a.href = "mailto:" + C.CONTACT_EMAIL; a.textContent = C.CONTACT_EMAIL; });
   $("[data-tagline]").textContent = C.TAGLINE;
   $("[data-featured-label]").textContent = C.FEATURED_LABEL;
   $("#year").textContent = new Date().getFullYear();
@@ -261,6 +262,7 @@
     if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
     remember(p.id);
     if (!pd.open) pd.showModal();
+    $("#pdName").focus({ preventScroll: true }); // start on the product name, not the close button
   }
 
   // ---------- small storage helper (works even if storage is blocked) ----------
