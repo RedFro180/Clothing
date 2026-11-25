@@ -108,54 +108,44 @@
   const colors = [...new Set(P.map(p => p.color))].sort();
   fColor.append(el("option", { value: "", text: "All colors" }), ...colors.map(c => el("option", { value: c, text: c })));
 
-  // ---------- styled drop-downs on top of the native selects (selects stay the source of truth) ----------
+  // ---------- one-tap chips on top of the hidden native selects (selects stay the source of truth) ----------
   const menus = [];
-  function fancy(sel) {
-    const lab = sel.closest("label"), title = lab ? lab.firstChild.textContent.trim() : "";
-    const field = el("div", { class: "field" }, el("span", { class: "field-label", id: sel.id + "Lbl", text: title }));
-    if (lab) { lab.replaceWith(field); }
-    sel.classList.add("sr"); sel.tabIndex = -1; sel.setAttribute("aria-hidden", "true");
-    const btn = el("button", { type: "button", class: "dd-btn", "aria-haspopup": "listbox", "aria-expanded": "false", "aria-labelledby": `${sel.id}Lbl ${sel.id}Val` },
-      el("span", { class: "dd-val", id: sel.id + "Val" }), el("span", { class: "dd-chev", "aria-hidden": "true" }));
-    const list = el("ul", { class: "dd-list", role: "listbox", "aria-labelledby": sel.id + "Lbl", hidden: true });
+  const colorHex = Object.fromEntries(P.map(p => [p.color, p.hex]));
+  function chips(sel) {
+    const box = document.querySelector(`.chips[data-for="${sel.id}"]`);
+    box.setAttribute("role", "radiogroup"); box.setAttribute("aria-labelledby", sel.id + "Lbl");
     const items = [...sel.options].map(o => {
-      const soon = /\(coming soon\)/.test(o.text), txt = o.text.replace(/\s*\(coming soon\)/, "");
-      const li = el("li", { role: "option", tabindex: "-1", "data-v": o.value, class: soon ? "soon" : "" },
-        el("span", { text: txt }), soon ? el("span", { class: "tag", text: "soon" }) : null);
-      li.addEventListener("click", () => choose(o.value));
-      return li;
+      const soon = /\(coming soon\)/.test(o.text);
+      const m = o.text.replace(/\s*\(coming soon\)/, "").match(/^(.*?)(?:\s*\((\d+)\))?$/);
+      let label = m[1], n = m[2];
+      if (o.value === "") label = sel.id === "fCat" ? "All" : sel.id === "fTheme" ? "All themes" : "All colors";
+      const b = el("button", { type: "button", class: "chip" + (soon ? " is-soon" : ""), role: "radio", "data-v": o.value, "aria-label": o.text },
+        sel.id === "fColor" && o.value ? el("span", { class: "sw", style: `background:${colorHex[o.value]}` }) : null,
+        el("span", { text: label }),
+        n && sel.id !== "fCat" ? el("span", { class: "n", text: n }) : null,
+        soon ? el("span", { class: "tag", text: "soon" }) : null);
+      b.addEventListener("click", () => { if (sel.value !== o.value) { sel.value = o.value; sel.dispatchEvent(new Event("change")); } sync(); });
+      return b;
     });
-    list.append(...items);
-    const wrap = el("div", { class: "dd" }, btn, list);
-    field.append(sel, wrap);
-    const isOpen = () => !list.hidden;
-    function open() {
-      menus.forEach(m => m !== api && m.close());
-      list.hidden = false; btn.setAttribute("aria-expanded", "true"); wrap.classList.add("open");
-      (items.find(li => li.dataset.v === sel.value) || items[0]).focus();
-    }
-    function close(focusBtn) { if (!isOpen()) return; list.hidden = true; btn.setAttribute("aria-expanded", "false"); wrap.classList.remove("open"); if (focusBtn) btn.focus(); }
-    function choose(v) { if (sel.value !== v) { sel.value = v; sel.dispatchEvent(new Event("change")); } sync(); close(true); }
+    box.append(...items);
+    box.addEventListener("keydown", e => {   // arrow keys move between chips in the same row
+      const i = items.indexOf(document.activeElement); if (i < 0) return;
+      const k = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? items.length - 1 : null;
+      if (k === null) return; e.preventDefault();
+      const t = items[Math.max(0, Math.min(items.length - 1, k))]; t.focus(); t.click();
+    });
     function sync() {
-      const o = sel.options[sel.selectedIndex]; $("#" + sel.id + "Val").textContent = o ? o.text.replace(/\s*\(coming soon\)/, "") : "";
-      items.forEach(li => li.setAttribute("aria-selected", li.dataset.v === sel.value));
+      items.forEach(b => { const on = b.dataset.v === sel.value; b.setAttribute("aria-checked", on); b.tabIndex = on ? 0 : -1; });
+      const on = items.find(b => b.dataset.v === sel.value);
+      if (on && box.scrollWidth > box.clientWidth) {   // keep the selected chip in view in its row
+        const l = on.offsetLeft - box.offsetLeft, r = l + on.offsetWidth;
+        if (l < box.scrollLeft || r > box.scrollLeft + box.clientWidth) box.scrollTo({ left: l - 16, behavior: "smooth" });
+      }
     }
-    btn.addEventListener("click", () => isOpen() ? close() : open());
-    btn.addEventListener("keydown", e => { if (["ArrowDown", "ArrowUp"].includes(e.key)) { e.preventDefault(); open(); } });
-    list.addEventListener("keydown", e => {
-      const i = items.indexOf(document.activeElement);
-      const go = k => { e.preventDefault(); items[Math.max(0, Math.min(items.length - 1, k))].focus(); };
-      if (e.key === "ArrowDown") go(i + 1); else if (e.key === "ArrowUp") go(i - 1);
-      else if (e.key === "Home") go(0); else if (e.key === "End") go(items.length - 1);
-      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (i >= 0) choose(items[i].dataset.v); }
-      else if (e.key === "Escape") { e.preventDefault(); close(true); }
-      else if (e.key === "Tab") close();
-    });
-    const api = { sync, close, wrap };
+    const api = { sync, close() {}, wrap: box };
     menus.push(api); return api;
   }
-  document.addEventListener("click", e => menus.forEach(m => { if (!m.wrap.contains(e.target)) m.close(); }));
-  [fCat, fTheme, fColor, fSort].forEach(fancy);
+  [fCat, fTheme, fColor, fSort].forEach(chips);
 
   // read filters from the URL so filtered views can be shared
   const q = new URLSearchParams(location.search);

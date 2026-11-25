@@ -42,26 +42,26 @@
 
   <section id="shop" class="shop" aria-labelledby="shopTitle">
     <h2 id="shopTitle">All products</h2>
-    <form class="filters" id="filters" onsubmit="return false">
-      <label>Category
-        <select id="fCat"></select>
-      </label>
-      <label>Theme
-        <select id="fTheme"></select>
-      </label>
-      <label>Color
-        <select id="fColor"></select>
-      </label>
-      <label>Sort
-        <select id="fSort">
-          <option value="featured">Featured first</option>
-          <option value="new">Newest</option>
-          <option value="az">A–Z</option>
-        </select>
-      </label>
-      <label class="search">Search
-        <input id="fSearch" type="search" placeholder="coffin, grief, rot…" autocomplete="off">
-      </label>
+    <form class="filters" id="filters" onsubmit="return false" aria-label="Filter products">
+      <div class="ftop">
+        <label class="search"><span class="sr">Search</span>
+          <input id="fSearch" type="search" placeholder="Search designs: coffin, grief, rot…" autocomplete="off">
+        </label>
+        <div class="frow sortrow"><span class="frow-label" id="fSortLbl">Sort</span>
+          <select id="fSort" class="sr" tabindex="-1" aria-hidden="true">
+            <option value="featured">Featured</option>
+            <option value="new">Newest</option>
+            <option value="az">A–Z</option>
+          </select>
+          <div class="chips" data-for="fSort"></div>
+        </div>
+      </div>
+      <div class="frow"><span class="frow-label" id="fCatLbl">Shop</span>
+        <select id="fCat" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fCat"></div></div>
+      <div class="frow"><span class="frow-label" id="fThemeLbl">Theme</span>
+        <select id="fTheme" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fTheme"></div></div>
+      <div class="frow"><span class="frow-label" id="fColorLbl">Color</span>
+        <select id="fColor" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fColor"></div></div>
     </form>
     <div class="result-bar">
       <p id="resultCount" aria-live="polite"></p>
