@@ -10,4 +10,8 @@ window.SITE_CONFIG = {
   FORM_ENDPOINT: "",
   CONTACT_EMAIL: "hello@example.com",  // replace with your shop email
   CURRENCY: "USD",
+  // Hoodies that rotate in the big spotlight at the top, in order. Use the design numbers
+  // (the number at the start of each image name, e.g. 11 = img/11-skeleton-wearing-meat.svg).
+  HERO_ROTATION: [11, 10, 27, 44, 29, 60, 13, 48],
+  HERO_SECONDS: 5,                     // seconds each hoodie stays up
 };

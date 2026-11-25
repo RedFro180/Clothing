@@ -201,3 +201,43 @@ h2 { font-size: 26px; }
   .filters .search { grid-column: 1 / -1; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ---- rounded, raised ("bubbled") product boxes; price right under the picture ---- */
+.card { background: linear-gradient(180deg, #ffffff 0%, #f6f6f6 100%); border-radius: 22px; padding: 10px 10px 16px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.95), inset 0 -4px 10px rgba(0,0,0,.05),
+              0 2px 4px rgba(0,0,0,.06), 0 14px 26px -10px rgba(0,0,0,.28);
+  transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover, .card:focus-visible { transform: translateY(-5px);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.95), inset 0 -4px 10px rgba(0,0,0,.05),
+              0 4px 8px rgba(0,0,0,.08), 0 24px 36px -12px rgba(0,0,0,.32); }
+.card:hover .tile img, .card:focus-visible .tile img { transform: scale(1.04); }
+.tile { border-radius: 16px; box-shadow: inset 0 3px 8px rgba(255,255,255,.8), inset 0 -12px 20px rgba(0,0,0,.07); }
+.tile::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(ellipse 70% 40% at 28% 6%, rgba(255,255,255,.28), rgba(255,255,255,0) 60%); }
+.card .price { margin: 12px 4px 2px; font-size: 19px; font-weight: 800; color: #151515; }
+.card h3 { margin: 0 4px 4px; }
+.card .row { padding: 0 4px; }
+.badge { border-radius: 999px; padding: 4px 10px; box-shadow: 0 2px 6px rgba(0,0,0,.12); z-index: 1; }
+.place { border-radius: 999px; padding: 3px 9px; z-index: 1; }
+.grid { gap: 30px 22px; }
+.feat-row { padding: 6px 6px 26px; gap: 22px; }
+.bag-item .tile { border-radius: 12px; }
+
+/* ---- spotlight rotator ---- */
+.hero-split { overflow: hidden; background: linear-gradient(135deg, var(--tint, rgba(0,0,0,0)) 0%, rgba(0,0,0,0) 70%), #f3f3f3; transition: background .6s ease; }
+.rotator { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.rot-stage { position: relative; width: min(100%, 420px); aspect-ratio: 420 / 520; }
+.rot-slide { position: absolute; inset: 0; display: flex; flex-direction: column; text-align: left; border: 0; cursor: pointer;
+  background: linear-gradient(180deg, #fff, #f6f6f6); border-radius: 26px; padding: 14px 14px 18px; color: #151515;
+  box-shadow: inset 0 2px 0 #fff, inset 0 -5px 12px rgba(0,0,0,.05), 0 3px 6px rgba(0,0,0,.08), 0 26px 40px -14px rgba(0,0,0,.35);
+  opacity: 0; transform: translateX(30px) scale(.96); transition: opacity .5s ease, transform .5s ease; pointer-events: none; }
+.rot-slide.on { opacity: 1; transform: none; pointer-events: auto; }
+.rot-slide .tile { flex: 1; aspect-ratio: auto; min-height: 0; }
+.rot-slide .price { margin: 12px 4px 0; font-size: 22px; font-weight: 800; }
+.rot-name { margin: 2px 4px 0; font-weight: 600; font-size: 16px; }
+.rot-ctrl { display: flex; align-items: center; gap: 12px; }
+.rot-ctrl > button { width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; font-size: 24px; line-height: 1; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,.15); }
+.rot-dots { display: flex; gap: 8px; }
+.rot-dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; background: #c9c9c9; cursor: pointer; }
+.rot-dots button[aria-current="true"] { background: #151515; width: 24px; border-radius: 6px; }
+@media (prefers-reduced-motion: reduce) { .rot-slide, .card, .hero-split { transition: none; } }

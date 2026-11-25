@@ -29,11 +29,42 @@
         el("img", { src: p.img, alt: `${p.color} hoodie, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570 }),
         p.featured ? el("span", { class: "badge", text: C.FEATURED_LABEL }) : null,
         el("span", { class: "place", text: p.placement.replace(" print", "") })),
+      el("p", { class: "price", text: money(p.price) }),
       el("h3", { text: p.name }),
       el("div", { class: "row" },
-        el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), p.color),
-        el("span", { class: "price", text: money(p.price) })));
+        el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), p.color)));
   }
+
+  // ---------- spotlight rotator (hoodies listed in config HERO_ROTATION) ----------
+  (function rotator() {
+    const stage = $("#rotStage"); if (!stage) return;
+    const ids = (C.HERO_ROTATION && C.HERO_ROTATION.length ? C.HERO_ROTATION : P.filter(p => p.featured).map(p => p.id));
+    const list = ids.map(id => byId[id]).filter(Boolean);
+    if (!list.length) { $("#rotator").hidden = true; return; }
+    const hero = stage.closest(".hero");
+    const tint = hex => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},.22)`; };
+    const slides = list.map((p, i) => el("button", { class: "rot-slide", type: "button", "aria-label": `${p.name}, ${money(p.price)}. View`, tabindex: i ? -1 : 0, onclick: () => openProduct(p) },
+      el("div", { class: "tile" + (p.light ? " dark" : "") }, el("img", { src: p.img, alt: `${p.color} hoodie: ${p.name}`, width: 560, height: 570 })),
+      el("p", { class: "price", text: money(p.price) }),
+      el("p", { class: "rot-name", text: p.name })));
+    const dots = list.map((p, i) => el("button", { type: "button", "aria-label": `Show ${p.name}`, onclick: () => { go(i); restart(); } }));
+    stage.append(...slides); $("#rotDots").append(...dots);
+    let cur = 0, timer = null, paused = false;
+    function go(i) {
+      cur = (i + list.length) % list.length;
+      slides.forEach((s, k) => { s.classList.toggle("on", k === cur); s.tabIndex = k === cur ? 0 : -1; s.setAttribute("aria-hidden", k !== cur); });
+      dots.forEach((d, k) => d.setAttribute("aria-current", k === cur));
+      if (hero) hero.style.setProperty("--tint", tint(list[cur].hex));
+    }
+    const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function restart() { clearInterval(timer); if (!still && list.length > 1) timer = setInterval(() => { if (!paused && !document.hidden) go(cur + 1); }, (C.HERO_SECONDS || 5) * 1000); }
+    $("#rotPrev").addEventListener("click", () => { go(cur - 1); restart(); });
+    $("#rotNext").addEventListener("click", () => { go(cur + 1); restart(); });
+    const rot = $("#rotator");
+    rot.addEventListener("mouseenter", () => paused = true); rot.addEventListener("mouseleave", () => paused = false);
+    rot.addEventListener("focusin", () => paused = true); rot.addEventListener("focusout", () => paused = false);
+    go(0); restart();
+  })();
 
   // ---------- featured row ----------
   const feat = P.filter(p => p.featured).sort((a, b) => a.featured - b.featured);

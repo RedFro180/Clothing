@@ -30,7 +30,14 @@
       <p class="lede">Heavy hoodies for people who lift, grieve and laugh at the wrong things.</p>
       <a class="btn" href="#shop">Shop the drop</a>
     </div>
-    <div class="hs-art"><a class="hero-art " data-hero="0" href="#shop"><img alt="" width="560" height="570"></a></div>
+    <div class="hs-art rotator" id="rotator" role="region" aria-roledescription="carousel" aria-label="Spotlight hoodies">
+      <div class="rot-stage" id="rotStage" aria-live="polite"></div>
+      <div class="rot-ctrl">
+        <button type="button" id="rotPrev" aria-label="Previous hoodie">&#8249;</button>
+        <div class="rot-dots" id="rotDots"></div>
+        <button type="button" id="rotNext" aria-label="Next hoodie">&#8250;</button>
+      </div>
+    </div>
   </section>
 
   <section class="featured" aria-labelledby="featTitle">
@@ -149,11 +156,5 @@
 <script src="config.js"></script>
 <script src="products.js"></script>
 <script src="app.js"></script>
-<script>{
-  const f = window.CATALOG.products.filter(p => p.featured).sort((a, b) => a.featured - b.featured);
-  document.querySelectorAll("[data-hero]").forEach(a => { const p = f[+a.dataset.hero]; if (!p) return;
-    a.href = "#" + p.slug; a.setAttribute("aria-label", p.name); const i = a.querySelector("img"); i.src = p.img; i.alt = p.color + " hoodie: " + p.name; });
-  document.querySelectorAll("[data-hero-name]").forEach(e => { const p = f[+e.dataset.heroName]; if (p) e.textContent = p.name + " / " + p.color; });
-}</script>
 </body>
 </html>
