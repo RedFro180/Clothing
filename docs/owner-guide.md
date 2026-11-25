@@ -54,3 +54,12 @@ What the site can and can't protect:
 - **Shopper behaviour:** PostHog. See `docs/analytics.md`: bought together, clicks per purchase, time on site, non-buyers, failed searches, funnel.
 - **Preorder requests:** your form service inbox. Formspree lists every submission and can export CSV. Each request has an **order number (PO-YYMMDD-XXXX)**, a **[LARGE]** tag when relevant, the items with unit prices, the shipping and total, and the agreement text and time. Free Formspree is about 50 submissions a month according to third-party listings; check formspree.io.
 - **Once you move to Shopify:** real orders, refunds, fraud ratings and sales reports live there. Keep PostHog for behaviour.
+
+## 6. Show a friend a private preview (link only)
+1. Make the file: `python3 tools/make_share_zip.py` → `site-share.zip`. It holds **only** the shop (`site/`): no research, costs, tech pack, designs or notes. In this copy, search engines and AI crawlers are told not to index, list or archive it (`noindex` page tag + header, `robots.txt` blocks everything). Your real `site/` files are not changed.
+2. Go to dash.cloudflare.com (free account) → **Workers & Pages → Create → Pages → Upload assets**.
+3. Pick a project name that doesn't identify you or the brand (it becomes the address), upload the zip, press **Deploy**.
+4. Copy `https://<name>.pages.dev`, open it on your phone in a private tab to check, then send it.
+5. **Update it:** make a new zip and upload it to the same project (same link). **Take it down:** delete the project; the link stops working.
+
+Honest limits: the link isn't a lock. Anyone who has it can open and forward it. To limit it to specific people, add **Cloudflare Access** (Zero Trust → Access → allow only their email); they then enter a one-time code from their email before it opens.
