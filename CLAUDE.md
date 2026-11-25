@@ -78,7 +78,7 @@ Read this first. Not legal/tax advice. Prices are web research (Nov 2026); "est.
 - Ring size (2026-11-25, user: make the spinning hoodies bigger): RING SIZE block at end of style.css — front hoodie ~430px at 1440 (was 330), width also capped at 48vh so shorter laptops still see the front hoodie; 761–1100px (open Fold/tablets) min(38vw,48vh); phones 195px (was 150), ring 300px; app.js radius cap 520→600.
 - Hero line (2026-11-25, user picked from 7 options): lede = "For people carrying more than the bar." (og:description matches). Old: "Heavy hoodies for people who lift, grieve and laugh at the wrong things."
 - Product links are `#slug` (artifact viewer passes plain hashes only). Filters sync to the query string.
-- Preview artifact: https://claude.ai/artifact/CJ1kBxHD7rw5FRvQe3Y2H8, slug 5b74a0d4-d6f9-494f-9228-089e5255c623, version 1795645144-b176 (republish with publish_files; patch mode keeps unlisted files). In the artifact frame, mailto links may not open; the address is shown as text.
+- Preview artifact: https://claude.ai/artifact/CJ1kBxHD7rw5FRvQe3Y2H8, slug 5b74a0d4-d6f9-494f-9228-089e5255c623, version 1795647538-e840 (republish with publish_files; patch mode keeps unlisted files). In the artifact frame, mailto links may not open; the address is shown as text.
 
 ## Sales channels (user, 2026-11-25)
 - Most sales expected via TikTok Shop, Shopify (Shop app) and Instagram ads; audience 16–30.
