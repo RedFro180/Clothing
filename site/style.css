@@ -479,3 +479,22 @@ dialog { background: #f7f3ec; }
   .ftop .search { flex-basis: 100%; }
   .sortrow { width: 100%; }
 }
+
+/* ---- calmer product cards (2026-11-25): muted warm taupe instead of bright bone, so the hoodie is the brightest thing ---- */
+.card, dialog, .soon, .ring-card { --dim: #4f473f; }
+.card, .ring-card { background: linear-gradient(180deg, #cfc6b6 0%, #c3b9a8 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), inset 0 -4px 8px rgba(60,40,20,.10),
+              0 7px 0 #8f826d, 0 10px 14px rgba(0,0,0,.4), 0 30px 50px -14px rgba(0,0,0,.8); }
+.card:hover, .card:focus-visible { box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 10px 0 #887a64,
+              0 16px 22px rgba(0,0,0,.45), 0 46px 64px -16px rgba(0,0,0,.85); }
+.ring-card.front { box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 9px 0 #887a64, 0 16px 22px rgba(0,0,0,.5), 0 46px 64px -16px rgba(0,0,0,.9); }
+.tile, .tile.dark, .pd-img, .pd-img.dark, .g-thumb img { background: #aea290; }
+.card .row { color: #4f473f; }
+.badge { box-shadow: none; }
+.place { background: rgba(26,23,20,.85); }
+dialog, .bag-head { background: #e2dbcf; }
+.pd-gallery { background: #d3cabb; }
+.g-thumb { background: #e2dbcf; box-shadow: 0 3px 0 #b3a794, 0 6px 12px rgba(0,0,0,.15); }
+.size-guide { background: #ebe5db; border-color: #cfc5b5; }
+.soon { background: #d6cdbe; box-shadow: 0 7px 0 #8f826d, 0 26px 40px -12px rgba(0,0,0,.6); }
+.qty input, .req input, .req textarea, .bag-item input, .sizes button, .soon input { background: #f1ece4; }
