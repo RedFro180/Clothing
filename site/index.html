@@ -3,8 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shop</title>
+<title>Brand Name | Dark-humor hoodies, no plastic</title>
 <meta name="description" content="Dark-humor hoodies in hemp and cotton. No plastic anywhere.">
+<meta name="theme-color" content="#0f0d0c">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brand Name | Dark-humor hoodies, no plastic">
+<meta property="og:description" content="Heavy hemp &amp; cotton hoodies for people who lift, grieve and laugh at the wrong things.">
+<meta property="og:image" content="share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="share.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,9 +27,14 @@
     <a href="#shop">Shop</a>
     <a href="#about">About</a>
     <a href="#help">Help</a>
+    <span class="top-actions">
+    <button class="rv-btn" id="rvBtn" type="button" aria-haspopup="dialog" aria-controls="rv" aria-label="Recently viewed" hidden>
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
     <button class="bag-btn" id="bagBtn" aria-haspopup="dialog" aria-controls="bag">
       Preorder list <span class="count" id="bagCount">0</span>
     </button>
+    </span>
   </nav>
 </header>
 
@@ -117,6 +132,7 @@
 <!-- product dialog -->
 <dialog id="pd" class="pd" aria-labelledby="pdName">
   <button class="x" data-close aria-label="Close">&times;</button>
+  <button class="pd-prev" id="pdPrevBtn" type="button" hidden>&#8592; Previous</button>
   <div class="pd-body">
     <div class="pd-gallery">
       <div class="pd-img" id="pdImgWrap">
@@ -139,7 +155,19 @@
       <button type="button" class="link sg-btn" id="sgBtn" aria-expanded="false" aria-controls="sizeGuide">Size guide</button>
       <div class="size-guide" id="sizeGuide" hidden></div>
       <label class="qty">Quantity <input id="pdQty" type="number" min="1" max="20" value="1"></label>
+      <p class="size-note" id="sizeNote" role="status"></p>
       <button class="btn wide" id="pdAdd">Add to preorder list</button>
+      <form class="notify" id="notifyForm" hidden>
+        <p class="notify-title" id="notifyTitle"></p>
+        <div class="notify-tabs" id="notifyTabs" role="radiogroup" aria-label="How should we tell you?">
+          <button type="button" role="radio" aria-checked="true" data-m="email">Email</button>
+          <button type="button" role="radio" aria-checked="false" data-m="text">Text</button>
+        </div>
+        <label class="nf" data-for="email"><span class="sr">Email</span><input type="email" id="nfEmail" placeholder="you@email.com" autocomplete="email"></label>
+        <label class="nf" data-for="text" hidden><span class="sr">Mobile number</span><input type="tel" id="nfPhone" placeholder="Mobile number" autocomplete="tel"></label>
+        <label class="nf-consent" data-for="text" hidden><input type="checkbox" id="nfConsent"> I agree to get one text when this size is back. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
+        <button class="btn wide" type="submit" id="notifyBtn">Notify me</button>
+      </form>
       <p class="pd-msg" id="pdMsg" role="status"></p>
       <details open><summary>Details</summary>
         <ul id="pdDetails"></ul>
@@ -148,6 +176,17 @@
     </div>
   </div>
 </dialog>
+
+<!-- recently viewed -->
+<dialog id="rv" class="rv" aria-labelledby="rvTitle">
+  <div class="bag-head"><h2 id="rvTitle">Recently viewed</h2><button class="x" data-close aria-label="Close">&times;</button></div>
+  <div class="rv-list" id="rvList"></div>
+  <button class="link" id="rvClear" type="button">Clear history</button>
+</dialog>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 14l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <!-- preorder list drawer -->
 <dialog id="bag" class="bag" aria-labelledby="bagTitle">

@@ -210,8 +210,13 @@
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
     $("#pdPrice").textContent = money(p.price);
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
-    $("#pdSizes").replaceChildren(...p.sizes.map(s => el("button", { type: "button", "aria-pressed": "false", text: s,
-      onclick: e => { size = s; $("#pdSizes").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b === e.currentTarget)); $("#pdMsg").textContent = ""; } })));
+    const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
+    $("#pdSizes").replaceChildren(...p.sizes.map(s => el("button", { type: "button", "aria-pressed": "false", "data-s": s,
+      class: out.includes(s) ? "is-out" : "", "aria-label": out.includes(s) ? `${s}, sold out` : s, text: s,
+      onclick: () => pickSize(s, false) })));
+    $("#sizeNote").textContent = "";
+    const remembered = store.get("last-size");
+    if (remembered && p.sizes.includes(remembered)) pickSize(remembered, true); else setBuyMode(false);
     $("#pdDetails").replaceChildren(...[
       `Color: ${p.colorNote}`, "~30% hemp / 70% cotton brushed fleece, heavyweight",
       "Cotton rib, thread, drawcord and labels. No plastic.", `${p.placement}, natural-dye or embroidered`,
@@ -219,8 +224,78 @@
       "All sales final: check the size guide",
     ].map(s => el("li", { text: s })));
     if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
+    remember(p.id);
     if (!pd.open) pd.showModal();
   }
+
+  // ---------- small storage helper (works even if storage is blocked) ----------
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+  };
+
+  // ---------- size memory + sold-out sizes ----------
+  function pickSize(s, auto) {
+    size = s;
+    const out = ((C.SOLD_OUT && C.SOLD_OUT[cur.id]) || []).includes(s);
+    $("#pdSizes").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === s));
+    $("#pdMsg").textContent = "";
+    if (!auto) store.set("last-size", s);
+    $("#sizeNote").textContent = auto ? (out ? `Your size (${s}) is sold out in this one.` : `Size ${s} selected (your last size).`) : (out ? `${s} is sold out.` : "");
+    setBuyMode(out);
+  }
+  function setBuyMode(out) {
+    $("#pdAdd").hidden = out; $(".qty").hidden = out;
+    $("#notifyForm").hidden = !out;
+    if (out) { $("#notifyTitle").textContent = `Tell me when ${size} is back`; setMethod("email"); }
+  }
+  $("#notifyTabs").hidden = !C.SMS_ENABLED;
+  function setMethod(m) {
+    $("#notifyTabs").querySelectorAll("button").forEach(b => b.setAttribute("aria-checked", b.dataset.m === m));
+    $("#notifyForm").querySelectorAll("[data-for]").forEach(l => l.hidden = l.dataset.for !== m);
+    $("#nfEmail").required = m === "email"; $("#nfPhone").required = m === "text"; $("#nfConsent").required = m === "text";
+    $("#notifyForm").dataset.m = m;
+  }
+  $("#notifyTabs").querySelectorAll("button").forEach(b => b.addEventListener("click", () => setMethod(b.dataset.m)));
+  $("#notifyForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const m = e.target.dataset.m || "email";
+    const data = { type: "restock", product: `#${cur.id} ${cur.name} (${cur.color})`, size, method: m };
+    if (m === "text") { data.phone = $("#nfPhone").value; data.sms_consent = "yes, one-time restock text"; } else data.email = $("#nfEmail").value;
+    send(data, $("#pdMsg"), () => { $("#pdMsg").textContent = `You're on the list for ${size}.`; });
+  });
+
+  // ---------- recently viewed + previous ----------
+  let trail = [];   // products opened in this visit, for the Previous button
+  function remember(id) {
+    if (trail[trail.length - 1] !== id) trail.push(id);
+    const list = (store.get("recent") || []).filter(x => x !== id && byId[x]);
+    list.unshift(id); store.set("recent", list.slice(0, 8));
+    $("#rvBtn").hidden = false;
+    const prev = trail.length > 1 ? byId[trail[trail.length - 2]] : null;
+    $("#pdPrevBtn").hidden = !prev;
+    if (prev) $("#pdPrevBtn").setAttribute("aria-label", `Back to ${prev.name}`);
+  }
+  $("#pdPrevBtn").addEventListener("click", () => {
+    trail.pop(); const id = trail.pop(); if (byId[id]) openProduct(byId[id]);
+  });
+  const rv = $("#rv");
+  function drawRecent() {
+    const list = (store.get("recent") || []).map(id => byId[id]).filter(Boolean);
+    $("#rvList").replaceChildren(...(list.length ? list.map(p => el("button", { type: "button", class: "rv-item", onclick: () => { rv.close(); openProduct(p); } },
+      el("div", { class: "tile" }, el("img", { src: p.img, alt: "" })),
+      el("span", { class: "rv-name", text: p.name }), el("span", { class: "rv-price", text: money(p.price) })))
+      : [el("p", { class: "note", text: "Nothing yet. Hoodies you open show up here." })]));
+  }
+  $("#rvBtn").hidden = !(store.get("recent") || []).length;
+  $("#rvBtn").addEventListener("click", () => { drawRecent(); rv.showModal(); });
+  $("#rvClear").addEventListener("click", () => { store.set("recent", []); trail = []; drawRecent(); $("#rvBtn").hidden = true; });
+
+  // ---------- back to top ----------
+  const top = $("#toTop");
+  const onScroll = () => { top.hidden = window.scrollY < innerHeight * 1.5; };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  top.addEventListener("click", () => window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
   // ---------- product pictures ----------
   let pics = [], gi = 0;
   function gallery(p) {

@@ -10,6 +10,12 @@ window.SITE_CONFIG = {
   FORM_ENDPOINT: "",
   CONTACT_EMAIL: "hello@example.com",  // replace with your shop email
   CURRENCY: "USD",
+  // Sizes that are out of stock, by design number (the number at the start of each image name).
+  // Example: SOLD_OUT: { 11: ["S", "3XL"], 27: ["M"] }. Shoppers can ask to be told when it's back.
+  SOLD_OUT: {},
+  // Show the "Text me" option for restock alerts. Only turn on once you have an SMS tool that
+  // records consent and can send the texts (e.g. a Shopify back-in-stock or SMS app).
+  SMS_ENABLED: false,
   // Social links for the footer. Leave "" to hide.
   INSTAGRAM: "",
   TIKTOK: "",
