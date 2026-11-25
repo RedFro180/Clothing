@@ -310,7 +310,7 @@
     const list = similar(cur, 4, size).filter(q => !bag.some(i => i.id === q.id));
     $("#pdWith").hidden = !list.length || !$("#notifyForm").hidden;
     $("#pdWithList").replaceChildren(...list.map(q => mini(q, el("button", { type: "button", class: "mini-add",
-      text: size ? `+ Add ${size}` : "Pick a size above",
+      text: size ? `+ Add ${size}` : "Pick size",
       onclick: e => {
         if (!size) { $("#pdMsg").textContent = "Pick a size first, then tap + Add."; return; }
         if (soldOut(q, size)) { e.currentTarget.textContent = `${size} sold out`; return; }

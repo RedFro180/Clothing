@@ -765,3 +765,11 @@ body { font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 .order-flag { margin: 0; padding: 10px 14px; border-radius: 14px; background: #f6ece4; border: 1px solid #d9b9a6; font-size: 13.5px; color: #5a2a22; }
 .order-flag[hidden] { display: none; }
 #reqBtn:disabled { opacity: .6; cursor: wait; }
+
+/* ---- scrolling fix (2026-11-25): the pop-up scrolls inside itself; the page behind stays put ---- */
+html:has(dialog[open]) { overflow: hidden; }
+dialog.pd { overflow: hidden; display: flex; flex-direction: column; }
+.pd-body { max-height: 92vh; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; scrollbar-gutter: stable; }
+@media (min-width: 761px) { .pd-gallery { position: sticky; top: 0; align-self: start; } }
+@media (max-width: 760px) { .pd-body { max-height: 96vh; max-height: 96dvh; } }
+.bag, .rv { overflow-y: auto; overscroll-behavior: contain; }
