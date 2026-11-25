@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spin prototype: no windows, the hoodie is the product</title>
+<style>
+@font-face { font-family: "Pirata One"; src: url(fonts/pirata-one-latin-400-normal.woff2) format("woff2"); font-display: swap; }
+:root { --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; --bone: #ece5d8; --dim: #a89e8f; --ox: #8f2a25; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #0f0d0c; color: var(--bone); font-family: var(--sans); }
+#space { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; }
+header { padding: 28px 20px 8px; text-align: center; }
+h1 { font-family: "Pirata One", serif; font-weight: 400; font-size: clamp(30px, 5vw, 52px); margin: 0 0 6px; }
+.lede { color: var(--dim); margin: 0 auto; max-width: 60ch; font-size: 15px; line-height: 1.5; }
+.tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 18px 0 4px; }
+.tabs button { height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid rgba(236,229,216,.25); background: rgba(20,17,15,.7); color: var(--bone); font: 500 15px var(--sans); cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--bone); color: #1a1714; }
+.about { text-align: center; color: var(--dim); font-size: 14px; min-height: 2.6em; margin: 6px 20px 0; }
+.grid { max-width: 1280px; margin: 0 auto; padding: 10px clamp(12px, 3vw, 40px) 60px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px clamp(10px, 2vw, 26px); }
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---- the item: no box. The hoodie itself, spinnable ---- */
+.item { position: relative; text-align: left; }
+.stage { position: relative; aspect-ratio: 560 / 600; perspective: 1100px; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; outline: none; }
+.stage:active { cursor: grabbing; }
+.stage:focus-visible { outline: 2px solid #c9a27e; outline-offset: 4px; border-radius: 12px; }
+.turn { position: absolute; inset: 0 0 6% 0; transform-style: preserve-3d; will-change: transform; }
+.face { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; backface-visibility: hidden; -webkit-backface-visibility: hidden; pointer-events: none; -webkit-user-drag: none; }
+.face.back { transform: rotateY(180deg); }
+.shadow { position: absolute; left: 18%; right: 18%; bottom: 1%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.75), rgba(0,0,0,0)); transform-origin: center; pointer-events: none; }
+.hint { position: absolute; right: 2px; bottom: 2px; font-size: 11px; color: var(--dim); display: flex; gap: 4px; align-items: center; opacity: .8; pointer-events: none; transition: opacity .3s; }
+.item.spun .hint { opacity: 0; }
+.price { margin: 10px 2px 2px; font-size: 16px; font-weight: 600; }
+.name { margin: 0 2px 4px; font-size: 15px; line-height: 1.35; }
+.color { margin: 0 2px; font-size: 13px; color: var(--dim); display: flex; gap: 6px; align-items: center; }
+.dot { width: 9px; height: 9px; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); }
+
+/* Style 1: Spotlight. A soft warm light pool behind each hoodie so black ones don't vanish */
+.s-spot .stage::before { content: ""; position: absolute; inset: -4% -6% 4%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(236,229,216,.30), rgba(236,229,216,.10) 55%, rgba(236,229,216,0)); pointer-events: none; }
+/* Style 2: Plinth. Hoodie floats over a thin stone ledge with a faint reflection */
+.s-plinth .stage::after { content: ""; position: absolute; left: 8%; right: 8%; bottom: 0; height: 5%; border-radius: 3px;
+  background: linear-gradient(180deg, #3b342d, #1d1916); box-shadow: inset 0 1px 0 rgba(236,229,216,.25), 0 14px 24px -8px rgba(0,0,0,.9); pointer-events: none; }
+.s-plinth .stage::before { content: ""; position: absolute; inset: 4% 4% 10%; background: radial-gradient(closest-side, rgba(236,229,216,.2), rgba(236,229,216,0)); pointer-events: none; }
+.s-plinth .shadow { bottom: 4%; }
+.s-plinth .turn { inset: 0 0 8% 0; }
+/* Style 3: Hanger. Hoodie hangs from a thin rail hook and swings a little as it turns */
+.s-hanger .stage { padding-top: 0; }
+.s-hanger .rail { position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, rgba(236,229,216,0), rgba(236,229,216,.35) 20%, rgba(236,229,216,.35) 80%, rgba(236,229,216,0)); }
+.s-hanger .turn { inset: 9% 0 4% 0; transform-origin: 50% -10%; }
+.s-hanger .hook { position: absolute; left: 50%; top: -4.5%; width: 34%; height: 11%; transform: translateX(-50%); pointer-events: none; }
+.rail, .hook { display: none; }
+.s-hanger .rail, .s-hanger .hook { display: block; }
+.s-hanger .shadow { opacity: .5; }
+
+.toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); background: var(--bone); color: #1a1714; padding: 12px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; opacity: 0; transition: .25s; pointer-events: none; }
+.toast.on { opacity: 1; transform: translateX(-50%); }
+.note { max-width: 760px; margin: 0 auto 60px; padding: 0 20px; color: var(--dim); font-size: 14px; line-height: 1.6; }
+.note b { color: var(--bone); }
+</style>
+</head>
+<body>
+<canvas id="space" aria-hidden="true"></canvas>
+<header>
+  <h1>No windows. The hoodie is the product.</h1>
+  <p class="lede">Swipe a hoodie sideways on your phone, or click and drag on a computer, to spin it. Tap or click without dragging to open it. Scrolling up and down still scrolls the page.</p>
+  <div class="tabs" role="group" aria-label="Look">
+    <button type="button" data-s="s-spot" aria-pressed="true">1 · Spotlight</button>
+    <button type="button" data-s="s-plinth" aria-pressed="false">2 · Stone ledge</button>
+    <button type="button" data-s="s-hanger" aria-pressed="false">3 · On a hanger</button>
+  </div>
+  <p class="about" id="about"></p>
+</header>
+<main class="grid s-spot" id="grid"></main>
+<p class="note"><b>What this is:</b> each hoodie has a front and a back picture. Spinning turns it in 3-D between them, with shading as it turns. It is not a full 360° model; at the side it is thin, like a flat garment. <b>The real version:</b> when you have samples, a 360° photo spin (about 24–36 photos of each hoodie on a turntable) drops into this same spin, and then it turns like the real thing.</p>
+<div class="toast" id="toast"></div>
+<script src="fog.js"></script>
+<script>
+(() => {
+  const P = [
+    ["11-skeleton-wearing-meat", "You are a skeleton wearing meat.", "Dusty rose", "#c9a19c"],
+    ["10-everyone-gets-a-toe-tag", "Everyone gets a toe tag.", "Black", "#161616"],
+    ["27-maggots-are-patient", "The maggots are patient.", "Sand", "#cbbf9c"],
+    ["44-reaper-is-patient", "The reaper is patient.", "Charcoal", "#333"],
+    ["60-grief-has-weight", "Grief has weight.", "Black", "#161616"],
+    ["45-whats-left-of-me", "What's left of me.", "Indigo", "#1f2a4a"],
+    ["48-the-dirt-always-wins", "The dirt always wins.", "Olive", "#4d5130"],
+    ["29-everything-hurts", "Everything hurts and I'm still here", "Plum", "#4a2c45"],
+  ];
+  const ABOUT = {
+    "s-spot": "Each hoodie floats on the background with a soft light behind it, so black and charcoal hoodies stay visible. Cleanest look.",
+    "s-plinth": "Each hoodie floats over a thin stone ledge, like a display in a shop. Feels more like a physical store.",
+    "s-hanger": "Each hoodie hangs from a rail on a hook and swings slightly as you spin it. Most 'clothing store'; a little busier.",
+  };
+  const grid = document.getElementById("grid"), toast = document.getElementById("toast"), about = document.getElementById("about");
+  const hook = '<svg class="hook" viewBox="0 0 100 40" aria-hidden="true"><path d="M50 2 q8 0 8 7 q0 6 -8 9 L8 36 h84 L50 18" fill="none" stroke="#a89e8f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  grid.innerHTML = P.map(([f, name, color, hex], i) => `
+    <article class="item">
+      <div class="stage" tabindex="0" role="button" aria-label="${name}, ${color}, $150. Drag to spin, Enter to open. Left and right arrows turn it.">
+        <span class="rail"></span>
+        <div class="turn">${hook}<img class="face front" src="img/${f}.svg" alt="" draggable="false"><img class="face back" src="img/${f}-b.svg" alt="" draggable="false"></div>
+        <span class="shadow"></span>
+        ${i === 0 ? '<span class="hint">&#8635; drag to spin</span>' : '<span class="hint">&#8635;</span>'}
+      </div>
+      <p class="price">$150</p><p class="name">${name}</p><p class="color"><span class="dot" style="background:${hex}"></span>${color}</p>
+    </article>`).join("");
+
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const say = t => { toast.textContent = t; toast.classList.add("on"); clearTimeout(say.t); say.t = setTimeout(() => toast.classList.remove("on"), 1400); };
+
+  document.querySelectorAll(".stage").forEach(stage => {
+    const item = stage.closest(".item"), turn = stage.querySelector(".turn"), faces = stage.querySelectorAll(".face"), shadow = stage.querySelector(".shadow");
+    let a = 0, v = 0, raf = 0, down = null, lastX = 0, lastT = 0, moved = false, hover = false, t0 = performance.now();
+    const hanger = () => grid.classList.contains("s-hanger");
+    function draw() {
+      const c = Math.cos(a * Math.PI / 180), lit = 0.55 + 0.45 * Math.abs(c);   // darker when turned edge-on
+      const sway = hanger() ? Math.max(-6, Math.min(6, v * 0.6)) : 0;          // hanger swings with spin speed
+      turn.style.transform = `rotateZ(${sway}deg) rotateY(${a}deg)`;
+      faces.forEach(f => f.style.filter = `brightness(${lit}) drop-shadow(0 0 1.2px rgba(236,229,216,${(0.5 * lit).toFixed(2)}))`); // faint edge light so black hoodies don't vanish
+      shadow.style.transform = `scaleX(${0.55 + 0.45 * Math.abs(c)})`;
+    }
+    function loop(now) {
+      raf = 0;
+      if (down) return;
+      if (Math.abs(v) > 0.05) { a += v; v *= 0.94; }                              // momentum after a flick
+      else {
+        v = 0;
+        const target = Math.round(a / 180) * 180;                                  // settle on front or back
+        const idle = hover && !still ? Math.sin((now - t0) / 700) * 10 : 0;        // gentle sway when the mouse is over it
+        a += (target + idle - a) * 0.12;
+        if (Math.abs(target + idle - a) < 0.05 && !hover) { a = target + idle; draw(); return; }
+      }
+      draw(); raf = requestAnimationFrame(loop);
+    }
+    const kick = () => { if (!raf) raf = requestAnimationFrame(loop); };
+    stage.addEventListener("pointerdown", e => { if (e.button > 0) return; down = { x: e.clientX, y: e.clientY, a, id: e.pointerId }; moved = false; v = 0; lastX = e.clientX; lastT = e.timeStamp; });
+    stage.addEventListener("pointermove", e => {
+      if (!down || e.pointerId !== down.id) return;
+      const dx = e.clientX - down.x, dy = e.clientY - down.y;
+      if (!moved && Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) { moved = true; stage.setPointerCapture(e.pointerId); item.classList.add("spun"); }
+      if (!moved) return;
+      a = down.a + dx * 0.7;
+      const dt = Math.max(8, e.timeStamp - lastT); v = (e.clientX - lastX) * 0.7 * (16 / dt); lastX = e.clientX; lastT = e.timeStamp;
+      draw();
+    });
+    const end = e => { if (!down) return; const wasMoved = moved; down = null; if (!wasMoved && e.type === "pointerup") say("Opens the product page"); kick(); };
+    stage.addEventListener("pointerup", end); stage.addEventListener("pointercancel", e => { down = null; moved = false; kick(); });
+    stage.addEventListener("click", e => { if (moved) { e.preventDefault(); e.stopPropagation(); } });
+    stage.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); say("Opens the product page"); }
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); v = (e.key === "ArrowRight" ? 1 : -1) * 9; item.classList.add("spun"); kick(); }
+    });
+    stage.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") { hover = true; t0 = performance.now(); kick(); } });
+    stage.addEventListener("pointerleave", () => { hover = false; kick(); });
+    draw();
+  });
+
+  document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    grid.className = "grid " + b.dataset.s; about.textContent = ABOUT[b.dataset.s];
+  }));
+  about.textContent = ABOUT["s-spot"];
+})();
+</script>
+</body>
+</html>
