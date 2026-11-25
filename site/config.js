@@ -21,5 +21,5 @@ window.SITE_CONFIG = {
     { size: "3XL", chest: "", length: "", sleeve: "" },
   ],
   // The spinning ring at the top shows the Featured hoodies (FEATURED in tools/build_site.py).
-  HERO_SPEED: 40,                      // seconds for one full turn of the ring; bigger = slower
+  HERO_SPEED: 24,                      // seconds for one full turn of the ring; bigger = slower
 };

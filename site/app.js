@@ -47,15 +47,19 @@
     box.append(...items);
     const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     const speed = (Math.PI * 2) / ((Number(C.HERO_SPEED) || 40) * 1000);   // radians per ms
-    let angle = 0, target = null, paused = false, last = 0;
+    let angle = 0, target = null, hover = false, kbd = false, stopped = false, last = 0, stepClock = 0;
     function place() {
-      const W = box.clientWidth, R = Math.min(W * (W < 600 ? 0.44 : 0.36), 520), lift = Math.min(W * 0.05, 46);
+      const W = box.clientWidth, R = Math.min(W * (W < 600 ? 0.4 : 0.33), 520), lift = Math.min(W * 0.05, 46);
       items.forEach((it, i) => {
         const t = angle + i * step, x = Math.sin(t) * R, z = Math.cos(t);       // z: 1 front, -1 back
         const s = 0.55 + 0.45 * (z + 1) / 2;
         it.style.transform = `translate(-50%, -50%) translate3d(${x.toFixed(1)}px, ${(z * lift).toFixed(1)}px, 0) scale(${s.toFixed(3)})`;
         it.style.zIndex = String(Math.round((z + 1) * 50));
-        it.style.filter = `brightness(${(0.45 + 0.55 * (z + 1) / 2).toFixed(3)}) saturate(${(0.6 + 0.4 * (z + 1) / 2).toFixed(3)})`;
+        const op = Math.max(0, Math.min(1, (z + 0.25) / 0.75));      // fades out as it turns away, gone at the back
+        it.style.opacity = op.toFixed(3);
+        it.style.visibility = op < 0.02 ? "hidden" : "visible";
+        it.style.pointerEvents = op > 0.6 ? "auto" : "none";
+        it.style.filter = `brightness(${(0.55 + 0.45 * (z + 1) / 2).toFixed(3)})`;
         it.tabIndex = z > 0.7 ? 0 : -1;
         it.classList.toggle("front", z > 0.97);
       });
@@ -67,14 +71,25 @@
       const dt = last ? Math.min(now - last, 50) : 16; last = now;
       if (target !== null) {
         const d = target - angle; angle += d * 0.12; if (Math.abs(d) < 0.002) { angle = target; target = null; }
-      } else if (!still && !paused && !document.hidden) angle -= speed * dt;
+      } else if (!stopped && !hover && !kbd && !document.hidden) {
+        if (!still) angle -= speed * dt;                       // continuous slow spin
+        else if ((stepClock += dt) > 5000) { stepClock = 0; turn(1); }   // reduced motion: gentle step every 5 s
+      }
       place(); requestAnimationFrame(frame);
     }
     $("#ringPrev").addEventListener("click", () => turn(-1));
     $("#ringNext").addEventListener("click", () => turn(1));
     const sec = box.closest(".ring-sec");
-    sec.addEventListener("mouseenter", () => paused = true); sec.addEventListener("mouseleave", () => paused = false);
-    sec.addEventListener("focusin", () => paused = true); sec.addEventListener("focusout", () => paused = false);
+    // pause only while a mouse is over a hoodie or the keyboard is on one; taps and arrow clicks don't stop it
+    items.forEach(it => {
+      it.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") hover = true; });
+      it.addEventListener("pointerleave", () => { hover = false; });
+      it.addEventListener("focus", () => { kbd = it.matches(":focus-visible"); });
+      it.addEventListener("blur", () => { kbd = false; });
+    });
+    const pp = $("#ringPause");
+    pp.addEventListener("click", () => { stopped = !stopped; pp.setAttribute("aria-pressed", stopped); pp.textContent = stopped ? "\u25B6" : "\u275A\u275A";
+      pp.setAttribute("aria-label", stopped ? "Start spinning" : "Stop spinning"); });
     let sx = null, swiped = false;
     box.addEventListener("pointerdown", e => { sx = e.clientX; swiped = false; });
     box.addEventListener("pointerup", e => { if (sx !== null && Math.abs(e.clientX - sx) > 40) { swiped = true; turn(e.clientX < sx ? 1 : -1); } sx = null; });
