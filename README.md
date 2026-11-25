@@ -17,6 +17,9 @@ A showcase shop with no payment yet: a featured row at the top, all 107 hoodies 
 - **View locally:** open `site/index.html`, or run `cd site && python3 -m http.server` and go to http://localhost:8000.
 - **Brand name, tagline, featured label, contact email, form URL, speed of the spinning ring of featured hoodies at the top (`HERO_SPEED`, seconds per turn; bigger = slower; the ring shows the `FEATURED` list in `tools/build_site.py`):** `site/config.js`.
 - **Sold-out sizes:** `SOLD_OUT` in `site/config.js`, e.g. `{ 11: ["S", "3XL"] }`. Shoppers who pick a sold-out size can ask to be told when it's back (sent like a preorder request). Set `SMS_ENABLED: true` only once you use an SMS tool that records consent and actually sends texts; this site only collects the requests.
+- **Shipping:** `SHIPPING_FLAT` and `FREE_SHIP_QTY` in `site/config.js` (placeholders $9 / free at 2+; set your real numbers).
+- **Private analytics:** paste a PostHog project key into `POSTHOG_KEY` in `site/config.js`. See `docs/analytics.md` for the dashboard (bought together, clicks per purchase, time on site, non-buyers).
+- **Customer test:** `node tools/customer_runs.js` runs 50 simulated shoppers and writes `docs/testing/customer-runs-latest.json`.
 - **Size guide numbers:** `SIZE_CHART` in `site/config.js` (blank shows "Measurements coming soon").
 - **Real product photos:** put them in `site/photos/` named with the design number first (e.g. `11-front.jpg`, `11-worn.jpg`), then run `python3 tools/build_site.py`. They show before the mockup pictures in each product's gallery.
 - **Featured picks, price, coming-soon list:** top of `tools/build_site.py`. A design's theme can be overridden with `theme="rot"` in its `D(...)` entry.

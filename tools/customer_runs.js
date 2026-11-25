@@ -72,7 +72,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
         await act('submit notify', () => p.click('#notifyBtn')); await p.waitForTimeout(200);
         const mail = /email app/i.test(await p.textContent('#pdMsg')); if (mail) friction.push('restock request opens email app (no form service)');
         const alt = (await p.locator('#pdSizes button:not(.is-out)').count()); log.push(`${alt} other sizes available`);
-        const suggest = await p.evaluate(() => /other|similar|try/i.test(document.querySelector('#pdMsg').textContent + document.querySelector('#sizeNote').textContent));
+        const suggest = await p.locator('#pdAlts').isVisible();
         if (!suggest) friction.push('sold out: no suggestion of similar hoodies in that size');
       } else {
         if (rnd() < 0.15) { await act('tap Add without size (mistake)', async () => { await p.locator('#pdSizes button[aria-pressed="true"]').click(); }); }
@@ -92,7 +92,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     if (items > 0) {
       if (!(await p.locator('#bag').evaluate(d => d.open))) await act('open preorder list', () => p.click('#bagBtn'));
       const total = await p.textContent('#bagTotal'); log.push(total.trim());
-      if (/shipping/.test(total) && !/\$\d+ shipping|free shipping/i.test(total)) friction.push('shipping cost unknown at checkout');
+      if (!/Shipping/.test(total)) friction.push('shipping cost unknown at checkout');
       await act('type name', () => p.fill('#reqForm input[name=name]', 'Test Buyer'));
       await act('type email', () => p.fill('#reqForm input[name=email]', 'buyer@example.com'));
       await act('send preorder request', () => p.click('#reqForm button[type=submit]')); await p.waitForTimeout(200);

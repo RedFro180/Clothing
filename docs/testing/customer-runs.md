@@ -28,3 +28,24 @@ Search only matches caption text, color and theme names. So:
 - "hoodie", "skull", "pink", "sad", "depression", "funny", "3am", "tombstone", "xl", "zip up" and "mom" all returned **0 results**.
 - "coffin" returned 1 result even though 7 designs show coffins.
 - About 9 designs show a skull.
+
+## After fixes (same 50 runs, rerun 2026-11-25)
+Fixed:
+- **Smarter search:** picture tags, shopper words and filler words. "skull" finds 9 designs, "coffin" 7, "pink" 11, "sad" 24, "3am" 3.
+- **No-results suggestions:** a search with no results shows suggestion chips.
+- **Shipping:** shown on the page, on each product and in the list ($9 flat, free at 2+; placeholders in config).
+- **Sold-out sizes:** now show "Available in L" with 4 similar hoodies.
+- **Small iPhones:** the Add button fits on the iPhone SE.
+- **New:** a "Buy it with" row (one-tap add in your size) and a free-shipping nudge in the list.
+
+| Problem | Before | After |
+|---|---|---|
+| Shipping unknown | 41/41 | 0 |
+| Sold-out dead end | 9/9 | 0 |
+| Add button off-screen (iPhone SE) | 9 | 0 |
+| Searches with 0 results (28-word test) | 11 | 1 ("mom") |
+| Preorder opens email app | 41/41 | 41/41 (needs a form service URL in config) |
+| Size guide empty | 5/5 | 5/5 (needs your measurements) |
+| Color chip off-screen | 3 | 3 (minor; row swipes) |
+
+0 page errors. About 7 clicks from landing to preorder request.

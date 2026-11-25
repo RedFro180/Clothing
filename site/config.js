@@ -10,6 +10,12 @@ window.SITE_CONFIG = {
   FORM_ENDPOINT: "",
   CONTACT_EMAIL: "hello@example.com",  // replace with your shop email
   CURRENCY: "USD",
+  // Shipping shown on products and in the preorder list. PLACEHOLDERS: set your real numbers.
+  SHIPPING_FLAT: 9,                    // dollars per order
+  FREE_SHIP_QTY: 2,                    // free shipping when the order has this many hoodies (0 = never)
+  // Private analytics (only you see it). Make a free PostHog account, copy the "Project API key", paste it here.
+  POSTHOG_KEY: "",
+  POSTHOG_HOST: "https://us.i.posthog.com",
   // Sizes that are out of stock, by design number (the number at the start of each image name).
   // Example: SOLD_OUT: { 11: ["S", "3XL"], 27: ["M"] }. Shoppers can ask to be told when it's back.
   SOLD_OUT: {},

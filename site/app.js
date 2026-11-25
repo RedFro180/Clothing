@@ -12,6 +12,13 @@
     return n;
   };
   const money = n => new Intl.NumberFormat("en-US", { style: "currency", currency: C.CURRENCY, maximumFractionDigits: 0 }).format(n);
+  const track = (n, p) => { try { window.track && window.track(n, p); } catch (e) {} };
+  const trackPurchase = (...x) => { try { window.trackPurchase && window.trackPurchase(...x); } catch (e) {} };
+  const shipLine = () => {
+    const f = Number(C.SHIPPING_FLAT) || 0, q = C.FREE_SHIP_QTY;
+    if (!f) return "Free shipping";
+    return q ? `${money(f)} shipping · free when you get ${q}+` : `${money(f)} shipping`;
+  };
   const byId = Object.fromEntries(P.map(p => [p.id, p]));
   const bySlug = Object.fromEntries(P.map(p => [p.slug, p]));
 
@@ -172,19 +179,38 @@
       grid.append(soonCard(type));
       writeURL(); return;
     }
-    const words = fSearch.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const words = searchWords(fSearch.value);
     let list = P.filter(p =>
       (!fCat.value || p.type === fCat.value) && (!fTheme.value || p.theme === fTheme.value) &&
       (!fColor.value || p.color === fColor.value) &&
-      words.every(w => `${p.name} ${p.sub} ${p.color} ${CAT.themes[p.theme]} ${p.placement}`.toLowerCase().includes(w)));
+      words.every(w => haystack(p).includes(w)));
     if (fSort.value === "az") list.sort((a, b) => a.name.localeCompare(b.name));
     else if (fSort.value === "new") list.sort((a, b) => b.id - a.id);
     else list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id);
     $("#resultCount").textContent = `${list.length} ${list.length === 1 ? "hoodie" : "hoodies"}`;
-    if (!list.length) grid.append(el("p", { class: "empty", text: "Nothing matches. Try fewer filters." }));
+    if (!list.length) {
+      const tips = ["skull", "coffin", "grief", "gym", "rot", "black"];
+      grid.append(el("div", { class: "empty" },
+        el("p", { text: words.length ? `No hoodies match "${fSearch.value.trim()}".` : "Nothing matches these filters." }),
+        el("p", { class: "tips" }, "Try: ", ...tips.map(w => el("button", { type: "button", class: "chip", text: w,
+          onclick: () => { fCat.value = fTheme.value = fColor.value = ""; fSearch.value = w; render(); } })))));
+      track("search_no_results", { q: fSearch.value.trim() });
+    }
     else grid.append(...list.map(card));
     writeURL();
   }
+
+  // search: ignore filler words, map common shopper words, match picture tags too
+  const STOP = new Set(["hoodie", "hoodies", "sweatshirt", "sweater", "hoody", "a", "an", "the", "with", "and", "of", "for", "shirt", "pullover"]);
+  const ALIAS = { "3am": "3 a.m.", "3": "3 a.m.", "skulls": "skull", "skeletons": "skeleton", "coffins": "coffin", "graves": "grave", "funny": "", "dark": "",
+    "sad": "grief", "depressed": "grief", "depression": "grief", "anxiety": "grief", "mental": "grief", "workout": "gym", "lifting": "lift", "weights": "gym",
+    "gray": "grey", "dead": "dead", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
+  function searchWords(q) {
+    return q.toLowerCase().replace(/[^a-z0-9.' -]/g, " ").split(/\s+/).filter(Boolean)
+      .map(w => (w in ALIAS ? ALIAS[w] : w)).filter(w => w && !STOP.has(w));
+  }
+  const hay = {};
+  const haystack = p => hay[p.id] || (hay[p.id] = `${p.name} ${p.sub} ${p.color} ${p.colorNote} ${CAT.themes[p.theme]} ${p.placement} ${p.tags || ""}`.toLowerCase());
 
   function soonCard(t) {
     const msg = el("p", { class: "pd-msg", role: "status" });
@@ -197,7 +223,8 @@
   }
 
   [fCat, fTheme, fColor, fSort].forEach(s => s.addEventListener("change", render));
-  let t; fSearch.addEventListener("input", () => { clearTimeout(t); t = setTimeout(render, 150); });
+  let t, ts; fSearch.addEventListener("input", () => { clearTimeout(t); t = setTimeout(render, 150);
+    clearTimeout(ts); ts = setTimeout(() => fSearch.value.trim() && track("search", { q: fSearch.value.trim(), results: $("#grid").querySelectorAll(".card").length }), 1200); });
   $("#clearBtn").addEventListener("click", () => { fCat.value = fTheme.value = fColor.value = ""; fSearch.value = ""; render(); });
 
   // ---------- product dialog ----------
@@ -209,14 +236,17 @@
     $("#pdMeta").textContent = [p.featured ? C.FEATURED_LABEL : "", CAT.themes[p.theme], p.placement].filter(Boolean).join(" · ");
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
     $("#pdPrice").textContent = money(p.price);
+    $("#pdShip").textContent = shipLine();
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
     const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
     $("#pdSizes").replaceChildren(...p.sizes.map(s => el("button", { type: "button", "aria-pressed": "false", "data-s": s,
       class: out.includes(s) ? "is-out" : "", "aria-label": out.includes(s) ? `${s}, sold out` : s, text: s,
       onclick: () => pickSize(s, false) })));
     $("#sizeNote").textContent = "";
+    track("product_viewed", { id: p.id, name: p.name, theme: p.theme, color: p.color });
     const remembered = store.get("last-size");
     if (remembered && p.sizes.includes(remembered)) pickSize(remembered, true); else setBuyMode(false);
+    $("#pdBody").scrollTop = 0; pd.scrollTop = 0;
     $("#pdDetails").replaceChildren(...[
       `Color: ${p.colorNote}`, "~30% hemp / 70% cotton brushed fleece, heavyweight",
       "Cotton rib, thread, drawcord and labels. No plastic.", `${p.placement}, natural-dye or embroidered`,
@@ -248,6 +278,41 @@
     $("#pdAdd").hidden = out; $(".qty").hidden = out;
     $("#notifyForm").hidden = !out;
     if (out) { $("#notifyTitle").textContent = `Tell me when ${size} is back`; setMethod("email"); }
+    drawAlts(out);
+    drawWith();
+  }
+  const soldOut = (p, s) => ((C.SOLD_OUT && C.SOLD_OUT[p.id]) || []).includes(s);
+  function similar(p, n, s) {   // same theme first, then same color, never the same hoodie; only ones in size s if given
+    const ok = q => q.id !== p.id && (!s || !soldOut(q, s));
+    const a = P.filter(q => ok(q) && q.theme === p.theme), b = P.filter(q => ok(q) && q.theme !== p.theme && q.color === p.color);
+    return [...a, ...b].slice(0, n);
+  }
+  function mini(q, btn) {
+    return el("div", { class: "mini" },
+      el("button", { type: "button", class: "mini-open", "aria-label": `View ${q.name}`, onclick: () => { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); } },
+        el("div", { class: "tile" }, el("img", { src: q.img, alt: "", loading: "lazy" })),
+        el("span", { class: "mini-price", text: money(q.price) }), el("span", { class: "mini-name", text: q.name })), btn || null);
+  }
+  function drawAlts(out) {
+    const box = $("#pdAlts");
+    if (!out) { box.hidden = true; return; }
+    const list = similar(cur, 4, size);
+    box.hidden = !list.length;
+    $("#pdAltsTitle").textContent = `Available in ${size}`;
+    $("#pdAltsList").replaceChildren(...list.map(q => mini(q)));
+  }
+  function drawWith() {
+    const list = similar(cur, 4, size).filter(q => !bag.some(i => i.id === q.id));
+    $("#pdWith").hidden = !list.length || !$("#notifyForm").hidden;
+    $("#pdWithList").replaceChildren(...list.map(q => mini(q, el("button", { type: "button", class: "mini-add",
+      text: size ? `+ Add ${size}` : "Pick a size above",
+      onclick: e => {
+        if (!size) { $("#pdMsg").textContent = "Pick a size first, then tap + Add."; return; }
+        if (soldOut(q, size)) { e.currentTarget.textContent = `${size} sold out`; return; }
+        addToBag(q.id, size, 1, "buy_it_with"); e.currentTarget.textContent = "Added ✓"; e.currentTarget.disabled = true;
+        $("#pdMsg").textContent = `Added ${q.name} (${size}). `;
+        $("#pdMsg").append(el("button", { class: "link", type: "button", text: "View list", onclick: () => { pd.close(); openBag(); } }));
+      } }))));
   }
   $("#notifyTabs").hidden = !C.SMS_ENABLED;
   function setMethod(m) {
@@ -376,12 +441,18 @@
   bag = bag.filter(i => byId[i.id]);
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(bag)); } catch {} updateCount(); };
   const updateCount = () => { $("#bagCount").textContent = bag.reduce((s, i) => s + i.qty, 0); };
-  function addToBag(id, sz, n) {
+  function addToBag(id, sz, n, from) {
+    track("added_to_list", { id, name: byId[id].name, size: sz, qty: n, from: from || "product" });
     const hit = bag.find(i => i.id === id && i.size === sz);
     if (hit) hit.qty = Math.min(20, hit.qty + n); else bag.push({ id, size: sz, qty: n });
     save();
   }
   const bagEl = $("#bag");
+  function shipping(qty, subtotal) {
+    if (!qty) return 0;
+    if (C.FREE_SHIP_QTY && qty >= C.FREE_SHIP_QTY) return 0;
+    return Number(C.SHIPPING_FLAT) || 0;
+  }
   function drawBag() {
     const box = $("#bagItems"); box.replaceChildren();
     if (!bag.length) box.append(el("p", { class: "note", text: "Your list is empty. Open a hoodie, pick a size and add it." }));
@@ -394,8 +465,15 @@
         el("input", { type: "number", min: 1, max: 20, value: i.qty, "aria-label": `Quantity for ${p.name}`,
           onchange: e => { i.qty = Math.max(1, Math.min(20, parseInt(e.target.value, 10) || 1)); save(); drawBag(); } })));
     });
-    const total = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0);
-    $("#bagTotal").textContent = bag.length ? `Estimated total: ${money(total)} + shipping. Nothing is charged now.` : "";
+    const sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0), qty = bag.reduce((s, i) => s + i.qty, 0);
+    const ship = shipping(qty, sub), need = C.FREE_SHIP_QTY ? C.FREE_SHIP_QTY - qty : 0;
+    $("#bagTotal").replaceChildren(...(bag.length ? [
+      need > 0 ? el("p", { class: "ship-nudge", text: `Add ${need} more hoodie${need > 1 ? "s" : ""} for free shipping.` })
+               : C.FREE_SHIP_QTY ? el("p", { class: "ship-nudge ok", text: "You've got free shipping." }) : null,
+      el("div", { class: "sum" }, el("span", { text: "Subtotal" }), el("span", { text: money(sub) })),
+      el("div", { class: "sum" }, el("span", { text: "Shipping" }), el("span", { text: ship ? money(ship) : "Free" })),
+      el("div", { class: "sum total" }, el("span", { text: "Estimated total" }), el("span", { text: money(sub + ship) })),
+      el("p", { class: "note", text: "Nothing is charged now." })] : []));
     $("#reqForm").hidden = !bag.length;
   }
   $("#bagNote").textContent = `No payment now. Send the list and we'll email a ship date and payment link. Or email ${C.CONTACT_EMAIL} directly.`;
@@ -406,7 +484,10 @@
     e.preventDefault();
     const f = new FormData(e.target);
     const items = bag.map(i => `${i.qty} x #${i.id} ${byId[i.id].name} (${byId[i.id].color}, ${i.size})`);
-    send({ type: "preorder", name: f.get("name"), email: f.get("email"), note: f.get("note"), items: items.join("\n") }, $("#reqMsg"),
+    const qty = bag.reduce((s, i) => s + i.qty, 0), sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0);
+    trackPurchase(bag.map(i => ({ id: i.id, name: byId[i.id].name, size: i.size, qty: i.qty })), sub, shipping(qty, sub));
+    send({ type: "preorder", name: f.get("name"), email: f.get("email"), note: f.get("note"), items: items.join("\n"),
+      shipping: money(shipping(qty, sub)), total: money(sub + shipping(qty, sub)) }, $("#reqMsg"),
       () => { bag = []; save(); drawBag(); });
   });
 
@@ -433,6 +514,10 @@
     send({ type: "notify", product: "Drop alerts", email: e.target.querySelector("input").value }, $("#dropMsg")); });
   const soc = [["Instagram", C.INSTAGRAM], ["TikTok", C.TIKTOK]].filter(([, u]) => u);
   $("#social").append(...soc.map(([n, u]) => el("a", { href: u, rel: "noopener", text: n })));
+
+  $("#heroShip").textContent = shipLine();
+  const sf = document.querySelector("[data-ship-faq]");
+  if (sf) sf.textContent = `${shipLine()}. Shipping is shown on each product and in your preorder list before you send anything.`;
 
   updateCount(); render(); fromHash();
 })();

@@ -43,6 +43,7 @@
     <p class="kicker">Hemp &amp; cotton fleece · natural dyes · zero plastic</p>
     <h1 data-tagline>Dark humor. Natural fiber. No plastic.</h1>
     <p class="lede">Heavy hoodies for people who lift, grieve and laugh at the wrong things.</p>
+    <p class="hero-ship" id="heroShip"></p>
   </section>
 
   <section class="ring-sec" aria-labelledby="featTitle">
@@ -104,6 +105,10 @@
         <p>All sales are final. Check the size chart before ordering. If we send the wrong item or it's lost or damaged in shipping, email us within 7 days and we'll fix it.</p></details>
       <details name="faq"><summary>Sizing</summary>
         <p>Measure a hoodie you already own that fits the way you like, then compare it to the size guide on each product. Chest: lay it flat and measure armpit to armpit, then double it. Length: from the top of the shoulder next to the collar straight down to the hem. Sleeve: from the center of the back of the collar to the end of the cuff.</p></details>
+      <details name="faq"><summary>Shipping</summary>
+        <p data-ship-faq>Shipping is shown on each product and in your preorder list before you send anything.</p></details>
+      <details name="faq"><summary>Privacy</summary>
+        <p>We count anonymous things like which hoodies are viewed, how long visits last and what gets added to preorder lists, to make the shop better. No cookies, and no names, emails or phone numbers go into these stats. Your preorder details are only used to contact you about your order.</p></details>
       <details name="faq"><summary>Care</summary>
         <p>Wash cold, inside out, with a mild soap. Line dry or tumble low. Expect up to a few percent shrink on the first wash. Don't bleach.</p></details>
     </div>
@@ -133,7 +138,7 @@
 <dialog id="pd" class="pd" aria-labelledby="pdName">
   <button class="x" data-close aria-label="Close">&times;</button>
   <button class="pd-prev" id="pdPrevBtn" type="button" hidden>&#8592; Previous</button>
-  <div class="pd-body">
+  <div class="pd-body" id="pdBody">
     <div class="pd-gallery">
       <div class="pd-img" id="pdImgWrap">
         <img id="pdImg" alt="">
@@ -148,6 +153,7 @@
       <h2 id="pdName"></h2>
       <p class="pd-sub" id="pdSub"></p>
       <p class="pd-price" id="pdPrice"></p>
+      <p class="pd-ship" id="pdShip"></p>
       <fieldset class="sizes">
         <legend>Size</legend>
         <div id="pdSizes"></div>
@@ -157,6 +163,7 @@
       <label class="qty">Quantity <input id="pdQty" type="number" min="1" max="20" value="1"></label>
       <p class="size-note" id="sizeNote" role="status"></p>
       <button class="btn wide" id="pdAdd">Add to preorder list</button>
+      <section class="pd-alts" id="pdAlts" hidden><h3 id="pdAltsTitle"></h3><div class="mini-row" id="pdAltsList"></div></section>
       <form class="notify" id="notifyForm" hidden>
         <p class="notify-title" id="notifyTitle"></p>
         <div class="notify-tabs" id="notifyTabs" role="radiogroup" aria-label="How should we tell you?">
@@ -169,6 +176,7 @@
         <button class="btn wide" type="submit" id="notifyBtn">Notify me</button>
       </form>
       <p class="pd-msg" id="pdMsg" role="status"></p>
+      <section class="pd-with" id="pdWith" hidden><h3>Buy it with</h3><div class="mini-row" id="pdWithList"></div></section>
       <details open><summary>Details</summary>
         <ul id="pdDetails"></ul>
       </details>
@@ -208,6 +216,7 @@
 
 <script src="fog.js"></script>
 <script src="config.js"></script>
+<script src="analytics.js"></script>
 <script src="products.js"></script>
 <script src="app.js"></script>
 </body>

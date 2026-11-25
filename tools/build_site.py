@@ -52,6 +52,31 @@ def theme_for(d):
             return t
     return "grief"
 
+# Words a shopper might type, by what is drawn on the hoodie (icon) and by theme, for search.
+ICON_TAGS = {
+    "skull": "skull bones death", "rot_skull": "skull rot decay bones", "skull_flies": "skull flies rot",
+    "skeleton": "skeleton bones", "figure": "skeleton bones gym lift", "figures2": "skeletons friends gym together",
+    "rot_lifter": "skeleton rot gym lift", "hand_skel": "skeleton hand bones", "death_grip": "skeleton hands grip bones",
+    "coffin": "coffin casket funeral", "tombstone": "tombstone gravestone grave rip cemetery", "open_grave": "grave shovel dirt cemetery",
+    "reaper": "grim reaper scythe death", "wreath": "funeral flowers wreath", "obituary": "obituary newspaper funeral",
+    "toe_tag": "toe tag morgue tag", "body_bag": "body bag morgue", "morgue_drawer": "morgue drawer", "y_incision": "autopsy surgery",
+    "autopsy_report": "autopsy coroner report", "bottle": "jar specimen formaldehyde", "anatomical_heart": "heart anatomy organ",
+    "heart": "heart love broken", "brain": "brain mind mental", "flayed_figure": "anatomy muscles body", "flatline": "heartbeat ekg flatline hospital",
+    "barbell": "barbell gym lift weights", "plate": "weight plate gym lift", "rack": "squat rack gym", "dumbbell": "dumbbell gym weights",
+    "kettlebell": "kettlebell gym", "candle": "candle", "moon": "moon night", "sun": "sun", "eye": "eye watching",
+    "ghost": "ghost haunted", "clock": "clock time 3am night", "hourglass": "hourglass time", "battery": "battery tired low",
+    "checklist": "list checklist", "flower": "flower rose plants", "maggots": "maggots worms rot", "flies": "flies rot",
+}
+THEME_TAGS = {"morgue": "morgue corpse dead body coroner", "rot": "rot decay decompose worms", "anatomy": "anatomy body organs blood",
+              "grave": "grave funeral burial cemetery buried dead death", "grief": "grief sad depression mental health anxiety loss lonely tired",
+              "iron": "gym lift lifting workout fitness weights training"}
+COLOR_TAGS = {"Dusty rose": "pink rose", "Undyed oatmeal": "cream white beige natural off-white", "Sand": "beige tan khaki",
+              "Heather grey": "gray grey", "Charcoal": "gray grey dark", "Indigo": "blue navy", "Oxblood": "red maroon burgundy wine",
+              "Olive": "green army", "Plum": "purple", "Black": "black"}
+
+def search_tags(d, theme, color):
+    return " ".join([ICON_TAGS.get(d["icon"], ""), THEME_TAGS.get(theme, ""), COLOR_TAGS.get(color, "")]).strip()
+
 def title_case(lines):
     """Sentence case: capitalize each sentence start and the word I (I'm, I'll, I've)."""
     import re
@@ -84,7 +109,7 @@ def main():
         products.append({
             "id": i, "slug": d["slug"], "name": title_case(d["lines"]), "sub": d["sub"],
             "type": "hoodie", "theme": theme_for(d), "color": cname.split(" (")[0],
-            "colorNote": cname, "hex": fab, "light": lum(fab) > 450,
+            "colorNote": cname, "tags": search_tags(d, theme_for(d), cname.split(" (")[0]), "hex": fab, "light": lum(fab) > 450,
             "placement": PLACE[d["place"]], "price": PRICE, "sizes": SIZES, "img": "img/" + f, "imgs": imgs,
             "featured": FEATURED.index(i) + 1 if i in FEATURED else None,
         })
