@@ -8,6 +8,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   Cross-Origin-Opener-Policy: same-origin
+  X-Robots-Tag: noai, noimageai
 
 /config.js
   Cache-Control: no-cache
