@@ -378,3 +378,69 @@ dialog h2, .soon h3 { color: #151515; text-shadow: none; }
 }
 #ringPause { font-size: 14px; letter-spacing: -2px; }
 .ring-sec { isolation: isolate; z-index: 0; }
+
+/* =====================================================================
+   DARKROOM THEME (2026-11-25): replaces the purple galaxy.
+   Warm near-black page, bone product boxes, oxblood accent, no neon.
+   ===================================================================== */
+html { background: #0f0d0c; }
+body { --bone: #ece5d8; --dim: #a89e8f; --line: rgba(236,229,216,.14); --red: #8f2a25; }
+.card, dialog, .soon, .ring-card { --bone: #1a1714; --dim: #6b6258; --line: #ddd4c6; color: #1a1714; }
+
+/* header + type */
+.top { background: rgba(15,13,12,.72); border-bottom: 1px solid rgba(236,229,216,.10); }
+.top nav a { color: #d9d1c3; } .top nav a:hover { color: #fff; }
+.bag-btn { border-color: #d9d1c3; color: #ece5d8; }
+.count { background: #8f2a25; color: #fff; }
+h2, .info h2 { color: #ece5d8; text-shadow: none; }
+.hero-head .kicker { color: #c9a27e; }
+.hero-head h1 { color: #ece5d8; text-shadow: 0 2px 0 rgba(0,0,0,.5), 0 10px 40px rgba(0,0,0,.6); }
+.hero-head .lede { color: #b8ae9f; }
+.info p { color: #b8ae9f; }
+.foot { background: rgba(10,9,8,.7); color: #a89e8f; border-top: 1px solid rgba(236,229,216,.10); }
+.result-bar, .result-bar .link { color: #a89e8f; }
+
+/* product boxes: warm bone instead of white; tile tone picked per hoodie so every color reads */
+.card, .ring-card { background: linear-gradient(180deg, #f3eee5 0%, #e6dfd2 100%);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.7), inset 0 -4px 8px rgba(60,40,20,.08),
+              0 7px 0 #b3a68f, 0 10px 14px rgba(0,0,0,.35), 0 30px 50px -14px rgba(0,0,0,.75); }
+.card:hover, .card:focus-visible { box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 10px 0 #ab9d85,
+              0 16px 22px rgba(0,0,0,.4), 0 46px 64px -16px rgba(0,0,0,.8); }
+.ring-card.front { box-shadow: inset 0 2px 0 rgba(255,255,255,.7), 0 9px 0 #ab9d85, 0 16px 22px rgba(0,0,0,.45), 0 46px 64px -16px rgba(0,0,0,.85); }
+.tile, .pd-img, .pd-gallery { background: #e1d9cb; }          /* dark hoodies sit on light stone */
+.tile.dark, .pd-img.dark { background: #3a3430; }               /* light hoodies sit on warm charcoal */
+.tile { box-shadow: inset 0 0 0 1px rgba(60,40,20,.06), inset 0 4px 10px rgba(255,255,255,.35), inset 0 -16px 26px rgba(60,40,20,.14); }
+.tile::after { background: radial-gradient(ellipse 70% 40% at 28% 6%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%); }
+.badge { background: #8f2a25; color: #fff; }
+.place { background: rgba(26,23,20,.82); color: #ece5d8; }
+.soon { box-shadow: 0 7px 0 #b3a68f, 0 26px 40px -12px rgba(0,0,0,.6); background: #efe9df; }
+
+/* drop-downs + search: dark smoked glass with bone text */
+.field-label, .filters .search { color: #cfc6b7; }
+.dd-btn, .filters .search input { background: linear-gradient(180deg, rgba(42,37,33,.88), rgba(26,23,21,.88)); border: 1px solid rgba(236,229,216,.18);
+  color: #ece5d8; box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 6px 16px rgba(0,0,0,.4); }
+.dd-btn:hover, .dd.open .dd-btn, .filters .search input:focus { border-color: rgba(201,162,126,.7); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 0 3px rgba(143,42,37,.35), 0 8px 20px rgba(0,0,0,.5); }
+.dd-chev { border-color: #d9d1c3; }
+.dd-list { background: rgba(24,21,19,.98); border: 1px solid rgba(236,229,216,.16); box-shadow: 0 20px 44px rgba(0,0,0,.7); }
+.dd-list li { color: #ece5d8; }
+.dd-list li:hover, .dd-list li:focus { background: rgba(143,42,37,.45); }
+.dd-list li[aria-selected="true"]::after { color: #c9a27e; }
+.dd-list li.soon { color: #8f8578; }
+.dd-list .tag { background: rgba(236,229,216,.10); color: #b8ae9f; }
+.filters .search input::placeholder { color: #8f8578; }
+
+/* ring + gallery controls */
+.ring-ctrl button { background: linear-gradient(180deg, rgba(42,37,33,.9), rgba(26,23,21,.9)); border: 1px solid rgba(236,229,216,.22); color: #ece5d8; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+.ring-ctrl button:hover { border-color: rgba(201,162,126,.8); }
+.g-thumb { background: #f3eee5; box-shadow: 0 3px 0 #cfc4b3, 0 6px 12px rgba(0,0,0,.15); }
+.g-thumb img { background: #e1d9cb; }
+.g-thumb[aria-current="true"] { border-color: #8f2a25; }
+.size-guide { background: #f4efe6; border-color: #e0d6c6; }
+.size-guide th, .size-guide td { border-bottom-color: #e0d6c6; }
+.sizes button[aria-pressed="true"] { background: #1a1714; border-color: #1a1714; }
+dialog { background: #f7f3ec; }
+.bag-head { background: #f7f3ec; }
+.btn { background: #1a1714; } .btn:hover { background: #8f2a25; }
+/* one warm stone tone behind every hoodie (reads with both black and oatmeal hoodies) */
+.tile, .tile.dark, .pd-img, .pd-img.dark, .g-thumb img { background: #b5aa98; }
+.pd-gallery { background: #e6dfd2; }
