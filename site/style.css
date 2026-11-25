@@ -899,3 +899,15 @@ dialog.pd { overflow: hidden; display: flex; flex-direction: column; }
   .shop-head { align-items: center; }
   .one-price { padding: 6px 12px; gap: 8px; } .one-price .op-v { font-size: 16px; } .one-price .op-s { display: none; }
 }
+
+/* ================= RING CONTROLS (2026-11-25): one small pause button in the corner, no arrows =================
+   Pause stays because anything moving on its own for more than 5 s needs a way to stop it (WCAG 2.2.2).
+   Arrows removed: swipe, tapping a side hoodie, and keyboard arrows still turn or open everything. */
+.ring-ctrl { position: absolute; right: max(20px, calc((100% - var(--wrap)) / 2)); bottom: 12px; margin: 0 !important; z-index: 5; display: block; }
+.ring-ctrl button#ringPause { position: relative; width: 30px !important; height: 30px !important; padding: 0; border-radius: 50%;
+  display: grid; place-items: center; font-size: 9px; letter-spacing: -1px; line-height: 1;
+  background: rgba(15,13,12,.45) !important; border: 1px solid rgba(236,229,216,.28) !important; color: rgba(236,229,216,.7) !important;
+  box-shadow: none !important; opacity: .75; transition: opacity .2s, border-color .2s; }
+.ring-ctrl button#ringPause::before { content: ""; position: absolute; inset: -8px; border-radius: 50%; }   /* 46px tap area */
+.ring-ctrl button#ringPause:hover, .ring-ctrl button#ringPause:focus-visible { opacity: 1; border-color: rgba(236,229,216,.7) !important; color: #ece5d8 !important; }
+@media (max-width: 760px) { .ring-ctrl { right: 14px; bottom: 8px; } }

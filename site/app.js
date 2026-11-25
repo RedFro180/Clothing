@@ -19,7 +19,7 @@
   const shipLine = () => {
     const f = Number(C.SHIPPING_FLAT) || 0, q = C.FREE_SHIP_QTY;
     if (!f) return "Free shipping";
-    return q ? `${money(f)} shipping · free when you get ${q}+` : `${money(f)} shipping`;
+    return q ? `${money(f)} shipping · free on ${q}+` : `${money(f)} shipping`;
   };
   const MAXQ = Math.max(1, Number(C.MAX_QTY_PER_ITEM) || 3), MAXN = Math.max(1, Number(C.MAX_ITEMS_PER_ORDER) || 8);
   const LARGE = Number(C.LARGE_ORDER_ITEMS) || 4;
@@ -140,8 +140,8 @@
       }
       place(); requestAnimationFrame(frame);
     }
-    $("#ringPrev").addEventListener("click", () => turn(-1));
-    $("#ringNext").addEventListener("click", () => turn(1));
+    // keyboard: left/right arrows turn the ring when a hoodie in it has focus (replaces the on-screen arrows)
+    box.addEventListener("keydown", e => { if (e.key === "ArrowLeft" || e.key === "ArrowRight") { e.preventDefault(); turn(e.key === "ArrowRight" ? 1 : -1); } });
     const sec = box.closest(".ring-sec");
     // pause only while a mouse is over a hoodie or the keyboard is on one; taps and arrow clicks don't stop it
     items.forEach(it => {
