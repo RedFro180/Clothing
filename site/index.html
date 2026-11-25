@@ -91,7 +91,9 @@
     </div>
     <div>
       <h2>Returns</h2>
-      <p>One free size exchange. Unworn items: 80% refund within 30 days (20% restocking). Defects: full refund. Marked seconds are final sale.</p>
+      <p>All sales are final. Check the size chart before ordering. If we send the wrong item or it's lost or damaged in shipping, email us within 7 days and we'll fix it.</p>
+      <h2>Sizing</h2>
+      <p>Measure a hoodie you already own that fits the way you like, then compare it to the size guide on each product. Chest: lay it flat and measure armpit to armpit, then double it. Length: from the top of the shoulder next to the collar straight down to the hem. Sleeve: from the center of the back of the collar to the end of the cuff.</p>
     </div>
   </section>
 </main>
@@ -105,7 +107,15 @@
 <dialog id="pd" class="pd" aria-labelledby="pdName">
   <button class="x" data-close aria-label="Close">&times;</button>
   <div class="pd-body">
-    <div class="pd-img" id="pdImgWrap"><img id="pdImg" alt=""></div>
+    <div class="pd-gallery">
+      <div class="pd-img" id="pdImgWrap">
+        <img id="pdImg" alt="">
+        <button type="button" class="g-nav g-prev" id="gPrev" aria-label="Previous picture">&#8249;</button>
+        <button type="button" class="g-nav g-next" id="gNext" aria-label="Next picture">&#8250;</button>
+        <span class="g-count" id="gCount" aria-live="polite"></span>
+      </div>
+      <div class="g-thumbs" id="gThumbs" aria-label="Pictures"></div>
+    </div>
     <div class="pd-info">
       <p class="pd-meta" id="pdMeta"></p>
       <h2 id="pdName"></h2>
@@ -115,6 +125,8 @@
         <legend>Size</legend>
         <div id="pdSizes"></div>
       </fieldset>
+      <button type="button" class="link sg-btn" id="sgBtn" aria-expanded="false" aria-controls="sizeGuide">Size guide</button>
+      <div class="size-guide" id="sizeGuide" hidden></div>
       <label class="qty">Quantity <input id="pdQty" type="number" min="1" max="20" value="1"></label>
       <button class="btn wide" id="pdAdd">Add to preorder list</button>
       <p class="pd-msg" id="pdMsg" role="status"></p>

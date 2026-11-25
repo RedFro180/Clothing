@@ -10,6 +10,7 @@ import svgs_dark as S
 
 SITE = os.path.normpath(os.path.join(HERE, "..", "site"))
 IMG = os.path.join(SITE, "img")
+PHOTOS = os.path.join(SITE, "photos")   # drop real photos here as NN-anything.jpg (e.g. 11-front.jpg); they show first
 
 # Design numbers shown in the top row, in order. Swap for real best sellers once orders exist.
 FEATURED = [11, 10, 27, 44, 29, 60, 13, 48]
@@ -65,12 +66,22 @@ def main():
     products = []
     for i, d in enumerate(S.all_designs(), 1):
         f = S.render(i, d, clean=True, out=IMG)
+        extra = S.extra_views(i, d, IMG)
         cname, fab, ink = S.color_for(i)
+        prefix = f.split("-")[0] + "-"
+        photos = sorted(x for x in os.listdir(PHOTOS) if x.startswith(prefix) and x.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))) if os.path.isdir(PHOTOS) else []
+        main_side = "Back" if d["place"] in ("back", "hood") else "Front"
+        other_side = "Front" if main_side == "Back" else "Back"
+        imgs = [{"src": "photos/" + x, "alt": "Photo"} for x in photos] + [
+            {"src": "img/" + f, "alt": f"{main_side}, with print"},
+            {"src": "img/" + extra[0], "alt": f"{other_side}, plain"},
+            {"src": "img/" + extra[1], "alt": "Print close-up"},
+            {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
         products.append({
             "id": i, "slug": d["slug"], "name": title_case(d["lines"]), "sub": d["sub"],
             "type": "hoodie", "theme": theme_for(d), "color": cname.split(" (")[0],
             "colorNote": cname, "hex": fab, "light": lum(fab) > 450,
-            "placement": PLACE[d["place"]], "price": PRICE, "sizes": SIZES, "img": "img/" + f,
+            "placement": PLACE[d["place"]], "price": PRICE, "sizes": SIZES, "img": "img/" + f, "imgs": imgs,
             "featured": FEATURED.index(i) + 1 if i in FEATURED else None,
         })
     fonts = os.path.join(SITE, "fonts")

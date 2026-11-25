@@ -16,6 +16,8 @@ A showcase shop with no payment yet: a featured row at the top, all 107 hoodies 
 - **Page design:** one design ("Clean": white, centered logo, left sidebar filters, 3-column grid). Edit `site/index.html` and `site/style.css` directly.
 - **View locally:** open `site/index.html`, or run `cd site && python3 -m http.server` and go to http://localhost:8000.
 - **Brand name, tagline, featured label, contact email, form URL, hoodies in the moving top strip (`HERO_ROTATION`, design numbers) and its speed (`HERO_SPEED`, seconds per loop; bigger = slower):** `site/config.js`.
+- **Size guide numbers:** `SIZE_CHART` in `site/config.js` (blank shows "Measurements coming soon").
+- **Real product photos:** put them in `site/photos/` named with the design number first (e.g. `11-front.jpg`, `11-worn.jpg`), then run `python3 tools/build_site.py`. They show before the mockup pictures in each product's gallery.
 - **Featured picks, price, coming-soon list:** top of `tools/build_site.py`. A design's theme can be overridden with `theme="rot"` in its `D(...)` entry.
 - **Keep the label "Featured"** until there are real sales. Calling unsold items "best sellers" is a false claim.
 - **Requests:** with `FORM_ENDPOINT` empty, the site opens the visitor's email app addressed to `CONTACT_EMAIL`. To receive requests without relying on email apps, paste a form-service URL (e.g. Formspree) into `FORM_ENDPOINT`.

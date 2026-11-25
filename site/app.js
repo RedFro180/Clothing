@@ -65,6 +65,55 @@
   const colors = [...new Set(P.map(p => p.color))].sort();
   fColor.append(el("option", { value: "", text: "All colors" }), ...colors.map(c => el("option", { value: c, text: c })));
 
+  // ---------- styled drop-downs on top of the native selects (selects stay the source of truth) ----------
+  const menus = [];
+  function fancy(sel) {
+    const lab = sel.closest("label"), title = lab ? lab.firstChild.textContent.trim() : "";
+    const field = el("div", { class: "field" }, el("span", { class: "field-label", id: sel.id + "Lbl", text: title }));
+    if (lab) { lab.replaceWith(field); }
+    sel.classList.add("sr"); sel.tabIndex = -1; sel.setAttribute("aria-hidden", "true");
+    const btn = el("button", { type: "button", class: "dd-btn", "aria-haspopup": "listbox", "aria-expanded": "false", "aria-labelledby": `${sel.id}Lbl ${sel.id}Val` },
+      el("span", { class: "dd-val", id: sel.id + "Val" }), el("span", { class: "dd-chev", "aria-hidden": "true" }));
+    const list = el("ul", { class: "dd-list", role: "listbox", "aria-labelledby": sel.id + "Lbl", hidden: true });
+    const items = [...sel.options].map(o => {
+      const soon = /\(coming soon\)/.test(o.text), txt = o.text.replace(/\s*\(coming soon\)/, "");
+      const li = el("li", { role: "option", tabindex: "-1", "data-v": o.value, class: soon ? "soon" : "" },
+        el("span", { text: txt }), soon ? el("span", { class: "tag", text: "soon" }) : null);
+      li.addEventListener("click", () => choose(o.value));
+      return li;
+    });
+    list.append(...items);
+    const wrap = el("div", { class: "dd" }, btn, list);
+    field.append(sel, wrap);
+    const isOpen = () => !list.hidden;
+    function open() {
+      menus.forEach(m => m !== api && m.close());
+      list.hidden = false; btn.setAttribute("aria-expanded", "true"); wrap.classList.add("open");
+      (items.find(li => li.dataset.v === sel.value) || items[0]).focus();
+    }
+    function close(focusBtn) { if (!isOpen()) return; list.hidden = true; btn.setAttribute("aria-expanded", "false"); wrap.classList.remove("open"); if (focusBtn) btn.focus(); }
+    function choose(v) { if (sel.value !== v) { sel.value = v; sel.dispatchEvent(new Event("change")); } sync(); close(true); }
+    function sync() {
+      const o = sel.options[sel.selectedIndex]; $("#" + sel.id + "Val").textContent = o ? o.text.replace(/\s*\(coming soon\)/, "") : "";
+      items.forEach(li => li.setAttribute("aria-selected", li.dataset.v === sel.value));
+    }
+    btn.addEventListener("click", () => isOpen() ? close() : open());
+    btn.addEventListener("keydown", e => { if (["ArrowDown", "ArrowUp"].includes(e.key)) { e.preventDefault(); open(); } });
+    list.addEventListener("keydown", e => {
+      const i = items.indexOf(document.activeElement);
+      const go = k => { e.preventDefault(); items[Math.max(0, Math.min(items.length - 1, k))].focus(); };
+      if (e.key === "ArrowDown") go(i + 1); else if (e.key === "ArrowUp") go(i - 1);
+      else if (e.key === "Home") go(0); else if (e.key === "End") go(items.length - 1);
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (i >= 0) choose(items[i].dataset.v); }
+      else if (e.key === "Escape") { e.preventDefault(); close(true); }
+      else if (e.key === "Tab") close();
+    });
+    const api = { sync, close, wrap };
+    menus.push(api); return api;
+  }
+  document.addEventListener("click", e => menus.forEach(m => { if (!m.wrap.contains(e.target)) m.close(); }));
+  [fCat, fTheme, fColor, fSort].forEach(fancy);
+
   // read filters from the URL so filtered views can be shared
   const q = new URLSearchParams(location.search);
   const setIf = (sel, v) => { if (v && [...sel.options].some(o => o.value === v)) sel.value = v; };
@@ -81,6 +130,7 @@
   }
 
   function render() {
+    menus.forEach(m => m.sync());
     const grid = $("#grid"); grid.replaceChildren();
     const type = CAT.types.find(t => t.id === fCat.value);
     const any = fCat.value || fTheme.value || fColor.value || fSearch.value.trim();
@@ -122,8 +172,8 @@
   const pd = $("#pd"); let cur = null, size = null;
   function openProduct(p, push = true) {
     cur = p; size = null;
-    $("#pdImg").src = p.img; $("#pdImg").alt = `${p.color} hoodie, ${p.placement.toLowerCase()}: ${p.name}`;
-    $("#pdImgWrap").className = "pd-img" + (p.light ? " dark" : "");
+    gallery(p);
+    $("#sizeGuide").hidden = true; $("#sgBtn").setAttribute("aria-expanded", "false");
     $("#pdMeta").textContent = `${CAT.themes[p.theme]} · ${p.placement}`;
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
     $("#pdPrice").textContent = money(p.price);
@@ -134,10 +184,59 @@
       `Color: ${p.colorNote}`, "~30% hemp / 70% cotton brushed fleece, heavyweight",
       "Cotton rib, thread, drawcord and labels. No plastic.", `${p.placement}, natural-dye or embroidered`,
       "Natural dyes fade gradually with sun and washing", "Preorder: no charge until we confirm a ship date",
+      "All sales final: check the size guide",
     ].map(s => el("li", { text: s })));
     if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
     if (!pd.open) pd.showModal();
   }
+  // ---------- product pictures ----------
+  let pics = [], gi = 0;
+  function gallery(p) {
+    pics = (p.imgs && p.imgs.length) ? p.imgs : [{ src: p.img, alt: p.placement }];
+    $("#gThumbs").replaceChildren(...pics.map((im, i) => el("button", { type: "button", class: "g-thumb", "aria-label": `Picture ${i + 1}: ${im.alt}`, onclick: () => show(i) },
+      el("img", { src: im.src, alt: "", loading: "lazy" }))));
+    $("#pdImgWrap").className = "pd-img" + (p.light ? " dark" : "");
+    const multi = pics.length > 1;
+    $("#gPrev").hidden = $("#gNext").hidden = $("#gCount").hidden = !multi; $("#gThumbs").hidden = !multi;
+    show(0);
+  }
+  function show(i) {
+    gi = (i + pics.length) % pics.length;
+    $("#pdImg").src = pics[gi].src; $("#pdImg").alt = `${cur.color} hoodie, ${cur.name}: ${pics[gi].alt}`;
+    $("#gCount").textContent = `${gi + 1} / ${pics.length}`;
+    $("#gThumbs").querySelectorAll(".g-thumb").forEach((b, k) => b.setAttribute("aria-current", k === gi));
+  }
+  $("#gPrev").addEventListener("click", () => show(gi - 1));
+  $("#gNext").addEventListener("click", () => show(gi + 1));
+  pd.addEventListener("keydown", e => {
+    if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+    if (e.key === "ArrowLeft") { show(gi - 1); e.preventDefault(); }
+    if (e.key === "ArrowRight") { show(gi + 1); e.preventDefault(); }
+  });
+  let sx = null;
+  $("#pdImgWrap").addEventListener("pointerdown", e => { sx = e.clientX; });
+  $("#pdImgWrap").addEventListener("pointerup", e => { if (sx !== null && Math.abs(e.clientX - sx) > 40) show(gi + (e.clientX < sx ? 1 : -1)); sx = null; });
+
+  // ---------- size guide ----------
+  (function sizeGuide() {
+    const rows = C.SIZE_CHART || [], u = C.SIZE_UNITS || "in";
+    const filled = rows.some(r => r.chest || r.length || r.sleeve);
+    const box = $("#sizeGuide");
+    box.append(
+      el("p", { class: "sg-title", text: "How to measure" }),
+      el("ol", {},
+        el("li", { text: "Use a hoodie you own that fits the way you like. Lay it flat." }),
+        el("li", { text: "Chest: armpit to armpit, then double it." }),
+        el("li", { text: "Length: top of the shoulder next to the collar, straight down to the hem." }),
+        el("li", { text: "Sleeve: center back of the collar to the end of the cuff." })),
+      filled
+        ? el("table", {}, el("thead", {}, el("tr", {}, ...["Size", `Chest (${u})`, `Length (${u})`, `Sleeve (${u})`].map(t => el("th", { text: t })))),
+            el("tbody", {}, ...rows.map(r => el("tr", {}, ...[r.size, r.chest || "–", r.length || "–", r.sleeve || "–"].map(t => el("td", { text: String(t) }))))))
+        : el("p", { class: "sg-note", text: "Measurements coming soon." }),
+      el("p", { class: "sg-note", text: "All sales are final, so please check before ordering." }));
+    $("#sgBtn").addEventListener("click", () => { box.hidden = !box.hidden; $("#sgBtn").setAttribute("aria-expanded", !box.hidden); });
+  })();
+
   pd.addEventListener("close", () => { if (bySlug[location.hash.slice(1)]) history.replaceState(null, "", location.pathname + location.search); });
   $("#pdAdd").addEventListener("click", () => {
     if (!size) { $("#pdMsg").textContent = "Pick a size first."; return; }

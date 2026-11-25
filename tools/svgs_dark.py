@@ -764,6 +764,37 @@ def render(num, d, clean=False, out=OUT):
     open(os.path.join(out, fname(num, d)), "w").write(s)
     return fname(num, d)
 
+# extra pictures for the shop's product gallery
+CROP = {"front": "135 140 330 350", "back": "125 80 350 470", "hood": "125 80 350 470", "chest": "292 168 180 180",
+        "sleeve": "30 140 540 360", "pocket": "165 180 270 330"}
+def extra_views(num, d, out):
+    """Write NN-slug-b.svg (other side, plain), -c (print close-up), -d (fabric color). Returns the 3 names."""
+    global INK, FAB
+    cname, FAB, INK = color_for(num)
+    view, art = layout(num, d)
+    base = fname(num, d)[:-4]
+    other = "front" if view == "back" else "back"
+    files = {}
+    files["b"] = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 36 560 570" width="560" height="570">'
+                  f'<title>{E(cname)}, {other} (plain)</title>{hoodie(other)}</svg>')
+    vb = CROP[d["place"]]; w, h = vb.split()[2:]
+    files["c"] = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" width="{w}" height="{h}">'
+                  f'<title>Print close-up</title>{DEFS}{hoodie(view)}<g filter="url(#grunge)">{art}</g></svg>')
+    knit = shade(FAB, 0.86) if sum(int(FAB[i:i+2], 16) for i in (1, 3, 5)) > 300 else shade(FAB, 1.18)
+    files["d"] = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 570" width="560" height="570"><title>{E(cname)} fabric</title>'
+                  f'<defs><pattern id="k" width="8" height="8" patternUnits="userSpaceOnUse">'
+                  f'<path d="M0 8 L4 0 L8 8" fill="none" stroke="{knit}" stroke-width="1.2" opacity=".55"/></pattern>'
+                  f'<filter id="fz"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2"/>'
+                  f'<feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .18 0"/></filter>'
+                  f'<radialGradient id="v" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/>'
+                  f'<stop offset="1" stop-color="#000" stop-opacity=".22"/></radialGradient></defs>'
+                  f'<rect width="560" height="570" fill="{FAB}"/><rect width="560" height="570" fill="url(#k)"/>'
+                  f'<rect width="560" height="570" filter="url(#fz)"/><rect width="560" height="570" fill="url(#v)"/></svg>')
+    names = []
+    for k in ("b", "c", "d"):
+        n = f"{base}-{k}.svg"; open(os.path.join(out, n), "w").write(files[k]); names.append(n)
+    return names
+
 def all_designs():
     sys.path.insert(0, HERE)
     from designs_data import FIRST, DESIGNS

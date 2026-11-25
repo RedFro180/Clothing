@@ -23,6 +23,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/01-keep-hanging-on.svg",
+   "imgs": [
+    {
+     "src": "img/01-keep-hanging-on.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/01-keep-hanging-on-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/01-keep-hanging-on-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/01-keep-hanging-on-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -47,6 +65,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/02-meat-bone-nothing-else.svg",
+   "imgs": [
+    {
+     "src": "img/02-meat-bone-nothing-else.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/02-meat-bone-nothing-else-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/02-meat-bone-nothing-else-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/02-meat-bone-nothing-else-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -71,6 +107,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/03-ill-spot-you.svg",
+   "imgs": [
+    {
+     "src": "img/03-ill-spot-you.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/03-ill-spot-you-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/03-ill-spot-you-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/03-ill-spot-you-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -95,6 +149,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/04-carrying-the-dead.svg",
+   "imgs": [
+    {
+     "src": "img/04-carrying-the-dead.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/04-carrying-the-dead-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/04-carrying-the-dead-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/04-carrying-the-dead-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -119,6 +191,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/05-after-checklist.svg",
+   "imgs": [
+    {
+     "src": "img/05-after-checklist.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/05-after-checklist-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/05-after-checklist-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/05-after-checklist-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -143,6 +233,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/06-running-on-whats-left.svg",
+   "imgs": [
+    {
+     "src": "img/06-running-on-whats-left.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/06-running-on-whats-left-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/06-running-on-whats-left-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/06-running-on-whats-left-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -167,6 +275,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/07-i-carry-the-dead.svg",
+   "imgs": [
+    {
+     "src": "img/07-i-carry-the-dead.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/07-i-carry-the-dead-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/07-i-carry-the-dead-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/07-i-carry-the-dead-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -191,6 +317,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/08-we-all-break.svg",
+   "imgs": [
+    {
+     "src": "img/08-we-all-break.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/08-we-all-break-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/08-we-all-break-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/08-we-all-break-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -215,6 +359,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/09-bar-doesnt-care.svg",
+   "imgs": [
+    {
+     "src": "img/09-bar-doesnt-care.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/09-bar-doesnt-care-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/09-bar-doesnt-care-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/09-bar-doesnt-care-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -239,6 +401,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/10-everyone-gets-a-toe-tag.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/10-everyone-gets-a-toe-tag-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": 2
   },
   {
@@ -263,6 +443,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/11-skeleton-wearing-meat.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/11-skeleton-wearing-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/11-skeleton-wearing-meat-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/11-skeleton-wearing-meat-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": 1
   },
   {
@@ -287,6 +485,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/12-lift-heavy-carry-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/12-lift-heavy-carry-heavy.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/12-lift-heavy-carry-heavy-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/12-lift-heavy-carry-heavy-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/12-lift-heavy-carry-heavy-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -311,6 +527,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/13-they-weigh-your-heart.svg",
+   "imgs": [
+    {
+     "src": "img/13-they-weigh-your-heart.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/13-they-weigh-your-heart-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/13-they-weigh-your-heart-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/13-they-weigh-your-heart-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": 7
   },
   {
@@ -335,6 +569,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/14-225-it-helps.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/14-225-it-helps-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/14-225-it-helps-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/14-225-it-helps-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -359,6 +611,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/15-still-warm.svg",
+   "imgs": [
+    {
+     "src": "img/15-still-warm.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/15-still-warm-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/15-still-warm-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/15-still-warm-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -383,6 +653,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/16-something-is-watching.svg",
+   "imgs": [
+    {
+     "src": "img/16-something-is-watching.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/16-something-is-watching-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/16-something-is-watching-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/16-something-is-watching-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -407,6 +695,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/17-embalmed-zipped-forgotten.svg",
+   "imgs": [
+    {
+     "src": "img/17-embalmed-zipped-forgotten.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/17-embalmed-zipped-forgotten-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/17-embalmed-zipped-forgotten-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/17-embalmed-zipped-forgotten-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -431,6 +737,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/18-mortality-undefeated.svg",
+   "imgs": [
+    {
+     "src": "img/18-mortality-undefeated.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/18-mortality-undefeated-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/18-mortality-undefeated-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/18-mortality-undefeated-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -455,6 +779,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/19-carry-forever.svg",
+   "imgs": [
+    {
+     "src": "img/19-carry-forever.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/19-carry-forever-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/19-carry-forever-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/19-carry-forever-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -479,6 +821,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/20-coroner-will-know.svg",
+   "imgs": [
+    {
+     "src": "img/20-coroner-will-know.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/20-coroner-will-know-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/20-coroner-will-know-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/20-coroner-will-know-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -503,6 +863,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/21-demons-dont-spot-you.svg",
+   "imgs": [
+    {
+     "src": "img/21-demons-dont-spot-you.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/21-demons-dont-spot-you-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/21-demons-dont-spot-you-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/21-demons-dont-spot-you-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -527,6 +905,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/22-sweat-tears-dread-repeat.svg",
+   "imgs": [
+    {
+     "src": "img/22-sweat-tears-dread-repeat.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/22-sweat-tears-dread-repeat-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/22-sweat-tears-dread-repeat-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/22-sweat-tears-dread-repeat-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -551,6 +947,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/23-ashes-to-ashes.svg",
+   "imgs": [
+    {
+     "src": "img/23-ashes-to-ashes.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/23-ashes-to-ashes-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/23-ashes-to-ashes-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/23-ashes-to-ashes-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -575,6 +989,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/24-ask-me-how-im-doing.svg",
+   "imgs": [
+    {
+     "src": "img/24-ask-me-how-im-doing.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/24-ask-me-how-im-doing-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/24-ask-me-how-im-doing-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/24-ask-me-how-im-doing-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -599,6 +1031,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/25-the-box-will-be-heavy.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/25-the-box-will-be-heavy-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/25-the-box-will-be-heavy-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/25-the-box-will-be-heavy-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -623,6 +1073,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/26-time-of-death-tbd.svg",
+   "imgs": [
+    {
+     "src": "img/26-time-of-death-tbd.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/26-time-of-death-tbd-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/26-time-of-death-tbd-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/26-time-of-death-tbd-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -647,6 +1115,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/27-maggots-are-patient.svg",
+   "imgs": [
+    {
+     "src": "img/27-maggots-are-patient.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/27-maggots-are-patient-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/27-maggots-are-patient-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/27-maggots-are-patient-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": 3
   },
   {
@@ -671,6 +1157,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/28-still-moving-already-rotting.svg",
+   "imgs": [
+    {
+     "src": "img/28-still-moving-already-rotting.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/28-still-moving-already-rotting-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/28-still-moving-already-rotting-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/28-still-moving-already-rotting-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -695,6 +1199,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/29-everything-hurts.svg",
+   "imgs": [
+    {
+     "src": "img/29-everything-hurts.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/29-everything-hurts-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/29-everything-hurts-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/29-everything-hurts-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": 5
   },
   {
@@ -719,6 +1241,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/30-the-weight-is-real.svg",
+   "imgs": [
+    {
+     "src": "img/30-the-weight-is-real.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/30-the-weight-is-real-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/30-the-weight-is-real-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/30-the-weight-is-real-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -743,6 +1283,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/31-next-of-kin-notified.svg",
+   "imgs": [
+    {
+     "src": "img/31-next-of-kin-notified.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/31-next-of-kin-notified-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/31-next-of-kin-notified-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/31-next-of-kin-notified-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -767,6 +1325,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/32-meat-bone-spite.svg",
+   "imgs": [
+    {
+     "src": "img/32-meat-bone-spite.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/32-meat-bone-spite-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/32-meat-bone-spite-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/32-meat-bone-spite-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -791,6 +1367,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/33-tagged.svg",
+   "imgs": [
+    {
+     "src": "img/33-tagged.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/33-tagged-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/33-tagged-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/33-tagged-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -815,6 +1409,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/34-pine-box-final-address.svg",
+   "imgs": [
+    {
+     "src": "img/34-pine-box-final-address.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/34-pine-box-final-address-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/34-pine-box-final-address-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/34-pine-box-final-address-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -839,6 +1451,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/35-one-day-this-is-you.svg",
+   "imgs": [
+    {
+     "src": "img/35-one-day-this-is-you.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/35-one-day-this-is-you-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/35-one-day-this-is-you-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/35-one-day-this-is-you-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -863,6 +1493,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/36-3am-thoughts-fabric.svg",
+   "imgs": [
+    {
+     "src": "img/36-3am-thoughts-fabric.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/36-3am-thoughts-fabric-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/36-3am-thoughts-fabric-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/36-3am-thoughts-fabric-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -887,6 +1535,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/37-pain-is-real-so-are-we.svg",
+   "imgs": [
+    {
+     "src": "img/37-pain-is-real-so-are-we.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/37-pain-is-real-so-are-we-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/37-pain-is-real-so-are-we-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/37-pain-is-real-so-are-we-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -911,6 +1577,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/38-hold-the-weight.svg",
+   "imgs": [
+    {
+     "src": "img/38-hold-the-weight.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/38-hold-the-weight-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/38-hold-the-weight-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/38-hold-the-weight-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -935,6 +1619,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/39-brain-haunted-body-lifting.svg",
+   "imgs": [
+    {
+     "src": "img/39-brain-haunted-body-lifting.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/39-brain-haunted-body-lifting-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/39-brain-haunted-body-lifting-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/39-brain-haunted-body-lifting-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -959,6 +1661,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/40-dyed-with-dead-plants-front.svg",
+   "imgs": [
+    {
+     "src": "img/40-dyed-with-dead-plants-front.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/40-dyed-with-dead-plants-front-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/40-dyed-with-dead-plants-front-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/40-dyed-with-dead-plants-front-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -983,6 +1703,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/41-everything-rots-pocket.svg",
+   "imgs": [
+    {
+     "src": "img/41-everything-rots-pocket.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/41-everything-rots-pocket-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/41-everything-rots-pocket-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/41-everything-rots-pocket-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1007,6 +1745,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/42-here-lies-someone-who-tried.svg",
+   "imgs": [
+    {
+     "src": "img/42-here-lies-someone-who-tried.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/42-here-lies-someone-who-tried-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/42-here-lies-someone-who-tried-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/42-here-lies-someone-who-tried-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -1031,6 +1787,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/43-six-feet-no-more.svg",
+   "imgs": [
+    {
+     "src": "img/43-six-feet-no-more.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/43-six-feet-no-more-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/43-six-feet-no-more-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/43-six-feet-no-more-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1055,6 +1829,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/44-reaper-is-patient.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/44-reaper-is-patient-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/44-reaper-is-patient-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/44-reaper-is-patient-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": 4
   },
   {
@@ -1079,6 +1871,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/45-whats-left-of-me.svg",
+   "imgs": [
+    {
+     "src": "img/45-whats-left-of-me.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/45-whats-left-of-me-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/45-whats-left-of-me-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/45-whats-left-of-me-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -1103,6 +1913,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/46-sore-and-haunted.svg",
+   "imgs": [
+    {
+     "src": "img/46-sore-and-haunted.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/46-sore-and-haunted-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/46-sore-and-haunted-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/46-sore-and-haunted-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1127,6 +1955,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/47-something-in-me-is-broken.svg",
+   "imgs": [
+    {
+     "src": "img/47-something-in-me-is-broken.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/47-something-in-me-is-broken-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/47-something-in-me-is-broken-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/47-something-in-me-is-broken-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1151,6 +1997,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/48-the-dirt-always-wins.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/48-the-dirt-always-wins-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/48-the-dirt-always-wins-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/48-the-dirt-always-wins-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": 8
   },
   {
@@ -1175,6 +2039,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/49-lie-still.svg",
+   "imgs": [
+    {
+     "src": "img/49-lie-still.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/49-lie-still-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/49-lie-still-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/49-lie-still-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1199,6 +2081,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/50-bury-me-with-my-belt.svg",
+   "imgs": [
+    {
+     "src": "img/50-bury-me-with-my-belt.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/50-bury-me-with-my-belt-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/50-bury-me-with-my-belt-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/50-bury-me-with-my-belt-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1223,6 +2123,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/51-heart-beats-out-of-spite.svg",
+   "imgs": [
+    {
+     "src": "img/51-heart-beats-out-of-spite.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/51-heart-beats-out-of-spite-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/51-heart-beats-out-of-spite-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/51-heart-beats-out-of-spite-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1247,6 +2165,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/52-chalk-hands-grave-dirt.svg",
+   "imgs": [
+    {
+     "src": "img/52-chalk-hands-grave-dirt.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/52-chalk-hands-grave-dirt-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/52-chalk-hands-grave-dirt-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/52-chalk-hands-grave-dirt-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -1271,6 +2207,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/53-worms-are-waiting.svg",
+   "imgs": [
+    {
+     "src": "img/53-worms-are-waiting.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/53-worms-are-waiting-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/53-worms-are-waiting-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/53-worms-are-waiting-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1295,6 +2249,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/54-measured-for-a-coffin.svg",
+   "imgs": [
+    {
+     "src": "img/54-measured-for-a-coffin.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/54-measured-for-a-coffin-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/54-measured-for-a-coffin-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/54-measured-for-a-coffin-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1319,6 +2291,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/55-rotting-in-real-time.svg",
+   "imgs": [
+    {
+     "src": "img/55-rotting-in-real-time.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/55-rotting-in-real-time-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/55-rotting-in-real-time-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/55-rotting-in-real-time-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -1343,6 +2333,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/56-grief-doesnt-get-lighter.svg",
+   "imgs": [
+    {
+     "src": "img/56-grief-doesnt-get-lighter.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/56-grief-doesnt-get-lighter-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/56-grief-doesnt-get-lighter-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/56-grief-doesnt-get-lighter-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1367,6 +2375,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/57-thoughts-are-heavier.svg",
+   "imgs": [
+    {
+     "src": "img/57-thoughts-are-heavier.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/57-thoughts-are-heavier-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/57-thoughts-are-heavier-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/57-thoughts-are-heavier-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1391,6 +2417,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/58-every-cell-is-dying.svg",
+   "imgs": [
+    {
+     "src": "img/58-every-cell-is-dying.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/58-every-cell-is-dying-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/58-every-cell-is-dying-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/58-every-cell-is-dying-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1415,6 +2459,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/59-everyone-ends-underground.svg",
+   "imgs": [
+    {
+     "src": "img/59-everyone-ends-underground.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/59-everyone-ends-underground-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/59-everyone-ends-underground-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/59-everyone-ends-underground-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1439,6 +2501,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/60-grief-has-weight.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/60-grief-has-weight-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/60-grief-has-weight-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/60-grief-has-weight-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": 6
   },
   {
@@ -1463,6 +2543,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/61-warm-up-small-talk.svg",
+   "imgs": [
+    {
+     "src": "img/61-warm-up-small-talk.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/61-warm-up-small-talk-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/61-warm-up-small-talk-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/61-warm-up-small-talk-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1487,6 +2585,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/62-coroner-heart-too-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/62-coroner-heart-too-heavy.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/62-coroner-heart-too-heavy-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/62-coroner-heart-too-heavy-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/62-coroner-heart-too-heavy-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -1511,6 +2627,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/63-iron-never-asks.svg",
+   "imgs": [
+    {
+     "src": "img/63-iron-never-asks.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/63-iron-never-asks-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/63-iron-never-asks-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/63-iron-never-asks-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1535,6 +2669,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/64-you-will-fit-in-a-bag.svg",
+   "imgs": [
+    {
+     "src": "img/64-you-will-fit-in-a-bag.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/64-you-will-fit-in-a-bag-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/64-you-will-fit-in-a-bag-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/64-you-will-fit-in-a-bag-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1559,6 +2711,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/65-six-people-will-carry-you.svg",
+   "imgs": [
+    {
+     "src": "img/65-six-people-will-carry-you.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/65-six-people-will-carry-you-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/65-six-people-will-carry-you-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/65-six-people-will-carry-you-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -1583,6 +2753,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/66-a-heart-is-just-meat.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/66-a-heart-is-just-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/66-a-heart-is-just-meat-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/66-a-heart-is-just-meat-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1607,6 +2795,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/67-grief-unprocessed.svg",
+   "imgs": [
+    {
+     "src": "img/67-grief-unprocessed.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/67-grief-unprocessed-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/67-grief-unprocessed-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/67-grief-unprocessed-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1631,6 +2837,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/68-some-weights-put-down.svg",
+   "imgs": [
+    {
+     "src": "img/68-some-weights-put-down.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/68-some-weights-put-down-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/68-some-weights-put-down-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/68-some-weights-put-down-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1655,6 +2879,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/69-preserved-not-saved.svg",
+   "imgs": [
+    {
+     "src": "img/69-preserved-not-saved.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/69-preserved-not-saved-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/69-preserved-not-saved-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/69-preserved-not-saved-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1679,6 +2921,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/70-we-bury-our-own.svg",
+   "imgs": [
+    {
+     "src": "img/70-we-bury-our-own.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/70-we-bury-our-own-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/70-we-bury-our-own-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/70-we-bury-our-own-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1703,6 +2963,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/71-looks-like-death.svg",
+   "imgs": [
+    {
+     "src": "img/71-looks-like-death.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/71-looks-like-death-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/71-looks-like-death-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/71-looks-like-death-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1727,6 +3005,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/72-here-for-a-short-time.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/72-here-for-a-short-time-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/72-here-for-a-short-time-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/72-here-for-a-short-time-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -1751,6 +3047,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/73-the-void-listens.svg",
+   "imgs": [
+    {
+     "src": "img/73-the-void-listens.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/73-the-void-listens-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/73-the-void-listens-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/73-the-void-listens-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1775,6 +3089,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/74-cracked-still-standing.svg",
+   "imgs": [
+    {
+     "src": "img/74-cracked-still-standing.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/74-cracked-still-standing-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/74-cracked-still-standing-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/74-cracked-still-standing-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -1799,6 +3131,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/75-dressed-for-my-funeral.svg",
+   "imgs": [
+    {
+     "src": "img/75-dressed-for-my-funeral.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/75-dressed-for-my-funeral-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/75-dressed-for-my-funeral-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/75-dressed-for-my-funeral-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -1823,6 +3173,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/76-nothing-you-love-stays.svg",
+   "imgs": [
+    {
+     "src": "img/76-nothing-you-love-stays.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/76-nothing-you-love-stays-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/76-nothing-you-love-stays-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/76-nothing-you-love-stays-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1847,6 +3215,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/77-skeleton-scared.svg",
+   "imgs": [
+    {
+     "src": "img/77-skeleton-scared.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/77-skeleton-scared-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/77-skeleton-scared-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/77-skeleton-scared-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1871,6 +3257,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/78-hope-is-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/78-hope-is-heavy.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/78-hope-is-heavy-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/78-hope-is-heavy-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/78-hope-is-heavy-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1895,6 +3299,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/79-still-here-still-haunted.svg",
+   "imgs": [
+    {
+     "src": "img/79-still-here-still-haunted.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/79-still-here-still-haunted-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/79-still-here-still-haunted-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/79-still-here-still-haunted-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1919,6 +3341,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/80-rigor-mortis-sets-in.svg",
+   "imgs": [
+    {
+     "src": "img/80-rigor-mortis-sets-in.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/80-rigor-mortis-sets-in-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/80-rigor-mortis-sets-in-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/80-rigor-mortis-sets-in-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1943,6 +3383,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/81-breathing-tired-here.svg",
+   "imgs": [
+    {
+     "src": "img/81-breathing-tired-here.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/81-breathing-tired-here-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/81-breathing-tired-here-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/81-breathing-tired-here-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -1967,6 +3425,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/82-born-screaming-buried-quiet.svg",
+   "imgs": [
+    {
+     "src": "img/82-born-screaming-buried-quiet.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/82-born-screaming-buried-quiet-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/82-born-screaming-buried-quiet-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/82-born-screaming-buried-quiet-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -1991,6 +3467,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/83-cemetery-quiet-gym-loud.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/83-cemetery-quiet-gym-loud-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -2015,6 +3509,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/84-haunted-they-spot-me.svg",
+   "imgs": [
+    {
+     "src": "img/84-haunted-they-spot-me.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/84-haunted-they-spot-me-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/84-haunted-they-spot-me-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/84-haunted-they-spot-me-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -2039,6 +3551,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/85-cold-storage.svg",
+   "imgs": [
+    {
+     "src": "img/85-cold-storage.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/85-cold-storage-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/85-cold-storage-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/85-cold-storage-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -2063,6 +3593,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/86-3am-thoughts-5am-workouts.svg",
+   "imgs": [
+    {
+     "src": "img/86-3am-thoughts-5am-workouts.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/86-3am-thoughts-5am-workouts-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/86-3am-thoughts-5am-workouts-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/86-3am-thoughts-5am-workouts-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2087,6 +3635,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/87-always-in-mourning.svg",
+   "imgs": [
+    {
+     "src": "img/87-always-in-mourning.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/87-always-in-mourning-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/87-always-in-mourning-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/87-always-in-mourning-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2111,6 +3677,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/88-the-grave-can-wait.svg",
+   "imgs": [
+    {
+     "src": "img/88-the-grave-can-wait.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/88-the-grave-can-wait-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/88-the-grave-can-wait-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/88-the-grave-can-wait-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2135,6 +3719,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/89-everything-beautiful-rots.svg",
+   "imgs": [
+    {
+     "src": "img/89-everything-beautiful-rots.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/89-everything-beautiful-rots-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/89-everything-beautiful-rots-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/89-everything-beautiful-rots-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2159,6 +3761,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/90-death-remembers-you.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/90-death-remembers-you-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/90-death-remembers-you-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/90-death-remembers-you-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2183,6 +3803,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/91-decomposition-is-long.svg",
+   "imgs": [
+    {
+     "src": "img/91-decomposition-is-long.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/91-decomposition-is-long-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/91-decomposition-is-long-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/91-decomposition-is-long-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2207,6 +3845,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/92-organs-bones-nothing.svg",
+   "imgs": [
+    {
+     "src": "img/92-organs-bones-nothing.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/92-organs-bones-nothing-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/92-organs-bones-nothing-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/92-organs-bones-nothing-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -2231,6 +3887,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/93-built-heavy-buried-heavier.svg",
+   "imgs": [
+    {
+     "src": "img/93-built-heavy-buried-heavier.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/93-built-heavy-buried-heavier-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/93-built-heavy-buried-heavier-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/93-built-heavy-buried-heavier-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -2255,6 +3929,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/94-silence-at-3am.svg",
+   "imgs": [
+    {
+     "src": "img/94-silence-at-3am.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/94-silence-at-3am-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/94-silence-at-3am-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/94-silence-at-3am-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -2279,6 +3971,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/95-the-line-goes-flat.svg",
+   "imgs": [
+    {
+     "src": "img/95-the-line-goes-flat.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/95-the-line-goes-flat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/95-the-line-goes-flat-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/95-the-line-goes-flat-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -2303,6 +4013,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/96-grief-no-off-season.svg",
+   "imgs": [
+    {
+     "src": "img/96-grief-no-off-season.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/96-grief-no-off-season-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/96-grief-no-off-season-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/96-grief-no-off-season-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2327,6 +4055,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/97-alone-together-6am.svg",
+   "imgs": [
+    {
+     "src": "img/97-alone-together-6am.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/97-alone-together-6am-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/97-alone-together-6am-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/97-alone-together-6am-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2351,6 +4097,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/98-talk-then-lift.svg",
+   "imgs": [
+    {
+     "src": "img/98-talk-then-lift.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/98-talk-then-lift-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/98-talk-then-lift-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/98-talk-then-lift-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2375,6 +4139,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/99-still-breathing.svg",
+   "imgs": [
+    {
+     "src": "img/99-still-breathing.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/99-still-breathing-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/99-still-breathing-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/99-still-breathing-d.svg",
+     "alt": "Fabric color: Plum (logwood)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2399,6 +4181,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/100-it-hurts-here.svg",
+   "imgs": [
+    {
+     "src": "img/100-it-hurts-here.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/100-it-hurts-here-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/100-it-hurts-here-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/100-it-hurts-here-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2423,6 +4223,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/101-chalk-and-sorrow.svg",
+   "imgs": [
+    {
+     "src": "img/101-chalk-and-sorrow.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/101-chalk-and-sorrow-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/101-chalk-and-sorrow-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/101-chalk-and-sorrow-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2447,6 +4265,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/102-hes-always-in-the-room.svg",
+   "imgs": [
+    {
+     "src": "img/102-hes-always-in-the-room.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/102-hes-always-in-the-room-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/102-hes-always-in-the-room-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/102-hes-always-in-the-room-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
    "featured": null
   },
   {
@@ -2471,6 +4307,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/103-dead-hands-dont-let-go.svg",
+   "imgs": [
+    {
+     "src": "img/103-dead-hands-dont-let-go.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/103-dead-hands-dont-let-go-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/103-dead-hands-dont-let-go-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/103-dead-hands-dont-let-go-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
    "featured": null
   },
   {
@@ -2495,6 +4349,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/104-every-rep-a-eulogy.svg",
+   "imgs": [
+    {
+     "src": "img/104-every-rep-a-eulogy.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/104-every-rep-a-eulogy-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/104-every-rep-a-eulogy-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/104-every-rep-a-eulogy-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
    "featured": null
   },
   {
@@ -2519,6 +4391,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/105-flies-know-something.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/105-flies-know-something-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/105-flies-know-something-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/105-flies-know-something-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
    "featured": null
   },
   {
@@ -2543,6 +4433,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/106-support-system.svg",
+   "imgs": [
+    {
+     "src": "img/106-support-system.svg",
+     "alt": "Front, with print"
+    },
+    {
+     "src": "img/106-support-system-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/106-support-system-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/106-support-system-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
    "featured": null
   },
   {
@@ -2567,6 +4475,24 @@ window.CATALOG = {
     "3XL"
    ],
    "img": "img/107-checklist-today.svg",
+   "imgs": [
+    {
+     "src": "img/107-checklist-today.svg",
+     "alt": "Back, with print"
+    },
+    {
+     "src": "img/107-checklist-today-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/107-checklist-today-c.svg",
+     "alt": "Print close-up"
+    },
+    {
+     "src": "img/107-checklist-today-d.svg",
+     "alt": "Fabric color: Sand (undyed hemp)"
+    }
+   ],
    "featured": null
   }
  ],
