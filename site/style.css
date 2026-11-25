@@ -175,14 +175,6 @@ details { color: #555; }
 .bag-btn { grid-column: 3; grid-row: 1; justify-self: end; border-radius: 4px; }
 @media (max-width: 560px) { .top { grid-template-columns: auto 1fr; } .brand { grid-column: 1; } .bag-btn { grid-column: 2; } }
 
-/* hero banner */
-.hero-split { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 0; }
-.hero-split { background: #f3f3f3; }
-.hero-split .hs-text { padding: clamp(36px, 7vw, 96px) clamp(16px, 5vw, 64px); align-self: center; }
-.hero-split h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.05; }
-.hs-art { display: grid; place-items: center; padding: clamp(20px, 4vw, 48px); }
-.hs-art .hero-art { width: min(100%, 480px); }
-@media (max-width: 760px) { .hero-split { grid-template-columns: 1fr; } }
 
 .featured, .shop { padding-top: 44px; }
 h2 { font-size: 26px; }
@@ -223,21 +215,42 @@ h2 { font-size: 26px; }
 .feat-row { padding: 6px 6px 26px; gap: 22px; }
 .bag-item .tile { border-radius: 12px; }
 
-/* ---- spotlight rotator ---- */
-.hero-split { overflow: hidden; background: linear-gradient(135deg, var(--tint, rgba(0,0,0,0)) 0%, rgba(0,0,0,0) 70%), #f3f3f3; transition: background .6s ease; }
-.rotator { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.rot-stage { position: relative; width: min(100%, 420px); aspect-ratio: 420 / 520; }
-.rot-slide { position: absolute; inset: 0; display: flex; flex-direction: column; text-align: left; border: 0; cursor: pointer;
-  background: linear-gradient(180deg, #fff, #f6f6f6); border-radius: 26px; padding: 14px 14px 18px; color: #151515;
-  box-shadow: inset 0 2px 0 #fff, inset 0 -5px 12px rgba(0,0,0,.05), 0 3px 6px rgba(0,0,0,.08), 0 26px 40px -14px rgba(0,0,0,.35);
-  opacity: 0; transform: translateX(30px) scale(.96); transition: opacity .5s ease, transform .5s ease; pointer-events: none; }
-.rot-slide.on { opacity: 1; transform: none; pointer-events: auto; }
-.rot-slide .tile { flex: 1; aspect-ratio: auto; min-height: 0; }
-.rot-slide .price { margin: 12px 4px 0; font-size: 22px; font-weight: 800; }
-.rot-name { margin: 2px 4px 0; font-weight: 600; font-size: 16px; }
-.rot-ctrl { display: flex; align-items: center; gap: 12px; }
-.rot-ctrl > button { width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; font-size: 24px; line-height: 1; cursor: pointer; box-shadow: 0 3px 8px rgba(0,0,0,.15); }
-.rot-dots { display: flex; gap: 8px; }
-.rot-dots button { width: 10px; height: 10px; border-radius: 50%; border: 0; padding: 0; background: #c9c9c9; cursor: pointer; }
-.rot-dots button[aria-current="true"] { background: #151515; width: 24px; border-radius: 6px; }
-@media (prefers-reduced-motion: reduce) { .rot-slide, .card, .hero-split { transition: none; } }
+/* ---- stronger pop (2026-11-25): grey page so white boxes stand out, thick raised edge, deeper shadow ---- */
+body { --bg: #ececec; background: #ececec; }
+.top { background: rgba(255,255,255,.97); }
+.foot { background: #e4e4e4; }
+.card { background: linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%); border-radius: 24px;
+  box-shadow: inset 0 2px 0 #fff, inset 0 -3px 6px rgba(0,0,0,.05),
+              0 6px 0 #d2d2d2,                       /* raised edge */
+              0 8px 10px rgba(0,0,0,.10), 0 26px 40px -12px rgba(0,0,0,.42); }
+.card:hover, .card:focus-visible { transform: translateY(-9px) scale(1.02);
+  box-shadow: inset 0 2px 0 #fff, inset 0 -3px 6px rgba(0,0,0,.05),
+              0 8px 0 #cdcdcd, 0 14px 18px rgba(0,0,0,.12), 0 40px 56px -14px rgba(0,0,0,.48); }
+.card:active { transform: translateY(-2px); box-shadow: inset 0 2px 0 #fff, 0 3px 0 #d2d2d2, 0 10px 18px -6px rgba(0,0,0,.35); }
+.tile { border-radius: 18px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.05), inset 0 4px 10px rgba(255,255,255,.9), inset 0 -16px 26px rgba(0,0,0,.12); }
+.grid { gap: 40px 24px; padding-bottom: 20px; }
+.feat-row { padding: 10px 8px 36px; }
+.filters select, .filters input { background-color: #fff; }
+
+/* ---- top strip: slow endless glide of product boxes, no text ---- */
+.hero-strip { background: #e2e2e2; padding: clamp(16px, 3vw, 36px) 0 clamp(4px, 1vw, 12px); overflow: hidden; }
+.strip { overflow: hidden; padding: 14px 0 64px; }
+.strip-track { display: flex; gap: clamp(16px, 2.5vw, 30px); width: max-content; padding-left: clamp(16px, 2.5vw, 30px);
+  animation: strip-glide 60s linear infinite; }
+.strip:hover .strip-track, .strip:focus-within .strip-track { animation-play-state: paused; }
+@keyframes strip-glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.strip-box { flex: none; width: clamp(200px, 24vw, 310px); border: 0; cursor: pointer; padding: 10px;
+  background: linear-gradient(180deg, #fff 0%, #f1f1f1 100%); border-radius: 24px;
+  box-shadow: inset 0 2px 0 #fff, inset 0 -3px 6px rgba(0,0,0,.05), 0 6px 0 #d2d2d2,
+              0 8px 10px rgba(0,0,0,.10), 0 26px 40px -12px rgba(0,0,0,.42);
+  transition: transform .25s ease, box-shadow .25s ease; }
+.strip-box:hover, .strip-box:focus-visible { transform: translateY(-8px) scale(1.03);
+  box-shadow: inset 0 2px 0 #fff, 0 8px 0 #cdcdcd, 0 14px 18px rgba(0,0,0,.12), 0 40px 56px -14px rgba(0,0,0,.48); }
+.strip-box .tile { aspect-ratio: 1; }
+.strip-box img { width: 100%; height: 100%; object-fit: contain; }
+@media (prefers-reduced-motion: reduce) {
+  .strip { overflow-x: auto; scroll-snap-type: x mandatory; }
+  .strip-track { animation: none; }
+  .strip-box { scroll-snap-align: start; }
+  .strip-box[aria-hidden="true"] { display: none; }
+}
