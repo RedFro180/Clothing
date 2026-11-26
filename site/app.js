@@ -612,20 +612,25 @@
   window.addEventListener("hashchange", fromHash);
 
   // Phone Back button closes pop-ups instead of leaving the shop: opening one adds a history step; closing it any other way removes that step.
-  let backClosing = false, skipPop = false;
+  let backClosing = false, skipPop = false, keepY = null;
+  // the browser restores an old scroll position when we step history back; hold the page where it is instead
+  const holdY = y => { const f = () => { if (Math.abs(scrollY - y) > 1) scrollTo({ top: y, behavior: "instant" }); }; f(); requestAnimationFrame(f); };
   const anyOpen = () => !!document.querySelector("dialog[open]");
   document.querySelectorAll("dialog").forEach(d => {
     const show = d.showModal.bind(d);
-    d.showModal = () => { if (!(history.state && history.state.dlg)) history.pushState({ dlg: 1 }, "", location.href); show(); };
+    // scrollRestoration is stored per history entry and used when returning TO it: set it on the page's entry before adding the pop-up step
+    d.showModal = () => { if (!(history.state && history.state.dlg)) { try { history.scrollRestoration = "manual"; } catch {} history.pushState({ dlg: 1 }, "", location.href); } show(); };
     d.addEventListener("close", () => {
       if (backClosing) return;
-      setTimeout(() => { if (!anyOpen() && history.state && history.state.dlg) { skipPop = true; history.back(); } }, 0);
+      setTimeout(() => { if (!anyOpen() && history.state && history.state.dlg) { skipPop = true; keepY = scrollY; history.back(); } }, 0);
     });
   });
   window.addEventListener("popstate", () => {
     backNav = true; setTimeout(() => { backNav = false; }, 50);
-    if (skipPop) { skipPop = false; return; }
-    if (anyOpen()) { backClosing = true; document.querySelectorAll("dialog[open]").forEach(d => d.close()); backClosing = false; }
+    setTimeout(() => { try { if (!(history.state && history.state.dlg)) history.scrollRestoration = "auto"; } catch {} }, 0);   // normal restore for real page visits
+    if (skipPop) { skipPop = false; if (keepY != null) { holdY(keepY); keepY = null; } return; }
+    const y = scrollY;
+    if (anyOpen()) { requestAnimationFrame(() => holdY(y)); backClosing = true; document.querySelectorAll("dialog[open]").forEach(d => d.close()); backClosing = false; }
   });
 
   // close any dialog on backdrop click or close button
