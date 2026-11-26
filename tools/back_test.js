@@ -26,6 +26,8 @@ const OTHER = "file://" + path.join(__dirname, "..", "site", "policies.html");
     await back(); ok("Back with nothing open leaves the shop", /policies\.html/.test(p.url()), p.url());
     await p.goto(URL0 + "#the-box-will-be-heavy"); await p.waitForTimeout(600); ok("shared link opens product", (await open()) === "pd");
     await back(); ok("Back closes a shared-link product", (await open()) === "-", await open());
+    await p.evaluate(() => { location.hash = "everyone-gets-a-toe-tag"; }); await p.waitForTimeout(400);
+    ok("changing the #product link opens it", (await open()) === "pd", await open());
     await c.close();
   }
   if (errs.length) { fails++; console.log("  page errors:", errs); }

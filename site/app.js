@@ -626,7 +626,7 @@
     });
   });
   window.addEventListener("popstate", () => {
-    backNav = true; setTimeout(() => { backNav = false; }, 50);
+    if (skipPop || anyOpen()) { backNav = true; setTimeout(() => { backNav = false; }, 50); }   // only when Back is closing a pop-up, not for a new #product link
     setTimeout(() => { try { if (!(history.state && history.state.dlg)) history.scrollRestoration = "auto"; } catch {} }, 0);   // normal restore for real page visits
     if (skipPop) { skipPop = false; if (keepY != null) { holdY(keepY); keepY = null; } return; }
     const y = scrollY;
