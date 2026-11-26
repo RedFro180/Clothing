@@ -7,7 +7,7 @@ const SEARCHES = ['skull', 'skeleton', 'black', 'gym', 'grief', 'funny', 'coffin
 const PERSONAS = [
   ['ring-impulse', 'Sees the spinning ring, taps a hoodie, buys'],
   ['search', 'Knows a vibe, types a search'],
-  ['theme', 'Browses a theme chip'],
+  ['theme', 'Looks for a theme by typing it in search (theme buttons were removed)'],
   ['color', 'Wants a specific color'],
   ['scroll', 'Scrolls the grid and picks something'],
   ['multi', 'Adds 2–3 items'],
@@ -49,7 +49,8 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
       if (n === 0) { friction.push(`search "${q}" found nothing`); await act('clear filters', () => p.click('#clearBtn')); }
       await act('open first result', () => openCard('#grid .card >> nth=0'));
     }
-    if (persona === 'theme') { await gridToView(); const t = pick(['Morgue', 'Rot', 'Anatomy', 'Graves', 'Grief', 'Iron']); await act('theme chip ' + t, () => p.locator('[data-for="fTheme"] .chip', { hasText: t }).click()); await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 4))); }
+    if (persona === 'theme') { await gridToView(); const t = pick(['morgue', 'rot', 'anatomy', 'grave', 'grief', 'iron']); await act('search theme "' + t + '"', () => p.fill('#fSearch', t)); await p.waitForTimeout(300);
+      if (!(await p.locator('#grid .card').count())) friction.push(`theme search "${t}" found nothing`); await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 4))); }
     if (persona === 'color') { await gridToView(); const c = pick(['Black', 'Olive', 'Oxblood', 'Indigo', 'Plum', 'Sand', 'Charcoal']);
       const chip = p.locator('[data-for="fColor"] .chip', { hasText: c }); const inView = await chip.evaluate(e => { const r = e.getBoundingClientRect(); return r.right <= innerWidth && r.left >= 0; });
       if (!inView) friction.push(`color "${c}" chip off-screen; had to swipe the row`);

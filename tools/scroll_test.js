@@ -56,13 +56,13 @@ const fails = [], errs = [];
     let y0 = await pageY(); let [x, y] = await mid("#ring");
     await scrollAt(x, Math.min(y, vh - 40), 300);
     ok("page scrolls from the ring", (await pageY()) > y0);
-    await p.evaluate(() => document.querySelector(".chips[data-for=fTheme]").scrollIntoView({ block: "center", behavior: "instant" })); await settle();
-    y0 = await pageY(); [x, y] = await mid(".chips[data-for=fTheme]");
+    await p.evaluate(() => document.querySelector(".chips[data-for=fCat]").scrollIntoView({ block: "center", behavior: "instant" })); await settle();
+    y0 = await pageY(); [x, y] = await mid(".chips[data-for=fCat]");
     await scrollAt(x, y, 250);
     ok("page scrolls from a chip row", (await pageY()) > y0);
 
     // 2. chip row swipes sideways
-    const chipRow = ".chips[data-for=fTheme]";
+    const chipRow = ".chips[data-for=fCat]";
     if (await p.evaluate(s => { const c = document.querySelector(s); return c.scrollWidth > c.clientWidth; }, chipRow)) {
       await p.evaluate(s => document.querySelector(s).scrollIntoView({ block: "center", behavior: "instant" }), chipRow); await settle(); [x, y] = await mid(chipRow);
       await scrollAt(x, y, 0, 200);

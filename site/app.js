@@ -184,7 +184,8 @@
   function chips(sel) {
     const box = document.querySelector(`.chips[data-for="${sel.id}"]`);
     box.setAttribute("role", "radiogroup"); box.setAttribute("aria-labelledby", sel.id + "Lbl");
-    const items = [...sel.options].map(o => {
+    const toggle = sel.id === "fCat" || sel.id === "fColor";   // no "All" button: nothing selected = everything; tap the selected one again to clear
+    const items = [...sel.options].filter(o => !(toggle && o.value === "")).map(o => {
       const soon = /\(coming soon\)/.test(o.text);
       const m = o.text.replace(/\s*\(coming soon\)/, "").match(/^(.*?)(?:\s*\((\d+)\))?$/);
       let label = m[1], n = m[2];
@@ -200,7 +201,9 @@
         el("span", { class: dot ? "sr" : "cl", text: label }),
         tabPrice ? el("span", { class: "tp", text: tabPrice }) : null,
         soon ? el("span", { class: "tag", text: "soon" }) : null);
-      b.addEventListener("click", () => { if (sel.value !== o.value) { sel.value = o.value; sel.dispatchEvent(new Event("change")); } sync(); });
+      b.addEventListener("click", e => {
+        const next = toggle && sel.value === o.value && e.detail !== -1 ? "" : o.value;   // keyboard arrows (detail -1) never clear
+        if (sel.value !== next) { sel.value = next; sel.dispatchEvent(new Event("change")); } sync(); });
       return b;
     });
     box.append(...items);
@@ -208,10 +211,11 @@
       const i = items.indexOf(document.activeElement); if (i < 0) return;
       const k = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? items.length - 1 : null;
       if (k === null) return; e.preventDefault();
-      const t = items[Math.max(0, Math.min(items.length - 1, k))]; t.focus(); t.click();
+      const t = items[Math.max(0, Math.min(items.length - 1, k))]; t.focus(); t.dispatchEvent(new MouseEvent("click", { detail: -1, bubbles: true }));
     });
     function sync() {
       items.forEach(b => { const on = b.dataset.v === sel.value; b.setAttribute("aria-checked", on); b.tabIndex = on ? 0 : -1; });
+      if (!items.some(b => b.dataset.v === sel.value) && items[0]) items[0].tabIndex = 0;   // nothing picked: first button is the way in
       const on = items.find(b => b.dataset.v === sel.value);
       if (on && box.scrollWidth > box.clientWidth) {   // keep the selected chip in view in its row
         const l = on.offsetLeft - box.offsetLeft, r = l + on.offsetWidth;
@@ -221,7 +225,7 @@
     const api = { sync, close() {}, wrap: box };
     menus.push(api); return api;
   }
-  [fCat, fTheme, fColor, fSort].forEach(chips);
+  [fCat, fColor, fSort].forEach(chips);   // themes: no buttons (user removed them); the hidden select still honors ?theme= links
 
   // read filters from the URL so filtered views can be shared
   const q = new URLSearchParams(location.search);
@@ -275,7 +279,7 @@
     else list = mixTypes(list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id));
     const tt = type || (LIVE.length === 1 ? LIVE[0] : null);
     $("#resultCount").textContent = `${list.length} ${tt ? (list.length === 1 ? tt.one : tt.many) : (list.length === 1 ? "item" : "items")}`
-      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : "");
+      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : "") + (fColor.value ? ` · ${fColor.value}` : "");
     priceTag(type);
     if (!list.length) {
       const tips = ["skull", "coffin", "grief", "gym", "rot", "black"];

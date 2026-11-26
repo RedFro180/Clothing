@@ -1063,3 +1063,38 @@ dialog.pd.one-size fieldset.sizes { display: none; }
   .mini-row::-webkit-scrollbar { display: none; }
   .mini { flex: 0 0 40%; scroll-snap-align: start; height: auto; }
 }
+
+/* ===== FILTER BAR 2 (2026-11-26, user: no themes; item buttons across, 2 rows of 3 on narrow screens; colors the same as 2 rows of dots) ===== */
+.fb-top { border-bottom: 0; align-items: center; }
+.tabs-row { border-bottom: 0 !important; }
+#filters .chips.tabs { display: flex; gap: 8px; overflow: visible; flex-wrap: nowrap; }
+#filters .chips.tabs .chip { flex: 1 1 0; min-width: 0; justify-content: center; height: 42px; padding: 0 14px; gap: 6px; margin: 0;
+  border: 1px solid rgba(236,229,216,.18); border-radius: 999px; background: transparent; color: #cfc6b7; font: 600 14px/1 var(--sans); }
+#filters .chips.tabs .chip:hover { border-color: rgba(236,229,216,.45); color: #ece5d8; }
+#filters .chips.tabs .chip[aria-checked="true"] { background: #ece5d8; color: #1a1714; border-color: #ece5d8; }
+#filters .chips.tabs .chip[aria-checked="true"] .tp { color: #4f473f; }
+#filters .chips.tabs .cl { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fb-row { overflow: visible; -webkit-mask-image: none !important; mask-image: none !important; margin-inline: 0 !important; padding-inline: 2px !important; }
+#filters .chips.dots { display: flex; flex-wrap: wrap; gap: 4px; }
+@media (pointer: coarse) { #filters .chips.tabs .chip { height: 46px; } }
+@media (max-width: 1100px) { .fb-tools { width: 100%; } }
+/* narrow (phones, Fold cover screen, split screens): items 2 rows of 3, colors 2 rows of 5, then search + sort */
+@media (max-width: 600px) {
+  #filters.fbar { gap: 12px; }
+  .fb-top { display: contents; }
+  .tabs-row { order: 1; } .fb-row { order: 2; } .fb-tools { order: 3; }
+  #filters .chips.tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; }
+  #filters .chips.tabs .chip { height: 54px; flex-direction: column; justify-content: center; gap: 3px; padding: 0 6px; border-radius: 16px; font-size: 14px; }
+  #filters .chips.tabs .tp { font-size: 12px; }
+  .fb-row { display: block; width: 100%; }
+  #filters .fb-row .frow { display: block; width: 100%; }
+  #filters .chips.dots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px 4px; width: 100%; justify-items: center; }
+  #filters .fb-row .chip.dot { width: 44px; height: 44px; }
+}
+@media (max-width: 330px) { #filters .chips.tabs .chip { font-size: 13px; padding: 0 3px; } }
+@media (min-width: 601px) { #filters .chips.tabs .chip { flex: 0 0 auto; } #filters .chips.tabs { flex-wrap: wrap; } }
+@media (min-width: 601px) and (max-width: 1100px) {
+  #filters .chips.tabs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; width: 100%; }
+  #filters .chips.tabs .chip { height: 54px; flex-direction: column; justify-content: center; gap: 3px; padding: 0 6px; border-radius: 16px; font-size: 14px; }
+  #filters .chips.tabs .tp { font-size: 12px; }
+}
