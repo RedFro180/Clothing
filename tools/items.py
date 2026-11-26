@@ -1,4 +1,4 @@
-"""Mockups for the non-hoodie items: tee, boxers, socks, beanie, dad cap.
+"""Mockups for the non-hoodie items: tee, boxers, socks, beanie, dad cap, sweatpants, heavy jacket.
 Same look as the hoodie mockups in svgs_dark.py (flat fabric + soft gradient shading, no filters on the garment),
 and the same art: tees use the full hoodie layout, small items use the design's icon plus at most one short word.
 Used by tools/build_site.py. Each item gets 4 pictures: main, other side, close-up, fabric color."""
@@ -160,6 +160,91 @@ def cap(view):
         g += _stitch("M300 152 L300 236", seam)
     return g
 
+
+# ---------------- sweatpants (hoodie fleece, natural-rubber waist in a cotton casing + cotton drawcord, rib cuffs) ----------------
+PANTS = "M176 104 L424 104 L442 240 L422 536 L318 536 L304 272 L296 272 L282 536 L178 536 L158 240 Z"
+def sweatpants(view):
+    FAB = S.FAB; line, seam = S.shade(FAB, .62), S.shade(FAB, .8)
+    k = "pf" if view == "front" else "pb"
+    defs, over = _shade_layers(k, PANTS)
+    g = defs + f'<path d="{PANTS}" fill="{FAB}"/>' + over
+    g += _fold("M300 104 L300 272", .1, 3)
+    g += _fold("M196 300 Q210 400 198 520", .07, 6) + _fold("M404 300 Q390 400 402 520", .07, 6)
+    for y in (470, 496, 520):   # fabric stacking above the cuffs
+        g += _fold(f"M186 {y} Q230 {y + 12} 276 {y - 2}", .1, 3) + _fold(f"M324 {y - 2} Q370 {y + 12} 414 {y}", .1, 3)
+    g += '</g>' + f'<path d="{PANTS}" fill="none" stroke="{line}" stroke-width="2" stroke-linejoin="round"/>'
+    rib = S.shade(FAB, .9)
+    for x0, x1 in ((184, 278), (322, 416)):   # rib cuffs
+        g += f'<rect x="{x0}" y="530" width="{x1 - x0}" height="52" rx="6" fill="{rib}" stroke="{line}" stroke-width="2"/>'
+        g += "".join(f'<line x1="{x}" y1="534" x2="{x}" y2="578" stroke="#000" stroke-opacity=".14" stroke-width="2"/>' for x in range(x0 + 7, x1 - 3, 8))
+    g += f'<rect x="172" y="62" width="256" height="46" rx="8" fill="{rib}" stroke="{line}" stroke-width="2"/>'   # waistband casing
+    g += _stitch("M178 100 L422 100", seam) + _stitch("M178 70 L422 70", seam)
+    if view == "front":
+        g += f'<path d="M186 112 Q196 160 166 214" fill="none" stroke="#000" stroke-opacity=".28" stroke-width="3"/>'
+        g += f'<path d="M414 112 Q404 160 434 214" fill="none" stroke="#000" stroke-opacity=".28" stroke-width="3"/>'
+        cord = S.shade(FAB, 1.4) if _lum(FAB) < 300 else S.shade(FAB, .55)
+        g += f'<circle cx="286" cy="90" r="4" fill="{line}"/><circle cx="314" cy="90" r="4" fill="{line}"/>'
+        g += f'<path d="M286 92 Q280 130 288 168" fill="none" stroke="{cord}" stroke-width="5" stroke-linecap="round"/>'
+        g += f'<path d="M314 92 Q322 128 310 162" fill="none" stroke="{cord}" stroke-width="5" stroke-linecap="round"/>'
+        g += f'<circle cx="288" cy="172" r="6" fill="{cord}"/><circle cx="310" cy="166" r="6" fill="{cord}"/>'   # knotted ends
+    else:
+        g += f'<path d="M332 140 L404 140 L400 214 L336 214 Z" fill="#000" fill-opacity=".05" stroke="{seam}" stroke-width="1.5"/>'
+        g += _stitch("M336 146 L400 146", seam)
+    return g
+def pants_art(num, d, word):
+    """Left-thigh print (viewer's right): the icon, then the word running down the leg."""
+    ic = d.get("icon", "none")
+    if ic in ("none", "checklist", "obituary", "autopsy_report"): ic = "skull"
+    g = S.ICONS[ic](366, 196, .3, **d.get("args", {}))
+    if word:
+        fs = S.fitsize(word, "osw", 200, 30)
+        g += f'<g transform="rotate(90 366 360)">' + S.tpath(word, "osw", fs, 366, 360 + fs * .35, fill=S.INK) + '</g>'
+    return g
+
+# ---------------- heavy jacket (12 oz cotton duck, corduroy collar, brass snaps, quilted flannel + wool lining) ----------------
+JACKET = ("M150 170 L95 200 L40 470 L95 485 L130 330 L135 590 L465 590 L470 330 L505 485 L560 470 L505 200 L450 170 "
+          "Q420 150 390 142 Q300 160 210 142 Q180 150 150 170 Z")
+def jacket(view):
+    FAB = S.FAB; line, seam = S.shade(FAB, .62), S.shade(FAB, .8)
+    k = "jf" if view == "front" else "jb"
+    defs, over = _shade_layers(k, JACKET)
+    dark = _lum(FAB) < 300
+    weave = S.shade(FAB, 1.25 if dark else .84)
+    defs = defs.replace("</defs>", f'<pattern id="{k}w" width="6" height="6" patternUnits="userSpaceOnUse">'
+                        f'<path d="M0 6 L6 0" stroke="{weave}" stroke-width="1" opacity=".35"/></pattern></defs>')
+    g = defs + f'<path d="{JACKET}" fill="{FAB}"/>' + over + f'<rect x="20" y="36" width="560" height="570" fill="url(#{k}w)"/>'
+    g += _fold("M150 172 L131 332", .18, 7) + _fold("M450 172 L469 332", .18, 7)
+    g += _fold("M118 268 Q104 286 98 312") + _fold("M104 352 Q90 366 84 392") + _fold("M482 268 Q496 286 502 312") + _fold("M496 352 Q510 366 516 392")
+    g += _fold("M175 360 Q185 440 170 530", .07, 6) + _fold("M425 360 Q415 440 430 530", .07, 6) + '</g>'
+    g += f'<path d="{JACKET}" fill="none" stroke="{line}" stroke-width="2" stroke-linejoin="round"/>'
+    g += _stitch("M150 176 L132 330", seam) + _stitch("M450 176 L468 330", seam)
+    g += f'<path d="M135 564 L465 564" stroke="{line}" stroke-width="1.5"/>' + _stitch("M137 580 L463 580", seam) + _stitch("M137 570 L463 570", seam)
+    cuff = S.shade(FAB, .82)
+    g += f'<rect x="38" y="458" width="60" height="30" rx="3" fill="{cuff}" stroke="{line}" stroke-width="1.5" transform="rotate(5 68 473)"/>'
+    g += f'<rect x="502" y="458" width="60" height="30" rx="3" fill="{cuff}" stroke="{line}" stroke-width="1.5" transform="rotate(-5 532 473)"/>'
+    cord = "#5b3f2c" if _lum(FAB) > 200 else "#4a3426"    # brown cotton corduroy collar, like classic duck work jackets
+    brass, brass_d = "#b08d57", "#7a5f36"
+    if view == "front":
+        g += f'<path d="M300 196 L300 590" stroke="{line}" stroke-width="2"/>' + _stitch("M292 200 L292 588", seam)
+        for y in (250, 318, 386, 454, 522):
+            g += f'<circle cx="300" cy="{y}" r="7" fill="{brass}" stroke="{brass_d}" stroke-width="2"/>'
+        for x0 in (178, 332):    # chest pockets with flaps
+            g += f'<rect x="{x0}" y="262" width="90" height="82" rx="3" fill="#000" fill-opacity=".05" stroke="{seam}" stroke-width="1.5"/>'
+            g += f'<path d="M{x0 - 2} 256 L{x0 + 92} 256 L{x0 + 92} 284 L{x0 + 45} 292 L{x0 - 2} 284 Z" fill="{S.shade(FAB, .93)}" stroke="{line}" stroke-width="1.5"/>'
+            g += f'<circle cx="{x0 + 45}" cy="282" r="4.5" fill="{brass}" stroke="{brass_d}" stroke-width="1.5"/>'
+        for x0 in (164, 326):    # lower patch pockets
+            g += f'<path d="M{x0} 420 L{x0 + 110} 420 L{x0 + 110} 530 L{x0} 530 Z" fill="#000" fill-opacity=".05" stroke="{seam}" stroke-width="1.5"/>'
+            g += _stitch(f"M{x0 + 4} 426 L{x0 + 106} 426", seam)
+        g += f'<path d="M300 158 L212 140 L194 170 L254 240 L300 200 Z" fill="{cord}" stroke="{line}" stroke-width="1.5"/>'
+        g += f'<path d="M300 158 L388 140 L406 170 L346 240 L300 200 Z" fill="{cord}" stroke="{line}" stroke-width="1.5"/>'
+        g += "".join(f'<path d="M{212 + i * 9} {144 + i * 2} L{232 + i * 8} {196 + i * 3}" stroke="#000" stroke-opacity=".12" stroke-width="2"/>' for i in range(8))
+        g += "".join(f'<path d="M{388 - i * 9} {144 + i * 2} L{368 - i * 8} {196 + i * 3}" stroke="#000" stroke-opacity=".12" stroke-width="2"/>' for i in range(8))
+    else:
+        g += f'<path d="M150 226 Q300 236 450 226" stroke="{seam}" stroke-width="1.5" fill="none"/>' + _stitch("M150 232 Q300 242 450 232", seam)
+        g += f'<path d="M210 142 Q300 160 390 142 L394 166 Q300 184 206 166 Z" fill="{cord}" stroke="{line}" stroke-width="1.5"/>'
+        g += f'<rect x="290" y="176" width="20" height="12" rx="2" fill="{S.shade(FAB, .7)}"/>'   # hang loop
+    return g
+
 # ---------------- items table ----------------
 # fit: transform that fills the 560x570 frame like the hoodie does; crop: close-up window (after the transform)
 ITEMS = {
@@ -168,6 +253,8 @@ ITEMS = {
     "socks":     {"fit": "translate(-44 0)", "crop": "170 60 200 340"},
     "hats-beanie": {"fit": "translate(300 326) scale(1.2) translate(-300 -326)", "crop": "150 370 300 180"},
     "hats-cap":  {"fit": "translate(300 328) scale(1.16) translate(-300 -280)", "crop": "160 180 280 200"},
+    "sweatpants": {"fit": "", "crop": "226 150 280 340"},
+    "jackets":   {"fit": "", "crop": "140 180 320 360"},
 }
 def _fit(kind, body):
     tf = ITEMS[kind]["fit"]
@@ -179,9 +266,15 @@ def _svg(title, body, vb=VB, defs=""):
     w, h = vb.split()[2:]
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" width="{w}" height="{h}"><title>{E(title)}</title>{defs}{body}</svg>'
 
-def fabric(cname):
+def fabric(cname, duck=False):
     FAB = S.FAB
     knit = S.shade(FAB, .86) if _lum(FAB) > 300 else S.shade(FAB, 1.18)
+    if duck:   # canvas weave instead of knit
+        return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 570" width="560" height="570"><title>{E(cname)} cotton duck</title>'
+                f'<defs><pattern id="k" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 1.5 H6 M1.5 0 V6" stroke="{knit}" stroke-width="1.4" opacity=".5"/></pattern>'
+                f'<radialGradient id="v" cx=".5" cy=".45" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/>'
+                f'<stop offset="1" stop-color="#000" stop-opacity=".22"/></radialGradient></defs>'
+                f'<rect width="560" height="570" fill="{FAB}"/><rect width="560" height="570" fill="url(#k)"/><rect width="560" height="570" fill="url(#v)"/></svg>')
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 570" width="560" height="570"><title>{E(cname)} fabric</title>'
             f'<defs><pattern id="k" width="8" height="8" patternUnits="userSpaceOnUse">'
             f'<path d="M0 8 L4 0 L8 8" fill="none" stroke="{knit}" stroke-width="1.2" opacity=".55"/></pattern>'
@@ -238,7 +331,21 @@ def render_item(kind, num, d, out):
         files["-b"] = _svg(f"{cname} cap, back", _fit(kind, cap("back")))
         files["-c"] = _svg("Embroidery close-up", main, vb=ITEMS[kind]["crop"])
         labels = ("Front", "Back")
-    files["-d"] = fabric(cname)
+    elif kind == "sweatpants":
+        main = sweatpants("front") + f'<g filter="url(#grunge)">{pants_art(num, d, word)}</g>'
+        files[""] = _svg(f"Sweatpants: {word}", main, defs=S.DEFS)
+        files["-b"] = _svg(f"{cname} sweatpants, back", sweatpants("back"))
+        files["-c"] = _svg("Print close-up", main, vb=ITEMS[kind]["crop"], defs=S.DEFS)
+        labels = ("Front", "Back")
+    elif kind == "jackets":
+        d2 = dict(d, place="back" if d["place"] in ("back", "hood") else "front")
+        _, art = S.layout(num, d2)
+        main = jacket("back") + f'<g filter="url(#grunge)" transform="translate(300 334) scale(.9) translate(-300 -300)">{art}</g>'
+        files[""] = _svg(" ".join(d["lines"]).capitalize() + " (jacket back)", main, defs=S.DEFS)
+        files["-b"] = _svg(f"{cname} jacket, front", jacket("front"))
+        files["-c"] = _svg("Back print close-up", main, vb=ITEMS[kind]["crop"], defs=S.DEFS)
+        labels = ("Back", "Front")
+    files["-d"] = fabric(cname, duck=(kind == "jackets"))
     names = {}
     for suf, svg in files.items():
         n = base + suf + ".svg"

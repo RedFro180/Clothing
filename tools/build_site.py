@@ -26,8 +26,8 @@ TYPES = [
     ("hats", "Hats", "hat", "hats", 40, True),
     ("underwear", "Underwear", "pair of boxers", "boxers", 38, True),
     ("socks", "Socks", "pair of socks", "socks", 24, True),
-    ("sweatpants", "Sweatpants", "pair of sweatpants", "sweatpants", 140, False),
-    ("jackets", "Heavy jackets", "jacket", "jackets", 325, False),
+    ("sweatpants", "Sweatpants", "pair of sweatpants", "sweatpants", 140, True),
+    ("jackets", "Heavy jackets", "jacket", "jackets", 325, True),
 ]
 TPRICE = {t[0]: t[4] for t in TYPES}
 NATURAL_DYE = "Natural dyes fade gradually with sun and washing"
@@ -51,6 +51,15 @@ ITEMS = [
     ("socks", "socks", "Socks", ["S/M", "L/XL"], "Design knitted in",
      ["Cotton or merino crew sock, knitted with the design in it", "No nylon or spandex. No plastic."],
      ["No nylon or spandex: they slide more and wear faster at heel and toe", "Final sale (hygiene)"]),
+    ("sweatpants", "sweatpants", "Sweatpants", SIZES, "Print on the left thigh",
+     ["~30% hemp / 70% cotton brushed fleece, same as the hoodies", "Heavy cotton rib cuffs, cotton drawcord, cotton thread and labels",
+      "Waist: natural rubber elastic inside a cotton casing. No plastic, no spandex.", "Line dry or tumble low: heat wears out natural rubber faster"],
+     ["Contains natural rubber latex (not for latex allergies)", "All sales final: check the size guide"]),
+    ("jackets", "jackets", "Heavy jacket", SIZES, "Large back print",
+     ["12 oz 100% cotton duck shell, brown cotton corduroy collar", "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
+      "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
+      "Wash cold, line dry: the wool lining can shrink in heat"],
+     ["Contains wool (lining)", "All sales final: check the size guide"]),
 ]
 SINGULAR = {t[0]: t[2] for t in TYPES}
 
@@ -106,7 +115,8 @@ COLOR_TAGS = {"Dusty rose": "pink rose", "Undyed oatmeal": "cream white beige na
               "Olive": "green army", "Plum": "purple", "Black": "black"}
 
 TYPE_TAGS = {"tee": "tee tees t-shirt tshirt shirt", "hats-beanie": "hat hats beanie toque knit", "hats-cap": "hat hats cap dad cap baseball",
-             "underwear": "underwear boxers boxer shorts", "socks": "sock socks crew"}
+             "underwear": "underwear boxers boxer shorts", "socks": "sock socks crew",
+             "sweatpants": "sweatpants sweats joggers pants trackpants bottoms", "jackets": "jacket jackets coat chore work duck canvas outerwear"}
 def fab_of(num): return S.color_for(num)[1]
 
 def search_tags(d, theme, color):
@@ -188,12 +198,12 @@ def main():
                 {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
             theme = theme_for(d)
             products.append({
-                "id": pid, "slug": f"{d['slug']}-{kind.replace('hats-', '')}", "name": title_case(d["lines"]), "sub": d["sub"] if typ == "tee" else "",
+                "id": pid, "slug": f"{d['slug']}-{kind.replace('hats-', '')}", "name": title_case(d["lines"]), "sub": d["sub"] if typ in ("tee", "jackets") else "",
                 "type": typ, "typeLabel": label, "word": SINGULAR[typ] if typ != "hats" else label.lower(), "theme": theme, "color": color, "colorNote": cname,
                 "tags": search_tags(d, theme, color) + " " + TYPE_TAGS[kind], "hex": fab_of(num), "light": lum(fab_of(num)) > 450,
                 "placement": placement or PLACE[d["place"]], "price": TPRICE[typ], "sizes": sizes, "img": "img/" + main, "imgs": imgs,
                 "featured": None,
-                "details": [f"Color: {cname}"] + details + ([f"{placement or PLACE[d['place']]}, natural dye"] if typ == "tee" else []) + [NATURAL_DYE, PREORDER],
+                "details": [f"Color: {cname}"] + details + ([f"{placement or PLACE[d['place']]}, natural dye"] if typ in ("tee", "jackets", "sweatpants") else []) + [NATURAL_DYE, PREORDER],
                 "notes": notes,
             })
     dedupe(products)

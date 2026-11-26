@@ -287,7 +287,7 @@
   const ALIAS = { "3am": "3 a.m.", "3": "3 a.m.", "skulls": "skull", "skeletons": "skeleton", "coffins": "coffin", "graves": "grave", "funny": "", "dark": "",
     "sad": "grief", "depressed": "grief", "depression": "grief", "anxiety": "grief", "mental": "grief", "workout": "gym", "lifting": "lift", "weights": "gym",
     "gray": "grey", "dead": "dead", "hoodies": "hoodie", "hoody": "hoodie", "sweatshirt": "hoodie", "sweater": "hoodie", "pullover": "hoodie",
-    "tshirt": "tee", "t-shirt": "tee", "tees": "tee", "shirts": "shirt", "hats": "hat", "beanies": "beanie", "caps": "cap", "boxer": "boxers", "sock": "socks", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
+    "tshirt": "tee", "t-shirt": "tee", "tees": "tee", "shirts": "shirt", "hats": "hat", "beanies": "beanie", "caps": "cap", "boxer": "boxers", "sock": "socks", "sweats": "sweatpants", "joggers": "sweatpants", "coat": "jacket", "jackets": "jacket", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
   function searchWords(q) {
     return q.toLowerCase().replace(/[^a-z0-9.' -]/g, " ").split(/\s+/).filter(Boolean)
       .map(w => (w in ALIAS ? ALIAS[w] : w)).filter(w => w && !STOP.has(w));
@@ -301,7 +301,7 @@
     op.hidden = !EACH; if (!EACH) return;
     if (type && ONE_BY[type.id] != null) {
       op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE_BY[type.id]) }),
-        el("span", { class: "op-s", text: `every ${type.one === "pair of boxers" ? "pair" : type.one === "pair of socks" ? "pair" : type.one}` }));
+        el("span", { class: "op-s", text: `every ${type.one.startsWith("pair of") ? "pair" : type.one}` }));
     } else if (LIVE.length === 1) {
       op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE_BY[LIVE[0].id]) }), el("span", { class: "op-s", text: "every design" }));
     } else {
@@ -516,6 +516,10 @@
     underwear: { cols: [["waist", "Waist"], ["inseam", "Inseam"]], how: ["Measure around your waist where the waistband sits.",
       "Inseam: on boxers you own, crotch seam to the leg hem."] },
     socks: { cols: [["us_men", "US men's shoe"], ["us_women", "US women's shoe"]], how: ["Pick by your usual shoe size."] },
+    sweatpants: { cols: [["waist", "Waist (relaxed)"], ["hip", "Hip"], ["inseam", "Inseam"]], how: ["Use sweatpants you own that fit the way you like. Lay them flat.",
+      "Waist: edge to edge across the waistband, relaxed, then double it.", "Hip: edge to edge at the widest point, then double it.", "Inseam: crotch seam to the bottom of the cuff."] },
+    jackets: { cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]], how: ["Use a jacket you own that fits the way you like, ideally one you wear over a hoodie. Lay it flat, closed.",
+      "Chest: armpit to armpit, then double it.", "Length: base of the collar at the back, straight down to the hem.", "Sleeve: shoulder seam to the end of the cuff."] },
   };
   function sizeGuideFor(p) {
     const box = $("#sizeGuide"); box.replaceChildren();
@@ -667,7 +671,7 @@
     send({ type: "preorder", order_id: id, large_order: large ? "YES - verify before taking payment" : "no",
       name, email, note, items: items.join("\n"), item_count: qty,
       subtotal: money(sub), shipping: money(ship), total: money(sub + ship), price_check: catalogStamp(),
-      agreed_to: POLICY + (latex ? " I understand the boxers contain natural rubber latex." : ""), agreed_at: new Date().toISOString(), page: location.href.split("#")[0],
+      agreed_to: POLICY + (latex ? " I understand this order contains natural rubber latex (waistband elastic)." : ""), agreed_at: new Date().toISOString(), page: location.href.split("#")[0],
       _subject: `${large ? "[LARGE] " : ""}Preorder ${id} from ${name}` }, msg,
       () => { bag = []; save(); drawBag(); msg.textContent = `Sent. Your order number is ${id}. We'll email ${email} with a ship date and payment link.`; });
     setTimeout(() => { btn.disabled = false; }, 4000);

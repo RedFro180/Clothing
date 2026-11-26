@@ -11,7 +11,7 @@ const PERSONAS = [
   ['color', 'Wants a specific color'],
   ['scroll', 'Scrolls the grid and picks something'],
   ['multi', 'Adds 2–3 items'],
-  ['category', 'Taps a type chip (tees, hats, underwear, socks) and buys one'],
+  ['category', 'Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one'],
   ['addon', 'Buys a hoodie, adds a one-size add-on from "Buy it with"'],
   ['soldout', 'Wants a size that is sold out'],
   ['sizeunsure', 'Unsure of size, opens size guide'],
@@ -57,7 +57,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     if (persona === 'multi') { await act('open product', () => openCard('#grid .card >> nth=1')); }
     if (persona === 'soldout') { await act('open toe tag (L sold out)', async () => { await p.evaluate(() => location.hash = 'everyone-gets-a-toe-tag'); await p.waitForTimeout(300); }); wantSize = 'L'; }
     if (persona === 'sizeunsure') { await act('open product', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 12))); }
-    if (persona === 'category') { await gridToView(); const t = pick(['Tees', 'Hats', 'Underwear', 'Socks']); await act('type chip ' + t, () => p.locator('[data-for="fCat"] .chip', { hasText: t }).first().click());
+    if (persona === 'category') { await gridToView(); const t = pick(['Tees', 'Hats', 'Underwear', 'Socks', 'Sweatpants', 'Heavy jackets']); await act('type chip ' + t, () => p.locator('[data-for="fCat"] .chip', { hasText: t }).first().click());
       const n = await p.locator('#grid .card').count(); log.push(`${t}: ${n} items`); if (!n) friction.push(`${t}: no items`);
       const tag = await p.textContent('#onePrice'); if (!/\$\d+/.test(tag)) friction.push(`${t}: price not shown`);
       await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 3))); }
