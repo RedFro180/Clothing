@@ -30,6 +30,21 @@ window.SITE_CONFIG = {
   INSTAGRAM: "",
   TIKTOK: "",
   // Size guide shown on every product. Fill in the numbers (garment measured flat). Blank = "Measurements coming soon".
+  // Size guides for the other items (same idea: blank = "Measurements coming soon"). Hats are one size.
+  SIZE_CHARTS: {
+    tee: [
+      { size: "S", chest: "", length: "", sleeve: "" }, { size: "M", chest: "", length: "", sleeve: "" },
+      { size: "L", chest: "", length: "", sleeve: "" }, { size: "XL", chest: "", length: "", sleeve: "" },
+      { size: "2XL", chest: "", length: "", sleeve: "" }, { size: "3XL", chest: "", length: "", sleeve: "" },
+    ],
+    underwear: [
+      { size: "S", waist: "", inseam: "" }, { size: "M", waist: "", inseam: "" }, { size: "L", waist: "", inseam: "" },
+      { size: "XL", waist: "", inseam: "" }, { size: "2XL", waist: "", inseam: "" },
+    ],
+    socks: [
+      { size: "S/M", us_men: "", us_women: "" }, { size: "L/XL", us_men: "", us_women: "" },
+    ],
+  },
   SIZE_UNITS: "in",
   SIZE_CHART: [
     { size: "S",   chest: "", length: "", sleeve: "" },

@@ -10,7 +10,9 @@ const PERSONAS = [
   ['theme', 'Browses a theme chip'],
   ['color', 'Wants a specific color'],
   ['scroll', 'Scrolls the grid and picks something'],
-  ['multi', 'Adds 2–3 hoodies'],
+  ['multi', 'Adds 2–3 items'],
+  ['category', 'Taps a type chip (tees, hats, underwear, socks) and buys one'],
+  ['addon', 'Buys a hoodie, adds a one-size add-on from "Buy it with"'],
   ['soldout', 'Wants a size that is sold out'],
   ['sizeunsure', 'Unsure of size, opens size guide'],
   ['shared-link', 'Arrives from a shared product link'],
@@ -55,6 +57,11 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     if (persona === 'multi') { await act('open product', () => openCard('#grid .card >> nth=1')); }
     if (persona === 'soldout') { await act('open toe tag (L sold out)', async () => { await p.evaluate(() => location.hash = 'everyone-gets-a-toe-tag'); await p.waitForTimeout(300); }); wantSize = 'L'; }
     if (persona === 'sizeunsure') { await act('open product', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 12))); }
+    if (persona === 'category') { await gridToView(); const t = pick(['Tees', 'Hats', 'Underwear', 'Socks']); await act('type chip ' + t, () => p.locator('[data-for="fCat"] .chip', { hasText: t }).first().click());
+      const n = await p.locator('#grid .card').count(); log.push(`${t}: ${n} items`); if (!n) friction.push(`${t}: no items`);
+      const tag = await p.textContent('#onePrice'); if (!/\$\d+/.test(tag)) friction.push(`${t}: price not shown`);
+      await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 3))); }
+    if (persona === 'addon') { await act('open hoodie', () => openCard('#grid .card >> nth=0')); }
     if (persona === 'returning') { const vis = await p.locator('#rvBtn').isVisible(); if (!vis) friction.push('recently viewed button not visible'); await act('open recently viewed', () => p.click('#rvBtn')); await act('pick from recent', () => p.locator('.rv-item').first().click()); }
     // ---------- inside product ----------
     const open = await p.evaluate(() => document.querySelector('#pd').open);
@@ -64,7 +71,13 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
       const m = await p.evaluate(() => { const r = document.querySelector('#pdAdd').getBoundingClientRect(); return { addBelow: r.bottom > innerHeight, priceTop: Math.round(document.querySelector('#pdPrice').getBoundingClientRect().top) }; });
       if (m.addBelow) friction.push('Add button below the screen in pop-up');
       if (persona === 'sizeunsure') { await act('open size guide', () => p.click('#sgBtn')); const g = await p.textContent('#sizeGuide'); if (g.includes('coming soon')) friction.push('size guide has no measurements'); }
-      await act('pick size ' + wantSize, () => p.locator(`#pdSizes button[data-s="${wantSize}"]`).click());
+      const oneSize = await p.evaluate(() => document.querySelector('#pd').classList.contains('one-size'));
+      const sizes = await p.evaluate(() => [...document.querySelectorAll('#pdSizes button')].map(b => b.dataset.s));
+      if (oneSize) log.push('one size: nothing to pick');
+      else {
+        if (!sizes.includes(wantSize)) wantSize = sizes.includes('M') ? 'M' : sizes.includes('L/XL') ? 'L/XL' : sizes[0];
+        await act('pick size ' + wantSize, () => p.locator(`#pdSizes button[data-s="${wantSize}"]`).click());
+      }
       const sold = await p.locator('#notifyForm').isVisible();
       if (sold) {
         log.push('size sold out');
@@ -75,13 +88,20 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
         const suggest = await p.locator('#pdAlts').isVisible();
         if (!suggest) friction.push('sold out: no suggestion of similar hoodies in that size');
       } else {
-        if (rnd() < 0.15) { await act('tap Add without size (mistake)', async () => { await p.locator('#pdSizes button[aria-pressed="true"]').click(); }); }
+        if (!oneSize && rnd() < 0.15) { await act('tap Add without size (mistake)', async () => { await p.locator('#pdSizes button[aria-pressed="true"]').click(); }); }
         await act('add to preorder list', () => p.click('#pdAdd')); await p.waitForTimeout(150);
         const msg = await p.textContent('#pdMsg'); log.push('msg: ' + msg.trim());
         const countVisible = await p.evaluate(() => { const r = document.querySelector('#bagCount').getBoundingClientRect(); return r.width > 0; });
-        if (persona === 'multi') {
+        if (persona === 'addon') {
+          const add = p.locator('#pdWithList .mini-add', { hasText: '+ Add' }).filter({ hasNotText: 'M' });
+          const one = await p.evaluate(() => [...document.querySelectorAll('#pdWithList .mini')].filter(m => /Beanie|Dad cap/.test(m.textContent) && /\+ Add$/.test(m.querySelector('.mini-add').textContent.trim())).length);
+          if (!one) friction.push('no one-size add-on offered under the hoodie');
+          else { await act('add a hat from "Buy it with"', () => p.evaluate(() => [...document.querySelectorAll('#pdWithList .mini')].find(m => /Beanie|Dad cap/.test(m.textContent) && /\+ Add$/.test(m.querySelector('.mini-add').textContent.trim())).querySelector('.mini-add').click())); }
+          await act('tap "View list"', () => p.locator('#pdMsg .link').click());
+        } else if (persona === 'multi') {
           await act('close', () => p.keyboard.press('Escape'));
-          for (const k of [5, 14]) { await act('open another', () => openCard(`#grid .card >> nth=${k}`)); const pre = await p.locator('#pdSizes button[aria-pressed="true"]').count(); if (!pre) friction.push('size not remembered'); await act('add', () => p.click('#pdAdd')); await act('close', () => p.keyboard.press('Escape')); }
+          for (const k of [5, 14]) { await act('open another', () => openCard(`#grid .card >> nth=${k}`)); const pre = await p.locator('#pdSizes button[aria-pressed="true"]').count(); const one = await p.evaluate(() => document.querySelector('#pd').classList.contains('one-size'));
+            if (!pre && !one) { await act('pick size', () => p.locator('#pdSizes button:not(.is-out)').first().click()); } await act('add', () => p.click('#pdAdd')); await act('close', () => p.keyboard.press('Escape')); }
         } else await act('tap "View list"', () => p.locator('#pdMsg .link').click());
       }
     }

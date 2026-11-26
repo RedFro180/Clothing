@@ -14,8 +14,14 @@
   const money = n => new Intl.NumberFormat("en-US", { style: "currency", currency: C.CURRENCY, maximumFractionDigits: 0 }).format(n);
   const track = (n, p) => { try { window.track && window.track(n, p); } catch (e) {} };
   const trackPurchase = (...x) => { try { window.trackPurchase && window.trackPurchase(...x); } catch (e) {} };
-  // One price for everything? Then prices come off the cards and the shop says it once, clearly.
-  const PRICES = [...new Set(P.map(p => p.price))], ONE = PRICES.length === 1 ? PRICES[0] : null;
+  // One price per item type? Then prices come off the cards and the shop says each type's price once, clearly.
+  const typeOf = id => CAT.types.find(t => t.id === id) || { id, label: "Items", one: "item", many: "items" };
+  const LIVE = CAT.types.filter(t => P.some(p => p.type === t.id));
+  const ONE_BY = {};
+  LIVE.forEach(t => { const pr = [...new Set(P.filter(p => p.type === t.id).map(p => p.price))]; if (pr.length === 1) ONE_BY[t.id] = pr[0]; });
+  const EACH = LIVE.length > 0 && LIVE.every(t => ONE_BY[t.id] != null);   // every type has a single price
+  const onePrice = p => ONE_BY[p.type] != null;
+  const ONE = LIVE.length === 1 && EACH ? ONE_BY[LIVE[0].id] : null;       // only one type in the shop: say "Every hoodie $150"
   const shipLine = () => {
     const f = Number(C.SHIPPING_FLAT) || 0, q = C.FREE_SHIP_QTY;
     if (!f) return "Free shipping";
@@ -29,7 +35,7 @@
   const bySlug = Object.fromEntries(P.map(p => [p.slug, p]));
 
   // ---------- branding ----------
-  document.title = `${C.BRAND} | Dark-humor hoodies, no plastic`;
+  document.title = `${C.BRAND} | Dark-humor clothing, no plastic`;
   document.querySelectorAll("[data-brand]").forEach(n => n.textContent = C.BRAND);
   document.querySelectorAll("[data-contact]").forEach(a => { a.href = "mailto:" + C.CONTACT_EMAIL; a.textContent = C.CONTACT_EMAIL; });
   $("[data-tagline]").textContent = C.TAGLINE;
@@ -41,16 +47,16 @@
     const back = (p.imgs && p.imgs[1] && p.imgs[1].src) || p.img;
     const stage = el("div", { class: "stage" },
       el("div", { class: "turn" },
-        el("img", { class: "face front", src: p.img, alt: `${p.color} hoodie, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570, draggable: "false" }),
+        el("img", { class: "face front", src: p.img, alt: `${p.color} ${p.typeLabel.toLowerCase()}, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570, draggable: "false" }),
         el("img", { class: "face back", "data-src": back, alt: "", width: 560, height: 570, draggable: "false" })),
       el("span", { class: "shadow", "aria-hidden": "true" }),
       el("span", { class: "spin-ico", "aria-hidden": "true", text: "\u21BB" }));
     const c = el("button", { class: "card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. Left and right arrows turn it.`, onclick: () => openProduct(p) },
       stage,
-      ONE ? null : el("p", { class: "price", text: money(p.price) }),
+      onePrice(p) ? null : el("p", { class: "price", text: money(p.price) }),
       el("h3", { text: p.name }),
       el("div", { class: "row" },
-        el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), p.color)));
+        el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), `${p.color} · ${p.typeLabel}`)));
     spinnable(stage, c);
     return c;
   }
@@ -104,9 +110,9 @@
     if (!list.length) { box.closest(".ring-sec").hidden = true; return; }
     const N = list.length, step = Math.PI * 2 / N;
     const items = list.map(p => el("button", { class: "ring-card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. View`, onclick: () => openProduct(p) },
-      el("div", { class: "tile" }, el("img", { src: p.img, alt: `${p.color} hoodie: ${p.name}`, width: 560, height: 570, draggable: "false" })),
+      el("div", { class: "tile" }, el("img", { src: p.img, alt: `${p.color} ${p.typeLabel.toLowerCase()}: ${p.name}`, width: 560, height: 570, draggable: "false" })),
       el("span", { class: "shadow", "aria-hidden": "true" }),
-      ONE ? null : el("p", { class: "price", text: money(p.price) })));
+      onePrice(p) ? null : el("p", { class: "price", text: money(p.price) })));
     box.append(...items);
     const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     const speed = (Math.PI * 2) / ((Number(C.HERO_SPEED) || 40) * 1000);   // radians per ms
@@ -225,6 +231,22 @@
     history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash);
   }
 
+  // Default order: featured first, then 3 hoodies (or the biggest type) for every 1 other item, cycling through the other types,
+  // so tees, hats, boxers and socks show up early instead of after all 107 hoodies.
+  function mixTypes(list) {
+    const feat = list.filter(p => p.featured), rest = list.filter(p => !p.featured);
+    const groups = {}; rest.forEach(p => (groups[p.type] = groups[p.type] || []).push(p));
+    const keys = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
+    if (keys.length < 2) return list;
+    const main = groups[keys[0]], others = keys.slice(1).map(k => groups[k]), out = [...feat];
+    let oi = 0;
+    while (main.length || others.some(g => g.length)) {
+      out.push(...main.splice(0, 3));
+      for (let tries = 0; tries < others.length; tries++) { const g = others[oi++ % others.length]; if (g.length) { out.push(g.shift()); break; } }
+      if (!main.length) others.forEach(g => out.push(...g.splice(0)));
+    }
+    return out;
+  }
   function render() {
     menus.forEach(m => m.sync());
     const grid = $("#grid"); grid.replaceChildren();
@@ -243,12 +265,15 @@
       words.every(w => haystack(p).includes(w)));
     if (fSort.value === "az") list.sort((a, b) => a.name.localeCompare(b.name));
     else if (fSort.value === "new") list.sort((a, b) => b.id - a.id);
-    else list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id);
-    $("#resultCount").textContent = `${list.length} ${list.length === 1 ? "hoodie" : "hoodies"}` + (ONE ? ` · ${money(ONE)} each` : "");
+    else list = mixTypes(list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id));
+    const tt = type || (LIVE.length === 1 ? LIVE[0] : null);
+    $("#resultCount").textContent = `${list.length} ${tt ? (list.length === 1 ? tt.one : tt.many) : (list.length === 1 ? "item" : "items")}`
+      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : "");
+    priceTag(type);
     if (!list.length) {
       const tips = ["skull", "coffin", "grief", "gym", "rot", "black"];
       grid.append(el("div", { class: "empty" },
-        el("p", { text: words.length ? `No hoodies match "${fSearch.value.trim()}".` : "Nothing matches these filters." }),
+        el("p", { text: words.length ? `Nothing matches "${fSearch.value.trim()}".` : "Nothing matches these filters." }),
         el("p", { class: "tips" }, "Try: ", ...tips.map(w => el("button", { type: "button", class: "chip", text: w,
           onclick: () => { fCat.value = fTheme.value = fColor.value = ""; fSearch.value = w; render(); } })))));
       track("search_no_results", { q: fSearch.value.trim() });
@@ -258,23 +283,39 @@
   }
 
   // search: ignore filler words, map common shopper words, match picture tags too
-  const STOP = new Set(["hoodie", "hoodies", "sweatshirt", "sweater", "hoody", "a", "an", "the", "with", "and", "of", "for", "shirt", "pullover"]);
+  const STOP = new Set(["a", "an", "the", "with", "and", "of", "for"]);
   const ALIAS = { "3am": "3 a.m.", "3": "3 a.m.", "skulls": "skull", "skeletons": "skeleton", "coffins": "coffin", "graves": "grave", "funny": "", "dark": "",
     "sad": "grief", "depressed": "grief", "depression": "grief", "anxiety": "grief", "mental": "grief", "workout": "gym", "lifting": "lift", "weights": "gym",
-    "gray": "grey", "dead": "dead", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
+    "gray": "grey", "dead": "dead", "hoodies": "hoodie", "hoody": "hoodie", "sweatshirt": "hoodie", "sweater": "hoodie", "pullover": "hoodie",
+    "tshirt": "tee", "t-shirt": "tee", "tees": "tee", "shirts": "shirt", "hats": "hat", "beanies": "beanie", "caps": "cap", "boxer": "boxers", "sock": "socks", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
   function searchWords(q) {
     return q.toLowerCase().replace(/[^a-z0-9.' -]/g, " ").split(/\s+/).filter(Boolean)
       .map(w => (w in ALIAS ? ALIAS[w] : w)).filter(w => w && !STOP.has(w));
   }
   const hay = {};
-  const haystack = p => hay[p.id] || (hay[p.id] = `${p.name} ${p.sub} ${p.color} ${p.colorNote} ${CAT.themes[p.theme]} ${p.placement} ${p.tags || ""}`.toLowerCase());
+  const haystack = p => hay[p.id] || (hay[p.id] = `${p.name} ${p.sub} ${p.color} ${p.colorNote} ${CAT.themes[p.theme]} ${p.placement} ${p.typeLabel} ${p.type} ${p.tags || ""}`.toLowerCase());
+
+  // the one-price tag beside "All products": the chosen type's price, or every type's price on "All"
+  function priceTag(type) {
+    const op = $("#onePrice"); if (!op) return;
+    op.hidden = !EACH; if (!EACH) return;
+    if (type && ONE_BY[type.id] != null) {
+      op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE_BY[type.id]) }),
+        el("span", { class: "op-s", text: `every ${type.one === "pair of boxers" ? "pair" : type.one === "pair of socks" ? "pair" : type.one}` }));
+    } else if (LIVE.length === 1) {
+      op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE_BY[LIVE[0].id]) }), el("span", { class: "op-s", text: "every design" }));
+    } else {
+      op.replaceChildren(el("span", { class: "op-k", text: "One price each" }),
+        ...LIVE.map(t => el("span", { class: "op-i" }, el("span", { class: "op-l", text: t.label }), el("span", { class: "op-v", text: money(ONE_BY[t.id]) }))));
+    }
+  }
 
   function soonCard(t) {
     const msg = el("p", { class: "pd-msg", role: "status" });
     const email = el("input", { type: "email", required: true, placeholder: "you@email.com", "aria-label": "Email" });
     return el("div", { class: "soon" },
       el("h3", { text: `${t.label} are coming` }),
-      el("p", { text: `Same rules as the hoodies: natural fiber, no plastic. Planned price around ${money(t.price)}. Leave your email and you'll hear first.` }),
+      el("p", { text: `Same rules as everything else here: natural fiber, no plastic. Planned price around ${money(t.price)}. Leave your email and you'll hear first.` }),
       el("form", { onsubmit: e => { e.preventDefault(); send({ type: "notify", product: t.label, email: email.value }, msg); } },
         email, el("button", { class: "btn", type: "submit", text: "Notify me" })), msg);
   }
@@ -293,7 +334,8 @@
     $("#sizeGuide").hidden = true; $("#sgBtn").setAttribute("aria-expanded", "false");
     $("#pdMeta").textContent = [p.featured ? C.FEATURED_LABEL : "", CAT.themes[p.theme], p.placement].filter(Boolean).join(" · ");
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
-    $("#pdPrice").replaceChildren(money(p.price), ONE ? el("span", { class: "same-price", text: "Same price for every design" }) : "");
+    const tp = typeOf(p.type);
+    $("#pdPrice").replaceChildren(money(p.price), onePrice(p) ? el("span", { class: "same-price", text: `Same price for every ${p.type === "hats" ? "hat" : p.type === "underwear" ? "pair of boxers" : p.type === "socks" ? "pair of socks" : tp.one}` }) : "");
     $("#pdShip").textContent = shipLine();
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
     const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
@@ -302,15 +344,18 @@
       onclick: () => pickSize(s, false) })));
     $("#sizeNote").textContent = "";
     track("product_viewed", { id: p.id, name: p.name, theme: p.theme, color: p.color });
-    const remembered = store.get("last-size");
-    if (remembered && p.sizes.includes(remembered)) pickSize(remembered, true); else setBuyMode(false);
+    const single = p.sizes.length === 1;
+    pd.classList.toggle("one-size", single);
+    sizeGuideFor(p);
+    const remembered = store.get("last-size-" + p.type) || (p.type === "hoodie" ? store.get("last-size") : null);
+    if (single) pickSize(p.sizes[0], true, true);
+    else if (remembered && p.sizes.includes(remembered)) pickSize(remembered, true); else setBuyMode(false);
+    $("#pdNotes").replaceChildren(...(p.notes || []).map(t => el("li", { text: t })));
+    $("#pdNotes").hidden = !(p.notes || []).length;
+    // short screens: keep the Add button in view by putting the notes right under it (they're still on screen next to it)
+    if (innerHeight < 700) $("#pdAdd").after($("#pdNotes")); else $("#sizeNote").after($("#pdNotes"));
     $("#pdBody").scrollTop = 0; pd.scrollTop = 0;
-    $("#pdDetails").replaceChildren(...[
-      `Color: ${p.colorNote}`, "~30% hemp / 70% cotton brushed fleece, heavyweight",
-      "Cotton rib, thread, drawcord and labels. No plastic.", `${p.placement}, natural-dye or embroidered`,
-      "Natural dyes fade gradually with sun and washing", "Preorder: no charge until we confirm a ship date",
-      "All sales final: check the size guide",
-    ].map(s => el("li", { text: s })));
+    $("#pdDetails").replaceChildren(...(p.details || []).map(s => el("li", { text: s })));
     if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
     remember(p.id);
     if (!pd.open) pd.showModal();
@@ -324,13 +369,13 @@
   };
 
   // ---------- size memory + sold-out sizes ----------
-  function pickSize(s, auto) {
+  function pickSize(s, auto, single) {
     size = s;
     const out = ((C.SOLD_OUT && C.SOLD_OUT[cur.id]) || []).includes(s);
     $("#pdSizes").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === s));
     $("#pdMsg").textContent = "";
-    if (!auto) store.set("last-size", s);
-    $("#sizeNote").textContent = auto ? (out ? `Your size (${s}) is sold out in this one.` : `Size ${s} selected (your last size).`) : (out ? `${s} is sold out.` : "");
+    if (!auto) store.set("last-size-" + cur.type, s);
+    $("#sizeNote").textContent = single ? (out ? "Sold out." : "One size.") : auto ? (out ? `Your size (${s}) is sold out in this one.` : `Size ${s} selected (your last size).`) : (out ? `${s} is sold out.` : "");
     setBuyMode(out);
   }
   function setBuyMode(out) {
@@ -341,8 +386,8 @@
     drawWith();
   }
   const soldOut = (p, s) => ((C.SOLD_OUT && C.SOLD_OUT[p.id]) || []).includes(s);
-  function similar(p, n, s) {   // same theme first, then same color, never the same hoodie; only ones in size s if given
-    const ok = q => q.id !== p.id && (!s || !soldOut(q, s));
+  function similar(p, n, s, sameType = true) {   // same type, same theme first, then same color, never the same item; only ones in size s if given
+    const ok = q => q.id !== p.id && (!sameType || q.type === p.type) && (!s || !soldOut(q, s));
     const a = P.filter(q => ok(q) && q.theme === p.theme), b = P.filter(q => ok(q) && q.theme !== p.theme && q.color === p.color);
     return [...a, ...b].slice(0, n);
   }
@@ -350,7 +395,8 @@
     return el("div", { class: "mini" },
       el("button", { type: "button", class: "mini-open", "aria-label": `View ${q.name}`, onclick: () => { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); } },
         el("div", { class: "tile" }, el("img", { src: q.img, alt: "", loading: "lazy" })),
-        ONE ? null : el("span", { class: "mini-price", text: money(q.price) }), el("span", { class: "mini-name", text: q.name })), btn || null);
+        onePrice(q) ? null : el("span", { class: "mini-price", text: money(q.price) }), el("span", { class: "mini-name", text: q.name }),
+        q.typeLabel !== cur.typeLabel ? el("span", { class: "mini-type", text: q.typeLabel }) : null), btn || null);
   }
   function drawAlts(out) {
     const box = $("#pdAlts");
@@ -361,18 +407,30 @@
     $("#pdAltsList").replaceChildren(...list.map(q => mini(q)));
   }
   function drawWith() {
-    const list = similar(cur, 4, size).filter(q => !bag.some(i => i.id === q.id));
+    // 2 of the same type, plus up to 2 add-ons of other types with the same design or theme (socks, hats...)
+    const fresh = q => !bag.some(i => i.id === q.id);
+    const same = similar(cur, 4, size).filter(fresh);
+    const design = id => id % 1000;
+    const others = P.filter(q => q.type !== cur.type && fresh(q) && (design(q.id) === design(cur.id) || q.theme === cur.theme))
+      .sort((a, b) => (design(b.id) === design(cur.id)) - (design(a.id) === design(cur.id)) || a.sizes.length - b.sizes.length);
+    const pick = [], seen = new Set();
+    for (const q of others) { if (pick.length >= 2) break; if (!seen.has(q.type)) { seen.add(q.type); pick.push(q); } }
+    const list = [...same.slice(0, 4 - pick.length), ...pick];
     $("#pdWith").hidden = !list.length || !$("#notifyForm").hidden;
-    $("#pdWithList").replaceChildren(...list.map(q => mini(q, el("button", { type: "button", class: "mini-add",
-      text: size ? `+ Add ${size}` : "Pick size",
+    $("#pdWithList").replaceChildren(...list.map(q => {
+      const qOne = q.sizes.length === 1, qSize = qOne ? q.sizes[0] : q.type === cur.type ? size : null;
+      return mini(q, el("button", { type: "button", class: "mini-add",
+      text: qOne ? "+ Add" : q.type !== cur.type ? "View" : size ? `+ Add ${size}` : "Pick size",
       onclick: e => {
-        if (!size) { $("#pdMsg").textContent = "Pick a size first, then tap + Add."; return; }
-        if (soldOut(q, size)) { e.currentTarget.textContent = `${size} sold out`; return; }
-        if (!addToBag(q.id, size, 1, "buy_it_with")) return;
+        if (!qOne && q.type !== cur.type) { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); return; }
+        if (!qSize) { $("#pdMsg").textContent = "Pick a size first, then tap + Add."; return; }
+        if (soldOut(q, qSize)) { e.currentTarget.textContent = qOne ? "Sold out" : `${qSize} sold out`; return; }
+        if (!addToBag(q.id, qSize, 1, "buy_it_with")) return;
         e.currentTarget.textContent = "Added ✓"; e.currentTarget.disabled = true;
-        $("#pdMsg").textContent = `Added ${q.name} (${size}). `;
+        $("#pdMsg").textContent = `Added ${q.name} (${qOne ? q.typeLabel : qSize}). `;
         $("#pdMsg").append(el("button", { class: "link", type: "button", text: "View list", onclick: () => { pd.close(); openBag(); } }));
-      } }))));
+      } }));
+    }));
   }
   $("#notifyTabs").hidden = !C.SMS_ENABLED;
   function setMethod(m) {
@@ -409,7 +467,7 @@
     const list = (store.get("recent") || []).map(id => byId[id]).filter(Boolean);
     $("#rvList").replaceChildren(...(list.length ? list.map(p => el("button", { type: "button", class: "rv-item", onclick: () => { rv.close(); openProduct(p); } },
       el("div", { class: "tile" }, el("img", { src: p.img, alt: "" })),
-      el("span", { class: "rv-name", text: p.name }), ONE ? null : el("span", { class: "rv-price", text: money(p.price) })))
+      el("span", { class: "rv-name", text: p.name }), onePrice(p) ? null : el("span", { class: "rv-price", text: money(p.price) })))
       : [el("p", { class: "note", text: "Nothing yet. Hoodies you open show up here." })]));
   }
   $("#rvBtn").hidden = !(store.get("recent") || []).length;
@@ -434,7 +492,7 @@
   }
   function show(i) {
     gi = (i + pics.length) % pics.length;
-    $("#pdImg").src = pics[gi].src; $("#pdImg").alt = `${cur.color} hoodie, ${cur.name}: ${pics[gi].alt}`;
+    $("#pdImg").src = pics[gi].src; $("#pdImg").alt = `${cur.color} ${cur.typeLabel.toLowerCase()}, ${cur.name}: ${pics[gi].alt}`;
     $("#gCount").textContent = `${gi + 1} / ${pics.length}`;
     $("#gThumbs").querySelectorAll(".g-thumb").forEach((b, k) => b.setAttribute("aria-current", k === gi));
   }
@@ -449,25 +507,34 @@
   $("#pdImgWrap").addEventListener("pointerdown", e => { sx = e.clientX; });
   $("#pdImgWrap").addEventListener("pointerup", e => { if (sx !== null && Math.abs(e.clientX - sx) > 40) show(gi + (e.clientX < sx ? 1 : -1)); sx = null; });
 
-  // ---------- size guide ----------
-  (function sizeGuide() {
-    const rows = C.SIZE_CHART || [], u = C.SIZE_UNITS || "in";
-    const filled = rows.some(r => r.chest || r.length || r.sleeve);
-    const box = $("#sizeGuide");
+  // ---------- size guide (per item type; numbers come from config.js) ----------
+  const GUIDE = {
+    hoodie: { cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]], how: ["Use a hoodie you own that fits the way you like. Lay it flat.",
+      "Chest: armpit to armpit, then double it.", "Length: top of the shoulder next to the collar, straight down to the hem.", "Sleeve: center back of the collar to the end of the cuff."] },
+    tee: { cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]], how: ["Use a tee you own that fits the way you like. Lay it flat.",
+      "Chest: armpit to armpit, then double it.", "Length: top of the shoulder next to the collar, straight down to the hem.", "Sleeve: shoulder seam to the end of the sleeve."] },
+    underwear: { cols: [["waist", "Waist"], ["inseam", "Inseam"]], how: ["Measure around your waist where the waistband sits.",
+      "Inseam: on boxers you own, crotch seam to the leg hem."] },
+    socks: { cols: [["us_men", "US men's shoe"], ["us_women", "US women's shoe"]], how: ["Pick by your usual shoe size."] },
+  };
+  function sizeGuideFor(p) {
+    const box = $("#sizeGuide"); box.replaceChildren();
+    const g = GUIDE[p.type], u = C.SIZE_UNITS || "in";
+    $("#sgBtn").hidden = !g;
+    if (!g) return;
+    const rows = (p.type === "hoodie" ? C.SIZE_CHART : ((C.SIZE_CHARTS || {})[p.type])) || [];
+    const filled = rows.some(r => g.cols.some(([k]) => r[k]));
+    const unit = p.type === "socks" ? "" : ` (${u})`;
     box.append(
       el("p", { class: "sg-title", text: "How to measure" }),
-      el("ol", {},
-        el("li", { text: "Use a hoodie you own that fits the way you like. Lay it flat." }),
-        el("li", { text: "Chest: armpit to armpit, then double it." }),
-        el("li", { text: "Length: top of the shoulder next to the collar, straight down to the hem." }),
-        el("li", { text: "Sleeve: center back of the collar to the end of the cuff." })),
+      el("ol", {}, ...g.how.map(t => el("li", { text: t }))),
       filled
-        ? el("table", {}, el("thead", {}, el("tr", {}, ...["Size", `Chest (${u})`, `Length (${u})`, `Sleeve (${u})`].map(t => el("th", { text: t })))),
-            el("tbody", {}, ...rows.map(r => el("tr", {}, ...[r.size, r.chest || "–", r.length || "–", r.sleeve || "–"].map(t => el("td", { text: String(t) }))))))
+        ? el("table", {}, el("thead", {}, el("tr", {}, ...["Size", ...g.cols.map(([, l]) => l + unit)].map(t => el("th", { text: t })))),
+            el("tbody", {}, ...rows.map(r => el("tr", {}, ...[r.size, ...g.cols.map(([k]) => r[k] || "–")].map(t => el("td", { text: String(t) }))))))
         : el("p", { class: "sg-note", text: "Measurements coming soon." }),
       el("p", { class: "sg-note", text: "All sales are final, so please check before ordering." }));
-    $("#sgBtn").addEventListener("click", () => { box.hidden = !box.hidden; $("#sgBtn").setAttribute("aria-expanded", !box.hidden); });
-  })();
+  }
+  $("#sgBtn").addEventListener("click", () => { const box = $("#sizeGuide"); box.hidden = !box.hidden; $("#sgBtn").setAttribute("aria-expanded", !box.hidden); });
 
   pd.addEventListener("close", () => { if (bySlug[location.hash.slice(1)]) history.replaceState(null, "", location.pathname + location.search); });
   $("#pdAdd").addEventListener("click", () => {
@@ -510,7 +577,7 @@
     const room = MAXN - bagQty();
     const hit0 = bag.find(i => i.id === id && i.size === sz);
     n = Math.min(n, room, MAXQ - (hit0 ? hit0.qty : 0));
-    if (n <= 0) { limitMsg(hit0 && hit0.qty >= MAXQ ? `Limit is ${MAXQ} of the same hoodie and size.` : `Limit is ${MAXN} hoodies per order. Email us for bigger orders.`); return false; }
+    if (n <= 0) { limitMsg(hit0 && hit0.qty >= MAXQ ? `Limit is ${MAXQ} of the same item and size.` : `Limit is ${MAXN} items per order. Email us for bigger orders.`); return false; }
     track("added_to_list", { id, name: byId[id].name, size: sz, qty: n, from: from || "product" });
     const hit = bag.find(i => i.id === id && i.size === sz);
     if (hit) hit.qty = Math.min(MAXQ, hit.qty + n); else bag.push({ id, size: sz, qty: n });
@@ -524,12 +591,13 @@
   }
   function drawBag() {
     const box = $("#bagItems"); box.replaceChildren();
-    if (!bag.length) box.append(el("p", { class: "note", text: "Your list is empty. Open a hoodie, pick a size and add it." }));
+    if (!bag.length) box.append(el("p", { class: "note", text: "Your list is empty. Open something, pick a size and add it." }));
     bag.forEach((i, idx) => {
       const p = byId[i.id];
       box.append(el("div", { class: "bag-item" },
         el("div", { class: "tile" + (p.light ? " dark" : "") }, el("img", { src: p.img, alt: "" })),
-        el("div", {}, el("h3", { text: p.name }), el("p", { text: `${p.color} · Size ${i.size} · ${money(p.price)}` }),
+        el("div", {}, el("h3", { text: p.name }), el("p", { text: `${p.typeLabel} · ${p.color} · ${p.sizes.length === 1 ? i.size : "Size " + i.size} · ${money(p.price)}` }),
+          (p.notes || []).some(n => /latex/i.test(n)) ? el("p", { class: "bag-warn", text: "Contains natural rubber latex" }) : null,
           el("button", { class: "link", type: "button", text: "Remove", onclick: () => { bag.splice(idx, 1); save(); drawBag(); } })),
         el("input", { type: "number", min: 1, max: MAXQ, value: i.qty, "aria-label": `Quantity for ${p.name}`,
           onchange: e => { const others = bagQty() - i.qty; i.qty = Math.min(clampQ(e.target.value), MAXN - others); save(); drawBag(); } })));
@@ -537,7 +605,7 @@
     const sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0), qty = bag.reduce((s, i) => s + i.qty, 0);
     const ship = shipping(qty, sub), need = C.FREE_SHIP_QTY ? C.FREE_SHIP_QTY - qty : 0;
     $("#bagTotal").replaceChildren(...(bag.length ? [
-      need > 0 ? el("p", { class: "ship-nudge", text: `Add ${need} more hoodie${need > 1 ? "s" : ""} for free shipping.` })
+      need > 0 ? el("p", { class: "ship-nudge", text: `Add ${need} more item${need > 1 ? "s" : ""} for free shipping.` })
                : C.FREE_SHIP_QTY ? el("p", { class: "ship-nudge ok", text: "You've got free shipping." }) : null,
       el("div", { class: "sum" }, el("span", { text: "Subtotal" }), el("span", { text: money(sub) })),
       el("div", { class: "sum" }, el("span", { text: "Shipping" }), el("span", { text: ship ? money(ship) : "Free" })),
@@ -547,7 +615,7 @@
     const qn = bagQty();
     $("#orderFlag").hidden = qn < LARGE;
     $("#orderFlag").textContent = qn >= MAXN ? `That's the most per order (${MAXN}). For bigger orders, email ${C.CONTACT_EMAIL}.`
-      : `Large order (${qn} hoodies): we'll confirm by email before sending a payment link.`;
+      : `Large order (${qn} items): we'll confirm by email before sending a payment link.`;
   }
   $("#bagNote").textContent = `No payment now. Send the list and we'll email a ship date and payment link. Or email ${C.CONTACT_EMAIL} directly.`;
   function openBag() { drawBag(); $("#reqMsg").textContent = ""; formOpenedAt = Date.now(); bagEl.showModal(); }
@@ -589,13 +657,14 @@
     if (!rateOk()) { msg.textContent = `Too many requests from this device. Try again in a few minutes or email ${C.CONTACT_EMAIL}.`; return; }
     const qty = bagQty(), sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0), ship = shipping(qty, sub);
     const id = orderId(), large = qty >= LARGE;
-    const items = bag.map(i => `${i.qty} x #${i.id} ${byId[i.id].name} (${byId[i.id].color}, ${i.size}) @ ${money(byId[i.id].price)}`);
+    const items = bag.map(i => `${i.qty} x #${i.id} ${byId[i.id].typeLabel.toUpperCase()}: ${byId[i.id].name} (${byId[i.id].color}, ${i.size}) @ ${money(byId[i.id].price)}`);
+    const latex = bag.some(i => (byId[i.id].notes || []).some(n => /latex/i.test(n)));
     trackPurchase(bag.map(i => ({ id: i.id, name: byId[i.id].name, size: i.size, qty: i.qty })), sub, ship);
     btn.disabled = true;
     send({ type: "preorder", order_id: id, large_order: large ? "YES - verify before taking payment" : "no",
       name, email, note, items: items.join("\n"), item_count: qty,
       subtotal: money(sub), shipping: money(ship), total: money(sub + ship), price_check: catalogStamp(),
-      agreed_to: POLICY, agreed_at: new Date().toISOString(), page: location.href.split("#")[0],
+      agreed_to: POLICY + (latex ? " I understand the boxers contain natural rubber latex." : ""), agreed_at: new Date().toISOString(), page: location.href.split("#")[0],
       _subject: `${large ? "[LARGE] " : ""}Preorder ${id} from ${name}` }, msg,
       () => { bag = []; save(); drawBag(); msg.textContent = `Sent. Your order number is ${id}. We'll email ${email} with a ship date and payment link.`; });
     setTimeout(() => { btn.disabled = false; }, 4000);
@@ -628,8 +697,7 @@
   const soc = [["Instagram", safeUrl(C.INSTAGRAM)], ["TikTok", safeUrl(C.TIKTOK)]].filter(([, u]) => u);
   $("#social").append(...soc.map(([n, u]) => el("a", { href: u, rel: "noopener", text: n })));
 
-  $("#heroShip").replaceChildren(...(ONE ? [el("strong", { text: `Every hoodie ${money(ONE)}` }), " · "] : []), shipLine());
-  const op = $("#onePrice"); if (op) { op.hidden = !ONE; if (ONE) op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE) }), el("span", { class: "op-s", text: "every design" })); }
+  $("#heroShip").replaceChildren(...(ONE ? [el("strong", { text: `Every ${LIVE[0].one} ${money(ONE)}` }), " · "] : EACH ? [el("strong", { text: "One price per item" }), " · "] : []), shipLine());
   const sf = document.querySelector("[data-ship-faq]");
   if (sf) sf.textContent = `${shipLine()}. Shipping is shown on each product and in your preorder list before you send anything.`;
 

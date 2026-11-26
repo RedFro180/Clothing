@@ -66,9 +66,9 @@
   <section><h2>Orders, shipping &amp; protection</h2><p class="hint">Limits stop huge or fake orders. Large orders still come in, marked [LARGE] so you verify before taking payment.</p>
     <div class="grid">
       <label>Shipping per order ($) <input type="number" min="0" step="1" data-k="SHIPPING_FLAT" data-num></label>
-      <label>Free shipping at (hoodies) <small>0 = never</small><input type="number" min="0" step="1" data-k="FREE_SHIP_QTY" data-num></label>
+      <label>Free shipping at (items) <small>0 = never</small><input type="number" min="0" step="1" data-k="FREE_SHIP_QTY" data-num></label>
       <label>Max of one design + size <input type="number" min="1" step="1" data-k="MAX_QTY_PER_ITEM" data-num></label>
-      <label>Max hoodies per order <input type="number" min="1" step="1" data-k="MAX_ITEMS_PER_ORDER" data-num></label>
+      <label>Max items per order <input type="number" min="1" step="1" data-k="MAX_ITEMS_PER_ORDER" data-num></label>
       <label>Flag as large order at <input type="number" min="1" step="1" data-k="LARGE_ORDER_ITEMS" data-num></label>
       <label>Order form address <small>Formspree (or similar) link. Empty = email app.</small><input type="url" data-k="FORM_ENDPOINT"></label>
     </div></section>
@@ -79,7 +79,9 @@
     <div class="so-list" id="soList"></div></section>
 
   <section><h2>Size guide (inches, measured flat)</h2><p class="hint">Fill in after your fit sample. Blank shows "Measurements coming soon".</p>
-    <table><thead><tr><th>Size</th><th>Chest</th><th>Length</th><th>Sleeve</th></tr></thead><tbody id="sizeRows"></tbody></table></section>
+    <h3>Hoodies</h3>
+    <table><thead><tr><th>Size</th><th>Chest</th><th>Length</th><th>Sleeve</th></tr></thead><tbody id="sizeRows"></tbody></table>
+    <div id="otherCharts"></div></section>
 
   <section><h2>Data &amp; extras</h2>
     <div class="grid">
@@ -114,6 +116,27 @@
       i.type = "number"; i.step = "0.25"; i.min = "0"; i.value = row[f]; i.setAttribute("aria-label", `${s} ${f}`);
       i.addEventListener("input", () => { row[f] = i.value; build(); }); c.append(i); tr.append(c); }
     return tr; }));
+  // size charts for the other items (tees, boxers, socks); hats are one size
+  const OTHER = {
+    tee: { title: "Tees (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL"], cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]] },
+    underwear: { title: "Boxers (inches)", sizes: ["S", "M", "L", "XL", "2XL"], cols: [["waist", "Waist"], ["inseam", "Inseam"]] },
+    socks: { title: "Socks (US shoe sizes, e.g. 6-9)", sizes: ["S/M", "L/XL"], cols: [["us_men", "Men's"], ["us_women", "Women's"]], text: true },
+  };
+  C.SIZE_CHARTS = C.SIZE_CHARTS || {};
+  for (const [t, g] of Object.entries(OTHER)) {
+    const rows = C.SIZE_CHARTS[t] = C.SIZE_CHARTS[t] || [];
+    g.sizes.forEach(sz => { if (!rows.find(r => r.size === sz)) rows.push(Object.fromEntries([["size", sz], ...g.cols.map(([k]) => [k, ""])])); });
+    const h = document.createElement("h3"); h.textContent = g.title;
+    const tb = document.createElement("table"), th = document.createElement("thead"), hr = document.createElement("tr");
+    ["Size", ...g.cols.map(([, l]) => l)].forEach(x => { const c = document.createElement("th"); c.textContent = x; hr.append(c); });
+    th.append(hr); const body = document.createElement("tbody");
+    g.sizes.forEach(sz => { const row = rows.find(r => r.size === sz), tr = document.createElement("tr"), td = document.createElement("td"); td.textContent = sz; tr.append(td);
+      for (const [k] of g.cols) { const c = document.createElement("td"), i = document.createElement("input");
+        i.type = g.text ? "text" : "number"; if (!g.text) { i.step = "0.25"; i.min = "0"; } i.value = row[k] || ""; i.setAttribute("aria-label", `${t} ${sz} ${k}`);
+        i.addEventListener("input", () => { row[k] = i.value.trim(); build(); }); c.append(i); tr.append(c); }
+      body.append(tr); });
+    tb.append(th, body); $("#otherCharts").append(h, tb);
+  }
   // sold out list
   function drawSO() {
     const q = $("#soFind").value.trim().toLowerCase(), only = $("#soOnly").checked;
@@ -149,7 +172,7 @@ window.SITE_CONFIG = {
   // Social links for the footer. "" hides them.
   INSTAGRAM: ${q(C.INSTAGRAM || "")},
   TIKTOK: ${q(C.TIKTOK || "")},
-  // Shipping (dollars per order) and free shipping at this many hoodies (0 = never).
+  // Shipping (dollars per order) and free shipping at this many items (0 = never).
   SHIPPING_FLAT: ${Number(C.SHIPPING_FLAT) || 0},
   FREE_SHIP_QTY: ${Number(C.FREE_SHIP_QTY) || 0},
   // Private analytics (only you see it): PostHog project key.
@@ -168,6 +191,10 @@ window.SITE_CONFIG = {
   SIZE_CHART: [
 ${chart}
   ],
+  // Size guides for the other items. Hats are one size.
+  SIZE_CHARTS: {
+${Object.entries(C.SIZE_CHARTS).map(([t, rows]) => `    ${t}: [\n${rows.map(r => "      { " + Object.entries(r).map(([k, v]) => `${k}: ${q(String(v || ""))}`).join(", ") + " },").join("\n")}\n    ],`).join("\n")}
+  },
   // The spinning ring shows the Featured hoodies. Seconds for one full turn; bigger = slower.
   HERO_SPEED: ${Number(C.HERO_SPEED) || 24},
 };

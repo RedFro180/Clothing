@@ -32,6 +32,13 @@ if (C) {
   if (C.SMS_ENABLED && !C.FORM_ENDPOINT) warn("config.js: SMS_ENABLED is on but there's no FORM_ENDPOINT to receive the phone numbers.");
   if (!Array.isArray(C.SIZE_CHART)) err("config.js: SIZE_CHART must be a list.");
   else if (!C.SIZE_CHART.some(r => r.chest || r.length || r.sleeve)) warn("config.js: SIZE_CHART has no measurements yet (all sales are final, so add them).");
+  if (C.SIZE_CHARTS !== undefined) {
+    if (typeof C.SIZE_CHARTS !== "object" || Array.isArray(C.SIZE_CHARTS)) err("config.js: SIZE_CHARTS must look like { tee: [...], underwear: [...], socks: [...] }.");
+    else for (const [t, rows] of Object.entries(C.SIZE_CHARTS)) {
+      if (!Array.isArray(rows)) err(`config.js SIZE_CHARTS.${t} must be a list.`);
+      else if (!rows.some(r => Object.entries(r).some(([k, v]) => k !== "size" && v))) warn(`config.js: SIZE_CHARTS.${t} has no measurements yet.`);
+    }
+  }
   const headers = fs.existsSync(path.join(SITE, "_headers")) ? fs.readFileSync(path.join(SITE, "_headers"), "utf8") : "";
   if (!headers.includes("Content-Security-Policy")) err("site/_headers is missing the security policy.");
   if (C.FORM_ENDPOINT && headers) {
@@ -48,6 +55,12 @@ if (CAT) {
     for (const im of [p.img, ...(p.imgs || []).map(i => i.src)])
       if (!fs.existsSync(path.join(SITE, im))) err(`Missing picture for #${p.id}: site/${im}`);
   }
+  for (const t of (CAT.types || []).filter(t => t.live)) {
+    const pr = [...new Set(CAT.products.filter(p => p.type === t.id).map(p => p.price))];
+    if (!pr.length) warn(`${t.label} is marked live but has no products.`);
+    if (pr.length > 1) warn(`${t.label} have different prices (${pr.join(", ")}), so prices show under each item instead of once.`);
+  }
+  if ((CAT.products || []).some(p => !p.imgs || p.imgs.length < 4)) err("products.js: some products have fewer than 4 pictures.");
   if (!CAT.products.some(p => p.featured)) warn("No featured hoodies: the spinning ring will be empty.");
   if (C && C.SOLD_OUT) {
     if (typeof C.SOLD_OUT !== "object" || Array.isArray(C.SOLD_OUT)) err("config.js: SOLD_OUT must look like { 11: [\"S\", \"XL\"] }.");

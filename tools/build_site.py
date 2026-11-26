@@ -1,12 +1,13 @@
 """Build the storefront data and product images.
 Run: python3 tools/build_site.py
 Writes site/img/*.svg (clean product mockups) and site/products.js (all product data).
-Edit FEATURED, PRICE and COMING_SOON here; edit brand name, labels and form settings in site/config.js."""
+Edit FEATURED, PRICE and TYPES/ITEMS here; edit brand name, labels and form settings in site/config.js."""
 import os, sys, json, shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import svgs_dark as S
+import items as I
 
 SITE = os.path.normpath(os.path.join(HERE, "..", "site"))
 IMG = os.path.join(SITE, "img")
@@ -17,11 +18,41 @@ FEATURED = [11, 10, 27, 44, 29, 60, 13, 48]
 PRICE = 150          # hoodie price, USD (docs/margin-model.xlsx: ~52% margin at $150, US conventional)
 SIZES = ["S", "M", "L", "XL", "2XL", "3XL"]
 
-# Other product types from docs/other-products.md. Shown as "coming soon" in the category menu.
-COMING_SOON = [
-    ("tee", "Tees", 60), ("sweatpants", "Sweatpants", 140), ("underwear", "Underwear", 38),
-    ("socks", "Socks", 24), ("hats", "Hats", 40), ("jackets", "Heavy jackets", 325),
+# Item types (docs/other-products.md). Live types get products; the rest show as "coming soon".
+# id, menu label, singular word, plural word, price (one price per type), live
+TYPES = [
+    ("hoodie", "Hoodies", "hoodie", "hoodies", PRICE, True),
+    ("tee", "Tees", "tee", "tees", 60, True),
+    ("hats", "Hats", "hat", "hats", 40, True),
+    ("underwear", "Underwear", "pair of boxers", "boxers", 38, True),
+    ("socks", "Socks", "pair of socks", "socks", 24, True),
+    ("sweatpants", "Sweatpants", "pair of sweatpants", "sweatpants", 140, False),
+    ("jackets", "Heavy jackets", "jacket", "jackets", 325, False),
 ]
+TPRICE = {t[0]: t[4] for t in TYPES}
+NATURAL_DYE = "Natural dyes fade gradually with sun and washing"
+PREORDER = "Preorder: no charge until we confirm a ship date"
+HOODIE_DETAILS = ["~30% hemp / 70% cotton brushed fleece, heavyweight", "Cotton rib, thread, drawcord and labels. No plastic."]
+# Non-hoodie items: picture kind (tools/items.py), product type, name suffix, sizes, placement, details, notes
+ITEMS = [
+    ("tee", "tee", "Tee", SIZES, None,
+     ["30% hemp / 70% cotton jersey, heavyweight", "Cotton rib collar, cotton thread and labels. No plastic.",
+      "The collar has no spandex, so it can relax over time"], ["All sales final: check the size guide"]),
+    ("hats-beanie", "hats", "Beanie", ["One size"], "Embroidered cotton patch on the cuff",
+     ["100% cotton or merino rib knit, cuffed", "Cotton patch, cotton thread and label. No plastic.", "Stretches to fit most heads"],
+     ["All sales final"]),
+    ("hats-cap", "hats", "Dad cap", ["One size"], "Embroidered front",
+     ["100% cotton twill, unstructured", "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+      "Adjustable strap, fits most heads"], ["All sales final"]),
+    ("underwear", "underwear", "Boxers", ["S", "M", "L", "XL", "2XL"], "Leg print + printed cotton waistband",
+     ["100% woven cotton boxers, loose fit", "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+      "Line dry or tumble low: heat wears out natural rubber faster"],
+     ["Contains natural rubber latex (not for latex allergies)", "Final sale (hygiene)"]),
+    ("socks", "socks", "Socks", ["S/M", "L/XL"], "Design knitted in",
+     ["Cotton or merino crew sock, knitted with the design in it", "No nylon or spandex. No plastic."],
+     ["No nylon or spandex: they slide more and wear faster at heel and toe", "Final sale (hygiene)"]),
+]
+SINGULAR = {t[0]: t[2] for t in TYPES}
 
 THEMES = {
     "morgue": "Morgue & autopsy", "rot": "Rot & decay", "anatomy": "Anatomy",
@@ -74,6 +105,10 @@ COLOR_TAGS = {"Dusty rose": "pink rose", "Undyed oatmeal": "cream white beige na
               "Heather grey": "gray grey", "Charcoal": "gray grey dark", "Indigo": "blue navy", "Oxblood": "red maroon burgundy wine",
               "Olive": "green army", "Plum": "purple", "Black": "black"}
 
+TYPE_TAGS = {"tee": "tee tees t-shirt tshirt shirt", "hats-beanie": "hat hats beanie toque knit", "hats-cap": "hat hats cap dad cap baseball",
+             "underwear": "underwear boxers boxer shorts", "socks": "sock socks crew"}
+def fab_of(num): return S.color_for(num)[1]
+
 def search_tags(d, theme, color):
     return " ".join([ICON_TAGS.get(d["icon"], ""), THEME_TAGS.get(theme, ""), COLOR_TAGS.get(color, "")]).strip()
 
@@ -108,25 +143,50 @@ def main():
             {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
         products.append({
             "id": i, "slug": d["slug"], "name": title_case(d["lines"]), "sub": d["sub"],
-            "type": "hoodie", "theme": theme_for(d), "color": cname.split(" (")[0],
+            "type": "hoodie", "typeLabel": "Hoodie", "word": "hoodie", "theme": theme_for(d), "color": cname.split(" (")[0],
             "colorNote": cname, "tags": search_tags(d, theme_for(d), cname.split(" (")[0]), "hex": fab, "light": lum(fab) > 450,
             "placement": PLACE[d["place"]], "price": PRICE, "sizes": SIZES, "img": "img/" + f, "imgs": imgs,
             "featured": FEATURED.index(i) + 1 if i in FEATURED else None,
+            "details": [f"Color: {cname}"] + HOODIE_DETAILS + [f"{PLACE[d['place']]}, natural-dye or embroidered", NATURAL_DYE, PREORDER, "All sales final: check the size guide"],
+            "notes": [],
         })
+    designs = S.all_designs()
+    for k, (kind, typ, label, sizes, placement, details, notes) in enumerate(ITEMS, 1):
+        for num in I.STARTER:
+            d = designs[num - 1]
+            main, extra, sides, cname = I.render_item(kind, num, d, IMG)
+            color = cname.split(" (")[0]
+            pid = k * 1000 + num        # hoodies keep ids 1-107; tee #10 is 1010, beanie #10 is 2010, etc.
+            prefix = f"{kind}-{num:02d}-"
+            photos = sorted(x for x in os.listdir(PHOTOS) if x.startswith(prefix) and x.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))) if os.path.isdir(PHOTOS) else []
+            imgs = [{"src": "photos/" + x, "alt": "Photo"} for x in photos] + [
+                {"src": "img/" + main, "alt": f"{sides[0]}, with design"},
+                {"src": "img/" + extra[0], "alt": sides[1] if kind == "socks" else f"{sides[1]}, plain"},
+                {"src": "img/" + extra[1], "alt": "Design close-up"},
+                {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
+            theme = theme_for(d)
+            products.append({
+                "id": pid, "slug": f"{d['slug']}-{kind.replace('hats-', '')}", "name": title_case(d["lines"]), "sub": d["sub"] if typ == "tee" else "",
+                "type": typ, "typeLabel": label, "word": SINGULAR[typ] if typ != "hats" else label.lower(), "theme": theme, "color": color, "colorNote": cname,
+                "tags": search_tags(d, theme, color) + " " + TYPE_TAGS[kind], "hex": fab_of(num), "light": lum(fab_of(num)) > 450,
+                "placement": placement or PLACE[d["place"]], "price": TPRICE[typ], "sizes": sizes, "img": "img/" + main, "imgs": imgs,
+                "featured": None,
+                "details": [f"Color: {cname}"] + details + ([f"{placement or PLACE[d['place']]}, natural dye"] if typ == "tee" else []) + [NATURAL_DYE, PREORDER],
+                "notes": notes,
+            })
     fonts = os.path.join(SITE, "fonts")
     os.makedirs(fonts, exist_ok=True)
     for f in os.listdir(S.FD):   # the site uses Pirata One (logo) and Oswald (buttons, labels)
         if f.split("-")[0] in ("pirata", "oswald") or f in ("LICENSE-pirata-one.txt", "LICENSE-oswald.txt"):
             shutil.copy(os.path.join(S.FD, f), fonts)
     data = {"products": products, "themes": THEMES,
-            "types": [{"id": "hoodie", "label": "Hoodies", "live": True, "price": PRICE}] +
-                     [{"id": k, "label": l, "live": False, "price": p} for k, l, p in COMING_SOON]}
+            "types": [{"id": i, "label": l, "one": one, "many": many, "live": live, "price": pr} for i, l, one, many, pr, live in TYPES]}
     with open(os.path.join(SITE, "products.js"), "w") as fh:
         fh.write("// Generated by tools/build_site.py. Do not edit by hand.\nwindow.CATALOG = ")
         json.dump(data, fh, indent=1)
         fh.write(";\n")
     counts = {t: sum(p["theme"] == t for p in products) for t in THEMES}
-    print(len(products), "products;", counts)
+    print(len(products), "products;", counts, {t[0]: sum(p["type"] == t[0] for p in products) for t in TYPES if t[5]})
 
 if __name__ == "__main__":
     main()

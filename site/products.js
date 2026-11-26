@@ -7,6 +7,8 @@ window.CATALOG = {
    "name": "Keep hanging on",
    "sub": "grip until it passes.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -42,7 +44,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 2,
@@ -50,6 +62,8 @@ window.CATALOG = {
    "name": "Meat. Bone. Nothing else.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -85,7 +99,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 3,
@@ -93,6 +117,8 @@ window.CATALOG = {
    "name": "I'll spot you.",
    "sub": "heavy days don't get lifted alone.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -128,7 +154,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 4,
@@ -136,6 +172,8 @@ window.CATALOG = {
    "name": "Carrying the dead.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -171,7 +209,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 5,
@@ -179,6 +227,8 @@ window.CATALOG = {
    "name": "After",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -214,7 +264,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 6,
@@ -222,6 +282,8 @@ window.CATALOG = {
    "name": "Running on what's left.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -257,7 +319,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 7,
@@ -265,6 +337,8 @@ window.CATALOG = {
    "name": "I carry the dead with me",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -300,7 +374,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Sleeve print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 8,
@@ -308,6 +392,8 @@ window.CATALOG = {
    "name": "We all break the same way.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -343,7 +429,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 9,
@@ -351,6 +447,8 @@ window.CATALOG = {
    "name": "The bar doesn't care how you feel.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -386,7 +484,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 10,
@@ -394,6 +502,8 @@ window.CATALOG = {
    "name": "Everyone gets a toe tag.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -429,7 +539,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": 2
+   "featured": 2,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 11,
@@ -437,6 +557,8 @@ window.CATALOG = {
    "name": "You are a skeleton wearing meat.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -472,7 +594,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": 1
+   "featured": 1,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 12,
@@ -480,6 +612,8 @@ window.CATALOG = {
    "name": "Lift heavy things. Carry heavy thoughts. Put both down sometimes.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -515,7 +649,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 13,
@@ -523,6 +667,8 @@ window.CATALOG = {
    "name": "They will cut you open and weigh your heart.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -558,7 +704,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": 7
+   "featured": 7,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 14,
@@ -566,6 +722,8 @@ window.CATALOG = {
    "name": "225 lbs. It helps.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -601,7 +759,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 15,
@@ -609,6 +777,8 @@ window.CATALOG = {
    "name": "Still warm.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -644,7 +814,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Left-chest print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 16,
@@ -652,6 +832,8 @@ window.CATALOG = {
    "name": "Something is watching.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -687,7 +869,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 17,
@@ -695,6 +887,8 @@ window.CATALOG = {
    "name": "Embalmed. Zipped. Forgotten.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -730,7 +924,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 18,
@@ -738,6 +942,8 @@ window.CATALOG = {
    "name": "Mortality is undefeated.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -773,7 +979,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 19,
@@ -781,6 +997,8 @@ window.CATALOG = {
    "name": "Some things you carry forever.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -816,7 +1034,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 20,
@@ -824,6 +1052,8 @@ window.CATALOG = {
    "name": "The coroner will know everything.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -859,7 +1089,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 21,
@@ -867,6 +1107,8 @@ window.CATALOG = {
    "name": "Your demons don't spot you.",
    "sub": "we do.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -902,7 +1144,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 22,
@@ -910,6 +1162,8 @@ window.CATALOG = {
    "name": "Sweat. Tears. Dread. Repeat.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -945,7 +1199,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 23,
@@ -953,6 +1217,8 @@ window.CATALOG = {
    "name": "Ashes to ashes. Dust to dust.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -988,7 +1254,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Sleeve print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 24,
@@ -996,6 +1272,8 @@ window.CATALOG = {
    "name": "Ask me how I'm really doing.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -1031,7 +1309,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 25,
@@ -1039,6 +1327,8 @@ window.CATALOG = {
    "name": "The box will be heavy.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -1074,7 +1364,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 26,
@@ -1082,6 +1382,8 @@ window.CATALOG = {
    "name": "Time of death: to be determined.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -1117,7 +1419,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 27,
@@ -1125,6 +1437,8 @@ window.CATALOG = {
    "name": "The maggots are patient.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -1160,7 +1474,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": 3
+   "featured": 3,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 28,
@@ -1168,6 +1492,8 @@ window.CATALOG = {
    "name": "Still moving. Already rotting.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -1203,7 +1529,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 29,
@@ -1211,6 +1547,8 @@ window.CATALOG = {
    "name": "Everything hurts and I'm still here",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -1246,7 +1584,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": 5
+   "featured": 5,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 30,
@@ -1254,6 +1602,8 @@ window.CATALOG = {
    "name": "The weight is real.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -1289,7 +1639,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 31,
@@ -1297,6 +1657,8 @@ window.CATALOG = {
    "name": "Next of kin:",
    "sub": "notified.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -1332,7 +1694,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Left-chest print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 32,
@@ -1340,6 +1712,8 @@ window.CATALOG = {
    "name": "Meat. Bone. Spite.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -1375,7 +1749,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 33,
@@ -1383,6 +1767,8 @@ window.CATALOG = {
    "name": "Tagged.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -1418,7 +1804,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Left-chest print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 34,
@@ -1426,6 +1822,8 @@ window.CATALOG = {
    "name": "Pine box. Final address.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -1461,7 +1859,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 35,
@@ -1469,6 +1877,8 @@ window.CATALOG = {
    "name": "One day this is you.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -1504,7 +1914,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 36,
@@ -1512,6 +1932,8 @@ window.CATALOG = {
    "name": "Somebody's 3 a.m. thoughts made it into fabric",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -1547,7 +1969,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 37,
@@ -1555,6 +1987,8 @@ window.CATALOG = {
    "name": "The pain is real. So are we.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -1590,7 +2024,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 38,
@@ -1598,6 +2042,8 @@ window.CATALOG = {
    "name": "Hold the weight. Hold each other.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -1633,7 +2079,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 39,
@@ -1641,6 +2097,8 @@ window.CATALOG = {
    "name": "Brain: haunted. Body: lifting. Spirit: unclear.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -1676,7 +2134,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 40,
@@ -1684,6 +2152,8 @@ window.CATALOG = {
    "name": "Dyed with dead plants.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -1719,7 +2189,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 41,
@@ -1727,6 +2207,8 @@ window.CATALOG = {
    "name": "Everything rots.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -1762,7 +2244,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Pocket print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 42,
@@ -1770,6 +2262,8 @@ window.CATALOG = {
    "name": "Here lies someone who tried.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -1805,7 +2299,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 43,
@@ -1813,6 +2317,8 @@ window.CATALOG = {
    "name": "Six feet. No more.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -1848,7 +2354,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 44,
@@ -1856,6 +2372,8 @@ window.CATALOG = {
    "name": "The reaper is patient.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -1891,7 +2409,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": 4
+   "featured": 4,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 45,
@@ -1899,6 +2427,8 @@ window.CATALOG = {
    "name": "What's left of me.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -1934,7 +2464,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 46,
@@ -1942,6 +2482,8 @@ window.CATALOG = {
    "name": "Sore from yesterday. Haunted from childhood.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -1977,7 +2519,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 47,
@@ -1985,6 +2537,8 @@ window.CATALOG = {
    "name": "Something in me is broken.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -2020,7 +2574,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 48,
@@ -2028,6 +2592,8 @@ window.CATALOG = {
    "name": "The dirt always wins.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -2063,7 +2629,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": 8
+   "featured": 8,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 49,
@@ -2071,6 +2647,8 @@ window.CATALOG = {
    "name": "Lie still.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -2106,7 +2684,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Pocket print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 50,
@@ -2114,6 +2702,8 @@ window.CATALOG = {
    "name": "Bury me with my belt on.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -2149,7 +2739,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 51,
@@ -2157,6 +2757,8 @@ window.CATALOG = {
    "name": "My heart beats out of spite.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -2192,7 +2794,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 52,
@@ -2200,6 +2812,8 @@ window.CATALOG = {
    "name": "Chalk on my hands. Grave dirt on my boots.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -2235,7 +2849,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 53,
@@ -2243,6 +2867,8 @@ window.CATALOG = {
    "name": "The worms are waiting.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -2278,7 +2904,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 54,
@@ -2286,6 +2922,8 @@ window.CATALOG = {
    "name": "Measured for a coffin.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -2321,7 +2959,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 55,
@@ -2329,6 +2977,8 @@ window.CATALOG = {
    "name": "Rotting in real time.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -2364,7 +3014,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 56,
@@ -2372,6 +3032,8 @@ window.CATALOG = {
    "name": "Grief.",
    "sub": "it doesn't get lighter.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -2407,7 +3069,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Left-chest print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 57,
@@ -2415,6 +3087,8 @@ window.CATALOG = {
    "name": "The thoughts are heavier.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -2450,7 +3124,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 58,
@@ -2458,6 +3142,8 @@ window.CATALOG = {
    "name": "Every cell in you is dying.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -2493,7 +3179,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 59,
@@ -2501,6 +3197,8 @@ window.CATALOG = {
    "name": "Everyone ends underground.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -2536,7 +3234,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 60,
@@ -2544,6 +3252,8 @@ window.CATALOG = {
    "name": "Grief has weight.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -2579,7 +3289,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": 6
+   "featured": 6,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 61,
@@ -2587,6 +3307,8 @@ window.CATALOG = {
    "name": "Warm-up set: small talk. Working set: the truth.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -2622,7 +3344,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 62,
@@ -2630,6 +3362,8 @@ window.CATALOG = {
    "name": "Coroner's report: heart too heavy.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -2665,7 +3399,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 63,
@@ -2673,6 +3417,8 @@ window.CATALOG = {
    "name": "The iron never asks if I'm okay.",
    "sub": "you can.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -2708,7 +3454,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 64,
@@ -2716,6 +3472,8 @@ window.CATALOG = {
    "name": "You will fit in a bag.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -2751,7 +3509,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 65,
@@ -2759,6 +3527,8 @@ window.CATALOG = {
    "name": "Six people will carry you.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -2794,7 +3564,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 66,
@@ -2802,6 +3582,8 @@ window.CATALOG = {
    "name": "A heart is just meat.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -2837,7 +3619,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 67,
@@ -2845,6 +3637,8 @@ window.CATALOG = {
    "name": "Grief. Unprocessed. Unfinished.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -2880,7 +3674,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Sleeve print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 68,
@@ -2888,6 +3692,8 @@ window.CATALOG = {
    "name": "Some weights you can put down.",
    "sub": "ask for help with the rest.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -2923,7 +3729,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 69,
@@ -2931,6 +3747,8 @@ window.CATALOG = {
    "name": "Preserved. Not saved.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -2966,7 +3784,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 70,
@@ -2974,6 +3802,8 @@ window.CATALOG = {
    "name": "We bury our own.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -3009,7 +3839,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 71,
@@ -3017,6 +3857,8 @@ window.CATALOG = {
    "name": "Looks like death.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -3052,7 +3894,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 72,
@@ -3060,6 +3912,8 @@ window.CATALOG = {
    "name": "Here for a short time.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -3095,7 +3949,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 73,
@@ -3103,6 +3967,8 @@ window.CATALOG = {
    "name": "The void listens.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -3138,7 +4004,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 74,
@@ -3146,6 +4022,8 @@ window.CATALOG = {
    "name": "Cracked. Still standing.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -3181,7 +4059,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 75,
@@ -3189,6 +4077,8 @@ window.CATALOG = {
    "name": "Dressed for my funeral",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -3224,7 +4114,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Pocket print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 76,
@@ -3232,6 +4132,8 @@ window.CATALOG = {
    "name": "Nothing you love stays.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -3267,7 +4169,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 77,
@@ -3275,6 +4187,8 @@ window.CATALOG = {
    "name": "Under all this muscle:",
    "sub": "a skeleton who is scared.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -3310,7 +4224,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 78,
@@ -3318,6 +4242,8 @@ window.CATALOG = {
    "name": "Hope is heavy.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -3353,7 +4279,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 79,
@@ -3361,6 +4297,8 @@ window.CATALOG = {
    "name": "Still here. Still haunted.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -3396,7 +4334,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 80,
@@ -3404,6 +4352,8 @@ window.CATALOG = {
    "name": "Rigor mortis sets in fast.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -3439,7 +4389,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 81,
@@ -3447,6 +4407,8 @@ window.CATALOG = {
    "name": "Breathing. Tired. Here.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -3482,7 +4444,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 82,
@@ -3490,6 +4462,8 @@ window.CATALOG = {
    "name": "Born screaming. Buried quiet.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -3525,7 +4499,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 83,
@@ -3533,6 +4517,8 @@ window.CATALOG = {
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -3568,7 +4554,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 84,
@@ -3576,6 +4572,8 @@ window.CATALOG = {
    "name": "Haunted by everyone I've lost.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -3611,7 +4609,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 85,
@@ -3619,6 +4627,8 @@ window.CATALOG = {
    "name": "Cold storage.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "morgue",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -3654,7 +4664,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 86,
@@ -3662,6 +4682,8 @@ window.CATALOG = {
    "name": "3 a.m. thoughts. 5 a.m. workouts.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -3697,7 +4719,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 87,
@@ -3705,6 +4737,8 @@ window.CATALOG = {
    "name": "Always in mourning.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -3740,7 +4774,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 88,
@@ -3748,6 +4792,8 @@ window.CATALOG = {
    "name": "The grave can wait.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -3783,7 +4829,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 89,
@@ -3791,6 +4847,8 @@ window.CATALOG = {
    "name": "Everything beautiful rots.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -3826,7 +4884,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 90,
@@ -3834,6 +4902,8 @@ window.CATALOG = {
    "name": "Death",
    "sub": "remembers you.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -3869,7 +4939,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Left-chest print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 91,
@@ -3877,6 +4957,8 @@ window.CATALOG = {
    "name": "Life is short. Decomposition is long.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -3912,7 +4994,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 92,
@@ -3920,6 +5012,8 @@ window.CATALOG = {
    "name": "Organs. Bones. Nothing else.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -3955,7 +5049,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Sleeve print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 93,
@@ -3963,6 +5067,8 @@ window.CATALOG = {
    "name": "Built heavy. Buried heavier.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -3998,7 +5104,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 94,
@@ -4006,6 +5122,8 @@ window.CATALOG = {
    "name": "Silence is loud at 3 a.m.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -4041,7 +5159,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 95,
@@ -4049,6 +5177,8 @@ window.CATALOG = {
    "name": "The line goes flat.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -4084,7 +5214,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 96,
@@ -4092,6 +5232,8 @@ window.CATALOG = {
    "name": "Grief has no off-season",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -4127,7 +5269,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 97,
@@ -4135,6 +5287,8 @@ window.CATALOG = {
    "name": "Alone together at 6 a.m.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -4170,7 +5324,17 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 98,
@@ -4178,6 +5342,8 @@ window.CATALOG = {
    "name": "Talk to someone.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Olive",
    "colorNote": "Olive (weld + iron)",
@@ -4213,7 +5379,17 @@ window.CATALOG = {
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Hood print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 99,
@@ -4221,6 +5397,8 @@ window.CATALOG = {
    "name": "Still breathing.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Plum",
    "colorNote": "Plum (logwood)",
@@ -4256,7 +5434,17 @@ window.CATALOG = {
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Plum (logwood)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Hood print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 100,
@@ -4264,6 +5452,8 @@ window.CATALOG = {
    "name": "It hurts here.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Black",
    "colorNote": "Black (logwood + iron)",
@@ -4299,7 +5489,17 @@ window.CATALOG = {
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Hood print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 101,
@@ -4307,6 +5507,8 @@ window.CATALOG = {
    "name": "Chalk and sorrow",
    "sub": "both get on everything",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Dusty rose",
    "colorNote": "Dusty rose (light madder)",
@@ -4342,7 +5544,17 @@ window.CATALOG = {
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Sleeve print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 102,
@@ -4350,6 +5562,8 @@ window.CATALOG = {
    "name": "He's always in the room.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grave",
    "color": "Heather grey",
    "colorNote": "Heather grey",
@@ -4385,7 +5599,17 @@ window.CATALOG = {
      "alt": "Fabric color: Heather grey"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 103,
@@ -4393,6 +5617,8 @@ window.CATALOG = {
    "name": "Dead hands don't let go.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "anatomy",
    "color": "Undyed oatmeal",
    "colorNote": "Undyed oatmeal",
@@ -4428,7 +5654,17 @@ window.CATALOG = {
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 104,
@@ -4436,6 +5672,8 @@ window.CATALOG = {
    "name": "Every rep is a eulogy",
    "sub": "for who I was.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Charcoal",
    "colorNote": "Charcoal",
@@ -4471,7 +5709,17 @@ window.CATALOG = {
      "alt": "Fabric color: Charcoal"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 105,
@@ -4479,6 +5727,8 @@ window.CATALOG = {
    "name": "The flies know something.",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "rot",
    "color": "Indigo",
    "colorNote": "Indigo",
@@ -4514,7 +5764,17 @@ window.CATALOG = {
      "alt": "Fabric color: Indigo"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 106,
@@ -4522,6 +5782,8 @@ window.CATALOG = {
    "name": "Support system:",
    "sub": "a squat rack and three friends.",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "iron",
    "color": "Oxblood",
    "colorNote": "Oxblood (madder + iron)",
@@ -4557,7 +5819,17 @@ window.CATALOG = {
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Front print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
   },
   {
    "id": 107,
@@ -4565,6 +5837,8 @@ window.CATALOG = {
    "name": "Today's goals",
    "sub": "",
    "type": "hoodie",
+   "typeLabel": "Hoodie",
+   "word": "hoodie",
    "theme": "grief",
    "color": "Sand",
    "colorNote": "Sand (undyed hemp)",
@@ -4600,7 +5874,3221 @@ window.CATALOG = {
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
-   "featured": null
+   "featured": null,
+   "details": [
+    "Color: Sand (undyed hemp)",
+    "~30% hemp / 70% cotton brushed fleece, heavyweight",
+    "Cotton rib, thread, drawcord and labels. No plastic.",
+    "Back print, natural-dye or embroidered",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date",
+    "All sales final: check the size guide"
+   ],
+   "notes": []
+  },
+  {
+   "id": 1010,
+   "slug": "everyone-gets-a-toe-tag-tee",
+   "name": "Everyone gets a toe tag.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "morgue",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "toe tag morgue tag morgue corpse dead body coroner black tee tees t-shirt tshirt shirt",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Front print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/tee-10-everyone-gets-a-toe-tag.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/tee-10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/tee-10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-10-everyone-gets-a-toe-tag-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Front print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1011,
+   "slug": "skeleton-wearing-meat-tee",
+   "name": "You are a skeleton wearing meat.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "rot",
+   "color": "Dusty rose",
+   "colorNote": "Dusty rose (light madder)",
+   "tags": "skull rot decay bones rot decay decompose worms pink rose tee tees t-shirt tshirt shirt",
+   "hex": "#cfa39b",
+   "light": true,
+   "placement": "Front print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/tee-11-skeleton-wearing-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/tee-11-skeleton-wearing-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/tee-11-skeleton-wearing-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-11-skeleton-wearing-meat-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Front print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1014,
+   "slug": "225-it-helps-tee",
+   "name": "225 lbs. It helps.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "iron",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark tee tees t-shirt tshirt shirt",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Front print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/tee-14-225-it-helps.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/tee-14-225-it-helps-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/tee-14-225-it-helps-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-14-225-it-helps-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Front print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1025,
+   "slug": "the-box-will-be-heavy-tee",
+   "name": "The box will be heavy.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "grave",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy tee tees t-shirt tshirt shirt",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/tee-25-the-box-will-be-heavy.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-25-the-box-will-be-heavy-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-25-the-box-will-be-heavy-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-25-the-box-will-be-heavy-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1044,
+   "slug": "reaper-is-patient-tee",
+   "name": "The reaper is patient.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "grave",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark tee tees t-shirt tshirt shirt",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/tee-44-reaper-is-patient.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-44-reaper-is-patient-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-44-reaper-is-patient-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-44-reaper-is-patient-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1048,
+   "slug": "the-dirt-always-wins-tee",
+   "name": "The dirt always wins.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "grave",
+   "color": "Olive",
+   "colorNote": "Olive (weld + iron)",
+   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army tee tees t-shirt tshirt shirt",
+   "hex": "#4a4a2a",
+   "light": false,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/tee-48-the-dirt-always-wins.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-48-the-dirt-always-wins-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-48-the-dirt-always-wins-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-48-the-dirt-always-wins-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1060,
+   "slug": "grief-has-weight-tee",
+   "name": "Grief has weight.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "iron",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black tee tees t-shirt tshirt shirt",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/tee-60-grief-has-weight.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-60-grief-has-weight-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-60-grief-has-weight-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-60-grief-has-weight-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1066,
+   "slug": "a-heart-is-just-meat-tee",
+   "name": "A heart is just meat.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "anatomy",
+   "color": "Oxblood",
+   "colorNote": "Oxblood (madder + iron)",
+   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine tee tees t-shirt tshirt shirt",
+   "hex": "#5e1a1c",
+   "light": false,
+   "placement": "Front print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/tee-66-a-heart-is-just-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/tee-66-a-heart-is-just-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/tee-66-a-heart-is-just-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-66-a-heart-is-just-meat-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Front print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1072,
+   "slug": "here-for-a-short-time-tee",
+   "name": "Here for a short time.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "grave",
+   "color": "Heather grey",
+   "colorNote": "Heather grey",
+   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey tee tees t-shirt tshirt shirt",
+   "hex": "#b8b5ae",
+   "light": true,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/tee-72-here-for-a-short-time.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-72-here-for-a-short-time-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-72-here-for-a-short-time-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-72-here-for-a-short-time-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1083,
+   "slug": "cemetery-quiet-gym-loud-tee",
+   "name": "Cemetery quiet. Gym loud.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "grave",
+   "color": "Undyed oatmeal",
+   "colorNote": "Undyed oatmeal",
+   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white tee tees t-shirt tshirt shirt",
+   "hex": "#e4d9c2",
+   "light": true,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/tee-83-cemetery-quiet-gym-loud.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-83-cemetery-quiet-gym-loud-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1090,
+   "slug": "death-remembers-you-tee",
+   "name": "Death",
+   "sub": "remembers you.",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "anatomy",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "skull bones death anatomy body organs blood black tee tees t-shirt tshirt shirt",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Left-chest print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/tee-90-death-remembers-you.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/tee-90-death-remembers-you-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/tee-90-death-remembers-you-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-90-death-remembers-you-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Left-chest print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 1105,
+   "slug": "flies-know-something-tee",
+   "name": "The flies know something.",
+   "sub": "",
+   "type": "tee",
+   "typeLabel": "Tee",
+   "word": "tee",
+   "theme": "rot",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "skull flies rot rot decay decompose worms blue navy tee tees t-shirt tshirt shirt",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Back print",
+   "price": 60,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL",
+    "3XL"
+   ],
+   "img": "img/tee-105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/tee-105-flies-know-something.svg",
+     "alt": "Back, with design"
+    },
+    {
+     "src": "img/tee-105-flies-know-something-b.svg",
+     "alt": "Front, plain"
+    },
+    {
+     "src": "img/tee-105-flies-know-something-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/tee-105-flies-know-something-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "30% hemp / 70% cotton jersey, heavyweight",
+    "Cotton rib collar, cotton thread and labels. No plastic.",
+    "The collar has no spandex, so it can relax over time",
+    "Back print, natural dye",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 2010,
+   "slug": "everyone-gets-a-toe-tag-beanie",
+   "name": "Everyone gets a toe tag.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "morgue",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "toe tag morgue tag morgue corpse dead body coroner black hat hats beanie toque knit",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-10-everyone-gets-a-toe-tag.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-10-everyone-gets-a-toe-tag-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2011,
+   "slug": "skeleton-wearing-meat-beanie",
+   "name": "You are a skeleton wearing meat.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "rot",
+   "color": "Dusty rose",
+   "colorNote": "Dusty rose (light madder)",
+   "tags": "skull rot decay bones rot decay decompose worms pink rose hat hats beanie toque knit",
+   "hex": "#cfa39b",
+   "light": true,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-11-skeleton-wearing-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-11-skeleton-wearing-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-11-skeleton-wearing-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-11-skeleton-wearing-meat-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2014,
+   "slug": "225-it-helps-beanie",
+   "name": "225 lbs. It helps.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "iron",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark hat hats beanie toque knit",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-14-225-it-helps.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-14-225-it-helps-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-14-225-it-helps-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-14-225-it-helps-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2025,
+   "slug": "the-box-will-be-heavy-beanie",
+   "name": "The box will be heavy.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "grave",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy hat hats beanie toque knit",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-25-the-box-will-be-heavy.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-25-the-box-will-be-heavy-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-25-the-box-will-be-heavy-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-25-the-box-will-be-heavy-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2044,
+   "slug": "reaper-is-patient-beanie",
+   "name": "The reaper is patient.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "grave",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark hat hats beanie toque knit",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-44-reaper-is-patient.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-44-reaper-is-patient-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-44-reaper-is-patient-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-44-reaper-is-patient-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2048,
+   "slug": "the-dirt-always-wins-beanie",
+   "name": "The dirt always wins.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "grave",
+   "color": "Olive",
+   "colorNote": "Olive (weld + iron)",
+   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army hat hats beanie toque knit",
+   "hex": "#4a4a2a",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-48-the-dirt-always-wins.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-48-the-dirt-always-wins-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-48-the-dirt-always-wins-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-48-the-dirt-always-wins-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2060,
+   "slug": "grief-has-weight-beanie",
+   "name": "Grief has weight.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "iron",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black hat hats beanie toque knit",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-60-grief-has-weight.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-60-grief-has-weight-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-60-grief-has-weight-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-60-grief-has-weight-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2066,
+   "slug": "a-heart-is-just-meat-beanie",
+   "name": "A heart is just meat.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "anatomy",
+   "color": "Oxblood",
+   "colorNote": "Oxblood (madder + iron)",
+   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine hat hats beanie toque knit",
+   "hex": "#5e1a1c",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-66-a-heart-is-just-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-66-a-heart-is-just-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-66-a-heart-is-just-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-66-a-heart-is-just-meat-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2072,
+   "slug": "here-for-a-short-time-beanie",
+   "name": "Here for a short time.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "grave",
+   "color": "Heather grey",
+   "colorNote": "Heather grey",
+   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey hat hats beanie toque knit",
+   "hex": "#b8b5ae",
+   "light": true,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-72-here-for-a-short-time.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-72-here-for-a-short-time-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-72-here-for-a-short-time-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-72-here-for-a-short-time-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2083,
+   "slug": "cemetery-quiet-gym-loud-beanie",
+   "name": "Cemetery quiet. Gym loud.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "grave",
+   "color": "Undyed oatmeal",
+   "colorNote": "Undyed oatmeal",
+   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white hat hats beanie toque knit",
+   "hex": "#e4d9c2",
+   "light": true,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-83-cemetery-quiet-gym-loud.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-83-cemetery-quiet-gym-loud-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2090,
+   "slug": "death-remembers-you-beanie",
+   "name": "Death",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "anatomy",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "skull bones death anatomy body organs blood black hat hats beanie toque knit",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-90-death-remembers-you.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-90-death-remembers-you-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-90-death-remembers-you-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-90-death-remembers-you-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 2105,
+   "slug": "flies-know-something-beanie",
+   "name": "The flies know something.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Beanie",
+   "word": "beanie",
+   "theme": "rot",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "skull flies rot rot decay decompose worms blue navy hat hats beanie toque knit",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Embroidered cotton patch on the cuff",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-beanie-105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/hats-beanie-105-flies-know-something.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-beanie-105-flies-know-something-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-beanie-105-flies-know-something-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-beanie-105-flies-know-something-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "100% cotton or merino rib knit, cuffed",
+    "Cotton patch, cotton thread and label. No plastic.",
+    "Stretches to fit most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3010,
+   "slug": "everyone-gets-a-toe-tag-cap",
+   "name": "Everyone gets a toe tag.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "morgue",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "toe tag morgue tag morgue corpse dead body coroner black hat hats cap dad cap baseball",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-10-everyone-gets-a-toe-tag.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-10-everyone-gets-a-toe-tag-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3011,
+   "slug": "skeleton-wearing-meat-cap",
+   "name": "You are a skeleton wearing meat.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "rot",
+   "color": "Dusty rose",
+   "colorNote": "Dusty rose (light madder)",
+   "tags": "skull rot decay bones rot decay decompose worms pink rose hat hats cap dad cap baseball",
+   "hex": "#cfa39b",
+   "light": true,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-11-skeleton-wearing-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-11-skeleton-wearing-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-11-skeleton-wearing-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-11-skeleton-wearing-meat-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3014,
+   "slug": "225-it-helps-cap",
+   "name": "225 lbs. It helps.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "iron",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark hat hats cap dad cap baseball",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-14-225-it-helps.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-14-225-it-helps-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-14-225-it-helps-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-14-225-it-helps-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3025,
+   "slug": "the-box-will-be-heavy-cap",
+   "name": "The box will be heavy.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "grave",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy hat hats cap dad cap baseball",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-25-the-box-will-be-heavy.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-25-the-box-will-be-heavy-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-25-the-box-will-be-heavy-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-25-the-box-will-be-heavy-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3044,
+   "slug": "reaper-is-patient-cap",
+   "name": "The reaper is patient.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "grave",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark hat hats cap dad cap baseball",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-44-reaper-is-patient.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-44-reaper-is-patient-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-44-reaper-is-patient-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-44-reaper-is-patient-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3048,
+   "slug": "the-dirt-always-wins-cap",
+   "name": "The dirt always wins.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "grave",
+   "color": "Olive",
+   "colorNote": "Olive (weld + iron)",
+   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army hat hats cap dad cap baseball",
+   "hex": "#4a4a2a",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-48-the-dirt-always-wins.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-48-the-dirt-always-wins-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-48-the-dirt-always-wins-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-48-the-dirt-always-wins-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3060,
+   "slug": "grief-has-weight-cap",
+   "name": "Grief has weight.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "iron",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black hat hats cap dad cap baseball",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-60-grief-has-weight.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-60-grief-has-weight-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-60-grief-has-weight-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-60-grief-has-weight-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3066,
+   "slug": "a-heart-is-just-meat-cap",
+   "name": "A heart is just meat.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "anatomy",
+   "color": "Oxblood",
+   "colorNote": "Oxblood (madder + iron)",
+   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine hat hats cap dad cap baseball",
+   "hex": "#5e1a1c",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-66-a-heart-is-just-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-66-a-heart-is-just-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-66-a-heart-is-just-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-66-a-heart-is-just-meat-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3072,
+   "slug": "here-for-a-short-time-cap",
+   "name": "Here for a short time.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "grave",
+   "color": "Heather grey",
+   "colorNote": "Heather grey",
+   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey hat hats cap dad cap baseball",
+   "hex": "#b8b5ae",
+   "light": true,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-72-here-for-a-short-time.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-72-here-for-a-short-time-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-72-here-for-a-short-time-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-72-here-for-a-short-time-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3083,
+   "slug": "cemetery-quiet-gym-loud-cap",
+   "name": "Cemetery quiet. Gym loud.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "grave",
+   "color": "Undyed oatmeal",
+   "colorNote": "Undyed oatmeal",
+   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white hat hats cap dad cap baseball",
+   "hex": "#e4d9c2",
+   "light": true,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-83-cemetery-quiet-gym-loud.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-83-cemetery-quiet-gym-loud-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3090,
+   "slug": "death-remembers-you-cap",
+   "name": "Death",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "anatomy",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "skull bones death anatomy body organs blood black hat hats cap dad cap baseball",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-90-death-remembers-you.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-90-death-remembers-you-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-90-death-remembers-you-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-90-death-remembers-you-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 3105,
+   "slug": "flies-know-something-cap",
+   "name": "The flies know something.",
+   "sub": "",
+   "type": "hats",
+   "typeLabel": "Dad cap",
+   "word": "dad cap",
+   "theme": "rot",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "skull flies rot rot decay decompose worms blue navy hat hats cap dad cap baseball",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Embroidered front",
+   "price": 40,
+   "sizes": [
+    "One size"
+   ],
+   "img": "img/hats-cap-105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/hats-cap-105-flies-know-something.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/hats-cap-105-flies-know-something-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/hats-cap-105-flies-know-something-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/hats-cap-105-flies-know-something-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "100% cotton twill, unstructured",
+    "Cotton sweatband and thread, cardboard brim (no plastic), brass buckle strap",
+    "Adjustable strap, fits most heads",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "All sales final"
+   ]
+  },
+  {
+   "id": 4010,
+   "slug": "everyone-gets-a-toe-tag-underwear",
+   "name": "Everyone gets a toe tag.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "morgue",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "toe tag morgue tag morgue corpse dead body coroner black underwear boxers boxer shorts",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-10-everyone-gets-a-toe-tag.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-10-everyone-gets-a-toe-tag-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4011,
+   "slug": "skeleton-wearing-meat-underwear",
+   "name": "You are a skeleton wearing meat.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "rot",
+   "color": "Dusty rose",
+   "colorNote": "Dusty rose (light madder)",
+   "tags": "skull rot decay bones rot decay decompose worms pink rose underwear boxers boxer shorts",
+   "hex": "#cfa39b",
+   "light": true,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-11-skeleton-wearing-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-11-skeleton-wearing-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-11-skeleton-wearing-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-11-skeleton-wearing-meat-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4014,
+   "slug": "225-it-helps-underwear",
+   "name": "225 lbs. It helps.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "iron",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark underwear boxers boxer shorts",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-14-225-it-helps.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-14-225-it-helps-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-14-225-it-helps-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-14-225-it-helps-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4025,
+   "slug": "the-box-will-be-heavy-underwear",
+   "name": "The box will be heavy.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "grave",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy underwear boxers boxer shorts",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-25-the-box-will-be-heavy.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-25-the-box-will-be-heavy-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-25-the-box-will-be-heavy-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-25-the-box-will-be-heavy-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4044,
+   "slug": "reaper-is-patient-underwear",
+   "name": "The reaper is patient.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "grave",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark underwear boxers boxer shorts",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-44-reaper-is-patient.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-44-reaper-is-patient-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-44-reaper-is-patient-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-44-reaper-is-patient-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4048,
+   "slug": "the-dirt-always-wins-underwear",
+   "name": "The dirt always wins.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "grave",
+   "color": "Olive",
+   "colorNote": "Olive (weld + iron)",
+   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army underwear boxers boxer shorts",
+   "hex": "#4a4a2a",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-48-the-dirt-always-wins.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-48-the-dirt-always-wins-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-48-the-dirt-always-wins-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-48-the-dirt-always-wins-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4060,
+   "slug": "grief-has-weight-underwear",
+   "name": "Grief has weight.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "iron",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black underwear boxers boxer shorts",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-60-grief-has-weight.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-60-grief-has-weight-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-60-grief-has-weight-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-60-grief-has-weight-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4066,
+   "slug": "a-heart-is-just-meat-underwear",
+   "name": "A heart is just meat.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "anatomy",
+   "color": "Oxblood",
+   "colorNote": "Oxblood (madder + iron)",
+   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine underwear boxers boxer shorts",
+   "hex": "#5e1a1c",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-66-a-heart-is-just-meat.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-66-a-heart-is-just-meat-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-66-a-heart-is-just-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-66-a-heart-is-just-meat-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4072,
+   "slug": "here-for-a-short-time-underwear",
+   "name": "Here for a short time.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "grave",
+   "color": "Heather grey",
+   "colorNote": "Heather grey",
+   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey underwear boxers boxer shorts",
+   "hex": "#b8b5ae",
+   "light": true,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-72-here-for-a-short-time.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-72-here-for-a-short-time-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-72-here-for-a-short-time-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-72-here-for-a-short-time-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4083,
+   "slug": "cemetery-quiet-gym-loud-underwear",
+   "name": "Cemetery quiet. Gym loud.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "grave",
+   "color": "Undyed oatmeal",
+   "colorNote": "Undyed oatmeal",
+   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white underwear boxers boxer shorts",
+   "hex": "#e4d9c2",
+   "light": true,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-83-cemetery-quiet-gym-loud.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-83-cemetery-quiet-gym-loud-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4090,
+   "slug": "death-remembers-you-underwear",
+   "name": "Death",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "anatomy",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "skull bones death anatomy body organs blood black underwear boxers boxer shorts",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-90-death-remembers-you.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-90-death-remembers-you-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-90-death-remembers-you-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-90-death-remembers-you-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 4105,
+   "slug": "flies-know-something-underwear",
+   "name": "The flies know something.",
+   "sub": "",
+   "type": "underwear",
+   "typeLabel": "Boxers",
+   "word": "pair of boxers",
+   "theme": "rot",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "skull flies rot rot decay decompose worms blue navy underwear boxers boxer shorts",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Leg print + printed cotton waistband",
+   "price": 38,
+   "sizes": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "2XL"
+   ],
+   "img": "img/underwear-105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/underwear-105-flies-know-something.svg",
+     "alt": "Front, with design"
+    },
+    {
+     "src": "img/underwear-105-flies-know-something-b.svg",
+     "alt": "Back, plain"
+    },
+    {
+     "src": "img/underwear-105-flies-know-something-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/underwear-105-flies-know-something-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "100% woven cotton boxers, loose fit",
+    "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
+    "Line dry or tumble low: heat wears out natural rubber faster",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "Contains natural rubber latex (not for latex allergies)",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5010,
+   "slug": "everyone-gets-a-toe-tag-socks",
+   "name": "Everyone gets a toe tag.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "morgue",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "toe tag morgue tag morgue corpse dead body coroner black sock socks crew",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/socks-10-everyone-gets-a-toe-tag.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-10-everyone-gets-a-toe-tag-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5011,
+   "slug": "skeleton-wearing-meat-socks",
+   "name": "You are a skeleton wearing meat.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "rot",
+   "color": "Dusty rose",
+   "colorNote": "Dusty rose (light madder)",
+   "tags": "skull rot decay bones rot decay decompose worms pink rose sock socks crew",
+   "hex": "#cfa39b",
+   "light": true,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/socks-11-skeleton-wearing-meat.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-11-skeleton-wearing-meat-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-11-skeleton-wearing-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-11-skeleton-wearing-meat-d.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5014,
+   "slug": "225-it-helps-socks",
+   "name": "225 lbs. It helps.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "iron",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark sock socks crew",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/socks-14-225-it-helps.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-14-225-it-helps-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-14-225-it-helps-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-14-225-it-helps-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5025,
+   "slug": "the-box-will-be-heavy-socks",
+   "name": "The box will be heavy.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy sock socks crew",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/socks-25-the-box-will-be-heavy.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-25-the-box-will-be-heavy-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-25-the-box-will-be-heavy-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-25-the-box-will-be-heavy-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5044,
+   "slug": "reaper-is-patient-socks",
+   "name": "The reaper is patient.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark sock socks crew",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/socks-44-reaper-is-patient.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-44-reaper-is-patient-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-44-reaper-is-patient-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-44-reaper-is-patient-d.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5048,
+   "slug": "the-dirt-always-wins-socks",
+   "name": "The dirt always wins.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Olive",
+   "colorNote": "Olive (weld + iron)",
+   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army sock socks crew",
+   "hex": "#4a4a2a",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/socks-48-the-dirt-always-wins.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-48-the-dirt-always-wins-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-48-the-dirt-always-wins-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-48-the-dirt-always-wins-d.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5060,
+   "slug": "grief-has-weight-socks",
+   "name": "Grief has weight.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "iron",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black sock socks crew",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/socks-60-grief-has-weight.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-60-grief-has-weight-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-60-grief-has-weight-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-60-grief-has-weight-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5066,
+   "slug": "a-heart-is-just-meat-socks",
+   "name": "A heart is just meat.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "anatomy",
+   "color": "Oxblood",
+   "colorNote": "Oxblood (madder + iron)",
+   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine sock socks crew",
+   "hex": "#5e1a1c",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/socks-66-a-heart-is-just-meat.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-66-a-heart-is-just-meat-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-66-a-heart-is-just-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-66-a-heart-is-just-meat-d.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5072,
+   "slug": "here-for-a-short-time-socks",
+   "name": "Here for a short time.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Heather grey",
+   "colorNote": "Heather grey",
+   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey sock socks crew",
+   "hex": "#b8b5ae",
+   "light": true,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/socks-72-here-for-a-short-time.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-72-here-for-a-short-time-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-72-here-for-a-short-time-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-72-here-for-a-short-time-d.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5083,
+   "slug": "cemetery-quiet-gym-loud-socks",
+   "name": "Cemetery quiet. Gym loud.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Undyed oatmeal",
+   "colorNote": "Undyed oatmeal",
+   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white sock socks crew",
+   "hex": "#e4d9c2",
+   "light": true,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/socks-83-cemetery-quiet-gym-loud.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-83-cemetery-quiet-gym-loud-d.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5090,
+   "slug": "death-remembers-you-socks",
+   "name": "Death",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "anatomy",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "skull bones death anatomy body organs blood black sock socks crew",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/socks-90-death-remembers-you.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-90-death-remembers-you-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-90-death-remembers-you-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-90-death-remembers-you-d.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 5105,
+   "slug": "flies-know-something-socks",
+   "name": "The flies know something.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Socks",
+   "word": "pair of socks",
+   "theme": "rot",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "skull flies rot rot decay decompose worms blue navy sock socks crew",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Design knitted in",
+   "price": 24,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/socks-105-flies-know-something.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-105-flies-know-something-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-105-flies-know-something-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/socks-105-flies-know-something-d.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "Cotton or merino crew sock, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No nylon or spandex: they slide more and wear faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
   }
  ],
  "themes": {
@@ -4615,42 +9103,56 @@ window.CATALOG = {
   {
    "id": "hoodie",
    "label": "Hoodies",
+   "one": "hoodie",
+   "many": "hoodies",
    "live": true,
    "price": 150
   },
   {
    "id": "tee",
    "label": "Tees",
-   "live": false,
+   "one": "tee",
+   "many": "tees",
+   "live": true,
    "price": 60
   },
   {
-   "id": "sweatpants",
-   "label": "Sweatpants",
-   "live": false,
-   "price": 140
+   "id": "hats",
+   "label": "Hats",
+   "one": "hat",
+   "many": "hats",
+   "live": true,
+   "price": 40
   },
   {
    "id": "underwear",
    "label": "Underwear",
-   "live": false,
+   "one": "pair of boxers",
+   "many": "boxers",
+   "live": true,
    "price": 38
   },
   {
    "id": "socks",
    "label": "Socks",
-   "live": false,
+   "one": "pair of socks",
+   "many": "socks",
+   "live": true,
    "price": 24
   },
   {
-   "id": "hats",
-   "label": "Hats",
+   "id": "sweatpants",
+   "label": "Sweatpants",
+   "one": "pair of sweatpants",
+   "many": "sweatpants",
    "live": false,
-   "price": 40
+   "price": 140
   },
   {
    "id": "jackets",
    "label": "Heavy jackets",
+   "one": "jacket",
+   "many": "jackets",
    "live": false,
    "price": 325
   }

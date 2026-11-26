@@ -57,7 +57,10 @@ async function popupFits(p, ok, tag = "") {
     await p.locator("#grid .card").first().click(); await p.waitForTimeout(400);
     await popupFits(p, ok);
     await p.screenshot({ path: path.join(SHOTS, name.replace(/\W+/g, "-") + "-2.png") });
-    await p.locator("#pdSizes button", { hasText: /^M$/ }).first().click();
+    if (!(await p.evaluate(() => document.querySelector("#pd").classList.contains("one-size")))) {   // one-size items need no size
+      const m = p.locator("#pdSizes button", { hasText: /^M$/ });
+      await ((await m.count()) ? m.first() : p.locator("#pdSizes button:not(.is-out)").first()).click();
+    }
     const add = p.locator("#pdAdd"); await add.scrollIntoViewIfNeeded();
     ok("Add button reachable", await add.isVisible()); await add.click(); await p.waitForTimeout(250);
     ok("added to list", (await p.textContent("#bagCount")).trim() === "1");
