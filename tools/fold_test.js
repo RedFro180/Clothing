@@ -15,7 +15,7 @@ async function layout(p, ok, touch) {
     const vw = innerWidth, vh = innerHeight, r = s => document.querySelector(s).getBoundingClientRect();
     const cards = [...document.querySelectorAll("#grid .card")].slice(0, 8).map(c => c.getBoundingClientRect());
     const cols = new Set(cards.map(c => Math.round(c.left))).size;
-    const clipped = [...document.querySelectorAll("#grid .card")].slice(0, 12).filter(c => [...c.querySelectorAll("*")].some(e => e.children.length === 0 && e.scrollWidth > e.clientWidth + 2 && getComputedStyle(e).overflow !== "visible" && getComputedStyle(e).textOverflow !== "ellipsis")).length;
+    const clipped = [...document.querySelectorAll("#grid .card")].slice(0, 12).filter(c => [...c.querySelectorAll("*")].some(e => e.children.length === 0 && !e.classList.contains("sr") && e.scrollWidth > e.clientWidth + 2 && getComputedStyle(e).overflow !== "visible" && getComputedStyle(e).textOverflow !== "ellipsis")).length;
     const head = r(".top"), bag = r("#bagBtn"), brand = r(".top .brand");
     const tiny = [...document.querySelectorAll("p, a, button, span, label, summary, h1, h2, h3")].filter(e => e.offsetParent && e.textContent.trim() && parseFloat(getComputedStyle(e).fontSize) < 11).length;
     const chips = [...document.querySelectorAll(".chip")].filter(e => e.offsetParent).map(e => e.getBoundingClientRect().height);

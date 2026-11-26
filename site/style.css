@@ -1118,3 +1118,11 @@ body.policies { background: radial-gradient(ellipse at 50% 0%, #2a2420 0%, #0f0d
 .agree a { color: inherit; text-decoration: underline; }
 /* bug fix (2026-11-26 audit): a later rule set the product pop-up to display:flex even while closed, leaving an empty pop-up below the footer */
 dialog:not([open]) { display: none !important; }
+/* preorder list: name + email side by side where there's room, shorter note, so Send stays on screen */
+@media (min-width: 700px) {
+  #reqForm { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+  #reqForm > * { grid-column: 1 / -1; }
+  #reqForm > label:has(input[name=name]) { grid-column: 1; }
+  #reqForm > label:has(input[name=email]) { grid-column: 2; }
+}
+#reqForm textarea[name=note] { min-height: 44px; }

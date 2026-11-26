@@ -665,7 +665,7 @@
       el("div", { class: "sum" }, el("span", { text: "Subtotal" }), el("span", { text: money(sub) })),
       el("div", { class: "sum" }, el("span", { text: "Shipping" }), el("span", { text: ship ? money(ship) : "Free" })),
       el("div", { class: "sum total" }, el("span", { text: "Estimated total" }), el("span", { text: money(sub + ship) })),
-      el("p", { class: "note", text: "Plus sales tax where it applies. Nothing is charged now." + (SHIP_WINDOW ? ` ${SHIP_WINDOW}.` : "") })] : []));
+      el("p", { class: "note", text: "Plus tax where it applies." + (SHIP_WINDOW ? ` ${SHIP_WINDOW}.` : "") })] : []));
     $("#reqForm").hidden = !bag.length;
     const qn = bagQty();
     $("#orderFlag").hidden = qn < LARGE;
