@@ -976,3 +976,6 @@ dialog.pd.one-size fieldset.sizes { display: none; }
   .also-l { max-width: none; }
   .also-p { font-size: 12px; }
 }
+
+/* keep each spinning card's 3-D layer inside its own card, so it can never sit over fixed buttons (back-to-top) */
+.card { position: relative; isolation: isolate; }

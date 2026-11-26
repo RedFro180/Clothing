@@ -79,7 +79,8 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
       const name = await p.textContent('#pdName'); log.push('viewing: ' + name);
       const m = await p.evaluate(() => { const r = document.querySelector('#pdAdd').getBoundingClientRect(); return { addBelow: r.bottom > innerHeight, priceTop: Math.round(document.querySelector('#pdPrice').getBoundingClientRect().top) }; });
       if (m.addBelow) friction.push('Add button below the screen in pop-up');
-      if (persona === 'sizeunsure') { await act('open size guide', () => p.click('#sgBtn')); const g = await p.textContent('#sizeGuide'); if (g.includes('coming soon')) friction.push('size guide has no measurements'); }
+      if (persona === 'sizeunsure' && !(await p.isVisible('#sgBtn'))) log.push('one-size item: no size guide needed');
+      else if (persona === 'sizeunsure') { await act('open size guide', () => p.click('#sgBtn')); const g = await p.textContent('#sizeGuide'); if (g.includes('coming soon')) friction.push('size guide has no measurements'); }
       const oneSize = await p.evaluate(() => document.querySelector('#pd').classList.contains('one-size'));
       const sizes = await p.evaluate(() => [...document.querySelectorAll('#pdSizes button')].map(b => b.dataset.s));
       if (oneSize) log.push('one size: nothing to pick');
