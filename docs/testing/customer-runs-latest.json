@@ -32,7 +32,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "4.5"
  },
  {
   "i": 2,
@@ -69,7 +69,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.6"
+  "secs": "5.7"
  },
  {
   "i": 3,
@@ -141,7 +141,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.1"
  },
  {
   "i": 5,
@@ -176,7 +176,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.0"
+  "secs": "6.3"
  },
  {
   "i": 6,
@@ -255,7 +255,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "4.7"
  },
  {
   "i": 8,
@@ -291,7 +291,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "5.1"
  },
  {
   "i": 9,
@@ -328,7 +328,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.7"
+  "secs": "5.8"
  },
  {
   "i": 10,
@@ -428,7 +428,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.4"
+  "secs": "4.3"
  },
  {
   "i": 13,
@@ -499,7 +499,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "4.4"
  },
  {
   "i": 15,
@@ -536,7 +536,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "4.7"
  },
  {
   "i": 16,
@@ -572,7 +572,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.3"
+  "secs": "6.5"
  },
  {
   "i": 17,
@@ -608,7 +608,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 18,
@@ -685,7 +685,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.7"
+  "secs": "5.5"
  },
  {
   "i": 20,
@@ -722,7 +722,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 21,
@@ -752,7 +752,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "2.9"
+  "secs": "2.7"
  },
  {
   "i": 22,
@@ -789,7 +789,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.4"
+  "secs": "5.3"
  },
  {
   "i": 23,
@@ -856,7 +856,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.7"
+  "secs": "6.3"
  },
  {
   "i": 25,
@@ -891,7 +891,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "4.5"
  },
  {
   "i": 26,
@@ -927,7 +927,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.8"
+  "secs": "7.7"
  },
  {
   "i": 27,
@@ -962,7 +962,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.4"
  },
  {
   "i": 28,
@@ -999,7 +999,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "4.9"
  },
  {
   "i": 29,
@@ -1035,7 +1035,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 30,
@@ -1106,7 +1106,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.2"
+  "secs": "6.0"
  },
  {
   "i": 32,
@@ -1221,7 +1221,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 35,
@@ -1258,7 +1258,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.2"
+  "secs": "6.7"
  },
  {
   "i": 36,
@@ -1288,7 +1288,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.8"
+  "secs": "1.6"
  },
  {
   "i": 37,
@@ -1325,7 +1325,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "5.0"
  },
  {
   "i": 38,
@@ -1359,7 +1359,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.3"
  },
  {
   "i": 39,
@@ -1395,7 +1395,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.1"
+  "secs": "5.9"
  },
  {
   "i": 40,
@@ -1430,7 +1430,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.6"
+  "secs": "4.5"
  },
  {
   "i": 41,
@@ -1468,7 +1468,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "5.7"
  },
  {
   "i": 42,
@@ -1505,7 +1505,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.5"
+  "secs": "7.8"
  },
  {
   "i": 43,
@@ -1542,7 +1542,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.2"
+  "secs": "6.1"
  },
  {
   "i": 44,
@@ -1577,7 +1577,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 45,
@@ -1619,7 +1619,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "8.1"
+  "secs": "7.9"
  },
  {
   "i": 46,
@@ -1723,7 +1723,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "5.3"
  },
  {
   "i": 49,
@@ -1753,7 +1753,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.8"
+  "secs": "1.6"
  },
  {
   "i": 50,
@@ -1790,6 +1790,6 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "4.9"
  }
 ]
