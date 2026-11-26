@@ -703,7 +703,8 @@
 
   // ---------- preorder request: anti-spam, limits, order id, evidence for disputes ----------
   let formOpenedAt = 0;
-  const POLICY = "All sales are final. Check the size chart before ordering. If we send the wrong item or it's lost or damaged in shipping, email us within 7 days and we'll fix it.";
+  // What the buyer agrees to with the tick box (recorded with each request, with the terms date, as proof of agreement)
+  const POLICY = `I agree to the Terms of Sale dated ${cfg("POLICY_UPDATED") || "(undated)"} (policies page), including the warranty disclaimer and limit of liability. All sales are final. Check the size chart before ordering. If we send the wrong item or it's lost or damaged in shipping, email us within 7 days and we'll fix it.`;
   function catalogStamp() {   // short fingerprint of prices so you can spot an edited order
     let h = 0; const s = P.map(p => p.id + ":" + p.price).join("|");
     for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;

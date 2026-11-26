@@ -57,6 +57,8 @@ This brand sells garments with **no plastic or synthetic polymer anywhere**. Nat
 
 ---
 
+**Flammability (required):** brushed cotton/hemp fleece is a raised-surface fabric and is *not* exempt under 16 CFR 1610.1(d). Provide 16 CFR 1610 test results for the fleece (or test it), so the brand can issue a General Certificate of Conformity before sale.
+
 ## 4. Construction
 
 | Area | Method |

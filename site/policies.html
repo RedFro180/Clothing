@@ -4,15 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Policies | Brand Name</title>
-<meta name="description" content="Privacy, terms of sale, shipping, returns and contact.">
+<meta name="description" content="Terms of sale, shipping, returns, privacy, accessibility and contact.">
 <meta name="theme-color" content="#0f0d0c">
 <meta name="robots" content="index, follow, noai, noimageai">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="style.css">
 <!--
   Policies template. Blanks are filled from config.js (BUSINESS_NAME, BUSINESS_ADDRESS, CONTACT_EMAIL, SHIP_WINDOW,
-  SHIPPING_FLAT, FREE_SHIP_OVER, POLICY_UPDATED). NOT LEGAL ADVICE: have a lawyer review this page before you take real orders,
-  and update it if you start using new services (payments, email tools, SMS, analytics).
+  SHIPPING_FLAT, FREE_SHIP_OVER, POLICY_UPDATED). NOT LEGAL ADVICE: have an Ohio lawyer review this page before you take real
+  orders, and update it if you add services (payments, email tools, SMS, analytics) or move states.
+  Deliberately NOT included (2026-11-26 decision): an arbitration clause / class-action waiver (AAA registration + per-case fees);
+  revisit with a lawyer once sales grow.
 -->
 </head>
 <body class="policies">
@@ -24,48 +26,72 @@
   <h1 class="sec-title">Policies</h1>
   <p class="pol-meta">Last updated <span data-c="POLICY_UPDATED" data-fallback="(date to be set)"></span></p>
   <nav class="pol-toc" aria-label="On this page">
-    <a href="#terms">Terms of sale</a><a href="#shipping">Shipping</a><a href="#returns">Returns</a><a href="#privacy">Privacy</a><a href="#contact">Contact</a>
+    <a href="#terms">Terms of sale</a><a href="#shipping">Shipping</a><a href="#returns">Returns</a><a href="#care">Product safety</a><a href="#privacy">Privacy</a><a href="#accessibility">Accessibility</a><a href="#contact">Contact</a>
   </nav>
 
   <section id="terms"><h2>Terms of sale</h2>
-    <p>This shop is run by <strong data-c="BUSINESS_NAME" data-fallback="(business name to be set)"></strong>. By sending a preorder request you agree to these terms.</p>
-    <ul>
-      <li><strong>Preorders.</strong> Sending a preorder request does not charge you. We reply by email with a payment link and a ship date. Your order is confirmed only when you pay.</li>
-      <li><strong>Made in small batches.</strong> <span data-c="SHIP_WINDOW" data-fallback="We ship within 30 days of payment"></span>. If we can't ship on time, we'll email you a new date before the old one passes and you can choose to wait or get a full refund.</li>
-      <li><strong>Prices</strong> are in US dollars. Sales tax is added at payment where the law requires it.</li>
-      <li><strong>Pictures</strong> are mockups until real photos are added. Natural dyes vary from batch to batch, so colors and prints can differ a little from what you see.</li>
-      <li><strong>Order limits.</strong> We may limit quantities, and we may cancel and refund any order we can't fill or that looks fraudulent.</li>
-    </ul></section>
+    <p>This shop is run by <strong data-c="BUSINESS_NAME" data-fallback="(business name to be set)"></strong> ("we", "us"). These terms apply to every order. <strong>You agree to them when you tick the box and send a preorder request, and again when you pay.</strong> The version that applies is the one dated at the top of this page on the day you order.</p>
+    <ol class="pol-num">
+      <li><strong>Who can buy.</strong> You must be 18 or older, or have a parent or guardian place the order. Our clothing is made in adult sizes only and is not made for children.</li>
+      <li><strong>Preorders and payment.</strong> Sending a preorder request does not charge you and is not a contract yet. We reply by email with a payment link and a ship date. The order is accepted, and a contract is formed, only when you pay. We may decline or cancel any order before it ships, for example if an item can't be made, a price or description was wrong, or the order looks fraudulent. If we cancel after you paid, we refund you in full.</li>
+      <li><strong>Prices and errors.</strong> Prices are in US dollars. Sales tax is added at payment where the law requires it. If a price, picture or description is clearly wrong, we'll tell you before charging and you can cancel; we won't charge a price that was obviously a mistake.</li>
+      <li><strong>When it ships.</strong> <span data-c="SHIP_WINDOW" data-fallback="We ship within 30 days of payment"></span>. If we can't ship on time, we'll email you before the date passes with a new date, and you can choose to wait or cancel for a full refund. If you don't answer, we'll cancel and refund you.</li>
+      <li><strong>Pictures and color.</strong> Pictures are mockups until real photos are added. Natural dyes vary from batch to batch, so colors and prints can differ a little from what you see. Measurements can vary by about half an inch.</li>
+      <li><strong>Final sale.</strong> All sales are final, as explained under <a href="#returns">Returns</a>. This does not limit any right the law gives you that can't be waived.</li>
+      <li class="pol-caps"><strong>No other warranties.</strong> Except for what we promise on this page (to send what you ordered and fix shipping mistakes, losses and damage in transit), our products are sold "as is". To the fullest extent the law allows, we disclaim all other warranties, express or implied, including the implied warranties of merchantability and fitness for a particular purpose. Some states don't allow these warranties to be disclaimed, so this may not apply to you.</li>
+      <li class="pol-caps"><strong>Limit of liability.</strong> To the fullest extent the law allows, our total liability for any claim about an order is limited to the amount you paid for that order, and we are not liable for indirect, incidental, special or consequential damages. This does not limit liability that can't be limited by law, such as for death or personal injury caused by our negligence, or for fraud.</li>
+      <li><strong>The designs.</strong> Our designs are dark humor about pain, grief, death and getting through it. They are art, not advice, and are not meant to encourage anyone to hurt themselves. If you're struggling, call or text <strong>988</strong> or text <strong>HOME</strong> to <strong>741741</strong>.</li>
+      <li><strong>Our work.</strong> All designs, artwork, text and photos on this site are ours (or used with permission) and protected by copyright. You may share links and post photos of yourself wearing our clothes. You may not copy, print or sell our designs.</li>
+      <li><strong>Problems and disputes.</strong> If something goes wrong, email us first and give us 60 days to try to fix it; most problems are solved that way. These terms are governed by the laws of the State of Ohio and applicable federal law. Any claim that isn't resolved may be brought in small claims court, or in the state or federal courts for the county of our business address in Ohio, unless the law where you live gives you the right to sue there.</li>
+      <li><strong>Things outside our control.</strong> We're not responsible for delays caused by events we can't reasonably control (for example carrier delays, severe weather, supplier failures or public emergencies). We'll keep you informed and you can cancel for a refund if your order is delayed.</li>
+      <li><strong>The rest.</strong> If any part of these terms is found unenforceable, the rest still applies. Not enforcing a term isn't a waiver of it. These terms, the order details and our email confirming your order are the whole agreement. We may update these terms; changes apply only to orders placed after the new date.</li>
+    </ol></section>
 
   <section id="shipping"><h2>Shipping</h2>
     <ul>
       <li><strong>Cost:</strong> <span data-ship-line>shown on each product and in your preorder list</span>.</li>
       <li><strong>When:</strong> <span data-c="SHIP_WINDOW" data-fallback="We ship within 30 days of payment"></span>. You get a tracking number by email when it ships.</li>
       <li><strong>Where:</strong> United States only for now.</li>
-      <li><strong>Lost or damaged:</strong> email us within 7 days of the delivery date (or the expected date, if it never arrived) and we'll fix it.</li>
+      <li><strong>Lost or damaged:</strong> email us within 7 days of the delivery date (or the expected date, if it never arrived) and we'll replace it or refund you. We may ask for a photo of the damage and the packaging.</li>
+      <li><strong>Address:</strong> please check it. If a package is returned to us because the address was wrong or it wasn't picked up, we'll reship it once you pay the new shipping, or refund the item minus the shipping costs.</li>
       <li><strong>Packaging:</strong> paper packaging.</li>
     </ul></section>
 
   <section id="returns"><h2>Returns</h2>
     <ul>
-      <li><strong>All sales are final.</strong> Please check the size guide on each product before ordering. We don't take returns or exchanges for fit or change of mind.</li>
+      <li><strong>All sales are final.</strong> Please check the size guide on each product before ordering. We don't take returns or exchanges for fit, color or change of mind.</li>
       <li><strong>Our mistakes are on us.</strong> If we send the wrong item, or it arrives damaged or never arrives, email us within 7 days and we'll replace it or refund you.</li>
       <li><strong>Underwear and socks</strong> are final sale for hygiene reasons, except for the cases above.</li>
-      <li><strong>Latex:</strong> boxers and sweatpants have natural rubber in the waistband. Don't buy them if you have a latex allergy.</li>
+      <li>This policy is shown on every product and in your preorder list before you order, and you confirm it with the tick box.</li>
+    </ul></section>
+
+  <section id="care"><h2>Product safety and care</h2>
+    <ul>
+      <li><strong>Latex:</strong> boxers and sweatpants have natural rubber in the waistband. Don't buy them if you have a latex allergy. Stop wearing anything that irritates your skin.</li>
+      <li><strong>Natural dyes</strong> can release some color in the first washes. Wash dark colors separately and cold before wearing them against light furniture or clothes. Colors fade with sun and washing.</li>
+      <li><strong>Fire:</strong> cotton, hemp and wool can burn. Keep clothing away from open flames and heat sources.</li>
+      <li><strong>Drawcords:</strong> adult sizes only. Not for children.</li>
+      <li><strong>Care:</strong> follow the care label. Natural rubber wears out faster with heat; caps are spot clean only.</li>
     </ul></section>
 
   <section id="privacy"><h2>Privacy</h2>
     <p><strong>What we collect.</strong></p>
     <ul>
       <li><strong>When you send a preorder or restock request:</strong> your name, email, the items, sizes and anything you write. Used only to handle your order or tell you about that restock.</li>
-      <li><strong>When you join drop alerts:</strong> your email. Used only to tell you about new designs and restocks. Every email has an unsubscribe link.</li>
+      <li><strong>When you join drop alerts:</strong> your email. Used only to tell you about new designs and restocks. Every email has an unsubscribe link and our mailing address.</li>
       <li><strong>Shop stats:</strong> anonymous counts, like which products are viewed and what gets added to preorder lists. No cookies, and no names, emails or phone numbers go into these stats.</li>
       <li><strong>On your device:</strong> your preorder list, recently viewed items and last size are saved in your browser only. Clearing your browser data removes them.</li>
     </ul>
-    <p><strong>What we don't do.</strong> We don't sell or rent your information, and we don't share it except with the services that run the shop (email, order forms, payment and shipping), only to do those jobs.</p>
-    <p><strong>Your choices.</strong> Email us to see, correct or delete what we have about you, or to stop emails. We'll reply within 30 days.</p>
-    <p><strong>Kids.</strong> This shop isn't meant for children under 13, and we don't knowingly collect their information.</p>
+    <p><strong>What we don't do.</strong> We don't sell or rent your information, we don't share it for targeted advertising, and we don't share it except with the services that run the shop (email, order forms, payment and shipping), only to do those jobs.</p>
+    <p><strong>How long we keep it.</strong> Order records as long as tax and accounting law requires; drop-alert emails until you unsubscribe; restock requests until the item is back or we stop making it.</p>
+    <p><strong>Security.</strong> We use reputable services and protect accounts with strong passwords and two-factor sign-in. No system is perfectly secure; if a breach affects you, we'll tell you as the law requires.</p>
+    <p><strong>Your choices.</strong> Email us to see, correct or delete what we have about you, or to stop emails. We'll reply within 30 days. Depending on where you live you may have more privacy rights; we'll honor them.</p>
+    <p><strong>Kids.</strong> This shop isn't meant for children under 13, and we don't knowingly collect their information. If you think a child gave us information, email us and we'll delete it.</p>
+    <p><strong>Do Not Track.</strong> We don't track you across other sites, so there's nothing to turn off.</p>
     <p><strong>Changes.</strong> If this policy changes, the date at the top changes too.</p></section>
+
+  <section id="accessibility"><h2>Accessibility</h2>
+    <p>We want everyone to be able to use this shop. We design it to meet the Web Content Accessibility Guidelines (WCAG) 2.1 level AA and test it with automated accessibility checks, keyboard-only use and screen-reader labels on phones and computers. If anything is hard to use, email us and we'll help you order and fix the problem.</p></section>
 
   <section id="contact"><h2>Contact</h2>
     <p><span data-c="BUSINESS_NAME" data-fallback="(business name to be set)"></span><br>
