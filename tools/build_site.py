@@ -32,7 +32,7 @@ TPRICE = {t[0]: t[4] for t in TYPES}
 NATURAL_DYE = "Natural dyes fade gradually with sun and washing"
 PREORDER = "Preorder: no charge until we confirm a ship date"
 HOODIE_DETAILS = ["~30% hemp / 70% cotton brushed fleece, heavyweight", "Cotton rib, thread, drawcord and labels. No plastic."]
-# Non-hoodie items: picture kind (tools/items.py), product type, name suffix, sizes, placement, details, notes
+# Non-hoodie items: picture kind (tools/items.py), product type, name suffix, sizes, placement, details, notes[, price if not the type's price]
 ITEMS = [
     ("tee", "tee", "Tee", SIZES, None,
      ["30% hemp / 70% cotton jersey, heavyweight", "Cotton rib collar, cotton thread and labels. No plastic.",
@@ -47,13 +47,16 @@ ITEMS = [
      ["100% woven cotton boxers, loose fit", "Waistband: natural rubber elastic inside a printed cotton casing. No plastic, no spandex.",
       "Line dry or tumble low: heat wears out natural rubber faster"],
      ["Contains natural rubber latex (not for latex allergies)", "Final sale (hygiene)"]),
-    ("socks", "socks", "Socks", ["S/M", "L/XL"], "Design knitted in",
+    ("socks", "socks", "Crew socks", ["S/M", "L/XL"], "Design knitted in",
      ["Cotton or merino crew sock, knitted with the design in it", "No nylon or spandex. No plastic."],
      ["No nylon or spandex: they slide more and wear faster at heel and toe", "Final sale (hygiene)"]),
     ("sweatpants", "sweatpants", "Sweatpants", SIZES, "Print on the left thigh",
      ["~30% hemp / 70% cotton brushed fleece, same as the hoodies", "Heavy cotton rib cuffs, cotton drawcord, cotton thread and labels",
       "Waist: natural rubber elastic inside a cotton casing. No plastic, no spandex.", "Line dry or tumble low: heat wears out natural rubber faster"],
      ["Contains natural rubber latex (not for latex allergies)", "All sales final: check the size guide"]),
+    ("socks-ankle", "socks", "Ankle socks", ["S/M", "L/XL"], "Design knitted in at the ankle",
+     ["Quarter height: just above the ankle bone", "Cotton or merino, knitted with the design in it", "No nylon or spandex. No plastic."],
+     ["No spandex: may slip a little in low shoes and wears faster at heel and toe", "Final sale (hygiene)"], 16),
 ]
 SINGULAR = {t[0]: t[2] for t in TYPES}
 
@@ -109,7 +112,7 @@ COLOR_TAGS = {"Dusty rose": "pink rose", "Undyed oatmeal": "cream white beige na
               "Olive": "green army", "Plum": "purple", "Black": "black"}
 
 TYPE_TAGS = {"tee": "tee tees t-shirt tshirt shirt", "hats-beanie": "hat hats beanie toque knit", "hats-cap": "hat hats cap dad cap baseball",
-             "underwear": "underwear boxers boxer shorts", "socks": "sock socks crew",
+             "underwear": "underwear boxers boxer shorts", "socks": "sock socks crew", "socks-ankle": "sock socks ankle quarter low short",
              "sweatpants": "sweatpants sweats joggers pants trackpants bottoms"}
 def fab_of(num): return S.color_for(num)[1]
 
@@ -177,7 +180,8 @@ def main():
             "notes": [],
         })
     designs = S.all_designs()
-    for k, (kind, typ, label, sizes, placement, details, notes) in enumerate(ITEMS, 1):
+    for k, (kind, typ, label, sizes, placement, details, notes, *rest) in enumerate(ITEMS, 1):
+        price = rest[0] if rest else TPRICE[typ]
         for num in I.STARTER:
             d = designs[num - 1]
             main, extra, sides, cname = I.render_item(kind, num, d, IMG)
@@ -187,7 +191,7 @@ def main():
             photos = sorted(x for x in os.listdir(PHOTOS) if x.startswith(prefix) and x.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))) if os.path.isdir(PHOTOS) else []
             imgs = [{"src": "photos/" + x, "alt": "Photo"} for x in photos] + [
                 {"src": "img/" + main, "alt": f"{sides[0]}, with design"},
-                {"src": "img/" + extra[0], "alt": sides[1] if kind == "socks" else f"{sides[1]}, plain"},
+                {"src": "img/" + extra[0], "alt": sides[1] if kind.startswith("socks") else f"{sides[1]}, plain"},
                 {"src": "img/" + extra[1], "alt": "Design close-up"},
                 {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
             theme = theme_for(d)
@@ -195,7 +199,7 @@ def main():
                 "id": pid, "design": num, "slug": f"{d['slug']}-{kind.replace('hats-', '')}", "name": title_case(d["lines"]), "sub": d["sub"] if typ == "tee" else "",
                 "type": typ, "typeLabel": label, "word": SINGULAR[typ] if typ != "hats" else label.lower(), "theme": theme, "color": color, "colorNote": cname,
                 "tags": search_tags(d, theme, color) + " " + TYPE_TAGS[kind], "hex": fab_of(num), "light": lum(fab_of(num)) > 450,
-                "placement": placement or PLACE[d["place"]], "price": TPRICE[typ], "sizes": sizes, "img": "img/" + main, "imgs": imgs,
+                "placement": placement or PLACE[d["place"]], "price": price, "sizes": sizes, "img": "img/" + main, "imgs": imgs,
                 "featured": None,
                 "details": [f"Color: {cname}"] + details + ([f"{placement or PLACE[d['place']]}, natural dye"] if typ in ("tee", "sweatpants") else []) + [NATURAL_DYE, PREORDER],
                 "notes": notes,

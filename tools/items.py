@@ -1,4 +1,4 @@
-"""Mockups for the non-hoodie items: tee, boxers, socks, beanie, dad cap, sweatpants.
+"""Mockups for the non-hoodie items: tee, boxers, socks, beanie, dad cap, sweatpants, quarter-height ankle socks.
 Same look as the hoodie mockups in svgs_dark.py (flat fabric + soft gradient shading, no filters on the garment),
 and the same art: tees use the full hoodie layout, small items use the design's icon plus at most one short word.
 Used by tools/build_site.py. Each item gets 4 pictures: main, other side, close-up, fabric color."""
@@ -78,22 +78,26 @@ def boxers(view, word=""):
     return g
 
 # ---------------- sock (factory knit, design knitted in) ----------------
-SOCK = ("M232 70 L368 70 L368 372 Q368 418 412 436 L508 470 Q556 488 548 532 Q540 568 492 566 "
-        "L262 566 Q214 566 212 518 L222 372 Z")
-def sock(view, k="s"):
+def sock_path(top=70):
+    return (f"M232 {top} L368 {top} L368 372 Q368 418 412 436 L508 470 Q556 488 548 532 Q540 568 492 566 "
+            "L262 566 Q214 566 212 518 L222 372 Z")
+SOCK = sock_path()
+def sock(view, k="s", top=70, cuff=84):
+    """Crew sock (top=70) or quarter sock (top=250, shorter cuff)."""
     FAB = S.FAB; line = S.shade(FAB, .62)
     dark = _lum(FAB) < 300
     knit = S.shade(FAB, 1.35 if dark else .82)
-    defs, over = _shade_layers(k, SOCK)
+    path = sock_path(top)
+    defs, over = _shade_layers(k, path)
     defs = defs.replace("</defs>", f'<pattern id="{k}k" width="7" height="7" patternUnits="userSpaceOnUse">'
                         f'<path d="M0 7 L3.5 1 L7 7" fill="none" stroke="{knit}" stroke-width="1.1" opacity=".55"/></pattern></defs>')
-    g = defs + f'<path d="{SOCK}" fill="{FAB}"/>' + over
+    g = defs + f'<path d="{path}" fill="{FAB}"/>' + over
     g += f'<path d="M212 500 Q214 566 262 566 L304 566 Q264 520 222 462 Z" fill="#000" fill-opacity=".14"/>'   # heel
     g += f'<path d="M492 566 Q540 568 548 532 Q556 488 508 470 L468 456 Q500 512 478 566 Z" fill="#000" fill-opacity=".14"/>'  # toe
-    g += f'<rect x="230" y="66" width="140" height="84" fill="#000" fill-opacity=".08"/>'
-    g += "".join(f'<line x1="{x}" y1="70" x2="{x}" y2="148" stroke="#000" stroke-opacity=".16" stroke-width="2"/>' for x in range(240, 368, 9))
+    g += f'<rect x="230" y="{top - 4}" width="140" height="{cuff}" fill="#000" fill-opacity=".08"/>'
+    g += "".join(f'<line x1="{x}" y1="{top}" x2="{x}" y2="{top + cuff - 6}" stroke="#000" stroke-opacity=".16" stroke-width="2"/>' for x in range(240, 368, 9))
     g += f'<rect x="20" y="36" width="560" height="570" fill="url(#{k}k)"/></g>'
-    g += f'<path d="{SOCK}" fill="none" stroke="{line}" stroke-width="2" stroke-linejoin="round"/>'
+    g += f'<path d="{path}" fill="none" stroke="{line}" stroke-width="2" stroke-linejoin="round"/>'
     return g
 def sock_art(num, d):
     """Knitted-in: the icon only, flat ink, with the knit texture laid over it."""
@@ -104,6 +108,17 @@ def sock_art(num, d):
     return (f'<g>{art}</g>'
             f'<defs><pattern id="sk2" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 7 L3.5 1 L7 7" fill="none" stroke="{knit}" stroke-width="1" opacity=".35"/></pattern></defs>'
             f'<rect x="232" y="150" width="136" height="230" fill="url(#sk2)" clip-path="url(#scc)"/>')
+
+QTOP, QCUFF = 250, 50
+def quarter_art(num, d, k="qc"):
+    """Quarter sock: the knitted-in icon, small, on the outer ankle just under the cuff."""
+    ic = d.get("icon", "none")
+    if ic in ("none", "checklist", "obituary", "autopsy_report"): ic = "skull"
+    art = S.ICONS[ic](300, 352, .36, **d.get("args", {}))
+    knit = S.shade(S.INK, .8 if _lum(S.INK) > 300 else 1.5)
+    return (f'<g>{art}</g>'
+            f'<defs><pattern id="{k}2" width="7" height="7" patternUnits="userSpaceOnUse"><path d="M0 7 L3.5 1 L7 7" fill="none" stroke="{knit}" stroke-width="1" opacity=".35"/></pattern></defs>'
+            f'<rect x="232" y="{QTOP + QCUFF}" width="136" height="120" fill="url(#{k}2)" clip-path="url(#{k}c)"/>')
 
 # ---------------- beanie (cotton or merino rib knit, embroidered cuff patch) ----------------
 CROWN = "M168 396 Q156 176 300 150 Q444 176 432 396 Z"
@@ -207,6 +222,7 @@ ITEMS = {
     "tee":       {"fit": ""},
     "underwear": {"fit": "translate(300 322) scale(1.3) translate(-300 -317)", "crop": "100 80 400 390"},
     "socks":     {"fit": "translate(-44 0)", "crop": "170 60 200 340"},
+    "socks-ankle": {"fit": "translate(300 321) scale(1.22) translate(-380 -408)", "crop": "72 123 260 260"},
     "hats-beanie": {"fit": "translate(300 326) scale(1.2) translate(-300 -326)", "crop": "150 370 300 180"},
     "hats-cap":  {"fit": "translate(300 328) scale(1.16) translate(-300 -280)", "crop": "160 180 280 200"},
     "sweatpants": {"fit": "", "crop": "226 150 280 340"},
@@ -266,6 +282,15 @@ def render_item(kind, num, d, out):
                 f'<g transform="translate(16 8)">{sock("front", "sc")}{sock_art(num, d)}</g>')
         pair = f'<g transform="translate(-30 0)">{pair}</g>'
         files["-b"] = _svg(f"{cname} socks, pair", pair)
+        files["-c"] = _svg("Knit close-up", main, vb=ITEMS[kind]["crop"])
+        labels = ("Side", "Pair")
+    elif kind == "socks-ankle":
+        q = lambda k: sock("front", k, QTOP, QCUFF)
+        main = _fit(kind, q("qc") + quarter_art(num, d))
+        files[""] = _svg("Ankle sock (quarter height)", main)
+        pair = (f'<g transform="translate(-64 -6) rotate(-6 300 420)" opacity=".92">{sock("back", "qp", QTOP, QCUFF)}</g>'
+                f'<g transform="translate(16 8)">{q("qc")}{quarter_art(num, d)}</g>')
+        files["-b"] = _svg(f"{cname} ankle socks, pair", _fit(kind, f'<g transform="translate(30 0)">{pair}</g>'))
         files["-c"] = _svg("Knit close-up", main, vb=ITEMS[kind]["crop"])
         labels = ("Side", "Pair")
     elif kind == "hats-beanie":

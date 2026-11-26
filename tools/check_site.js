@@ -59,8 +59,10 @@ if (CAT) {
   for (const t of (CAT.types || []).filter(t => t.live)) {
     const pr = [...new Set(CAT.products.filter(p => p.type === t.id).map(p => p.price))];
     if (!pr.length) warn(`${t.label} is marked live but has no products.`);
-    if (pr.length > 1) warn(`${t.label} have different prices (${pr.join(", ")}), so prices show under each item instead of once.`);
   }
+  // one price per item kind (e.g. Crew socks $24, Ankle socks $16 is fine); a kind with several prices shows prices on every card
+  const kinds = {}; (CAT.products || []).forEach(p => (kinds[p.typeLabel] = kinds[p.typeLabel] || new Set()).add(p.price));
+  for (const [k, pr] of Object.entries(kinds)) if (pr.size > 1) warn(`${k} have different prices (${[...pr].join(", ")}), so prices show under each item instead of once.`);
   if ((CAT.products || []).some(p => !p.imgs || p.imgs.length < 4)) err("products.js: some products have fewer than 4 pictures.");
   if (!CAT.products.some(p => p.featured)) warn("No featured hoodies: the spinning ring will be empty.");
   if (C && C.SOLD_OUT) {

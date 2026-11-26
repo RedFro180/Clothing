@@ -1,4 +1,4 @@
-# Tech pack: Crew socks, design knitted in (Style K01)
+# Tech pack: Crew socks (K01) and quarter-height ankle socks (K02), design knitted in
 
 | Field | Detail |
 |---|---|
@@ -128,3 +128,29 @@ No nylon or spandex: may slide down and wear faster at the heel and toe.
 4. Sample cost and lead time; production lead time
 5. Yarn sourcing: do you supply natural yarn, or do we?
 6. Photos of past knitted-in designs and **2–3 client references**
+
+---
+
+## 11. Variant K02: quarter-height ankle sock
+
+Same rules, yarn, construction and quality checks as K01, except:
+
+| Area | K02 spec |
+|---|---|
+| Height | **Quarter**: cuff top just above the ankle bone (leg ~2.5–3 in from top of heel, confirm on sample). A true low/no-show sock was rejected: with no spandex it slips into the shoe. |
+| Cuff | 1x1 rib, ~1 in, knitted **firmer** than K01 to grip without spandex |
+| Heel | Deeper Y-heel (or reciprocating) so the heel pocket sits right and the sock doesn't rotate |
+| Design | Icon only, small (~1–1.25 in), knitted into the **outer ankle** just under the cuff, 2 colors |
+| Price target | Sells at **$16** a pair (crew $24). Ask the mill for K02 pricing at the same minimums as K01. |
+| Product page note | "No spandex: may slip a little in low shoes and wears faster at heel and toe." |
+
+**K02 measurements (fill in from the approved sample):**
+
+| POM | S/M | L/XL | Tol. |
+|---|---|---|---|
+| Leg length (top of cuff to top of heel) | | | 1/4 |
+| Foot length | | | 1/4 |
+| Cuff height | | | 1/8 |
+| Cuff width relaxed / stretched | | | 1/8 / 1/4 |
+
+**Add to the quote request:** price per pair for K02 at your minimum, 300 and 500 pairs; can K01 and K02 share one minimum per design?

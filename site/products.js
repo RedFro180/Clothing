@@ -8628,7 +8628,7 @@ window.CATALOG = {
    "name": "Everyone gets a toe tag.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "morgue",
    "color": "Black",
@@ -8681,7 +8681,7 @@ window.CATALOG = {
    "name": "You are a skeleton wearing meat.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "rot",
    "color": "Dusty rose",
@@ -8734,7 +8734,7 @@ window.CATALOG = {
    "name": "225 lbs. It helps.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "iron",
    "color": "Charcoal",
@@ -8787,7 +8787,7 @@ window.CATALOG = {
    "name": "The box will be heavy.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "grave",
    "color": "Indigo",
@@ -8840,7 +8840,7 @@ window.CATALOG = {
    "name": "The reaper is patient.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "grave",
    "color": "Charcoal",
@@ -8893,7 +8893,7 @@ window.CATALOG = {
    "name": "The dirt always wins.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "grave",
    "color": "Olive",
@@ -8946,7 +8946,7 @@ window.CATALOG = {
    "name": "Grief has weight.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "iron",
    "color": "Black",
@@ -8999,7 +8999,7 @@ window.CATALOG = {
    "name": "A heart is just meat.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "anatomy",
    "color": "Oxblood",
@@ -9052,7 +9052,7 @@ window.CATALOG = {
    "name": "Here for a short time.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "grave",
    "color": "Heather grey",
@@ -9105,7 +9105,7 @@ window.CATALOG = {
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "grave",
    "color": "Undyed oatmeal",
@@ -9158,7 +9158,7 @@ window.CATALOG = {
    "name": "Death",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "anatomy",
    "color": "Black",
@@ -9211,7 +9211,7 @@ window.CATALOG = {
    "name": "The flies know something.",
    "sub": "",
    "type": "socks",
-   "typeLabel": "Socks",
+   "typeLabel": "Crew socks",
    "word": "pair of socks",
    "theme": "rot",
    "color": "Indigo",
@@ -9975,6 +9975,654 @@ window.CATALOG = {
    "notes": [
     "Contains natural rubber latex (not for latex allergies)",
     "All sales final: check the size guide"
+   ]
+  },
+  {
+   "id": 7010,
+   "design": 10,
+   "slug": "everyone-gets-a-toe-tag-socks-ankle",
+   "name": "Everyone gets a toe tag.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "morgue",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "toe tag morgue tag morgue corpse dead body coroner black sock socks ankle quarter low short",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-10-everyone-gets-a-toe-tag.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-10-everyone-gets-a-toe-tag.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-10-everyone-gets-a-toe-tag-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-10-everyone-gets-a-toe-tag-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-0dec176696.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7011,
+   "design": 11,
+   "slug": "skeleton-wearing-meat-socks-ankle",
+   "name": "You are a skeleton wearing meat.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "rot",
+   "color": "Dusty rose",
+   "colorNote": "Dusty rose (light madder)",
+   "tags": "skull rot decay bones rot decay decompose worms pink rose sock socks ankle quarter low short",
+   "hex": "#cfa39b",
+   "light": true,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-11-skeleton-wearing-meat.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-11-skeleton-wearing-meat.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-11-skeleton-wearing-meat-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-11-skeleton-wearing-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-8741148d3b.svg",
+     "alt": "Fabric color: Dusty rose (light madder)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Dusty rose (light madder)",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7014,
+   "design": 14,
+   "slug": "225-it-helps-socks-ankle",
+   "name": "225 lbs. It helps.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "iron",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark sock socks ankle quarter low short",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-14-225-it-helps.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-14-225-it-helps.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-14-225-it-helps-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-14-225-it-helps-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-b32b8766da.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7025,
+   "design": 25,
+   "slug": "the-box-will-be-heavy-socks-ankle",
+   "name": "The box will be heavy.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy sock socks ankle quarter low short",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-25-the-box-will-be-heavy.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-25-the-box-will-be-heavy.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-25-the-box-will-be-heavy-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-25-the-box-will-be-heavy-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-f6174898ab.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7044,
+   "design": 44,
+   "slug": "reaper-is-patient-socks-ankle",
+   "name": "The reaper is patient.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Charcoal",
+   "colorNote": "Charcoal",
+   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark sock socks ankle quarter low short",
+   "hex": "#2d2d2d",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-44-reaper-is-patient.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-44-reaper-is-patient.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-44-reaper-is-patient-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-44-reaper-is-patient-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-b32b8766da.svg",
+     "alt": "Fabric color: Charcoal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Charcoal",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7048,
+   "design": 48,
+   "slug": "the-dirt-always-wins-socks-ankle",
+   "name": "The dirt always wins.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Olive",
+   "colorNote": "Olive (weld + iron)",
+   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army sock socks ankle quarter low short",
+   "hex": "#4a4a2a",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-48-the-dirt-always-wins.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-48-the-dirt-always-wins.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-48-the-dirt-always-wins-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-48-the-dirt-always-wins-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-c2f0f37750.svg",
+     "alt": "Fabric color: Olive (weld + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Olive (weld + iron)",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7060,
+   "design": 60,
+   "slug": "grief-has-weight-socks-ankle",
+   "name": "Grief has weight.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "iron",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black sock socks ankle quarter low short",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-60-grief-has-weight.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-60-grief-has-weight.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-60-grief-has-weight-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-60-grief-has-weight-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-0dec176696.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7066,
+   "design": 66,
+   "slug": "a-heart-is-just-meat-socks-ankle",
+   "name": "A heart is just meat.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "anatomy",
+   "color": "Oxblood",
+   "colorNote": "Oxblood (madder + iron)",
+   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine sock socks ankle quarter low short",
+   "hex": "#5e1a1c",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-66-a-heart-is-just-meat.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-66-a-heart-is-just-meat.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-66-a-heart-is-just-meat-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-66-a-heart-is-just-meat-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-a38e88d7bd.svg",
+     "alt": "Fabric color: Oxblood (madder + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Oxblood (madder + iron)",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7072,
+   "design": 72,
+   "slug": "here-for-a-short-time-socks-ankle",
+   "name": "Here for a short time.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Heather grey",
+   "colorNote": "Heather grey",
+   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey sock socks ankle quarter low short",
+   "hex": "#b8b5ae",
+   "light": true,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-72-here-for-a-short-time.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-72-here-for-a-short-time.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-72-here-for-a-short-time-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-72-here-for-a-short-time-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-9cc1fb9640.svg",
+     "alt": "Fabric color: Heather grey"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Heather grey",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7083,
+   "design": 83,
+   "slug": "cemetery-quiet-gym-loud-socks-ankle",
+   "name": "Cemetery quiet. Gym loud.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "grave",
+   "color": "Undyed oatmeal",
+   "colorNote": "Undyed oatmeal",
+   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white sock socks ankle quarter low short",
+   "hex": "#e4d9c2",
+   "light": true,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-83-cemetery-quiet-gym-loud.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-83-cemetery-quiet-gym-loud.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-83-cemetery-quiet-gym-loud-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-83-cemetery-quiet-gym-loud-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-0bb2c82d5a.svg",
+     "alt": "Fabric color: Undyed oatmeal"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Undyed oatmeal",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7090,
+   "design": 90,
+   "slug": "death-remembers-you-socks-ankle",
+   "name": "Death",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "anatomy",
+   "color": "Black",
+   "colorNote": "Black (logwood + iron)",
+   "tags": "skull bones death anatomy body organs blood black sock socks ankle quarter low short",
+   "hex": "#151515",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-90-death-remembers-you.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-90-death-remembers-you.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-90-death-remembers-you-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-90-death-remembers-you-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-0dec176696.svg",
+     "alt": "Fabric color: Black (logwood + iron)"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Black (logwood + iron)",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
+   ]
+  },
+  {
+   "id": 7105,
+   "design": 105,
+   "slug": "flies-know-something-socks-ankle",
+   "name": "The flies know something.",
+   "sub": "",
+   "type": "socks",
+   "typeLabel": "Ankle socks",
+   "word": "pair of socks",
+   "theme": "rot",
+   "color": "Indigo",
+   "colorNote": "Indigo",
+   "tags": "skull flies rot rot decay decompose worms blue navy sock socks ankle quarter low short",
+   "hex": "#1e2a46",
+   "light": false,
+   "placement": "Design knitted in at the ankle",
+   "price": 16,
+   "sizes": [
+    "S/M",
+    "L/XL"
+   ],
+   "img": "img/socks-ankle-105-flies-know-something.svg",
+   "imgs": [
+    {
+     "src": "img/socks-ankle-105-flies-know-something.svg",
+     "alt": "Side, with design"
+    },
+    {
+     "src": "img/socks-ankle-105-flies-know-something-b.svg",
+     "alt": "Pair"
+    },
+    {
+     "src": "img/socks-ankle-105-flies-know-something-c.svg",
+     "alt": "Design close-up"
+    },
+    {
+     "src": "img/s-f6174898ab.svg",
+     "alt": "Fabric color: Indigo"
+    }
+   ],
+   "featured": null,
+   "details": [
+    "Color: Indigo",
+    "Quarter height: just above the ankle bone",
+    "Cotton or merino, knitted with the design in it",
+    "No nylon or spandex. No plastic.",
+    "Natural dyes fade gradually with sun and washing",
+    "Preorder: no charge until we confirm a ship date"
+   ],
+   "notes": [
+    "No spandex: may slip a little in low shoes and wears faster at heel and toe",
+    "Final sale (hygiene)"
    ]
   }
  ],

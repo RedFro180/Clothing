@@ -81,6 +81,7 @@ Break-even here covers only each style's development and the equipment it adds. 
 
   I assumed $7/pair for plastic-free custom (est.).
 - **Home sock machine:** computerized machines from China run ~$2,800–4,000 ex-factory ([Made-in-China](https://m.made-in-china.com/hot-china-products/Computerized_Sock_Machine_Price.html)), plus shipping, setup and a steep learning curve. Not recommended in year one.
+- **Ankle socks (added 2026-11-26):** quarter height (just above the ankle bone) at $16; a low/no-show sock slips without spandex. Comps: Cottonique latex-free ankle socks $25 for 2 pairs, Rawganique elastic-free organic cotton $18.95, Buster Brown 100% cotton 3-pack $17.94 (Walmart). ~51% margin at an est. $7/pair mill cost. Tech pack K02 in docs/tech-pack-socks.md.
 - **Role:** a cheap add-on that raises order value. Margin % is high, but it's only ~$7 per pair after fees and shipping.
 
 ## 5. Hats

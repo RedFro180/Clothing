@@ -19,8 +19,12 @@
   const LIVE = CAT.types.filter(t => P.some(p => p.type === t.id));
   const ONE_BY = {};
   LIVE.forEach(t => { const pr = [...new Set(P.filter(p => p.type === t.id).map(p => p.price))]; if (pr.length === 1) ONE_BY[t.id] = pr[0]; });
-  const EACH = LIVE.length > 0 && LIVE.every(t => ONE_BY[t.id] != null);   // every type has a single price
-  const onePrice = p => ONE_BY[p.type] != null;
+  // one price per item kind (Crew socks $24, Ankle socks $16...): cards still hide prices when each kind has a single price
+  const KIND = {}; P.forEach(p => { (KIND[p.typeLabel] = KIND[p.typeLabel] || new Set()).add(p.price); });
+  const EACH = LIVE.length > 0 && Object.values(KIND).every(s => s.size === 1);
+  const onePrice = p => KIND[p.typeLabel].size === 1;
+  const MIN_BY = {}, MAX_BY = {};
+  LIVE.forEach(t => { const pr = P.filter(p => p.type === t.id).map(p => p.price); MIN_BY[t.id] = Math.min(...pr); MAX_BY[t.id] = Math.max(...pr); });
   const ONE = LIVE.length === 1 && EACH ? ONE_BY[LIVE[0].id] : null;       // only one type in the shop: say "Every hoodie $150"
   const shipLine = () => {
     const f = Number(C.SHIPPING_FLAT) || 0, q = Number(C.FREE_SHIP_QTY) || 0, o = Number(C.FREE_SHIP_OVER) || 0;
@@ -54,7 +58,7 @@
       el("span", { class: "spin-ico", "aria-hidden": "true", text: "\u21BB" }));
     const c = el("button", { class: "card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. Left and right arrows turn it.`, onclick: () => openProduct(p) },
       stage,
-      onePrice(p) ? null : el("p", { class: "price", text: money(p.price) }),
+      ONE_BY[p.type] != null ? null : el("p", { class: "price", text: money(p.price) }),
       el("h3", { text: p.name }),
       el("div", { class: "row" },
         el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), `${p.color} · ${p.typeLabel}`)));
@@ -113,7 +117,7 @@
     const items = list.map(p => el("button", { class: "ring-card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. View`, onclick: () => openProduct(p) },
       el("div", { class: "tile" }, el("img", { src: p.img, alt: `${p.color} ${p.typeLabel.toLowerCase()}: ${p.name}`, width: 560, height: 570, draggable: "false" })),
       el("span", { class: "shadow", "aria-hidden": "true" }),
-      onePrice(p) ? null : el("p", { class: "price", text: money(p.price) })));
+      ONE_BY[p.type] != null ? null : el("p", { class: "price", text: money(p.price) })));
     box.append(...items);
     const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     const speed = (Math.PI * 2) / ((Number(C.HERO_SPEED) || 40) * 1000);   // radians per ms
@@ -194,7 +198,7 @@
       if (sel.id === "fTheme" && o.value) label = label.split(" & ")[0];          // short theme names on the buttons ("Morgue", "Rot"...)
       const dot = sel.id === "fColor";                                              // colors are swatch dots ("All" = a mixed dot); names stay for screen readers
       if (dot && !o.value) label = "All colors";
-      const tabPrice = sel.id === "fCat" && o.value && ONE_BY[o.value] != null ? money(ONE_BY[o.value]) : "";
+      const tabPrice = sel.id !== "fCat" || !o.value ? "" : ONE_BY[o.value] != null ? money(ONE_BY[o.value]) : MIN_BY[o.value] != null ? `from ${money(MIN_BY[o.value])}` : "";
       const b = el("button", { type: "button", class: "chip" + (soon ? " is-soon" : "") + (dot ? " dot" : ""), role: "radio", "data-v": o.value,
           "aria-label": tabPrice ? `${full}, ${tabPrice} each` : dot ? label : o.text, title: dot ? label : label !== full ? full : null },
         dot ? el("span", { class: "sw" + (o.value ? "" : " sw-all"), style: o.value ? `background:${colorHex[o.value]}` : null }) : null,
@@ -279,7 +283,7 @@
     else list = mixTypes(list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id));
     const tt = type || (LIVE.length === 1 ? LIVE[0] : null);
     $("#resultCount").textContent = `${list.length} ${tt ? (list.length === 1 ? tt.one : tt.many) : (list.length === 1 ? "item" : "items")}`
-      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : "") + (fColor.value ? ` · ${fColor.value}` : "");
+      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : tt && MIN_BY[tt.id] != null ? ` · ${money(MIN_BY[tt.id])}–${money(MAX_BY[tt.id])}` : "") + (fColor.value ? ` · ${fColor.value}` : "");
     priceTag(type);
     if (!list.length) {
       const tips = ["skull", "coffin", "grief", "gym", "rot", "black"];
@@ -346,7 +350,9 @@
     $("#pdMeta").textContent = [p.featured ? C.FEATURED_LABEL : "", CAT.themes[p.theme], p.placement].filter(Boolean).join(" · ");
     $("#pdName").textContent = p.name; $("#pdSub").textContent = p.sub || "";
     const tp = typeOf(p.type);
-    $("#pdPrice").replaceChildren(money(p.price), onePrice(p) ? el("span", { class: "same-price", text: `Same price for every ${p.type === "hats" ? "hat" : p.type === "underwear" ? "pair of boxers" : p.type === "socks" ? "pair of socks" : tp.one}` }) : "");
+    const kindWord = ONE_BY[p.type] != null ? (p.type === "hats" ? "hat" : p.type === "underwear" ? "pair of boxers" : p.type === "socks" ? "pair of socks" : tp.one)
+      : (p.type === "socks" ? `pair of ${p.typeLabel.toLowerCase()}` : p.typeLabel.toLowerCase());
+    $("#pdPrice").replaceChildren(money(p.price), onePrice(p) ? el("span", { class: "same-price", text: `Same price for every ${kindWord}` }) : "");
     $("#pdShip").textContent = shipLine();
     drawAlso(p);
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
@@ -429,7 +435,7 @@
   const designOf = q => q.design != null ? q.design : q.id % 1000;
   function drawAlso(p) {
     const list = P.filter(q => designOf(q) === designOf(p))
-      .sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type) || a.typeLabel.localeCompare(b.typeLabel));
+      .sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type) || b.price - a.price || a.typeLabel.localeCompare(b.typeLabel));
     $("#pdAlso").hidden = list.length < 2;
     if (list.length < 2) { $("#pdAlsoList").replaceChildren(); return; }
     $("#pdAlsoK").textContent = `Also in this design · ${p.color}`;
@@ -507,7 +513,7 @@
     const list = (store.get("recent") || []).map(id => byId[id]).filter(Boolean);
     $("#rvList").replaceChildren(...(list.length ? list.map(p => el("button", { type: "button", class: "rv-item", onclick: () => { rv.close(); openProduct(p); } },
       el("div", { class: "tile" }, el("img", { src: p.img, alt: "" })),
-      el("span", { class: "rv-name", text: p.name }), onePrice(p) ? null : el("span", { class: "rv-price", text: money(p.price) })))
+      el("span", { class: "rv-name", text: p.name }), ONE_BY[p.type] != null ? null : el("span", { class: "rv-price", text: money(p.price) })))
       : [el("p", { class: "note", text: "Nothing yet. Hoodies you open show up here." })]));
   }
   $("#rvBtn").hidden = !(store.get("recent") || []).length;
