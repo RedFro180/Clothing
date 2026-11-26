@@ -1098,3 +1098,23 @@ dialog.pd.one-size fieldset.sizes { display: none; }
   #filters .chips.tabs .chip { height: 54px; flex-direction: column; justify-content: center; gap: 3px; padding: 0 6px; border-radius: 16px; font-size: 14px; }
   #filters .chips.tabs .tp { font-size: 12px; }
 }
+
+/* ===== POLICIES PAGE (2026-11-26) + legal bits ===== */
+body.policies { background: radial-gradient(ellipse at 50% 0%, #2a2420 0%, #0f0d0c 60%) fixed, #0f0d0c; }
+.pol { max-width: 760px; margin: 0 auto; padding: 40px clamp(18px, 5vw, 40px) 80px; color: #d9d1c3; font: 400 16px/1.6 var(--sans); }
+.pol .sec-title { margin: 0 0 6px; }
+.pol-meta { color: #8f8578; font-size: 13px; margin: 0 0 18px; }
+.pol-toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+.pol-toc a { padding: 8px 14px; border: 1px solid rgba(236,229,216,.18); border-radius: 999px; color: #ece5d8; text-decoration: none; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; }
+.pol-toc a:hover { border-color: rgba(236,229,216,.45); }
+.pol section { padding: 22px 0; border-top: 1px solid rgba(236,229,216,.12); scroll-margin-top: 80px; }
+.pol h2 { font: 600 22px/1.2 var(--sans); color: #ece5d8; margin: 0 0 10px; }
+.pol ul { padding-left: 20px; margin: 8px 0; } .pol li { margin: 6px 0; }
+.pol strong { color: #ece5d8; }
+.pol a { color: #e6c9a8; }
+.pol .crisis { margin-top: 30px; }
+.foot-sign p a, .legal a { color: inherit; }
+[data-business]:empty { display: none; }
+.agree a { color: inherit; text-decoration: underline; }
+/* bug fix (2026-11-26 audit): a later rule set the product pop-up to display:flex even while closed, leaving an empty pop-up below the footer */
+dialog:not([open]) { display: none !important; }

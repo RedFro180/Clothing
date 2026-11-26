@@ -21,6 +21,10 @@ if (C) {
   if (str("BRAND") && C.BRAND === "Brand Name") warn("config.js: BRAND is still the placeholder \"Brand Name\".");
   if (str("CONTACT_EMAIL") && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(C.CONTACT_EMAIL)) err("config.js: CONTACT_EMAIL is not a valid email.");
   if (str("CONTACT_EMAIL") && /example\.com$/.test(C.CONTACT_EMAIL)) warn("config.js: CONTACT_EMAIL is still the example address.");
+  const blank = k => !(typeof C[k] === "string" && C[k].trim());
+  if (blank("BUSINESS_NAME") || blank("BUSINESS_ADDRESS")) warn("config.js: BUSINESS_NAME / BUSINESS_ADDRESS are empty (policies page, footer, CAN-SPAM).");
+  if (blank("SHIP_WINDOW")) warn("config.js: SHIP_WINDOW is empty: with no stated ship time the FTC Mail Order Rule expects shipping within 30 days.");
+  if (blank("ORIGIN")) warn("config.js: ORIGIN is empty: online listings should say Made in USA or Imported (FTC Textile Rule).");
   if (C.FEATURED_LABEL && /best ?sell/i.test(C.FEATURED_LABEL)) warn("config.js: FEATURED_LABEL says best seller. Only use that once real sales back it up.");
   if (C.FREE_SHIP_OVER !== undefined && !(typeof C.FREE_SHIP_OVER === "number" && C.FREE_SHIP_OVER >= 0)) err("config.js: FREE_SHIP_OVER must be a number of 0 or more (no quotes).");
   for (const k of ["SHIPPING_FLAT", "FREE_SHIP_QTY", "MAX_QTY_PER_ITEM", "MAX_ITEMS_PER_ORDER", "LARGE_ORDER_ITEMS", "HERO_SPEED"])

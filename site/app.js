@@ -31,6 +31,8 @@
     if (!f) return "Free shipping";
     return o ? `${money(f)} shipping · free on orders ${money(o)}+` : q ? `${money(f)} shipping · free on ${q}+ items` : `${money(f)} shipping`;
   };
+  const cfg = k => (typeof C[k] === "string" ? C[k].trim() : "");
+  const SHIP_WINDOW = cfg("SHIP_WINDOW"), ORIGIN = cfg("ORIGIN");
   const MAXQ = Math.max(1, Number(C.MAX_QTY_PER_ITEM) || 3), MAXN = Math.max(1, Number(C.MAX_ITEMS_PER_ORDER) || 8);
   const LARGE = Number(C.LARGE_ORDER_ITEMS) || 4;
   const clampQ = n => Math.max(1, Math.min(MAXQ, parseInt(n, 10) || 1));
@@ -48,17 +50,19 @@
   $("#year").textContent = new Date().getFullYear();
 
   // ---------- cards ----------
+  if (!document.getElementById("spinHint")) document.querySelector("main").append(el("p", { id: "spinHint", class: "sr", text: "Left and right arrows turn it." }));
   function card(p) {
     const back = (p.imgs && p.imgs[1] && p.imgs[1].src) || p.img;
     const stage = el("div", { class: "stage" },
       el("div", { class: "turn" },
-        el("img", { class: "face front", src: p.img, alt: `${p.color} ${p.typeLabel.toLowerCase()}, ${p.placement.toLowerCase()}: ${p.name}`, loading: "lazy", width: 560, height: 570, draggable: "false" }),
+        el("img", { class: "face front", src: p.img, alt: "", loading: "lazy", width: 560, height: 570, draggable: "false" }),
         el("img", { class: "face back", "data-src": back, alt: "", width: 560, height: 570, draggable: "false" })),
       el("span", { class: "shadow", "aria-hidden": "true" }),
       el("span", { class: "spin-ico", "aria-hidden": "true", text: "\u21BB" }));
-    const c = el("button", { class: "card", type: "button", "aria-label": `${p.name}, ${p.color}, ${money(p.price)}. Left and right arrows turn it.`, onclick: () => openProduct(p) },
+    // accessible name = the visible text (WCAG 2.5.3); price stays for screen readers even when it's hidden on the card
+    const c = el("button", { class: "card", type: "button", "aria-describedby": "spinHint", onclick: () => openProduct(p) },
       stage,
-      ONE_BY[p.type] != null ? null : el("p", { class: "price", text: money(p.price) }),
+      ONE_BY[p.type] != null ? el("span", { class: "sr", text: money(p.price) + "," }) : el("p", { class: "price", text: money(p.price) }),
       el("h3", { text: p.name }),
       el("div", { class: "row" },
         el("span", {}, el("span", { class: "swatch", style: `background:${p.hex}` }), `${p.color} · ${p.typeLabel}`)));
@@ -353,7 +357,7 @@
     const kindWord = ONE_BY[p.type] != null ? (p.type === "hats" ? "hat" : p.type === "underwear" ? "pair of boxers" : p.type === "socks" ? "pair of socks" : tp.one)
       : (p.type === "socks" ? `pair of ${p.typeLabel.toLowerCase()}` : p.typeLabel.toLowerCase());
     $("#pdPrice").replaceChildren(money(p.price), onePrice(p) ? el("span", { class: "same-price", text: `Same price for every ${kindWord}` }) : "");
-    $("#pdShip").textContent = shipLine();
+    $("#pdShip").textContent = shipLine() + (SHIP_WINDOW ? ` · ${SHIP_WINDOW}` : "");
     drawAlso(p);
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
     const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
@@ -373,7 +377,7 @@
     // short screens: keep the Add button in view by putting the notes right under it (they're still on screen next to it)
     if (innerHeight < 700) $("#pdAdd").after($("#pdNotes")); else $("#sizeNote").after($("#pdNotes"));
     $("#pdBody").scrollTop = 0; pd.scrollTop = 0;
-    $("#pdDetails").replaceChildren(...(p.details || []).map(s => el("li", { text: s })));
+    $("#pdDetails").replaceChildren(...[...(p.details || []), ...(ORIGIN ? [ORIGIN] : [])].map(s => el("li", { text: s })));
     if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
     remember(p.id);
     if (!pd.open) pd.showModal();
@@ -661,7 +665,7 @@
       el("div", { class: "sum" }, el("span", { text: "Subtotal" }), el("span", { text: money(sub) })),
       el("div", { class: "sum" }, el("span", { text: "Shipping" }), el("span", { text: ship ? money(ship) : "Free" })),
       el("div", { class: "sum total" }, el("span", { text: "Estimated total" }), el("span", { text: money(sub + ship) })),
-      el("p", { class: "note", text: "Nothing is charged now." })] : []));
+      el("p", { class: "note", text: "Plus sales tax where it applies. Nothing is charged now." + (SHIP_WINDOW ? ` ${SHIP_WINDOW}.` : "") })] : []));
     $("#reqForm").hidden = !bag.length;
     const qn = bagQty();
     $("#orderFlag").hidden = qn < LARGE;
@@ -750,7 +754,10 @@
 
   $("#heroShip").replaceChildren(...(ONE ? [el("strong", { text: `Every ${LIVE[0].one} ${money(ONE)}` }), " · "] : EACH ? [el("strong", { text: "One price per item" }), " · "] : []), shipLine());
   const sf = document.querySelector("[data-ship-faq]");
-  if (sf) sf.textContent = `${shipLine()}. Shipping is shown on each product and in your preorder list before you send anything.`;
+  if (sf) sf.textContent = `${shipLine()}. ${SHIP_WINDOW ? SHIP_WINDOW + ". " : ""}Shipping is shown on each product and in your preorder list before you send anything. US only for now.`;
+  // footer legal line: business name + address once set
+  const legal = document.querySelector("[data-business]");
+  if (legal) legal.textContent = [cfg("BUSINESS_NAME"), cfg("BUSINESS_ADDRESS")].filter(Boolean).join(" · ");
 
   updateCount(); render(); fromHash();
 })();

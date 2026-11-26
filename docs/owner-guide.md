@@ -65,3 +65,21 @@ What the site can and can't protect:
 5. **Update it:** make a new zip and upload it to the same project (same link). **Take it down:** delete the project; the link stops working.
 
 Honest limits: the link isn't a lock. Anyone who has it can open and forward it. To limit it to specific people, add **Cloudflare Access** (Zero Trust → Access → allow only their email); they then enter a one-time code from their email before it opens.
+
+## 7. Before you take real orders: fill these in (2026-11-26 audit)
+
+Open `tools/admin.html` (or edit `site/config.js`). The checker (`node tools/check_site.js`) warns until each is set.
+
+| Setting | Why |
+|---|---|
+| `BUSINESS_NAME`, `BUSINESS_ADDRESS` | Shown on the policies page and in the footer. Card networks, Shopify, TikTok Shop and ad platforms expect a business name and contact address. Every marketing email must include a postal address (CAN-SPAM); a registered PO box is allowed. |
+| `SHIP_WINDOW` (e.g. "Ships 4–6 weeks after payment") | FTC Mail, Internet, or Telephone Order Rule: if you don't state a ship time you must be able to ship within 30 days, and if you'll miss the time you must get the buyer's consent to the delay or refund them. |
+| `ORIGIN` ("Made in USA" / "Imported") | Shown on every product. The FTC Textile Rule covers country of origin in mail-order (online) advertising (16 CFR 303.34). "Made in USA" must be all or virtually all US-made. |
+| `CONTACT_EMAIL`, `FORM_ENDPOINT` | Real inbox; a form service so preorders arrive without the shopper's email app. |
+| `SHIPPING_FLAT` | $9 is a placeholder. Weigh a packed hoodie. |
+| `POLICY_UPDATED` | Date shown on the policies page. |
+| Size charts | Every item's size guide still says "coming soon"; all sales are final, so buyers need these. |
+
+`site/policies.html` holds Terms of sale, Shipping, Returns, Privacy and Contact. It fills itself from config. **It is a starting template, not legal advice: have a lawyer review it before launch**, and update it when you add services (payments, email tool, SMS, analytics).
+
+Also: "paper packaging" is what the site claims. Most shipping labels and tape are plastic film or use synthetic adhesive, so use paper tape and paper labels, and keep supplier spec sheets for every "no plastic" claim (FTC Green Guides: environmental claims need proof).

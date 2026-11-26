@@ -61,6 +61,11 @@
       <label>Top-row label <small>Keep "Featured" until real sales</small><input type="text" data-k="FEATURED_LABEL" maxlength="24"></label>
       <label>Instagram link <small>https://instagram.com/…</small><input type="url" data-k="INSTAGRAM"></label>
       <label>TikTok link <small>https://tiktok.com/@…</small><input type="url" data-k="TIKTOK"></label>
+      <label>Business legal name <small>e.g. Your Name LLC</small><input type="text" data-k="BUSINESS_NAME" maxlength="80"></label>
+      <label>Mailing address <small>Street or registered PO box</small><input type="text" data-k="BUSINESS_ADDRESS" maxlength="160"></label>
+      <label>Ship time <small>e.g. Ships 4–6 weeks after payment</small><input type="text" data-k="SHIP_WINDOW" maxlength="80"></label>
+      <label>Made in <small>e.g. Made in USA / Imported</small><input type="text" data-k="ORIGIN" maxlength="60"></label>
+      <label>Policies last updated <small>e.g. 2026-12-01</small><input type="text" data-k="POLICY_UPDATED" maxlength="20"></label>
     </div></section>
 
   <section><h2>Orders, shipping &amp; protection</h2><p class="hint">Limits stop huge or fake orders. Large orders still come in, marked [LARGE] so you verify before taking payment.</p>
@@ -170,6 +175,12 @@ window.SITE_CONFIG = {
   // Where preorder / notify-me requests go. "" = the shopper's email app opens instead.
   FORM_ENDPOINT: ${q(C.FORM_ENDPOINT || "")},
   CONTACT_EMAIL: ${q(C.CONTACT_EMAIL)},
+  // Business details (policies page, footer). Ship time: FTC Mail Order Rule. Origin: shown on every product.
+  BUSINESS_NAME: ${q(C.BUSINESS_NAME || "")},
+  BUSINESS_ADDRESS: ${q(C.BUSINESS_ADDRESS || "")},
+  SHIP_WINDOW: ${q(C.SHIP_WINDOW || "")},
+  ORIGIN: ${q(C.ORIGIN || "")},
+  POLICY_UPDATED: ${q(C.POLICY_UPDATED || "")},
   CURRENCY: ${q(C.CURRENCY || "USD")},
   // Social links for the footer. "" hides them.
   INSTAGRAM: ${q(C.INSTAGRAM || "")},

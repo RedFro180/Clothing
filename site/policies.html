@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Policies | Brand Name</title>
+<meta name="description" content="Privacy, terms of sale, shipping, returns and contact.">
+<meta name="theme-color" content="#0f0d0c">
+<meta name="robots" content="index, follow, noai, noimageai">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<!--
+  Policies template. Blanks are filled from config.js (BUSINESS_NAME, BUSINESS_ADDRESS, CONTACT_EMAIL, SHIP_WINDOW,
+  SHIPPING_FLAT, FREE_SHIP_OVER, POLICY_UPDATED). NOT LEGAL ADVICE: have a lawyer review this page before you take real orders,
+  and update it if you start using new services (payments, email tools, SMS, analytics).
+-->
+</head>
+<body class="policies">
+<header class="top">
+  <a class="brand" href="index.html" data-brand>Brand</a>
+  <nav><a href="index.html#shop">Shop</a><a href="index.html#help">Help</a></nav>
+</header>
+<main class="pol">
+  <h1 class="sec-title">Policies</h1>
+  <p class="pol-meta">Last updated <span data-c="POLICY_UPDATED" data-fallback="(date to be set)"></span></p>
+  <nav class="pol-toc" aria-label="On this page">
+    <a href="#terms">Terms of sale</a><a href="#shipping">Shipping</a><a href="#returns">Returns</a><a href="#privacy">Privacy</a><a href="#contact">Contact</a>
+  </nav>
+
+  <section id="terms"><h2>Terms of sale</h2>
+    <p>This shop is run by <strong data-c="BUSINESS_NAME" data-fallback="(business name to be set)"></strong>. By sending a preorder request you agree to these terms.</p>
+    <ul>
+      <li><strong>Preorders.</strong> Sending a preorder request does not charge you. We reply by email with a payment link and a ship date. Your order is confirmed only when you pay.</li>
+      <li><strong>Made in small batches.</strong> <span data-c="SHIP_WINDOW" data-fallback="We ship within 30 days of payment"></span>. If we can't ship on time, we'll email you a new date before the old one passes and you can choose to wait or get a full refund.</li>
+      <li><strong>Prices</strong> are in US dollars. Sales tax is added at payment where the law requires it.</li>
+      <li><strong>Pictures</strong> are mockups until real photos are added. Natural dyes vary from batch to batch, so colors and prints can differ a little from what you see.</li>
+      <li><strong>Order limits.</strong> We may limit quantities, and we may cancel and refund any order we can't fill or that looks fraudulent.</li>
+    </ul></section>
+
+  <section id="shipping"><h2>Shipping</h2>
+    <ul>
+      <li><strong>Cost:</strong> <span data-ship-line>shown on each product and in your preorder list</span>.</li>
+      <li><strong>When:</strong> <span data-c="SHIP_WINDOW" data-fallback="We ship within 30 days of payment"></span>. You get a tracking number by email when it ships.</li>
+      <li><strong>Where:</strong> United States only for now.</li>
+      <li><strong>Lost or damaged:</strong> email us within 7 days of the delivery date (or the expected date, if it never arrived) and we'll fix it.</li>
+      <li><strong>Packaging:</strong> paper packaging.</li>
+    </ul></section>
+
+  <section id="returns"><h2>Returns</h2>
+    <ul>
+      <li><strong>All sales are final.</strong> Please check the size guide on each product before ordering. We don't take returns or exchanges for fit or change of mind.</li>
+      <li><strong>Our mistakes are on us.</strong> If we send the wrong item, or it arrives damaged or never arrives, email us within 7 days and we'll replace it or refund you.</li>
+      <li><strong>Underwear and socks</strong> are final sale for hygiene reasons, except for the cases above.</li>
+      <li><strong>Latex:</strong> boxers and sweatpants have natural rubber in the waistband. Don't buy them if you have a latex allergy.</li>
+    </ul></section>
+
+  <section id="privacy"><h2>Privacy</h2>
+    <p><strong>What we collect.</strong></p>
+    <ul>
+      <li><strong>When you send a preorder or restock request:</strong> your name, email, the items, sizes and anything you write. Used only to handle your order or tell you about that restock.</li>
+      <li><strong>When you join drop alerts:</strong> your email. Used only to tell you about new designs and restocks. Every email has an unsubscribe link.</li>
+      <li><strong>Shop stats:</strong> anonymous counts, like which products are viewed and what gets added to preorder lists. No cookies, and no names, emails or phone numbers go into these stats.</li>
+      <li><strong>On your device:</strong> your preorder list, recently viewed items and last size are saved in your browser only. Clearing your browser data removes them.</li>
+    </ul>
+    <p><strong>What we don't do.</strong> We don't sell or rent your information, and we don't share it except with the services that run the shop (email, order forms, payment and shipping), only to do those jobs.</p>
+    <p><strong>Your choices.</strong> Email us to see, correct or delete what we have about you, or to stop emails. We'll reply within 30 days.</p>
+    <p><strong>Kids.</strong> This shop isn't meant for children under 13, and we don't knowingly collect their information.</p>
+    <p><strong>Changes.</strong> If this policy changes, the date at the top changes too.</p></section>
+
+  <section id="contact"><h2>Contact</h2>
+    <p><span data-c="BUSINESS_NAME" data-fallback="(business name to be set)"></span><br>
+      <span data-c="BUSINESS_ADDRESS" data-fallback="(mailing address to be set)"></span><br>
+      Email: <a data-contact href="#"></a></p></section>
+
+  <p class="crisis">If it's more than a joke tonight: call or text <strong>988</strong> (US Suicide &amp; Crisis Lifeline), or text <strong>HOME</strong> to <strong>741741</strong>.</p>
+</main>
+<script src="config.js"></script>
+<script src="policies.js"></script>
+</body>
+</html>

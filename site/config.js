@@ -9,6 +9,13 @@ window.SITE_CONFIG = {
   // FORM_ENDPOINT: a form service URL (e.g. a Formspree form URL). Leave "" to use email instead.
   FORM_ENDPOINT: "",
   CONTACT_EMAIL: "hello@example.com",  // replace with your shop email
+  // Business details for the policies page and footer. Card networks, Shopify, TikTok Shop and ad platforms expect these.
+  BUSINESS_NAME: "",                   // legal name, e.g. "Your Name LLC"
+  BUSINESS_ADDRESS: "",                // mailing address or registered PO box (also required in marketing emails: CAN-SPAM)
+  // Ship time stated to buyers (FTC Mail Order Rule: if none is stated you must be able to ship within 30 days).
+  SHIP_WINDOW: "",                     // e.g. "Ships 4–6 weeks after payment"
+  ORIGIN: "",                          // country of origin shown on every product, e.g. "Made in USA" or "Imported"
+  POLICY_UPDATED: "",                  // date the policies were last updated, e.g. "2026-12-01"
   CURRENCY: "USD",
   // Shipping shown on products and in the preorder list. PLACEHOLDERS: set your real numbers.
   SHIPPING_FLAT: 9,                    // dollars per order
