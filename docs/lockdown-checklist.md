@@ -28,7 +28,7 @@ Do these once, in order, and keep this file. Each step says **where** to click.
   - [ ] Production branch: **`main`** only.
   - [ ] **Turn off automatic production deployments.** Then nothing goes live until **you** press "Deploy" in Cloudflare, even if someone or something changes GitHub.
   - [ ] Preview deployments: off, or protect them with **Cloudflare Access** (Zero Trust → Access → add your email only) so only you can see previews.
-- [ ] Security → Bots → turn on **Block AI bots / AI Scrapers and Crawlers** and **Bot Fight Mode**. It's free, and it catches bots that ignore `robots.txt` ([Cloudflare](https://blog.cloudflare.com/declaring-your-aindependence-block-ai-bots-scrapers-and-crawlers-with-a-single-click/)).
+- [ ] Security → Settings → **Configure AI bot policies** (Cloudflare replaced the single "Block AI bots" switch with separate Search / Training / Agent controls in 2026): set **Search: Allow**, **Training: Disallow AI Training** (not "Block": Block also removes Googlebot from search), **Agents: Allow**. Turn on **Bot Fight Mode**. ([Cloudflare docs](https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/), [Cloudflare blog](https://blog.cloudflare.com/accountable-mixed-use-ai-crawlers/))
 - [ ] Manage account → Members → **only you**.
 - [ ] Bookmark **Deployments → Rollback**. If anything ever looks wrong, roll back first, then investigate.
 
@@ -49,7 +49,7 @@ Do these once, in order, and keep this file. Each step says **where** to click.
   - HTTPS forced
 - **No injection:** no part of the page is ever built from what a visitor types.
 - **Order protection:** limits, bot trap, rate limit, order numbers, a recorded final-sale agreement, and prices always taken from the catalog.
-- **AI crawlers:** `robots.txt` blocks the known ones (OpenAI, Anthropic, Google-Extended, Common Crawl, Perplexity, ByteDance, Meta, Apple-Extended, Amazon and others). The `noai` / `noimageai` tags ask the rest not to use the content. Normal Google and Bing search still work, so customers can find you.
+- **AI crawlers:** `robots.txt` blocks AI *training* crawlers (OpenAI GPTBot, Anthropic ClaudeBot, Google-Extended, Common Crawl, ByteDance, Meta, Apple-Extended, Amazon and others) and allows AI *search/shopping* bots (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) so products can be found and linked in AI assistants (user decision 2026-11-26). The `noai` / `noimageai` tags stay.
 - **Automatic check:** every push runs the GitHub **Site safety check** (settings checker, abuse tests, 50 simulated shoppers). A red ✗ means don't deploy.
 
 ## Honest limits
