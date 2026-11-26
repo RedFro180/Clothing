@@ -22,6 +22,7 @@ if (C) {
   if (str("CONTACT_EMAIL") && !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(C.CONTACT_EMAIL)) err("config.js: CONTACT_EMAIL is not a valid email.");
   if (str("CONTACT_EMAIL") && /example\.com$/.test(C.CONTACT_EMAIL)) warn("config.js: CONTACT_EMAIL is still the example address.");
   if (C.FEATURED_LABEL && /best ?sell/i.test(C.FEATURED_LABEL)) warn("config.js: FEATURED_LABEL says best seller. Only use that once real sales back it up.");
+  if (C.FREE_SHIP_OVER !== undefined && !(typeof C.FREE_SHIP_OVER === "number" && C.FREE_SHIP_OVER >= 0)) err("config.js: FREE_SHIP_OVER must be a number of 0 or more (no quotes).");
   for (const k of ["SHIPPING_FLAT", "FREE_SHIP_QTY", "MAX_QTY_PER_ITEM", "MAX_ITEMS_PER_ORDER", "LARGE_ORDER_ITEMS", "HERO_SPEED"])
     if (!num(k) || C[k] < 0) err(`config.js: ${k} must be a number of 0 or more (no quotes).`);
   if (num("MAX_QTY_PER_ITEM") && C.MAX_QTY_PER_ITEM < 1) err("config.js: MAX_QTY_PER_ITEM must be at least 1.");

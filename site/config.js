@@ -12,7 +12,8 @@ window.SITE_CONFIG = {
   CURRENCY: "USD",
   // Shipping shown on products and in the preorder list. PLACEHOLDERS: set your real numbers.
   SHIPPING_FLAT: 9,                    // dollars per order
-  FREE_SHIP_QTY: 2,                    // free shipping when the order has this many hoodies (0 = never)
+  FREE_SHIP_OVER: 200,                 // free shipping when the order subtotal is this many dollars or more (0 = off)
+  FREE_SHIP_QTY: 0,                    // or: free shipping at this many items (0 = off). Item counts include cheap socks, so dollars is safer.
   // Private analytics (only you see it). Make a free PostHog account, copy the "Project API key", paste it here.
   POSTHOG_KEY: "",
   POSTHOG_HOST: "https://us.i.posthog.com",

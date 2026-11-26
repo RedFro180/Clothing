@@ -23,9 +23,9 @@
   const onePrice = p => ONE_BY[p.type] != null;
   const ONE = LIVE.length === 1 && EACH ? ONE_BY[LIVE[0].id] : null;       // only one type in the shop: say "Every hoodie $150"
   const shipLine = () => {
-    const f = Number(C.SHIPPING_FLAT) || 0, q = C.FREE_SHIP_QTY;
+    const f = Number(C.SHIPPING_FLAT) || 0, q = Number(C.FREE_SHIP_QTY) || 0, o = Number(C.FREE_SHIP_OVER) || 0;
     if (!f) return "Free shipping";
-    return q ? `${money(f)} shipping · free on ${q}+` : `${money(f)} shipping`;
+    return o ? `${money(f)} shipping · free on orders ${money(o)}+` : q ? `${money(f)} shipping · free on ${q}+ items` : `${money(f)} shipping`;
   };
   const MAXQ = Math.max(1, Number(C.MAX_QTY_PER_ITEM) || 3), MAXN = Math.max(1, Number(C.MAX_ITEMS_PER_ORDER) || 8);
   const LARGE = Number(C.LARGE_ORDER_ITEMS) || 4;
@@ -586,7 +586,8 @@
   const bagEl = $("#bag");
   function shipping(qty, subtotal) {
     if (!qty) return 0;
-    if (C.FREE_SHIP_QTY && qty >= C.FREE_SHIP_QTY) return 0;
+    const over = Number(C.FREE_SHIP_OVER) || 0, q = Number(C.FREE_SHIP_QTY) || 0;
+    if ((over && subtotal >= over) || (q && qty >= q)) return 0;
     return Number(C.SHIPPING_FLAT) || 0;
   }
   function drawBag() {
@@ -603,10 +604,12 @@
           onchange: e => { const others = bagQty() - i.qty; i.qty = Math.min(clampQ(e.target.value), MAXN - others); save(); drawBag(); } })));
     });
     const sub = bag.reduce((s, i) => s + byId[i.id].price * i.qty, 0), qty = bag.reduce((s, i) => s + i.qty, 0);
-    const ship = shipping(qty, sub), need = C.FREE_SHIP_QTY ? C.FREE_SHIP_QTY - qty : 0;
+    const ship = shipping(qty, sub), over = Number(C.FREE_SHIP_OVER) || 0, fq = Number(C.FREE_SHIP_QTY) || 0;
+    const needD = over ? over - sub : 0, need = fq ? fq - qty : 0, hasRule = !!(over || fq);
     $("#bagTotal").replaceChildren(...(bag.length ? [
-      need > 0 ? el("p", { class: "ship-nudge", text: `Add ${need} more item${need > 1 ? "s" : ""} for free shipping.` })
-               : C.FREE_SHIP_QTY ? el("p", { class: "ship-nudge ok", text: "You've got free shipping." }) : null,
+      ship && over && needD > 0 ? el("p", { class: "ship-nudge", text: `Add ${money(needD)} more for free shipping.` })
+      : ship && fq && need > 0 ? el("p", { class: "ship-nudge", text: `Add ${need} more item${need > 1 ? "s" : ""} for free shipping.` })
+      : hasRule && !ship ? el("p", { class: "ship-nudge ok", text: "You've got free shipping." }) : null,
       el("div", { class: "sum" }, el("span", { text: "Subtotal" }), el("span", { text: money(sub) })),
       el("div", { class: "sum" }, el("span", { text: "Shipping" }), el("span", { text: ship ? money(ship) : "Free" })),
       el("div", { class: "sum total" }, el("span", { text: "Estimated total" }), el("span", { text: money(sub + ship) })),

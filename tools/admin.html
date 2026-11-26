@@ -66,7 +66,8 @@
   <section><h2>Orders, shipping &amp; protection</h2><p class="hint">Limits stop huge or fake orders. Large orders still come in, marked [LARGE] so you verify before taking payment.</p>
     <div class="grid">
       <label>Shipping per order ($) <input type="number" min="0" step="1" data-k="SHIPPING_FLAT" data-num></label>
-      <label>Free shipping at (items) <small>0 = never</small><input type="number" min="0" step="1" data-k="FREE_SHIP_QTY" data-num></label>
+      <label>Free shipping on orders of ($) <small>0 = off</small><input type="number" min="0" step="1" data-k="FREE_SHIP_OVER" data-num></label>
+      <label>Or free shipping at (items) <small>0 = off</small><input type="number" min="0" step="1" data-k="FREE_SHIP_QTY" data-num></label>
       <label>Max of one design + size <input type="number" min="1" step="1" data-k="MAX_QTY_PER_ITEM" data-num></label>
       <label>Max items per order <input type="number" min="1" step="1" data-k="MAX_ITEMS_PER_ORDER" data-num></label>
       <label>Flag as large order at <input type="number" min="1" step="1" data-k="LARGE_ORDER_ITEMS" data-num></label>
@@ -172,8 +173,9 @@ window.SITE_CONFIG = {
   // Social links for the footer. "" hides them.
   INSTAGRAM: ${q(C.INSTAGRAM || "")},
   TIKTOK: ${q(C.TIKTOK || "")},
-  // Shipping (dollars per order) and free shipping at this many items (0 = never).
+  // Shipping (dollars per order). Free shipping on orders of FREE_SHIP_OVER dollars or more, or at FREE_SHIP_QTY items (0 = off).
   SHIPPING_FLAT: ${Number(C.SHIPPING_FLAT) || 0},
+  FREE_SHIP_OVER: ${Number(C.FREE_SHIP_OVER) || 0},
   FREE_SHIP_QTY: ${Number(C.FREE_SHIP_QTY) || 0},
   // Private analytics (only you see it): PostHog project key.
   POSTHOG_KEY: ${q(C.POSTHOG_KEY || "")},
@@ -205,7 +207,7 @@ ${Object.entries(C.SIZE_CHARTS).map(([t, rows]) => `    ${t}: [\n${rows.map(r =>
     if (!C.BRAND) E.push("Brand name is empty."); else if (C.BRAND === "Brand Name") W.push("Brand name is still the placeholder.");
     if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(C.CONTACT_EMAIL || "")) E.push("Contact email isn't valid.");
     for (const k of ["FORM_ENDPOINT", "INSTAGRAM", "TIKTOK", "POSTHOG_HOST"]) if (C[k] && !/^https:\/\/\S+$/.test(C[k])) E.push(`${k} must start with https://`);
-    for (const k of ["SHIPPING_FLAT", "FREE_SHIP_QTY", "MAX_QTY_PER_ITEM", "MAX_ITEMS_PER_ORDER", "LARGE_ORDER_ITEMS", "HERO_SPEED"])
+    for (const k of ["SHIPPING_FLAT", "FREE_SHIP_OVER", "FREE_SHIP_QTY", "MAX_QTY_PER_ITEM", "MAX_ITEMS_PER_ORDER", "LARGE_ORDER_ITEMS", "HERO_SPEED"])
       if (C[k] === "" || !(Number(C[k]) >= 0)) E.push(`${k} needs a number.`);
     if (Number(C.MAX_QTY_PER_ITEM) < 1 || Number(C.MAX_ITEMS_PER_ORDER) < 1) E.push("Order limits must be at least 1.");
     if (C.POSTHOG_KEY && !/^phc_[A-Za-z0-9]+$/.test(C.POSTHOG_KEY)) E.push("PostHog key should start with phc_.");
