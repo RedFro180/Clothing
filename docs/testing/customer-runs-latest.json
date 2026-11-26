@@ -25,14 +25,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "4.7"
  },
  {
   "i": 2,
@@ -50,7 +50,6 @@
   "submitted": true,
   "mailto": true,
   "friction": [
-   "Send button below the screen in the list",
    "preorder request opens email app; buyer must press send there"
   ],
   "errs": [],
@@ -63,7 +62,7 @@
    "add to preorder list",
    "msg: Added 1 × XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
@@ -99,7 +98,7 @@
    "add to preorder list",
    "msg: Added 1 × XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
@@ -135,14 +134,14 @@
    "add to preorder list",
    "msg: Added 1 × XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "5.2"
  },
  {
   "i": 5,
@@ -170,14 +169,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.7"
+  "secs": "6.2"
  },
  {
   "i": 6,
@@ -212,14 +211,14 @@
    "add",
    "close",
    "open preorder list",
-   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus sales tax where it applies. Nothing is charged now.",
+   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.3"
+  "secs": "6.4"
  },
  {
   "i": 7,
@@ -249,14 +248,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $140 more for free shipping.Subtotal$60Shipping$9Estimated total$69Plus sales tax where it applies. Nothing is charged now.",
+   "Add $140 more for free shipping.Subtotal$60Shipping$9Estimated total$69Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "4.9"
  },
  {
   "i": 8,
@@ -285,14 +284,14 @@
    "msg: Added 1 × L. View list",
    "add a hat from \"Buy it with\"",
    "tap \"View list\"",
-   "Add $10 more for free shipping.Subtotal$190Shipping$9Estimated total$199Plus sales tax where it applies. Nothing is charged now.",
+   "Add $10 more for free shipping.Subtotal$190Shipping$9Estimated total$199Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.5"
+  "secs": "4.9"
  },
  {
   "i": 9,
@@ -322,14 +321,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Plus sales tax where it applies. Nothing is charged now.",
+   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.4"
+  "secs": "6.7"
  },
  {
   "i": 10,
@@ -359,7 +358,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "2.0"
+  "secs": "1.7"
  },
  {
   "i": 11,
@@ -388,14 +387,14 @@
    "add to preorder list",
    "msg: Added 1 × One size. View list",
    "tap \"View list\"",
-   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Plus sales tax where it applies. Nothing is charged now.",
+   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "4.6"
  },
  {
   "i": 12,
@@ -422,14 +421,14 @@
    "add to preorder list",
    "msg: Added 1 × M. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.6"
+  "secs": "4.3"
  },
  {
   "i": 13,
@@ -458,14 +457,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "6.1"
  },
  {
   "i": 14,
@@ -493,14 +492,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.6"
+  "secs": "4.8"
  },
  {
   "i": 15,
@@ -530,14 +529,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "4.7"
  },
  {
   "i": 16,
@@ -566,14 +565,14 @@
    "add to preorder list",
    "msg: Added 1 × M. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.5"
+  "secs": "6.7"
  },
  {
   "i": 17,
@@ -602,14 +601,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "4.8"
  },
  {
   "i": 18,
@@ -637,14 +636,14 @@
    "add to preorder list",
    "msg: Added 1 × M. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "4.6"
  },
  {
   "i": 19,
@@ -679,14 +678,14 @@
    "add",
    "close",
    "open preorder list",
-   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus sales tax where it applies. Nothing is charged now.",
+   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "5.7"
  },
  {
   "i": 20,
@@ -716,14 +715,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $60 more for free shipping.Subtotal$140Shipping$9Estimated total$149Plus sales tax where it applies. Nothing is charged now.",
+   "Add $60 more for free shipping.Subtotal$140Shipping$9Estimated total$149Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 21,
@@ -753,7 +752,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "3.1"
+  "secs": "2.6"
  },
  {
   "i": 22,
@@ -783,14 +782,14 @@
    "add to preorder list",
    "msg: Added 1 × S. View list",
    "tap \"View list\"",
-   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Plus sales tax where it applies. Nothing is charged now.",
+   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.6"
+  "secs": "5.3"
  },
  {
   "i": 23,
@@ -820,7 +819,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "2.3"
+  "secs": "2.7"
  },
  {
   "i": 24,
@@ -850,14 +849,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.8"
+  "secs": "6.7"
  },
  {
   "i": 25,
@@ -885,7 +884,7 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
@@ -921,14 +920,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.0"
+  "secs": "7.1"
  },
  {
   "i": 27,
@@ -956,7 +955,7 @@
    "add to preorder list",
    "msg: Added 1 × M. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
@@ -993,14 +992,14 @@
    "add to preorder list",
    "msg: Added 1 × XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "4.9"
  },
  {
   "i": 29,
@@ -1029,14 +1028,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.2"
  },
  {
   "i": 30,
@@ -1065,14 +1064,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.2"
  },
  {
   "i": 31,
@@ -1090,7 +1089,6 @@
   "submitted": true,
   "mailto": true,
   "friction": [
-   "Send button below the screen in the list",
    "preorder request opens email app; buyer must press send there"
   ],
   "errs": [],
@@ -1101,14 +1099,14 @@
    "add to preorder list",
    "msg: Added 1 × XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.5"
+  "secs": "6.3"
  },
  {
   "i": 32,
@@ -1143,14 +1141,14 @@
    "add",
    "close",
    "open preorder list",
-   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus sales tax where it applies. Nothing is charged now.",
+   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.0"
+  "secs": "5.7"
  },
  {
   "i": 33,
@@ -1180,14 +1178,14 @@
    "add to preorder list",
    "msg: Added 1 × One size. View list",
    "tap \"View list\"",
-   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Plus sales tax where it applies. Nothing is charged now.",
+   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.6"
+  "secs": "4.5"
  },
  {
   "i": 34,
@@ -1216,14 +1214,14 @@
    "msg: Added 1 × L. View list",
    "add a hat from \"Buy it with\"",
    "tap \"View list\"",
-   "Add $10 more for free shipping.Subtotal$190Shipping$9Estimated total$199Plus sales tax where it applies. Nothing is charged now.",
+   "Add $10 more for free shipping.Subtotal$190Shipping$9Estimated total$199Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 35,
@@ -1253,14 +1251,14 @@
    "add to preorder list",
    "msg: Added 1 × One size. View list",
    "tap \"View list\"",
-   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Plus sales tax where it applies. Nothing is charged now.",
+   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.2"
+  "secs": "7.2"
  },
  {
   "i": 36,
@@ -1290,7 +1288,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.8"
+  "secs": "1.6"
  },
  {
   "i": 37,
@@ -1320,14 +1318,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.3"
+  "secs": "5.2"
  },
  {
   "i": 38,
@@ -1354,14 +1352,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.4"
+  "secs": "4.5"
  },
  {
   "i": 39,
@@ -1390,14 +1388,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.8"
+  "secs": "6.1"
  },
  {
   "i": 40,
@@ -1425,14 +1423,14 @@
    "add to preorder list",
    "msg: Added 1 × L. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.9"
+  "secs": "4.5"
  },
  {
   "i": 41,
@@ -1450,7 +1448,6 @@
   "submitted": true,
   "mailto": true,
   "friction": [
-   "Send button below the screen in the list",
    "preorder request opens email app; buyer must press send there"
   ],
   "errs": [],
@@ -1464,14 +1461,14 @@
    "add to preorder list",
    "msg: Added 1 × XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.1"
+  "secs": "5.9"
  },
  {
   "i": 42,
@@ -1501,14 +1498,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "8.2"
+  "secs": "8.1"
  },
  {
   "i": 43,
@@ -1538,14 +1535,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.4"
+  "secs": "6.8"
  },
  {
   "i": 44,
@@ -1573,14 +1570,14 @@
    "add to preorder list",
    "msg: Added 1 × S. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.7"
+  "secs": "4.9"
  },
  {
   "i": 45,
@@ -1615,14 +1612,14 @@
    "add",
    "close",
    "open preorder list",
-   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus sales tax where it applies. Nothing is charged now.",
+   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "8.7"
+  "secs": "8.5"
  },
  {
   "i": 46,
@@ -1652,7 +1649,7 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Plus sales tax where it applies. Nothing is charged now.",
+   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
@@ -1689,7 +1686,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.9"
+  "secs": "1.7"
  },
  {
   "i": 48,
@@ -1719,14 +1716,14 @@
    "add to preorder list",
    "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
-   "Add $140 more for free shipping.Subtotal$60Shipping$9Estimated total$69Plus sales tax where it applies. Nothing is charged now.",
+   "Add $140 more for free shipping.Subtotal$60Shipping$9Estimated total$69Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.4"
+  "secs": "5.7"
  },
  {
   "i": 49,
@@ -1786,13 +1783,13 @@
    "add to preorder list",
    "msg: Added 1 × S. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus sales tax where it applies. Nothing is charged now.",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Plus tax where it applies.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "5.4"
  }
 ]
