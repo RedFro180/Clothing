@@ -21,7 +21,7 @@ const fails = [], errs = [];
 (async () => {
   const b = await chromium.launch();
   for (const [name, opts] of SCREENS) {
-    const ctx = await b.newContext(opts); const p = await ctx.newPage();
+    const ctx = await b.newContext(opts); await ctx.addInitScript(() => { try { localStorage.setItem("drop-prompt", JSON.stringify({ until: 9e15 })); } catch (e) {} }); const p = await ctx.newPage();   // drop-alert card off: this test is about scrolling
     p.on("pageerror", e => errs.push(`${name}: ${e.message}`));
     const touch = !!opts.hasTouch, cdp = await ctx.newCDPSession(p);
     const ok = (label, cond, extra = "") => { if (!cond) fails.push(`${name}: ${label} ${extra}`); return cond; };

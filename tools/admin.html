@@ -79,6 +79,25 @@
       <label>Order form address <small>Formspree (or similar) link. Empty = email app.</small><input type="url" data-k="FORM_ENDPOINT"></label>
     </div></section>
 
+  <section><h2>Fit, sets, drop alerts &amp; About</h2><p class="hint">All sales are final, so tell buyers how each item fits. Blank fields stay hidden on the site.</p>
+    <div class="grid">
+      <label>Hoodie fit <small>e.g. Relaxed, boxy. True to size; size down for a closer fit.</small><input type="text" data-obj="FIT" data-sub="hoodie" maxlength="140"></label>
+      <label>Hoodie fabric weight <small>e.g. 400 GSM</small><input type="text" data-obj="WEIGHT" data-sub="hoodie" maxlength="40"></label>
+      <label>Tee fit <input type="text" data-obj="FIT" data-sub="tee" maxlength="140"></label>
+      <label>Tee fabric weight <input type="text" data-obj="WEIGHT" data-sub="tee" maxlength="40"></label>
+      <label>Sweatpants fit <input type="text" data-obj="FIT" data-sub="sweatpants" maxlength="140"></label>
+      <label>Sweatpants fabric weight <input type="text" data-obj="WEIGHT" data-sub="sweatpants" maxlength="40"></label>
+      <label>Boxers fit <input type="text" data-obj="FIT" data-sub="underwear" maxlength="140"></label>
+      <label>Socks fit <input type="text" data-obj="FIT" data-sub="socks" maxlength="140"></label>
+      <label>Hats fit <input type="text" data-obj="FIT" data-sub="hats" maxlength="140"></label>
+      <label>Set discount ($) <small>Hoodie + sweatpants, same design. 0 = none.</small><input type="number" min="0" step="1" data-k="SET_DISCOUNT" data-num></label>
+      <label class="check"><input type="checkbox" data-k="DROP_PROMPT" data-bool> Show the small drop-alert card (once, then not for 30 days)</label>
+      <label>About title <small>e.g. Who makes this</small><input type="text" data-obj="ABOUT" data-sub="title" maxlength="60"></label>
+      <label>About photo <small>e.g. photos/about.jpg (optional)</small><input type="text" data-obj="ABOUT" data-sub="photo" maxlength="120"></label>
+    </div>
+    <label style="display:block;margin-top:8px">About text <small>Blank hides the section. Who you are, why natural fibers, why the dark humor.</small><textarea data-obj="ABOUT" data-sub="text" rows="5" maxlength="1200" style="width:100%"></textarea></label>
+  </section>
+
   <section><h2>Sold-out sizes</h2><p class="hint">Tick sizes that are out. Shoppers see them crossed out and can ask to be told when they're back.</p>
     <input type="search" id="soFind" placeholder="Find a design (name or number)" style="width:100%;margin-bottom:8px">
     <label class="check" style="margin-bottom:8px"><input type="checkbox" id="soOnly"> Only show designs with sold-out sizes</label>
@@ -112,8 +131,14 @@
     if (i.dataset.bool !== undefined) i.checked = !!C[k]; else i.value = C[k] ?? "";
     i.addEventListener("input", () => { C[k] = i.dataset.bool !== undefined ? i.checked : i.dataset.num !== undefined ? (i.value === "" ? "" : Number(i.value)) : i.value.trim(); build(); });
   });
+  // nested settings (FIT / WEIGHT / ABOUT)
+  document.querySelectorAll("[data-obj]").forEach(i => {
+    const o = i.dataset.obj, k = i.dataset.sub; C[o] = C[o] || {};
+    i.value = C[o][k] ?? "";
+    i.addEventListener("input", () => { C[o][k] = i.value.trim(); build(); });
+  });
   // size chart
-  const sizes = ["S", "M", "L", "XL", "2XL", "3XL"];
+  const sizes = ["S", "M", "L", "XL", "2XL", "3XL", "4XL"];
   sizes.forEach(s => { if (!C.SIZE_CHART.find(r => r.size === s)) C.SIZE_CHART.push({ size: s, chest: "", length: "", sleeve: "" }); });
   $("#sizeRows").append(...sizes.map(s => {
     const tr = document.createElement("tr"); const row = C.SIZE_CHART.find(r => r.size === s);
@@ -124,10 +149,10 @@
     return tr; }));
   // size charts for the other items (tees, boxers, socks, sweatpants); hats are one size
   const OTHER = {
-    tee: { title: "Tees (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL"], cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]] },
+    tee: { title: "Tees (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"], cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]] },
     underwear: { title: "Boxers (inches)", sizes: ["S", "M", "L", "XL", "2XL"], cols: [["waist", "Waist"], ["inseam", "Inseam"]] },
     socks: { title: "Socks (US shoe sizes, e.g. 6-9)", sizes: ["S/M", "L/XL"], cols: [["us_men", "Men's"], ["us_women", "Women's"]], text: true },
-    sweatpants: { title: "Sweatpants (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL"], cols: [["waist", "Waist"], ["hip", "Hip"], ["inseam", "Inseam"]] },
+    sweatpants: { title: "Sweatpants (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"], cols: [["waist", "Waist"], ["hip", "Hip"], ["inseam", "Inseam"]] },
   };
   C.SIZE_CHARTS = C.SIZE_CHARTS || {};
   for (const [t, g] of Object.entries(OTHER)) {
@@ -209,6 +234,15 @@ ${chart}
   SIZE_CHARTS: {
 ${Object.entries(C.SIZE_CHARTS).map(([t, rows]) => `    ${t}: [\n${rows.map(r => "      { " + Object.entries(r).map(([k, v]) => `${k}: ${q(String(v || ""))}`).join(", ") + " },").join("\n")}\n    ],`).join("\n")}
   },
+  // Fit and fabric weight per item (shown on products and in the size guide; blank = hidden).
+  FIT: ${JSON.stringify(C.FIT || {})},
+  WEIGHT: ${JSON.stringify(C.WEIGHT || {})},
+  // Dollars off when a hoodie + sweatpants of the same design are in one order (0 = none).
+  SET_DISCOUNT: ${Number(C.SET_DISCOUNT) || 0},
+  // Small drop-alert card (once, then not for 30 days).
+  DROP_PROMPT: ${C.DROP_PROMPT === false ? "false" : "true"},
+  // About section (text "" hides it).
+  ABOUT: ${JSON.stringify(C.ABOUT || { title: "", text: "", photo: "" })},
   // The spinning ring shows the Featured hoodies. Seconds for one full turn; bigger = slower.
   HERO_SPEED: ${Number(C.HERO_SPEED) || 24},
 };

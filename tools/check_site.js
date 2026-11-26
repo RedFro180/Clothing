@@ -24,6 +24,12 @@ if (C) {
   const blank = k => !(typeof C[k] === "string" && C[k].trim());
   if (blank("BUSINESS_NAME") || blank("BUSINESS_ADDRESS")) warn("config.js: BUSINESS_NAME / BUSINESS_ADDRESS are empty (policies page, footer, CAN-SPAM).");
   if (blank("SHIP_WINDOW")) warn("config.js: SHIP_WINDOW is empty: with no stated ship time the FTC Mail Order Rule expects shipping within 30 days.");
+  const fit = C.FIT || {};
+  if (!["hoodie", "tee", "sweatpants"].every(t => typeof fit[t] === "string" && fit[t].trim())) warn("config.js: FIT is empty for some items. All sales are final, so tell buyers how each item fits (tools/admin.html → Fit).");
+  if (C.SET_DISCOUNT !== undefined && !(Number(C.SET_DISCOUNT) >= 0 && Number(C.SET_DISCOUNT) < 140)) err("config.js: SET_DISCOUNT must be a number of dollars from 0 to less than the sweatpants price.");
+  const ab = C.ABOUT || {};
+  if (ab.photo && !(/^[\w\-./]+\.(jpe?g|png|webp|svg)$/i.test(ab.photo) && !ab.photo.startsWith("/") && !ab.photo.includes(".."))) err("config.js: ABOUT.photo must be a file inside the site folder, e.g. photos/about.jpg.");
+  if (ab.text && ab.text.length > 1500) warn("config.js: ABOUT.text is long; keep it under ~150 words.");
   if (blank("ORIGIN")) warn("config.js: ORIGIN is empty: online listings should say Made in USA or Imported (FTC Textile Rule).");
   if (C.FEATURED_LABEL && /best ?sell/i.test(C.FEATURED_LABEL)) warn("config.js: FEATURED_LABEL says best seller. Only use that once real sales back it up.");
   if (C.FREE_SHIP_OVER !== undefined && !(typeof C.FREE_SHIP_OVER === "number" && C.FREE_SHIP_OVER >= 0)) err("config.js: FREE_SHIP_OVER must be a number of 0 or more (no quotes).");

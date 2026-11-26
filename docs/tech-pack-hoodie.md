@@ -4,7 +4,7 @@
 |---|---|
 | **Brand** | Brand Name (placeholder) |
 | **Style** | H01, heavyweight pullover hoodie, unisex fit |
-| **Sizes** | S, M, L, XL, 2XL, 3XL |
+| **Sizes** | S, M, L, XL, 2XL, 3XL, 4XL |
 | **Version / date** | v1, 2026-11-25 |
 | **Contact** | name / email / phone |
 | **Order type** | **CMT (cut, make, trim):** the brand supplies fabric, rib, thread, drawcord and labels. The sewer cuts, sews and finishes. |
@@ -91,21 +91,21 @@ This brand sells garments with **no plastic or synthetic polymer anywhere**. Nat
 
 Measured **flat, garment laid smooth, in inches**. Final numbers come from the approved fit sample; fill in once the pattern is graded.
 
-| POM | How to measure | Tol. (+/-) | S | M | L | XL | 2XL | 3XL |
-|---|---|---|---|---|---|---|---|---|
-| A. Chest width | 1 in below armhole, side to side | 1/2 | | | | | | |
-| B. Body length | High point shoulder (next to neck) to bottom of waistband | 1/2 | | | | | | |
-| C. Sleeve length | Center back neck to end of cuff | 1/2 | | | | | | |
-| D. Shoulder width | Shoulder seam to shoulder seam | 3/8 | | | | | | |
-| E. Armhole (straight) | Shoulder point to underarm | 3/8 | | | | | | |
-| F. Bicep width | 1 in below armhole, perpendicular to sleeve | 3/8 | | | | | | |
-| G. Cuff width (relaxed) | Edge to edge | 1/4 | | | | | | |
-| H. Cuff height | Rib height | 1/8 | | | | | | |
-| I. Waistband width (relaxed) | Edge to edge | 1/2 | | | | | | |
-| J. Waistband height | Rib height | 1/8 | | | | | | |
-| K. Hood height | Neck seam to top of hood | 3/8 | | | | | | |
-| L. Hood width | Front edge to back of hood | 3/8 | | | | | | |
-| M. Pocket width / height | At widest / at center | 1/4 | | | | | | |
+| POM | How to measure | Tol. (+/-) | S | M | L | XL | 2XL | 3XL | 4XL |
+|---|---|---|---|---|---|---|---|---|---|
+| A. Chest width | 1 in below armhole, side to side | 1/2 | | | | | | | |
+| B. Body length | High point shoulder (next to neck) to bottom of waistband | 1/2 | | | | | | | |
+| C. Sleeve length | Center back neck to end of cuff | 1/2 | | | | | | | |
+| D. Shoulder width | Shoulder seam to shoulder seam | 3/8 | | | | | | | |
+| E. Armhole (straight) | Shoulder point to underarm | 3/8 | | | | | | | |
+| F. Bicep width | 1 in below armhole, perpendicular to sleeve | 3/8 | | | | | | | |
+| G. Cuff width (relaxed) | Edge to edge | 1/4 | | | | | | | |
+| H. Cuff height | Rib height | 1/8 | | | | | | | |
+| I. Waistband width (relaxed) | Edge to edge | 1/2 | | | | | | | |
+| J. Waistband height | Rib height | 1/8 | | | | | | | |
+| K. Hood height | Neck seam to top of hood | 3/8 | | | | | | | |
+| L. Hood width | Front edge to back of hood | 3/8 | | | | | | | |
+| M. Pocket width / height | At widest / at center | 1/4 | | | | | | | |
 
 **Fit intent:** relaxed, slightly oversized, dropped shoulder optional (decide on sample 1).
 
@@ -131,7 +131,7 @@ Fiber percentages must match the fabric mill's spec. Origin wording must follow 
 
 1. **Proto / fit sample** in size M: brand reviews fit, measurements and construction.
 2. Corrections, then **second sample** if needed.
-3. **Size set** (one of each size S–3XL): brand approves grading.
+3. **Size set** (one of each size S–4XL): brand approves grading.
 4. **Pre-production sample** with final fabric, print and labels: brand signs off in writing.
 5. **Production.** Brand inspects the first finished pieces before the rest are completed.
 
@@ -155,7 +155,7 @@ No production starts without written approval of step 4.
 
 ## 10. What we need in your quote
 
-1. Pattern making and grading S–3XL (or price to work from our pattern)
+1. Pattern making and grading S–4XL (or price to work from our pattern)
 2. Sample fee (proto, second sample, size set)
 3. **CMT price per hoodie at 25, 50, 100 and 250 pieces**
 4. Minimum order per style and per color

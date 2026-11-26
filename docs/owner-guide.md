@@ -100,3 +100,13 @@ No website text makes a business lawsuit-proof. Policies reduce risk; these do m
 10. **Not included on purpose:** an arbitration clause and class-action waiver (decided 2026-11-26). With the AAA the business registers the clause (~$600 plus $600 a year) and pays most of each case's fees, and "mass arbitration" can be ruinous for a small seller. Revisit with a lawyer once sales grow.
 
 What's in the policies page: who can buy (18+), contract formed at payment, right to cancel errors/fraud, ship-time and delay handling (FTC Mail Order Rule), conspicuous "as is" warranty disclaimer and liability cap (to the extent the law allows), dark-humor/not-advice statement with crisis lines, copyright, informal 60-day dispute step, Ohio law and venue, force majeure, severability, product-safety notes (latex, dye transfer, fire, adult-only drawcords), privacy (retention, security, no selling or targeted-ad sharing, kids, Do Not Track) and accessibility statement.
+
+## 9. Fit, Saved, "Get the set", drop-alert card, About (2026-11-26)
+
+All in `tools/admin.html` → **Fit, sets, drop alerts & About** (or `site/config.js`):
+- **FIT / WEIGHT:** one line per item, e.g. "Relaxed, boxy fit. True to size; size down for a closer fit." and "400 GSM". Shown under the sizes on every product and at the top of the size guide. Blank = hidden. Fill these before selling: all sales are final.
+- **Saved (hearts):** shoppers tap ♡ on any product; saved items live on their device only and appear under the heart button in the header. Nothing to set up.
+- **Get the set:** hoodies and sweatpants that share a design show a "Get the set" box with both size pickers and one "Add both" button. `SET_DISCOUNT` = dollars off per hoodie + sweatpants pair in one order (0 = no discount). Check your margin first (US-made: hoodie ~52%, sweatpants ~44% after card fees).
+- **Drop-alert card:** a small card ("Get first access to new drops") shows once, after 30 seconds or the 2nd product opened, never on top of another pop-up, and not again for 30 days after it's closed or ever after someone joins. No discount. Turn it off with `DROP_PROMPT: false`.
+- **About:** write 3–6 sentences (who you are, why natural fiber, why the dark humor). Blank paragraphs split it. Optional photo: put it in `site/photos/` and enter `photos/about.jpg`. Blank text hides the section and its footer link.
+- **Sizes:** hoodies, tees and sweatpants now go S–4XL. Size-chart rows and tech-pack measurement columns include 4XL; your sewer needs to grade the extra size.

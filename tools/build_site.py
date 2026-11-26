@@ -16,7 +16,7 @@ PHOTOS = os.path.join(SITE, "photos")   # drop real photos here as NN-anything.j
 # Design numbers shown in the top row, in order. Swap for real best sellers once orders exist.
 FEATURED = [11, 10, 27, 44, 29, 60, 13, 48]
 PRICE = 150          # hoodie price, USD (docs/margin-model.xlsx: ~52% margin at $150, US conventional)
-SIZES = ["S", "M", "L", "XL", "2XL", "3XL"]
+SIZES = ["S", "M", "L", "XL", "2XL", "3XL", "4XL"]
 
 # Item types (docs/other-products.md). Live types get products; the rest show as "coming soon".
 # id, menu label, singular word, plural word, price (one price per type), live

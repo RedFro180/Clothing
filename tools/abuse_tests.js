@@ -1,7 +1,7 @@
 // Abuse tests: bots, spam, tampering, huge orders.
 const { chromium } = require('playwright');
 (async () => { const b = await chromium.launch(); const R = {}; const errs = [];
-  const fresh = async () => { const c = await b.newContext({ viewport: { width: 1280, height: 860 } }); const p = await c.newPage(); p.on('pageerror', e => errs.push(e.message));
+  const fresh = async () => { const c = await b.newContext({ viewport: { width: 1280, height: 860 } }); await c.addInitScript(() => { try { localStorage.setItem("drop-prompt", JSON.stringify({ until: 9e15 })); } catch (e) {} }); const p = await c.newPage(); p.on('pageerror', e => errs.push(e.message));
     await c.addInitScript(() => { window.__mail = []; window.__origOpen = null; });
     await p.goto('file://' + require('path').join(__dirname, '..', 'site', 'index.html')); await p.waitForTimeout(400); return [c, p]; };
   const fill = async (p, o = {}) => { await p.click('#bagBtn'); await p.fill('#reqForm input[name=name]', o.name ?? 'Real Person'); await p.fill('#reqForm input[name=email]', o.email ?? 'real@person.com');

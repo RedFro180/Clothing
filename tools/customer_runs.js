@@ -18,6 +18,8 @@ const PERSONAS = [
   ['sizeunsure', 'Unsure of size, opens size guide'],
   ['shared-link', 'Arrives from a shared product link'],
   ['returning', 'Comes back later, uses recently viewed'],
+  ['saver', 'Hearts two products, opens Saved, buys one of them'],
+  ['set-buyer', 'Wants the matching hoodie + sweatpants, uses "Get the set"'],
 ];
 const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
 (async () => {
@@ -31,7 +33,9 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     }, SOLD);
     const p = await ctx.newPage(); const errs = []; p.on('pageerror', e => errs.push(e.message));
     const log = []; let clicks = 0, taps = 0, scrolls = 0, friction = []; const t0 = Date.now();
-    const act = async (label, fn) => { try { await fn(); clicks++; log.push(label); } catch (e) { friction.push('FAILED: ' + label + ' (' + e.message.split('\n')[0].slice(0, 80) + ')'); } };
+    let dropSeen = false;
+    const closeDrop = async () => { if (await p.locator('#dropCard').isVisible().catch(() => false)) { dropSeen = true; await p.click('#dropCardX'); clicks++; log.push('closed drop-alert card'); } };
+    const act = async (label, fn) => { try { await closeDrop(); await fn(); clicks++; log.push(label); } catch (e) { friction.push('FAILED: ' + label + ' (' + e.message.split('\n')[0].slice(0, 80) + ')'); } };
     const startUrl = persona === 'shared-link' ? URL0 + '#' + pick(['everyone-gets-a-toe-tag', 'grief-has-weight', 'skeleton-wearing-meat', 'the-dirt-always-wins']) : URL0;
     await p.goto(startUrl); await p.waitForTimeout(500);
     const vh = await p.evaluate(() => innerHeight);
@@ -64,6 +68,25 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
       const tag = (await p.textContent('[data-for="fCat"] .chip[aria-checked="true"]')) + ' ' + (await p.textContent('#resultCount')); if (!/\$\d+/.test(tag)) friction.push(`${t}: price not shown`);
       await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 3))); }
     if (persona === 'addon') { await act('open hoodie', () => openCard('#grid .card >> nth=0')); }
+    if (persona === 'saver') {
+      await gridToView();
+      for (const k of [2, 5]) await act('heart product ' + (k + 1), async () => { await p.locator('#grid .save-heart').nth(k).scrollIntoViewIfNeeded(); await p.locator('#grid .save-heart').nth(k).click(); });
+      const nSaved = await p.evaluate(() => (JSON.parse(localStorage.getItem('saved') || '[]')).length);
+      if (nSaved !== 2) friction.push(`saved ${nSaved} items, expected 2`);
+      if (!(await p.locator('#svBtn').isVisible())) friction.push('saved button not visible');
+      await act('open Saved list', () => p.click('#svBtn'));
+      const rows = await p.locator('#rvList .rv-item').count(); if (rows !== 2) friction.push(`Saved list shows ${rows}`);
+      await act('open a saved item', () => p.locator('#rvList .rv-item').first().click()); await p.waitForTimeout(300); }
+    if (persona === 'set-buyer') {
+      await act('open a hoodie that has sweatpants', async () => { await p.evaluate(() => { location.hash = pickSet(); function pickSet() { const s = ['the-box-will-be-heavy', 'grief-has-weight', 'the-dirt-always-wins', 'everyone-gets-a-toe-tag']; return s[Math.floor(Math.random() * s.length)]; } }); await p.waitForTimeout(400); });
+      const vis = await p.locator('#pdSet').isVisible(); if (!vis) friction.push('no "Get the set" on a hoodie with matching sweatpants');
+      else {
+        const n0 = await p.evaluate(() => (JSON.parse(localStorage.getItem('preorder-list-v1') || '[]')).length);
+        await act('pick hoodie size in set', () => p.locator('.set-sizes').nth(0).locator('button', { hasText: /^L$/ }).click());
+        await act('pick sweatpants size in set', () => p.locator('.set-sizes').nth(1).locator('button', { hasText: /^M$/ }).click());
+        await act('add both', () => p.click('.set-add'));
+        const n1 = await p.evaluate(() => (JSON.parse(localStorage.getItem('preorder-list-v1') || '[]')).length);
+        if (n1 - n0 !== 2) friction.push(`set added ${n1 - n0} lines, expected 2`); else log.push('set added'); } }
     if (persona === 'variant') {
       await act('open hoodie', () => openCard('#grid .card >> nth=0'));
       const before = await p.textContent('#pdName'); const n = await p.locator('#pdAlsoList .also').count();
@@ -140,7 +163,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
       if (!/size|ship|address/i.test(await p.textContent('#reqForm'))) {}
     }
     const secs = ((Date.now() - t0) / 1000).toFixed(1);
-    runs.push({ i: i + 1, persona, desc, device: phone ? 'phone' : 'desktop', vh, firstScreen, clicks, scrolls, items, submitted, mailto: !!mail, friction, errs, log, secs });
+    runs.push({ i: i + 1, persona, desc, device: phone ? 'phone' : 'desktop', vh, firstScreen, clicks, scrolls, items, submitted, mailto: !!mail, dropSeen, friction, errs, log, secs });
     await ctx.close();
   }
   fs.writeFileSync(require('path').join(__dirname, '..', 'docs', 'testing', 'customer-runs-latest.json'), JSON.stringify(runs, null, 1));
@@ -149,6 +172,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
   console.log('runs', runs.length, 'errors', runs.reduce((a, r) => a + r.errs.length, 0));
   console.log('reached a product:', runs.filter(r => !r.friction.includes('never reached a product')).length);
   console.log('submitted preorder:', runs.filter(r => r.submitted).length, ' via email app:', runs.filter(r => r.mailto).length);
+  console.log('drop-alert card shown (then closed):', runs.filter(r => r.dropSeen).length);
   const avg = k => (runs.reduce((a, r) => a + r[k], 0) / runs.length).toFixed(1);
   console.log('avg clicks', avg('clicks'), 'avg scrolls', avg('scrolls'));
   console.log('first screen (phone) products visible:', runs.filter(r => r.device === 'phone').map(r => r.firstScreen.products).join(','));

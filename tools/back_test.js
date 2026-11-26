@@ -7,7 +7,7 @@ const OTHER = "file://" + path.join(__dirname, "..", "site", "policies.html");
 (async () => {
   const b = await chromium.launch(); let fails = 0; const errs = [];
   for (const dev of ["Pixel 7", "iPhone 13"]) {
-    const c = await b.newContext({ ...devices[dev] }); const p = await c.newPage(); p.on("pageerror", e => errs.push(e.message));
+    const c = await b.newContext({ ...devices[dev] }); await c.addInitScript(() => { try { localStorage.setItem("drop-prompt", JSON.stringify({ until: 9e15 })); } catch (e) {} }); const p = await c.newPage(); p.on("pageerror", e => errs.push(e.message));
     const open = () => p.evaluate(() => [...document.querySelectorAll("dialog[open]")].map(d => d.id).join(",") || "-");
     const ok = (name, cond, extra = "") => { if (!cond) { fails++; console.log(`  FAIL ${dev}: ${name} ${extra}`); } };
     const back = async () => { await p.goBack(); await p.waitForTimeout(350); };
@@ -16,7 +16,7 @@ const OTHER = "file://" + path.join(__dirname, "..", "site", "policies.html");
     ok("product opens", (await open()) === "pd");
     await p.evaluate(() => document.querySelector("#pdAlsoList .also:nth-child(2)") && document.querySelector("#pdAlsoList .also:nth-child(2)").click()); await p.waitForTimeout(300);
     await back(); ok("Back closes the product", (await open()) === "-", await open()); ok("still in the shop", /index\.html/.test(p.url()), p.url());
-    await p.evaluate(() => document.querySelector("#grid .card:nth-child(3)").click()); await p.waitForTimeout(300);
+    await p.evaluate(() => document.querySelectorAll("#grid .card")[2].click()); await p.waitForTimeout(300);
     await p.evaluate(() => document.querySelector("#pd [data-close]").click()); await p.waitForTimeout(400);
     ok("X closes without reopening", (await open()) === "-", await open());
     await p.evaluate(() => document.querySelector("#bagBtn").click()); await p.waitForTimeout(300);

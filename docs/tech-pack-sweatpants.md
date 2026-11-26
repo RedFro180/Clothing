@@ -4,7 +4,7 @@
 |---|---|
 | **Brand** | Brand Name (placeholder) |
 | **Style** | P01, heavyweight fleece jogger sweatpants, relaxed fit, rib cuffs, printed left thigh |
-| **Sizes** | S, M, L, XL, 2XL, 3XL |
+| **Sizes** | S, M, L, XL, 2XL, 3XL, 4XL |
 | **Version / date** | v1, 2026-11-26 |
 | **Contact** | name / email / phone |
 | **Order type** | **CMT (cut, make, trim):** the brand supplies the hoodie fleece, cotton rib, natural-rubber elastic, cotton drawcord, thread and labels. The sewer cuts, sews and finishes. |
@@ -84,18 +84,18 @@
 
 Measured **flat, in inches**. Fill in from the approved fit sample.
 
-| POM | How to measure | Tol. (+/-) | S | M | L | XL | 2XL | 3XL |
-|---|---|---|---|---|---|---|---|---|
-| A. Waist relaxed | Edge to edge, waistband relaxed | 1/2 | | | | | | |
-| B. Waist stretched | Edge to edge, fully stretched | 1/2 | | | | | | |
-| C. Hip | 7 in below top of waistband, edge to edge | 1/2 | | | | | | |
-| D. Thigh | 1 in below crotch, edge to edge | 3/8 | | | | | | |
-| E. Front rise | Top of waistband to crotch seam | 1/4 | | | | | | |
-| F. Back rise | Top of waistband to crotch seam | 1/4 | | | | | | |
-| G. Inseam | Crotch seam to cuff bottom | 1/2 | | | | | | |
-| H. Outseam | Top of waistband to cuff bottom at side | 1/2 | | | | | | |
-| I. Leg opening above cuff | Edge to edge | 1/4 | | | | | | |
-| J. Cuff height | Finished | 1/8 | | | | | | |
+| POM | How to measure | Tol. (+/-) | S | M | L | XL | 2XL | 3XL | 4XL |
+|---|---|---|---|---|---|---|---|---|---|
+| A. Waist relaxed | Edge to edge, waistband relaxed | 1/2 | | | | | | | |
+| B. Waist stretched | Edge to edge, fully stretched | 1/2 | | | | | | | |
+| C. Hip | 7 in below top of waistband, edge to edge | 1/2 | | | | | | | |
+| D. Thigh | 1 in below crotch, edge to edge | 3/8 | | | | | | | |
+| E. Front rise | Top of waistband to crotch seam | 1/4 | | | | | | | |
+| F. Back rise | Top of waistband to crotch seam | 1/4 | | | | | | | |
+| G. Inseam | Crotch seam to cuff bottom | 1/2 | | | | | | | |
+| H. Outseam | Top of waistband to cuff bottom at side | 1/2 | | | | | | | |
+| I. Leg opening above cuff | Edge to edge | 1/4 | | | | | | | |
+| J. Cuff height | Finished | 1/8 | | | | | | | |
 
 **Fit intent:** relaxed, roomy thigh, tapered to the cuff, slight stack above the cuff. Unisex sizing like the hoodie.
 
@@ -124,7 +124,7 @@ No US rule I found requires the latex line on apparel; include it anyway (latex 
 1. **Proto / fit sample** in size M.
 2. Wear-test for a full day and wash 3 times: check waistband recovery, casing twist, cuff grip and crotch seam.
 3. Second sample as needed.
-4. **Size set** S–3XL: brand approves grading.
+4. **Size set** S–4XL: brand approves grading.
 5. **Pre-production sample** with final fabric, print, elastic, cord and labels: written sign-off.
 6. **Production.** Brand inspects the first pieces.
 
@@ -145,7 +145,7 @@ No US rule I found requires the latex line on apparel; include it anyway (latex 
 
 ## 10. What we need in your quote
 
-1. Pattern making and grading S–3XL
+1. Pattern making and grading S–4XL
 2. Sample fees (expect 2 rounds)
 3. **CMT price per pair at 25, 50, 100 and 250 pieces** (research assumed ~$22 US small-batch; confirm)
 4. Minimums per style and color

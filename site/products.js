@@ -24,7 +24,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/01-keep-hanging-on.svg",
    "imgs": [
@@ -80,7 +81,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/02-meat-bone-nothing-else.svg",
    "imgs": [
@@ -136,7 +138,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/03-ill-spot-you.svg",
    "imgs": [
@@ -192,7 +195,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/04-carrying-the-dead.svg",
    "imgs": [
@@ -248,7 +252,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/05-after-checklist.svg",
    "imgs": [
@@ -304,7 +309,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/06-running-on-whats-left.svg",
    "imgs": [
@@ -360,7 +366,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/07-i-carry-the-dead.svg",
    "imgs": [
@@ -416,7 +423,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/08-we-all-break.svg",
    "imgs": [
@@ -472,7 +480,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/09-bar-doesnt-care.svg",
    "imgs": [
@@ -528,7 +537,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/10-everyone-gets-a-toe-tag.svg",
    "imgs": [
@@ -584,7 +594,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/11-skeleton-wearing-meat.svg",
    "imgs": [
@@ -640,7 +651,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/12-lift-heavy-carry-heavy.svg",
    "imgs": [
@@ -696,7 +708,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/13-they-weigh-your-heart.svg",
    "imgs": [
@@ -752,7 +765,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/14-225-it-helps.svg",
    "imgs": [
@@ -808,7 +822,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/15-still-warm.svg",
    "imgs": [
@@ -864,7 +879,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/16-something-is-watching.svg",
    "imgs": [
@@ -920,7 +936,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/17-embalmed-zipped-forgotten.svg",
    "imgs": [
@@ -976,7 +993,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/18-mortality-undefeated.svg",
    "imgs": [
@@ -1032,7 +1050,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/19-carry-forever.svg",
    "imgs": [
@@ -1088,7 +1107,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/20-coroner-will-know.svg",
    "imgs": [
@@ -1144,7 +1164,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/21-demons-dont-spot-you.svg",
    "imgs": [
@@ -1200,7 +1221,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/22-sweat-tears-dread-repeat.svg",
    "imgs": [
@@ -1256,7 +1278,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/23-ashes-to-ashes.svg",
    "imgs": [
@@ -1312,7 +1335,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/24-ask-me-how-im-doing.svg",
    "imgs": [
@@ -1368,7 +1392,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/25-the-box-will-be-heavy.svg",
    "imgs": [
@@ -1424,7 +1449,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/26-time-of-death-tbd.svg",
    "imgs": [
@@ -1480,7 +1506,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/27-maggots-are-patient.svg",
    "imgs": [
@@ -1536,7 +1563,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/28-still-moving-already-rotting.svg",
    "imgs": [
@@ -1592,7 +1620,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/29-everything-hurts.svg",
    "imgs": [
@@ -1648,7 +1677,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/30-the-weight-is-real.svg",
    "imgs": [
@@ -1704,7 +1734,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/31-next-of-kin-notified.svg",
    "imgs": [
@@ -1760,7 +1791,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/32-meat-bone-spite.svg",
    "imgs": [
@@ -1816,7 +1848,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/33-tagged.svg",
    "imgs": [
@@ -1872,7 +1905,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/34-pine-box-final-address.svg",
    "imgs": [
@@ -1928,7 +1962,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/35-one-day-this-is-you.svg",
    "imgs": [
@@ -1984,7 +2019,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/36-3am-thoughts-fabric.svg",
    "imgs": [
@@ -2040,7 +2076,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/37-pain-is-real-so-are-we.svg",
    "imgs": [
@@ -2096,7 +2133,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/38-hold-the-weight.svg",
    "imgs": [
@@ -2152,7 +2190,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/39-brain-haunted-body-lifting.svg",
    "imgs": [
@@ -2208,7 +2247,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/40-dyed-with-dead-plants-front.svg",
    "imgs": [
@@ -2264,7 +2304,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/41-everything-rots-pocket.svg",
    "imgs": [
@@ -2320,7 +2361,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/42-here-lies-someone-who-tried.svg",
    "imgs": [
@@ -2376,7 +2418,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/43-six-feet-no-more.svg",
    "imgs": [
@@ -2432,7 +2475,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/44-reaper-is-patient.svg",
    "imgs": [
@@ -2488,7 +2532,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/45-whats-left-of-me.svg",
    "imgs": [
@@ -2544,7 +2589,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/46-sore-and-haunted.svg",
    "imgs": [
@@ -2600,7 +2646,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/47-something-in-me-is-broken.svg",
    "imgs": [
@@ -2656,7 +2703,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/48-the-dirt-always-wins.svg",
    "imgs": [
@@ -2712,7 +2760,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/49-lie-still.svg",
    "imgs": [
@@ -2768,7 +2817,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/50-bury-me-with-my-belt.svg",
    "imgs": [
@@ -2824,7 +2874,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/51-heart-beats-out-of-spite.svg",
    "imgs": [
@@ -2880,7 +2931,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/52-chalk-hands-grave-dirt.svg",
    "imgs": [
@@ -2936,7 +2988,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/53-worms-are-waiting.svg",
    "imgs": [
@@ -2992,7 +3045,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/54-measured-for-a-coffin.svg",
    "imgs": [
@@ -3048,7 +3102,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/55-rotting-in-real-time.svg",
    "imgs": [
@@ -3104,7 +3159,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/56-grief-doesnt-get-lighter.svg",
    "imgs": [
@@ -3160,7 +3216,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/57-thoughts-are-heavier.svg",
    "imgs": [
@@ -3216,7 +3273,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/58-every-cell-is-dying.svg",
    "imgs": [
@@ -3272,7 +3330,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/59-everyone-ends-underground.svg",
    "imgs": [
@@ -3328,7 +3387,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/60-grief-has-weight.svg",
    "imgs": [
@@ -3384,7 +3444,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/61-warm-up-small-talk.svg",
    "imgs": [
@@ -3440,7 +3501,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/62-coroner-heart-too-heavy.svg",
    "imgs": [
@@ -3496,7 +3558,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/63-iron-never-asks.svg",
    "imgs": [
@@ -3552,7 +3615,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/64-you-will-fit-in-a-bag.svg",
    "imgs": [
@@ -3608,7 +3672,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/65-six-people-will-carry-you.svg",
    "imgs": [
@@ -3664,7 +3729,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/66-a-heart-is-just-meat.svg",
    "imgs": [
@@ -3720,7 +3786,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/67-grief-unprocessed.svg",
    "imgs": [
@@ -3776,7 +3843,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/68-some-weights-put-down.svg",
    "imgs": [
@@ -3832,7 +3900,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/69-preserved-not-saved.svg",
    "imgs": [
@@ -3888,7 +3957,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/70-we-bury-our-own.svg",
    "imgs": [
@@ -3944,7 +4014,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/71-looks-like-death.svg",
    "imgs": [
@@ -4000,7 +4071,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/72-here-for-a-short-time.svg",
    "imgs": [
@@ -4056,7 +4128,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/73-the-void-listens.svg",
    "imgs": [
@@ -4112,7 +4185,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/74-cracked-still-standing.svg",
    "imgs": [
@@ -4168,7 +4242,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/75-dressed-for-my-funeral.svg",
    "imgs": [
@@ -4224,7 +4299,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/76-nothing-you-love-stays.svg",
    "imgs": [
@@ -4280,7 +4356,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/77-skeleton-scared.svg",
    "imgs": [
@@ -4336,7 +4413,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/78-hope-is-heavy.svg",
    "imgs": [
@@ -4392,7 +4470,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/79-still-here-still-haunted.svg",
    "imgs": [
@@ -4448,7 +4527,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/80-rigor-mortis-sets-in.svg",
    "imgs": [
@@ -4504,7 +4584,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/81-breathing-tired-here.svg",
    "imgs": [
@@ -4560,7 +4641,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/82-born-screaming-buried-quiet.svg",
    "imgs": [
@@ -4616,7 +4698,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/83-cemetery-quiet-gym-loud.svg",
    "imgs": [
@@ -4672,7 +4755,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/84-haunted-they-spot-me.svg",
    "imgs": [
@@ -4728,7 +4812,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/85-cold-storage.svg",
    "imgs": [
@@ -4784,7 +4869,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/86-3am-thoughts-5am-workouts.svg",
    "imgs": [
@@ -4840,7 +4926,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/87-always-in-mourning.svg",
    "imgs": [
@@ -4896,7 +4983,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/88-the-grave-can-wait.svg",
    "imgs": [
@@ -4952,7 +5040,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/89-everything-beautiful-rots.svg",
    "imgs": [
@@ -5008,7 +5097,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/90-death-remembers-you.svg",
    "imgs": [
@@ -5064,7 +5154,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/91-decomposition-is-long.svg",
    "imgs": [
@@ -5120,7 +5211,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/92-organs-bones-nothing.svg",
    "imgs": [
@@ -5176,7 +5268,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/93-built-heavy-buried-heavier.svg",
    "imgs": [
@@ -5232,7 +5325,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/94-silence-at-3am.svg",
    "imgs": [
@@ -5288,7 +5382,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/95-the-line-goes-flat.svg",
    "imgs": [
@@ -5344,7 +5439,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/96-grief-no-off-season.svg",
    "imgs": [
@@ -5400,7 +5496,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/97-alone-together-6am.svg",
    "imgs": [
@@ -5456,7 +5553,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/98-talk-then-lift.svg",
    "imgs": [
@@ -5512,7 +5610,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/99-still-breathing.svg",
    "imgs": [
@@ -5568,7 +5667,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/100-it-hurts-here.svg",
    "imgs": [
@@ -5624,7 +5724,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/101-chalk-and-sorrow.svg",
    "imgs": [
@@ -5680,7 +5781,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/102-hes-always-in-the-room.svg",
    "imgs": [
@@ -5736,7 +5838,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/103-dead-hands-dont-let-go.svg",
    "imgs": [
@@ -5792,7 +5895,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/104-every-rep-a-eulogy.svg",
    "imgs": [
@@ -5848,7 +5952,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/105-flies-know-something.svg",
    "imgs": [
@@ -5904,7 +6009,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/106-support-system.svg",
    "imgs": [
@@ -5960,7 +6066,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/107-checklist-today.svg",
    "imgs": [
@@ -6016,7 +6123,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-10-everyone-gets-a-toe-tag.svg",
    "imgs": [
@@ -6074,7 +6182,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-11-skeleton-wearing-meat.svg",
    "imgs": [
@@ -6132,7 +6241,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-14-225-it-helps.svg",
    "imgs": [
@@ -6190,7 +6300,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-25-the-box-will-be-heavy.svg",
    "imgs": [
@@ -6248,7 +6359,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-44-reaper-is-patient.svg",
    "imgs": [
@@ -6306,7 +6418,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-48-the-dirt-always-wins.svg",
    "imgs": [
@@ -6364,7 +6477,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-60-grief-has-weight.svg",
    "imgs": [
@@ -6422,7 +6536,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-66-a-heart-is-just-meat.svg",
    "imgs": [
@@ -6480,7 +6595,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-72-here-for-a-short-time.svg",
    "imgs": [
@@ -6538,7 +6654,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-83-cemetery-quiet-gym-loud.svg",
    "imgs": [
@@ -6596,7 +6713,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-90-death-remembers-you.svg",
    "imgs": [
@@ -6654,7 +6772,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/tee-105-flies-know-something.svg",
    "imgs": [
@@ -9280,7 +9399,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-10-everyone-gets-a-toe-tag.svg",
    "imgs": [
@@ -9340,7 +9460,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-11-skeleton-wearing-meat.svg",
    "imgs": [
@@ -9400,7 +9521,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-14-225-it-helps.svg",
    "imgs": [
@@ -9460,7 +9582,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-25-the-box-will-be-heavy.svg",
    "imgs": [
@@ -9520,7 +9643,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-44-reaper-is-patient.svg",
    "imgs": [
@@ -9580,7 +9704,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-48-the-dirt-always-wins.svg",
    "imgs": [
@@ -9640,7 +9765,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-60-grief-has-weight.svg",
    "imgs": [
@@ -9700,7 +9826,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-66-a-heart-is-just-meat.svg",
    "imgs": [
@@ -9760,7 +9887,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-72-here-for-a-short-time.svg",
    "imgs": [
@@ -9820,7 +9948,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-83-cemetery-quiet-gym-loud.svg",
    "imgs": [
@@ -9880,7 +10009,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-90-death-remembers-you.svg",
    "imgs": [
@@ -9940,7 +10070,8 @@ window.CATALOG = {
     "L",
     "XL",
     "2XL",
-    "3XL"
+    "3XL",
+    "4XL"
    ],
    "img": "img/sweatpants-105-flies-know-something.svg",
    "imgs": [

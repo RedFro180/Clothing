@@ -43,7 +43,7 @@ async function popupFits(p, ok, tag = "") {
 (async () => {
   const b = await chromium.launch();
   for (const [name, opts] of FOLD) {
-    const ctx = await b.newContext(opts); const p = await ctx.newPage();
+    const ctx = await b.newContext(opts); await ctx.addInitScript(() => { try { localStorage.setItem("drop-prompt", JSON.stringify({ until: 9e15 })); } catch (e) {} }); const p = await ctx.newPage();
     p.on("pageerror", e => errs.push(`${name}: ${e.message}`));
     const mine = [], ok = (label, cond, extra = "") => { if (!cond) mine.push(`${label} ${extra}`); return cond; };
     await p.goto(URL0); await p.waitForTimeout(600);
@@ -81,7 +81,7 @@ async function popupFits(p, ok, tag = "") {
   const moves = [["unfold: cover → open", [411, 850], [859, 845]], ["fold: open → cover", [859, 845], [411, 850]],
     ["open → split screen", [859, 845], [427, 845]], ["split screen → full", [427, 845], [859, 845]], ["turn sideways (open)", [859, 845], [954, 750]]];
   for (const [label, from, to] of moves) {
-    const ctx = await b.newContext(fold(from[0], from[1])); const p = await ctx.newPage(); const mine = [];
+    const ctx = await b.newContext(fold(from[0], from[1])); await ctx.addInitScript(() => { try { localStorage.setItem("drop-prompt", JSON.stringify({ until: 9e15 })); } catch (e) {} }); const p = await ctx.newPage(); const mine = [];
     const ok = (l, c, e = "") => { if (!c) mine.push(`${l} ${e}`); return c; };
     p.on("pageerror", e => errs.push(`${label}: ${e.message}`));
     await p.goto(URL0); await p.waitForTimeout(500);
@@ -105,7 +105,7 @@ async function popupFits(p, ok, tag = "") {
   for (const [label, w, h, feat, axis] of hinges) {
     const mine = [], ok = (l, c, e = "") => { if (!c) mine.push(`${l} ${e}`); return c; };
     for (const which of ["#pd", "#bag"]) {
-      const ctx = await b.newContext(fold(w, h)); const p = await ctx.newPage(), cdp = await ctx.newCDPSession(p);
+      const ctx = await b.newContext(fold(w, h)); await ctx.addInitScript(() => { try { localStorage.setItem("drop-prompt", JSON.stringify({ until: 9e15 })); } catch (e) {} }); const p = await ctx.newPage(), cdp = await ctx.newCDPSession(p);
       p.on("pageerror", e => errs.push(`${label}: ${e.message}`));
       await p.goto(URL0); await p.waitForTimeout(400);
       // (set after loading: Playwright resets this override on some actions, so only script clicks below)

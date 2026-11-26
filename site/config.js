@@ -44,6 +44,7 @@ window.SITE_CONFIG = {
       { size: "S", chest: "", length: "", sleeve: "" }, { size: "M", chest: "", length: "", sleeve: "" },
       { size: "L", chest: "", length: "", sleeve: "" }, { size: "XL", chest: "", length: "", sleeve: "" },
       { size: "2XL", chest: "", length: "", sleeve: "" }, { size: "3XL", chest: "", length: "", sleeve: "" },
+      { size: "4XL", chest: "", length: "", sleeve: "" },
     ],
     underwear: [
       { size: "S", waist: "", inseam: "" }, { size: "M", waist: "", inseam: "" }, { size: "L", waist: "", inseam: "" },
@@ -56,6 +57,7 @@ window.SITE_CONFIG = {
       { size: "S", waist: "", hip: "", inseam: "" }, { size: "M", waist: "", hip: "", inseam: "" },
       { size: "L", waist: "", hip: "", inseam: "" }, { size: "XL", waist: "", hip: "", inseam: "" },
       { size: "2XL", waist: "", hip: "", inseam: "" }, { size: "3XL", waist: "", hip: "", inseam: "" },
+      { size: "4XL", waist: "", hip: "", inseam: "" },
     ],
   },
   SIZE_UNITS: "in",
@@ -66,7 +68,23 @@ window.SITE_CONFIG = {
     { size: "XL",  chest: "", length: "", sleeve: "" },
     { size: "2XL", chest: "", length: "", sleeve: "" },
     { size: "3XL", chest: "", length: "", sleeve: "" },
+    { size: "4XL", chest: "", length: "", sleeve: "" },
   ],
+  // How each item fits and fabric weight, shown on every product and in the size guide. Blank = hidden.
+  // All sales are final, so fill these in: e.g. FIT hoodie "Relaxed, boxy fit. True to size; size down for a closer fit." WEIGHT hoodie "400 GSM".
+  FIT: { hoodie: "", tee: "", sweatpants: "", underwear: "", socks: "", hats: "" },
+  WEIGHT: { hoodie: "", tee: "", sweatpants: "" },
+  // "Get the set" (hoodie + sweatpants in the same design). Dollars off when both are in one order; 0 = no discount.
+  SET_DISCOUNT: 0,
+  // Small "get first access to new drops" card: shows once after 30 seconds or the 2nd product opened, then not again for 30 days.
+  DROP_PROMPT: true,
+  // About section. Leave text "" to hide it. Template (replace with your own words):
+  //   title: "Who makes this"
+  //   text: "I'm [name], a lifter from Ohio. I make every piece in small batches from hemp, cotton and wool, with no plastic,
+  //          because what touches your skin all day should be real. The jokes are dark because life can be. They're for
+  //          getting through it, not giving up. If it's more than a joke tonight, call or text 988."
+  //   photo: "photos/about.jpg" (optional; put the file in site/photos)
+  ABOUT: { title: "", text: "", photo: "" },
   // The spinning ring at the top shows the Featured hoodies (FEATURED in tools/build_site.py).
   HERO_SPEED: 24,                      // seconds for one full turn of the ring; bigger = slower
 };

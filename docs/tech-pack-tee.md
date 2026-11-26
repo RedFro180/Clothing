@@ -4,7 +4,7 @@
 |---|---|
 | **Brand** | Brand Name (placeholder) |
 | **Style** | T01, heavyweight crew-neck tee, unisex fit |
-| **Sizes** | S, M, L, XL, 2XL, 3XL |
+| **Sizes** | S, M, L, XL, 2XL, 3XL, 4XL |
 | **Version / date** | v1, 2026-11-26 |
 | **Contact** | name / email / phone |
 | **Order type** | **CMT (cut, make, trim):** the brand supplies jersey, rib, twill tape, thread and labels. The sewer cuts, sews and finishes. |
@@ -80,18 +80,18 @@ This brand sells garments with **no plastic or synthetic polymer anywhere**. Nat
 
 Measured **flat, in inches**. Fill in from the approved fit sample.
 
-| POM | How to measure | Tol. (+/-) | S | M | L | XL | 2XL | 3XL |
-|---|---|---|---|---|---|---|---|---|
-| A. Chest width | 1 in below armhole, side to side | 1/2 | | | | | | |
-| B. Body length | High point shoulder to hem | 1/2 | | | | | | |
-| C. Sleeve length | Shoulder seam to sleeve hem | 3/8 | | | | | | |
-| D. Shoulder width | Shoulder seam to shoulder seam | 3/8 | | | | | | |
-| E. Armhole (straight) | Shoulder point to underarm | 3/8 | | | | | | |
-| F. Sleeve opening | Edge to edge at hem | 1/4 | | | | | | |
-| G. Neck width | Seam to seam at shoulder | 1/4 | | | | | | |
-| H. Front neck drop | High point shoulder to collar seam at center front | 1/4 | | | | | | |
-| I. Collar rib height | Finished rib | 1/8 | | | | | | |
-| J. Hem width | Edge to edge at bottom | 1/2 | | | | | | |
+| POM | How to measure | Tol. (+/-) | S | M | L | XL | 2XL | 3XL | 4XL |
+|---|---|---|---|---|---|---|---|---|---|
+| A. Chest width | 1 in below armhole, side to side | 1/2 | | | | | | | |
+| B. Body length | High point shoulder to hem | 1/2 | | | | | | | |
+| C. Sleeve length | Shoulder seam to sleeve hem | 3/8 | | | | | | | |
+| D. Shoulder width | Shoulder seam to shoulder seam | 3/8 | | | | | | | |
+| E. Armhole (straight) | Shoulder point to underarm | 3/8 | | | | | | | |
+| F. Sleeve opening | Edge to edge at hem | 1/4 | | | | | | | |
+| G. Neck width | Seam to seam at shoulder | 1/4 | | | | | | | |
+| H. Front neck drop | High point shoulder to collar seam at center front | 1/4 | | | | | | | |
+| I. Collar rib height | Finished rib | 1/8 | | | | | | | |
+| J. Hem width | Edge to edge at bottom | 1/2 | | | | | | | |
 
 **Fit intent:** relaxed and boxy, heavyweight feel. Decide sleeve length and drop on sample 1.
 
@@ -117,7 +117,7 @@ Fiber percentages must match the mill's spec. Origin wording must follow FTC rul
 
 1. **Proto / fit sample** in size M.
 2. Corrections, then **second sample** if needed. Check the collar after 3 washes; a cotton-only rib can relax.
-3. **Size set** (one of each size S–3XL): brand approves grading.
+3. **Size set** (one of each size S–4XL): brand approves grading.
 4. **Pre-production sample** with final fabric, print and labels: brand signs off in writing.
 5. **Production.** Brand inspects the first finished pieces.
 
@@ -140,7 +140,7 @@ No production starts without written approval of step 4.
 
 ## 10. What we need in your quote
 
-1. Pattern making and grading S–3XL (or price to work from our pattern)
+1. Pattern making and grading S–4XL (or price to work from our pattern)
 2. Sample fee (proto, second sample, size set)
 3. **CMT price per tee at 25, 50, 100 and 250 pieces**
 4. Minimum order per style and per color

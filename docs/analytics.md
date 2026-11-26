@@ -22,6 +22,9 @@ Tracking does **not** run inside the claude.ai preview, which blocks outside con
 | `search` / `search_no_results` | A search was typed | `q`, `results` |
 | `suggestion_opened` | A "Buy it with" or "Available in" hoodie was opened | `from`, `to` |
 | `variant_switched` | Shopper switched to the same design on another item in "Also in this design" | `from`, `to`, `type` (breakdown by `type` shows which items people want in a design they like) |
+| `saved` | Shopper tapped ♡ on a product | `id`, `name` |
+| `set_added` | "Add both" in Get the set | `design`, `hoodie` (size), `sweatpants` (size) |
+| `drop_prompt_shown` / `drop_prompt_joined` | Drop-alert card shown / email sent from it | (none) |
 | `preorder_sent` | The preorder request was sent (your "purchase" until real checkout exists) | `items`, `item_count`, `subtotal`, `shipping`, **`clicks_to_purchase`**, **`seconds_to_purchase`** |
 | `bought_together` | One event for each pair of different hoodies in the same preorder | **`pair`** (e.g. "Grief has weight. + The dirt always wins."), `a`, `b` |
 | `session_end` | The visitor leaves or switches away | **`seconds_on_site`**, **`clicks`**, `products_viewed`, `viewed_names`, `items_in_list`, **`purchased` (true/false)**, `last_product` |
