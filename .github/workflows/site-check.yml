@@ -2,7 +2,7 @@
 name: Site safety check
 on:
   push:
-    paths: ["site/**", "tools/check_site.js", "tools/customer_runs.js", "tools/abuse_tests.js", "tools/scroll_test.js", "tools/fold_test.js", "tools/screens.js", ".github/workflows/site-check.yml"]
+    paths: ["site/**", "tools/check_site.js", "tools/customer_runs.js", "tools/abuse_tests.js", "tools/scroll_test.js", "tools/fold_test.js", "tools/back_test.js", "tools/screens.js", ".github/workflows/site-check.yml"]
   pull_request:
     paths: ["site/**"]
 jobs:
@@ -21,6 +21,8 @@ jobs:
         run: npm i --no-save playwright@1 && npx playwright install --with-deps chromium
       - name: Abuse tests (bots, spam, tampering, huge orders)
         run: node tools/abuse_tests.js
+      - name: Phone Back button closes pop-ups
+        run: node tools/back_test.js
       - name: Scrolling on 7 screen types (pop-ups, lists, ring, chips)
         run: node tools/scroll_test.js
       - name: Foldables, dual screens and split screen (layout, full order, fold/unfold, hinge)

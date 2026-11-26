@@ -111,9 +111,11 @@ COLOR_TAGS = {"Dusty rose": "pink rose", "Undyed oatmeal": "cream white beige na
               "Heather grey": "gray grey", "Charcoal": "gray grey dark", "Indigo": "blue navy", "Oxblood": "red maroon burgundy wine",
               "Olive": "green army", "Plum": "purple", "Black": "black"}
 
-TYPE_TAGS = {"tee": "tee tees t-shirt tshirt shirt", "hats-beanie": "hat hats beanie toque knit", "hats-cap": "hat hats cap dad cap baseball",
-             "underwear": "underwear boxers boxer shorts", "socks": "sock socks crew", "socks-ankle": "sock socks ankle quarter low short",
-             "sweatpants": "sweatpants sweats joggers pants trackpants bottoms"}
+TYPE_TAGS = {"tee": "tee tees t-shirt tshirt shirt hemp cotton jersey", "hats-beanie": "hat hats beanie toque knit cotton merino wool",
+             "hats-cap": "hat hats cap dad cap baseball cotton twill", "underwear": "underwear boxers boxer shorts cotton woven",
+             "socks": "sock socks crew cotton merino wool", "socks-ankle": "sock socks ankle quarter low short cotton merino wool",
+             "sweatpants": "sweatpants sweats joggers pants trackpants bottoms hemp cotton fleece"}
+HOODIE_TAGS = "hoodie hoodies sweatshirt pullover hemp cotton fleece heavyweight"
 def fab_of(num): return S.color_for(num)[1]
 
 def search_tags(d, theme, color):
@@ -173,7 +175,7 @@ def main():
         products.append({
             "id": i, "design": i, "slug": d["slug"], "name": title_case(d["lines"]), "sub": d["sub"],
             "type": "hoodie", "typeLabel": "Hoodie", "word": "hoodie", "theme": theme_for(d), "color": cname.split(" (")[0],
-            "colorNote": cname, "tags": search_tags(d, theme_for(d), cname.split(" (")[0]), "hex": fab, "light": lum(fab) > 450,
+            "colorNote": cname, "tags": search_tags(d, theme_for(d), cname.split(" (")[0]) + " " + HOODIE_TAGS, "hex": fab, "light": lum(fab) > 450,
             "placement": PLACE[d["place"]], "price": PRICE, "sizes": SIZES, "img": "img/" + f, "imgs": imgs,
             "featured": FEATURED.index(i) + 1 if i in FEATURED else None,
             "details": [f"Color: {cname}"] + HOODIE_DETAILS + [f"{PLACE[d['place']]}, natural-dye or embroidered", NATURAL_DYE, PREORDER, "All sales final: check the size guide"],

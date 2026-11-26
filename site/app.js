@@ -247,7 +247,7 @@
     if (fColor.value) u.set("color", fColor.value); if (fSort.value !== "featured") u.set("sort", fSort.value);
     if (fSearch.value.trim()) u.set("q", fSearch.value.trim());
     const s = u.toString();
-    history.replaceState(null, "", location.pathname + (s ? "?" + s : "") + location.hash);
+    history.replaceState(history.state, "", location.pathname + (s ? "?" + s : "") + location.hash);
   }
 
   // Default order: featured first, then 3 hoodies (or the biggest type) for every 1 other item, cycling through the other types,
@@ -287,7 +287,7 @@
     else list = mixTypes(list.sort((a, b) => (a.featured || 999) - (b.featured || 999) || a.id - b.id));
     const tt = type || (LIVE.length === 1 ? LIVE[0] : null);
     $("#resultCount").textContent = `${list.length} ${tt ? (list.length === 1 ? tt.one : tt.many) : (list.length === 1 ? "item" : "items")}`
-      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : tt && MIN_BY[tt.id] != null ? ` · ${money(MIN_BY[tt.id])}–${money(MAX_BY[tt.id])}` : "") + (fColor.value ? ` · ${fColor.value}` : "");
+      + (tt && ONE_BY[tt.id] != null ? ` · ${money(ONE_BY[tt.id])} each` : tt && MIN_BY[tt.id] != null ? ` · ${money(MIN_BY[tt.id])}–${money(MAX_BY[tt.id])}` : "") + (fColor.value ? ` · ${fColor.value}` : "") + (fTheme.value && CAT.themes[fTheme.value] ? ` · ${CAT.themes[fTheme.value]}` : "");
     priceTag(type);
     if (!list.length) {
       const tips = ["skull", "coffin", "grief", "gym", "rot", "black"];
@@ -358,6 +358,7 @@
       : (p.type === "socks" ? `pair of ${p.typeLabel.toLowerCase()}` : p.typeLabel.toLowerCase());
     $("#pdPrice").replaceChildren(money(p.price), onePrice(p) ? el("span", { class: "same-price", text: `Same price for every ${kindWord}` }) : "");
     $("#pdShip").textContent = shipLine() + (SHIP_WINDOW ? ` · ${SHIP_WINDOW}` : "");
+    $("#pdShare").textContent = `Copy link to this ${p.typeLabel.toLowerCase()}`;
     drawAlso(p);
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
     const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
@@ -378,9 +379,9 @@
     if (innerHeight < 700) $("#pdAdd").after($("#pdNotes")); else $("#sizeNote").after($("#pdNotes"));
     $("#pdBody").scrollTop = 0; pd.scrollTop = 0;
     $("#pdDetails").replaceChildren(...[...(p.details || []), ...(ORIGIN ? [ORIGIN] : [])].map(s => el("li", { text: s })));
-    if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
     remember(p.id);
-    if (!pd.open) pd.showModal();
+    if (!pd.open) pd.showModal();   // adds the Back step first, so the link below goes on that step, not the page underneath
+    if (push) history.replaceState(history.state, "", location.pathname + location.search + "#" + p.slug);
     // very short screens: if the design picker pushes the Add button off screen, move the picker under the Add button (and its notes)
     $("#pdShip").after($("#pdAlso"));
     const visBottom = Math.min(innerHeight, pd.getBoundingClientRect().bottom);   // the pop-up can end above the screen bottom
@@ -518,7 +519,7 @@
     $("#rvList").replaceChildren(...(list.length ? list.map(p => el("button", { type: "button", class: "rv-item", onclick: () => { rv.close(); openProduct(p); } },
       el("div", { class: "tile" }, el("img", { src: p.img, alt: "" })),
       el("span", { class: "rv-name", text: p.name }), ONE_BY[p.type] != null ? null : el("span", { class: "rv-price", text: money(p.price) })))
-      : [el("p", { class: "note", text: "Nothing yet. Hoodies you open show up here." })]));
+      : [el("p", { class: "note", text: "Nothing yet. Items you open show up here." })]));
   }
   $("#rvBtn").hidden = !(store.get("recent") || []).length;
   $("#rvBtn").addEventListener("click", () => { drawRecent(); rv.showModal(); });
@@ -588,7 +589,7 @@
   }
   $("#sgBtn").addEventListener("click", () => { const box = $("#sizeGuide"); box.hidden = !box.hidden; $("#sgBtn").setAttribute("aria-expanded", !box.hidden); });
 
-  pd.addEventListener("close", () => { if (bySlug[location.hash.slice(1)]) history.replaceState(null, "", location.pathname + location.search); });
+  pd.addEventListener("close", () => { if (bySlug[location.hash.slice(1)]) history.replaceState(history.state, "", location.pathname + location.search); });
   $("#pdAdd").addEventListener("click", () => {
     if (!size) { $("#pdMsg").textContent = "Pick a size first."; return; }
     const n = clampQ($("#pdQty").value);
@@ -602,11 +603,30 @@
     try { await navigator.clipboard.writeText(url); $("#pdMsg").textContent = "Link copied."; }
     catch { $("#pdMsg").textContent = url; }
   });
+  let backNav = false;
   function fromHash() {
+    if (backNav) return;   // Back just closed a pop-up: don't reopen a product from the older link
     const p = bySlug[decodeURIComponent(location.hash.slice(1))];
     if (p) openProduct(p, false);
   }
   window.addEventListener("hashchange", fromHash);
+
+  // Phone Back button closes pop-ups instead of leaving the shop: opening one adds a history step; closing it any other way removes that step.
+  let backClosing = false, skipPop = false;
+  const anyOpen = () => !!document.querySelector("dialog[open]");
+  document.querySelectorAll("dialog").forEach(d => {
+    const show = d.showModal.bind(d);
+    d.showModal = () => { if (!(history.state && history.state.dlg)) history.pushState({ dlg: 1 }, "", location.href); show(); };
+    d.addEventListener("close", () => {
+      if (backClosing) return;
+      setTimeout(() => { if (!anyOpen() && history.state && history.state.dlg) { skipPop = true; history.back(); } }, 0);
+    });
+  });
+  window.addEventListener("popstate", () => {
+    backNav = true; setTimeout(() => { backNav = false; }, 50);
+    if (skipPop) { skipPop = false; return; }
+    if (anyOpen()) { backClosing = true; document.querySelectorAll("dialog[open]").forEach(d => d.close()); backClosing = false; }
+  });
 
   // close any dialog on backdrop click or close button
   document.querySelectorAll("dialog").forEach(d => {
