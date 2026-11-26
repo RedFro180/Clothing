@@ -95,6 +95,12 @@ Break-even here covers only each style's development and the equipment it adds. 
 
 ## 6. Heavy jacket (Carhartt-style duck)
 
+> **Dropped 2026-11-26 (user: too expensive).** Not on the site; tech pack J01 deleted. What we found before dropping it:
+> - **Cost:** a plastic-free lined coat in 55% hemp / 45% cotton canvas costs ~$300 to make US-made, incl. shipping (est.), or ~$120–150 landed from an overseas full-package factory (est., no quotes). 12 oz 55/45 hemp/cotton canvas is $19.95–29.41/yd ([EnviroTextiles](https://www.envirotextiles.com/store/Khaki-Light-Weight-Hemp-Canvas-55-Certified-Organic-Hemp-45-Certified-Organic-Cotton-Plain-Weave-12oz-57-58-width-p658999589), [Organic Cotton Plus](https://organiccottonplus.com/products/hemp-canvas-57)) vs ~$7/yd for cotton duck. A coat also costs more than a jacket (more fabric, more lining, heavier shipping). Carhartt sells for less ($130–210) because of volume, overseas making and synthetic fill.
+> - **Zipper (user: no buttons):** the only plastic-free one found is a YKK #5 brass separating zipper on 100% cotton tape, made in the USA, sold by Zipperstop ([Amazon](https://www.amazon.com/Zipper-Brass-Separating-Cotton-Tape/dp/B005OY2RPS), [Walmart](https://www.walmart.com/ip/Natural-Cotton-Tape-YKK-5-Brass-Metal-Medium-Weight-Jacket-Zipper-Doughnut-Drop-Pull-Separating-Choose-Color-Natural-Length-1-Zipper-Made-United-Stat/16597907311)). No cotton-tape #8/#10 was found. Separating ends may be reinforced with a synthetic film ([patent EP1364591A2](https://patents.google.com/patent/EP1364591A2/fr)), so confirm with the supplier. Riri makes a GOTS organic cotton tape for metal chains ([Riri](https://www.riri.com/products/riri/tapes/organic-cotton/)).
+> - **Waterproof zip pockets:** no plastic-free option. YKK AquaGuard and AquaLock use polyurethane; DynaPel is water-repellent, not waterproof ([Textile World](https://www.textileworld.com/textile-world/knitting-apparel/2023/11/ykk-launches-new-water-repellant-zipper-designed-to-work-in-circular-systems-new-dynapel-zipper-uses-gtt-empel-technology)). Ventile (100% cotton) is 400–850 mm hydrostatic head, below the 1,000 mm waterproof line ([Ventile](https://en.wikipedia.org/wiki/Ventile)).
+> - **Wool batting correction:** the Hobbs Tuscany batt listed below is superwashed (polyamide-resin coated) and resin bonded, and Quilter's Dream Wool uses polyester bonding, so both fail the no-plastic rule. Unbonded, non-superwash options: Sonoma Wool Company ([link](https://sonomawoolcompany.com/products/wool-batting)), DIY Natural Home wool wrap ([link](https://diynaturalhome.com/product/wool-batting/)).
+
 **What Carhartt uses:** the J140 has a 12 oz 100% ring-spun cotton duck shell, but the lining isn't natural. Quilted flannel body lining, quilted nylon in the sleeves and 100% polyester fill per Carhartt ([Carhartt](https://www.carhartt.com/product/106673/iconic-j140-firm-duck-active-jac)). It sells for $120–140.
 
 **Plastic-free build:**
@@ -126,4 +132,4 @@ Break-even here covers only each style's development and the equipment it adds. 
 3. **Tee:** cheapest entry price for buyers, but low margin unless made overseas or priced $55–60+.
 4. **Socks and caps:** add-ons; socks need ~$1,300 in cash per design at a 144-pair minimum.
 5. **Underwear:** only after you've tested natural-rubber elastic and fit; final-sale policy.
-6. **Jacket:** last; ~$10,600 in cash for 50 US-made pieces, an industrial machine if self-sewn, and the hardest plastic-free trims.
+6. **Jacket (dropped 2026-11-26, see §6):** was last; ~$10,600 in cash for 50 US-made pieces, an industrial machine if self-sewn, and the hardest plastic-free trims.

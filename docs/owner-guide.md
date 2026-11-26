@@ -44,9 +44,9 @@ What the site can and can't protect:
 
 **One price:** while every hoodie has the same price, the site hides prices on the product grid and says "One price $150, every design" once instead. If you ever give one design a different price, prices show under every hoodie again automatically.
 
-**Sizes for tees, boxers, socks, sweatpants and jackets:** fill the extra tables in `tools/admin.html` (they're saved as `SIZE_CHARTS` in config.js). Hats are one size.
+**Sizes for tees, boxers, socks and sweatpants:** fill the extra tables in `tools/admin.html` (they're saved as `SIZE_CHARTS` in config.js). Hats are one size.
 
-**Change designs or prices:** prices per item type are in `TYPES` in `tools/build_site.py`; the designs used on tees, hats, boxers, socks, sweatpants and jackets are `STARTER` in `tools/items.py`. edit `tools/designs_data.py` or `tools/build_site.py`, then run `python3 tools/build_site.py`, then `node tools/check_site.js`. Easiest: ask me to do it.
+**Change designs or prices:** prices per item type are in `TYPES` in `tools/build_site.py`; the designs used on tees, hats, boxers, socks and sweatpants are `STARTER` in `tools/items.py`. edit `tools/designs_data.py` or `tools/build_site.py`, then run `python3 tools/build_site.py`, then `node tools/check_site.js`. Easiest: ask me to do it.
 
 **Foldables and split screen:** `node tools/fold_test.js` checks the Galaxy Fold cover and inner screens, split screen, half-folded and dual screens (it also runs in the GitHub check). Emulation isn't the real phone, so look at big changes on your Fold too.
 

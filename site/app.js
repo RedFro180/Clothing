@@ -188,11 +188,17 @@
       const soon = /\(coming soon\)/.test(o.text);
       const m = o.text.replace(/\s*\(coming soon\)/, "").match(/^(.*?)(?:\s*\((\d+)\))?$/);
       let label = m[1], n = m[2];
-      if (o.value === "") label = sel.id === "fCat" ? "All" : sel.id === "fTheme" ? "All themes" : "All colors";
-      const b = el("button", { type: "button", class: "chip" + (soon ? " is-soon" : ""), role: "radio", "data-v": o.value, "aria-label": o.text },
-        sel.id === "fColor" && o.value ? el("span", { class: "sw", style: `background:${colorHex[o.value]}` }) : null,
-        el("span", { text: label }),
-        n && sel.id !== "fCat" ? el("span", { class: "n", text: n }) : null,
+      if (o.value === "") label = "All";
+      const full = label;
+      if (sel.id === "fTheme" && o.value) label = label.split(" & ")[0];          // short theme names on the buttons ("Morgue", "Rot"...)
+      const dot = sel.id === "fColor";                                              // colors are swatch dots ("All" = a mixed dot); names stay for screen readers
+      if (dot && !o.value) label = "All colors";
+      const tabPrice = sel.id === "fCat" && o.value && ONE_BY[o.value] != null ? money(ONE_BY[o.value]) : "";
+      const b = el("button", { type: "button", class: "chip" + (soon ? " is-soon" : "") + (dot ? " dot" : ""), role: "radio", "data-v": o.value,
+          "aria-label": tabPrice ? `${full}, ${tabPrice} each` : dot ? label : o.text, title: dot ? label : label !== full ? full : null },
+        dot ? el("span", { class: "sw" + (o.value ? "" : " sw-all"), style: o.value ? `background:${colorHex[o.value]}` : null }) : null,
+        el("span", { class: dot ? "sr" : "cl", text: label }),
+        tabPrice ? el("span", { class: "tp", text: tabPrice }) : null,
         soon ? el("span", { class: "tag", text: "soon" }) : null);
       b.addEventListener("click", () => { if (sel.value !== o.value) { sel.value = o.value; sel.dispatchEvent(new Event("change")); } sync(); });
       return b;
@@ -288,7 +294,7 @@
   const ALIAS = { "3am": "3 a.m.", "3": "3 a.m.", "skulls": "skull", "skeletons": "skeleton", "coffins": "coffin", "graves": "grave", "funny": "", "dark": "",
     "sad": "grief", "depressed": "grief", "depression": "grief", "anxiety": "grief", "mental": "grief", "workout": "gym", "lifting": "lift", "weights": "gym",
     "gray": "grey", "dead": "dead", "hoodies": "hoodie", "hoody": "hoodie", "sweatshirt": "hoodie", "sweater": "hoodie", "pullover": "hoodie",
-    "tshirt": "tee", "t-shirt": "tee", "tees": "tee", "shirts": "shirt", "hats": "hat", "beanies": "beanie", "caps": "cap", "boxer": "boxers", "sock": "socks", "sweats": "sweatpants", "joggers": "sweatpants", "coat": "jacket", "jackets": "jacket", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
+    "tshirt": "tee", "t-shirt": "tee", "tees": "tee", "shirts": "shirt", "hats": "hat", "beanies": "beanie", "caps": "cap", "boxer": "boxers", "sock": "socks", "sweats": "sweatpants", "joggers": "sweatpants", "zip": "", "up": "", "xl": "", "xxl": "", "2xl": "", "3xl": "", "small": "", "medium": "", "large": "" };
   function searchWords(q) {
     return q.toLowerCase().replace(/[^a-z0-9.' -]/g, " ").split(/\s+/).filter(Boolean)
       .map(w => (w in ALIAS ? ALIAS[w] : w)).filter(w => w && !STOP.has(w));
@@ -299,7 +305,7 @@
   // the one-price tag beside "All products": the chosen type's price, or every type's price on "All"
   function priceTag(type) {
     const op = $("#onePrice"); if (!op) return;
-    op.hidden = !EACH; if (!EACH) return;
+    op.hidden = true; return;   // prices now sit on the item tabs (see chips()); the old price box stays hidden
     if (type && ONE_BY[type.id] != null) {
       op.replaceChildren(el("span", { class: "op-k", text: "One price" }), el("span", { class: "op-v", text: money(ONE_BY[type.id]) }),
         el("span", { class: "op-s", text: `every ${type.one.startsWith("pair of") ? "pair" : type.one}` }));
@@ -402,9 +408,9 @@
   function mini(q, btn) {
     return el("div", { class: "mini" },
       el("button", { type: "button", class: "mini-open", "aria-label": `View ${q.name}`, onclick: () => { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); } },
-        el("div", { class: "tile" }, el("img", { src: q.img, alt: "", loading: "lazy" })),
-        onePrice(q) ? null : el("span", { class: "mini-price", text: money(q.price) }), el("span", { class: "mini-name", text: q.name }),
-        q.typeLabel !== cur.typeLabel ? el("span", { class: "mini-type", text: q.typeLabel }) : null), btn || null);
+        el("span", { class: "mini-pic" }, el("img", { src: q.img, alt: "", loading: "lazy" })),
+        el("span", { class: "mini-name", text: q.name }),
+        el("span", { class: "mini-meta", text: `${q.typeLabel} · ${money(q.price)}` })), btn || null);
   }
   function drawAlts(out) {
     const box = $("#pdAlts");
@@ -414,7 +420,7 @@
     $("#pdAltsTitle").textContent = `Available in ${size}`;
     $("#pdAltsList").replaceChildren(...list.map(q => mini(q)));
   }
-  // ---------- same design + color on the other items (hoodie, tee, hats, boxers, socks, sweatpants, jacket) ----------
+  // ---------- same design + color on the other items (hoodie, tee, hats, boxers, socks, sweatpants) ----------
   const TYPE_ORDER = CAT.types.map(t => t.id);
   const designOf = q => q.design != null ? q.design : q.id % 1000;
   function drawAlso(p) {
@@ -448,12 +454,12 @@
     const list = [...same.slice(0, 4 - pick.length), ...pick];
     $("#pdWith").hidden = !list.length || !$("#notifyForm").hidden;
     $("#pdWithList").replaceChildren(...list.map(q => {
-      const qOne = q.sizes.length === 1, qSize = qOne ? q.sizes[0] : q.type === cur.type ? size : null;
+      // two labels only: "+ Add" when it can be added right now (one size, or same item type in the size already picked), else "Choose size"
+      const qOne = q.sizes.length === 1, qSize = qOne ? q.sizes[0] : q.type === cur.type && size && q.sizes.includes(size) ? size : null;
       return mini(q, el("button", { type: "button", class: "mini-add",
-      text: qOne ? "+ Add" : q.type !== cur.type ? "View" : size ? `+ Add ${size}` : "Pick size",
+      text: qSize ? "+ Add" : "Choose size", "aria-label": qSize ? `Add ${q.name}, ${qOne ? q.typeLabel : qSize}` : `Choose a size for ${q.name}`,
       onclick: e => {
-        if (!qOne && q.type !== cur.type) { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); return; }
-        if (!qSize) { $("#pdMsg").textContent = "Pick a size first, then tap + Add."; return; }
+        if (!qSize) { track("suggestion_opened", { from: cur.id, to: q.id }); openProduct(q); return; }
         if (soldOut(q, qSize)) { e.currentTarget.textContent = qOne ? "Sold out" : `${qSize} sold out`; return; }
         if (!addToBag(q.id, qSize, 1, "buy_it_with")) return;
         e.currentTarget.textContent = "Added ✓"; e.currentTarget.disabled = true;
@@ -548,8 +554,6 @@
     socks: { cols: [["us_men", "US men's shoe"], ["us_women", "US women's shoe"]], how: ["Pick by your usual shoe size."] },
     sweatpants: { cols: [["waist", "Waist (relaxed)"], ["hip", "Hip"], ["inseam", "Inseam"]], how: ["Use sweatpants you own that fit the way you like. Lay them flat.",
       "Waist: edge to edge across the waistband, relaxed, then double it.", "Hip: edge to edge at the widest point, then double it.", "Inseam: crotch seam to the bottom of the cuff."] },
-    jackets: { cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]], how: ["Use a jacket you own that fits the way you like, ideally one you wear over a hoodie. Lay it flat, closed.",
-      "Chest: armpit to armpit, then double it.", "Length: base of the collar at the back, straight down to the hem.", "Sleeve: shoulder seam to the end of the cuff."] },
   };
   function sizeGuideFor(p) {
     const box = $("#sizeGuide"); box.replaceChildren();

@@ -6033,7 +6033,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6091,7 +6091,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-37c59e12f4.svg",
+     "src": "img/s-8741148d3b.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -6149,7 +6149,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6207,7 +6207,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -6265,7 +6265,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6323,7 +6323,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-0ae8de5091.svg",
+     "src": "img/s-c2f0f37750.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -6381,7 +6381,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6439,7 +6439,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-65b1e6a907.svg",
+     "src": "img/s-a38e88d7bd.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -6497,7 +6497,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-4533a55bbb.svg",
+     "src": "img/s-9cc1fb9640.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -6555,7 +6555,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-b704ce590a.svg",
+     "src": "img/s-0bb2c82d5a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -6613,7 +6613,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6671,7 +6671,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -6724,7 +6724,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6776,7 +6776,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-37c59e12f4.svg",
+     "src": "img/s-8741148d3b.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -6828,7 +6828,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6880,7 +6880,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -6932,7 +6932,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6984,7 +6984,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-0ae8de5091.svg",
+     "src": "img/s-c2f0f37750.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -7036,7 +7036,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7088,7 +7088,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-65b1e6a907.svg",
+     "src": "img/s-a38e88d7bd.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -7140,7 +7140,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-4533a55bbb.svg",
+     "src": "img/s-9cc1fb9640.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -7192,7 +7192,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-b704ce590a.svg",
+     "src": "img/s-0bb2c82d5a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -7244,7 +7244,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7296,7 +7296,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -7348,7 +7348,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7400,7 +7400,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-37c59e12f4.svg",
+     "src": "img/s-8741148d3b.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -7452,7 +7452,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -7504,7 +7504,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -7556,7 +7556,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -7608,7 +7608,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-0ae8de5091.svg",
+     "src": "img/s-c2f0f37750.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -7660,7 +7660,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7712,7 +7712,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-65b1e6a907.svg",
+     "src": "img/s-a38e88d7bd.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -7764,7 +7764,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-4533a55bbb.svg",
+     "src": "img/s-9cc1fb9640.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -7816,7 +7816,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-b704ce590a.svg",
+     "src": "img/s-0bb2c82d5a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -7868,7 +7868,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7920,7 +7920,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -7976,7 +7976,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8033,7 +8033,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-37c59e12f4.svg",
+     "src": "img/s-8741148d3b.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -8090,7 +8090,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8147,7 +8147,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -8204,7 +8204,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8261,7 +8261,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-0ae8de5091.svg",
+     "src": "img/s-c2f0f37750.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -8318,7 +8318,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8375,7 +8375,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-65b1e6a907.svg",
+     "src": "img/s-a38e88d7bd.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -8432,7 +8432,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-4533a55bbb.svg",
+     "src": "img/s-9cc1fb9640.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -8489,7 +8489,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-b704ce590a.svg",
+     "src": "img/s-0bb2c82d5a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -8546,7 +8546,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8603,7 +8603,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -8657,7 +8657,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8710,7 +8710,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-37c59e12f4.svg",
+     "src": "img/s-8741148d3b.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -8763,7 +8763,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8816,7 +8816,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -8869,7 +8869,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8922,7 +8922,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-0ae8de5091.svg",
+     "src": "img/s-c2f0f37750.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -8975,7 +8975,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -9028,7 +9028,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-65b1e6a907.svg",
+     "src": "img/s-a38e88d7bd.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -9081,7 +9081,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-4533a55bbb.svg",
+     "src": "img/s-9cc1fb9640.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -9134,7 +9134,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-b704ce590a.svg",
+     "src": "img/s-0bb2c82d5a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -9187,7 +9187,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -9240,7 +9240,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -9297,7 +9297,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -9357,7 +9357,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-37c59e12f4.svg",
+     "src": "img/s-8741148d3b.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -9417,7 +9417,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -9477,7 +9477,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -9537,7 +9537,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-26a2285af7.svg",
+     "src": "img/s-b32b8766da.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -9597,7 +9597,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-0ae8de5091.svg",
+     "src": "img/s-c2f0f37750.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -9657,7 +9657,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -9717,7 +9717,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-65b1e6a907.svg",
+     "src": "img/s-a38e88d7bd.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -9777,7 +9777,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-4533a55bbb.svg",
+     "src": "img/s-9cc1fb9640.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -9837,7 +9837,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-b704ce590a.svg",
+     "src": "img/s-0bb2c82d5a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -9897,7 +9897,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-840c58db19.svg",
+     "src": "img/s-0dec176696.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -9957,7 +9957,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/s-c201b8e8e8.svg",
+     "src": "img/s-f6174898ab.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -9974,726 +9974,6 @@ window.CATALOG = {
    ],
    "notes": [
     "Contains natural rubber latex (not for latex allergies)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7010,
-   "design": 10,
-   "slug": "everyone-gets-a-toe-tag-jackets",
-   "name": "Everyone gets a toe tag.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "morgue",
-   "color": "Black",
-   "colorNote": "Black (logwood + iron)",
-   "tags": "toe tag morgue tag morgue corpse dead body coroner black jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#151515",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-10-everyone-gets-a-toe-tag.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-10-everyone-gets-a-toe-tag.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-b1ef7e0700.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-10-everyone-gets-a-toe-tag-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-0dec176696.svg",
-     "alt": "Fabric color: Black (logwood + iron)"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Black (logwood + iron)",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7011,
-   "design": 11,
-   "slug": "skeleton-wearing-meat-jackets",
-   "name": "You are a skeleton wearing meat.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "rot",
-   "color": "Dusty rose",
-   "colorNote": "Dusty rose (light madder)",
-   "tags": "skull rot decay bones rot decay decompose worms pink rose jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#cfa39b",
-   "light": true,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-11-skeleton-wearing-meat.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-11-skeleton-wearing-meat.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/jackets-11-skeleton-wearing-meat-b.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-11-skeleton-wearing-meat-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/jackets-11-skeleton-wearing-meat-d.svg",
-     "alt": "Fabric color: Dusty rose (light madder)"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Dusty rose (light madder)",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7014,
-   "design": 14,
-   "slug": "225-it-helps-jackets",
-   "name": "225 lbs. It helps.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "iron",
-   "color": "Charcoal",
-   "colorNote": "Charcoal",
-   "tags": "barbell gym lift weights gym lift lifting workout fitness weights training gray grey dark jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#2d2d2d",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-14-225-it-helps.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-14-225-it-helps.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-0f8a221446.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-14-225-it-helps-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-b32b8766da.svg",
-     "alt": "Fabric color: Charcoal"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Charcoal",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7025,
-   "design": 25,
-   "slug": "the-box-will-be-heavy-jackets",
-   "name": "The box will be heavy.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "grave",
-   "color": "Indigo",
-   "colorNote": "Indigo",
-   "tags": "coffin casket funeral grave funeral burial cemetery buried dead death blue navy jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#1e2a46",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-25-the-box-will-be-heavy.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-25-the-box-will-be-heavy.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-89ba5f63e7.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-25-the-box-will-be-heavy-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-f6174898ab.svg",
-     "alt": "Fabric color: Indigo"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Indigo",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7044,
-   "design": 44,
-   "slug": "reaper-is-patient-jackets",
-   "name": "The reaper is patient.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "grave",
-   "color": "Charcoal",
-   "colorNote": "Charcoal",
-   "tags": "grim reaper scythe death grave funeral burial cemetery buried dead death gray grey dark jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#2d2d2d",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-44-reaper-is-patient.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-44-reaper-is-patient.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-0f8a221446.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-44-reaper-is-patient-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-b32b8766da.svg",
-     "alt": "Fabric color: Charcoal"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Charcoal",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7048,
-   "design": 48,
-   "slug": "the-dirt-always-wins-jackets",
-   "name": "The dirt always wins.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "grave",
-   "color": "Olive",
-   "colorNote": "Olive (weld + iron)",
-   "tags": "grave shovel dirt cemetery grave funeral burial cemetery buried dead death green army jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#4a4a2a",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-48-the-dirt-always-wins.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-48-the-dirt-always-wins.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/jackets-48-the-dirt-always-wins-b.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-48-the-dirt-always-wins-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/jackets-48-the-dirt-always-wins-d.svg",
-     "alt": "Fabric color: Olive (weld + iron)"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Olive (weld + iron)",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7060,
-   "design": 60,
-   "slug": "grief-has-weight-jackets",
-   "name": "Grief has weight.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "iron",
-   "color": "Black",
-   "colorNote": "Black (logwood + iron)",
-   "tags": "weight plate gym lift gym lift lifting workout fitness weights training black jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#151515",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-60-grief-has-weight.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-60-grief-has-weight.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-b1ef7e0700.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-60-grief-has-weight-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-0dec176696.svg",
-     "alt": "Fabric color: Black (logwood + iron)"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Black (logwood + iron)",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7066,
-   "design": 66,
-   "slug": "a-heart-is-just-meat-jackets",
-   "name": "A heart is just meat.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "anatomy",
-   "color": "Oxblood",
-   "colorNote": "Oxblood (madder + iron)",
-   "tags": "heart anatomy organ anatomy body organs blood red maroon burgundy wine jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#5e1a1c",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-66-a-heart-is-just-meat.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-66-a-heart-is-just-meat.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/jackets-66-a-heart-is-just-meat-b.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-66-a-heart-is-just-meat-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/jackets-66-a-heart-is-just-meat-d.svg",
-     "alt": "Fabric color: Oxblood (madder + iron)"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Oxblood (madder + iron)",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7072,
-   "design": 72,
-   "slug": "here-for-a-short-time-jackets",
-   "name": "Here for a short time.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "grave",
-   "color": "Heather grey",
-   "colorNote": "Heather grey",
-   "tags": "hourglass time grave funeral burial cemetery buried dead death gray grey jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#b8b5ae",
-   "light": true,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-72-here-for-a-short-time.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-72-here-for-a-short-time.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/jackets-72-here-for-a-short-time-b.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-72-here-for-a-short-time-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/jackets-72-here-for-a-short-time-d.svg",
-     "alt": "Fabric color: Heather grey"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Heather grey",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7083,
-   "design": 83,
-   "slug": "cemetery-quiet-gym-loud-jackets",
-   "name": "Cemetery quiet. Gym loud.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "grave",
-   "color": "Undyed oatmeal",
-   "colorNote": "Undyed oatmeal",
-   "tags": "tombstone gravestone grave rip cemetery grave funeral burial cemetery buried dead death cream white beige natural off-white jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#e4d9c2",
-   "light": true,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-83-cemetery-quiet-gym-loud.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-83-cemetery-quiet-gym-loud.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/jackets-83-cemetery-quiet-gym-loud-b.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-83-cemetery-quiet-gym-loud-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/jackets-83-cemetery-quiet-gym-loud-d.svg",
-     "alt": "Fabric color: Undyed oatmeal"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Undyed oatmeal",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7090,
-   "design": 90,
-   "slug": "death-remembers-you-jackets",
-   "name": "Death",
-   "sub": "remembers you.",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "anatomy",
-   "color": "Black",
-   "colorNote": "Black (logwood + iron)",
-   "tags": "skull bones death anatomy body organs blood black jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#151515",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-90-death-remembers-you.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-90-death-remembers-you.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-b1ef7e0700.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-90-death-remembers-you-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-0dec176696.svg",
-     "alt": "Fabric color: Black (logwood + iron)"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Black (logwood + iron)",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
-    "All sales final: check the size guide"
-   ]
-  },
-  {
-   "id": 7105,
-   "design": 105,
-   "slug": "flies-know-something-jackets",
-   "name": "The flies know something.",
-   "sub": "",
-   "type": "jackets",
-   "typeLabel": "Heavy jacket",
-   "word": "jacket",
-   "theme": "rot",
-   "color": "Indigo",
-   "colorNote": "Indigo",
-   "tags": "skull flies rot rot decay decompose worms blue navy jacket jackets coat chore work duck canvas outerwear",
-   "hex": "#1e2a46",
-   "light": false,
-   "placement": "Large back print",
-   "price": 325,
-   "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "2XL",
-    "3XL"
-   ],
-   "img": "img/jackets-105-flies-know-something.svg",
-   "imgs": [
-    {
-     "src": "img/jackets-105-flies-know-something.svg",
-     "alt": "Back, with design"
-    },
-    {
-     "src": "img/s-89ba5f63e7.svg",
-     "alt": "Front, plain"
-    },
-    {
-     "src": "img/jackets-105-flies-know-something-c.svg",
-     "alt": "Design close-up"
-    },
-    {
-     "src": "img/s-f6174898ab.svg",
-     "alt": "Fabric color: Indigo"
-    }
-   ],
-   "featured": null,
-   "details": [
-    "Color: Indigo",
-    "12 oz 100% cotton duck shell, brown cotton corduroy collar",
-    "Lining: cotton flannel quilted over wool batting; plant-cellulose (cupro) sleeve lining",
-    "Brass snaps instead of a zipper (zipper tape is usually polyester). Cotton thread. No plastic.",
-    "Wash cold, line dry: the wool lining can shrink in heat",
-    "Large back print, natural dye",
-    "Natural dyes fade gradually with sun and washing",
-    "Preorder: no charge until we confirm a ship date"
-   ],
-   "notes": [
-    "Contains wool (lining)",
     "All sales final: check the size guide"
    ]
   }
@@ -10754,14 +10034,6 @@ window.CATALOG = {
    "many": "sweatpants",
    "live": true,
    "price": 140
-  },
-  {
-   "id": "jackets",
-   "label": "Heavy jackets",
-   "one": "jacket",
-   "many": "jackets",
-   "live": true,
-   "price": 325
   }
  ]
 };

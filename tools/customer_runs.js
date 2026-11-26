@@ -11,7 +11,7 @@ const PERSONAS = [
   ['color', 'Wants a specific color'],
   ['scroll', 'Scrolls the grid and picks something'],
   ['multi', 'Adds 2–3 items'],
-  ['category', 'Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one'],
+  ['category', 'Taps a type chip (tees, hats, underwear, socks, sweatpants) and buys one'],
   ['addon', 'Buys a hoodie, adds a one-size add-on from "Buy it with"'],
   ['variant', 'Likes a hoodie design, switches to the same design on another item ("Also in this design") and buys that'],
   ['soldout', 'Wants a size that is sold out'],
@@ -36,7 +36,7 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     await p.goto(startUrl); await p.waitForTimeout(500);
     const vh = await p.evaluate(() => innerHeight);
     const firstScreen = await p.evaluate(() => ({ products: [...document.querySelectorAll('.ring-card, #grid .card')].filter(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0 && getComputedStyle(e).visibility !== 'hidden' && +getComputedStyle(e).opacity > .5; }).length,
-      priceVisible: [...document.querySelectorAll('.price, #onePrice:not([hidden]), #heroShip, #resultCount')].some(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }) }));
+      priceVisible: [...document.querySelectorAll('.price, [data-for="fCat"] .tp, #heroShip, #resultCount')].some(e => { const r = e.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }) }));
     if (persona === 'returning') { await p.evaluate(() => localStorage.setItem('recent', JSON.stringify([60, 27, 44]))); await p.reload(); await p.waitForTimeout(400); }
     const openCard = async sel => { await p.locator(sel).scrollIntoViewIfNeeded(); scrolls++; await p.locator(sel).click({ force: true }); await p.waitForTimeout(250); };
     const gridToView = async () => { await p.locator('#filters').scrollIntoViewIfNeeded(); scrolls++; };
@@ -58,16 +58,16 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
     if (persona === 'multi') { await act('open product', () => openCard('#grid .card >> nth=1')); }
     if (persona === 'soldout') { await act('open toe tag (L sold out)', async () => { await p.evaluate(() => location.hash = 'everyone-gets-a-toe-tag'); await p.waitForTimeout(300); }); wantSize = 'L'; }
     if (persona === 'sizeunsure') { await act('open product', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 12))); }
-    if (persona === 'category') { await gridToView(); const t = pick(['Tees', 'Hats', 'Underwear', 'Socks', 'Sweatpants', 'Heavy jackets']); await act('type chip ' + t, () => p.locator('[data-for="fCat"] .chip', { hasText: t }).first().click());
+    if (persona === 'category') { await gridToView(); const t = pick(['Tees', 'Hats', 'Underwear', 'Socks', 'Sweatpants']); await act('type chip ' + t, () => p.locator('[data-for="fCat"] .chip', { hasText: t }).first().click());
       const n = await p.locator('#grid .card').count(); log.push(`${t}: ${n} items`); if (!n) friction.push(`${t}: no items`);
-      const tag = await p.textContent('#onePrice'); if (!/\$\d+/.test(tag)) friction.push(`${t}: price not shown`);
+      const tag = (await p.textContent('[data-for="fCat"] .chip[aria-checked="true"]')) + ' ' + (await p.textContent('#resultCount')); if (!/\$\d+/.test(tag)) friction.push(`${t}: price not shown`);
       await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 3))); }
     if (persona === 'addon') { await act('open hoodie', () => openCard('#grid .card >> nth=0')); }
     if (persona === 'variant') {
       await act('open hoodie', () => openCard('#grid .card >> nth=0'));
       const before = await p.textContent('#pdName'); const n = await p.locator('#pdAlsoList .also').count();
       if (n < 2) friction.push('no "Also in this design" picker on a starter design');
-      else { const t = pick(['Tee', 'Beanie', 'Dad cap', 'Boxers', 'Socks', 'Sweatpants', 'Heavy jacket']);
+      else { const t = pick(['Tee', 'Beanie', 'Dad cap', 'Boxers', 'Socks', 'Sweatpants']);
         await act('switch to ' + t, () => p.locator('#pdAlsoList .also', { hasText: t }).first().click()); await p.waitForTimeout(300);
         const after = await p.evaluate(() => ({ name: document.querySelector('#pdName').textContent, on: document.querySelector('#pdAlsoList [aria-checked="true"] .also-l').textContent }));
         if (after.name !== before || after.on !== t) friction.push(`picker switch wrong: ${JSON.stringify(after)}`); else log.push('switched to ' + t); } }

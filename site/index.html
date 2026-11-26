@@ -60,26 +60,31 @@
       <h2 id="shopTitle" class="sec-title">All products</h2>
       <p class="one-price" id="onePrice" hidden></p>
     </div>
-    <form class="filters" id="filters" aria-label="Filter products">
-      <div class="ftop">
-        <label class="search"><span class="sr">Search</span>
-          <input id="fSearch" type="search" placeholder="Search designs: coffin, grief, rot…" autocomplete="off">
-        </label>
-        <div class="frow sortrow"><span class="frow-label" id="fSortLbl">Sort</span>
-          <select id="fSort" class="sr" tabindex="-1" aria-hidden="true">
-            <option value="featured">Featured</option>
-            <option value="new">Newest</option>
-            <option value="az">A–Z</option>
-          </select>
-          <div class="chips" data-for="fSort"></div>
+    <form class="filters fbar" id="filters" aria-label="Filter products">
+      <div class="fb-top">
+        <div class="frow tabs-row"><span class="frow-label sr" id="fCatLbl">Shop</span>
+          <select id="fCat" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips tabs" data-for="fCat"></div></div>
+        <div class="fb-tools">
+          <label class="search"><span class="sr">Search</span>
+            <input id="fSearch" type="search" placeholder="Search" autocomplete="off">
+          </label>
+          <div class="frow sortrow"><span class="frow-label sr" id="fSortLbl">Sort</span>
+            <select id="fSort" class="sr" tabindex="-1" aria-hidden="true">
+              <option value="featured">Featured</option>
+              <option value="new">Newest</option>
+              <option value="az">A–Z</option>
+            </select>
+            <div class="chips" data-for="fSort"></div>
+          </div>
         </div>
       </div>
-      <div class="frow"><span class="frow-label" id="fCatLbl">Shop</span>
-        <select id="fCat" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fCat"></div></div>
-      <div class="frow"><span class="frow-label" id="fThemeLbl">Theme</span>
-        <select id="fTheme" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fTheme"></div></div>
-      <div class="frow"><span class="frow-label" id="fColorLbl">Color</span>
-        <select id="fColor" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fColor"></div></div>
+      <div class="fb-row">
+        <div class="frow"><span class="frow-label sr" id="fThemeLbl">Theme</span>
+          <select id="fTheme" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips" data-for="fTheme"></div></div>
+        <span class="fdiv" aria-hidden="true"></span>
+        <div class="frow"><span class="frow-label sr" id="fColorLbl">Color</span>
+          <select id="fColor" class="sr" tabindex="-1" aria-hidden="true"></select><div class="chips dots" data-for="fColor"></div></div>
+      </div>
     </form>
     <div class="result-bar">
       <p id="resultCount" aria-live="polite"></p>

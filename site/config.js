@@ -50,11 +50,6 @@ window.SITE_CONFIG = {
       { size: "L", waist: "", hip: "", inseam: "" }, { size: "XL", waist: "", hip: "", inseam: "" },
       { size: "2XL", waist: "", hip: "", inseam: "" }, { size: "3XL", waist: "", hip: "", inseam: "" },
     ],
-    jackets: [
-      { size: "S", chest: "", length: "", sleeve: "" }, { size: "M", chest: "", length: "", sleeve: "" },
-      { size: "L", chest: "", length: "", sleeve: "" }, { size: "XL", chest: "", length: "", sleeve: "" },
-      { size: "2XL", chest: "", length: "", sleeve: "" }, { size: "3XL", chest: "", length: "", sleeve: "" },
-    ],
   },
   SIZE_UNITS: "in",
   SIZE_CHART: [

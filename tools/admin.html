@@ -117,13 +117,12 @@
       i.type = "number"; i.step = "0.25"; i.min = "0"; i.value = row[f]; i.setAttribute("aria-label", `${s} ${f}`);
       i.addEventListener("input", () => { row[f] = i.value; build(); }); c.append(i); tr.append(c); }
     return tr; }));
-  // size charts for the other items (tees, boxers, socks, sweatpants, jackets); hats are one size
+  // size charts for the other items (tees, boxers, socks, sweatpants); hats are one size
   const OTHER = {
     tee: { title: "Tees (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL"], cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]] },
     underwear: { title: "Boxers (inches)", sizes: ["S", "M", "L", "XL", "2XL"], cols: [["waist", "Waist"], ["inseam", "Inseam"]] },
     socks: { title: "Socks (US shoe sizes, e.g. 6-9)", sizes: ["S/M", "L/XL"], cols: [["us_men", "Men's"], ["us_women", "Women's"]], text: true },
     sweatpants: { title: "Sweatpants (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL"], cols: [["waist", "Waist"], ["hip", "Hip"], ["inseam", "Inseam"]] },
-    jackets: { title: "Heavy jackets (inches, flat)", sizes: ["S", "M", "L", "XL", "2XL", "3XL"], cols: [["chest", "Chest"], ["length", "Length"], ["sleeve", "Sleeve"]] },
   };
   C.SIZE_CHARTS = C.SIZE_CHARTS || {};
   for (const [t, g] of Object.entries(OTHER)) {
