@@ -32,7 +32,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/01-keep-hanging-on-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -40,7 +40,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/01-keep-hanging-on-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -87,7 +87,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/02-meat-bone-nothing-else-b.svg",
+     "src": "img/s-2422962842.svg",
      "alt": "Back, plain"
     },
     {
@@ -95,7 +95,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/02-meat-bone-nothing-else-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -142,7 +142,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/03-ill-spot-you-b.svg",
+     "src": "img/s-56a37e2303.svg",
      "alt": "Front, plain"
     },
     {
@@ -150,7 +150,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/03-ill-spot-you-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -197,7 +197,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/04-carrying-the-dead-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -205,7 +205,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/04-carrying-the-dead-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -252,7 +252,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/05-after-checklist-b.svg",
+     "src": "img/s-ecfcc26283.svg",
      "alt": "Front, plain"
     },
     {
@@ -260,7 +260,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/05-after-checklist-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -307,7 +307,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/06-running-on-whats-left-b.svg",
+     "src": "img/s-ec879f5803.svg",
      "alt": "Back, plain"
     },
     {
@@ -315,7 +315,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/06-running-on-whats-left-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -362,7 +362,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/07-i-carry-the-dead-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -370,7 +370,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/07-i-carry-the-dead-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -417,7 +417,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/08-we-all-break-b.svg",
+     "src": "img/s-371e431f3c.svg",
      "alt": "Back, plain"
     },
     {
@@ -425,7 +425,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/08-we-all-break-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -472,7 +472,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/09-bar-doesnt-care-b.svg",
+     "src": "img/s-e18c0d995b.svg",
      "alt": "Front, plain"
     },
     {
@@ -480,7 +480,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/09-bar-doesnt-care-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -527,7 +527,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/10-everyone-gets-a-toe-tag-b.svg",
+     "src": "img/s-01566e75c6.svg",
      "alt": "Back, plain"
     },
     {
@@ -535,7 +535,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/10-everyone-gets-a-toe-tag-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -582,7 +582,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/11-skeleton-wearing-meat-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -590,7 +590,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/11-skeleton-wearing-meat-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -637,7 +637,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/12-lift-heavy-carry-heavy-b.svg",
+     "src": "img/s-77f3db555f.svg",
      "alt": "Front, plain"
     },
     {
@@ -645,7 +645,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/12-lift-heavy-carry-heavy-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -692,7 +692,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/13-they-weigh-your-heart-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -700,7 +700,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/13-they-weigh-your-heart-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -747,7 +747,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/14-225-it-helps-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -755,7 +755,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/14-225-it-helps-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -802,7 +802,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/15-still-warm-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -810,7 +810,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/15-still-warm-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -857,7 +857,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/16-something-is-watching-b.svg",
+     "src": "img/s-ec879f5803.svg",
      "alt": "Back, plain"
     },
     {
@@ -865,7 +865,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/16-something-is-watching-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -912,7 +912,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/17-embalmed-zipped-forgotten-b.svg",
+     "src": "img/s-cf4dbc0c37.svg",
      "alt": "Front, plain"
     },
     {
@@ -920,7 +920,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/17-embalmed-zipped-forgotten-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -967,7 +967,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/18-mortality-undefeated-b.svg",
+     "src": "img/s-a3cdcda2b2.svg",
      "alt": "Front, plain"
     },
     {
@@ -975,7 +975,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/18-mortality-undefeated-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -1022,7 +1022,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/19-carry-forever-b.svg",
+     "src": "img/s-2a0b373281.svg",
      "alt": "Back, plain"
     },
     {
@@ -1030,7 +1030,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/19-carry-forever-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -1077,7 +1077,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/20-coroner-will-know-b.svg",
+     "src": "img/s-79417ae882.svg",
      "alt": "Front, plain"
     },
     {
@@ -1085,7 +1085,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/20-coroner-will-know-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -1132,7 +1132,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/21-demons-dont-spot-you-b.svg",
+     "src": "img/s-278561c287.svg",
      "alt": "Front, plain"
     },
     {
@@ -1140,7 +1140,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/21-demons-dont-spot-you-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -1187,7 +1187,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/22-sweat-tears-dread-repeat-b.svg",
+     "src": "img/s-77f3db555f.svg",
      "alt": "Front, plain"
     },
     {
@@ -1195,7 +1195,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/22-sweat-tears-dread-repeat-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -1242,7 +1242,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/23-ashes-to-ashes-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -1250,7 +1250,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/23-ashes-to-ashes-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -1297,7 +1297,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/24-ask-me-how-im-doing-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -1305,7 +1305,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/24-ask-me-how-im-doing-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -1352,7 +1352,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/25-the-box-will-be-heavy-b.svg",
+     "src": "img/s-ecfcc26283.svg",
      "alt": "Front, plain"
     },
     {
@@ -1360,7 +1360,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/25-the-box-will-be-heavy-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -1407,7 +1407,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/26-time-of-death-tbd-b.svg",
+     "src": "img/s-e66ed6c8d5.svg",
      "alt": "Front, plain"
     },
     {
@@ -1415,7 +1415,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/26-time-of-death-tbd-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -1462,7 +1462,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/27-maggots-are-patient-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -1470,7 +1470,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/27-maggots-are-patient-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -1517,7 +1517,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/28-still-moving-already-rotting-b.svg",
+     "src": "img/s-371e431f3c.svg",
      "alt": "Back, plain"
     },
     {
@@ -1525,7 +1525,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/28-still-moving-already-rotting-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -1572,7 +1572,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/29-everything-hurts-b.svg",
+     "src": "img/s-e18c0d995b.svg",
      "alt": "Front, plain"
     },
     {
@@ -1580,7 +1580,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/29-everything-hurts-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -1627,7 +1627,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/30-the-weight-is-real-b.svg",
+     "src": "img/s-01566e75c6.svg",
      "alt": "Back, plain"
     },
     {
@@ -1635,7 +1635,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/30-the-weight-is-real-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -1682,7 +1682,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/31-next-of-kin-notified-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -1690,7 +1690,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/31-next-of-kin-notified-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -1737,7 +1737,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/32-meat-bone-spite-b.svg",
+     "src": "img/s-2422962842.svg",
      "alt": "Back, plain"
     },
     {
@@ -1745,7 +1745,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/32-meat-bone-spite-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -1792,7 +1792,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/33-tagged-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -1800,7 +1800,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/33-tagged-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -1847,7 +1847,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/34-pine-box-final-address-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -1855,7 +1855,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/34-pine-box-final-address-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -1902,7 +1902,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/35-one-day-this-is-you-b.svg",
+     "src": "img/s-ecfcc26283.svg",
      "alt": "Front, plain"
     },
     {
@@ -1910,7 +1910,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/35-one-day-this-is-you-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -1957,7 +1957,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/36-3am-thoughts-fabric-b.svg",
+     "src": "img/s-e66ed6c8d5.svg",
      "alt": "Front, plain"
     },
     {
@@ -1965,7 +1965,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/36-3am-thoughts-fabric-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -2012,7 +2012,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/37-pain-is-real-so-are-we-b.svg",
+     "src": "img/s-cf4dbc0c37.svg",
      "alt": "Front, plain"
     },
     {
@@ -2020,7 +2020,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/37-pain-is-real-so-are-we-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -2067,7 +2067,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/38-hold-the-weight-b.svg",
+     "src": "img/s-371e431f3c.svg",
      "alt": "Back, plain"
     },
     {
@@ -2075,7 +2075,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/38-hold-the-weight-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -2122,7 +2122,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/39-brain-haunted-body-lifting-b.svg",
+     "src": "img/s-e18c0d995b.svg",
      "alt": "Front, plain"
     },
     {
@@ -2130,7 +2130,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/39-brain-haunted-body-lifting-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -2177,7 +2177,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/40-dyed-with-dead-plants-front-b.svg",
+     "src": "img/s-01566e75c6.svg",
      "alt": "Back, plain"
     },
     {
@@ -2185,7 +2185,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/40-dyed-with-dead-plants-front-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -2232,7 +2232,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/41-everything-rots-pocket-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -2240,7 +2240,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/41-everything-rots-pocket-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -2287,7 +2287,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/42-here-lies-someone-who-tried-b.svg",
+     "src": "img/s-77f3db555f.svg",
      "alt": "Front, plain"
     },
     {
@@ -2295,7 +2295,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/42-here-lies-someone-who-tried-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -2342,7 +2342,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/43-six-feet-no-more-b.svg",
+     "src": "img/s-56a37e2303.svg",
      "alt": "Front, plain"
     },
     {
@@ -2350,7 +2350,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/43-six-feet-no-more-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -2397,7 +2397,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/44-reaper-is-patient-b.svg",
+     "src": "img/s-42a9fea259.svg",
      "alt": "Front, plain"
     },
     {
@@ -2405,7 +2405,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/44-reaper-is-patient-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -2452,7 +2452,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/45-whats-left-of-me-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -2460,7 +2460,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/45-whats-left-of-me-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -2507,7 +2507,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/46-sore-and-haunted-b.svg",
+     "src": "img/s-e66ed6c8d5.svg",
      "alt": "Front, plain"
     },
     {
@@ -2515,7 +2515,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/46-sore-and-haunted-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -2562,7 +2562,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/47-something-in-me-is-broken-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -2570,7 +2570,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/47-something-in-me-is-broken-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -2617,7 +2617,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/48-the-dirt-always-wins-b.svg",
+     "src": "img/s-a3cdcda2b2.svg",
      "alt": "Front, plain"
     },
     {
@@ -2625,7 +2625,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/48-the-dirt-always-wins-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -2672,7 +2672,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/49-lie-still-b.svg",
+     "src": "img/s-2a0b373281.svg",
      "alt": "Back, plain"
     },
     {
@@ -2680,7 +2680,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/49-lie-still-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -2727,7 +2727,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/50-bury-me-with-my-belt-b.svg",
+     "src": "img/s-79417ae882.svg",
      "alt": "Front, plain"
     },
     {
@@ -2735,7 +2735,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/50-bury-me-with-my-belt-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -2782,7 +2782,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/51-heart-beats-out-of-spite-b.svg",
+     "src": "img/s-278561c287.svg",
      "alt": "Front, plain"
     },
     {
@@ -2790,7 +2790,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/51-heart-beats-out-of-spite-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -2837,7 +2837,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/52-chalk-hands-grave-dirt-b.svg",
+     "src": "img/s-2422962842.svg",
      "alt": "Back, plain"
     },
     {
@@ -2845,7 +2845,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/52-chalk-hands-grave-dirt-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -2892,7 +2892,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/53-worms-are-waiting-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -2900,7 +2900,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/53-worms-are-waiting-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -2947,7 +2947,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/54-measured-for-a-coffin-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -2955,7 +2955,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/54-measured-for-a-coffin-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -3002,7 +3002,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/55-rotting-in-real-time-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -3010,7 +3010,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/55-rotting-in-real-time-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -3057,7 +3057,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/56-grief-doesnt-get-lighter-b.svg",
+     "src": "img/s-ec879f5803.svg",
      "alt": "Back, plain"
     },
     {
@@ -3065,7 +3065,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/56-grief-doesnt-get-lighter-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -3112,7 +3112,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/57-thoughts-are-heavier-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -3120,7 +3120,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/57-thoughts-are-heavier-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -3167,7 +3167,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/58-every-cell-is-dying-b.svg",
+     "src": "img/s-371e431f3c.svg",
      "alt": "Back, plain"
     },
     {
@@ -3175,7 +3175,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/58-every-cell-is-dying-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -3222,7 +3222,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/59-everyone-ends-underground-b.svg",
+     "src": "img/s-2a0b373281.svg",
      "alt": "Back, plain"
     },
     {
@@ -3230,7 +3230,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/59-everyone-ends-underground-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -3277,7 +3277,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/60-grief-has-weight-b.svg",
+     "src": "img/s-79417ae882.svg",
      "alt": "Front, plain"
     },
     {
@@ -3285,7 +3285,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/60-grief-has-weight-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -3332,7 +3332,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/61-warm-up-small-talk-b.svg",
+     "src": "img/s-278561c287.svg",
      "alt": "Front, plain"
     },
     {
@@ -3340,7 +3340,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/61-warm-up-small-talk-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -3387,7 +3387,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/62-coroner-heart-too-heavy-b.svg",
+     "src": "img/s-2422962842.svg",
      "alt": "Back, plain"
     },
     {
@@ -3395,7 +3395,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/62-coroner-heart-too-heavy-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -3442,7 +3442,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/63-iron-never-asks-b.svg",
+     "src": "img/s-56a37e2303.svg",
      "alt": "Front, plain"
     },
     {
@@ -3450,7 +3450,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/63-iron-never-asks-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -3497,7 +3497,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/64-you-will-fit-in-a-bag-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -3505,7 +3505,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/64-you-will-fit-in-a-bag-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -3552,7 +3552,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/65-six-people-will-carry-you-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -3560,7 +3560,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/65-six-people-will-carry-you-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -3607,7 +3607,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/66-a-heart-is-just-meat-b.svg",
+     "src": "img/s-ec879f5803.svg",
      "alt": "Back, plain"
     },
     {
@@ -3615,7 +3615,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/66-a-heart-is-just-meat-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -3662,7 +3662,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/67-grief-unprocessed-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -3670,7 +3670,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/67-grief-unprocessed-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -3717,7 +3717,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/68-some-weights-put-down-b.svg",
+     "src": "img/s-a3cdcda2b2.svg",
      "alt": "Front, plain"
     },
     {
@@ -3725,7 +3725,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/68-some-weights-put-down-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -3772,7 +3772,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/69-preserved-not-saved-b.svg",
+     "src": "img/s-2a0b373281.svg",
      "alt": "Back, plain"
     },
     {
@@ -3780,7 +3780,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/69-preserved-not-saved-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -3827,7 +3827,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/70-we-bury-our-own-b.svg",
+     "src": "img/s-79417ae882.svg",
      "alt": "Front, plain"
     },
     {
@@ -3835,7 +3835,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/70-we-bury-our-own-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -3882,7 +3882,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/71-looks-like-death-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -3890,7 +3890,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/71-looks-like-death-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -3937,7 +3937,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/72-here-for-a-short-time-b.svg",
+     "src": "img/s-77f3db555f.svg",
      "alt": "Front, plain"
     },
     {
@@ -3945,7 +3945,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/72-here-for-a-short-time-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -3992,7 +3992,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/73-the-void-listens-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -4000,7 +4000,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/73-the-void-listens-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -4047,7 +4047,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/74-cracked-still-standing-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -4055,7 +4055,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/74-cracked-still-standing-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -4102,7 +4102,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/75-dressed-for-my-funeral-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -4110,7 +4110,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/75-dressed-for-my-funeral-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -4157,7 +4157,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/76-nothing-you-love-stays-b.svg",
+     "src": "img/s-ec879f5803.svg",
      "alt": "Back, plain"
     },
     {
@@ -4165,7 +4165,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/76-nothing-you-love-stays-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -4212,7 +4212,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/77-skeleton-scared-b.svg",
+     "src": "img/s-cf4dbc0c37.svg",
      "alt": "Front, plain"
     },
     {
@@ -4220,7 +4220,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/77-skeleton-scared-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -4267,7 +4267,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/78-hope-is-heavy-b.svg",
+     "src": "img/s-371e431f3c.svg",
      "alt": "Back, plain"
     },
     {
@@ -4275,7 +4275,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/78-hope-is-heavy-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -4322,7 +4322,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/79-still-here-still-haunted-b.svg",
+     "src": "img/s-e18c0d995b.svg",
      "alt": "Front, plain"
     },
     {
@@ -4330,7 +4330,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/79-still-here-still-haunted-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -4377,7 +4377,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/80-rigor-mortis-sets-in-b.svg",
+     "src": "img/s-01566e75c6.svg",
      "alt": "Back, plain"
     },
     {
@@ -4385,7 +4385,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/80-rigor-mortis-sets-in-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -4432,7 +4432,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/81-breathing-tired-here-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -4440,7 +4440,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/81-breathing-tired-here-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -4487,7 +4487,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/82-born-screaming-buried-quiet-b.svg",
+     "src": "img/s-77f3db555f.svg",
      "alt": "Front, plain"
     },
     {
@@ -4495,7 +4495,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/82-born-screaming-buried-quiet-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -4542,7 +4542,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/83-cemetery-quiet-gym-loud-b.svg",
+     "src": "img/s-56a37e2303.svg",
      "alt": "Front, plain"
     },
     {
@@ -4550,7 +4550,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/83-cemetery-quiet-gym-loud-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -4597,7 +4597,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/84-haunted-they-spot-me-b.svg",
+     "src": "img/s-42a9fea259.svg",
      "alt": "Front, plain"
     },
     {
@@ -4605,7 +4605,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/84-haunted-they-spot-me-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -4652,7 +4652,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/85-cold-storage-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -4660,7 +4660,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/85-cold-storage-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -4707,7 +4707,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/86-3am-thoughts-5am-workouts-b.svg",
+     "src": "img/s-e66ed6c8d5.svg",
      "alt": "Front, plain"
     },
     {
@@ -4715,7 +4715,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/86-3am-thoughts-5am-workouts-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -4762,7 +4762,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/87-always-in-mourning-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -4770,7 +4770,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/87-always-in-mourning-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -4817,7 +4817,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/88-the-grave-can-wait-b.svg",
+     "src": "img/s-a3cdcda2b2.svg",
      "alt": "Front, plain"
     },
     {
@@ -4825,7 +4825,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/88-the-grave-can-wait-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -4872,7 +4872,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/89-everything-beautiful-rots-b.svg",
+     "src": "img/s-2a0b373281.svg",
      "alt": "Back, plain"
     },
     {
@@ -4880,7 +4880,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/89-everything-beautiful-rots-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -4927,7 +4927,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/90-death-remembers-you-b.svg",
+     "src": "img/s-01566e75c6.svg",
      "alt": "Back, plain"
     },
     {
@@ -4935,7 +4935,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/90-death-remembers-you-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -4982,7 +4982,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/91-decomposition-is-long-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -4990,7 +4990,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/91-decomposition-is-long-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -5037,7 +5037,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/92-organs-bones-nothing-b.svg",
+     "src": "img/s-2422962842.svg",
      "alt": "Back, plain"
     },
     {
@@ -5045,7 +5045,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/92-organs-bones-nothing-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -5092,7 +5092,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/93-built-heavy-buried-heavier-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -5100,7 +5100,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/93-built-heavy-buried-heavier-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -5147,7 +5147,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/94-silence-at-3am-b.svg",
+     "src": "img/s-d8ae908951.svg",
      "alt": "Back, plain"
     },
     {
@@ -5155,7 +5155,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/94-silence-at-3am-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -5202,7 +5202,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/95-the-line-goes-flat-b.svg",
+     "src": "img/s-04c4f86f9c.svg",
      "alt": "Back, plain"
     },
     {
@@ -5210,7 +5210,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/95-the-line-goes-flat-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -5257,7 +5257,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/96-grief-no-off-season-b.svg",
+     "src": "img/s-e66ed6c8d5.svg",
      "alt": "Front, plain"
     },
     {
@@ -5265,7 +5265,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/96-grief-no-off-season-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -5312,7 +5312,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/97-alone-together-6am-b.svg",
+     "src": "img/s-d0dc3ce0c1.svg",
      "alt": "Back, plain"
     },
     {
@@ -5320,7 +5320,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/97-alone-together-6am-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -5367,7 +5367,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/98-talk-then-lift-b.svg",
+     "src": "img/s-a3cdcda2b2.svg",
      "alt": "Front, plain"
     },
     {
@@ -5375,7 +5375,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/98-talk-then-lift-d.svg",
+     "src": "img/s-dc1d79a50b.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -5422,7 +5422,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/99-still-breathing-b.svg",
+     "src": "img/s-e18c0d995b.svg",
      "alt": "Front, plain"
     },
     {
@@ -5430,7 +5430,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/99-still-breathing-d.svg",
+     "src": "img/s-333cf1bd58.svg",
      "alt": "Fabric color: Plum (logwood)"
     }
    ],
@@ -5477,7 +5477,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/100-it-hurts-here-b.svg",
+     "src": "img/s-79417ae882.svg",
      "alt": "Front, plain"
     },
     {
@@ -5485,7 +5485,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/100-it-hurts-here-d.svg",
+     "src": "img/s-44c34b4de9.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -5532,7 +5532,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/101-chalk-and-sorrow-b.svg",
+     "src": "img/s-1b42fafa77.svg",
      "alt": "Back, plain"
     },
     {
@@ -5540,7 +5540,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/101-chalk-and-sorrow-d.svg",
+     "src": "img/s-c0b3c88a79.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -5587,7 +5587,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/102-hes-always-in-the-room-b.svg",
+     "src": "img/s-2422962842.svg",
      "alt": "Back, plain"
     },
     {
@@ -5595,7 +5595,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/102-hes-always-in-the-room-d.svg",
+     "src": "img/s-46c55c1e1c.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -5642,7 +5642,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/103-dead-hands-dont-let-go-b.svg",
+     "src": "img/s-719e053ca5.svg",
      "alt": "Back, plain"
     },
     {
@@ -5650,7 +5650,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/103-dead-hands-dont-let-go-d.svg",
+     "src": "img/s-a3d7c95640.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -5697,7 +5697,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/104-every-rep-a-eulogy-b.svg",
+     "src": "img/s-42a9fea259.svg",
      "alt": "Front, plain"
     },
     {
@@ -5705,7 +5705,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/104-every-rep-a-eulogy-d.svg",
+     "src": "img/s-95e8e9bb21.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -5752,7 +5752,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/105-flies-know-something-b.svg",
+     "src": "img/s-ecfcc26283.svg",
      "alt": "Front, plain"
     },
     {
@@ -5760,7 +5760,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/105-flies-know-something-d.svg",
+     "src": "img/s-9252b214e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -5807,7 +5807,7 @@ window.CATALOG = {
      "alt": "Front, with print"
     },
     {
-     "src": "img/106-support-system-b.svg",
+     "src": "img/s-ec879f5803.svg",
      "alt": "Back, plain"
     },
     {
@@ -5815,7 +5815,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/106-support-system-d.svg",
+     "src": "img/s-9d2107e4c9.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -5862,7 +5862,7 @@ window.CATALOG = {
      "alt": "Back, with print"
     },
     {
-     "src": "img/107-checklist-today-b.svg",
+     "src": "img/s-cf4dbc0c37.svg",
      "alt": "Front, plain"
     },
     {
@@ -5870,7 +5870,7 @@ window.CATALOG = {
      "alt": "Print close-up"
     },
     {
-     "src": "img/107-checklist-today-d.svg",
+     "src": "img/s-1150cf0bcd.svg",
      "alt": "Fabric color: Sand (undyed hemp)"
     }
    ],
@@ -5917,7 +5917,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/tee-10-everyone-gets-a-toe-tag-b.svg",
+     "src": "img/s-935e969d7a.svg",
      "alt": "Back, plain"
     },
     {
@@ -5925,7 +5925,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-10-everyone-gets-a-toe-tag-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -5982,7 +5982,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-11-skeleton-wearing-meat-d.svg",
+     "src": "img/s-37c59e12f4.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -6039,7 +6039,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-14-225-it-helps-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6088,7 +6088,7 @@ window.CATALOG = {
      "alt": "Back, with design"
     },
     {
-     "src": "img/tee-25-the-box-will-be-heavy-b.svg",
+     "src": "img/s-efda6a433a.svg",
      "alt": "Front, plain"
     },
     {
@@ -6096,7 +6096,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-25-the-box-will-be-heavy-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -6153,7 +6153,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-44-reaper-is-patient-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6210,7 +6210,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-48-the-dirt-always-wins-d.svg",
+     "src": "img/s-0ae8de5091.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -6267,7 +6267,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-60-grief-has-weight-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6324,7 +6324,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-66-a-heart-is-just-meat-d.svg",
+     "src": "img/s-65b1e6a907.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -6381,7 +6381,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-72-here-for-a-short-time-d.svg",
+     "src": "img/s-4533a55bbb.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -6438,7 +6438,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-83-cemetery-quiet-gym-loud-d.svg",
+     "src": "img/s-b704ce590a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -6487,7 +6487,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/tee-90-death-remembers-you-b.svg",
+     "src": "img/s-935e969d7a.svg",
      "alt": "Back, plain"
     },
     {
@@ -6495,7 +6495,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-90-death-remembers-you-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6544,7 +6544,7 @@ window.CATALOG = {
      "alt": "Back, with design"
     },
     {
-     "src": "img/tee-105-flies-know-something-b.svg",
+     "src": "img/s-efda6a433a.svg",
      "alt": "Front, plain"
     },
     {
@@ -6552,7 +6552,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/tee-105-flies-know-something-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -6596,7 +6596,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-10-everyone-gets-a-toe-tag-b.svg",
+     "src": "img/s-f3c5832fea.svg",
      "alt": "Back, plain"
     },
     {
@@ -6604,7 +6604,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-10-everyone-gets-a-toe-tag-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6655,7 +6655,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-11-skeleton-wearing-meat-d.svg",
+     "src": "img/s-37c59e12f4.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -6698,7 +6698,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-14-225-it-helps-b.svg",
+     "src": "img/s-6040f0a0cd.svg",
      "alt": "Back, plain"
     },
     {
@@ -6706,7 +6706,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-14-225-it-helps-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6749,7 +6749,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-25-the-box-will-be-heavy-b.svg",
+     "src": "img/s-17d9c06b23.svg",
      "alt": "Back, plain"
     },
     {
@@ -6757,7 +6757,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-25-the-box-will-be-heavy-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -6800,7 +6800,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-44-reaper-is-patient-b.svg",
+     "src": "img/s-6040f0a0cd.svg",
      "alt": "Back, plain"
     },
     {
@@ -6808,7 +6808,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-44-reaper-is-patient-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -6859,7 +6859,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-48-the-dirt-always-wins-d.svg",
+     "src": "img/s-0ae8de5091.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -6902,7 +6902,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-60-grief-has-weight-b.svg",
+     "src": "img/s-f3c5832fea.svg",
      "alt": "Back, plain"
     },
     {
@@ -6910,7 +6910,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-60-grief-has-weight-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -6961,7 +6961,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-66-a-heart-is-just-meat-d.svg",
+     "src": "img/s-65b1e6a907.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -7012,7 +7012,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-72-here-for-a-short-time-d.svg",
+     "src": "img/s-4533a55bbb.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -7063,7 +7063,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-83-cemetery-quiet-gym-loud-d.svg",
+     "src": "img/s-b704ce590a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -7106,7 +7106,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-90-death-remembers-you-b.svg",
+     "src": "img/s-f3c5832fea.svg",
      "alt": "Back, plain"
     },
     {
@@ -7114,7 +7114,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-90-death-remembers-you-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7157,7 +7157,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-beanie-105-flies-know-something-b.svg",
+     "src": "img/s-17d9c06b23.svg",
      "alt": "Back, plain"
     },
     {
@@ -7165,7 +7165,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-beanie-105-flies-know-something-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -7208,7 +7208,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-10-everyone-gets-a-toe-tag-b.svg",
+     "src": "img/s-2782a75ac6.svg",
      "alt": "Back, plain"
     },
     {
@@ -7216,7 +7216,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-10-everyone-gets-a-toe-tag-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7267,7 +7267,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-11-skeleton-wearing-meat-d.svg",
+     "src": "img/s-37c59e12f4.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -7310,7 +7310,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-14-225-it-helps-b.svg",
+     "src": "img/s-5b600ba16b.svg",
      "alt": "Back, plain"
     },
     {
@@ -7318,7 +7318,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-14-225-it-helps-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -7361,7 +7361,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-25-the-box-will-be-heavy-b.svg",
+     "src": "img/s-137bb89d28.svg",
      "alt": "Back, plain"
     },
     {
@@ -7369,7 +7369,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-25-the-box-will-be-heavy-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -7412,7 +7412,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-44-reaper-is-patient-b.svg",
+     "src": "img/s-5b600ba16b.svg",
      "alt": "Back, plain"
     },
     {
@@ -7420,7 +7420,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-44-reaper-is-patient-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -7471,7 +7471,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-48-the-dirt-always-wins-d.svg",
+     "src": "img/s-0ae8de5091.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -7514,7 +7514,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-60-grief-has-weight-b.svg",
+     "src": "img/s-2782a75ac6.svg",
      "alt": "Back, plain"
     },
     {
@@ -7522,7 +7522,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-60-grief-has-weight-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7573,7 +7573,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-66-a-heart-is-just-meat-d.svg",
+     "src": "img/s-65b1e6a907.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -7624,7 +7624,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-72-here-for-a-short-time-d.svg",
+     "src": "img/s-4533a55bbb.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -7675,7 +7675,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-83-cemetery-quiet-gym-loud-d.svg",
+     "src": "img/s-b704ce590a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -7718,7 +7718,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-90-death-remembers-you-b.svg",
+     "src": "img/s-2782a75ac6.svg",
      "alt": "Back, plain"
     },
     {
@@ -7726,7 +7726,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-90-death-remembers-you-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7769,7 +7769,7 @@ window.CATALOG = {
      "alt": "Front, with design"
     },
     {
-     "src": "img/hats-cap-105-flies-know-something-b.svg",
+     "src": "img/s-137bb89d28.svg",
      "alt": "Back, plain"
     },
     {
@@ -7777,7 +7777,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/hats-cap-105-flies-know-something-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -7832,7 +7832,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-10-everyone-gets-a-toe-tag-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -7888,7 +7888,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-11-skeleton-wearing-meat-d.svg",
+     "src": "img/s-37c59e12f4.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -7944,7 +7944,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-14-225-it-helps-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8000,7 +8000,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-25-the-box-will-be-heavy-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -8056,7 +8056,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-44-reaper-is-patient-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8112,7 +8112,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-48-the-dirt-always-wins-d.svg",
+     "src": "img/s-0ae8de5091.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -8168,7 +8168,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-60-grief-has-weight-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8224,7 +8224,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-66-a-heart-is-just-meat-d.svg",
+     "src": "img/s-65b1e6a907.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -8280,7 +8280,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-72-here-for-a-short-time-d.svg",
+     "src": "img/s-4533a55bbb.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -8336,7 +8336,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-83-cemetery-quiet-gym-loud-d.svg",
+     "src": "img/s-b704ce590a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -8392,7 +8392,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-90-death-remembers-you-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8448,7 +8448,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/underwear-105-flies-know-something-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -8501,7 +8501,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-10-everyone-gets-a-toe-tag-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8553,7 +8553,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-11-skeleton-wearing-meat-d.svg",
+     "src": "img/s-37c59e12f4.svg",
      "alt": "Fabric color: Dusty rose (light madder)"
     }
    ],
@@ -8605,7 +8605,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-14-225-it-helps-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8657,7 +8657,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-25-the-box-will-be-heavy-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],
@@ -8709,7 +8709,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-44-reaper-is-patient-d.svg",
+     "src": "img/s-26a2285af7.svg",
      "alt": "Fabric color: Charcoal"
     }
    ],
@@ -8761,7 +8761,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-48-the-dirt-always-wins-d.svg",
+     "src": "img/s-0ae8de5091.svg",
      "alt": "Fabric color: Olive (weld + iron)"
     }
    ],
@@ -8813,7 +8813,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-60-grief-has-weight-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -8865,7 +8865,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-66-a-heart-is-just-meat-d.svg",
+     "src": "img/s-65b1e6a907.svg",
      "alt": "Fabric color: Oxblood (madder + iron)"
     }
    ],
@@ -8917,7 +8917,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-72-here-for-a-short-time-d.svg",
+     "src": "img/s-4533a55bbb.svg",
      "alt": "Fabric color: Heather grey"
     }
    ],
@@ -8969,7 +8969,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-83-cemetery-quiet-gym-loud-d.svg",
+     "src": "img/s-b704ce590a.svg",
      "alt": "Fabric color: Undyed oatmeal"
     }
    ],
@@ -9021,7 +9021,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-90-death-remembers-you-d.svg",
+     "src": "img/s-840c58db19.svg",
      "alt": "Fabric color: Black (logwood + iron)"
     }
    ],
@@ -9073,7 +9073,7 @@ window.CATALOG = {
      "alt": "Design close-up"
     },
     {
-     "src": "img/socks-105-flies-know-something-d.svg",
+     "src": "img/s-c201b8e8e8.svg",
      "alt": "Fabric color: Indigo"
     }
    ],

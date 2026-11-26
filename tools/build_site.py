@@ -123,6 +123,28 @@ def title_case(lines):
 def lum(hexc):
     return sum(int(hexc[i:i + 2], 16) for i in (1, 3, 5))
 
+def dedupe(products):
+    """Many pictures are identical (a plain back or a fabric swatch only depends on the color), so keep one copy of each:
+    identical files become one shared file named by content (s-<hash>.svg). Fewer files to host (preview limit 512)."""
+    import hashlib
+    first = {}
+    for f in sorted(os.listdir(IMG)):
+        h = hashlib.sha1(open(os.path.join(IMG, f), "rb").read()).hexdigest()[:10]
+        first.setdefault(h, []).append(f)
+    rename = {}
+    for h, files in first.items():
+        if len(files) > 1:
+            shared = f"s-{h}.svg"
+            os.replace(os.path.join(IMG, files[0]), os.path.join(IMG, shared))
+            for f in files[1:]:
+                os.remove(os.path.join(IMG, f))
+            for f in files:
+                rename["img/" + f] = "img/" + shared
+    for p in products:
+        p["img"] = rename.get(p["img"], p["img"])
+        for im in p["imgs"]:
+            im["src"] = rename.get(im["src"], im["src"])
+
 def main():
     os.makedirs(IMG, exist_ok=True)
     for f in os.listdir(IMG):
@@ -174,6 +196,7 @@ def main():
                 "details": [f"Color: {cname}"] + details + ([f"{placement or PLACE[d['place']]}, natural dye"] if typ == "tee" else []) + [NATURAL_DYE, PREORDER],
                 "notes": notes,
             })
+    dedupe(products)
     fonts = os.path.join(SITE, "fonts")
     os.makedirs(fonts, exist_ok=True)
     for f in os.listdir(S.FD):   # the site uses Pirata One (logo) and Oswald (buttons, labels)
