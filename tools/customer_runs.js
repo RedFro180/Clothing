@@ -13,6 +13,7 @@ const PERSONAS = [
   ['multi', 'Adds 2–3 items'],
   ['category', 'Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one'],
   ['addon', 'Buys a hoodie, adds a one-size add-on from "Buy it with"'],
+  ['variant', 'Likes a hoodie design, switches to the same design on another item ("Also in this design") and buys that'],
   ['soldout', 'Wants a size that is sold out'],
   ['sizeunsure', 'Unsure of size, opens size guide'],
   ['shared-link', 'Arrives from a shared product link'],
@@ -62,6 +63,14 @@ const SOLD = { 10: ['L'], 27: ['M', 'L'], 44: ['XL'], 11: ['S'] };
       const tag = await p.textContent('#onePrice'); if (!/\$\d+/.test(tag)) friction.push(`${t}: price not shown`);
       await act('open a result', () => openCard('#grid .card >> nth=' + Math.floor(rnd() * 3))); }
     if (persona === 'addon') { await act('open hoodie', () => openCard('#grid .card >> nth=0')); }
+    if (persona === 'variant') {
+      await act('open hoodie', () => openCard('#grid .card >> nth=0'));
+      const before = await p.textContent('#pdName'); const n = await p.locator('#pdAlsoList .also').count();
+      if (n < 2) friction.push('no "Also in this design" picker on a starter design');
+      else { const t = pick(['Tee', 'Beanie', 'Dad cap', 'Boxers', 'Socks', 'Sweatpants', 'Heavy jacket']);
+        await act('switch to ' + t, () => p.locator('#pdAlsoList .also', { hasText: t }).first().click()); await p.waitForTimeout(300);
+        const after = await p.evaluate(() => ({ name: document.querySelector('#pdName').textContent, on: document.querySelector('#pdAlsoList [aria-checked="true"] .also-l').textContent }));
+        if (after.name !== before || after.on !== t) friction.push(`picker switch wrong: ${JSON.stringify(after)}`); else log.push('switched to ' + t); } }
     if (persona === 'returning') { const vis = await p.locator('#rvBtn').isVisible(); if (!vis) friction.push('recently viewed button not visible'); await act('open recently viewed', () => p.click('#rvBtn')); await act('pick from recent', () => p.locator('.rv-item').first().click()); }
     // ---------- inside product ----------
     const open = await p.evaluate(() => document.querySelector('#pd').open);

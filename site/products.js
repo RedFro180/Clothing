@@ -3,6 +3,7 @@ window.CATALOG = {
  "products": [
   {
    "id": 1,
+   "design": 1,
    "slug": "keep-hanging-on",
    "name": "Keep hanging on",
    "sub": "grip until it passes.",
@@ -58,6 +59,7 @@ window.CATALOG = {
   },
   {
    "id": 2,
+   "design": 2,
    "slug": "meat-bone-nothing-else",
    "name": "Meat. Bone. Nothing else.",
    "sub": "",
@@ -113,6 +115,7 @@ window.CATALOG = {
   },
   {
    "id": 3,
+   "design": 3,
    "slug": "ill-spot-you",
    "name": "I'll spot you.",
    "sub": "heavy days don't get lifted alone.",
@@ -168,6 +171,7 @@ window.CATALOG = {
   },
   {
    "id": 4,
+   "design": 4,
    "slug": "carrying-the-dead",
    "name": "Carrying the dead.",
    "sub": "",
@@ -223,6 +227,7 @@ window.CATALOG = {
   },
   {
    "id": 5,
+   "design": 5,
    "slug": "after-checklist",
    "name": "After",
    "sub": "",
@@ -278,6 +283,7 @@ window.CATALOG = {
   },
   {
    "id": 6,
+   "design": 6,
    "slug": "running-on-whats-left",
    "name": "Running on what's left.",
    "sub": "",
@@ -333,6 +339,7 @@ window.CATALOG = {
   },
   {
    "id": 7,
+   "design": 7,
    "slug": "i-carry-the-dead",
    "name": "I carry the dead with me",
    "sub": "",
@@ -388,6 +395,7 @@ window.CATALOG = {
   },
   {
    "id": 8,
+   "design": 8,
    "slug": "we-all-break",
    "name": "We all break the same way.",
    "sub": "",
@@ -443,6 +451,7 @@ window.CATALOG = {
   },
   {
    "id": 9,
+   "design": 9,
    "slug": "bar-doesnt-care",
    "name": "The bar doesn't care how you feel.",
    "sub": "",
@@ -498,6 +507,7 @@ window.CATALOG = {
   },
   {
    "id": 10,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -553,6 +563,7 @@ window.CATALOG = {
   },
   {
    "id": 11,
+   "design": 11,
    "slug": "skeleton-wearing-meat",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -608,6 +619,7 @@ window.CATALOG = {
   },
   {
    "id": 12,
+   "design": 12,
    "slug": "lift-heavy-carry-heavy",
    "name": "Lift heavy things. Carry heavy thoughts. Put both down sometimes.",
    "sub": "",
@@ -663,6 +675,7 @@ window.CATALOG = {
   },
   {
    "id": 13,
+   "design": 13,
    "slug": "they-weigh-your-heart",
    "name": "They will cut you open and weigh your heart.",
    "sub": "",
@@ -718,6 +731,7 @@ window.CATALOG = {
   },
   {
    "id": 14,
+   "design": 14,
    "slug": "225-it-helps",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -773,6 +787,7 @@ window.CATALOG = {
   },
   {
    "id": 15,
+   "design": 15,
    "slug": "still-warm",
    "name": "Still warm.",
    "sub": "",
@@ -828,6 +843,7 @@ window.CATALOG = {
   },
   {
    "id": 16,
+   "design": 16,
    "slug": "something-is-watching",
    "name": "Something is watching.",
    "sub": "",
@@ -883,6 +899,7 @@ window.CATALOG = {
   },
   {
    "id": 17,
+   "design": 17,
    "slug": "embalmed-zipped-forgotten",
    "name": "Embalmed. Zipped. Forgotten.",
    "sub": "",
@@ -938,6 +955,7 @@ window.CATALOG = {
   },
   {
    "id": 18,
+   "design": 18,
    "slug": "mortality-undefeated",
    "name": "Mortality is undefeated.",
    "sub": "",
@@ -993,6 +1011,7 @@ window.CATALOG = {
   },
   {
    "id": 19,
+   "design": 19,
    "slug": "carry-forever",
    "name": "Some things you carry forever.",
    "sub": "",
@@ -1048,6 +1067,7 @@ window.CATALOG = {
   },
   {
    "id": 20,
+   "design": 20,
    "slug": "coroner-will-know",
    "name": "The coroner will know everything.",
    "sub": "",
@@ -1103,6 +1123,7 @@ window.CATALOG = {
   },
   {
    "id": 21,
+   "design": 21,
    "slug": "demons-dont-spot-you",
    "name": "Your demons don't spot you.",
    "sub": "we do.",
@@ -1158,6 +1179,7 @@ window.CATALOG = {
   },
   {
    "id": 22,
+   "design": 22,
    "slug": "sweat-tears-dread-repeat",
    "name": "Sweat. Tears. Dread. Repeat.",
    "sub": "",
@@ -1213,6 +1235,7 @@ window.CATALOG = {
   },
   {
    "id": 23,
+   "design": 23,
    "slug": "ashes-to-ashes",
    "name": "Ashes to ashes. Dust to dust.",
    "sub": "",
@@ -1268,6 +1291,7 @@ window.CATALOG = {
   },
   {
    "id": 24,
+   "design": 24,
    "slug": "ask-me-how-im-doing",
    "name": "Ask me how I'm really doing.",
    "sub": "",
@@ -1323,6 +1347,7 @@ window.CATALOG = {
   },
   {
    "id": 25,
+   "design": 25,
    "slug": "the-box-will-be-heavy",
    "name": "The box will be heavy.",
    "sub": "",
@@ -1378,6 +1403,7 @@ window.CATALOG = {
   },
   {
    "id": 26,
+   "design": 26,
    "slug": "time-of-death-tbd",
    "name": "Time of death: to be determined.",
    "sub": "",
@@ -1433,6 +1459,7 @@ window.CATALOG = {
   },
   {
    "id": 27,
+   "design": 27,
    "slug": "maggots-are-patient",
    "name": "The maggots are patient.",
    "sub": "",
@@ -1488,6 +1515,7 @@ window.CATALOG = {
   },
   {
    "id": 28,
+   "design": 28,
    "slug": "still-moving-already-rotting",
    "name": "Still moving. Already rotting.",
    "sub": "",
@@ -1543,6 +1571,7 @@ window.CATALOG = {
   },
   {
    "id": 29,
+   "design": 29,
    "slug": "everything-hurts",
    "name": "Everything hurts and I'm still here",
    "sub": "",
@@ -1598,6 +1627,7 @@ window.CATALOG = {
   },
   {
    "id": 30,
+   "design": 30,
    "slug": "the-weight-is-real",
    "name": "The weight is real.",
    "sub": "",
@@ -1653,6 +1683,7 @@ window.CATALOG = {
   },
   {
    "id": 31,
+   "design": 31,
    "slug": "next-of-kin-notified",
    "name": "Next of kin:",
    "sub": "notified.",
@@ -1708,6 +1739,7 @@ window.CATALOG = {
   },
   {
    "id": 32,
+   "design": 32,
    "slug": "meat-bone-spite",
    "name": "Meat. Bone. Spite.",
    "sub": "",
@@ -1763,6 +1795,7 @@ window.CATALOG = {
   },
   {
    "id": 33,
+   "design": 33,
    "slug": "tagged",
    "name": "Tagged.",
    "sub": "",
@@ -1818,6 +1851,7 @@ window.CATALOG = {
   },
   {
    "id": 34,
+   "design": 34,
    "slug": "pine-box-final-address",
    "name": "Pine box. Final address.",
    "sub": "",
@@ -1873,6 +1907,7 @@ window.CATALOG = {
   },
   {
    "id": 35,
+   "design": 35,
    "slug": "one-day-this-is-you",
    "name": "One day this is you.",
    "sub": "",
@@ -1928,6 +1963,7 @@ window.CATALOG = {
   },
   {
    "id": 36,
+   "design": 36,
    "slug": "3am-thoughts-fabric",
    "name": "Somebody's 3 a.m. thoughts made it into fabric",
    "sub": "",
@@ -1983,6 +2019,7 @@ window.CATALOG = {
   },
   {
    "id": 37,
+   "design": 37,
    "slug": "pain-is-real-so-are-we",
    "name": "The pain is real. So are we.",
    "sub": "",
@@ -2038,6 +2075,7 @@ window.CATALOG = {
   },
   {
    "id": 38,
+   "design": 38,
    "slug": "hold-the-weight",
    "name": "Hold the weight. Hold each other.",
    "sub": "",
@@ -2093,6 +2131,7 @@ window.CATALOG = {
   },
   {
    "id": 39,
+   "design": 39,
    "slug": "brain-haunted-body-lifting",
    "name": "Brain: haunted. Body: lifting. Spirit: unclear.",
    "sub": "",
@@ -2148,6 +2187,7 @@ window.CATALOG = {
   },
   {
    "id": 40,
+   "design": 40,
    "slug": "dyed-with-dead-plants-front",
    "name": "Dyed with dead plants.",
    "sub": "",
@@ -2203,6 +2243,7 @@ window.CATALOG = {
   },
   {
    "id": 41,
+   "design": 41,
    "slug": "everything-rots-pocket",
    "name": "Everything rots.",
    "sub": "",
@@ -2258,6 +2299,7 @@ window.CATALOG = {
   },
   {
    "id": 42,
+   "design": 42,
    "slug": "here-lies-someone-who-tried",
    "name": "Here lies someone who tried.",
    "sub": "",
@@ -2313,6 +2355,7 @@ window.CATALOG = {
   },
   {
    "id": 43,
+   "design": 43,
    "slug": "six-feet-no-more",
    "name": "Six feet. No more.",
    "sub": "",
@@ -2368,6 +2411,7 @@ window.CATALOG = {
   },
   {
    "id": 44,
+   "design": 44,
    "slug": "reaper-is-patient",
    "name": "The reaper is patient.",
    "sub": "",
@@ -2423,6 +2467,7 @@ window.CATALOG = {
   },
   {
    "id": 45,
+   "design": 45,
    "slug": "whats-left-of-me",
    "name": "What's left of me.",
    "sub": "",
@@ -2478,6 +2523,7 @@ window.CATALOG = {
   },
   {
    "id": 46,
+   "design": 46,
    "slug": "sore-and-haunted",
    "name": "Sore from yesterday. Haunted from childhood.",
    "sub": "",
@@ -2533,6 +2579,7 @@ window.CATALOG = {
   },
   {
    "id": 47,
+   "design": 47,
    "slug": "something-in-me-is-broken",
    "name": "Something in me is broken.",
    "sub": "",
@@ -2588,6 +2635,7 @@ window.CATALOG = {
   },
   {
    "id": 48,
+   "design": 48,
    "slug": "the-dirt-always-wins",
    "name": "The dirt always wins.",
    "sub": "",
@@ -2643,6 +2691,7 @@ window.CATALOG = {
   },
   {
    "id": 49,
+   "design": 49,
    "slug": "lie-still",
    "name": "Lie still.",
    "sub": "",
@@ -2698,6 +2747,7 @@ window.CATALOG = {
   },
   {
    "id": 50,
+   "design": 50,
    "slug": "bury-me-with-my-belt",
    "name": "Bury me with my belt on.",
    "sub": "",
@@ -2753,6 +2803,7 @@ window.CATALOG = {
   },
   {
    "id": 51,
+   "design": 51,
    "slug": "heart-beats-out-of-spite",
    "name": "My heart beats out of spite.",
    "sub": "",
@@ -2808,6 +2859,7 @@ window.CATALOG = {
   },
   {
    "id": 52,
+   "design": 52,
    "slug": "chalk-hands-grave-dirt",
    "name": "Chalk on my hands. Grave dirt on my boots.",
    "sub": "",
@@ -2863,6 +2915,7 @@ window.CATALOG = {
   },
   {
    "id": 53,
+   "design": 53,
    "slug": "worms-are-waiting",
    "name": "The worms are waiting.",
    "sub": "",
@@ -2918,6 +2971,7 @@ window.CATALOG = {
   },
   {
    "id": 54,
+   "design": 54,
    "slug": "measured-for-a-coffin",
    "name": "Measured for a coffin.",
    "sub": "",
@@ -2973,6 +3027,7 @@ window.CATALOG = {
   },
   {
    "id": 55,
+   "design": 55,
    "slug": "rotting-in-real-time",
    "name": "Rotting in real time.",
    "sub": "",
@@ -3028,6 +3083,7 @@ window.CATALOG = {
   },
   {
    "id": 56,
+   "design": 56,
    "slug": "grief-doesnt-get-lighter",
    "name": "Grief.",
    "sub": "it doesn't get lighter.",
@@ -3083,6 +3139,7 @@ window.CATALOG = {
   },
   {
    "id": 57,
+   "design": 57,
    "slug": "thoughts-are-heavier",
    "name": "The thoughts are heavier.",
    "sub": "",
@@ -3138,6 +3195,7 @@ window.CATALOG = {
   },
   {
    "id": 58,
+   "design": 58,
    "slug": "every-cell-is-dying",
    "name": "Every cell in you is dying.",
    "sub": "",
@@ -3193,6 +3251,7 @@ window.CATALOG = {
   },
   {
    "id": 59,
+   "design": 59,
    "slug": "everyone-ends-underground",
    "name": "Everyone ends underground.",
    "sub": "",
@@ -3248,6 +3307,7 @@ window.CATALOG = {
   },
   {
    "id": 60,
+   "design": 60,
    "slug": "grief-has-weight",
    "name": "Grief has weight.",
    "sub": "",
@@ -3303,6 +3363,7 @@ window.CATALOG = {
   },
   {
    "id": 61,
+   "design": 61,
    "slug": "warm-up-small-talk",
    "name": "Warm-up set: small talk. Working set: the truth.",
    "sub": "",
@@ -3358,6 +3419,7 @@ window.CATALOG = {
   },
   {
    "id": 62,
+   "design": 62,
    "slug": "coroner-heart-too-heavy",
    "name": "Coroner's report: heart too heavy.",
    "sub": "",
@@ -3413,6 +3475,7 @@ window.CATALOG = {
   },
   {
    "id": 63,
+   "design": 63,
    "slug": "iron-never-asks",
    "name": "The iron never asks if I'm okay.",
    "sub": "you can.",
@@ -3468,6 +3531,7 @@ window.CATALOG = {
   },
   {
    "id": 64,
+   "design": 64,
    "slug": "you-will-fit-in-a-bag",
    "name": "You will fit in a bag.",
    "sub": "",
@@ -3523,6 +3587,7 @@ window.CATALOG = {
   },
   {
    "id": 65,
+   "design": 65,
    "slug": "six-people-will-carry-you",
    "name": "Six people will carry you.",
    "sub": "",
@@ -3578,6 +3643,7 @@ window.CATALOG = {
   },
   {
    "id": 66,
+   "design": 66,
    "slug": "a-heart-is-just-meat",
    "name": "A heart is just meat.",
    "sub": "",
@@ -3633,6 +3699,7 @@ window.CATALOG = {
   },
   {
    "id": 67,
+   "design": 67,
    "slug": "grief-unprocessed",
    "name": "Grief. Unprocessed. Unfinished.",
    "sub": "",
@@ -3688,6 +3755,7 @@ window.CATALOG = {
   },
   {
    "id": 68,
+   "design": 68,
    "slug": "some-weights-put-down",
    "name": "Some weights you can put down.",
    "sub": "ask for help with the rest.",
@@ -3743,6 +3811,7 @@ window.CATALOG = {
   },
   {
    "id": 69,
+   "design": 69,
    "slug": "preserved-not-saved",
    "name": "Preserved. Not saved.",
    "sub": "",
@@ -3798,6 +3867,7 @@ window.CATALOG = {
   },
   {
    "id": 70,
+   "design": 70,
    "slug": "we-bury-our-own",
    "name": "We bury our own.",
    "sub": "",
@@ -3853,6 +3923,7 @@ window.CATALOG = {
   },
   {
    "id": 71,
+   "design": 71,
    "slug": "looks-like-death",
    "name": "Looks like death.",
    "sub": "",
@@ -3908,6 +3979,7 @@ window.CATALOG = {
   },
   {
    "id": 72,
+   "design": 72,
    "slug": "here-for-a-short-time",
    "name": "Here for a short time.",
    "sub": "",
@@ -3963,6 +4035,7 @@ window.CATALOG = {
   },
   {
    "id": 73,
+   "design": 73,
    "slug": "the-void-listens",
    "name": "The void listens.",
    "sub": "",
@@ -4018,6 +4091,7 @@ window.CATALOG = {
   },
   {
    "id": 74,
+   "design": 74,
    "slug": "cracked-still-standing",
    "name": "Cracked. Still standing.",
    "sub": "",
@@ -4073,6 +4147,7 @@ window.CATALOG = {
   },
   {
    "id": 75,
+   "design": 75,
    "slug": "dressed-for-my-funeral",
    "name": "Dressed for my funeral",
    "sub": "",
@@ -4128,6 +4203,7 @@ window.CATALOG = {
   },
   {
    "id": 76,
+   "design": 76,
    "slug": "nothing-you-love-stays",
    "name": "Nothing you love stays.",
    "sub": "",
@@ -4183,6 +4259,7 @@ window.CATALOG = {
   },
   {
    "id": 77,
+   "design": 77,
    "slug": "skeleton-scared",
    "name": "Under all this muscle:",
    "sub": "a skeleton who is scared.",
@@ -4238,6 +4315,7 @@ window.CATALOG = {
   },
   {
    "id": 78,
+   "design": 78,
    "slug": "hope-is-heavy",
    "name": "Hope is heavy.",
    "sub": "",
@@ -4293,6 +4371,7 @@ window.CATALOG = {
   },
   {
    "id": 79,
+   "design": 79,
    "slug": "still-here-still-haunted",
    "name": "Still here. Still haunted.",
    "sub": "",
@@ -4348,6 +4427,7 @@ window.CATALOG = {
   },
   {
    "id": 80,
+   "design": 80,
    "slug": "rigor-mortis-sets-in",
    "name": "Rigor mortis sets in fast.",
    "sub": "",
@@ -4403,6 +4483,7 @@ window.CATALOG = {
   },
   {
    "id": 81,
+   "design": 81,
    "slug": "breathing-tired-here",
    "name": "Breathing. Tired. Here.",
    "sub": "",
@@ -4458,6 +4539,7 @@ window.CATALOG = {
   },
   {
    "id": 82,
+   "design": 82,
    "slug": "born-screaming-buried-quiet",
    "name": "Born screaming. Buried quiet.",
    "sub": "",
@@ -4513,6 +4595,7 @@ window.CATALOG = {
   },
   {
    "id": 83,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -4568,6 +4651,7 @@ window.CATALOG = {
   },
   {
    "id": 84,
+   "design": 84,
    "slug": "haunted-they-spot-me",
    "name": "Haunted by everyone I've lost.",
    "sub": "",
@@ -4623,6 +4707,7 @@ window.CATALOG = {
   },
   {
    "id": 85,
+   "design": 85,
    "slug": "cold-storage",
    "name": "Cold storage.",
    "sub": "",
@@ -4678,6 +4763,7 @@ window.CATALOG = {
   },
   {
    "id": 86,
+   "design": 86,
    "slug": "3am-thoughts-5am-workouts",
    "name": "3 a.m. thoughts. 5 a.m. workouts.",
    "sub": "",
@@ -4733,6 +4819,7 @@ window.CATALOG = {
   },
   {
    "id": 87,
+   "design": 87,
    "slug": "always-in-mourning",
    "name": "Always in mourning.",
    "sub": "",
@@ -4788,6 +4875,7 @@ window.CATALOG = {
   },
   {
    "id": 88,
+   "design": 88,
    "slug": "the-grave-can-wait",
    "name": "The grave can wait.",
    "sub": "",
@@ -4843,6 +4931,7 @@ window.CATALOG = {
   },
   {
    "id": 89,
+   "design": 89,
    "slug": "everything-beautiful-rots",
    "name": "Everything beautiful rots.",
    "sub": "",
@@ -4898,6 +4987,7 @@ window.CATALOG = {
   },
   {
    "id": 90,
+   "design": 90,
    "slug": "death-remembers-you",
    "name": "Death",
    "sub": "remembers you.",
@@ -4953,6 +5043,7 @@ window.CATALOG = {
   },
   {
    "id": 91,
+   "design": 91,
    "slug": "decomposition-is-long",
    "name": "Life is short. Decomposition is long.",
    "sub": "",
@@ -5008,6 +5099,7 @@ window.CATALOG = {
   },
   {
    "id": 92,
+   "design": 92,
    "slug": "organs-bones-nothing",
    "name": "Organs. Bones. Nothing else.",
    "sub": "",
@@ -5063,6 +5155,7 @@ window.CATALOG = {
   },
   {
    "id": 93,
+   "design": 93,
    "slug": "built-heavy-buried-heavier",
    "name": "Built heavy. Buried heavier.",
    "sub": "",
@@ -5118,6 +5211,7 @@ window.CATALOG = {
   },
   {
    "id": 94,
+   "design": 94,
    "slug": "silence-at-3am",
    "name": "Silence is loud at 3 a.m.",
    "sub": "",
@@ -5173,6 +5267,7 @@ window.CATALOG = {
   },
   {
    "id": 95,
+   "design": 95,
    "slug": "the-line-goes-flat",
    "name": "The line goes flat.",
    "sub": "",
@@ -5228,6 +5323,7 @@ window.CATALOG = {
   },
   {
    "id": 96,
+   "design": 96,
    "slug": "grief-no-off-season",
    "name": "Grief has no off-season",
    "sub": "",
@@ -5283,6 +5379,7 @@ window.CATALOG = {
   },
   {
    "id": 97,
+   "design": 97,
    "slug": "alone-together-6am",
    "name": "Alone together at 6 a.m.",
    "sub": "",
@@ -5338,6 +5435,7 @@ window.CATALOG = {
   },
   {
    "id": 98,
+   "design": 98,
    "slug": "talk-then-lift",
    "name": "Talk to someone.",
    "sub": "",
@@ -5393,6 +5491,7 @@ window.CATALOG = {
   },
   {
    "id": 99,
+   "design": 99,
    "slug": "still-breathing",
    "name": "Still breathing.",
    "sub": "",
@@ -5448,6 +5547,7 @@ window.CATALOG = {
   },
   {
    "id": 100,
+   "design": 100,
    "slug": "it-hurts-here",
    "name": "It hurts here.",
    "sub": "",
@@ -5503,6 +5603,7 @@ window.CATALOG = {
   },
   {
    "id": 101,
+   "design": 101,
    "slug": "chalk-and-sorrow",
    "name": "Chalk and sorrow",
    "sub": "both get on everything",
@@ -5558,6 +5659,7 @@ window.CATALOG = {
   },
   {
    "id": 102,
+   "design": 102,
    "slug": "hes-always-in-the-room",
    "name": "He's always in the room.",
    "sub": "",
@@ -5613,6 +5715,7 @@ window.CATALOG = {
   },
   {
    "id": 103,
+   "design": 103,
    "slug": "dead-hands-dont-let-go",
    "name": "Dead hands don't let go.",
    "sub": "",
@@ -5668,6 +5771,7 @@ window.CATALOG = {
   },
   {
    "id": 104,
+   "design": 104,
    "slug": "every-rep-a-eulogy",
    "name": "Every rep is a eulogy",
    "sub": "for who I was.",
@@ -5723,6 +5827,7 @@ window.CATALOG = {
   },
   {
    "id": 105,
+   "design": 105,
    "slug": "flies-know-something",
    "name": "The flies know something.",
    "sub": "",
@@ -5778,6 +5883,7 @@ window.CATALOG = {
   },
   {
    "id": 106,
+   "design": 106,
    "slug": "support-system",
    "name": "Support system:",
    "sub": "a squat rack and three friends.",
@@ -5833,6 +5939,7 @@ window.CATALOG = {
   },
   {
    "id": 107,
+   "design": 107,
    "slug": "checklist-today",
    "name": "Today's goals",
    "sub": "",
@@ -5888,6 +5995,7 @@ window.CATALOG = {
   },
   {
    "id": 1010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-tee",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -5945,6 +6053,7 @@ window.CATALOG = {
   },
   {
    "id": 1011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-tee",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -6002,6 +6111,7 @@ window.CATALOG = {
   },
   {
    "id": 1014,
+   "design": 14,
    "slug": "225-it-helps-tee",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -6059,6 +6169,7 @@ window.CATALOG = {
   },
   {
    "id": 1025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-tee",
    "name": "The box will be heavy.",
    "sub": "",
@@ -6116,6 +6227,7 @@ window.CATALOG = {
   },
   {
    "id": 1044,
+   "design": 44,
    "slug": "reaper-is-patient-tee",
    "name": "The reaper is patient.",
    "sub": "",
@@ -6173,6 +6285,7 @@ window.CATALOG = {
   },
   {
    "id": 1048,
+   "design": 48,
    "slug": "the-dirt-always-wins-tee",
    "name": "The dirt always wins.",
    "sub": "",
@@ -6230,6 +6343,7 @@ window.CATALOG = {
   },
   {
    "id": 1060,
+   "design": 60,
    "slug": "grief-has-weight-tee",
    "name": "Grief has weight.",
    "sub": "",
@@ -6287,6 +6401,7 @@ window.CATALOG = {
   },
   {
    "id": 1066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-tee",
    "name": "A heart is just meat.",
    "sub": "",
@@ -6344,6 +6459,7 @@ window.CATALOG = {
   },
   {
    "id": 1072,
+   "design": 72,
    "slug": "here-for-a-short-time-tee",
    "name": "Here for a short time.",
    "sub": "",
@@ -6401,6 +6517,7 @@ window.CATALOG = {
   },
   {
    "id": 1083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-tee",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -6458,6 +6575,7 @@ window.CATALOG = {
   },
   {
    "id": 1090,
+   "design": 90,
    "slug": "death-remembers-you-tee",
    "name": "Death",
    "sub": "remembers you.",
@@ -6515,6 +6633,7 @@ window.CATALOG = {
   },
   {
    "id": 1105,
+   "design": 105,
    "slug": "flies-know-something-tee",
    "name": "The flies know something.",
    "sub": "",
@@ -6572,6 +6691,7 @@ window.CATALOG = {
   },
   {
    "id": 2010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-beanie",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -6623,6 +6743,7 @@ window.CATALOG = {
   },
   {
    "id": 2011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-beanie",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -6674,6 +6795,7 @@ window.CATALOG = {
   },
   {
    "id": 2014,
+   "design": 14,
    "slug": "225-it-helps-beanie",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -6725,6 +6847,7 @@ window.CATALOG = {
   },
   {
    "id": 2025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-beanie",
    "name": "The box will be heavy.",
    "sub": "",
@@ -6776,6 +6899,7 @@ window.CATALOG = {
   },
   {
    "id": 2044,
+   "design": 44,
    "slug": "reaper-is-patient-beanie",
    "name": "The reaper is patient.",
    "sub": "",
@@ -6827,6 +6951,7 @@ window.CATALOG = {
   },
   {
    "id": 2048,
+   "design": 48,
    "slug": "the-dirt-always-wins-beanie",
    "name": "The dirt always wins.",
    "sub": "",
@@ -6878,6 +7003,7 @@ window.CATALOG = {
   },
   {
    "id": 2060,
+   "design": 60,
    "slug": "grief-has-weight-beanie",
    "name": "Grief has weight.",
    "sub": "",
@@ -6929,6 +7055,7 @@ window.CATALOG = {
   },
   {
    "id": 2066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-beanie",
    "name": "A heart is just meat.",
    "sub": "",
@@ -6980,6 +7107,7 @@ window.CATALOG = {
   },
   {
    "id": 2072,
+   "design": 72,
    "slug": "here-for-a-short-time-beanie",
    "name": "Here for a short time.",
    "sub": "",
@@ -7031,6 +7159,7 @@ window.CATALOG = {
   },
   {
    "id": 2083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-beanie",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -7082,6 +7211,7 @@ window.CATALOG = {
   },
   {
    "id": 2090,
+   "design": 90,
    "slug": "death-remembers-you-beanie",
    "name": "Death",
    "sub": "",
@@ -7133,6 +7263,7 @@ window.CATALOG = {
   },
   {
    "id": 2105,
+   "design": 105,
    "slug": "flies-know-something-beanie",
    "name": "The flies know something.",
    "sub": "",
@@ -7184,6 +7315,7 @@ window.CATALOG = {
   },
   {
    "id": 3010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-cap",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -7235,6 +7367,7 @@ window.CATALOG = {
   },
   {
    "id": 3011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-cap",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -7286,6 +7419,7 @@ window.CATALOG = {
   },
   {
    "id": 3014,
+   "design": 14,
    "slug": "225-it-helps-cap",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -7337,6 +7471,7 @@ window.CATALOG = {
   },
   {
    "id": 3025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-cap",
    "name": "The box will be heavy.",
    "sub": "",
@@ -7388,6 +7523,7 @@ window.CATALOG = {
   },
   {
    "id": 3044,
+   "design": 44,
    "slug": "reaper-is-patient-cap",
    "name": "The reaper is patient.",
    "sub": "",
@@ -7439,6 +7575,7 @@ window.CATALOG = {
   },
   {
    "id": 3048,
+   "design": 48,
    "slug": "the-dirt-always-wins-cap",
    "name": "The dirt always wins.",
    "sub": "",
@@ -7490,6 +7627,7 @@ window.CATALOG = {
   },
   {
    "id": 3060,
+   "design": 60,
    "slug": "grief-has-weight-cap",
    "name": "Grief has weight.",
    "sub": "",
@@ -7541,6 +7679,7 @@ window.CATALOG = {
   },
   {
    "id": 3066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-cap",
    "name": "A heart is just meat.",
    "sub": "",
@@ -7592,6 +7731,7 @@ window.CATALOG = {
   },
   {
    "id": 3072,
+   "design": 72,
    "slug": "here-for-a-short-time-cap",
    "name": "Here for a short time.",
    "sub": "",
@@ -7643,6 +7783,7 @@ window.CATALOG = {
   },
   {
    "id": 3083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-cap",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -7694,6 +7835,7 @@ window.CATALOG = {
   },
   {
    "id": 3090,
+   "design": 90,
    "slug": "death-remembers-you-cap",
    "name": "Death",
    "sub": "",
@@ -7745,6 +7887,7 @@ window.CATALOG = {
   },
   {
    "id": 3105,
+   "design": 105,
    "slug": "flies-know-something-cap",
    "name": "The flies know something.",
    "sub": "",
@@ -7796,6 +7939,7 @@ window.CATALOG = {
   },
   {
    "id": 4010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-underwear",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -7852,6 +7996,7 @@ window.CATALOG = {
   },
   {
    "id": 4011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-underwear",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -7908,6 +8053,7 @@ window.CATALOG = {
   },
   {
    "id": 4014,
+   "design": 14,
    "slug": "225-it-helps-underwear",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -7964,6 +8110,7 @@ window.CATALOG = {
   },
   {
    "id": 4025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-underwear",
    "name": "The box will be heavy.",
    "sub": "",
@@ -8020,6 +8167,7 @@ window.CATALOG = {
   },
   {
    "id": 4044,
+   "design": 44,
    "slug": "reaper-is-patient-underwear",
    "name": "The reaper is patient.",
    "sub": "",
@@ -8076,6 +8224,7 @@ window.CATALOG = {
   },
   {
    "id": 4048,
+   "design": 48,
    "slug": "the-dirt-always-wins-underwear",
    "name": "The dirt always wins.",
    "sub": "",
@@ -8132,6 +8281,7 @@ window.CATALOG = {
   },
   {
    "id": 4060,
+   "design": 60,
    "slug": "grief-has-weight-underwear",
    "name": "Grief has weight.",
    "sub": "",
@@ -8188,6 +8338,7 @@ window.CATALOG = {
   },
   {
    "id": 4066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-underwear",
    "name": "A heart is just meat.",
    "sub": "",
@@ -8244,6 +8395,7 @@ window.CATALOG = {
   },
   {
    "id": 4072,
+   "design": 72,
    "slug": "here-for-a-short-time-underwear",
    "name": "Here for a short time.",
    "sub": "",
@@ -8300,6 +8452,7 @@ window.CATALOG = {
   },
   {
    "id": 4083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-underwear",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -8356,6 +8509,7 @@ window.CATALOG = {
   },
   {
    "id": 4090,
+   "design": 90,
    "slug": "death-remembers-you-underwear",
    "name": "Death",
    "sub": "",
@@ -8412,6 +8566,7 @@ window.CATALOG = {
   },
   {
    "id": 4105,
+   "design": 105,
    "slug": "flies-know-something-underwear",
    "name": "The flies know something.",
    "sub": "",
@@ -8468,6 +8623,7 @@ window.CATALOG = {
   },
   {
    "id": 5010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-socks",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -8520,6 +8676,7 @@ window.CATALOG = {
   },
   {
    "id": 5011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-socks",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -8572,6 +8729,7 @@ window.CATALOG = {
   },
   {
    "id": 5014,
+   "design": 14,
    "slug": "225-it-helps-socks",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -8624,6 +8782,7 @@ window.CATALOG = {
   },
   {
    "id": 5025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-socks",
    "name": "The box will be heavy.",
    "sub": "",
@@ -8676,6 +8835,7 @@ window.CATALOG = {
   },
   {
    "id": 5044,
+   "design": 44,
    "slug": "reaper-is-patient-socks",
    "name": "The reaper is patient.",
    "sub": "",
@@ -8728,6 +8888,7 @@ window.CATALOG = {
   },
   {
    "id": 5048,
+   "design": 48,
    "slug": "the-dirt-always-wins-socks",
    "name": "The dirt always wins.",
    "sub": "",
@@ -8780,6 +8941,7 @@ window.CATALOG = {
   },
   {
    "id": 5060,
+   "design": 60,
    "slug": "grief-has-weight-socks",
    "name": "Grief has weight.",
    "sub": "",
@@ -8832,6 +8994,7 @@ window.CATALOG = {
   },
   {
    "id": 5066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-socks",
    "name": "A heart is just meat.",
    "sub": "",
@@ -8884,6 +9047,7 @@ window.CATALOG = {
   },
   {
    "id": 5072,
+   "design": 72,
    "slug": "here-for-a-short-time-socks",
    "name": "Here for a short time.",
    "sub": "",
@@ -8936,6 +9100,7 @@ window.CATALOG = {
   },
   {
    "id": 5083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-socks",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -8988,6 +9153,7 @@ window.CATALOG = {
   },
   {
    "id": 5090,
+   "design": 90,
    "slug": "death-remembers-you-socks",
    "name": "Death",
    "sub": "",
@@ -9040,6 +9206,7 @@ window.CATALOG = {
   },
   {
    "id": 5105,
+   "design": 105,
    "slug": "flies-know-something-socks",
    "name": "The flies know something.",
    "sub": "",
@@ -9092,6 +9259,7 @@ window.CATALOG = {
   },
   {
    "id": 6010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-sweatpants",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -9151,6 +9319,7 @@ window.CATALOG = {
   },
   {
    "id": 6011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-sweatpants",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -9210,6 +9379,7 @@ window.CATALOG = {
   },
   {
    "id": 6014,
+   "design": 14,
    "slug": "225-it-helps-sweatpants",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -9269,6 +9439,7 @@ window.CATALOG = {
   },
   {
    "id": 6025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-sweatpants",
    "name": "The box will be heavy.",
    "sub": "",
@@ -9328,6 +9499,7 @@ window.CATALOG = {
   },
   {
    "id": 6044,
+   "design": 44,
    "slug": "reaper-is-patient-sweatpants",
    "name": "The reaper is patient.",
    "sub": "",
@@ -9387,6 +9559,7 @@ window.CATALOG = {
   },
   {
    "id": 6048,
+   "design": 48,
    "slug": "the-dirt-always-wins-sweatpants",
    "name": "The dirt always wins.",
    "sub": "",
@@ -9446,6 +9619,7 @@ window.CATALOG = {
   },
   {
    "id": 6060,
+   "design": 60,
    "slug": "grief-has-weight-sweatpants",
    "name": "Grief has weight.",
    "sub": "",
@@ -9505,6 +9679,7 @@ window.CATALOG = {
   },
   {
    "id": 6066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-sweatpants",
    "name": "A heart is just meat.",
    "sub": "",
@@ -9564,6 +9739,7 @@ window.CATALOG = {
   },
   {
    "id": 6072,
+   "design": 72,
    "slug": "here-for-a-short-time-sweatpants",
    "name": "Here for a short time.",
    "sub": "",
@@ -9623,6 +9799,7 @@ window.CATALOG = {
   },
   {
    "id": 6083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-sweatpants",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -9682,6 +9859,7 @@ window.CATALOG = {
   },
   {
    "id": 6090,
+   "design": 90,
    "slug": "death-remembers-you-sweatpants",
    "name": "Death",
    "sub": "",
@@ -9741,6 +9919,7 @@ window.CATALOG = {
   },
   {
    "id": 6105,
+   "design": 105,
    "slug": "flies-know-something-sweatpants",
    "name": "The flies know something.",
    "sub": "",
@@ -9800,6 +9979,7 @@ window.CATALOG = {
   },
   {
    "id": 7010,
+   "design": 10,
    "slug": "everyone-gets-a-toe-tag-jackets",
    "name": "Everyone gets a toe tag.",
    "sub": "",
@@ -9859,6 +10039,7 @@ window.CATALOG = {
   },
   {
    "id": 7011,
+   "design": 11,
    "slug": "skeleton-wearing-meat-jackets",
    "name": "You are a skeleton wearing meat.",
    "sub": "",
@@ -9918,6 +10099,7 @@ window.CATALOG = {
   },
   {
    "id": 7014,
+   "design": 14,
    "slug": "225-it-helps-jackets",
    "name": "225 lbs. It helps.",
    "sub": "",
@@ -9977,6 +10159,7 @@ window.CATALOG = {
   },
   {
    "id": 7025,
+   "design": 25,
    "slug": "the-box-will-be-heavy-jackets",
    "name": "The box will be heavy.",
    "sub": "",
@@ -10036,6 +10219,7 @@ window.CATALOG = {
   },
   {
    "id": 7044,
+   "design": 44,
    "slug": "reaper-is-patient-jackets",
    "name": "The reaper is patient.",
    "sub": "",
@@ -10095,6 +10279,7 @@ window.CATALOG = {
   },
   {
    "id": 7048,
+   "design": 48,
    "slug": "the-dirt-always-wins-jackets",
    "name": "The dirt always wins.",
    "sub": "",
@@ -10154,6 +10339,7 @@ window.CATALOG = {
   },
   {
    "id": 7060,
+   "design": 60,
    "slug": "grief-has-weight-jackets",
    "name": "Grief has weight.",
    "sub": "",
@@ -10213,6 +10399,7 @@ window.CATALOG = {
   },
   {
    "id": 7066,
+   "design": 66,
    "slug": "a-heart-is-just-meat-jackets",
    "name": "A heart is just meat.",
    "sub": "",
@@ -10272,6 +10459,7 @@ window.CATALOG = {
   },
   {
    "id": 7072,
+   "design": 72,
    "slug": "here-for-a-short-time-jackets",
    "name": "Here for a short time.",
    "sub": "",
@@ -10331,6 +10519,7 @@ window.CATALOG = {
   },
   {
    "id": 7083,
+   "design": 83,
    "slug": "cemetery-quiet-gym-loud-jackets",
    "name": "Cemetery quiet. Gym loud.",
    "sub": "",
@@ -10390,6 +10579,7 @@ window.CATALOG = {
   },
   {
    "id": 7090,
+   "design": 90,
    "slug": "death-remembers-you-jackets",
    "name": "Death",
    "sub": "remembers you.",
@@ -10449,6 +10639,7 @@ window.CATALOG = {
   },
   {
    "id": 7105,
+   "design": 105,
    "slug": "flies-know-something-jackets",
    "name": "The flies know something.",
    "sub": "",

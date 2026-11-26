@@ -949,3 +949,30 @@ dialog.pd.one-size fieldset.sizes { display: none; }
 #sgBtn[hidden] { display: none !important; }
 @media (max-width: 760px) { .pd-notes { margin: 6px 0 4px; padding: 7px 10px; font-size: 12.5px; line-height: 1.35; } .pd-notes li + li { margin-top: 2px; } }
 .bag-warn { color: #8f2a25; font-size: 12.5px; margin: 2px 0; font-weight: 600; }
+
+/* ===== ALSO IN THIS DESIGN (variant picker: same design + color on every item type) ===== */
+.pd-also { margin: 10px 0 4px; min-width: 0; max-width: 100%; }
+.pd-info { min-width: 0; }
+.pd-also[hidden] { display: none; }
+.also-k { margin: 0 0 8px; font: 600 13px/1.2 var(--sans); color: #4a4238; }
+.also-row { position: relative; max-width: 100%; display: flex; flex-wrap: wrap; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; padding: 2px 2px 6px; scrollbar-width: thin; }
+.also { flex: 0 0 76px; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 6px 4px 7px; border-radius: 14px; border: 1.5px solid #cfc6b6; background: #efe9de; color: #1a1714; cursor: pointer;
+  font: 500 12px/1.15 var(--sans); min-height: 44px; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.also:hover { border-color: #8f8471; transform: translateY(-1px); }
+.also:focus-visible { outline: 2px solid #8f2a25; outline-offset: 2px; }
+.also[aria-checked="true"] { border-color: #1a1714; box-shadow: inset 0 0 0 1px #1a1714; background: #f6f2ea; cursor: default; }
+.also-pic { width: 56px; height: 56px; display: block; }
+.also-pic img { width: 100%; height: 100%; object-fit: contain; }
+.also-l { text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.also-p { color: #5c5348; font-size: 11.5px; }
+/* phones: compact pills (picture + "Tee $60") so the Add button stays on screen */
+@media (max-width: 700px) {
+  .pd-also { margin: 6px 0 2px; }
+  .also-k { margin-bottom: 5px; font-size: 12px; }
+  .also-row { flex-wrap: nowrap; gap: 6px; padding-bottom: 4px; }
+  .also { flex: 0 0 auto; flex-direction: row; gap: 5px; padding: 3px 10px 3px 4px; border-radius: 999px; min-height: 44px; }
+  .also-pic { width: 34px; height: 34px; }
+  .also-l { max-width: none; }
+  .also-p { font-size: 12px; }
+}

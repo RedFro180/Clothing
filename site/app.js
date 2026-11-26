@@ -337,6 +337,7 @@
     const tp = typeOf(p.type);
     $("#pdPrice").replaceChildren(money(p.price), onePrice(p) ? el("span", { class: "same-price", text: `Same price for every ${p.type === "hats" ? "hat" : p.type === "underwear" ? "pair of boxers" : p.type === "socks" ? "pair of socks" : tp.one}` }) : "");
     $("#pdShip").textContent = shipLine();
+    drawAlso(p);
     $("#pdQty").value = 1; $("#pdMsg").textContent = "";
     const out = (C.SOLD_OUT && C.SOLD_OUT[p.id]) || [];
     $("#pdSizes").replaceChildren(...p.sizes.map(s => el("button", { type: "button", "aria-pressed": "false", "data-s": s,
@@ -359,6 +360,11 @@
     if (push) history.replaceState(null, "", location.pathname + location.search + "#" + p.slug);
     remember(p.id);
     if (!pd.open) pd.showModal();
+    // very short screens: if the design picker pushes the Add button off screen, move the picker under the Add button (and its notes)
+    $("#pdShip").after($("#pdAlso"));
+    if (!$("#pdAlso").hidden && $("#pdAdd").getBoundingClientRect().bottom > innerHeight - 4) {
+      const n = $("#pdNotes"); (n.previousElementSibling === $("#pdAdd") && !n.hidden ? n : $("#pdAdd")).after($("#pdAlso"));
+    }
     $("#pdName").focus({ preventScroll: true }); // start on the product name, not the close button
   }
 
@@ -406,13 +412,35 @@
     $("#pdAltsTitle").textContent = `Available in ${size}`;
     $("#pdAltsList").replaceChildren(...list.map(q => mini(q)));
   }
+  // ---------- same design + color on the other items (hoodie, tee, hats, boxers, socks, sweatpants, jacket) ----------
+  const TYPE_ORDER = CAT.types.map(t => t.id);
+  const designOf = q => q.design != null ? q.design : q.id % 1000;
+  function drawAlso(p) {
+    const list = P.filter(q => designOf(q) === designOf(p))
+      .sort((a, b) => TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type) || a.typeLabel.localeCompare(b.typeLabel));
+    $("#pdAlso").hidden = list.length < 2;
+    if (list.length < 2) { $("#pdAlsoList").replaceChildren(); return; }
+    $("#pdAlsoK").textContent = `Also in this design · ${p.color}`;
+    const btns = list.map(q => el("button", { type: "button", role: "radio", class: "also", "aria-checked": String(q.id === p.id),
+      tabindex: q.id === p.id ? "0" : "-1", "aria-label": `${q.typeLabel}, ${money(q.price)}`,
+      onclick: () => { if (q.id === p.id) return; track("variant_switched", { from: p.id, to: q.id, type: q.type }); openProduct(q); } },
+      el("span", { class: "also-pic" }, el("img", { src: q.img, alt: "", loading: "lazy" })),
+      el("span", { class: "also-l", text: q.typeLabel }), el("span", { class: "also-p", text: money(q.price) })));
+    btns.forEach((b, i) => b.addEventListener("keydown", e => {   // radio-group arrow keys
+      const k = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key]; if (!k) return;
+      e.preventDefault(); const n = btns[(i + k + btns.length) % btns.length]; n.focus(); n.click();
+    }));
+    $("#pdAlsoList").replaceChildren(...btns);
+    const on = btns.find(b => b.getAttribute("aria-checked") === "true");
+    const row = $("#pdAlsoList");   // center the selected one inside the row only (scrollIntoView would also scroll the page)
+    if (on) requestAnimationFrame(() => { row.scrollLeft = Math.max(0, on.offsetLeft - (row.clientWidth - on.offsetWidth) / 2); });
+  }
   function drawWith() {
     // 2 of the same type, plus up to 2 add-ons of other types with the same design or theme (socks, hats...)
     const fresh = q => !bag.some(i => i.id === q.id);
     const same = similar(cur, 4, size).filter(fresh);
-    const design = id => id % 1000;
-    const others = P.filter(q => q.type !== cur.type && fresh(q) && (design(q.id) === design(cur.id) || q.theme === cur.theme))
-      .sort((a, b) => (design(b.id) === design(cur.id)) - (design(a.id) === design(cur.id)) || a.sizes.length - b.sizes.length);
+    const others = P.filter(q => q.type !== cur.type && fresh(q) && designOf(q) !== designOf(cur) && q.theme === cur.theme)
+      .sort((a, b) => a.sizes.length - b.sizes.length);
     const pick = [], seen = new Set();
     for (const q of others) { if (pick.length >= 2) break; if (!seen.has(q.type)) { seen.add(q.type); pick.push(q); } }
     const list = [...same.slice(0, 4 - pick.length), ...pick];

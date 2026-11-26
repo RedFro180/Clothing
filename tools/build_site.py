@@ -174,7 +174,7 @@ def main():
             {"src": "img/" + extra[1], "alt": "Print close-up"},
             {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
         products.append({
-            "id": i, "slug": d["slug"], "name": title_case(d["lines"]), "sub": d["sub"],
+            "id": i, "design": i, "slug": d["slug"], "name": title_case(d["lines"]), "sub": d["sub"],
             "type": "hoodie", "typeLabel": "Hoodie", "word": "hoodie", "theme": theme_for(d), "color": cname.split(" (")[0],
             "colorNote": cname, "tags": search_tags(d, theme_for(d), cname.split(" (")[0]), "hex": fab, "light": lum(fab) > 450,
             "placement": PLACE[d["place"]], "price": PRICE, "sizes": SIZES, "img": "img/" + f, "imgs": imgs,
@@ -198,7 +198,7 @@ def main():
                 {"src": "img/" + extra[2], "alt": f"Fabric color: {cname}"}]
             theme = theme_for(d)
             products.append({
-                "id": pid, "slug": f"{d['slug']}-{kind.replace('hats-', '')}", "name": title_case(d["lines"]), "sub": d["sub"] if typ in ("tee", "jackets") else "",
+                "id": pid, "design": num, "slug": f"{d['slug']}-{kind.replace('hats-', '')}", "name": title_case(d["lines"]), "sub": d["sub"] if typ in ("tee", "jackets") else "",
                 "type": typ, "typeLabel": label, "word": SINGULAR[typ] if typ != "hats" else label.lower(), "theme": theme, "color": color, "colorNote": cname,
                 "tags": search_tags(d, theme, color) + " " + TYPE_TAGS[kind], "hex": fab_of(num), "light": lum(fab_of(num)) > 450,
                 "placement": placement or PLACE[d["place"]], "price": TPRICE[typ], "sizes": sizes, "img": "img/" + main, "imgs": imgs,
