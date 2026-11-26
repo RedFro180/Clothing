@@ -979,3 +979,5 @@ dialog.pd.one-size fieldset.sizes { display: none; }
 
 /* keep each spinning card's 3-D layer inside its own card, so it can never sit over fixed buttons (back-to-top) */
 .card { position: relative; isolation: isolate; }
+/* 7 item types: 3 price columns are too wide under ~400px (split screens, small phones) → 2 columns */
+@media (max-width: 400px) { .one-price:has(.op-i) { grid-template-columns: repeat(2, minmax(0, auto)); column-gap: 12px; padding: 9px 12px; } }
