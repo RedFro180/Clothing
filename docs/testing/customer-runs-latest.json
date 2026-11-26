@@ -55,7 +55,7 @@
   "errs": [],
   "log": [
    "search \"rot\"",
-   "results: 22",
+   "results: 26",
    "open first result",
    "viewing: You are a skeleton wearing meat.",
    "pick size XL",
@@ -69,14 +69,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.3"
+  "secs": "5.1"
  },
  {
   "i": 3,
   "persona": "theme",
   "desc": "Browses a theme chip",
   "device": "phone",
-  "vh": 568,
+  "vh": 590,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -105,7 +105,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.6"
  },
  {
   "i": 4,
@@ -142,7 +142,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.7"
  },
  {
   "i": 5,
@@ -177,7 +177,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.5"
+  "secs": "5.3"
  },
  {
   "i": 6,
@@ -219,12 +219,12 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.6"
+  "secs": "5.8"
  },
  {
   "i": 7,
   "persona": "category",
-  "desc": "Taps a type chip (tees, hats, underwear, socks) and buys one",
+  "desc": "Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one",
   "device": "phone",
   "vh": 839,
   "firstScreen": {
@@ -292,391 +292,32 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.6"
+  "secs": "4.7"
  },
  {
   "i": 9,
-  "persona": "soldout",
-  "desc": "Wants a size that is sold out",
+  "persona": "variant",
+  "desc": "Likes a hoodie design, switches to the same design on another item (\"Also in this design\") and buys that",
   "device": "desktop",
   "vh": 760,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
   },
-  "clicks": 4,
-  "scrolls": 0,
-  "items": 0,
-  "submitted": false,
-  "mailto": false,
-  "friction": [
-   "restock request opens email app (no form service)"
-  ],
-  "errs": [],
-  "log": [
-   "open toe tag (L sold out)",
-   "viewing: Everyone gets a toe tag.",
-   "pick size L",
-   "size sold out",
-   "enter email for restock",
-   "submit notify",
-   "5 other sizes available"
-  ],
-  "secs": "1.6"
- },
- {
-  "i": 10,
-  "persona": "sizeunsure",
-  "desc": "Unsure of size, opens size guide",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 10,
+  "clicks": 9,
   "scrolls": 1,
   "items": 1,
   "submitted": true,
   "mailto": true,
   "friction": [
-   "size guide has no measurements",
    "preorder request opens email app; buyer must press send there"
   ],
   "errs": [],
   "log": [
-   "open product",
-   "viewing: I'll spot you.",
-   "open size guide",
-   "pick size M",
-   "tap Add without size (mistake)",
-   "add to preorder list",
-   "msg: Added 1 × M. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.5"
- },
- {
-  "i": 11,
-  "persona": "shared-link",
-  "desc": "Arrives from a shared product link",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 7,
-  "scrolls": 0,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
+   "open hoodie",
+   "switch to Boxers",
+   "switched to Boxers",
    "viewing: You are a skeleton wearing meat.",
-   "pick size 2XL",
-   "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.1"
- },
- {
-  "i": 12,
-  "persona": "returning",
-  "desc": "Comes back later, uses recently viewed",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 0,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "open recently viewed",
-   "pick from recent",
-   "viewing: Grief has weight.",
-   "pick size M",
-   "add to preorder list",
-   "msg: Added 1 × M. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "5.1"
- },
- {
-  "i": 13,
-  "persona": "ring-impulse",
-  "desc": "Sees the spinning ring, taps a hoodie, buys",
-  "device": "phone",
-  "vh": 664,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 8,
-  "scrolls": 0,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "tap front hoodie in ring",
-   "viewing: You are a skeleton wearing meat.",
-   "pick size L",
-   "add to preorder list",
-   "msg: Added 1 × L. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.2"
- },
- {
-  "i": 14,
-  "persona": "search",
-  "desc": "Knows a vibe, types a search",
-  "device": "phone",
-  "vh": 839,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "search \"zip up\"",
-   "results: 167",
-   "open first result",
-   "viewing: You are a skeleton wearing meat.",
-   "pick size L",
-   "add to preorder list",
-   "msg: Added 1 × L. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "5.2"
- },
- {
-  "i": 15,
-  "persona": "theme",
-  "desc": "Browses a theme chip",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "theme chip Grief",
-   "open a result",
-   "viewing: Something is watching.",
-   "pick size L",
-   "add to preorder list",
-   "msg: Added 1 × L. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.5"
- },
- {
-  "i": 16,
-  "persona": "color",
-  "desc": "Wants a specific color",
-  "device": "desktop",
-  "vh": 860,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "color chip Oxblood",
-   "open a result",
-   "viewing: Running on what's left.",
-   "pick size L",
-   "add to preorder list",
-   "msg: Added 1 × L. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.8"
- },
- {
-  "i": 17,
-  "persona": "scroll",
-  "desc": "Scrolls the grid and picks something",
-  "device": "desktop",
-  "vh": 760,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 8,
-  "scrolls": 4,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "scroll to product #11",
-   "viewing: I'll spot you.",
-   "pick size XL",
-   "add to preorder list",
-   "msg: Added 1 × XL. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "6.0"
- },
- {
-  "i": 18,
-  "persona": "multi",
-  "desc": "Adds 2–3 items",
-  "device": "phone",
-  "vh": 664,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 15,
-  "scrolls": 3,
-  "items": 3,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "open product",
-   "viewing: Everyone gets a toe tag.",
-   "pick size 2XL",
-   "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
-   "close",
-   "open another",
-   "add",
-   "close",
-   "open another",
-   "add",
-   "close",
-   "open preorder list",
-   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "5.4"
- },
- {
-  "i": 19,
-  "persona": "category",
-  "desc": "Taps a type chip (tees, hats, underwear, socks) and buys one",
-  "device": "phone",
-  "vh": 664,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "type chip Underwear",
-   "Underwear: 12 items",
-   "open a result",
-   "viewing: Everyone gets a toe tag.",
    "pick size L",
    "add to preorder list",
    "msg: Added 1 × L. View list",
@@ -688,50 +329,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.6"
+  "secs": "5.9"
  },
  {
-  "i": 20,
-  "persona": "addon",
-  "desc": "Buys a hoodie, adds a one-size add-on from \"Buy it with\"",
-  "device": "desktop",
-  "vh": 1000,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 1,
-  "items": 2,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "open hoodie",
-   "viewing: You are a skeleton wearing meat.",
-   "pick size 2XL",
-   "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
-   "add a hat from \"Buy it with\"",
-   "tap \"View list\"",
-   "Add $10 more for free shipping.Subtotal$190Shipping$9Estimated total$199Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "5.4"
- },
- {
-  "i": 21,
+  "i": 10,
   "persona": "soldout",
   "desc": "Wants a size that is sold out",
   "device": "phone",
-  "vh": 664,
+  "vh": 839,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -757,48 +362,47 @@
   "secs": "1.5"
  },
  {
-  "i": 22,
+  "i": 11,
   "persona": "sizeunsure",
   "desc": "Unsure of size, opens size guide",
   "device": "phone",
-  "vh": 664,
+  "vh": 590,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
   },
-  "clicks": 9,
+  "clicks": 7,
   "scrolls": 1,
   "items": 1,
   "submitted": true,
   "mailto": true,
   "friction": [
-   "size guide has no measurements",
+   "FAILED: open size guide (page.click: Timeout 30000ms exceeded.)",
    "preorder request opens email app; buyer must press send there"
   ],
   "errs": [],
   "log": [
    "open product",
-   "viewing: The maggots are patient.",
-   "open size guide",
-   "pick size XL",
+   "viewing: Everyone gets a toe tag.",
+   "one size: nothing to pick",
    "add to preorder list",
-   "msg: Added 1 × XL. View list",
+   "msg: Added 1 × One size. View list",
    "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Nothing is charged now.",
    "type name",
    "type email",
    "tick final-sale checkbox",
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "34.5"
  },
  {
-  "i": 23,
+  "i": 12,
   "persona": "shared-link",
   "desc": "Arrives from a shared product link",
   "device": "phone",
-  "vh": 839,
+  "vh": 664,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -813,10 +417,10 @@
   ],
   "errs": [],
   "log": [
-   "viewing: Everyone gets a toe tag.",
-   "pick size 2XL",
+   "viewing: Grief has weight.",
+   "pick size M",
    "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
+   "msg: Added 1 × M. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -825,14 +429,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.2"
+  "secs": "4.1"
  },
  {
-  "i": 24,
+  "i": 13,
   "persona": "returning",
   "desc": "Comes back later, uses recently viewed",
   "device": "phone",
-  "vh": 839,
+  "vh": 664,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -850,9 +454,9 @@
    "open recently viewed",
    "pick from recent",
    "viewing: Grief has weight.",
-   "pick size S",
+   "pick size L",
    "add to preorder list",
-   "msg: Added 1 × S. View list",
+   "msg: Added 1 × L. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -861,10 +465,10 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.5"
+  "secs": "5.4"
  },
  {
-  "i": 25,
+  "i": 14,
   "persona": "ring-impulse",
   "desc": "Sees the spinning ring, taps a hoodie, buys",
   "device": "phone",
@@ -885,9 +489,401 @@
   "log": [
    "tap front hoodie in ring",
    "viewing: You are a skeleton wearing meat.",
-   "pick size XL",
+   "pick size L",
    "add to preorder list",
-   "msg: Added 1 × XL. View list",
+   "msg: Added 1 × L. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.3"
+ },
+ {
+  "i": 15,
+  "persona": "search",
+  "desc": "Knows a vibe, types a search",
+  "device": "phone",
+  "vh": 590,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "search \"pink\"",
+   "results: 18",
+   "open first result",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size L",
+   "add to preorder list",
+   "msg: Added 1 × L. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.7"
+ },
+ {
+  "i": 16,
+  "persona": "theme",
+  "desc": "Browses a theme chip",
+  "device": "desktop",
+  "vh": 1000,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "theme chip Graves",
+   "open a result",
+   "viewing: The dirt always wins.",
+   "pick size M",
+   "add to preorder list",
+   "msg: Added 1 × M. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "6.0"
+ },
+ {
+  "i": 17,
+  "persona": "color",
+  "desc": "Wants a specific color",
+  "device": "phone",
+  "vh": 839,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "color chip Black",
+   "open a result",
+   "viewing: Everyone gets a toe tag.",
+   "pick size 2XL",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.6"
+ },
+ {
+  "i": 18,
+  "persona": "scroll",
+  "desc": "Scrolls the grid and picks something",
+  "device": "phone",
+  "vh": 590,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 8,
+  "scrolls": 6,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "scroll to product #11",
+   "viewing: I'll spot you.",
+   "pick size M",
+   "add to preorder list",
+   "msg: Added 1 × M. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.6"
+ },
+ {
+  "i": 19,
+  "persona": "multi",
+  "desc": "Adds 2–3 items",
+  "device": "phone",
+  "vh": 590,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 15,
+  "scrolls": 3,
+  "items": 3,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open product",
+   "viewing: Everyone gets a toe tag.",
+   "pick size M",
+   "add to preorder list",
+   "msg: Added 1 × M. View list",
+   "close",
+   "open another",
+   "add",
+   "close",
+   "open another",
+   "add",
+   "close",
+   "open preorder list",
+   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.7"
+ },
+ {
+  "i": 20,
+  "persona": "category",
+  "desc": "Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one",
+  "device": "phone",
+  "vh": 664,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "type chip Heavy jackets",
+   "Heavy jackets: 12 items",
+   "open a result",
+   "viewing: 225 lbs. It helps.",
+   "pick size 2XL",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "You've got free shipping.Subtotal$325ShippingFreeEstimated total$325Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.5"
+ },
+ {
+  "i": 21,
+  "persona": "addon",
+  "desc": "Buys a hoodie, adds a one-size add-on from \"Buy it with\"",
+  "device": "desktop",
+  "vh": 760,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 4,
+  "scrolls": 1,
+  "items": 0,
+  "submitted": false,
+  "mailto": false,
+  "friction": [
+   "restock request opens email app (no form service)"
+  ],
+  "errs": [],
+  "log": [
+   "open hoodie",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size S",
+   "size sold out",
+   "enter email for restock",
+   "submit notify",
+   "5 other sizes available"
+  ],
+  "secs": "2.4"
+ },
+ {
+  "i": 22,
+  "persona": "variant",
+  "desc": "Likes a hoodie design, switches to the same design on another item (\"Also in this design\") and buys that",
+  "device": "phone",
+  "vh": 664,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 1,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open hoodie",
+   "switch to Socks",
+   "switched to Socks",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size L/XL",
+   "add to preorder list",
+   "msg: Added 1 × L/XL. View list",
+   "tap \"View list\"",
+   "Add $176 more for free shipping.Subtotal$24Shipping$9Estimated total$33Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.0"
+ },
+ {
+  "i": 23,
+  "persona": "soldout",
+  "desc": "Wants a size that is sold out",
+  "device": "desktop",
+  "vh": 1000,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 4,
+  "scrolls": 0,
+  "items": 0,
+  "submitted": false,
+  "mailto": false,
+  "friction": [
+   "restock request opens email app (no form service)"
+  ],
+  "errs": [],
+  "log": [
+   "open toe tag (L sold out)",
+   "viewing: Everyone gets a toe tag.",
+   "pick size L",
+   "size sold out",
+   "enter email for restock",
+   "submit notify",
+   "5 other sizes available"
+  ],
+  "secs": "2.1"
+ },
+ {
+  "i": 24,
+  "persona": "sizeunsure",
+  "desc": "Unsure of size, opens size guide",
+  "device": "desktop",
+  "vh": 860,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 1,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "size guide has no measurements",
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open product",
+   "viewing: Everyone gets a toe tag.",
+   "open size guide",
+   "pick size 2XL",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.3"
+ },
+ {
+  "i": 25,
+  "persona": "shared-link",
+  "desc": "Arrives from a shared product link",
+  "device": "phone",
+  "vh": 839,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 8,
+  "scrolls": 0,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "viewing: You are a skeleton wearing meat.",
+   "pick size 2XL",
+   "tap Add without size (mistake)",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -900,6 +896,77 @@
  },
  {
   "i": 26,
+  "persona": "returning",
+  "desc": "Comes back later, uses recently viewed",
+  "device": "desktop",
+  "vh": 1000,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 0,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open recently viewed",
+   "pick from recent",
+   "viewing: Grief has weight.",
+   "pick size L",
+   "add to preorder list",
+   "msg: Added 1 × L. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "6.7"
+ },
+ {
+  "i": 27,
+  "persona": "ring-impulse",
+  "desc": "Sees the spinning ring, taps a hoodie, buys",
+  "device": "phone",
+  "vh": 664,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 8,
+  "scrolls": 0,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "tap front hoodie in ring",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size M",
+   "add to preorder list",
+   "msg: Added 1 × M. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.4"
+ },
+ {
+  "i": 28,
   "persona": "search",
   "desc": "Knows a vibe, types a search",
   "device": "phone",
@@ -918,13 +985,13 @@
   ],
   "errs": [],
   "log": [
-   "search \"depression\"",
+   "search \"bones\"",
    "results: 29",
    "open first result",
-   "viewing: Everything hurts and I'm still here",
-   "pick size M",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size XL",
    "add to preorder list",
-   "msg: Added 1 × M. View list",
+   "msg: Added 1 × XL. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -936,7 +1003,7 @@
   "secs": "4.8"
  },
  {
-  "i": 27,
+  "i": 29,
   "persona": "theme",
   "desc": "Browses a theme chip",
   "device": "phone",
@@ -945,7 +1012,7 @@
    "products": 4,
    "priceVisible": true
   },
-  "clicks": 10,
+  "clicks": 9,
   "scrolls": 2,
   "items": 1,
   "submitted": true,
@@ -955,79 +1022,12 @@
   ],
   "errs": [],
   "log": [
-   "theme chip Rot",
+   "theme chip Morgue",
    "open a result",
-   "viewing: Mortality is undefeated.",
-   "pick size M",
-   "tap Add without size (mistake)",
+   "viewing: Embalmed. Zipped. Forgotten.",
+   "pick size 2XL",
    "add to preorder list",
-   "msg: Added 1 × M. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.6"
- },
- {
-  "i": 28,
-  "persona": "color",
-  "desc": "Wants a specific color",
-  "device": "desktop",
-  "vh": 1000,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 5,
-  "scrolls": 2,
-  "items": 0,
-  "submitted": false,
-  "mailto": false,
-  "friction": [
-   "restock request opens email app (no form service)"
-  ],
-  "errs": [],
-  "log": [
-   "color chip Black",
-   "open a result",
-   "viewing: Everyone gets a toe tag.",
-   "pick size L",
-   "size sold out",
-   "enter email for restock",
-   "submit notify",
-   "5 other sizes available"
-  ],
-  "secs": "2.6"
- },
- {
-  "i": 29,
-  "persona": "scroll",
-  "desc": "Scrolls the grid and picks something",
-  "device": "phone",
-  "vh": 839,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 8,
-  "scrolls": 15,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "scroll to product #29",
-   "viewing: Some things you carry forever.",
-   "pick size S",
-   "add to preorder list",
-   "msg: Added 1 × S. View list",
+   "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -1040,10 +1040,81 @@
  },
  {
   "i": 30,
+  "persona": "color",
+  "desc": "Wants a specific color",
+  "device": "phone",
+  "vh": 839,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "color chip Charcoal",
+   "open a result",
+   "viewing: The reaper is patient.",
+   "pick size 2XL",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.7"
+ },
+ {
+  "i": 31,
+  "persona": "scroll",
+  "desc": "Scrolls the grid and picks something",
+  "device": "desktop",
+  "vh": 760,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 8,
+  "scrolls": 10,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "scroll to product #35",
+   "viewing: Ask me how I'm really doing.",
+   "pick size XL",
+   "add to preorder list",
+   "msg: Added 1 × XL. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.3"
+ },
+ {
+  "i": 32,
   "persona": "multi",
   "desc": "Adds 2–3 items",
   "device": "phone",
-  "vh": 839,
+  "vh": 590,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1078,14 +1149,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.5"
+  "secs": "5.7"
  },
  {
-  "i": 31,
+  "i": 33,
   "persona": "category",
-  "desc": "Taps a type chip (tees, hats, underwear, socks) and buys one",
-  "device": "desktop",
-  "vh": 860,
+  "desc": "Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one",
+  "device": "phone",
+  "vh": 590,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1104,9 +1175,9 @@
    "Underwear: 12 items",
    "open a result",
    "viewing: 225 lbs. It helps.",
-   "pick size M",
+   "pick size XL",
    "add to preorder list",
-   "msg: Added 1 × M. View list",
+   "msg: Added 1 × XL. View list",
    "tap \"View list\"",
    "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Nothing is charged now.",
    "type name",
@@ -1115,14 +1186,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "4.4"
  },
  {
-  "i": 32,
+  "i": 34,
   "persona": "addon",
   "desc": "Buys a hoodie, adds a one-size add-on from \"Buy it with\"",
   "device": "phone",
-  "vh": 568,
+  "vh": 664,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1151,144 +1222,12 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.4"
- },
- {
-  "i": 33,
-  "persona": "soldout",
-  "desc": "Wants a size that is sold out",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 4,
-  "scrolls": 0,
-  "items": 0,
-  "submitted": false,
-  "mailto": false,
-  "friction": [
-   "restock request opens email app (no form service)"
-  ],
-  "errs": [],
-  "log": [
-   "open toe tag (L sold out)",
-   "viewing: Everyone gets a toe tag.",
-   "pick size L",
-   "size sold out",
-   "enter email for restock",
-   "submit notify",
-   "5 other sizes available"
-  ],
-  "secs": "1.4"
- },
- {
-  "i": 34,
-  "persona": "sizeunsure",
-  "desc": "Unsure of size, opens size guide",
-  "device": "phone",
-  "vh": 839,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 5,
-  "scrolls": 1,
-  "items": 0,
-  "submitted": false,
-  "mailto": false,
-  "friction": [
-   "size guide has no measurements",
-   "restock request opens email app (no form service)"
-  ],
-  "errs": [],
-  "log": [
-   "open product",
-   "viewing: The maggots are patient.",
-   "open size guide",
-   "pick size L",
-   "size sold out",
-   "enter email for restock",
-   "submit notify",
-   "4 other sizes available"
-  ],
-  "secs": "1.6"
+  "secs": "4.6"
  },
  {
   "i": 35,
-  "persona": "shared-link",
-  "desc": "Arrives from a shared product link",
-  "device": "phone",
-  "vh": 839,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 7,
-  "scrolls": 0,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "viewing: The dirt always wins.",
-   "pick size XL",
-   "add to preorder list",
-   "msg: Added 1 × XL. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.1"
- },
- {
-  "i": 36,
-  "persona": "returning",
-  "desc": "Comes back later, uses recently viewed",
-  "device": "desktop",
-  "vh": 860,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 0,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "open recently viewed",
-   "pick from recent",
-   "viewing: Grief has weight.",
-   "pick size S",
-   "add to preorder list",
-   "msg: Added 1 × S. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "6.5"
- },
- {
-  "i": 37,
-  "persona": "ring-impulse",
-  "desc": "Sees the spinning ring, taps a hoodie, buys",
+  "persona": "variant",
+  "desc": "Likes a hoodie design, switches to the same design on another item (\"Also in this design\") and buys that",
   "device": "phone",
   "vh": 839,
   "firstScreen": {
@@ -1296,7 +1235,7 @@
    "priceVisible": true
   },
   "clicks": 8,
-  "scrolls": 0,
+  "scrolls": 1,
   "items": 1,
   "submitted": true,
   "mailto": true,
@@ -1305,81 +1244,10 @@
   ],
   "errs": [],
   "log": [
-   "tap front hoodie in ring",
+   "open hoodie",
+   "switch to Beanie",
+   "switched to Beanie",
    "viewing: You are a skeleton wearing meat.",
-   "pick size 2XL",
-   "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.2"
- },
- {
-  "i": 38,
-  "persona": "search",
-  "desc": "Knows a vibe, types a search",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "search \"grave\"",
-   "results: 47",
-   "open first result",
-   "viewing: The reaper is patient.",
-   "pick size M",
-   "add to preorder list",
-   "msg: Added 1 × M. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.7"
- },
- {
-  "i": 39,
-  "persona": "theme",
-  "desc": "Browses a theme chip",
-  "device": "phone",
-  "vh": 568,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 8,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "theme chip Anatomy",
-   "open a result",
-   "viewing: A heart is just meat.",
    "one size: nothing to pick",
    "add to preorder list",
    "msg: Added 1 × One size. View list",
@@ -1391,193 +1259,10 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "5.0"
  },
  {
-  "i": 40,
-  "persona": "color",
-  "desc": "Wants a specific color",
-  "device": "phone",
-  "vh": 664,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "color \"Olive\" chip off-screen; had to swipe the row",
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "color chip Olive",
-   "open a result",
-   "viewing: The dirt always wins.",
-   "pick size L",
-   "add to preorder list",
-   "msg: Added 1 × L. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.5"
- },
- {
-  "i": 41,
-  "persona": "scroll",
-  "desc": "Scrolls the grid and picks something",
-  "device": "phone",
-  "vh": 664,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 9,
-  "scrolls": 11,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "scroll to product #21",
-   "viewing: Lift heavy things. Carry heavy thoughts. Put both down sometimes.",
-   "pick size XL",
-   "tap Add without size (mistake)",
-   "add to preorder list",
-   "msg: Added 1 × XL. View list",
-   "tap \"View list\"",
-   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "4.6"
- },
- {
-  "i": 42,
-  "persona": "multi",
-  "desc": "Adds 2–3 items",
-  "device": "desktop",
-  "vh": 1000,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 15,
-  "scrolls": 3,
-  "items": 3,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "open product",
-   "viewing: Everyone gets a toe tag.",
-   "pick size 2XL",
-   "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
-   "close",
-   "open another",
-   "add",
-   "close",
-   "open another",
-   "add",
-   "close",
-   "open preorder list",
-   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "8.6"
- },
- {
-  "i": 43,
-  "persona": "category",
-  "desc": "Taps a type chip (tees, hats, underwear, socks) and buys one",
-  "device": "desktop",
-  "vh": 1000,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 10,
-  "scrolls": 2,
-  "items": 1,
-  "submitted": true,
-  "mailto": true,
-  "friction": [
-   "preorder request opens email app; buyer must press send there"
-  ],
-  "errs": [],
-  "log": [
-   "type chip Underwear",
-   "Underwear: 12 items",
-   "open a result",
-   "viewing: 225 lbs. It helps.",
-   "pick size XL",
-   "tap Add without size (mistake)",
-   "add to preorder list",
-   "msg: Added 1 × XL. View list",
-   "tap \"View list\"",
-   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Nothing is charged now.",
-   "type name",
-   "type email",
-   "tick final-sale checkbox",
-   "send preorder request",
-   "form fields: 5"
-  ],
-  "secs": "5.2"
- },
- {
-  "i": 44,
-  "persona": "addon",
-  "desc": "Buys a hoodie, adds a one-size add-on from \"Buy it with\"",
-  "device": "phone",
-  "vh": 664,
-  "firstScreen": {
-   "products": 4,
-   "priceVisible": true
-  },
-  "clicks": 4,
-  "scrolls": 1,
-  "items": 0,
-  "submitted": false,
-  "mailto": false,
-  "friction": [
-   "restock request opens email app (no form service)"
-  ],
-  "errs": [],
-  "log": [
-   "open hoodie",
-   "viewing: You are a skeleton wearing meat.",
-   "pick size S",
-   "size sold out",
-   "enter email for restock",
-   "submit notify",
-   "5 other sizes available"
-  ],
-  "secs": "1.7"
- },
- {
-  "i": 45,
+  "i": 36,
   "persona": "soldout",
   "desc": "Wants a size that is sold out",
   "device": "phone",
@@ -1607,11 +1292,11 @@
   "secs": "1.5"
  },
  {
-  "i": 46,
+  "i": 37,
   "persona": "sizeunsure",
   "desc": "Unsure of size, opens size guide",
-  "device": "desktop",
-  "vh": 760,
+  "device": "phone",
+  "vh": 839,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1628,11 +1313,11 @@
   "errs": [],
   "log": [
    "open product",
-   "viewing: Keep hanging on",
+   "viewing: Grief has weight.",
    "open size guide",
-   "pick size M",
+   "pick size 2XL",
    "add to preorder list",
-   "msg: Added 1 × M. View list",
+   "msg: Added 1 × 2XL. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -1641,14 +1326,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "4.8"
  },
  {
-  "i": 47,
+  "i": 38,
   "persona": "shared-link",
   "desc": "Arrives from a shared product link",
   "device": "phone",
-  "vh": 839,
+  "vh": 664,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1663,10 +1348,10 @@
   ],
   "errs": [],
   "log": [
-   "viewing: Grief has weight.",
-   "pick size XL",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size L",
    "add to preorder list",
-   "msg: Added 1 × XL. View list",
+   "msg: Added 1 × L. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -1678,11 +1363,11 @@
   "secs": "4.2"
  },
  {
-  "i": 48,
+  "i": 39,
   "persona": "returning",
   "desc": "Comes back later, uses recently viewed",
   "device": "phone",
-  "vh": 568,
+  "vh": 839,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1700,9 +1385,9 @@
    "open recently viewed",
    "pick from recent",
    "viewing: Grief has weight.",
-   "pick size S",
+   "pick size L",
    "add to preorder list",
-   "msg: Added 1 × S. View list",
+   "msg: Added 1 × L. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -1711,14 +1396,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.3"
+  "secs": "5.4"
  },
  {
-  "i": 49,
+  "i": 40,
   "persona": "ring-impulse",
   "desc": "Sees the spinning ring, taps a hoodie, buys",
-  "device": "desktop",
-  "vh": 760,
+  "device": "phone",
+  "vh": 664,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1735,9 +1420,9 @@
   "log": [
    "tap front hoodie in ring",
    "viewing: You are a skeleton wearing meat.",
-   "pick size 2XL",
+   "pick size L",
    "add to preorder list",
-   "msg: Added 1 × 2XL. View list",
+   "msg: Added 1 × L. View list",
    "tap \"View list\"",
    "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
    "type name",
@@ -1746,14 +1431,14 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.8"
+  "secs": "4.3"
  },
  {
-  "i": 50,
+  "i": 41,
   "persona": "search",
   "desc": "Knows a vibe, types a search",
-  "device": "phone",
-  "vh": 664,
+  "device": "desktop",
+  "vh": 760,
   "firstScreen": {
    "products": 4,
    "priceVisible": true
@@ -1768,10 +1453,10 @@
   ],
   "errs": [],
   "log": [
-   "search \"gym\"",
-   "results: 43",
+   "search \"sad\"",
+   "results: 31",
    "open first result",
-   "viewing: Grief has weight.",
+   "viewing: Everything hurts and I'm still here",
    "pick size XL",
    "tap Add without size (mistake)",
    "add to preorder list",
@@ -1784,6 +1469,328 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "5.0"
+ },
+ {
+  "i": 42,
+  "persona": "theme",
+  "desc": "Browses a theme chip",
+  "device": "desktop",
+  "vh": 1000,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 10,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "theme chip Grief",
+   "open a result",
+   "viewing: Something is watching.",
+   "pick size 2XL",
+   "tap Add without size (mistake)",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.5"
+ },
+ {
+  "i": 43,
+  "persona": "color",
+  "desc": "Wants a specific color",
+  "device": "desktop",
+  "vh": 1000,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 10,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "color chip Black",
+   "open a result",
+   "viewing: Everyone gets a toe tag.",
+   "pick size 2XL",
+   "tap Add without size (mistake)",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.5"
+ },
+ {
+  "i": 44,
+  "persona": "scroll",
+  "desc": "Scrolls the grid and picks something",
+  "device": "phone",
+  "vh": 664,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 8,
+  "scrolls": 5,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "scroll to product #9",
+   "viewing: Keep hanging on",
+   "pick size S",
+   "add to preorder list",
+   "msg: Added 1 × S. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.6"
+ },
+ {
+  "i": 45,
+  "persona": "multi",
+  "desc": "Adds 2–3 items",
+  "device": "desktop",
+  "vh": 760,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 15,
+  "scrolls": 3,
+  "items": 3,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open product",
+   "viewing: Everyone gets a toe tag.",
+   "pick size M",
+   "add to preorder list",
+   "msg: Added 1 × M. View list",
+   "close",
+   "open another",
+   "add",
+   "close",
+   "open another",
+   "add",
+   "close",
+   "open preorder list",
+   "You've got free shipping.Subtotal$450ShippingFreeEstimated total$450Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "6.0"
+ },
+ {
+  "i": 46,
+  "persona": "category",
+  "desc": "Taps a type chip (tees, hats, underwear, socks, sweatpants, jackets) and buys one",
+  "device": "phone",
+  "vh": 590,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 2,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "type chip Underwear",
+   "Underwear: 12 items",
+   "open a result",
+   "viewing: 225 lbs. It helps.",
+   "pick size 2XL",
+   "add to preorder list",
+   "msg: Added 1 × 2XL. View list",
+   "tap \"View list\"",
+   "Add $162 more for free shipping.Subtotal$38Shipping$9Estimated total$47Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.6"
+ },
+ {
+  "i": 47,
+  "persona": "addon",
+  "desc": "Buys a hoodie, adds a one-size add-on from \"Buy it with\"",
+  "device": "phone",
+  "vh": 590,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 4,
+  "scrolls": 1,
+  "items": 0,
+  "submitted": false,
+  "mailto": false,
+  "friction": [
+   "restock request opens email app (no form service)"
+  ],
+  "errs": [],
+  "log": [
+   "open hoodie",
+   "viewing: You are a skeleton wearing meat.",
+   "pick size S",
+   "size sold out",
+   "enter email for restock",
+   "submit notify",
+   "5 other sizes available"
+  ],
+  "secs": "1.6"
+ },
+ {
+  "i": 48,
+  "persona": "variant",
+  "desc": "Likes a hoodie design, switches to the same design on another item (\"Also in this design\") and buys that",
+  "device": "phone",
+  "vh": 839,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 8,
+  "scrolls": 1,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open hoodie",
+   "switch to Beanie",
+   "switched to Beanie",
+   "viewing: You are a skeleton wearing meat.",
+   "one size: nothing to pick",
+   "add to preorder list",
+   "msg: Added 1 × One size. View list",
+   "tap \"View list\"",
+   "Add $160 more for free shipping.Subtotal$40Shipping$9Estimated total$49Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "5.0"
+ },
+ {
+  "i": 49,
+  "persona": "soldout",
+  "desc": "Wants a size that is sold out",
+  "device": "desktop",
+  "vh": 760,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 4,
+  "scrolls": 0,
+  "items": 0,
+  "submitted": false,
+  "mailto": false,
+  "friction": [
+   "restock request opens email app (no form service)"
+  ],
+  "errs": [],
+  "log": [
+   "open toe tag (L sold out)",
+   "viewing: Everyone gets a toe tag.",
+   "pick size L",
+   "size sold out",
+   "enter email for restock",
+   "submit notify",
+   "5 other sizes available"
+  ],
+  "secs": "2.1"
+ },
+ {
+  "i": 50,
+  "persona": "sizeunsure",
+  "desc": "Unsure of size, opens size guide",
+  "device": "phone",
+  "vh": 664,
+  "firstScreen": {
+   "products": 4,
+   "priceVisible": true
+  },
+  "clicks": 9,
+  "scrolls": 1,
+  "items": 1,
+  "submitted": true,
+  "mailto": true,
+  "friction": [
+   "size guide has no measurements",
+   "preorder request opens email app; buyer must press send there"
+  ],
+  "errs": [],
+  "log": [
+   "open product",
+   "viewing: The reaper is patient.",
+   "open size guide",
+   "pick size S",
+   "add to preorder list",
+   "msg: Added 1 × S. View list",
+   "tap \"View list\"",
+   "Add $50 more for free shipping.Subtotal$150Shipping$9Estimated total$159Nothing is charged now.",
+   "type name",
+   "type email",
+   "tick final-sale checkbox",
+   "send preorder request",
+   "form fields: 5"
+  ],
+  "secs": "4.6"
  }
 ]
