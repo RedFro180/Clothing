@@ -32,6 +32,7 @@
   const clampQ = n => Math.max(1, Math.min(MAXQ, parseInt(n, 10) || 1));
   const safeUrl = u => /^https:\/\/[^\s"'<>]+$/i.test(String(u || "")) ? u : "";
   const byId = Object.fromEntries(P.map(p => [p.id, p]));
+
   const bySlug = Object.fromEntries(P.map(p => [p.slug, p]));
 
   // ---------- branding ----------
@@ -362,7 +363,8 @@
     if (!pd.open) pd.showModal();
     // very short screens: if the design picker pushes the Add button off screen, move the picker under the Add button (and its notes)
     $("#pdShip").after($("#pdAlso"));
-    if (!$("#pdAlso").hidden && $("#pdAdd").getBoundingClientRect().bottom > innerHeight - 4) {
+    const visBottom = Math.min(innerHeight, pd.getBoundingClientRect().bottom);   // the pop-up can end above the screen bottom
+    if (!$("#pdAlso").hidden && $("#pdAdd").getBoundingClientRect().bottom > visBottom - 4) {
       const n = $("#pdNotes"); (n.previousElementSibling === $("#pdAdd") && !n.hidden ? n : $("#pdAdd")).after($("#pdAlso"));
     }
     $("#pdName").focus({ preventScroll: true }); // start on the product name, not the close button

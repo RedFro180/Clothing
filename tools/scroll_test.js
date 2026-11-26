@@ -26,6 +26,10 @@ const fails = [], errs = [];
     const touch = !!opts.hasTouch, cdp = await ctx.newCDPSession(p);
     const ok = (label, cond, extra = "") => { if (!cond) fails.push(`${name}: ${label} ${extra}`); return cond; };
     const pageY = () => p.evaluate(() => scrollY);
+    async function still() {   // wait until the page has stopped moving (3 equal readings 100 ms apart, max ~3 s)
+      let last = -1, same = 0;
+      for (let i = 0; i < 30 && same < 3; i++) { const y = await pageY(); same = y === last ? same + 1 : 0; last = y; await p.waitForTimeout(100); }
+    }
     // scroll over a point: wheel on desktop, finger swipe on touch screens. dy > 0 = scroll down the content.
     async function scrollAt(x, y, dy, dx = 0) {
       const vp = await p.evaluate(() => [innerWidth, innerHeight]);
@@ -161,19 +165,22 @@ const fails = [], errs = [];
       const ids = window.CATALOG.products.slice(0, 6).map(x => x.id);
       localStorage.setItem("preorder-list-v1", JSON.stringify(ids.map((id, i) => ({ id, size: "L", qty: i < 2 ? 2 : 1 }))));
     });
-    await p.reload(); await p.waitForTimeout(400); await p.evaluate(() => scrollTo({ top: 600, behavior: "instant" })); await settle();
+    // reload restores the old scroll position with a smooth animation; turn that off and wait until the page is still,
+    // so a scroll that was already running isn't blamed on the list
+    await p.evaluate(() => { history.scrollRestoration = "manual"; scrollTo({ top: 0, behavior: "instant" }); });
+    await p.reload(); await p.waitForTimeout(400); await p.evaluate(() => scrollTo({ top: 600, behavior: "instant" })); await settle(); await still();
     const b2 = await pageY();
     await p.click("#bagBtn"); await p.waitForTimeout(300);
     const bagBox = await p.locator("#bag").boundingBox();
     for (let i = 0; i < 4; i++) await scrollAt(bagBox.x + bagBox.width / 2, bagBox.y + bagBox.height * 0.5, 600);
-    ok("preorder list: page behind stays still", (await pageY()) === b2);
+    ok("preorder list: page behind stays still", (await pageY()) === b2, `(${b2} → ${await pageY()})`);
     ok("preorder list: send button reachable", await p.evaluate(() => { const r = document.querySelector("#reqBtn").getBoundingClientRect(); return r.bottom <= innerHeight && r.top >= 0; }));
     await p.keyboard.press("Escape"); await p.waitForTimeout(200);
     ok("page unlocked after the list", await p.evaluate(() => getComputedStyle(document.documentElement).overflow !== "hidden"));
 
     // 6. recently viewed with 8 products
     await p.evaluate(() => localStorage.setItem("recent", JSON.stringify(window.CATALOG.products.slice(10, 18).map(x => x.id))));
-    await p.reload(); await p.waitForTimeout(400);
+    await p.reload(); await p.waitForTimeout(400); await still();
     await p.click("#rvBtn"); await p.waitForTimeout(300);
     const rb = await p.locator("#rv").boundingBox(), r0 = await pageY();
     for (let i = 0; i < 3; i++) await scrollAt(rb.x + rb.width / 2, rb.y + rb.height / 2, 600);
