@@ -32,7 +32,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "5.2"
  },
  {
   "i": 2,
@@ -55,7 +55,7 @@
   "errs": [],
   "log": [
    "search \"rot\"",
-   "results: 24",
+   "results: 26",
    "open first result",
    "viewing: You are a skeleton wearing meat.",
    "pick size XL",
@@ -69,7 +69,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.1"
+  "secs": "6.5"
  },
  {
   "i": 3,
@@ -141,7 +141,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.4"
+  "secs": "5.2"
  },
  {
   "i": 5,
@@ -176,7 +176,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "6.0"
  },
  {
   "i": 6,
@@ -218,7 +218,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.7"
+  "secs": "6.8"
  },
  {
   "i": 7,
@@ -255,7 +255,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "5.0"
  },
  {
   "i": 8,
@@ -291,7 +291,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "5.7"
  },
  {
   "i": 9,
@@ -328,7 +328,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.1"
+  "secs": "6.2"
  },
  {
   "i": 10,
@@ -358,7 +358,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.7"
+  "secs": "2.1"
  },
  {
   "i": 11,
@@ -394,7 +394,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.9"
  },
  {
   "i": 12,
@@ -428,7 +428,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.3"
+  "secs": "4.6"
  },
  {
   "i": 13,
@@ -464,7 +464,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "6.1"
  },
  {
   "i": 14,
@@ -499,7 +499,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.9"
  },
  {
   "i": 15,
@@ -522,7 +522,7 @@
   "errs": [],
   "log": [
    "search \"pink\"",
-   "results: 17",
+   "results: 18",
    "open first result",
    "viewing: You are a skeleton wearing meat.",
    "pick size L",
@@ -572,7 +572,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.4"
+  "secs": "7.2"
  },
  {
   "i": 17,
@@ -608,7 +608,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.4"
  },
  {
   "i": 18,
@@ -643,7 +643,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "4.8"
  },
  {
   "i": 19,
@@ -685,7 +685,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.2"
+  "secs": "6.1"
  },
  {
   "i": 20,
@@ -722,7 +722,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.8"
+  "secs": "5.0"
  },
  {
   "i": 21,
@@ -752,7 +752,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "3.0"
+  "secs": "2.6"
  },
  {
   "i": 22,
@@ -819,7 +819,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "2.0"
+  "secs": "2.2"
  },
  {
   "i": 24,
@@ -856,7 +856,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.6"
+  "secs": "7.2"
  },
  {
   "i": 25,
@@ -891,7 +891,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "5.1"
  },
  {
   "i": 26,
@@ -927,7 +927,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.0"
+  "secs": "7.1"
  },
  {
   "i": 27,
@@ -962,7 +962,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "4.9"
  },
  {
   "i": 28,
@@ -985,7 +985,7 @@
   "errs": [],
   "log": [
    "search \"bones\"",
-   "results: 27",
+   "results: 29",
    "open first result",
    "viewing: You are a skeleton wearing meat.",
    "pick size XL",
@@ -999,7 +999,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.3"
+  "secs": "5.1"
  },
  {
   "i": 29,
@@ -1035,7 +1035,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.1"
+  "secs": "5.0"
  },
  {
   "i": 30,
@@ -1071,7 +1071,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.3"
  },
  {
   "i": 31,
@@ -1106,7 +1106,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.3"
+  "secs": "6.0"
  },
  {
   "i": 32,
@@ -1148,7 +1148,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.8"
+  "secs": "6.1"
  },
  {
   "i": 33,
@@ -1221,7 +1221,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.9"
+  "secs": "5.3"
  },
  {
   "i": 35,
@@ -1258,7 +1258,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.9"
+  "secs": "6.3"
  },
  {
   "i": 36,
@@ -1288,7 +1288,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.5"
+  "secs": "1.8"
  },
  {
   "i": 37,
@@ -1325,7 +1325,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.5"
  },
  {
   "i": 38,
@@ -1395,7 +1395,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.1"
+  "secs": "6.8"
  },
  {
   "i": 40,
@@ -1430,7 +1430,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "4.9"
  },
  {
   "i": 41,
@@ -1453,7 +1453,7 @@
   "errs": [],
   "log": [
    "search \"sad\"",
-   "results: 30",
+   "results: 31",
    "open first result",
    "viewing: Everything hurts and I'm still here",
    "pick size XL",
@@ -1468,7 +1468,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.9"
+  "secs": "6.2"
  },
  {
   "i": 42,
@@ -1505,7 +1505,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.5"
+  "secs": "7.3"
  },
  {
   "i": 43,
@@ -1542,7 +1542,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "6.2"
+  "secs": "6.5"
  },
  {
   "i": 44,
@@ -1577,7 +1577,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.7"
+  "secs": "5.2"
  },
  {
   "i": 45,
@@ -1619,7 +1619,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "7.8"
+  "secs": "8.1"
  },
  {
   "i": 46,
@@ -1656,7 +1656,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "4.5"
+  "secs": "4.8"
  },
  {
   "i": 47,
@@ -1686,7 +1686,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.6"
+  "secs": "1.8"
  },
  {
   "i": 48,
@@ -1723,7 +1723,7 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.2"
+  "secs": "5.5"
  },
  {
   "i": 49,
@@ -1753,7 +1753,7 @@
    "submit notify",
    "5 other sizes available"
   ],
-  "secs": "1.9"
+  "secs": "1.7"
  },
  {
   "i": 50,
@@ -1790,6 +1790,6 @@
    "send preorder request",
    "form fields: 5"
   ],
-  "secs": "5.0"
+  "secs": "5.4"
  }
 ]
