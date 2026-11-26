@@ -56,7 +56,7 @@ const fails = [], errs = [];
     let y0 = await pageY(); let [x, y] = await mid("#ring");
     await scrollAt(x, Math.min(y, vh - 40), 300);
     ok("page scrolls from the ring", (await pageY()) > y0);
-    await p.locator(".chips").first().scrollIntoViewIfNeeded();
+    await p.evaluate(() => document.querySelector(".chips[data-for=fTheme]").scrollIntoView({ block: "center", behavior: "instant" })); await settle();
     y0 = await pageY(); [x, y] = await mid(".chips[data-for=fTheme]");
     await scrollAt(x, y, 250);
     ok("page scrolls from a chip row", (await pageY()) > y0);
