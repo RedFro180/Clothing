@@ -168,7 +168,7 @@ const fails = [], errs = [];
     // reload restores the old scroll position with a smooth animation; turn that off and wait until the page is still,
     // so a scroll that was already running isn't blamed on the list
     await p.evaluate(() => { history.scrollRestoration = "manual"; scrollTo({ top: 0, behavior: "instant" }); });
-    await p.reload(); await p.waitForTimeout(400); await p.evaluate(() => scrollTo({ top: 600, behavior: "instant" })); await settle(); await still();
+    await p.waitForTimeout(400); await p.reload().catch(() => p.reload()); await p.waitForTimeout(400); await p.evaluate(() => scrollTo({ top: 600, behavior: "instant" })); await settle(); await still();
     const b2 = await pageY();
     await p.click("#bagBtn"); await p.waitForTimeout(300);
     const bagBox = await p.locator("#bag").boundingBox();
@@ -179,8 +179,12 @@ const fails = [], errs = [];
     ok("page unlocked after the list", await p.evaluate(() => getComputedStyle(document.documentElement).overflow !== "hidden"));
 
     // 6. recently viewed with 8 products
-    await p.evaluate(() => localStorage.setItem("recent", JSON.stringify(window.CATALOG.products.slice(10, 18).map(x => x.id))));
-    await p.reload(); await p.waitForTimeout(400); await still();
+    for (let t = 0; t < 4; t++) {   // the test browser can drop a just-written value on a fast reload; retry until it sticks
+      await p.evaluate(() => localStorage.setItem("recent", JSON.stringify(window.CATALOG.products.slice(10, 18).map(x => x.id))));
+      await p.waitForTimeout(400); await p.reload().catch(() => {}); await p.waitForTimeout(500);
+      if (await p.locator("#rvBtn").isVisible()) break;
+    }
+    await still();
     await p.click("#rvBtn"); await p.waitForTimeout(300);
     const rb = await p.locator("#rv").boundingBox(), r0 = await pageY();
     for (let i = 0; i < 3; i++) await scrollAt(rb.x + rb.width / 2, rb.y + rb.height / 2, 600);

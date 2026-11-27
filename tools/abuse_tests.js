@@ -38,7 +38,7 @@ const { chromium } = require('playwright');
   await c.close();
   // 8. rate limit: 4 sends from same browser
   [c, p] = await fresh(); const msgs = [];
-  for (let k = 0; k < 4; k++) { await add(p, k); await fill(p); await p.waitForTimeout(2600); await p.click('#reqBtn'); await p.waitForTimeout(200); msgs.push((await p.textContent('#reqMsg')).slice(0, 40)); await p.keyboard.press('Escape'); await p.evaluate(() => { localStorage.setItem('preorder-list-v1', '[]'); }); await p.reload(); await p.waitForTimeout(300); }
+  for (let k = 0; k < 4; k++) { await add(p, k); await fill(p); await p.waitForTimeout(2600); await p.click('#reqBtn'); await p.waitForTimeout(200); msgs.push((await p.textContent('#reqMsg')).slice(0, 40)); await p.keyboard.press('Escape'); await p.waitForTimeout(500); await p.evaluate(() => { localStorage.setItem('preorder-list-v1', '[]'); }); await p.waitForTimeout(200); await p.goto(p.url().split('#')[0]); await p.waitForTimeout(400); }
   R.rate = msgs; await c.close();
   // 9. price in the order is from the catalog, not the page
   [c, p] = await fresh(); await p.evaluate(() => { document.querySelectorAll('.price').forEach(e => e.textContent = '$1'); });

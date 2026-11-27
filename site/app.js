@@ -701,7 +701,7 @@
       disc ? el("div", { class: "sum" }, el("span", { text: "Set discount" }), el("span", { text: "−" + money(disc) })) : null,
       el("div", { class: "sum" }, el("span", { text: "Shipping" }), el("span", { text: ship ? money(ship) : "Free" })),
       el("div", { class: "sum total" }, el("span", { text: "Estimated total" }), el("span", { text: money(sub + ship) })),
-      el("p", { class: "note", text: "Plus tax where it applies." + (SHIP_WINDOW ? ` ${SHIP_WINDOW}.` : "") })] : []));
+      el("p", { class: "note", text: "Plus tax where it applies." + (SHIP_WINDOW ? ` ${SHIP_WINDOW}.` : "") })].filter(Boolean) : []));
     $("#reqForm").hidden = !bag.length;
     const qn = bagQty();
     $("#orderFlag").hidden = qn < LARGE;
@@ -796,7 +796,6 @@
     document.querySelectorAll(".save-heart").forEach(b => b.setAttribute("aria-pressed", String(ids.includes(Number(b.dataset.id)))));
     if (cur) { const on = ids.includes(cur.id); $("#pdSave").setAttribute("aria-pressed", String(on)); $("#pdSave").textContent = on ? "♥ Saved" : "♡ Save"; }
     $("#svBtn").hidden = !ids.length; $("#svCount").textContent = ids.length ? String(ids.length) : "";
-    $("#svBtn").setAttribute("aria-label", `Saved (${ids.length})`);
   }
   $("#pdSave").addEventListener("click", () => cur && toggleSave(cur));
   let listKind = "recent";
