@@ -464,3 +464,82 @@ SPEC.update({
 203: ("pines", C(X(chalk_squat, 0, G))),
 205: ("meadow", C(X(flex_smile, 0, G))),
 })
+
+# ---------- pass 3 (2026-11-27): user notes on 01-12 + variety ----------
+import redo_vary as V
+def skel_lift(r, x, y):                       # skeleton holding a barbell at the hips, arms straight down to the bar
+    g = skull_l(r, x, y - 70, 0.36) + pl([(x, y - 60), (x, y - 30)], 2.4) + ''.join(pl([(x - 8, y + v), (x, y + v - 2), (x + 8, y + v)], 1.4) for v in (-56, -50, -44))
+    g += pl([(x - 9, y - 56), (x + 9, y - 56)], 2) + pl([(x - 9, y - 56), (x - 12, y - 30)], 2) + pl([(x + 9, y - 56), (x + 12, y - 30)], 2)
+    g += pl([(x - 6, y - 30), (x - 7, y - 14), (x - 6, y)], 2.2) + pl([(x + 6, y - 30), (x + 7, y - 14), (x + 6, y)], 2.2) + pl([(x - 8, y - 30), (x + 8, y - 30)], 2)
+    return g + ''.join(nt.dot(x + u, y - 30, 2.4) for u in (-12, 12)) + barbell_l(x, y - 30, 58)
+def meat_pile(r, x, y):
+    g = shape(r, [(x - 30, y), (x - 26, y - 12), (x - 12, y - 20), (x + 6, y - 18), (x + 22, y - 12), (x + 30, y)])
+    g += jl([(x - 18, y - 8), (x - 6, y - 12), (x + 8, y - 8)], r, 1.2) + jl([(x - 8, y - 4), (x + 14, y - 4)], r, 1.2)
+    return g + steak(r, x + 8, y - 22)
+def bench_spot(r, x, y, spotter=True, skel=False):   # clean bench press: lifter on the bench, spotter behind the head
+    g = jl([(x - 46, y - 20), (x + 40, y - 20)], r, 3) + jl([(x - 38, y - 20), (x - 38, y)], r, 2) + jl([(x + 32, y - 20), (x + 32, y)], r, 2)
+    hx = x - 40
+    g += head(hx, y - 28, 6.5) + pl([(hx + 8, y - 26), (x + 8, y - 26)], 2.6)          # body along the bench
+    g += pl([(x + 8, y - 26), (x + 22, y - 40), (x + 30, y)], 2.4)                       # knee up, foot on floor
+    g += pl([(x - 22, y - 26), (x - 22, y - 62)], 2.2) + pl([(x - 10, y - 26), (x - 10, y - 62)], 2.2)   # arms straight up
+    g += barbell_l(x - 16, y - 62, 46)
+    if spotter:
+        sx = x - 72
+        g += head(sx + 4, y - 64) + pl([(sx + 2, y - 56), (sx, y - 30)], 2.6) + pl([(sx - 8, y), (sx, y - 30), (sx + 6, y)], 2.6)
+        g += pl([(sx + 2, y - 52), (x - 40, y - 58)], 2.1) + pl([(sx + 2, y - 48), (x - 36, y - 64)], 2.1)   # hands under the bar
+    return g
+def tomb_plates_carry(r, x, y):               # bar across the shoulders, RIP headstones as the plates
+    g = head(x, y - 48) + pl([(x, y - 40), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6)
+    g += pl([(x - 3, y - 36), (x - 16, y - 44), (x - 18, y - 52)], 2.2) + pl([(x + 3, y - 36), (x + 16, y - 44), (x + 18, y - 52)], 2.2)
+    g += pl([(x - 74, y - 52), (x + 74, y - 52)], 2.8)
+    for d in (-1, 1):
+        g += tomb(r, x + d * 62, y - 34, 0.5, "RIP")
+    return g
+def skel_run(r, x, y):
+    g = skull_l(r, x + 4, y - 64, 0.34) + pl([(x + 2, y - 54), (x - 2, y - 28)], 2.2) + ''.join(pl([(x - 6, y + v), (x, y + v - 2), (x + 6, y + v)], 1.3) for v in (-50, -44, -38))
+    g += pl([(x, y - 48), (x + 12, y - 40), (x + 18, y - 48)], 1.9) + pl([(x, y - 48), (x - 12, y - 38), (x - 20, y - 42)], 1.9)
+    g += pl([(x - 2, y - 28), (x + 14, y - 16), (x + 12, y - 2), (x + 20, y)], 2.1) + pl([(x - 2, y - 28), (x - 14, y - 18), (x - 26, y - 22), (x - 30, y - 16)], 2.1)
+    return g + ''.join(jl([(x - 40 - k * 8, y - 30 + k * 8), (x - 52 - k * 8, y - 30 + k * 8)], r, 1, 0.3) for k in range(3))
+def piggyback(r, x, y):                       # walking, a skeleton riding on the back with its arms around the neck
+    g = walk(x, y, 1)
+    s = skull_l(r, x - 9, y - 50, 0.3)
+    s += pl([(x - 10, y - 42), (x - 14, y - 22)], 2) + ''.join(pl([(x - 17, y + v), (x - 12, y + v - 2), (x - 7, y + v)], 1.2) for v in (-38, -33, -28))
+    s += pl([(x - 10, y - 38), (x - 2, y - 34), (x + 4, y - 32)], 1.8) + pl([(x - 12, y - 36), (x - 4, y - 30), (x + 4, y - 30)], 1.6)
+    s += pl([(x - 14, y - 22), (x - 2, y - 20), (x + 4, y - 12)], 1.8) + pl([(x - 14, y - 22), (x - 4, y - 16), (x - 2, y - 8)], 1.6)
+    return g + s
+def two_bone_piles(r, x, y): return bones_pile(r, x - 55, y) + bones_pile(r, x + 55, y)
+def tagged_feet(r, x, y):                     # one long sheet, a row of feet poking out, every foot tagged: everyone
+    g = jl([(x - 100, y - 24), (x + 80, y - 24)], r, 2.6) + ''.join(jl([(x + u, y - 24), (x + u, y)], r, 2) for u in (-92, 72))
+    g += shape(r, [(x - 100, y - 26), (x - 94, y - 40), (x - 40, y - 44), (x + 20, y - 40), (x + 70, y - 42), (x + 80, y - 26)])
+    for i, u in enumerate((-60, -30, 0, 30)):
+        g += ell(x + u, y - 46, 4, 6) + jl([(x + u + 3, y - 50), (x + u + 8, y - 60)], r, 1) + shape(r, [(x + u + 4, y - 60), (x + u + 16, y - 66), (x + u + 18, y - 58), (x + u + 6, y - 54)], 1.2)
+    return g
+def half_face(r, x, y):                       # matches the original #11 art: half living face, half skull
+    g = f'<path d="M{x} {y-118} Q{x-40} {y-116} {x-42} {y-76} Q{x-40} {y-46} {x-18} {y-38} L{x} {y-36} Z" fill="{B()}" stroke="{I()}" stroke-width="2.2"/>'
+    g += f'<path d="M{x} {y-118} Q{x+40} {y-116} {x+42} {y-76} Q{x+40} {y-46} {x+18} {y-38} L{x} {y-36} Z" fill="{B()}" stroke="{I()}" stroke-width="2.2"/>'
+    g += ell(x - 18, y - 82, 9, 10) + jl([(x - 6, y - 64), (x - 2, y - 72), (x + 2, y - 64)], r, 1.6) + ''.join(pl([(x - u, y - 52), (x - u, y - 42)], 1.4) for u in (2, 8, 14, 20))
+    g += pl([(x - 26, y - 46), (x - 2, y - 48)], 1.6) + jl([(x - 4, y - 104), (x - 10, y - 96), (x - 4, y - 88), (x - 10, y - 78), (x - 4, y - 68)], r, 1.2, 0.3, 3)
+    g += ell(x + 17, y - 82, 7, 4.5) + nt.dot(x + 17, y - 82, 2.4) + jl([(x + 8, y - 92), (x + 26, y - 94)], r, 1.6)
+    g += jl([(x + 4, y - 74), (x + 8, y - 64), (x + 3, y - 62)], r, 1.6) + f'<path d="M{x+4} {y-50} Q{x+14} {y-46} {x+22} {y-50}" fill="none" stroke="{I()}" stroke-width="1.8"/>'
+    g += jl([(x + 6, y - 118), (x + 18, y - 124), (x + 32, y - 116), (x + 40, y - 104)], r, 1.6)
+    g += pl([(x - 22, y - 36), (x - 46, y - 24), (x - 60, y)], 2.2) + pl([(x + 22, y - 36), (x + 46, y - 24), (x + 60, y)], 2.2)
+    return g
+def stargazer(r, x, y):
+    return lie(x, y, 1) + barbell_l(x + 70, y - 12, 34)
+
+SPEC.update({
+1: ("pines", C(X(skel_lift, 0, G))),
+2: ("meadow", C(X(skeleton_l, -20, G), X(meat_pile, 30, G))),
+3: ("pines", C(X(bench_spot, 30, G))),
+4: ("valley", C(X(tomb_plates_carry, 0, G))),
+6: ("valley", C(X(skel_run, 0, G))),
+7: ("valley", C(X(piggyback, 0, G))),
+8: ("meadow", C(X(two_bone_piles, 0, G))),
+10: ("pines", C(X(tagged_feet, 10, G))),
+11: ("meadow", C(X(half_face, 0, G))),
+12: ("pines", C(X(stargazer, -30, G))),
+21: ("pines", C(X(bench_spot, 30, G))),
+38: ("pines", C(X(bench_spot, 30, G))),
+61: ("pines", C(X(bench_spot, 30, G))),
+})
+V.OVERRIDE.update({12: dict(sky="milky", trees="pine"), 1: dict(sky="none"), 3: dict(sky="none"), 11: dict(sky="none"), 10: dict(sky="none")})

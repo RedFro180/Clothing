@@ -290,19 +290,21 @@ def figure(r, pose):
             "stand": lambda: stand(-60, y), "press": lambda: press(0, y), "dead": lambda: deadlift(0, y), "none": lambda: ""}[pose]()
 
 def background(r, bg, num, sky_free=False):
-    g = ''   # no sky: the style is ground-level line art (night only for 208-219)
+    import redo_vary as V
+    v = V.variant(num); k = v["scale"]; T = lambda x, h, i=0: V.tree(v["trees"], x, G, h * k, r, i)
+    g = '' if sky_free else V.sky(v["sky"], r, v["side"])
     if bg == "valley":
         g += mountains(r, 170, ((-120, 34), (-50, 50), (30, 38), (110, 54)))
         rv = [(110, 172), (126, 186), (100, 200), (132, 214)]
-        g += river(r, rv, 2, 10) + forest(r, 174, 210, 40, 150, 22, in_river(rv, 2, 10))
+        g += river(r, rv, 2, 10) + forest(r, 174, 210, 40, 150, 22, in_river(rv, 2, 10)) + T(-136 * v["side"], 110, 1)
     elif bg == "meadow":
-        g += mountains(r, 196, ((-110, 34), (-30, 50), (60, 36), (126, 44))) + forest(r, 198, 222, n=26, avoid=lambda x, y: -80 < x < 100)
+        g += mountains(r, 196, ((-110, 34), (-30, 50), (60, 36), (126, 44))) + forest(r, 198, 222, n=20, avoid=lambda x, y: -90 < x < 110) + T(136 * v["side"], 104, 2)
     elif bg == "cemetery":
-        g += mountains(r, 196, ((-60, 30), (40, 40), (120, 30)), snow=False) + ''.join(tomb(r, u, G - 4, 0.5, "") for u in (-130, -106, 112, 134))
+        g += mountains(r, 196, ((-60, 30), (40, 40), (120, 30)), snow=False) + ''.join(tomb(r, u, G - 4, 0.5, "") for u in (-120, -98, 104, 126)) + T(-140 * v["side"], 100, 3)
     elif bg == "cabin":
-        g += pine(-132, G, 120, r) + pine(134, G, 130, r) + forest(r, 206, 226, n=14, avoid=lambda x, y: -114 < x < 114)
+        g += T(-132, 116, 0) + T(134, 126, 1) + forest(r, 206, 226, n=10, avoid=lambda x, y: -114 < x < 114)
     else:
-        g += ''.join(pine(u, G, h, r) for u, h in ((-138, 130), (-116, 96), (116, 100), (138, 134)))
+        g += ''.join(T(u, h, i) for i, (u, h) in enumerate(((-138, 120), (-112, 92), (112, 96), (138, 124))))
     return g + ground(r, [(-150, G), (150, G)])
 
 def scene(num, d):
@@ -333,32 +335,39 @@ def cap_text(t):
         elif start: lw = (lw[0].upper() + lw[1:]) if lw[0].isalpha() else (lw[0] + lw[1:2].upper() + lw[2:])
         out.append(lw); start = w.endswith((".", "?", "!"))
     return " ".join(out)
+FONT = ["hand"]
 def wrap(text, width, size):
     lines, cur = [], ""
     for w in text.split():
         t = (cur + " " + w).strip()
-        if cur and sd.measure(t, "hand", size) > width: lines.append(cur); cur = w
+        if cur and sd.measure(t, FONT[0], size) > width: lines.append(cur); cur = w
         else: cur = t
     return lines + [cur]
 def caption(text, x, y, width, size, minsize):
     for sz in range(int(size), int(minsize) - 1, -2):
         lines = wrap(text, width, sz)
-        if len(lines) <= 3 and all(sd.measure(l, "hand", sz) <= width for l in lines): break
-    g = ''.join(sd.tpath(l, "hand", sz, x, y + sz * 0.8 + i * sz * 0.95) for i, l in enumerate(lines))
+        if len(lines) <= 3 and all(sd.measure(l, FONT[0], sz) <= width for l in lines): break
+    g = ''.join(sd.tpath(l, FONT[0], sz, x, y + sz * 0.8 + i * sz * 0.95) for i, l in enumerate(lines))
     return g, y + sz * 0.95 * len(lines) + sz * 0.1
 
 def redo_layout(num, d):
+    import redo_vary as V, redo_specs  # noqa: F401  (redo_specs fills V.OVERRIDE)
+    v = V.variant(num); FONT[0] = v["font"]; f = V.FONT_SIZE[v["font"]]
+    top, hgt = (30, 214) if v["sky"] != "none" else (60, 184)
     main = cap_text(" ".join(d["lines"]))
     sub = cap_text(d["sub"]) if d.get("sub") else ""
     if d["place"] in ("back", "hood"):
-        a, yy = caption(main, 300, 186, 292, 44, 26)
-        if sub: a += sd.tpath(sub, "hand", sd.fitsize(sub, "hand", 280, 24), 300, yy + 18); yy += 26
-        k = min(1.15, (556 - yy) / 164)
-        return "back", a + f'<g transform="translate(300 {yy+2:.1f}) scale({k:.3f}) translate(0 -80)">{scene(num, d)}</g>'
-    a, yy = caption(main, 300, 214, 262, 34, 22)
-    if sub: a += sd.tpath(sub, "hand", sd.fitsize(sub, "hand", 250, 18), 300, yy + 12); yy += 18
-    k = min(0.9, (456 - yy) / 164)
-    return "front", a + f'<g transform="translate(300 {yy:.1f}) scale({k:.3f}) translate(0 -80)">{scene(num, d)}</g>'
+        a, yy = caption(main, 300, 186, 292, 44 * f, 24 * f)
+        if sub: a += sd.tpath(sub, FONT[0], sd.fitsize(sub, FONT[0], 280, 24 * f), 300, yy + 18); yy += 26
+        k = min(1.15, (556 - yy) / hgt)
+        out = "back", a + f'<g transform="translate(300 {yy+2:.1f}) scale({k:.3f}) translate(0 -{top})">{scene(num, d)}</g>'
+    else:
+        a, yy = caption(main, 300, 214, 262, 34 * f, 20 * f)
+        if sub: a += sd.tpath(sub, FONT[0], sd.fitsize(sub, FONT[0], 250, 18 * f), 300, yy + 12); yy += 18
+        k = min(0.9, (456 - yy) / hgt)
+        out = "front", a + f'<g transform="translate(300 {yy:.1f}) scale({k:.3f}) translate(0 -{top})">{scene(num, d)}</g>'
+    FONT[0] = "hand"
+    return out
 
 def all_designs():
     from designs_data import FIRST, DESIGNS
