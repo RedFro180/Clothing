@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketch review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: quiet, nocturnal, a working proof sheet.
+   IDEA: a contact sheet on a light table at night: every print laid out, old beside new.
+   PICTURE: the sketches themselves, large, in pairs.
+   COLOUR and TYPE: night ground #101114, bone ink #ece4d0, one moon accent #d8c9a3; Caveat for titles (matches the new style), Inter for labels.
+   LAYOUT: title + controls on one band, then a wrapping grid of pair cards; tap opens a big viewer with arrows. */
+:root{color-scheme:dark;--bg:#101114;--card:#1a1c21;--line:#2a2d34;--ink:#ece4d0;--dim:#a29b8c;--moon:#d8c9a3}
+:root[data-theme=light]{color-scheme:light;--bg:#efece6;--card:#fff;--line:#ddd6ca;--ink:#1d1b18;--dim:#6b6458;--moon:#7a6a3c}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif;overflow-x:clip}
+header{padding:28px max(4vw,16px) 8px;max-width:1500px;margin:auto}
+h1{font:600 clamp(36px,5vw,52px)/1.05 Caveat,cursive;margin:0 0 6px;text-wrap:balance}
+.lede{color:var(--dim);margin:0 0 16px;max-width:70ch}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;position:sticky;top:0;z-index:5;background:var(--bg);padding:10px max(4vw,16px);max-width:1500px;margin:auto}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg button,.chip{font:600 14px Inter,sans-serif;color:var(--ink);background:transparent;border:0;padding:0 14px;min-height:40px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 420px}
+.chip{border:1px solid var(--line);border-radius:999px;white-space:nowrap;flex:none}
+.chip[aria-pressed=true]{border-color:var(--moon);color:var(--moon)}
+input[type=search]{font:16px Inter,sans-serif;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:0 16px;min-height:40px;width:min(260px,100%)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--moon);outline-offset:2px}
+.count{color:var(--dim);font-size:13px;padding:0 max(4vw,16px);max-width:1500px;margin:4px auto 0}
+main{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px;padding:12px max(4vw,16px) 60px;max-width:1500px;margin:auto}
+main.single{grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.single .pics{grid-template-columns:1fr}
+.pic{background:#f3f1ec;border-radius:10px;overflow:hidden;border:0;padding:0;cursor:zoom-in;position:relative;aspect-ratio:600/640}
+.pic img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.pic span{position:absolute;left:8px;top:8px;font:600 11px Inter,sans-serif;background:rgba(16,17,20,.78);color:#ece4d0;padding:3px 8px;border-radius:999px}
+.none{display:grid;place-items:center;color:#6b6458;font-size:13px;text-align:center;padding:10px}
+.t{font-weight:600}.t b{color:var(--moon);margin-right:6px}
+.meta{color:var(--dim);font-size:13px}
+.note{font-size:13px;border-left:2px solid var(--moon);padding-left:8px}
+.empty{grid-column:1/-1;color:var(--dim);padding:40px 0;text-align:center}
+dialog{border:0;padding:0;background:var(--bg);color:var(--ink);width:min(1200px,96vw);max-height:94vh;border-radius:16px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.big{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
+.big img{width:100%;background:#f3f1ec;border-radius:10px}
+.dh{display:flex;align-items:center;gap:10px;padding:12px 14px 0}
+.dh .t{flex:1}
+.dh button{font:600 14px Inter,sans-serif;min-width:44px;min-height:44px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+@media(max-width:600px){.big{grid-template-columns:1fr}main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Sketch review: originals and night redraws</h1>
+  <p class="lede">Every sketch 01–207 beside its redraw in the new night line-art style, plus the 12 sketches made in that style (208–219). Originals are unchanged. Notes from the review sit under the cards that need them. Tap a sketch to see it large.</p>
+</header>
+<div class="bar">
+  <div class="seg" role="group" aria-label="View">
+    <button data-v="pairs" aria-pressed="true">Pairs</button><button data-v="o" aria-pressed="false">Originals</button><button data-v="n" aria-pressed="false">Night style</button>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Group"></div>
+  <input type="search" id="q" placeholder="Search captions or numbers" aria-label="Search captions or numbers">
+</div>
+<p class="count" id="count"></p>
+<main id="grid"></main>
+<dialog id="dlg" aria-label="Sketch">
+  <div class="dh"><div class="t" id="dt"></div><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button><button id="close" aria-label="Close">✕</button></div>
+  <div class="big" id="big"></div>
+</dialog>
+<script>
+{
+  const GROUPS = ["All", "Night set", "Morgue", "Decay", "Anatomy", "Burial", "Grief", "Reaper", "Cremation", "Gym", "Dread", "Has a note"];
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+  const PLACE = {front: "Front", back: "Back", chest: "Left chest", sleeve: "Sleeve", pocket: "Pocket + chest", hood: "Hood + back"};
+  const RISK = {H: "Ad risk high", M: "Ad risk medium", L: "Ad risk low"};
+  let data = [], view = "pairs", group = "All", q = "", shown = [], cur = -1;
+  const id3 = n => String(n).padStart(3, "0");
+
+  $("#chips").innerHTML = GROUPS.map(g => `<button class="chip" data-g="${esc(g)}" aria-pressed="${g === "All"}">${esc(g)}</button>`).join("");
+
+  function pic(r, side, lazy = true) {
+    if (side === "n" && !r.night) return `<div class="pic none">${r.newstyle ? "Made in the night style" : "No redraw"}</div>`;
+    const src = `${side}/${id3(r.n)}.svg`, label = side === "o" ? (r.newstyle ? "Night style" : "Original") : "Night redraw";
+    return `<button class="pic" data-n="${r.n}" aria-label="Open ${esc(label)} ${r.n}"><img src="${src}" alt="${esc(label)} sketch ${r.n}: ${esc(r.cap)}" ${lazy ? 'loading="lazy"' : ""}><span>${esc(label)}</span></button>`;
+  }
+  function render() {
+    const words = q.toLowerCase().trim();
+    shown = data.filter(r => (group === "All" || (group === "Has a note" ? r.note : r.group === group))
+      && (!words || r.cap.toLowerCase().includes(words) || String(r.n) === words.replace(/^0+/, ""))
+      && (view !== "n" || r.night || r.newstyle));
+    const grid = $("#grid");
+    grid.className = view === "pairs" ? "" : "single";
+    grid.innerHTML = shown.length ? shown.map(r => `<article class="card">
+      <div class="pics">${view === "pairs" ? pic(r, "o") + (r.newstyle ? "" : pic(r, "n")) : view === "o" ? pic(r, "o") : pic(r, r.newstyle ? "o" : "n")}</div>
+      <div class="t"><b>${id3(r.n)}</b>${esc(r.cap)}</div>
+      <div class="meta">${esc([PLACE[r.place] || r.place, r.group, RISK[r.risk]].filter(Boolean).join(" · "))}</div>
+      ${r.note ? `<div class="note">${esc(r.note)}</div>` : ""}</article>`).join("") : `<p class="empty">No sketches match. Clear the search or pick another group.</p>`;
+    $("#count").textContent = `${shown.length} of ${data.length} designs`;
+  }
+  function open(n) {
+    cur = shown.findIndex(r => r.n === n); if (cur < 0) return;
+    const r = shown[cur];
+    $("#dt").innerHTML = `<b>${id3(r.n)}</b> ${esc(r.cap)}`;
+    $("#big").style.gridTemplateColumns = (r.newstyle || view !== "pairs") ? "1fr" : "";
+    $("#big").innerHTML = (view === "n" && !r.newstyle ? "" : `<img src="o/${id3(r.n)}.svg" alt="${r.newstyle ? "Night style" : "Original"} ${r.n}">`)
+      + ((view !== "o" && r.night) ? `<img src="n/${id3(r.n)}.svg" alt="Night redraw ${r.n}">` : "");
+    const d = $("#dlg"); if (!d.open) d.showModal();
+  }
+  const step = k => { if (cur < 0) return; cur = (cur + k + shown.length) % shown.length; open(shown[cur].n); };
+
+  document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => {
+    view = b.dataset.v; document.querySelectorAll(".seg button").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); }));
+  $("#chips").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return;
+    group = b.dataset.g; document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed", x === b)); render(); });
+  $("#q").addEventListener("input", e => { q = e.target.value; render(); });
+  $("#grid").addEventListener("click", e => { const b = e.target.closest(".pic[data-n]"); if (b) open(+b.dataset.n); });
+  $("#prev").addEventListener("click", () => step(-1)); $("#next").addEventListener("click", () => step(1));
+  $("#close").addEventListener("click", () => $("#dlg").close());
+  $("#dlg").addEventListener("click", e => { if (e.target === $("#dlg")) $("#dlg").close(); });
+  document.addEventListener("keydown", e => { if (!$("#dlg").open) return; if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1); });
+
+  fetch("data.json").then(r => r.json()).then(d => { data = d; render(); })
+    .catch(() => { $("#grid").innerHTML = `<p class="empty">The sketch list didn't load. Reload the page.</p>`; });
+}
+</script>
+</body>
+</html>

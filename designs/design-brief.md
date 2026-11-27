@@ -85,3 +85,5 @@ From the user's reference images (2026-11-27).
 - **Never:** a figure at a cliff edge, on a ledge, at a rooftop, on a bridge or by deep water. No drop near the figure.
 - **Print note:** thicken lines to 1.5 pt or more and simplify the distant trees for natural-dye or discharge printing.
 - **Generator:** `tools/svgs_night.py` with data in `tools/designs_data_night.py`.
+
+- **Redraws of 01–207 in this style:** `tools/svgs_redo.py` (all line art, no filled icons). Compare old vs new in `designs/review-viewer/` or the Sketch review page.
