@@ -8,7 +8,7 @@ Graphic as allowed: autopsy, decay, anatomy and gore, burial, cremation, grief a
 - lines that express a wish to die
 - violence against other people
 
-Each idea was checked against the 107 existing captions so none repeat. Not trademark-checked: run a USPTO class 25 search before you print.
+Each idea was checked against the 107 existing captions so none repeat. **Drawn as sketches 108–207** (idea N = sketch N+107): `designs/sketches/`, contact sheets `overview-108-132.png` … `overview-183-207.png`; rebuild with `python3 tools/svgs_set3.py`. Not trademark-checked: run a USPTO class 25 search before you print.
 
 **Ad risk** (Meta and TikTok rules bar gruesome imagery and dead bodies in ads):
 - **H** = likely rejected in ads; sell it organically
