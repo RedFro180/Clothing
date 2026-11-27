@@ -68,3 +68,20 @@
 - **Sketches:** all 207 are in `designs/sketches/`, with contact sheets in the `overview-*.png` files.
 - **Captions:** `designs/concepts.md` and `designs/ideas-100.md`.
 - **Fonts:** `tools/fonts/` (SIL Open Font License).
+
+## Second style: night-landscape line art (sketches 208–219)
+From the user's reference images (2026-11-27).
+- **Ink:** one color (bone on dark, near-black on light), hand-drawn, slightly shaky pen lines. No fills except the moon, which has darker crater blotches.
+- **Scene:** a wide night landscape.
+  - pines made of jagged branch strokes
+  - mountain ridges with a few snow lines
+  - a winding river drawn as two wavy lines
+  - fields of tiny pines that shrink with distance
+  - stars, plus thin stretched cloud strokes
+- **Figure:** one or two simple stick figures (outlined round head, single-line limbs) doing quiet things: resting against a tree, kneeling at a grave, lying in a meadow, carrying something heavy, sitting by a fire, walking a path.
+- **Caption:** handwritten (Caveat, `tools/fonts/caveat-latin-600-normal.woff2`), sentence case, above the scene.
+  - Back print: the scene is about 12 in wide.
+  - Front: the scene is smaller.
+- **Never:** a figure at a cliff edge, on a ledge, at a rooftop, on a bridge or by deep water. No drop near the figure.
+- **Print note:** thicken lines to 1.5 pt or more and simplify the distant trees for natural-dye or discharge printing.
+- **Generator:** `tools/svgs_night.py` with data in `tools/designs_data_night.py`.
