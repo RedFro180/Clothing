@@ -27,34 +27,50 @@ def smooth(pts):
 
 # ---------- background ----------
 def mountains(r, y=150):
-    pts = [(-150, y + 10)]
-    x = -150
-    while x < 150:
-        x += r.uniform(30, 55); pts.append((min(x, 150), y - r.uniform(10, 46)))
-        x += r.uniform(14, 28); pts.append((min(x, 150), y + r.uniform(-4, 6)))
-    g = path("M" + " L".join(f"{a:.1f} {b:.1f}" for a, b in pts), BG)
-    for a, b in pts[1::2]:
-        g += path(f"M{a-6:.1f} {b+8:.1f} L{a:.1f} {b+2:.1f} L{a+5:.1f} {b+9:.1f}", BG * 0.8)
-    return g
-def sky(r, kind="night", side=1):
+    """Two soft ridges (far = thinner, dashed snow lines on the near peaks)."""
     g = ""
-    if kind in ("night", "milky"):
-        g += ''.join(f'<circle cx="{r.uniform(-140, 140):.1f}" cy="{r.uniform(20, 120):.1f}" r="{r.choice((0.7, 0.9, 1.2)):.1f}" fill="{I()}"/>' for _ in range(34))
-        mx = 96 * side
-        g += f'<circle cx="{mx}" cy="52" r="17" fill="{I()}"/>' + ''.join(f'<circle cx="{mx + r.uniform(-10, 10):.1f}" cy="{52 + r.uniform(-10, 10):.1f}" r="{r.uniform(1.5, 3.5):.1f}" fill="{B()}" opacity=".5"/>' for _ in range(7))
+    for layer, (yb, amp, w) in enumerate(((y - 6, 40, BG * 0.8), (y + 10, 30, BG))):
+        pts, x = [(-150, yb + 14)], -150
+        peaks = []
+        while x < 150:
+            x += r.uniform(36, 64); px = min(x, 150); py = yb - r.uniform(amp * 0.4, amp); pts.append((px, py)); peaks.append((px, py))
+            x += r.uniform(20, 34); pts.append((min(x, 150), yb + r.uniform(-2, 8)))
+        g += path(smooth(pts), w, extra=' opacity=".75"' if layer == 0 else "")
+        if layer == 1:
+            for px, py in peaks:
+                g += path(f"M{px-7:.1f} {py+9:.1f} Q{px-2:.1f} {py+4:.1f} {px:.1f} {py+6:.1f} Q{px+3:.1f} {py+3:.1f} {px+6:.1f} {py+10:.1f}", BG * 0.8)
+    return g
+def star(x, y, k=1.0):
+    return path(f"M{x-3*k:.1f} {y:.1f} L{x+3*k:.1f} {y:.1f} M{x:.1f} {y-3*k:.1f} L{x:.1f} {y+3*k:.1f}", 0.8)
+def sky(r, kind="night", side=1):
+    g, mx = "", 96 * side
+    if kind in ("night", "crescent", "milky"):
+        g += ''.join(f'<circle cx="{r.uniform(-140, 140):.1f}" cy="{r.uniform(24, 118):.1f}" r="{r.choice((0.6, 0.8, 1.0)):.1f}" fill="{I()}"/>' for _ in range(26))
+        g += ''.join(star(r.uniform(-130, 130), r.uniform(28, 100), r.uniform(0.8, 1.3)) for _ in range(6))
+    if kind == "night":
+        g += f'<circle cx="{mx}" cy="54" r="17" fill="none" stroke="{I()}" stroke-width="{MG}"/>'
+        g += ''.join(f'<circle cx="{mx+u}" cy="{54+v}" r="{rr}" fill="none" stroke="{I()}" stroke-width="0.9"/>' for u, v, rr in ((-5, -4, 4), (6, 3, 3), (-2, 8, 2.2), (7, -7, 1.6)))
         for k in range(3):
-            y = 70 + k * 6; x0 = mx - 60 + k * 10
-            g += path(smooth([(x0, y), (x0 + 30, y - 3), (x0 + 60, y + 1), (x0 + 100, y - 2)]), BG)
+            y = 76 + k * 6; x0 = mx - 70 + k * 12
+            g += path(smooth([(x0, y), (x0 + 30, y - 3), (x0 + 60, y + 1), (x0 + 96, y - 2)]), BG)
+    if kind == "crescent":
+        g += f'<path d="M{mx} {37} A17 17 0 1 0 {mx} {71} A13 17 0 1 1 {mx} {37} Z" fill="none" stroke="{I()}" stroke-width="{MG}"/>'
     if kind == "milky":
-        for t in [r.random() for _ in range(70)]:                  # soft diagonal band: sparse fine stars + two faint drift lines
-            g += f'<circle cx="{t*280-140 + r.gauss(0, 8):.1f}" cy="{36 + t*60 + r.gauss(0, 6):.1f}" r="0.6" fill="{I()}"/>'
-
+        for t in [r.random() for _ in range(80)]:
+            g += f'<circle cx="{t*280-140 + r.gauss(0, 9):.1f}" cy="{34 + t*58 + r.gauss(0, 6):.1f}" r="0.55" fill="{I()}"/>'
+    if kind == "sun":
+        g += f'<circle cx="{mx}" cy="58" r="15" fill="none" stroke="{I()}" stroke-width="{MG}"/>'
+        g += ''.join(path(f"M{mx+21*math.cos(a):.1f} {58+21*math.sin(a):.1f} L{mx+29*math.cos(a):.1f} {58+29*math.sin(a):.1f}", BG * 1.2) for a in [i * math.pi / 6 for i in range(12)])
+        g += ''.join(path(f"M{u-6} {v} q3 -4 6 0 q3 -4 6 0", 1.1) for u, v in ((-70 * side, 70), (-46 * side, 60), (-30 * side, 78)))
+    if kind == "dusk":
+        g += f'<path d="M{mx-34} 150 A34 34 0 0 1 {mx+34} 150" fill="none" stroke="{I()}" stroke-width="{MG}"/>'
+        g += ''.join(path(f"M{mx+40*math.cos(a):.1f} {150-40*math.sin(a):.1f} L{mx+50*math.cos(a):.1f} {150-50*math.sin(a):.1f}", BG) for a in [i * math.pi / 9 for i in range(1, 9)])
+        g += ''.join(path(smooth([(-140 + k * 26, 96 + k * 10), (-60 + k * 20, 92 + k * 10), (20 + k * 16, 98 + k * 10)]), BG) for k in range(3))
     return g
 
 # ---------- midground forest band (dense, tapering to the edges) ----------
 def pine(x, base, h, w=MG):
-    g = f'<path d="M{x:.1f} {base-h:.1f} L{x-h*0.26:.1f} {base:.1f} L{x+h*0.26:.1f} {base:.1f} Z" fill="{B()}" stroke="none"/>'
-    g += path(f"M{x:.1f} {base:.1f} L{x:.1f} {base-h:.1f}", w * 0.8)
+    g = path(f"M{x:.1f} {base:.1f} L{x:.1f} {base-h:.1f}", w * 0.8)
     n = max(4, int(h / 7))
     for i in range(n):
         t = (i + 1) / n; yy = base - h + h * t * 0.95; span = h * 0.27 * t
@@ -79,12 +95,10 @@ def mound(r, crest=206, half=128):
     top = [(-half - 6, 244), (-half * 0.7, crest + 13), (-half * 0.3, crest + 2), (0, crest), (half * 0.35, crest + 3), (half * 0.72, crest + 15), (half + 6, 246)]
     d = smooth(top)
     g = path(d, FG)
-    for k in range(9):                                           # contour hatching, right (shadow) slope, parallel strokes
-        t = 0.25 + k * 0.07; x = half * t; yb = crest + 3 + (t ** 2) * 40
-        g += path(f"M{x:.1f} {yb+5:.1f} l-7 9", MG * 0.8)
-    for k in range(5):
-        t = 0.45 + k * 0.1; x = -half * t; yb = crest + 2 + (t ** 2) * 38
-        g += path(f"M{x:.1f} {yb+6:.1f} l-5 7", MG * 0.7)
+    for k in range(3):                                           # cross-contour arcs that follow the hill (shadow side denser)
+        yk = crest + 12 + k * 8; w = half * (0.55 - k * 0.12)
+        g += path(f"M{w*0.15:.1f} {yk:.1f} Q{w*0.7:.1f} {yk+2:.1f} {w*1.25:.1f} {yk+10+k*3:.1f}", MG * 0.7)
+        g += path(f"M{-w*1.15:.1f} {yk+12+k*3:.1f} Q{-w*0.8:.1f} {yk+4:.1f} {-w*0.45:.1f} {yk+2:.1f}", BG * 0.8)
     for x in (-96, -60, -22, 30, 70, 104):                     # grass tufts along the crest
         yb = crest + (abs(x) / half) ** 2 * 26 + 1
         g += path(f"M{x-4:.1f} {yb:.1f} l2 -7 M{x:.1f} {yb:.1f} l0 -9 M{x+4:.1f} {yb:.1f} l-2 -7", MG)
@@ -105,11 +119,34 @@ def knockout(svg, extra=7):
     k = re.sub(r'(stroke|fill)="#[0-9a-fA-F]{6}"', lambda m: f'{m.group(1)}="#000"', svg)
     return re.sub(r'stroke-width="([0-9.]+)"', lambda m: f'stroke-width="{float(m.group(1)) + extra:.1f}"', k)
 SEQ = [0]
-def compose(r, subject, sky_kind="none", side=1, forest_gap=None, solid=None):
+def frame_tree(kind, x, base, h, w=MG + 0.3):
+    if kind == "dead":
+        g = path(f"M{x:.1f} {base:.1f} Q{x-2:.1f} {base-h*0.5:.1f} {x+1:.1f} {base-h:.1f}", w + 0.8)
+        for t, d, L in ((0.35, -1, 0.3), (0.5, 1, 0.34), (0.66, -1, 0.26), (0.8, 1, 0.2)):
+            yy = base - h * t
+            g += path(f"M{x:.1f} {yy:.1f} Q{x+d*h*L*0.5:.1f} {yy-h*0.05:.1f} {x+d*h*L:.1f} {yy-h*L*0.6:.1f}", w)
+        return g
+    if kind == "leafy":
+        cy, rx, ry, n, d = base - h * 0.66, h * 0.3, h * 0.3, 11, ""
+        for i in range(n):
+            a0, a1 = i / n * 2 * math.pi, (i + 1) / n * 2 * math.pi; am = (a0 + a1) / 2
+            p0 = (x + rx * math.cos(a0), cy + ry * math.sin(a0)); p1 = (x + rx * math.cos(a1), cy + ry * math.sin(a1)); c = (x + rx * 1.2 * math.cos(am), cy + ry * 1.2 * math.sin(am))
+            d += (f"M{p0[0]:.1f} {p0[1]:.1f}" if i == 0 else "") + f" Q{c[0]:.1f} {c[1]:.1f} {p1[0]:.1f} {p1[1]:.1f}"
+        return path(f"M{x-3:.1f} {base:.1f} L{x-2:.1f} {cy+ry*0.6:.1f} M{x+3:.1f} {base:.1f} L{x+2:.1f} {cy+ry*0.6:.1f}", w + 0.4) + f'<path d="{d} Z" fill="none" stroke="{I()}" stroke-width="{w}"/>'
+    if kind == "birch":
+        g = path(f"M{x-3:.1f} {base:.1f} L{x-2:.1f} {base-h:.1f} M{x+3:.1f} {base:.1f} L{x+2:.1f} {base-h:.1f}", w)
+        g += ''.join(path(f"M{x-3:.1f} {base-v:.1f} l{4 if i%2 else 3} -1", w + 0.4) for i, v in enumerate(range(14, int(h), 13)))
+        return g + ''.join(path(f"M{x:.1f} {base-h*t:.1f} Q{x+d*10:.1f} {base-h*t-6:.1f} {x+d*20:.1f} {base-h*t-14:.1f}", BG) for t, d in ((0.6, -1), (0.72, 1), (0.84, -1), (0.94, 1)))
+    if kind == "cypress":
+        return path(smooth([(x - 2, base), (x - 13, base - h * 0.35), (x - 9, base - h * 0.75), (x, base - h), (x + 9, base - h * 0.75), (x + 13, base - h * 0.35), (x + 2, base)]), w) + ''.join(path(f"M{x-5:.1f} {base-h*t:.1f} q5 -6 10 0", BG) for t in (0.25, 0.4, 0.55, 0.7, 0.85))
+    return pine(x, base, h, w)
+def compose(r, subject, sky_kind="none", side=1, forest_gap=None, solid=None, trees="pine", frame=True):
     """Background (sky, mountains, forest) is masked so the hill and the subject cut a clean hole in it:
     nothing is painted in fabric color, so no flat boxes show on the garment."""
     SEQ[0] += 1; mid = f"vg{SEQ[0]}"
     back = (sky(r, sky_kind, side) if sky_kind != "none" else "") + mountains(r) + forest_band(r, gap=forest_gap)
+    if frame:                                                     # tall framing trees at the vignette edges
+        back += frame_tree(trees, -126, 242, 150) + frame_tree(trees, -104, 230, 112) + frame_tree(trees, 124, 244, 156) + frame_tree(trees, 102, 232, 104)
     hill = f'<path d="{smooth(MOUND_TOP)} L134 270 L-134 270 Z" fill="#000"/>'
     mask = (f'<mask id="{mid}" maskUnits="userSpaceOnUse" x="-200" y="-60" width="400" height="360">'
             f'<rect x="-200" y="-60" width="400" height="360" fill="#fff"/>{hill}{knockout(subject)}{solid or ""}</mask>')

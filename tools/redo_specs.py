@@ -472,10 +472,10 @@ def skel_lift(r, x, y):                       # skeleton holding a barbell at th
     g += pl([(x - 9, y - 56), (x + 9, y - 56)], 2) + pl([(x - 9, y - 56), (x - 12, y - 30)], 2) + pl([(x + 9, y - 56), (x + 12, y - 30)], 2)
     g += pl([(x - 6, y - 30), (x - 7, y - 14), (x - 6, y)], 2.2) + pl([(x + 6, y - 30), (x + 7, y - 14), (x + 6, y)], 2.2) + pl([(x - 8, y - 30), (x + 8, y - 30)], 2)
     return g + ''.join(nt.dot(x + u, y - 30, 2.4) for u in (-12, 12)) + barbell_l(x, y - 30, 58)
-def meat_pile(r, x, y):
-    g = shape(r, [(x - 30, y), (x - 26, y - 12), (x - 12, y - 20), (x + 6, y - 18), (x + 22, y - 12), (x + 30, y)])
-    g += jl([(x - 18, y - 8), (x - 6, y - 12), (x + 8, y - 8)], r, 1.2) + jl([(x - 8, y - 4), (x + 14, y - 4)], r, 1.2)
-    return g + steak(r, x + 8, y - 22)
+def meat_pile(r, x, y):                       # low lumpy heap of flesh with a bone sticking out
+    g = shape(r, [(x - 34, y), (x - 30, y - 8), (x - 20, y - 14), (x - 8, y - 12), (x + 2, y - 18), (x + 14, y - 14), (x + 26, y - 10), (x + 34, y)])
+    g += jl([(x - 22, y - 6), (x - 10, y - 9)], r, 1.1) + jl([(x + 4, y - 8), (x + 18, y - 6)], r, 1.1) + jl([(x - 4, y - 3), (x + 8, y - 2)], r, 1.1)
+    return g + jl([(x + 10, y - 14), (x + 22, y - 28)], r, 3.2, 0.2) + ell(x + 24, y - 30, 3, 3, 1.4) + ell(x + 20, y - 32, 3, 3, 1.4)
 def bench_spot(r, x, y, spotter=True, skel=False):   # clean bench press: lifter on the bench, spotter behind the head
     g = jl([(x - 46, y - 20), (x + 40, y - 20)], r, 3) + jl([(x - 38, y - 20), (x - 38, y)], r, 2) + jl([(x + 32, y - 20), (x + 32, y)], r, 2)
     hx = x - 40
@@ -543,3 +543,31 @@ SPEC.update({
 61: ("pines", C(X(bench_spot, 30, G))),
 })
 V.OVERRIDE.update({12: dict(sky="milky", trees="pine"), 1: dict(sky="none"), 3: dict(sky="none"), 11: dict(sky="none"), 10: dict(sky="none")})
+
+# ---------- v2 critique fixes (no frame / hanging silhouettes) ----------
+def bearers(r, x, y, n=2):                     # coffin carried at shoulder height; heads clearly above it
+    us = [-34, 34] if n == 2 else [-48, -16, 16, 48]
+    g = ''
+    for u in us:
+        g += head(x + u, y - 62) + pl([(x + u, y - 54), (x + u, y - 18)], 2.6) + pl([(x + u - 8, y), (x + u, y - 18), (x + u + 8, y)], 2.6)
+    g += coffin_side(x, y - 40, 120 if n > 2 else 96, 16)
+    return g
+def friends_lift(r, x, y):                     # lifter deadlifting, three friends standing round cheering
+    g = deadlift(x, y)
+    for u in (-80, 70, 96):
+        g += stand(x + u, y) + pl([(x + u - 8, y - 18), (x + u - 12, y - 36)], 2)
+    return g
+def bell_grave(r, x, y):                       # handbell resting on the grave mound, string running into the ground
+    g = grave_mound(r, x, y, 70) + jl([(x + 10, y - 6), (x + 30, y - 4), (x + 38, y)], r, 1, 0.4)
+    return g + shape(r, [(x - 6, y - 8), (x - 12, y - 8), (x - 8, y - 22), (x, y - 28), (x + 8, y - 22), (x + 12, y - 8), (x + 6, y - 8)], 2) + jl([(x, y - 28), (x, y - 34)], r, 2.4)
+SPEC.update({
+25: ("cemetery", C(X(bearers, 0, G, 2))),
+65: ("cemetery", C(X(bearers, 0, G, 4))),
+106: ("pines", C(X(friends_lift, 0, G))),
+155: ("pines", C(X(skel_lift, 0, G))),
+165: ("cemetery", C(X(bell_grave, 0, G))),
+})
+def bearers_walk(r, x, y):
+    g = ''.join(walk(x + u, y, 1) for u in (-50, -18, 14, 46))
+    return g + coffin_side(x - 2, y - 17, 128, 15)
+SPEC.update({25: ("cemetery", C(X(coffin_backpack, 0, G))), 65: ("cemetery", C(X(bearers_walk, 0, G)))})

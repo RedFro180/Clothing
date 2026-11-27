@@ -3,7 +3,7 @@ Run after svgs_dark.py / svgs_set3.py / svgs_night.py / svgs_redo.py:  python3 t
 import os, sys, json, re, shutil
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
-SK, NI = os.path.join(ROOT, "designs", "sketches"), os.path.join(ROOT, "designs", "sketches-night")
+SK, NI = os.path.join(ROOT, "designs", "sketches"), os.path.join(ROOT, "designs", "sketches-v2")
 OUT = os.path.join(ROOT, "designs", "review-viewer")
 from designs_data import FIRST, DESIGNS
 from designs_data3 import SET3
