@@ -40,7 +40,7 @@ NOTES = {
     113: "Dotted saw line is faint at size.", 124: "Hand-shedding-skin art is hard to read.", 129: "The body in the grave is hard to see.",
     141: "Skinless squat figure is rough.", 187: "Plague doctor reads more like a bird than a person.",
 }
-NIGHT_NOTE = "Night redraws share about 30 line-art subjects, so some are less specific than the original (e.g. gore anatomy becomes a sheeted body on a gurney)."
+NIGHT_NOTE = "Line-art redraws share about 30 line-art subjects, so some are less specific than the original (e.g. gore anatomy becomes a sheeted body on a gurney)."
 
 def risk_of(note):
     m = re.search(r"Ad risk ([HML])", note or "")
@@ -58,7 +58,7 @@ def main():
         has = n in ni
         if has: shutil.copy(os.path.join(NI, ni[n]), os.path.join(OUT, "n", f"{n:03d}.svg"))
         cap = " ".join(d["lines"]) + (" / " + d["sub"] if d.get("sub") else "")
-        rows.append({"n": n, "cap": cap, "place": d["place"], "group": "Night set" if n >= 208 else ICON_GROUP.get(d.get("icon"), "Dread"),
+        rows.append({"n": n, "cap": cap, "place": d["place"], "group": "Night designs" if n >= 208 else ICON_GROUP.get(d.get("icon"), "Dread"),
                      "risk": risk_of(d.get("note")), "note": NOTES.get(n, ""), "night": has, "newstyle": n >= 208})
     with open(os.path.join(OUT, "data.json"), "w") as f:
         f.write("[\n" + ",\n".join(json.dumps(r) for r in rows) + "\n]\n")

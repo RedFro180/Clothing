@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* VOICE: quiet, nocturnal, a working proof sheet.
+/* VOICE: quiet, dark, a working proof sheet.
    IDEA: a contact sheet on a light table at night: every print laid out, old beside new.
    PICTURE: the sketches themselves, large, in pairs.
    COLOUR and TYPE: night ground #101114, bone ink #ece4d0, one moon accent #d8c9a3; Caveat for titles (matches the new style), Inter for labels.
@@ -54,12 +54,12 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 </head>
 <body>
 <header>
-  <h1>Sketch review: originals and night redraws</h1>
-  <p class="lede">Every sketch 01–207 beside its redraw in the new night line-art style, plus the 12 sketches made in that style (208–219). Originals are unchanged. Notes from the review sit under the cards that need them. Tap a sketch to see it large.</p>
+  <h1>Sketch review: originals and new-style redraws</h1>
+  <p class="lede">Every sketch 01–207 beside its redraw in the new hand-drawn line-art style (no sky needed), plus the 12 night designs made earlier (208–219). Originals are unchanged. Notes from the review sit under the cards that need them. Tap a sketch to see it large.</p>
 </header>
 <div class="bar">
   <div class="seg" role="group" aria-label="View">
-    <button data-v="pairs" aria-pressed="true">Pairs</button><button data-v="o" aria-pressed="false">Originals</button><button data-v="n" aria-pressed="false">Night style</button>
+    <button data-v="pairs" aria-pressed="true">Pairs</button><button data-v="o" aria-pressed="false">Originals</button><button data-v="n" aria-pressed="false">New style</button>
   </div>
   <div class="chips" id="chips" role="group" aria-label="Group"></div>
   <input type="search" id="q" placeholder="Search captions or numbers" aria-label="Search captions or numbers">
@@ -72,7 +72,7 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
 </dialog>
 <script>
 {
-  const GROUPS = ["All", "Night set", "Morgue", "Decay", "Anatomy", "Burial", "Grief", "Reaper", "Cremation", "Gym", "Dread", "Has a note"];
+  const GROUPS = ["All", "Night designs", "Morgue", "Decay", "Anatomy", "Burial", "Grief", "Reaper", "Cremation", "Gym", "Dread", "Has a note"];
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
   const PLACE = {front: "Front", back: "Back", chest: "Left chest", sleeve: "Sleeve", pocket: "Pocket + chest", hood: "Hood + back"};
@@ -83,8 +83,8 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
   $("#chips").innerHTML = GROUPS.map(g => `<button class="chip" data-g="${esc(g)}" aria-pressed="${g === "All"}">${esc(g)}</button>`).join("");
 
   function pic(r, side, lazy = true) {
-    if (side === "n" && !r.night) return `<div class="pic none">${r.newstyle ? "Made in the night style" : "No redraw"}</div>`;
-    const src = `${side}/${id3(r.n)}.svg`, label = side === "o" ? (r.newstyle ? "Night style" : "Original") : "Night redraw";
+    if (side === "n" && !r.night) return `<div class="pic none">${r.newstyle ? "Night design" : "No redraw"}</div>`;
+    const src = `${side}/${id3(r.n)}.svg`, label = side === "o" ? (r.newstyle ? "Night design" : "Original") : "New style";
     return `<button class="pic" data-n="${r.n}" aria-label="Open ${esc(label)} ${r.n}"><img src="${src}" alt="${esc(label)} sketch ${r.n}: ${esc(r.cap)}" ${lazy ? 'loading="lazy"' : ""}><span>${esc(label)}</span></button>`;
   }
   function render() {
@@ -106,8 +106,8 @@ dialog::backdrop{background:rgba(0,0,0,.7)}
     const r = shown[cur];
     $("#dt").innerHTML = `<b>${id3(r.n)}</b> ${esc(r.cap)}`;
     $("#big").style.gridTemplateColumns = (r.newstyle || view !== "pairs") ? "1fr" : "";
-    $("#big").innerHTML = (view === "n" && !r.newstyle ? "" : `<img src="o/${id3(r.n)}.svg" alt="${r.newstyle ? "Night style" : "Original"} ${r.n}">`)
-      + ((view !== "o" && r.night) ? `<img src="n/${id3(r.n)}.svg" alt="Night redraw ${r.n}">` : "");
+    $("#big").innerHTML = (view === "n" && !r.newstyle ? "" : `<img src="o/${id3(r.n)}.svg" alt="${r.newstyle ? "Night design" : "Original"} ${r.n}">`)
+      + ((view !== "o" && r.night) ? `<img src="n/${id3(r.n)}.svg" alt="New-style redraw ${r.n}">` : "");
     const d = $("#dlg"); if (!d.open) d.showModal();
   }
   const step = k => { if (cur < 0) return; cur = (cur + k + shown.length) % shown.length; open(shown[cur].n); };

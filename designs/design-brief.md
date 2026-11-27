@@ -69,7 +69,10 @@
 - **Captions:** `designs/concepts.md` and `designs/ideas-100.md`.
 - **Fonts:** `tools/fonts/` (SIL Open Font License).
 
-## Second style: night-landscape line art (sketches 208–219)
+## Second style: hand-drawn line art (night sky optional)
+The style is the pen line art, stick figures, ground-level landscape and handwritten caption. A night sky is NOT required: the 207 redraws have no sky at all; only 208–219 are night scenes.
+
+### Night designs (sketches 208–219)
 From the user's reference images (2026-11-27).
 - **Ink:** one color (bone on dark, near-black on light), hand-drawn, slightly shaky pen lines. No fills except the moon, which has darker crater blotches.
 - **Scene:** a wide night landscape.

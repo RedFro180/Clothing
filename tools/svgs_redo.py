@@ -44,6 +44,11 @@ def deadlift(x, y):
             + pl([(x - 10, y - 18), (x + 2, y - 10), (x - 2, y)], 2.6) + pl([(x + 6, y - 26), (x + 6, y - 12)], 2.3)) + barbell_l(x, y - 12, 48)
 
 # ---------- line-art subjects (anchor = ground point x, y) ----------
+def stone(r, x, y):
+    return shape(r, [(x - 34, y), (x - 30, y - 12), (x - 10, y - 18), (x + 18, y - 16), (x + 34, y - 8), (x + 36, y)])
+def rain_cloud(r, x, y):
+    g = shape(r, [(x - 30, y), (x - 34, y - 12), (x - 22, y - 22), (x - 6, y - 24), (x + 6, y - 32), (x + 24, y - 28), (x + 34, y - 14), (x + 30, y)], 2)
+    return g + ''.join(jl([(x + u, y + 6), (x + u - 4, y + 18)], r, 1.6, 0.3) for u in (-20, -8, 4, 16, 26))
 def skull_l(r, x, y, k=1):
     g = shape(r, [(x - 22 * k, y + 4 * k), (x - 24 * k, y - 14 * k), (x - 14 * k, y - 26 * k), (x, y - 29 * k), (x + 14 * k, y - 26 * k), (x + 24 * k, y - 14 * k),
                    (x + 22 * k, y + 4 * k), (x + 14 * k, y + 8 * k), (x + 13 * k, y + 18 * k), (x - 13 * k, y + 18 * k), (x - 14 * k, y + 8 * k)], max(1.4, 2.2 * k), amt=0.4 * k)
@@ -230,7 +235,7 @@ m("skin_glove mummy_hand marbled torn_palm", "skeleton_lie", "hug", "meadow")
 m("shroom_ribs", "shrooms", "hug", "meadow")
 m("root_skull", "roots", "lean_far", "valley")
 m("crow_ribs moth_ribs", "crows", "walk", "meadow")
-m("anatomical_heart heart sutured_heart heart_box nerves fibers microtear thigh_section knee torn_bicep molars", "heart", "lie", "meadow")
+m("anatomical_heart heart sutured_heart heart_box nerves fibers microtear thigh_section knee torn_bicep molars", "heart", "kneel", "meadow")
 m("heart_trap", "trap", "hug", "pines")
 m("organ_scale", "scale", "stand", "valley")
 m("brain_jar jaw_xray vials", "jar", "stand", "pines")
@@ -250,7 +255,7 @@ m("hourglass", "hourglass", "lean", "meadow")
 m("clock calendar", "clock", "lean", "meadow")
 m("flower", "rose", "kneel", "cemetery")
 m("ghost", "ghost", "hug", "pines")
-m("eye moon sun brain brain_storm cloud skull_thread", "sky", "lie", "valley")
+m("eye moon sun brain brain_storm cloud skull_thread", "sky", "hug", "valley")
 m("flatline", "ekg", "lie", "meadow")
 m("battery mattress wristband", "bed", "none", "cabin")
 m("figures2", "grave2", "none", "cemetery")
@@ -285,9 +290,7 @@ def figure(r, pose):
             "stand": lambda: stand(-60, y), "press": lambda: press(0, y), "dead": lambda: deadlift(0, y), "none": lambda: ""}[pose]()
 
 def background(r, bg, num, sky_free=False):
-    sx = 92 if num % 2 else -92
-    g = stars(r, 18, -150, 150, 66, 150)
-    if not sky_free: g += moon(sx, 92, 18, r) + clouds(r, sx - 10, 116, 80)
+    g = ''   # no sky: the style is ground-level line art (night only for 208-219)
     if bg == "valley":
         g += mountains(r, 170, ((-120, 34), (-50, 50), (30, 38), (110, 54)))
         rv = [(110, 172), (126, 186), (100, 200), (132, 214)]
@@ -306,8 +309,8 @@ def scene(num, d):
     r = random.Random(num * 17 + 3)
     subj, pose, bg = S.get(d.get("icon", "none"), S["none"])
     g = background(r, bg, num, sky_free=subj in ("heart", "sky"))
-    if subj == "heart": g += heart_l(r, 10, 140, 0.9) + clouds(r, -70, 128, 70)   # the heart hangs where the moon would be
-    if subj == "sky": g += moon(10, 110, 36, r) + clouds(r, -40, 146, 120)
+    if subj == "heart": g += stone(r, 30, G) + heart_l(r, 30, G - 26, 0.62)
+    if subj == "sky": g += rain_cloud(r, -40, 150)
     if subj == "ekg": g += ekg_ridge(r, 150)
     if subj == "rack" and pose == "press": g += rack_l(r, 0, G)
     return g + subject(r, subj, d) + figure(r, pose) + tufts(r, (-124, 124), G)
@@ -345,12 +348,12 @@ def redo_layout(num, d):
     if d["place"] in ("back", "hood"):
         a, yy = caption(main, 300, 186, 292, 44, 26)
         if sub: a += sd.tpath(sub, "hand", sd.fitsize(sub, "hand", 280, 24), 300, yy + 18); yy += 26
-        k = min(1.1, (556 - yy) / 182)
-        return "back", a + f'<g transform="translate(300 {yy+2:.1f}) scale({k:.3f}) translate(0 -62)">{scene(num, d)}</g>'
+        k = min(1.15, (556 - yy) / 164)
+        return "back", a + f'<g transform="translate(300 {yy+2:.1f}) scale({k:.3f}) translate(0 -80)">{scene(num, d)}</g>'
     a, yy = caption(main, 300, 214, 262, 34, 22)
     if sub: a += sd.tpath(sub, "hand", sd.fitsize(sub, "hand", 250, 18), 300, yy + 12); yy += 18
-    k = min(0.85, (456 - yy) / 182)
-    return "front", a + f'<g transform="translate(300 {yy:.1f}) scale({k:.3f}) translate(0 -62)">{scene(num, d)}</g>'
+    k = min(0.9, (456 - yy) / 164)
+    return "front", a + f'<g transform="translate(300 {yy:.1f}) scale({k:.3f}) translate(0 -80)">{scene(num, d)}</g>'
 
 def all_designs():
     from designs_data import FIRST, DESIGNS
@@ -364,7 +367,7 @@ def render_all(only=()):
         for i, d in enumerate(all_designs()):
             n = i + 1
             if only and n not in only: continue
-            dd = dict(d); dd["note"] = "Night-style redraw of sketch %02d. %s" % (n, d["note"])
+            dd = dict(d); dd["note"] = "Line-art redraw of sketch %02d. %s" % (n, d["note"])
             names.append(sd.render(n, dd, out=OUT))
     finally:
         sd.layout = lay0

@@ -6,7 +6,7 @@ Originals are unchanged. Notes only. Viewer: https://claude.ai/artifact/LQVJFCKk
 - Small text won't survive printing: forms, labels, hood bands, sleeve lines and typewriter banners (listed below).
 - Several icons repeat across designs (same coffin x6, half-rotted skull x5, anatomical heart x5, morgue drawer x3, two skeletons x5, tombstone-with-hand x3). Fine for a series, weak if sold side by side.
 - Type-only back prints (22, 29, 37, 39, 79, 94, 96) share one layout (stack + thorns + skull).
-- The night redraws share about 30 line-art subjects, so some are less specific than the originals (gore anatomy becomes a sheeted body on a gurney).
+- The line-art redraws share about 30 line-art subjects, so some are less specific than the originals (gore anatomy becomes a sheeted body on a gurney).
 
 ## Per design
 - 007: Sleeve text reads small; the chest icon is tiny.
