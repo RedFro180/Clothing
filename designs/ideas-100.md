@@ -155,6 +155,6 @@ Each idea was checked against the 107 existing captions so none repeat. Not trad
 | 99 | MY SKULL IS FULL. | Skull cutaway packed with tangled thread | L |
 | 100 | BONE TIRED. | Skeleton slumped on a bench, chalk on its hands | L |
 
-**Count by ad risk:** H 31, M 35, L 34.
+**Count by ad risk:** H 28, M 35, L 37.
 - **Ads:** lead with the L designs.
 - **H designs:** sell through the site, organic posts and the shop.
