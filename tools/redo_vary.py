@@ -9,7 +9,7 @@ sd.FILES.update({"hand": "caveat-latin-600-normal.woff2", "marker": "permanent-m
                  "amatic": "amatic-sc-latin-700-normal.woff2", "shadows": "shadows-into-light-latin-400-normal.woff2",
                  "rocksalt": "rock-salt-latin-400-normal.woff2", "indie": "indie-flower-latin-400-normal.woff2"})
 FONTS = ["hand", "marker", "amatic", "shadows", "rocksalt", "indie"]
-FONT_SIZE = {"hand": 1.0, "marker": 0.82, "amatic": 1.25, "shadows": 0.95, "rocksalt": 0.62, "indie": 0.88}   # size factor (Rock Salt runs wide)
+FONT_SIZE = {"hand": 1.0, "marker": 0.82, "amatic": 1.25, "shadows": 0.95, "rocksalt": 0.82, "indie": 0.88}   # size factor (Rock Salt runs wide)
 SKIES = ["none", "none", "night", "crescent", "milky", "sun", "dusk"]
 TREES = ["pine", "leafy", "birch", "cypress", "dead", "mixed"]
 OVERRIDE = {}          # filled by redo_specs: OVERRIDE[n] = dict(sky=..., trees=..., font=...)

@@ -571,3 +571,416 @@ def bearers_walk(r, x, y):
     g = ''.join(walk(x + u, y, 1) for u in (-50, -18, 14, 46))
     return g + coffin_side(x - 2, y - 17, 128, 15)
 SPEC.update({25: ("cemetery", C(X(coffin_backpack, 0, G))), 65: ("cemetery", C(X(bearers_walk, 0, G)))})
+
+# ---------- v3 review fixes (flat ground) ----------
+def bench_spot(r, x, y, spotter=True, skel=False):
+    """Side view bench press: the bar is seen end-on (plate circle) over the chest; spotter stands behind the head."""
+    g = jl([(x - 46, y - 20), (x + 40, y - 20)], r, 3) + jl([(x - 38, y - 20), (x - 38, y)], r, 2) + jl([(x + 32, y - 20), (x + 32, y)], r, 2)
+    g += head(x - 38, y - 28, 6.5) + pl([(x - 30, y - 26), (x + 8, y - 26)], 2.6)
+    g += pl([(x + 8, y - 26), (x + 22, y - 42), (x + 28, y)], 2.4)
+    g += pl([(x - 24, y - 26), (x - 22, y - 44), (x - 20, y - 60)], 2.4)                 # arms locked out
+    g += ell(x - 20, y - 68, 13, 13) + ell(x - 20, y - 68, 3, 3)                          # plate, bar end-on
+    if spotter:
+        sx = x - 74
+        g += (skeleton_l(r, sx, y) if skel else head(sx, y - 66) + pl([(sx, y - 58), (sx, y - 30)], 2.6) + pl([(sx - 8, y), (sx, y - 30), (sx + 8, y)], 2.6))
+        g += pl([(sx + 2, y - 52), (x - 50, y - 60), (x - 36, y - 66)], 2.1) + pl([(sx + 2, y - 48), (x - 48, y - 54), (x - 34, y - 60)], 2.1)
+    return g
+SPEC.update({n: ("pines", C(X(bench_spot, 30, G))) for n in (3, 21, 38, 61)})
+def tag_gurney(r, x, y):                     # covered body on a gurney, feet out, a big toe tag hanging off
+    g = gurney(r, x - 14, y, tag=False)
+    g += jl([(x + 50, y - 36), (x + 56, y - 22)], r, 1.4)
+    g += shape(r, [(x + 48, y - 22), (x + 74, y - 28), (x + 80, y - 6), (x + 54, y)], 2)
+    g += ell(x + 54, y - 17, 2, 2, 1.2) + ''.join(jl([(x + 60 + u * 0.1, y - 16 + u), (x + 74, y - 20 + u)], r, 1.1) for u in (0, 6))
+    return g
+def meat_pile(r, x, y):                      # butcher's heap: two steaks flat, one leaning, a drumstick bone on top
+    g = ell(x - 12, y - 7, 22, 7) + ell(x - 14, y - 7, 15, 4, 1.1, False) + ell(x - 20, y - 8, 3, 2, 1.1, False)
+    g += ell(x + 16, y - 9, 20, 8) + ell(x + 15, y - 9, 13, 4.5, 1.1, False) + ell(x + 22, y - 10, 3, 2, 1.1, False)
+    g += shape(r, [(x - 4, y - 14), (x + 2, y - 30), (x + 18, y - 34), (x + 26, y - 22), (x + 18, y - 14)], 2.2)
+    g += jl([(x + 4, y - 22), (x + 16, y - 28)], r, 1) + jl([(x + 8, y - 18), (x + 20, y - 22)], r, 1)
+    g += jl([(x - 18, y - 16), (x - 34, y - 30)], r, 3.4, 0.2) + ell(x - 36, y - 33, 3.2, 3.2, 1.4) + ell(x - 32, y - 35, 3.2, 3.2, 1.4)
+    g += shape(r, [(x - 22, y - 12), (x - 10, y - 14), (x - 12, y - 24), (x - 20, y - 22)], 1.8)
+    return g
+SPEC.update({10: ("pines", C(X(tag_gurney, 0, G))), 2: ("meadow", C(X(skeleton_l, -34, G), X(meat_pile, 34, G)))})
+def tag_feet(r, x, y):                       # foot end of a covered gurney: two bare feet up, a big toe tag hanging
+    g = jl([(x - 34, y), (x - 30, y - 24)], r, 2.2) + jl([(x + 34, y), (x + 30, y - 24)], r, 2.2) + jl([(x - 44, y - 24), (x + 44, y - 24)], r, 2.8)
+    g += shape(r, [(x - 44, y - 26), (x - 40, y - 40), (x - 24, y - 46), (x + 24, y - 46), (x + 40, y - 40), (x + 44, y - 26)], 2)
+    g += jl([(x - 30, y - 34), (x - 14, y - 40)], r, 1) + jl([(x + 14, y - 40), (x + 30, y - 34)], r, 1)
+    for d in (-1, 1):
+        fx = x + d * 13
+        g += f'<path d="M{fx-8:.1f} {y-40:.1f} C{fx-11:.1f} {y-58:.1f} {fx-9:.1f} {y-70:.1f} {fx:.1f} {y-71:.1f} C{fx+9:.1f} {y-70:.1f} {fx+11:.1f} {y-58:.1f} {fx+8:.1f} {y-40:.1f}" fill="{B()}" stroke="{I()}" stroke-width="2.4"/>'
+        for i, u in enumerate((-6, -2.5, 1, 4.5, 7.5)):
+            g += ell(fx + d * u, y - 73 + abs(u) * 0.5 + (0 if i else -1), 2.6 if i == 0 else 1.9, 2.6 if i == 0 else 1.9, 1.3)
+    g += jl([(x + 7, y - 74), (x + 26, y - 66), (x + 36, y - 56)], r, 1.2, 0.3)
+    g += shape(r, [(x + 30, y - 56), (x + 52, y - 60), (x + 56, y - 38), (x + 34, y - 34)], 2) + ell(x + 35, y - 52, 1.8, 1.8, 1.1)
+    g += jl([(x + 39, y - 47), (x + 51, y - 49)], r, 1) + jl([(x + 39, y - 41), (x + 52, y - 43)], r, 1)
+    return g
+SPEC.update({10: ("pines", C(X(tag_feet, -6, G)))})
+def tagged_self(r, x, y):                    # standing figure looking down at the toe tag on its own foot
+    g = head(x + 3, y - 50) + pl([(x, y - 42), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 9, y - 1)], 2.6)
+    g += pl([(x, y - 36), (x - 10, y - 24)], 2.2) + pl([(x, y - 36), (x + 8, y - 26), (x + 12, y - 30)], 2.2)
+    g += jl([(x + 11, y - 1), (x + 18, y + 2), (x + 22, y - 6)], r, 1.1, 0.2)
+    g += shape(r, [(x + 18, y - 6), (x + 36, y - 12), (x + 40, y + 2), (x + 22, y + 6)], 1.8) + ell(x + 22, y - 2, 1.4, 1.4, 1)
+    return g + jl([(x + 26, y - 4), (x + 36, y - 7)], r, 0.9) + jl([(x + 26, y + 1), (x + 37, y - 2)], r, 0.9)
+def shared_bar(r, x, y):                     # two lifters under one bar, each with a hand on the other's back
+    g = jl([(x - 70, y - 46), (x + 70, y - 46)], r, 3)
+    for d in (-1, 1):
+        g += shape(r, rect_pts(x + d * 66 - 4, y - 62, 8, 32), 2) + shape(r, rect_pts(x + d * 56 - 3, y - 56, 6, 20), 1.8)
+    for u in (-20, 20):
+        g += head(x + u, y - 54) + pl([(x + u, y - 46), (x + u, y - 18)], 2.6) + pl([(x + u - 8, y), (x + u, y - 18), (x + u + 8, y)], 2.6)
+        g += pl([(x + u, y - 42), (x + u + (-10 if u < 0 else 10), y - 46)], 2.2)
+    return g + pl([(x - 20, y - 38), (x, y - 34), (x + 18, y - 34)], 2) + pl([(x + 20, y - 38), (x, y - 30), (x - 18, y - 32)], 2)
+SPEC.update({33: ("meadow", C(X(tagged_self, -8, G))), 38: ("pines", C(X(shared_bar, 0, G)))})
+def phone_call(r, x, y):                     # sitting on a chair, old phone to the ear, the phone base on a small table, cord between
+    g = jl([(x - 30, y), (x - 30, y - 30), (x - 33, y - 58)], r, 2.2) + jl([(x - 30, y - 30), (x - 6, y - 30)], r, 2.4) + jl([(x - 8, y - 30), (x - 8, y)], r, 2.2)
+    g += head(x - 22, y - 70) + pl([(x - 24, y - 62), (x - 22, y - 32)], 2.6) + pl([(x - 22, y - 32), (x + 2, y - 32), (x + 4, y)], 2.6)
+    g += pl([(x - 23, y - 56), (x - 12, y - 64), (x - 15, y - 72)], 2.2) + shape(r, [(x - 17, y - 78), (x - 13, y - 78), (x - 13, y - 66), (x - 17, y - 66)], 1.6)
+    g += pl([(x - 23, y - 54), (x - 8, y - 44)], 2.2)
+    g += jl([(x + 24, y), (x + 24, y - 30)], r, 2.2) + jl([(x + 52, y), (x + 52, y - 30)], r, 2.2) + jl([(x + 18, y - 30), (x + 58, y - 30)], r, 2.6)
+    g += shape(r, [(x + 26, y - 32), (x + 28, y - 44), (x + 48, y - 44), (x + 50, y - 32)], 2) + ell(x + 38, y - 38, 4, 3, 1.2)
+    return g + jl([(x - 14, y - 64), (x - 4, y - 54), (x + 4, y - 62), (x + 14, y - 50), (x + 26, y - 40)], r, 1, 0.2, 3)
+SPEC.update({31: ("cabin", C(X(phone_call, -10, G)))})
+def wilted_rose(r, x, y):                    # tall rose bent over, head hanging, petals fallen on the ground, flies
+    g = f'<path d="M{x} {y} C{x-2} {y-40} {x+4} {y-78} {x+26} {y-86} C{x+40} {y-90} {x+46} {y-78} {x+42} {y-66}" fill="none" stroke="{I()}" stroke-width="2.4"/>'
+    g += f'<path d="M{x+33} {y-64} Q{x+30} {y-50} {x+38} {y-44} Q{x+42} {y-40} {x+46} {y-44} Q{x+54} {y-50} {x+51} {y-64} Q{x+46} {y-60} {x+42} {y-66} Q{x+38} {y-60} {x+33} {y-64} Z" fill="{B()}" stroke="{I()}" stroke-width="2.2"/>'
+    g += f'<path d="M{x+42} {y-48} Q{x+36} {y-52} {x+40} {y-58} M{x+42} {y-48} Q{x+48} {y-52} {x+45} {y-58}" fill="none" stroke="{I()}" stroke-width="1.2"/>'
+    g += f'<path d="M{x+34} {y-66} l-4 -4 M{x+50} {y-66} l4 -4" fill="none" stroke="{I()}" stroke-width="1.6"/>'
+    g += shape(r, [(x + 2, y - 44), (x - 14, y - 52), (x - 22, y - 44), (x - 10, y - 40)], 1.6) + jl([(x - 2, y - 42), (x - 16, y - 46)], r, 1)
+    g += ''.join(shape(r, [(x + u, y), (x + u + 4, y - 4), (x + u + 9, y - 2), (x + u + 7, y)], 1.4) for u in (30, 46, 58))
+    return g + ''.join(ell(x + u, y + v, 1.4, 1.4, 1) + pl([(x + u - 2, y + v - 2), (x + u - 4, y + v - 4)], 0.8) for u, v in ((24, -96), (54, -84), (60, -100)))
+def six_feet(r, x, y):                       # cut-away grave: a tape measure running down the side reads 6 FT; figure at the edge
+    g = jl([(x - 30, y), (x - 30, y + 0.1)], r, 1)
+    g += head(x - 70, y - 50) + pl([(x - 70, y - 42), (x - 70, y - 18)], 2.6) + pl([(x - 78, y), (x - 70, y - 18), (x - 62, y)], 2.6) + pl([(x - 70, y - 36), (x - 56, y - 28)], 2.2)
+    g += shape(r, [(x - 40, y), (x - 36, y - 12), (x + 40, y - 12), (x + 44, y)], 2) + jl([(x - 28, y - 6), (x + 30, y - 6)], r, 1)    # dirt pile
+    g += shape(r, [(x + 46, y - 4), (x + 50, y - 64), (x + 58, y - 64), (x + 54, y - 4)], 2)                         # tape measure strip
+    g += ''.join(pl([(x + 50 + i * 0.07, y - 10 - i * 9), (x + 54 + i * 0.07, y - 10 - i * 9)], 1) for i in range(6))
+    g += shape(r, rect_pts(x + 44, y - 76, 18, 14), 2.2) + hand("6 FT", 9, x + 72, y - 64)
+    return g
+def dirt_tug(r, x, y):                       # tug of war with a dirt mound: the rope runs into the ground
+    g = shape(r, [(x + 10, y), (x + 20, y - 12), (x + 40, y - 18), (x + 62, y - 12), (x + 72, y)], 2.2)
+    g += ''.join(jl([(x + u, y - 6), (x + u + 6, y - 8)], r, 1) for u in (24, 40, 54))
+    hx = x - 46
+    g += head(hx - 12, y - 46) + pl([(hx - 9, y - 38), (hx + 6, y - 18)], 2.6) + pl([(hx - 6, y), (hx + 6, y - 18), (hx + 16, y - 2)], 2.6)
+    g += pl([(hx - 4, y - 32), (hx + 14, y - 28)], 2.2) + pl([(hx - 2, y - 30), (hx + 14, y - 24)], 2.2)
+    return g + jl([(hx + 12, y - 27), (x + 10, y - 20), (x + 36, y - 14)], r, 1.8, 0.2)
+def broken_heart_hold(r, x, y):              # figure holding out a heart with a crack through it
+    g = head(x - 14, y - 50) + pl([(x - 14, y - 42), (x - 14, y - 18)], 2.6) + pl([(x - 22, y), (x - 14, y - 18), (x - 6, y)], 2.6)
+    g += pl([(x - 14, y - 36), (x + 2, y - 30), (x + 10, y - 34)], 2.2) + pl([(x - 14, y - 34), (x + 2, y - 26), (x + 12, y - 28)], 2.2)
+    hx, hy = x + 22, y - 44
+    g += f'<path d="M{hx} {hy+14} C{hx-18} {hy+2} {hx-16} {hy-14} {hx-6} {hy-14} C{hx-2} {hy-14} {hx} {hy-10} {hx} {hy-8} C{hx} {hy-10} {hx+2} {hy-14} {hx+6} {hy-14} C{hx+16} {hy-14} {hx+18} {hy+2} {hx} {hy+14} Z" fill="{B()}" stroke="{I()}" stroke-width="2.4"/>'
+    return g + pl([(hx, hy - 8), (hx - 3, hy - 2), (hx + 2, hy + 2), (hx - 2, hy + 7), (hx, hy + 14)], 1.6)
+SPEC.update({41: ("meadow", C(X(wilted_rose, -14, G))), 43: ("valley", C(X(six_feet, 10, G))), 48: ("valley", C(X(dirt_tug, 0, G))), 47: ("meadow", C(X(broken_heart_hold, -4, G)))})
+def six_feet(r, x, y):                       # figure at the edge of a grave shown in cut-away below the ground line, tape measure down the side: 6 FT
+    g = head(x - 44, y - 50) + pl([(x - 44, y - 42), (x - 44, y - 18)], 2.6) + pl([(x - 52, y), (x - 44, y - 18), (x - 36, y)], 2.6)
+    g += pl([(x - 44, y - 36), (x - 32, y - 26)], 2.2) + pl([(x - 44, y - 34), (x - 54, y - 24)], 2.2)
+    g += shape(r, [(x + 34, y), (x + 40, y - 12), (x + 62, y - 14), (x + 74, y)], 2)                                  # dirt pile
+    g += jl([(x - 24, y), (x - 24, y + 30), (x + 24, y + 30), (x + 24, y)], r, 2.2)                                    # the hole, cut away
+    g += shape(r, [(x - 18, y + 28), (x - 20, y + 22), (x - 12, y + 18), (x + 16, y + 18), (x + 20, y + 22), (x + 18, y + 28)], 1.8)
+    g += jl([(x + 30, y - 2), (x + 30, y + 30)], r, 1.6) + ''.join(pl([(x + 30, y + 3 + i * 5.4), (x + 34 - (i % 2) * 2, y + 3 + i * 5.4)], 1) for i in range(6))
+    return g + jl([(x + 26, y + 30), (x + 34, y + 30)], r, 1.6) + hand("6 FT", 9, x + 48, y + 20)
+SPEC.update({43: ("valley", C(X(six_feet, 0, G)))})
+V.OVERRIDE.setdefault(41, {})
+def chalk_and_dirt(r, x, y):                 # figure with chalk dust puffing off the hands; barbell on one side, shovel in a dirt pile on the other
+    g = head(x, y - 52) + pl([(x, y - 44), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6)
+    g += pl([(x, y - 38), (x - 12, y - 26)], 2.2) + pl([(x, y - 38), (x + 12, y - 26)], 2.2)
+    g += ''.join(ell(x + d * 14 + u, y - 24 + v, 1.6, 1.6, 0.9, False) for d in (-1, 1) for u, v in ((-3, -3), (2, -5), (4, 1), (-1, 3)))
+    g += shape(r, [(x - 6, y - 2), (x - 9, y + 1), (x - 2, y + 1)], 1.4) + shape(r, [(x + 6, y - 2), (x + 10, y + 1), (x + 3, y + 1)], 1.4)
+    g += jl([(x - 82, y - 10), (x - 30, y - 10)], r, 2.6) + ''.join(shape(r, rect_pts(x + u - 3, y - 22, 6, 22), 1.8) for u in (-76, -36))
+    g += shape(r, [(x + 30, y), (x + 38, y - 12), (x + 58, y - 16), (x + 74, y - 8), (x + 80, y)], 2)
+    return g + jl([(x + 56, y - 14), (x + 62, y - 50)], r, 2.4, 0.2) + jl([(x + 56, y - 54), (x + 68, y - 50)], r, 2.6) + shape(r, [(x + 52, y - 14), (x + 60, y - 14), (x + 58, y - 4), (x + 52, y - 4)], 1.6)
+def worms_wait(r, x, y):                     # figure on the ground; below, in cut-away soil, three worms look up at it
+    g = head(x, y - 50) + pl([(x, y - 42), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6)
+    g += pl([(x, y - 36), (x - 10, y - 24)], 2.2) + pl([(x, y - 36), (x + 10, y - 24)], 2.2)
+    for u, v, d in ((-40, 16, 1), (-6, 20, -1), (32, 15, 1)):
+        g += f'<path d="M{x+u-d*16} {y+v+2} q{d*4} -6 {d*8} 0 t{d*8} 0 q{d*3} -2 {d*4} -8" fill="none" stroke="{I()}" stroke-width="2.6" stroke-linecap="round"/>'
+        g += nt.dot(x + u + d * 4, y + v - 7, 1.1) + nt.dot(x + u + d * 1, y + v - 7, 1.1)
+    return g + ''.join(ell(x + u, y + v, 1.2, 1.2, 0.9, False) for u, v in ((-60, 10), (-24, 12), (14, 9), (50, 18), (-50, 20), (20, 22)))
+SPEC.update({52: ("valley", C(X(chalk_and_dirt, 0, G))), 53: ("meadow", C(X(worms_wait, 0, G)))})
+def under_rows(r, x, y):                     # two headstones above; cut-away below shows a coffin under each; a figure stands between
+    g = nt.headstone(x - 44, y, 22, 32) + nt.headstone(x + 44, y, 22, 32) + hand("RIP", 8, x - 44, y - 14) + hand("RIP", 8, x + 44, y - 14)
+    g += head(x, y - 50) + pl([(x, y - 42), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6) + pl([(x - 10, y - 26), (x, y - 36), (x + 10, y - 26)], 2.2)
+    g += nt.coffin_side(x - 44, y + 22, 48, 12) + nt.coffin_side(x + 44, y + 22, 48, 12) + nt.coffin_side(x, y + 22, 34, 10)
+    return g + ''.join(ell(x + u, y + v, 1.2, 1.2, 0.9, False) for u, v in ((-74, 8), (-14, 6), (20, 9), (72, 12)))
+def grief_scale(r, x, y):                    # figure on a platform scale, the needle pinned past the top
+    g = shape(r, rect_pts(x - 26, y - 8, 52, 8), 2.2) + shape(r, rect_pts(x + 10, y - 40, 4, 32), 1.6)
+    g += ell(x + 12, y - 52, 13, 13) + pl([(x + 12, y - 52), (x + 22, y - 62)], 1.8) + ''.join(pl([(x + 12 + 10 * c, y - 52 - 10 * s2), (x + 12 + 12 * c, y - 52 - 12 * s2)], 1) for c, s2 in ((-0.7, 0.7), (0, 1), (0.7, 0.7), (1, 0)))
+    g += head(x - 10, y - 58) + pl([(x - 10, y - 50), (x - 10, y - 26)], 2.6) + pl([(x - 17, y - 8), (x - 10, y - 26), (x - 3, y - 8)], 2.6)
+    return g + pl([(x - 10, y - 44), (x - 16, y - 32)], 2.2) + pl([(x - 10, y - 44), (x - 4, y - 32)], 2.2)
+def bench_talk(r, x, y):                     # two people sitting on a gym bench talking; barbell resting on the floor in front
+    g = jl([(x - 40, y - 18), (x + 40, y - 18)], r, 3) + jl([(x - 34, y - 18), (x - 34, y)], r, 2) + jl([(x + 34, y - 18), (x + 34, y)], r, 2)
+    for u, d in ((-18, 1), (18, -1)):
+        g += head(x + u, y - 56) + pl([(x + u, y - 48), (x + u, y - 22)], 2.6) + pl([(x + u, y - 22), (x + u + d * 14, y - 22), (x + u + d * 16, y)], 2.4)
+        g += pl([(x + u, y - 42), (x + u + d * 10, y - 30)], 2.2)
+    g += jl([(x - 8, y - 76), (x - 2, y - 82), (x + 6, y - 78)], r, 1.1) + ''.join(nt.dot(x + u, y - 70, 1.2) for u in (-4, 0, 4))
+    return g + jl([(x - 56, y - 8), (x + 56, y - 8)], r, 2.4) + ''.join(shape(r, rect_pts(x + u - 3, y - 18, 6, 18), 1.6) for u in (-52, 52))
+def bag_fit(r, x, y):                        # an empty body bag laid on the ground; the figure beside it, holding out an arm span to compare
+    g = shape(r, [(x - 6, y), (x - 10, y - 8), (x - 2, y - 14), (x + 82, y - 14), (x + 90, y - 8), (x + 86, y)], 2.2)
+    g += jl([(x + 4, y - 7), (x + 78, y - 7)], r, 1.2) + ''.join(pl([(x + u, y - 9), (x + u, y - 5)], 0.8) for u in range(8, 78, 5)) + shape(r, rect_pts(x + 76, y - 10, 6, 6), 1.2)
+    hx = x - 30
+    g += head(hx, y - 52) + pl([(hx, y - 44), (hx, y - 18)], 2.6) + pl([(hx - 8, y), (hx, y - 18), (hx + 8, y)], 2.6)
+    return g + pl([(hx - 16, y - 38), (hx, y - 38), (hx + 16, y - 38)], 2.2)
+SPEC.update({59: ("cemetery", C(X(under_rows, 0, G))), 60: ("valley", C(X(grief_scale, 0, G))), 61: ("pines", C(X(bench_talk, 0, G))), 64: ("pines", C(X(bag_fit, -16, G)))})
+def bearers_walk(r, x, y):                   # three bearers seen from the side (six in all), coffin on the shoulders, heads clear above it
+    g = ''
+    for u in (-44, 0, 44):
+        g += head(x + u, y - 52) + pl([(x + u, y - 44), (x + u, y - 36)], 2.6) + pl([(x + u - 9, y), (x + u, y - 20), (x + u + 9, y - 2)], 2.6)
+        g += pl([(x + u, y - 26), (x + u, y - 20)], 2.6)
+    return g + nt.coffin_side(x, y - 26, 134, 13)
+SPEC.update({65: ("cemetery", C(X(bearers_walk, 0, G)))})
+def scatter_ash(r, x, y):                    # figure at the shore tipping an urn; ash drifts out over the water
+    g = head(x, y - 50) + pl([(x, y - 42), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6)
+    g += pl([(x, y - 36), (x + 12, y - 34), (x + 16, y - 40)], 2.2) + pl([(x, y - 34), (x + 10, y - 30), (x + 18, y - 34)], 2.2)
+    g += f'<path d="M{x+14} {y-40} l12 -8 l6 6 l-4 4 l-12 6 Z" fill="{B()}" stroke="{I()}" stroke-width="2"/>'
+    return g + ''.join(ell(x + 34 + i * 6 + r.uniform(-2, 2), y - 50 - i * 1.2 + r.uniform(-4, 4), 0.9, 0.9, 0.8) for i in range(14))
+SPEC.update({194: ("valley", C(X(scatter_ash, -30, G)))})
+def balloon_away(r, x, y):                   # figure with an arm up; the balloon has already drifted off, string trailing
+    g = head(x, y - 50) + pl([(x, y - 42), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6)
+    g += pl([(x, y - 38), (x + 8, y - 50), (x + 12, y - 64)], 2.2) + pl([(x, y - 36), (x - 10, y - 24)], 2.2)
+    bx, by = x + 46, y - 96
+    g += f'<path d="M{bx} {by+13} C{bx-12} {by+6} {bx-11} {by-12} {bx} {by-12} C{bx+11} {by-12} {bx+12} {by+6} {bx} {by+13} Z" fill="{B()}" stroke="{I()}" stroke-width="2.2"/>'
+    g += pl([(bx - 2, by + 13), (bx, by + 16), (bx + 2, by + 13)], 1.4) + pl([(bx - 4, by - 6), (bx - 6, by - 2)], 1.2)
+    return g + jl([(bx, by + 16), (bx - 4, by + 26), (bx + 2, by + 36), (bx - 6, by + 44)], r, 1.1, 0.3, 4)
+def rigor_plank(r, x, y):                    # plank hold, body dead straight and stiff; stopwatch beside
+    g = head(x - 44, y - 26) + pl([(x - 36, y - 22), (x + 40, y - 4)], 2.8) + pl([(x + 40, y - 4), (x + 46, y)], 2.4)
+    g += pl([(x - 30, y - 20), (x - 30, y)], 2.4) + pl([(x - 30, y), (x - 18, y)], 2.4)
+    g += ell(x + 30, y - 40, 11, 11) + pl([(x + 30, y - 40), (x + 30, y - 47)], 1.6) + pl([(x + 30, y - 40), (x + 35, y - 37)], 1.4) + shape(r, rect_pts(x + 27, y - 56, 6, 4), 1.4)
+    return g + ''.join(jl([(x + u, y - 34 + u * 0.24), (x + u, y - 28 + u * 0.24)], r, 1) for u in (-20, -6, 8))
+SPEC.update({76: ("meadow", C(X(balloon_away, -30, G))), 80: ("pines", C(X(rigor_plank, 0, G)))})
+def rot_apple(r, x, y):                      # big apple gone soft: bruise spots, a worm out of the side, flies over it
+    g = f'<path d="M{x} {y-50} C{x-10} {y-58} {x-36} {y-54} {x-36} {y-28} C{x-36} {y-8} {x-20} {y} {x-8} {y-2} C{x-4} {y-1} {x+4} {y-1} {x+8} {y-2} C{x+20} {y} {x+36} {y-8} {x+36} {y-28} C{x+36} {y-54} {x+10} {y-58} {x} {y-50} Z" fill="{B()}" stroke="{I()}" stroke-width="2.6"/>'
+    g += jl([(x, y - 50), (x + 2, y - 62)], r, 2.2, 0.2) + shape(r, [(x + 2, y - 58), (x + 12, y - 66), (x + 18, y - 60), (x + 8, y - 56)], 1.6)
+    g += ell(x - 14, y - 26, 6, 5, 1.4, False) + ell(x + 12, y - 16, 4, 3.5, 1.4, False) + ell(x + 18, y - 36, 3, 2.6, 1.2, False)
+    g += f'<path d="M{x+34} {y-24} q8 -4 10 -12 q2 -6 8 -4" fill="none" stroke="{I()}" stroke-width="2.6" stroke-linecap="round"/>' + nt.dot(x + 50, y - 41, 1)
+    return g + ''.join(ell(x + u, y + v, 1.3, 1.3, 1) + pl([(x + u - 2, y + v - 2), (x + u - 4, y + v - 5)], 0.8) for u, v in ((-20, -70), (10, -80), (28, -70)))
+def all_seasons(r, x, y):                    # figure kneeling at a headstone; snow on one side, falling leaves on the other
+    g = nt.headstone(x + 22, y, 28, 40) + hand("RIP", 10, x + 22, y - 20)
+    g += head(x - 22, y - 38) + pl([(x - 22, y - 30), (x - 18, y - 14)], 2.6) + pl([(x - 18, y - 14), (x - 6, y - 14), (x - 4, y)], 2.4) + pl([(x - 18, y - 14), (x - 28, y)], 2.4)
+    g += pl([(x - 20, y - 26), (x + 4, y - 22)], 2.2)
+    for u, v in ((-60, -80), (-40, -64), (-70, -50), (-30, -90), (-52, -34), (-14, -76)):
+        g += pl([(x + u - 3, y + v), (x + u + 3, y + v)], 1) + pl([(x + u, y + v - 3), (x + u, y + v + 3)], 1) + pl([(x + u - 2, y + v - 2), (x + u + 2, y + v + 2)], 0.8)
+    for u, v in ((52, -78), (66, -56), (44, -50), (60, -30)):
+        g += f'<path d="M{x+u} {y+v} q5 -5 10 0 q-5 5 -10 0 Z" fill="none" stroke="{I()}" stroke-width="1.2"/>'
+    return g
+SPEC.update({41: ("meadow", C(X(rot_apple, 0, G))), 89: ("meadow", C(X(wilted_rose, -14, G))), 96: ("cemetery", C(X(all_seasons, 0, G)))})
+def hurts_here(r, x, y):                     # figure with a hand on the chest; a hand-drawn arrow points at the heart
+    g = head(x, y - 52) + pl([(x, y - 44), (x, y - 18)], 2.6) + pl([(x - 8, y), (x, y - 18), (x + 8, y)], 2.6)
+    g += pl([(x, y - 38), (x + 8, y - 32), (x + 2, y - 34)], 2.2) + pl([(x, y - 38), (x - 10, y - 26)], 2.2)
+    g += f'<path d="M{x+3} {y-33} c-3 -4 -8 -1 -4 3 l4 4 l4 -4 c4 -4 -1 -7 -4 -3 Z" fill="{I()}"/>'
+    g += jl([(x + 50, y - 72), (x + 38, y - 56), (x + 16, y - 38)], r, 1.4, 0.3) + pl([(x + 16, y - 38), (x + 24, y - 40)], 1.4) + pl([(x + 16, y - 38), (x + 18, y - 46)], 1.4)
+    return g + hand("here", 11, x + 54, y - 76)
+SPEC.update({100: ("pines", C(X(hurts_here, -10, G)))})
+def open_arms_skel(r, x, y):                 # skeleton standing with its arms held wide open: nothing left to hide
+    g = skull_l(r, x, y - 50, 0.4) + pl([(x, y - 40), (x, y - 14)], 2.2)
+    g += ''.join(pl([(x - 8, y + v), (x, y + v - 2), (x + 8, y + v)], 1.4) for v in (-34, -29, -24))
+    g += pl([(x - 9, y - 14), (x, y - 10), (x + 9, y - 14)], 1.6)
+    g += pl([(x - 6, y - 12), (x - 8, y)], 2) + pl([(x + 6, y - 12), (x + 8, y)], 2) + pl([(x - 8, y), (x - 14, y)], 2) + pl([(x + 8, y), (x + 14, y)], 2)
+    g += pl([(x, y - 37), (x - 20, y - 46), (x - 32, y - 58)], 2) + pl([(x, y - 37), (x + 20, y - 46), (x + 32, y - 58)], 2)
+    return g + ''.join(pl([(x + d * 32, y - 58), (x + d * (32 + u), y - 64 - abs(u))], 1.2) for d in (-1, 1) for u in (-2, 1, 4))
+SPEC.update({112: ("meadow", C(X(open_arms_skel, 0, G)))})
+def class_skeleton(r, x, y):                 # teaching skeleton hung from a rolling stand by the skull hook (stand, not a gallows: short post, wheeled base)
+    g = jl([(x - 24, y - 4), (x + 24, y - 4)], r, 2.4) + ell(x - 22, y - 2, 3, 3, 1.4) + ell(x + 22, y - 2, 3, 3, 1.4) + jl([(x, y - 4), (x, y - 30)], r, 2.4)
+    g += skeleton_l(r, x, y - 26)
+    g += pl([(x + 34, y - 20), (x + 56, y - 64)], 1.6) + shape(r, [(x + 44, y - 4), (x + 48, y - 38), (x + 74, y - 38), (x + 76, y - 4)], 1.8)
+    return g + jl([(x + 50, y - 30), (x + 70, y - 30)], r, 1) + jl([(x + 50, y - 22), (x + 66, y - 22)], r, 1) + hand("DONATED", 7, x + 60, y - 9)
+SPEC.update({120: ("valley", C(X(hearse_l, 0, G))), 115: ("cabin", C(X(class_skeleton, -16, G)))})
+def class_skeleton(r, x, y):                 # classroom skeleton on a low wheeled base beside a chalkboard: "206 BONES"
+    g = jl([(x - 20, y - 5), (x + 20, y - 5)], r, 2.4) + ell(x - 16, y - 2, 3, 3, 1.4) + ell(x + 16, y - 2, 3, 3, 1.4)
+    g += skeleton_l(r, x, y - 6)
+    g += shape(r, rect_pts(x + 34, y - 56, 52, 34), 2) + jl([(x + 40, y - 22), (x + 36, y)], r, 2) + jl([(x + 80, y - 22), (x + 84, y)], r, 2)
+    return g + hand("206", 12, x + 60, y - 40) + hand("BONES", 9, x + 60, y - 28)
+SPEC.update({115: ("cabin", C(X(class_skeleton, -24, G)))})
+def glove_off(r, x, y):                      # skeleton pulling a lifting glove off its bony hand, the other glove already on the ground
+    g = skeleton_l(r, x, y)
+    g += shape(r, [(x + 12, y - 40), (x + 28, y - 46), (x + 34, y - 38), (x + 30, y - 30), (x + 16, y - 30)], 2)
+    g += ''.join(pl([(x + 30 + u * 0.4, y - 44 + u), (x + 38 + u * 0.4, y - 48 + u)], 1.6) for u in (0, 4, 8))
+    g += pl([(x + 7, y - 33), (x + 14, y - 36)], 1.6)
+    return g + shape(r, [(x - 40, y), (x - 38, y - 10), (x - 24, y - 12), (x - 20, y - 4), (x - 24, y)], 2) + ''.join(pl([(x - 22 + u, y - 10), (x - 16 + u, y - 14)], 1.4) for u in (0, 3))
+SPEC.update({124: ("pines", C(X(glove_off, 0, G)))})
+def chalk_outline(r, x, y):                  # dashed chalk outline of a body lying on the ground (arms out, one knee bent), no body
+    d = (f"M{x-62} {y-12} m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 "
+         f"M{x-52} {y-16} L{x-36} {y-26} L{x-30} {y-34} L{x-26} {y-30} L{x-30} {y-20} L{x-14} {y-16} L{x+20} {y-16} L{x+34} {y-28} L{x+42} {y-26} L{x+32} {y-12} "
+         f"L{x+60} {y-12} L{x+64} {y-6} L{x+32} {y-4} L{x+16} {y-2} L{x-16} {y-2} L{x-26} {y+4} L{x-34} {y+2} L{x-30} {y-6} L{x-52} {y-8}")
+    return f'<path d="{d}" fill="none" stroke="{I()}" stroke-width="2.2" stroke-dasharray="5 3.5" stroke-linecap="round"/>'
+def oak_roots(r, x, y):                      # broad oak; in the cut-away below, its roots wrap a skull
+    g = f'<path d="M{x-8} {y} C{x-6} {y-30} {x-10} {y-50} {x-26} {y-64} M{x+8} {y} C{x+6} {y-30} {x+12} {y-52} {x+28} {y-66} M{x-2} {y-40} C{x} {y-56} {x} {y-66} {x+2} {y-74}" fill="none" stroke="{I()}" stroke-width="2.6"/>'
+    pts = [(x - 60, y - 66), (x - 50, y - 96), (x - 20, y - 112), (x + 14, y - 114), (x + 48, y - 100), (x + 62, y - 72), (x + 40, y - 56), (x + 10, y - 60), (x - 16, y - 54), (x - 44, y - 54)]
+    d = f"M{pts[0][0]} {pts[0][1]}"
+    for i in range(len(pts)):
+        a, b = pts[i], pts[(i + 1) % len(pts)]; mx, my = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2; cx, cy = mx + (mx - x) * 0.18, my + (my - (y - 84)) * 0.3
+        d += f" Q{cx:.1f} {cy:.1f} {b[0]} {b[1]}"
+    g += f'<path d="{d} Z" fill="none" stroke="{I()}" stroke-width="2.2"/>'
+    g += skull_l(r, x + 4, y + 24, 0.42)
+    return g + ''.join(jl(p, r, 1.4, 0.3, 4) for p in ([(x - 6, y), (x - 14, y + 12), (x - 6, y + 28), (x + 4, y + 34)], [(x + 6, y), (x + 20, y + 10), (x + 16, y + 26), (x + 8, y + 32)], [(x - 4, y), (x - 34, y + 10), (x - 50, y + 8)], [(x + 6, y), (x + 40, y + 8), (x + 56, y + 16)]))
+def four_stages(r, x, y):                    # four roses in a row: fresh, heavy, bowed, dry stalk
+    g = ''
+    for i, u in enumerate((-66, -22, 22, 66)):
+        bend = i * 12
+        tipx, tipy = x + u + bend * 0.8, y - 56 + bend * 0.6
+        g += f'<path d="M{x+u} {y} C{x+u} {y-30} {x+u+bend*0.2} {y-48} {tipx:.1f} {tipy:.1f}" fill="none" stroke="{I()}" stroke-width="2.2"/>'
+        if i < 3:
+            rr = 9 - i * 1.5
+            g += ell(tipx, tipy - (rr - 2) * (1 if i == 0 else 0.3), rr, rr * 0.9, 2) + pl([(tipx - rr * 0.5, tipy - rr * 0.6), (tipx, tipy - rr * 0.1), (tipx + rr * 0.5, tipy - rr * 0.6)], 1.2)
+        g += shape(r, [(x + u, y - 20), (x + u - 10, y - 26), (x + u - 14, y - 20 + i * 2), (x + u - 4, y - 18)], 1.4) if i < 3 else jl([(x + u, y - 18), (x + u - 8, y - 14)], r, 1.2)
+    return g + ''.join(shape(r, [(x + u, y), (x + u + 3, y - 3), (x + u + 7, y - 1)], 1.2) for u in (30, 40, 74, 82, 90))
+SPEC.update({131: ("meadow", C(X(chalk_outline, 0, G))), 133: ("meadow", C(X(oak_roots, 0, G))), 135: ("meadow", C(X(four_stages, 0, G)))})
+def empty_chair(r, x, y):                    # a chair with a dashed seated outline where someone used to sit
+    g = jl([(x - 20, y), (x - 20, y - 30), (x - 22, y - 72)], r, 2.4) + jl([(x - 20, y - 30), (x + 18, y - 30)], r, 2.6) + jl([(x + 16, y - 30), (x + 16, y)], r, 2.4)
+    g += jl([(x - 21, y - 52), (x - 4, y - 52)], r, 1.4) + jl([(x - 22, y - 66), (x - 4, y - 66)], r, 1.4)
+    dash = 'fill="none" stroke="%s" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"' % I()
+    g += f'<circle cx="{x-8}" cy="{y-66}" r="8" {dash}/>' + f'<path d="M{x-10} {y-58} L{x-10} {y-34} L{x+14} {y-34} L{x+16} {y} M{x-10} {y-50} L{x+6} {y-42} L{x+10} {y-46}" {dash}/>'
+    return g + jl([(x + 36, y), (x + 36, y - 26)], r, 2) + jl([(x + 30, y - 26), (x + 50, y - 26)], r, 2.2) + ell(x + 44, y - 30, 4, 3, 1.4)
+def oak_roots(r, x, y):                      # wide, low oak (lobed crown wider than tall, thick flared trunk); below, roots wrap a skull
+    g = f'<path d="M{x-14} {y} Q{x-8} {y-6} {x-8} {y-20} L{x-8} {y-40} Q{x-20} {y-50} {x-44} {y-56} M{x+14} {y} Q{x+8} {y-6} {x+8} {y-20} L{x+8} {y-38} Q{x+24} {y-48} {x+50} {y-54} M{x-2} {y-40} L{x+4} {y-62}" fill="none" stroke="{I()}" stroke-width="2.6"/>'
+    lobes = [(-76, -60), (-70, -80), (-50, -92), (-24, -96), (0, -92), (24, -98), (50, -92), (72, -80), (78, -62), (56, -52), (30, -58), (0, -54), (-30, -58), (-56, -52)]
+    d = f"M{x+lobes[0][0]} {y+lobes[0][1]}"
+    for i in range(len(lobes)):
+        a, b = lobes[i], lobes[(i + 1) % len(lobes)]
+        mx, my = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2; nx, ny = mx * 0.12, (my + 74) * 0.5
+        d += f" Q{x+mx+nx:.1f} {y+my+ny:.1f} {x+b[0]} {y+b[1]}"
+    g += f'<path d="{d} Z" fill="none" stroke="{I()}" stroke-width="2.2"/>'
+    g += ''.join(jl([(x + u, y - 72 + v), (x + u + 8, y - 74 + v)], r, 1) for u, v in ((-50, -4), (-20, -10), (20, -8), (46, 0)))
+    g += skull_l(r, x + 2, y + 26, 0.55)
+    return g + ''.join(jl(p, r, 1.6, 0.3, 4) for p in ([(x - 8, y), (x - 20, y + 12), (x - 14, y + 30), (x - 2, y + 36)], [(x + 8, y), (x + 22, y + 12), (x + 18, y + 30), (x + 6, y + 36)], [(x - 12, y), (x - 40, y + 8), (x - 60, y + 6)], [(x + 12, y), (x + 42, y + 8), (x + 62, y + 14)]))
+def apple_stages(r, x, y):                   # four apples left to right: fresh, swollen, rotting with flies, dried core
+    def apple(cx, s, spots=False):
+        g = f'<path d="M{cx} {y-34*s} C{cx-8*s} {y-40*s} {cx-24*s} {y-36*s} {cx-24*s} {y-18*s} C{cx-24*s} {y-4*s} {cx-12*s} {y} {cx} {y-2*s} C{cx+12*s} {y} {cx+24*s} {y-4*s} {cx+24*s} {y-18*s} C{cx+24*s} {y-36*s} {cx+8*s} {y-40*s} {cx} {y-34*s} Z" fill="{B()}" stroke="{I()}" stroke-width="2.2"/>'
+        g += pl([(cx, y - 34 * s), (cx + 2, y - 42 * s)], 1.8)
+        if spots: g += ell(cx - 8, y - 18 * s, 4, 3.5, 1.2, False) + ell(cx + 8, y - 10 * s, 3, 2.6, 1.2, False) + ''.join(ell(cx + u, y - v, 1.2, 1.2, 0.9) for u, v in ((-10, 48), (6, 56), (16, 44)))
+        return g
+    g = apple(x - 72, 0.9) + apple(x - 22, 1.15) + apple(x + 30, 1.0, True)
+    cx = x + 78
+    g += f'<path d="M{cx-8} {y-30} Q{cx-2} {y-16} {cx-8} {y-2} L{cx+8} {y-2} Q{cx+2} {y-16} {cx+8} {y-30} Z" fill="{B()}" stroke="{I()}" stroke-width="2.2"/>' + pl([(cx, y - 30), (cx + 2, y - 38)], 1.8)
+    return g
+SPEC.update({131: ("cabin", C(X(empty_chair, 0, G))), 133: ("meadow", C(X(oak_roots, 0, G))), 135: ("meadow", C(X(apple_stages, 0, G)))})
+def bare_oak(r, x, y):                       # bare winter oak (forked branches, no crown blob); below in cut-away, roots wrap a skull
+    import math as _m
+    import random as _r; rr = _r.Random(133)
+    def br(x0, y0, ang, L, w, depth):
+        x1, y1 = x0 + L * _m.cos(ang), y0 - L * _m.sin(ang)
+        s = f'<path d="M{x0:.1f} {y0:.1f} Q{(x0+x1)/2 + rr.uniform(-3,3):.1f} {(y0+y1)/2:.1f} {x1:.1f} {y1:.1f}" fill="none" stroke="{I()}" stroke-width="{w:.1f}" stroke-linecap="round"/>'
+        if depth:
+            for da in (-0.5, 0.45) if depth > 1 else (-0.55, 0.05, 0.55):
+                s += br(x1, y1, ang + da + rr.uniform(-0.12, 0.12), L * rr.uniform(0.62, 0.76), max(0.8, w * 0.62), depth - 1)
+        return s
+    g = br(x, y, _m.pi / 2, 34, 5.5, 4)
+    g += skull_l(r, x + 2, y + 26, 0.55)
+    return g + ''.join(jl(p, r, 1.6, 0.3, 4) for p in ([(x - 4, y), (x - 20, y + 12), (x - 14, y + 30), (x - 2, y + 36)], [(x + 4, y), (x + 22, y + 12), (x + 18, y + 30), (x + 6, y + 36)], [(x - 6, y), (x - 40, y + 8), (x - 60, y + 6)], [(x + 6, y), (x + 42, y + 8), (x + 62, y + 14)]))
+SPEC.update({133: ("meadow", C(X(bare_oak, 0, G)))})
+def crows_wait(r, x, y):                     # bare tree, three crows on the branches, a picked skull and a bone at its foot
+    import math as _m, random as _r
+    rr = _r.Random(137)
+    def br(x0, y0, ang, L, w, depth):
+        x1, y1 = x0 + L * _m.cos(ang), y0 - L * _m.sin(ang)
+        s = f'<path d="M{x0:.1f} {y0:.1f} L{x1:.1f} {y1:.1f}" fill="none" stroke="{I()}" stroke-width="{w:.1f}" stroke-linecap="round"/>'
+        if depth:
+            for da in (-0.55, 0.5):
+                s += br(x1, y1, ang + da + rr.uniform(-0.1, 0.1), L * 0.68, max(0.9, w * 0.6), depth - 1)
+        return s
+    g = br(x - 20, y, _m.pi / 2, 36, 5, 3)
+    def crow(cx, cy, d=1):
+        return (f'<path d="M{cx-7*d} {cy} Q{cx-2*d} {cy-8} {cx+4*d} {cy-6} L{cx+8*d} {cy-9} L{cx+6*d} {cy-4} Q{cx+4*d} {cy+2} {cx-2*d} {cy+2} L{cx-10*d} {cy+5} Z" fill="{I()}"/>'
+                + pl([(cx, cy + 2), (cx, cy + 5)], 1))
+    g += crow(x - 46, y - 62) + crow(x + 6, y - 74, -1) + crow(x - 22, y - 92)
+    g += skull_l(r, x + 30, y - 8, 0.45) + jl([(x + 46, y - 3), (x + 64, y - 6)], r, 2.6, 0.2) + ell(x + 66, y - 7, 2.4, 2.4, 1.2)
+    return g
+SPEC.update({137: ("meadow", C(X(crows_wait, 0, G)))})
+def molar_roots(r, x, y):                    # a molar planted in the ground like a stump; short roots in the cut-away soil
+    g = shape(r, [(x - 26, y), (x - 30, y - 30), (x - 18, y - 42), (x, y - 34), (x + 18, y - 42), (x + 30, y - 30), (x + 26, y)])
+    g += jl([(x - 16, y), (x - 20, y + 10), (x - 26, y + 18)], r, 2.2) + jl([(x + 16, y), (x + 20, y + 10), (x + 26, y + 18)], r, 2.2) + jl([(x, y), (x + 2, y + 14)], r, 2)
+    return g + jl([(x - 2, y - 34), (x + 4, y - 20), (x - 4, y - 8)], r, 1.6) + ''.join(ell(x + u, y - 46 - v, 1.2, 1.2, 0.9, False) for u, v in ((-24, 4), (18, 8), (30, 0)))
+def sutured_heart(r, x, y):                  # big heart resting on a stone, a stitched seam down the middle
+    g = shape(r, [(x - 40, y), (x - 34, y - 12), (x + 34, y - 12), (x + 40, y)], 2.2)
+    hx, hy, s = x, y - 46, 2.2
+    g += f'<path d="M{hx} {hy+16*s} C{hx-18*s} {hy+2*s} {hx-16*s} {hy-14*s} {hx-6*s} {hy-14*s} C{hx-2*s} {hy-14*s} {hx} {hy-10*s} {hx} {hy-8*s} C{hx} {hy-10*s} {hx+2*s} {hy-14*s} {hx+6*s} {hy-14*s} C{hx+16*s} {hy-14*s} {hx+18*s} {hy+2*s} {hx} {hy+16*s} Z" fill="{B()}" stroke="{I()}" stroke-width="2.6"/>'
+    g += pl([(hx - 2, hy - 16), (hx + 3, hy - 4), (hx - 2, hy + 8), (hx + 2, hy + 22), (hx, hy + 34)], 1.6)
+    return g + ''.join(pl([(hx - 5, hy + v - 2), (hx + 5, hy + v + 2)], 1.4) + pl([(hx - 5, hy + v + 2), (hx + 5, hy + v - 2)], 1.4) for v in (-10, 0, 10, 20))
+SPEC.update({152: ("meadow", C(X(molar_roots, 0, G))), 148: ("meadow", C(X(sutured_heart, 0, G)))})
+SPEC.update({158: ("cemetery", C(X(six_feet, 0, G)))})
+def bell_grave(r, x, y):                     # a hand bell resting on a fresh grave mound; its cord runs down into the soil
+    g = grave_mound(r, x, y, 76)
+    by = y - 12
+    g += (f'<path d="M{x-20} {by} Q{x-14} {by-4} {x-13} {by-18} Q{x-12} {by-36} {x} {by-38} Q{x+12} {by-36} {x+13} {by-18} Q{x+14} {by-4} {x+20} {by} Z" '
+          f'fill="{B()}" stroke="{I()}" stroke-width="2.4"/>')
+    g += jl([(x, by - 38), (x, by - 50)], r, 3, 0.2) + ell(x, by - 52, 4, 3, 2) + ell(x + 2, by + 3, 3, 3, 1.6)
+    g += jl([(x - 16, by - 6), (x + 16, by - 6)], r, 1.1)
+    return g + jl([(x + 4, by + 4), (x + 16, y + 6), (x + 30, y + 16)], r, 1.1, 0.3, 4)
+def unclaimed(r, x, y):                      # a row of identical numbered stakes, no names
+    g = ''
+    for i, u in enumerate((-66, -22, 22, 66)):
+        g += jl([(x + u, y), (x + u, y - 30)], r, 2.4) + shape(r, rect_pts(x + u - 12, y - 46, 24, 16), 2)
+        g += hand(str(1041 + i * 3), 8, x + u, y - 34)
+    return g
+SPEC.update({165: ("cemetery", C(X(bell_grave, 0, G))), 163: ("cemetery", C(X(unclaimed, 0, G)))})
+def chair_at_table(r, x, y):                 # table set for two; one chair pulled in and empty, the other person sitting alone
+    g = jl([(x - 30, y - 34), (x + 30, y - 34)], r, 2.8) + jl([(x - 24, y - 34), (x - 24, y)], r, 2.2) + jl([(x + 24, y - 34), (x + 24, y)], r, 2.2)
+    g += ell(x - 14, y - 37, 8, 2.4, 1.6) + ell(x + 14, y - 37, 8, 2.4, 1.6) + pl([(x + 2, y - 36), (x + 2, y - 46)], 1.4)
+    g += jl([(x + 44, y), (x + 44, y - 24), (x + 62, y - 24), (x + 62, y)], r, 2.2) + jl([(x + 62, y - 24), (x + 64, y - 62)], r, 2.2)   # empty chair
+    g += jl([(x - 62, y), (x - 62, y - 24), (x - 44, y - 24), (x - 44, y)], r, 2.2) + jl([(x - 62, y - 24), (x - 64, y - 60)], r, 2.2)
+    g += head(x - 52, y - 62) + pl([(x - 54, y - 54), (x - 52, y - 28)], 2.6) + pl([(x - 52, y - 28), (x - 34, y - 28), (x - 32, y)], 2.4)
+    return g + pl([(x - 53, y - 48), (x - 34, y - 38)], 2.2)
+def phone_glow(r, x, y):                     # sitting on the ground, knees up, looking at a phone; a contact card glows on the screen
+    g = head(x - 10, y - 48) + pl([(x - 14, y - 40), (x - 18, y - 2)], 2.6) + pl([(x - 18, y - 2), (x + 4, y - 22), (x + 10, y)], 2.4)
+    g += pl([(x - 15, y - 34), (x, y - 30), (x + 4, y - 36)], 2.2)
+    g += shape(r, rect_pts(x + 2, y - 46, 9, 14), 1.8) + ''.join(pl([(x + 6.5 + 12 * c, y - 39 - 12 * s), (x + 6.5 + 17 * c, y - 39 - 17 * s)], 1) for c, s in ((0.9, 0.4), (0.6, 0.8), (1, -0.1)))
+    return g + ell(x + 6.5, y - 42, 2, 2, 1) + pl([(x + 4, y - 37), (x + 9, y - 37)], 0.9)
+def casseroles(r, x, y):                     # a stack of covered casserole dishes on a table, one more being handed over
+    g = jl([(x - 40, y - 30), (x + 40, y - 30)], r, 2.8) + jl([(x - 34, y - 30), (x - 34, y)], r, 2.2) + jl([(x + 34, y - 30), (x + 34, y)], r, 2.2)
+    for i in range(4):
+        b = y - 32 - i * 13
+        g += f'<path d="M{x-22} {b-9} L{x-20} {b} L{x+20} {b} L{x+22} {b-9} Z" fill="{B()}" stroke="{I()}" stroke-width="2"/>'
+        g += pl([(x - 26, b - 7), (x - 22, b - 7)], 2) + pl([(x + 22, b - 7), (x + 26, b - 7)], 2)
+        g += f'<path d="M{x-20} {b-9} Q{x} {b-15} {x+20} {b-9}" fill="none" stroke="{I()}" stroke-width="1.6"/>'
+    return g + ell(x, y - 32 - 3 * 13 - 13, 2, 2, 1.4)
+SPEC.update({170: ("cabin", C(X(chair_at_table, 0, G))), 171: ("cabin", C(X(phone_call, -10, G))), 172: ("pines", C(X(phone_glow, 0, G))), 175: ("cabin", C(X(casseroles, 0, G)))})
+def their_chair(r, x, y):                    # an empty armchair with a jacket over its back; someone standing looking at it
+    g = shape(r, [(x + 6, y), (x + 6, y - 26), (x + 2, y - 62), (x + 12, y - 70), (x + 52, y - 70), (x + 60, y - 62), (x + 56, y - 26), (x + 56, y)], 2.4)
+    g += jl([(x + 6, y - 26), (x + 56, y - 26)], r, 2) + jl([(x + 2, y - 40), (x - 4, y - 36), (x - 2, y - 24), (x + 6, y - 24)], r, 2) + jl([(x + 60, y - 40), (x + 66, y - 36), (x + 64, y - 24), (x + 56, y - 24)], r, 2)
+    g += shape(r, [(x + 18, y - 70), (x + 40, y - 70), (x + 44, y - 40), (x + 36, y - 44), (x + 30, y - 36), (x + 22, y - 44), (x + 14, y - 40)], 1.8)
+    hx = x - 40
+    return g + head(hx, y - 52) + pl([(hx, y - 44), (hx, y - 18)], 2.6) + pl([(hx - 8, y), (hx, y - 18), (hx + 8, y)], 2.6) + pl([(hx - 9, y - 26), (hx, y - 38), (hx + 9, y - 26)], 2.2)
+SPEC.update({170: ("cabin", C(X(their_chair, 0, G))), 179: ("cabin", C(X(chair_at_table, 0, G)))})
+def dead_cart(r, x, y):                      # figure pulling a two-wheeled handcart with a coffin, ringing a hand bell overhead
+    g = shape(r, [(x - 10, y - 16), (x + 70, y - 16), (x + 66, y - 28), (x - 6, y - 28)], 2.2) + ell(x + 30, y - 9, 9, 9) + ell(x + 30, y - 9, 2, 2, 1.2)
+    g += nt.coffin_side(x + 30, y - 30, 70, 12)
+    g += jl([(x - 10, y - 22), (x - 34, y - 30)], r, 2.2)
+    hx = x - 44
+    g += head(hx, y - 52) + pl([(hx + 2, y - 44), (hx + 6, y - 18)], 2.6) + pl([(hx - 4, y), (hx + 6, y - 18), (hx + 14, y)], 2.6)
+    g += pl([(hx + 3, y - 38), (hx + 12, y - 32), (x - 34, y - 30)], 2.2) + pl([(hx + 3, y - 38), (hx - 8, y - 50), (hx - 10, y - 62)], 2.2)
+    g += f'<path d="M{hx-17} {y-62} Q{hx-16} {y-74} {hx-10} {y-76} Q{hx-4} {y-74} {hx-3} {y-62} Z" fill="{B()}" stroke="{I()}" stroke-width="2"/>'
+    return g + ''.join(pl([(hx - 10 + c * 10, y - 70 - s * 10), (hx - 10 + c * 14, y - 70 - s * 14)], 1.1) for c, s in ((-0.9, 0.4), (0.9, 0.4), (0, 1)))
+def mortar_bone(r, x, y):                    # big mortar and pestle; a bone end sticks out, powder spilling
+    g = f'<path d="M{x-40} {y-46} L{x+40} {y-46} Q{x+38} {y-10} {x+14} {y-4} L{x+18} {y} L{x-18} {y} L{x-14} {y-4} Q{x-38} {y-10} {x-40} {y-46} Z" fill="{B()}" stroke="{I()}" stroke-width="2.6"/>'
+    g += jl([(x - 40, y - 46), (x + 40, y - 46)], r, 3)
+    g += f'<path d="M{x+8} {y-40} L{x+40} {y-92} Q{x+48} {y-98} {x+50} {y-88} L{x+16} {y-38} Z" fill="{B()}" stroke="{I()}" stroke-width="2.4"/>'
+    g += jl([(x - 16, y - 44), (x - 30, y - 70)], r, 3, 0.2) + ell(x - 33, y - 73, 3.4, 3.4, 1.4) + ell(x - 28, y - 75, 3.4, 3.4, 1.4)
+    return g + ''.join(ell(x + u, y + v, 1, 1, 0.8) for u, v in ((-48, -4), (-54, -1), (46, -3), (52, -1), (-44, -1), (58, -2)))
+SPEC.update({187: ("valley", C(X(dead_cart, 0, G))), 191: ("meadow", C(X(mortar_bone, 0, G)))})
+def full_skull(r, x, y):                     # big skull; a tangled scribble of thoughts spills out of a crack in the top
+    g = skull_l(r, x, y - 40, 1.8)
+    g += jl([(x - 6, y - 92), (x - 2, y - 82), (x - 8, y - 74)], r, 1.6, 0.2) + jl([(x + 10, y - 92), (x + 6, y - 80)], r, 1.6, 0.2)
+    import math as _m
+    pts = []
+    for i in range(46):
+        t = i / 45 * 6.2 * _m.pi; rad = 6 + i * 0.55
+        pts.append((x + rad * _m.cos(t) * 1.4, y - 126 - rad * _m.sin(t) * 0.7))
+    return g + jl([(x, y - 92), (x + 2, y - 104)] + pts, r, 1.2, 0.6, 3)
+SPEC.update({206: ("pines", C(X(full_skull, 0, G)))})
+def bearers_walk(r, x, y):                   # coffin (classic six-sided shape, cross on the lid) on the shoulders of three walking bearers; heads drawn over its edge
+    g = f'<path d="M{x-70} {y-46} L{x-58} {y-62} L{x+40} {y-64} L{x+70} {y-54} L{x+66} {y-44} L{x-66} {y-40} Z" fill="{B()}" stroke="{I()}" stroke-width="2.6"/>'
+    g += jl([(x - 20, y - 60), (x - 20, y - 46)], r, 1.6) + jl([(x - 27, y - 55), (x - 13, y - 55)], r, 1.6)
+    for u in (-46, 0, 46):
+        g += head(x + u + 4, y - 44) + pl([(x + u, y - 36), (x + u, y - 20)], 2.6) + pl([(x + u - 9, y), (x + u, y - 20), (x + u + 9, y - 2)], 2.6)
+        g += pl([(x + u, y - 32), (x + u - 4, y - 42)], 2.2)
+    return g
+SPEC.update({65: ("cemetery", C(X(bearers_walk, 0, G)))})
+def heart_beat(r, x, y):                     # anatomical heart on a stone, beat lines around it, a pulse line running off along the ground
+    g = shape(r, [(x - 34, y), (x - 28, y - 12), (x + 28, y - 12), (x + 34, y)], 2.2) + heart_l(r, x, y - 30, 0.75)
+    g += ''.join(jl([(x + d * 34, y - 50 + v), (x + d * 44, y - 54 + v)], r, 1.6, 0.2) for d in (-1, 1) for v in (-8, 4))
+    return g + jl([(x + 36, y - 4), (x + 50, y - 4), (x + 55, y - 18), (x + 60, y + 4), (x + 64, y - 4), (x + 86, y - 4)], r, 1.6, 0.2)
+SPEC.update({142: ("meadow", C(X(heart_beat, -16, G)))})
+def molar_roots(r, x, y):                    # a molar sitting on the ground like a stump; curling roots spread into the cut-away soil
+    g = shape(r, [(x - 26, y), (x - 30, y - 30), (x - 18, y - 42), (x, y - 34), (x + 18, y - 42), (x + 30, y - 30), (x + 26, y)])
+    g += jl([(x - 2, y - 34), (x + 4, y - 20), (x - 4, y - 8)], r, 1.6)
+    for d in (-1, 1):
+        g += f'<path d="M{x+d*16} {y} C{x+d*22} {y+8} {x+d*38} {y+6} {x+d*46} {y+14} M{x+d*24} {y+5} C{x+d*26} {y+12} {x+d*22} {y+18} {x+d*28} {y+24} M{x+d*40} {y+9} q{d*6} -2 {d*10} 2" fill="none" stroke="{I()}" stroke-width="1.6" stroke-linecap="round"/>'
+    return g + f'<path d="M{x} {y} C{x+2} {y+8} {x-3} {y+14} {x+1} {y+22}" fill="none" stroke="{I()}" stroke-width="1.6" stroke-linecap="round"/>'
+SPEC.update({152: ("meadow", C(X(molar_roots, 0, G)))})

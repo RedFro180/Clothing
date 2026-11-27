@@ -215,3 +215,56 @@ Rules held: no figure near a drop; nothing hanging (no gallows shapes, nothing d
 | 207 | BONE TIRED. | skeleton (pines) |  |
 
 Sources: [Wikipedia: Morgue](https://en.wikipedia.org/wiki/Morgue), [StatPearls](https://www.ncbi.nlm.nih.gov/books/NBK539741/), [Wikipedia: Algor mortis](https://en.wikipedia.org/wiki/Algor_mortis), [ICCFA](https://iccfa.com/faq-items/how-long-does-it-take-to-cremate-a-body/), [HowStuffWorks](https://science.howstuffworks.com/cremation1.htm), [Neptune Society](https://neptunesociety.com/resources/cremation-planning/why-pacemaker-should-be-removed-prior-to-cremation), [PMC1279940](https://pmc.ncbi.nlm.nih.gov/articles/PMC1279940), [Wikipedia: Adipocere](https://en.wikipedia.org/wiki/Adipocere), [Wikipedia: Safety coffin](https://en.wikipedia.org/wiki/Safety_coffin), [AAOS](https://orthoinfo.aaos.org/en/diseases--conditions/biceps-tendon-tear-at-the-elbow/), [Wikipedia: Decomposition](https://en.wikipedia.org/wiki/Decomposition).
+
+
+## v3 review (2026-11-27): flat ground + per-sketch fixes
+User: "Why is the ground always curving it makes all the sketches look bad. Do a deep detailed look at every sketch."
+- Ground: the domed hill (`vignette.mound()`) is gone. Every scene now stands on a flat horizon that thins into broken strokes at the edges, with grass tufts, short furrow strokes and a cast shadow under the subject. Ground types: field (default), path (4, 7, 19, 56, 65, 120, 187, 189), lake shore (67, 194), cemetery (cemetery scenes: small far headstones). Frame pines stand on the ground in front; the inner pine is dropped when a wide subject would overlap it; tree height is capped by the crop.
+- Captions: balanced line breaks (no one-word orphan lines like "me" / "way."), "5 a.m." / "225 LBS." kept together, more line spacing for Permanent Marker and Rock Salt, Rock Salt larger, sub-lines spaced by their own size, front captions max 2 lines.
+- Small subjects are scaled up (cap 1.9) with line weights kept even.
+- Round 1 (every sketch at ~600 px), redrawn because they read wrong or didn't match the caption:
+
+| # | Problem | Fix |
+|---|---|---|
+| 02 | Meat pile read as a rock | Steaks, a drumstick bone, next to the skeleton's feet |
+| 03/21/38/61 | Bench press arms tangled | Clean side view, bar end-on over the chest, spotter behind the head (38 → two lifters under one bar; 61 → two on a bench talking) |
+| 10 | Toe tag hard to read | Foot end of a covered gurney, two feet up, big toe tag |
+| 12 | Barbell clipped by the tree | Smaller figure, bar moved in |
+| 31 | Phone scene unclear | Sitting, old phone to the ear, cord to the base on a table |
+| 33 | Generic | Figure looking down at the tag on its own foot |
+| 41 | Rose read as a lamp | Rotting apple with a worm and flies (rose moved to 89) |
+| 43/158 | Grave read as a box | Figure at a grave shown in cut-away below the ground with a 6 FT tape |
+| 44/102/180/182/184/188 | Reaper read as a ghost blob | New hooded reaper: robe, hood opening, two eyes, scythe |
+| 47 | Generic | Holding out a cracked heart |
+| 48 | Generic | Tug of war with a dirt mound |
+| 52 | Missing grave dirt | Chalk dust on the hands, barbell one side, shovel in dirt the other |
+| 53 | No worms | Worms in cut-away soil looking up |
+| 59 | Generic | Two headstones, coffins under each in cut-away |
+| 60 | Grief scale unclear | Figure on a platform scale, needle pinned |
+| 64 | Generic | Empty body bag on the ground, figure measuring |
+| 65 | Pallbearers read as a table | Coffin with a cross on the shoulders of three walking bearers |
+| 76 | Balloon read as a sign | Balloon drifting away, string trailing |
+| 80 | Repeat of morgue drawers | Rigor-stiff plank hold with a stopwatch |
+| 96 | Boulder carry repeated 4× | Kneeling at a headstone, snow one side, leaves the other |
+| 100 | Not about pain | Hand on chest, arrow "here" |
+| 112 | Generic | Skeleton with arms wide open |
+| 115 | Skeleton read as on a pike | Classroom skeleton on a wheeled base, chalkboard "206 BONES" |
+| 120 | Generic | Hearse on a road |
+| 124 | No glove | Skeleton pulling off a lifting glove |
+| 131 | Outline read as a plane | Empty chair with a dashed outline of the person |
+| 133 | Oak read as a mushroom cloud | Bare oak, roots wrapping a skull below |
+| 135 | Roses read as lollipops | Four apples: fresh, swollen, rotting, core |
+| 137 | Generic | Bare tree with crows, a skull at its foot |
+| 142 | Pole + cord read as a gallows | Heart on a stone, beat lines, pulse line |
+| 148 | Same heart as others | Big heart stitched down the middle |
+| 152 | Roots read as table legs | Curling roots spreading into the soil |
+| 163 | Generic | Row of numbered stakes, no names |
+| 165 | Bell on a post (gallows risk) | Hand bell resting on the grave mound, cord into the soil |
+| 170/179 | Same scene | 170 armchair with a jacket; 179 table set for two, one empty chair |
+| 171/172 | Same as 31 | 171 phone call; 172 sitting with a phone glowing |
+| 175 | No casseroles | Stack of covered casserole dishes |
+| 187 | Generic | Pulling a coffin cart, ringing a bell |
+| 191 | Generic | Mortar and pestle with a bone |
+| 194 | Lake didn't show | Water band behind the figure scattering ash from an urn |
+| 206 | Skull read as a cat | Skull with a tangle of thoughts spilling out |
+- Round 2: full re-render, every sheet re-checked; 65, 142 and 152 fixed again (above). No dome, curl, gallows shape, floating subject or caption collision left on any sheet.

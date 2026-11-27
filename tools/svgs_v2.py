@@ -13,7 +13,7 @@ import vignette as VG
 
 OUT = os.path.normpath(os.path.join(HERE, "..", "designs", "sketches-v2"))
 NATIVE = {16: lambda: watch_eyes(), 1: lambda: VG.skeleton_grip(0, 206, 1.05), 4: lambda: VG.back_carry(0, 206, 1.1),
-          11: lambda: VG.half_face(0, 212, 1.0), 12: lambda: VG.lying_stargazer(-24, 206, 1.35)}
+          11: lambda: VG.half_face(0, 212, 1.0), 12: lambda: VG.lying_stargazer(-26, 206, 0.95)}
 def watch_eyes():
     g = VG.path("M-8 206 L-6 186 L0 172 L6 186 L8 206", 2.6) + '<circle cx="0" cy="162" r="9" fill="none" stroke="%s" stroke-width="2.6"/>' % VG.I()
     g += VG.path("M-14 180 L0 176 L14 180", 2.4)
@@ -23,7 +23,7 @@ def watch_eyes():
 SKIES = ["none", "none", "none", "night", "crescent", "milky", "sun", "dusk"]
 TREES = ["pine"]
 FONTS = ["hand", "hand", "marker", "amatic", "shadows", "indie", "rocksalt"]
-FIX = {12: dict(sky="milky", trees="pine"), 1: dict(sky="night"), 4: dict(sky="none"), 11: dict(sky="none")}
+FIX = {41: dict(sky="none"), 12: dict(sky="milky", trees="pine"), 1: dict(sky="night"), 4: dict(sky="none"), 11: dict(sky="none")}
 
 def variant(n):
     r = random.Random(n * 7919)
@@ -58,32 +58,49 @@ def subject(n, d, v):
         nt.jitter = _jit; R.jitter = _jit
     x0, y0, x1, y1 = bbox(raw)
     room = 206 - (40 if v["sky"] == "none" else 70)                 # keep clear of the sky / caption
-    k = min(1.45, room / max(30, 236 - y0), 100 / max(30, abs(x0), abs(x1)))
+    k = min(1.9, room / max(30, 236 - y0), 100 / max(30, abs(x0), abs(x1)), 110 / max(30, 236 - y0))
+    if k > 1.4:                                                     # keep line weight even when a small subject is scaled up
+        raw = re.sub(r'stroke-width="([0-9.]+)"', lambda m: f'stroke-width="{float(m.group(1)) * 1.4 / k:.2f}"', raw)
     return f'<g transform="translate(0 206) scale({k:.3f}) translate(0 -236)">{raw}</g>', (x0 * k, x1 * k)
+
+PATHS = {4, 7, 19, 56, 65, 120, 187, 189}
+LAKES = {194, 67}
+PLATFORM = set()
+def ground_kind(n):
+    if n in PATHS: return "path"
+    if n in LAKES: return "lake"
+    if n in PLATFORM: return "platform"
+    if n in RS.SPEC and RS.SPEC[n][0] == "cemetery": return "cemetery"
+    return "field"
+
+def crop_top(n, v, sub):
+    if n in NATIVE: sy0 = {1: 82, 4: 80, 11: 80, 12: 150, 16: 140}[n]
+    else:
+        _, sy0, _, _ = bbox(sub); k = float(re.search(r"scale\(([\d.]+)\)", sub).group(1)); sy0 = 206 - (236 - sy0) * k
+    return max(14, min(24 if v["sky"] != "none" else 84, sy0 - 8))
 
 def scene(n, d):
     v = variant(n); r = random.Random(n * 17 + 3)
     sub, (gx0, gx1) = subject(n, d, v)
+    top = crop_top(n, v, sub)
     gap = (gx0 * 0.85, gx1 * 0.85) if gx1 - gx0 > 4 else None
-    if n in NATIVE: gap = {1: (-26, 26), 4: (-18, 18)}.get(n)
-    return VG.compose(r, sub, v["sky"], v["side"], forest_gap=gap, trees=v["trees"]), sub
+    if n in NATIVE: gap = {1: (-26, 26), 4: (-18, 18), 12: (-100, 96), 11: (-50, 50)}.get(n)
+    gx = (gx0, gx1) if gx1 - gx0 > 4 else (-30, 30)
+    if n in NATIVE: gx = {1: (-26, 26), 4: (-20, 20), 11: (-46, 46), 12: (-90, 90), 16: (-10, 10)}[n]
+    return VG.compose(r, sub, v["sky"], v["side"], forest_gap=gap, trees=v["trees"], kind=ground_kind(n), gx=gx, tree_top=top + 4), sub, top
 
 def layout(n, d):
     v = variant(n); f = RV.FONT_SIZE[v["font"]]; R.FONT[0] = v["font"]
-    body, sub = scene(n, d)
-    _, sy0, _, _ = bbox(sub) if n not in NATIVE else (0, {1: 82, 4: 90, 11: 80, 12: 150, 16: 140}[n], 0, 0)
-    if n not in NATIVE:
-        k = float(re.search(r"scale\(([\d.]+)\)", sub).group(1)); sy0 = 206 - (236 - sy0) * k
-    top = max(14, min(24 if v["sky"] != "none" else 84, sy0 - 8))
+    body, sub, top = scene(n, d)
     main = R.cap_text(" ".join(d["lines"])); subl = R.cap_text(d["sub"]) if d.get("sub") else ""
     try:
         if d["place"] in ("back", "hood"):
             a, yy = R.caption(main, 300, 176, 296, 46 * f, 26 * f)
-            if subl: a += sd.tpath(subl, v["font"], sd.fitsize(subl, v["font"], 280, 24 * f), 300, yy + 16); yy += 24
+            if subl: ss = sd.fitsize(subl, v["font"], 280, 24 * f); a += sd.tpath(subl, v["font"], ss, 300, yy + ss * 0.85 + 4); yy += ss + 6
             k = min(1.05, (558 - yy) / (262 - top))
             return "back", a + f'<g transform="translate(300 {yy+4:.1f}) scale({k:.3f}) translate(0 -{top:.1f})">{body}</g>'
-        a, yy = R.caption(main, 300, 210, 262, 34 * f, 20 * f)
-        if subl: a += sd.tpath(subl, v["font"], sd.fitsize(subl, v["font"], 250, 18 * f), 300, yy + 12); yy += 18
+        a, yy = R.caption(main, 300, 210, 262, 34 * f, 22 * f, 2)
+        if subl: ss = sd.fitsize(subl, v["font"], 250, 18 * f); a += sd.tpath(subl, v["font"], ss, 300, yy + ss * 0.85 + 3); yy += ss + 5
         k = min(0.82, (452 - yy) / (262 - top))
         return "front", a + f'<g transform="translate(300 {yy+2:.1f}) scale({k:.3f}) translate(0 -{top:.1f})">{body}</g>'
     finally:

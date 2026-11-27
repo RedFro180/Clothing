@@ -93,12 +93,14 @@ def bodybag(r, x, y):
     g += jl([(x - 50, y - 12), (x + 60, y - 12)], r, 1.4) + ''.join(pl([(x + u, y - 15), (x + u, y - 9)], 1) for u in range(-46, 60, 6))
     return g + shape(r, rect_pts(x + 60, y - 16, 8, 8), 1.4)
 def reaper_l(r, x, y, k=1):
-    g = shape(r, [(x - 30 * k, y), (x - 22 * k, y - 50 * k), (x - 20 * k, y - 80 * k), (x - 10 * k, y - 96 * k), (x + 6 * k, y - 98 * k), (x + 20 * k, y - 84 * k),
-                   (x + 22 * k, y - 50 * k), (x + 30 * k, y)])
-    g += f'<path d="M{x-10*k:.1f} {y-80*k:.1f} Q{x:.1f} {y-92*k:.1f} {x+10*k:.1f} {y-80*k:.1f} L{x+8*k:.1f} {y-66*k:.1f} Q{x:.1f} {y-62*k:.1f} {x-8*k:.1f} {y-66*k:.1f} Z" fill="{I()}"/>'
-    g += jl([(x + 34 * k, y), (x + 34 * k, y - 120 * k)], r, 2.2)
-    g += shape(r, [(x + 34 * k, y - 120 * k), (x + 4 * k, y - 126 * k), (x - 24 * k, y - 112 * k), (x + 4 * k, y - 118 * k), (x + 34 * k, y - 112 * k)], 1.8)
-    return g + jl([(x - 8 * k, y - 40 * k), (x + 34 * k, y - 56 * k)], r, 1.8)
+    """Hooded robe leaning forward, dark face, sleeve to a long scythe whose blade curves over the hood."""
+    P = lambda u, v: f"{x+u*k:.1f} {y+v*k:.1f}"
+    g = (f'<path d="M{P(-28,0)} C{P(-26,-30)} {P(-26,-60)} {P(-20,-84)} C{P(-16,-100)} {P(2,-108)} {P(14,-98)} C{P(22,-90)} {P(20,-78)} {P(16,-70)} '
+         f'C{P(20,-50)} {P(24,-24)} {P(30,0)} Q{P(20,-6)} {P(12,0)} Q{P(4,-6)} {P(-4,0)} Q{P(-14,-6)} {P(-28,0)} Z" fill="{B()}" stroke="{I()}" stroke-width="2.4"/>')
+    g += f'<path d="M{P(-2,-92)} C{P(6,-96)} {P(14,-90)} {P(12,-80)} C{P(10,-72)} {P(0,-70)} {P(-4,-76)} C{P(-6,-82)} {P(-6,-88)} {P(-2,-92)} Z" fill="{B()}" stroke="{I()}" stroke-width="1.8"/>' + nt.dot(x + 1 * k, y - 82 * k, 1.6) + nt.dot(x + 8 * k, y - 82 * k, 1.6)
+    g += jl([(x + 30 * k, y), (x + 38 * k, y - 126 * k)], r, 2.4, 0.3)
+    g += f'<path d="M{P(38,-126)} Q{P(6,-134)} {P(-22,-112)} Q{P(4,-122)} {P(37,-116)}" fill="{B()}" stroke="{I()}" stroke-width="1.9"/>'
+    return g + f'<path d="M{P(-6,-62)} Q{P(14,-60)} {P(34,-66)}" fill="none" stroke="{I()}" stroke-width="2.2"/>' + pl([(x + 31 * k, y - 69 * k), (x + 36 * k, y - 63 * k)], 2)
 def heart_l(r, x, y, k=1):
     g = shape(r, [(x - 4 * k, y - 50 * k), (x - 28 * k, y - 48 * k), (x - 34 * k, y - 28 * k), (x - 26 * k, y - 8 * k), (x - 6 * k, y + 8 * k), (x + 4 * k, y + 16 * k),
                    (x + 14 * k, y + 2 * k), (x + 32 * k, y - 16 * k), (x + 32 * k, y - 38 * k), (x + 18 * k, y - 50 * k)])
@@ -336,19 +338,39 @@ def cap_text(t):
         out.append(lw); start = w.endswith((".", "?", "!"))
     return " ".join(out)
 FONT = ["hand"]
+LEAD = {"marker": 1.22, "rocksalt": 1.3, "amatic": 0.9, "shadows": 1.0, "indie": 1.02}
 def wrap(text, width, size):
+    """Fewest lines that fit, then the most even split (no one-word orphan lines)."""
+    words, f = [], FONT[0]
+    for w in text.split():                                   # keep "5 a.m." / "225 LBS." together
+        if words and (w.lower().rstrip(".,") in ("a.m", "p.m", "lbs", "ft", "lb", "kg") or (w.lower() in ("a.m.", "p.m."))) and words[-1][-1:].isdigit():
+            words[-1] += " " + w
+        else: words.append(w)
     lines, cur = [], ""
-    for w in text.split():
+    for w in words:
         t = (cur + " " + w).strip()
-        if cur and sd.measure(t, FONT[0], size) > width: lines.append(cur); cur = w
+        if cur and sd.measure(t, f, size) > width: lines.append(cur); cur = w
         else: cur = t
-    return lines + [cur]
-def caption(text, x, y, width, size, minsize):
-    for sz in range(int(size), int(minsize) - 1, -2):
+    n = len(lines) + 1
+    if n == 1 or len(words) > 18: return lines + [cur]
+    from itertools import combinations
+    best, bl = None, None
+    for cuts in combinations(range(1, len(words)), n - 1):
+        b = (0,) + cuts + (len(words),)
+        ls = [" ".join(words[b[i]:b[i + 1]]) for i in range(n)]
+        ws = [sd.measure(l, f, size) for l in ls]
+        if max(ws) > width: continue
+        score = max(ws) - min(ws) + (width if len(ls[-1].split()) == 1 and len(words) > n else 0)
+        if best is None or score < best: best, bl = score, ls
+    return bl or (lines + [cur])
+def caption(text, x, y, width, size, minsize, maxl=3):
+    for sz in list(range(int(size), int(minsize) - 1, -2)) + [int(minsize) - 1] * (maxl < 3):
+        if maxl < 3 and sz < minsize: maxl = 3
         lines = wrap(text, width, sz)
-        if len(lines) <= 3 and all(sd.measure(l, FONT[0], sz) <= width for l in lines): break
-    g = ''.join(sd.tpath(l, FONT[0], sz, x, y + sz * 0.8 + i * sz * 0.95) for i, l in enumerate(lines))
-    return g, y + sz * 0.95 * len(lines) + sz * 0.1
+        if len(lines) <= maxl and all(sd.measure(l, FONT[0], sz) <= width for l in lines): break
+    lh = sz * 0.95 * LEAD.get(FONT[0], 1.0)
+    g = ''.join(sd.tpath(l, FONT[0], sz, x, y + sz * 0.8 + i * lh) for i, l in enumerate(lines))
+    return g, y + sz * 0.8 + (len(lines) - 1) * lh + sz * 0.25
 
 def redo_layout(num, d):
     import redo_vary as V, redo_specs  # noqa: F401  (redo_specs fills V.OVERRIDE)
