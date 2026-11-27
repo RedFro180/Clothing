@@ -307,6 +307,11 @@ def background(r, bg, num, sky_free=False):
 
 def scene(num, d):
     r = random.Random(num * 17 + 3)
+    import redo_specs as RS                     # per-design scenes chosen from the caption
+    if num in RS.SPEC:
+        bg, fn = RS.SPEC[num]
+        g = RS.eyes_forest(r) + ground(r, [(-150, G), (150, G)]) if bg == "eyes" else background(r, bg, num)
+        return g + fn(r) + tufts(r, (-124, 124), G)
     subj, pose, bg = S.get(d.get("icon", "none"), S["none"])
     g = background(r, bg, num, sky_free=subj in ("heart", "sky"))
     if subj == "heart": g += stone(r, 30, G) + heart_l(r, 30, G - 26, 0.62)
